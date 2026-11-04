@@ -1,0 +1,77 @@
+{
+  "snapshot": "autodl-evidence-snapshot-v2.zip",
+  "snapshot_bytes": 17983,
+  "snapshot_sha256": "6adc40a5017158959afc4255332a0c4c54633fffec8b37d8b028200196ca1f80",
+  "scope": "Remote execution evidence; draft labels remain draft; no physical device or 6G air interface",
+  "excluded_untrusted_labels": {},
+  "files": {
+    "adapter.log": {
+      "bytes": 53,
+      "sha256": "a08cdc2c51947a6b43494183fa0e915d12b5b0782bfabfab551b795d2e5e782d"
+    },
+    "eval-command.json": {
+      "bytes": 389,
+      "sha256": "2c00bf98b40a88753d74f7ac960ffaf66f8e802f743ff83351f5d87458dad1af"
+    },
+    "eval.draft.json": {
+      "bytes": 20325,
+      "sha256": "c421a215c740224245ced34636303a610019c37274edf911a998779bc77307db"
+    },
+    "eval.stdout.log": {
+      "bytes": 205,
+      "sha256": "cc271a27a034e6dee6be0f06ec65445f67aa35d0604b25ca6d9c359390dc89a8"
+    },
+    "eval_commands.draft.jsonl": {
+      "bytes": 4466,
+      "sha256": "b071e8a7a9bd4962d2c6c601ddab6c12252bcbb4856abee0f71c7f5905255fcf"
+    },
+    "health.json": {
+      "bytes": 499,
+      "sha256": "aa3298bbbc105d02798d91e2a6e0d49276a38f40fd4e9f593decd02d12809834"
+    },
+    "model-snapshot.json": {
+      "bytes": 3447,
+      "sha256": "248dc1ab3a182dd3779221e09ec9c66fa4ad7e8ec0827a9234165001218f2aef"
+    },
+    "nvidia-smi-before.txt": {
+      "bytes": 1689,
+      "sha256": "6c24f8c6ebb968e0a023668ee6431823bb3e447aa289a9bdad6dceb449577a16"
+    },
+    "probe.json": {
+      "bytes": 40,
+      "sha256": "fe199da666574a4ef8872a9a627932575a6b8bde181868716ab6f80e0b7961ed"
+    },
+    "runtime.lock.txt": {
+      "bytes": 7786,
+      "sha256": "72edb4b231d70bb997b84b4a88b45826e3bc702078d57cfd5300816748cb2c94"
+    },
+    "source-sha256.json": {
+      "bytes": 391,
+      "sha256": "4e759933ada68608efe30468101cbfeb94f14a4c394efb8e9e604914a83ecb7d"
+    },
+    "status.json": {
+      "bytes": 618,
+      "sha256": "bb18d3e5cbc1a06acc466405e73831141fa2f52be2ca602982a6b66a47f312e8"
+    },
+    "upstream-models.json": {
+      "bytes": 733,
+      "sha256": "3a0484bb0c8b54eca679df7e78cf9fe110957fbcd8a27810744f13ef4a779b24"
+    },
+    "versions.json": {
+      "bytes": 193,
+      "sha256": "82b1d5426f9780bb545c605d83e3c8af69985895ac688ec832d0b8b82d49a649"
+    },
+    "vllm-command.json": {
+      "bytes": 345,
+      "sha256": "c98d4294f007647d71904bcd0eae5c71286bd9367886e681ac06bf919a1dfa63"
+    },
+    "vllm.log": {
+      "bytes": 25692,
+      "sha256": "ed02e23320c13271664c7c76cd1da37d2c742822965e4a8e5a956ec8cba9286e"
+    },
+    "warmup-infer.json": {
+      "bytes": 903,
+      "sha256": "ecfdea54fc86c71cb887c4fbabd911c1042b087b39e86bd603dca85ac2a9a061"
+    }
+  }
+}

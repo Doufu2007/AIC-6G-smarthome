@@ -1,0 +1,20 @@
+{
+  "status": "completed_with_interface_errors",
+  "scope": "draft_small_model_pipeline_preflight_only",
+  "label_status": "draft_labels_not_human_verified",
+  "started_at": "20261103T043934_770898Z",
+  "provenance_rows_match": true,
+  "all_http_success": false,
+  "all_requests_from_real_model": false,
+  "formal_accuracy_evidence": false,
+  "gateway_capture_executed": false,
+  "finished_at": "20261103T044025_400023Z",
+  "summary": {
+    "n_cases": 20,
+    "n_http_ok": 18,
+    "n_action_correct": 12,
+    "action_accuracy_pct": 60.0,
+    "request_median_ms": 263.76300000000003,
+    "request_p95_ms": 523.654
+  }
+}

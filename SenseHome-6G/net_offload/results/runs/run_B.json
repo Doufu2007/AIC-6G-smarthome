@@ -1,0 +1,1709 @@
+{
+  "meta": {
+    "generated_at": "2026-10-16 02:16:50",
+    "note": "网络侧为真实测量；模型耗时为桩参数"
+  },
+  "stub_parameters": {
+    "cloud_compute_ms": 300.0,
+    "gateway_compute_ms": 150.0,
+    "_warning": "以上两项是注入的桩参数，不是测量值"
+  },
+  "harness": {
+    "infer_n_per_task_per_phase": 20,
+    "wan_rtt_max_ms": 300.0,
+    "cloud_jitter_max_ms": 30,
+    "cloud_loss_max_pct": 5
+  },
+  "summaries": [
+    {
+      "phase": "P1-normal",
+      "arm": "adaptive",
+      "conditions": {
+        "wan": {
+          "rtt_ms": 30.0,
+          "jitter_ms": 5.0,
+          "loss_pct": 0.0,
+          "blackout": false
+        },
+        "lan": {
+          "rtt_ms": 3.0,
+          "jitter_ms": 1.0,
+          "loss_pct": 0.0,
+          "blackout": false
+        }
+      },
+      "by_task": {
+        "simple": {
+          "n": 20,
+          "n_ok": 20,
+          "completion_pct": 100.0,
+          "n_resolved": 20,
+          "semantic_pct": 100.0,
+          "e2e_median_ms": 0.02,
+          "e2e_max_ms": 0.03,
+          "net_median_ms": 0.0,
+          "http_median_ms": 0.02,
+          "stub_ms": 300.0
+        },
+        "complex": {
+          "n": 20,
+          "n_ok": 20,
+          "completion_pct": 100.0,
+          "n_resolved": 20,
+          "semantic_pct": 100.0,
+          "e2e_median_ms": 344.3,
+          "e2e_max_ms": 359.4,
+          "net_median_ms": 43.9,
+          "http_median_ms": 300.3,
+          "stub_ms": 300.0
+        },
+        "safety": {
+          "n": 20,
+          "n_ok": 20,
+          "completion_pct": 100.0,
+          "n_resolved": 20,
+          "semantic_pct": 100.0,
+          "e2e_median_ms": 0.02,
+          "e2e_max_ms": 0.03,
+          "net_median_ms": 0.0,
+          "http_median_ms": 0.02,
+          "stub_ms": 300.0
+        }
+      },
+      "overall": {
+        "n": 60,
+        "n_ok": 60,
+        "completion_pct": 100.0,
+        "n_resolved": 60,
+        "semantic_pct": 100.0,
+        "e2e_median_ms": 0.03,
+        "e2e_max_ms": 359.4,
+        "net_median_ms": 0.0,
+        "http_median_ms": 0.03,
+        "stub_ms": 300.0
+      },
+      "errors": {},
+      "wan_refused": 0,
+      "wan_accepted": 80,
+      "n_failed": 0,
+      "by_backend": {
+        "cloud-model": {
+          "n": 20,
+          "n_ok": 20,
+          "completion_pct": 100.0,
+          "n_resolved": 20,
+          "semantic_pct": 100.0,
+          "e2e_median_ms": 344.3,
+          "e2e_max_ms": 359.4,
+          "net_median_ms": 43.9,
+          "http_median_ms": 300.3,
+          "stub_ms": 300.0
+        },
+        "local-rules": {
+          "n": 40,
+          "n_ok": 40,
+          "completion_pct": 100.0,
+          "n_resolved": 40,
+          "semantic_pct": 100.0,
+          "e2e_median_ms": 0.02,
+          "e2e_max_ms": 0.03,
+          "net_median_ms": 0.0,
+          "http_median_ms": 0.02,
+          "stub_ms": 300.0
+        }
+      },
+      "by_task_decisions": {
+        "simple": [
+          "local-rules"
+        ],
+        "complex": [
+          "cloud-model"
+        ],
+        "safety": [
+          "local-rules"
+        ]
+      },
+      "decision_distribution": {
+        "local-rules/TASK_IS_SIMPLE": 20,
+        "cloud-model/WAN_OK": 20,
+        "local-rules/TASK_IS_SAFETY": 20
+      }
+    },
+    {
+      "phase": "P1-normal",
+      "arm": "static-cloud",
+      "conditions": {
+        "wan": {
+          "rtt_ms": 30.0,
+          "jitter_ms": 5.0,
+          "loss_pct": 0.0,
+          "blackout": false
+        },
+        "lan": {
+          "rtt_ms": 3.0,
+          "jitter_ms": 1.0,
+          "loss_pct": 0.0,
+          "blackout": false
+        }
+      },
+      "by_task": {
+        "simple": {
+          "n": 20,
+          "n_ok": 20,
+          "completion_pct": 100.0,
+          "n_resolved": 20,
+          "semantic_pct": 100.0,
+          "e2e_median_ms": 350.3,
+          "e2e_max_ms": 362.0,
+          "net_median_ms": 49.7,
+          "http_median_ms": 300.4,
+          "stub_ms": 300.0
+        },
+        "complex": {
+          "n": 20,
+          "n_ok": 20,
+          "completion_pct": 100.0,
+          "n_resolved": 20,
+          "semantic_pct": 100.0,
+          "e2e_median_ms": 344.6,
+          "e2e_max_ms": 359.6,
+          "net_median_ms": 44.2,
+          "http_median_ms": 300.4,
+          "stub_ms": 300.0
+        },
+        "safety": {
+          "n": 20,
+          "n_ok": 20,
+          "completion_pct": 100.0,
+          "n_resolved": 20,
+          "semantic_pct": 100.0,
+          "e2e_median_ms": 349.4,
+          "e2e_max_ms": 359.0,
+          "net_median_ms": 48.9,
+          "http_median_ms": 300.4,
+          "stub_ms": 300.0
+        }
+      },
+      "overall": {
+        "n": 60,
+        "n_ok": 60,
+        "completion_pct": 100.0,
+        "n_resolved": 60,
+        "semantic_pct": 100.0,
+        "e2e_median_ms": 348.9,
+        "e2e_max_ms": 362.0,
+        "net_median_ms": 48.4,
+        "http_median_ms": 300.4,
+        "stub_ms": 300.0
+      },
+      "errors": {},
+      "wan_refused": 0,
+      "wan_accepted": 60,
+      "n_failed": 0,
+      "by_backend": {
+        "cloud-model": {
+          "n": 60,
+          "n_ok": 60,
+          "completion_pct": 100.0,
+          "n_resolved": 60,
+          "semantic_pct": 100.0,
+          "e2e_median_ms": 348.9,
+          "e2e_max_ms": 362.0,
+          "net_median_ms": 48.4,
+          "http_median_ms": 300.4,
+          "stub_ms": 300.0
+        }
+      },
+      "by_task_decisions": {
+        "simple": [
+          "cloud-model"
+        ],
+        "complex": [
+          "cloud-model"
+        ],
+        "safety": [
+          "cloud-model"
+        ]
+      },
+      "decision_distribution": {
+        "cloud-model/STATIC_COMPILE_TIME": 60
+      }
+    },
+    {
+      "phase": "P2-degraded",
+      "arm": "adaptive",
+      "conditions": {
+        "wan": {
+          "rtt_ms": 400.0,
+          "jitter_ms": 80.0,
+          "loss_pct": 10.0,
+          "blackout": false
+        },
+        "lan": {
+          "rtt_ms": 3.0,
+          "jitter_ms": 1.0,
+          "loss_pct": 0.0,
+          "blackout": false
+        }
+      },
+      "by_task": {
+        "simple": {
+          "n": 20,
+          "n_ok": 20,
+          "completion_pct": 100.0,
+          "n_resolved": 20,
+          "semantic_pct": 100.0,
+          "e2e_median_ms": 0.02,
+          "e2e_max_ms": 0.03,
+          "net_median_ms": 0.0,
+          "http_median_ms": 0.02,
+          "stub_ms": 300.0
+        },
+        "complex": {
+          "n": 20,
+          "n_ok": 20,
+          "completion_pct": 100.0,
+          "n_resolved": 20,
+          "semantic_pct": 100.0,
+          "e2e_median_ms": 176.6,
+          "e2e_max_ms": 183.3,
+          "net_median_ms": 26.2,
+          "http_median_ms": 150.3,
+          "stub_ms": 300.0
+        },
+        "safety": {
+          "n": 20,
+          "n_ok": 20,
+          "completion_pct": 100.0,
+          "n_resolved": 20,
+          "semantic_pct": 100.0,
+          "e2e_median_ms": 0.02,
+          "e2e_max_ms": 0.03,
+          "net_median_ms": 0.0,
+          "http_median_ms": 0.02,
+          "stub_ms": 300.0
+        }
+      },
+      "overall": {
+        "n": 60,
+        "n_ok": 60,
+        "completion_pct": 100.0,
+        "n_resolved": 60,
+        "semantic_pct": 100.0,
+        "e2e_median_ms": 0.02,
+        "e2e_max_ms": 183.3,
+        "net_median_ms": 0.0,
+        "http_median_ms": 0.02,
+        "stub_ms": 300.0
+      },
+      "errors": {},
+      "wan_refused": 5,
+      "wan_accepted": 55,
+      "n_failed": 0,
+      "by_backend": {
+        "local-model": {
+          "n": 20,
+          "n_ok": 20,
+          "completion_pct": 100.0,
+          "n_resolved": 20,
+          "semantic_pct": 100.0,
+          "e2e_median_ms": 176.6,
+          "e2e_max_ms": 183.3,
+          "net_median_ms": 26.2,
+          "http_median_ms": 150.3,
+          "stub_ms": 300.0
+        },
+        "local-rules": {
+          "n": 40,
+          "n_ok": 40,
+          "completion_pct": 100.0,
+          "n_resolved": 40,
+          "semantic_pct": 100.0,
+          "e2e_median_ms": 0.02,
+          "e2e_max_ms": 0.03,
+          "net_median_ms": 0.0,
+          "http_median_ms": 0.02,
+          "stub_ms": 300.0
+        }
+      },
+      "by_task_decisions": {
+        "simple": [
+          "local-rules"
+        ],
+        "complex": [
+          "local-model"
+        ],
+        "safety": [
+          "local-rules"
+        ]
+      },
+      "decision_distribution": {
+        "local-rules/TASK_IS_SIMPLE": 20,
+        "local-model/WAN_RTT_HIGH": 19,
+        "local-model/WAN_UNREACHABLE": 1,
+        "local-rules/TASK_IS_SAFETY": 20
+      }
+    },
+    {
+      "phase": "P2-degraded",
+      "arm": "static-cloud",
+      "conditions": {
+        "wan": {
+          "rtt_ms": 400.0,
+          "jitter_ms": 80.0,
+          "loss_pct": 10.0,
+          "blackout": false
+        },
+        "lan": {
+          "rtt_ms": 3.0,
+          "jitter_ms": 1.0,
+          "loss_pct": 0.0,
+          "blackout": false
+        }
+      },
+      "by_task": {
+        "simple": {
+          "n": 20,
+          "n_ok": 17,
+          "completion_pct": 85.0,
+          "n_resolved": 17,
+          "semantic_pct": 85.0,
+          "e2e_median_ms": 704.9,
+          "e2e_max_ms": 790.4,
+          "net_median_ms": 404.4,
+          "http_median_ms": 300.3,
+          "stub_ms": 300.0
+        },
+        "complex": {
+          "n": 20,
+          "n_ok": 19,
+          "completion_pct": 95.0,
+          "n_resolved": 19,
+          "semantic_pct": 95.0,
+          "e2e_median_ms": 693.6,
+          "e2e_max_ms": 767.1,
+          "net_median_ms": 393.3,
+          "http_median_ms": 300.3,
+          "stub_ms": 300.0
+        },
+        "safety": {
+          "n": 20,
+          "n_ok": 17,
+          "completion_pct": 85.0,
+          "n_resolved": 17,
+          "semantic_pct": 85.0,
+          "e2e_median_ms": 718.3,
+          "e2e_max_ms": 802.3,
+          "net_median_ms": 415.6,
+          "http_median_ms": 300.4,
+          "stub_ms": 300.0
+        }
+      },
+      "overall": {
+        "n": 60,
+        "n_ok": 53,
+        "completion_pct": 88.3,
+        "n_resolved": 53,
+        "semantic_pct": 88.3,
+        "e2e_median_ms": 704.2,
+        "e2e_max_ms": 802.3,
+        "net_median_ms": 404.0,
+        "http_median_ms": 300.3,
+        "stub_ms": 300.0
+      },
+      "errors": {
+        "ConnectionResetError": 7
+      },
+      "wan_refused": 7,
+      "wan_accepted": 53,
+      "n_failed": 7,
+      "by_backend": {
+        "cloud-model": {
+          "n": 60,
+          "n_ok": 53,
+          "completion_pct": 88.3,
+          "n_resolved": 53,
+          "semantic_pct": 88.3,
+          "e2e_median_ms": 704.2,
+          "e2e_max_ms": 802.3,
+          "net_median_ms": 404.0,
+          "http_median_ms": 300.3,
+          "stub_ms": 300.0
+        }
+      },
+      "by_task_decisions": {
+        "simple": [
+          "cloud-model"
+        ],
+        "complex": [
+          "cloud-model"
+        ],
+        "safety": [
+          "cloud-model"
+        ]
+      },
+      "decision_distribution": {
+        "cloud-model/STATIC_COMPILE_TIME": 60
+      }
+    },
+    {
+      "phase": "P3-wan-down",
+      "arm": "adaptive",
+      "conditions": {
+        "wan": {
+          "rtt_ms": 300.0,
+          "jitter_ms": 0.0,
+          "loss_pct": 0.0,
+          "blackout": true
+        },
+        "lan": {
+          "rtt_ms": 3.0,
+          "jitter_ms": 1.0,
+          "loss_pct": 0.0,
+          "blackout": false
+        }
+      },
+      "by_task": {
+        "simple": {
+          "n": 20,
+          "n_ok": 20,
+          "completion_pct": 100.0,
+          "n_resolved": 20,
+          "semantic_pct": 100.0,
+          "e2e_median_ms": 0.02,
+          "e2e_max_ms": 0.03,
+          "net_median_ms": 0.0,
+          "http_median_ms": 0.02,
+          "stub_ms": 300.0
+        },
+        "complex": {
+          "n": 20,
+          "n_ok": 20,
+          "completion_pct": 100.0,
+          "n_resolved": 20,
+          "semantic_pct": 100.0,
+          "e2e_median_ms": 158.1,
+          "e2e_max_ms": 182.6,
+          "net_median_ms": 7.88,
+          "http_median_ms": 150.3,
+          "stub_ms": 300.0
+        },
+        "safety": {
+          "n": 20,
+          "n_ok": 20,
+          "completion_pct": 100.0,
+          "n_resolved": 20,
+          "semantic_pct": 100.0,
+          "e2e_median_ms": 0.02,
+          "e2e_max_ms": 0.04,
+          "net_median_ms": 0.0,
+          "http_median_ms": 0.02,
+          "stub_ms": 300.0
+        }
+      },
+      "overall": {
+        "n": 60,
+        "n_ok": 60,
+        "completion_pct": 100.0,
+        "n_resolved": 60,
+        "semantic_pct": 100.0,
+        "e2e_median_ms": 0.02,
+        "e2e_max_ms": 182.6,
+        "net_median_ms": 0.0,
+        "http_median_ms": 0.02,
+        "stub_ms": 300.0
+      },
+      "errors": {},
+      "wan_refused": 60,
+      "wan_accepted": 0,
+      "n_failed": 0,
+      "by_backend": {
+        "local-model": {
+          "n": 20,
+          "n_ok": 20,
+          "completion_pct": 100.0,
+          "n_resolved": 20,
+          "semantic_pct": 100.0,
+          "e2e_median_ms": 158.1,
+          "e2e_max_ms": 182.6,
+          "net_median_ms": 7.88,
+          "http_median_ms": 150.3,
+          "stub_ms": 300.0
+        },
+        "local-rules": {
+          "n": 40,
+          "n_ok": 40,
+          "completion_pct": 100.0,
+          "n_resolved": 40,
+          "semantic_pct": 100.0,
+          "e2e_median_ms": 0.02,
+          "e2e_max_ms": 0.04,
+          "net_median_ms": 0.0,
+          "http_median_ms": 0.02,
+          "stub_ms": 300.0
+        }
+      },
+      "by_task_decisions": {
+        "simple": [
+          "local-rules"
+        ],
+        "complex": [
+          "local-model"
+        ],
+        "safety": [
+          "local-rules"
+        ]
+      },
+      "decision_distribution": {
+        "local-rules/TASK_IS_SIMPLE": 20,
+        "local-model/WAN_UNREACHABLE": 20,
+        "local-rules/TASK_IS_SAFETY": 20
+      }
+    },
+    {
+      "phase": "P3-wan-down",
+      "arm": "static-cloud",
+      "conditions": {
+        "wan": {
+          "rtt_ms": 300.0,
+          "jitter_ms": 0.0,
+          "loss_pct": 0.0,
+          "blackout": true
+        },
+        "lan": {
+          "rtt_ms": 3.0,
+          "jitter_ms": 1.0,
+          "loss_pct": 0.0,
+          "blackout": false
+        }
+      },
+      "by_task": {
+        "simple": {
+          "n": 20,
+          "n_ok": 0,
+          "completion_pct": 0.0,
+          "n_resolved": 0,
+          "semantic_pct": 0.0,
+          "e2e_median_ms": null,
+          "e2e_max_ms": null,
+          "net_median_ms": null,
+          "http_median_ms": null,
+          "stub_ms": 300.0
+        },
+        "complex": {
+          "n": 20,
+          "n_ok": 0,
+          "completion_pct": 0.0,
+          "n_resolved": 0,
+          "semantic_pct": 0.0,
+          "e2e_median_ms": null,
+          "e2e_max_ms": null,
+          "net_median_ms": null,
+          "http_median_ms": null,
+          "stub_ms": 300.0
+        },
+        "safety": {
+          "n": 20,
+          "n_ok": 0,
+          "completion_pct": 0.0,
+          "n_resolved": 0,
+          "semantic_pct": 0.0,
+          "e2e_median_ms": null,
+          "e2e_max_ms": null,
+          "net_median_ms": null,
+          "http_median_ms": null,
+          "stub_ms": 300.0
+        }
+      },
+      "overall": {
+        "n": 60,
+        "n_ok": 0,
+        "completion_pct": 0.0,
+        "n_resolved": 0,
+        "semantic_pct": 0.0,
+        "e2e_median_ms": null,
+        "e2e_max_ms": null,
+        "net_median_ms": null,
+        "http_median_ms": null,
+        "stub_ms": 300.0
+      },
+      "errors": {
+        "ConnectionResetError": 45,
+        "ConnectionAbortedError": 15
+      },
+      "wan_refused": 60,
+      "wan_accepted": 0,
+      "n_failed": 60,
+      "by_backend": {
+        "cloud-model": {
+          "n": 60,
+          "n_ok": 0,
+          "completion_pct": 0.0,
+          "n_resolved": 0,
+          "semantic_pct": 0.0,
+          "e2e_median_ms": null,
+          "e2e_max_ms": null,
+          "net_median_ms": null,
+          "http_median_ms": null,
+          "stub_ms": 300.0
+        }
+      },
+      "by_task_decisions": {
+        "simple": [
+          "cloud-model"
+        ],
+        "complex": [
+          "cloud-model"
+        ],
+        "safety": [
+          "cloud-model"
+        ]
+      },
+      "decision_distribution": {
+        "cloud-model/STATIC_COMPILE_TIME": 60
+      }
+    },
+    {
+      "phase": "P4-all-down",
+      "arm": "adaptive",
+      "conditions": {
+        "wan": {
+          "rtt_ms": 300.0,
+          "jitter_ms": 0.0,
+          "loss_pct": 0.0,
+          "blackout": true
+        },
+        "lan": {
+          "rtt_ms": 3.0,
+          "jitter_ms": 0.0,
+          "loss_pct": 0.0,
+          "blackout": true
+        }
+      },
+      "by_task": {
+        "simple": {
+          "n": 20,
+          "n_ok": 20,
+          "completion_pct": 100.0,
+          "n_resolved": 20,
+          "semantic_pct": 100.0,
+          "e2e_median_ms": 0.01,
+          "e2e_max_ms": 0.02,
+          "net_median_ms": 0.0,
+          "http_median_ms": 0.01,
+          "stub_ms": 300.0
+        },
+        "complex": {
+          "n": 20,
+          "n_ok": 20,
+          "completion_pct": 100.0,
+          "n_resolved": 0,
+          "semantic_pct": 0.0,
+          "e2e_median_ms": 0.01,
+          "e2e_max_ms": 0.03,
+          "net_median_ms": 0.0,
+          "http_median_ms": 0.01,
+          "stub_ms": 300.0
+        },
+        "safety": {
+          "n": 20,
+          "n_ok": 20,
+          "completion_pct": 100.0,
+          "n_resolved": 20,
+          "semantic_pct": 100.0,
+          "e2e_median_ms": 0.01,
+          "e2e_max_ms": 0.04,
+          "net_median_ms": 0.0,
+          "http_median_ms": 0.01,
+          "stub_ms": 300.0
+        }
+      },
+      "overall": {
+        "n": 60,
+        "n_ok": 60,
+        "completion_pct": 100.0,
+        "n_resolved": 40,
+        "semantic_pct": 66.7,
+        "e2e_median_ms": 0.01,
+        "e2e_max_ms": 0.04,
+        "net_median_ms": 0.0,
+        "http_median_ms": 0.01,
+        "stub_ms": 300.0
+      },
+      "errors": {
+        "UNRESOLVED_NO_NLU": 20
+      },
+      "wan_refused": 60,
+      "wan_accepted": 0,
+      "n_failed": 0,
+      "by_backend": {
+        "local-rules": {
+          "n": 60,
+          "n_ok": 60,
+          "completion_pct": 100.0,
+          "n_resolved": 40,
+          "semantic_pct": 66.7,
+          "e2e_median_ms": 0.01,
+          "e2e_max_ms": 0.04,
+          "net_median_ms": 0.0,
+          "http_median_ms": 0.01,
+          "stub_ms": 300.0
+        }
+      },
+      "by_task_decisions": {
+        "simple": [
+          "local-rules"
+        ],
+        "complex": [
+          "local-rules"
+        ],
+        "safety": [
+          "local-rules"
+        ]
+      },
+      "decision_distribution": {
+        "local-rules/TASK_IS_SIMPLE": 20,
+        "local-rules/LAN_DOWN": 20,
+        "local-rules/TASK_IS_SAFETY": 20
+      }
+    },
+    {
+      "phase": "P4-all-down",
+      "arm": "static-cloud",
+      "conditions": {
+        "wan": {
+          "rtt_ms": 300.0,
+          "jitter_ms": 0.0,
+          "loss_pct": 0.0,
+          "blackout": true
+        },
+        "lan": {
+          "rtt_ms": 3.0,
+          "jitter_ms": 0.0,
+          "loss_pct": 0.0,
+          "blackout": true
+        }
+      },
+      "by_task": {
+        "simple": {
+          "n": 20,
+          "n_ok": 0,
+          "completion_pct": 0.0,
+          "n_resolved": 0,
+          "semantic_pct": 0.0,
+          "e2e_median_ms": null,
+          "e2e_max_ms": null,
+          "net_median_ms": null,
+          "http_median_ms": null,
+          "stub_ms": 300.0
+        },
+        "complex": {
+          "n": 20,
+          "n_ok": 0,
+          "completion_pct": 0.0,
+          "n_resolved": 0,
+          "semantic_pct": 0.0,
+          "e2e_median_ms": null,
+          "e2e_max_ms": null,
+          "net_median_ms": null,
+          "http_median_ms": null,
+          "stub_ms": 300.0
+        },
+        "safety": {
+          "n": 20,
+          "n_ok": 0,
+          "completion_pct": 0.0,
+          "n_resolved": 0,
+          "semantic_pct": 0.0,
+          "e2e_median_ms": null,
+          "e2e_max_ms": null,
+          "net_median_ms": null,
+          "http_median_ms": null,
+          "stub_ms": 300.0
+        }
+      },
+      "overall": {
+        "n": 60,
+        "n_ok": 0,
+        "completion_pct": 0.0,
+        "n_resolved": 0,
+        "semantic_pct": 0.0,
+        "e2e_median_ms": null,
+        "e2e_max_ms": null,
+        "net_median_ms": null,
+        "http_median_ms": null,
+        "stub_ms": 300.0
+      },
+      "errors": {
+        "ConnectionResetError": 34,
+        "ConnectionAbortedError": 26
+      },
+      "wan_refused": 60,
+      "wan_accepted": 0,
+      "n_failed": 60,
+      "by_backend": {
+        "cloud-model": {
+          "n": 60,
+          "n_ok": 0,
+          "completion_pct": 0.0,
+          "n_resolved": 0,
+          "semantic_pct": 0.0,
+          "e2e_median_ms": null,
+          "e2e_max_ms": null,
+          "net_median_ms": null,
+          "http_median_ms": null,
+          "stub_ms": 300.0
+        }
+      },
+      "by_task_decisions": {
+        "simple": [
+          "cloud-model"
+        ],
+        "complex": [
+          "cloud-model"
+        ],
+        "safety": [
+          "cloud-model"
+        ]
+      },
+      "decision_distribution": {
+        "cloud-model/STATIC_COMPILE_TIME": 60
+      }
+    }
+  ],
+  "probe_overheads": [
+    {
+      "n_probes": 60,
+      "median_probe_ms": 48.7,
+      "probe_failure_pct": 0.0,
+      "injected_failure_pct": 0.0,
+      "note": "探测是自适应策略自身的成本，静态方案不付这笔钱；探测不含 8 次预热采样，故样本数小于总请求数",
+      "phase": "P1-normal"
+    },
+    {
+      "n_probes": 60,
+      "median_probe_ms": 411.4,
+      "probe_failure_pct": 8.3,
+      "injected_failure_pct": 10.0,
+      "note": "探测是自适应策略自身的成本，静态方案不付这笔钱；探测不含 8 次预热采样，故样本数小于总请求数",
+      "phase": "P2-degraded"
+    },
+    {
+      "n_probes": 60,
+      "median_probe_ms": 1.41,
+      "probe_failure_pct": 100.0,
+      "injected_failure_pct": 100.0,
+      "note": "探测是自适应策略自身的成本，静态方案不付这笔钱；探测不含 8 次预热采样，故样本数小于总请求数",
+      "phase": "P3-wan-down"
+    },
+    {
+      "n_probes": 60,
+      "median_probe_ms": 0.64,
+      "probe_failure_pct": 100.0,
+      "injected_failure_pct": 100.0,
+      "note": "探测是自适应策略自身的成本，静态方案不付这笔钱；探测不含 8 次预热采样，故样本数小于总请求数",
+      "phase": "P4-all-down"
+    }
+  ],
+  "transition_trace": [
+    {
+      "step": "30",
+      "probe_idx": 0,
+      "wan_configured_rtt_ms": 30,
+      "wan_measured_rtt_ms": 33.6,
+      "wan_probe_ok": true,
+      "backend_complex": "cloud-model",
+      "reason_complex": "WAN_OK",
+      "backend_safety": "local-rules",
+      "reason_safety": "TASK_IS_SAFETY"
+    },
+    {
+      "step": "30",
+      "probe_idx": 1,
+      "wan_configured_rtt_ms": 30,
+      "wan_measured_rtt_ms": 36.0,
+      "wan_probe_ok": true,
+      "backend_complex": "cloud-model",
+      "reason_complex": "WAN_OK",
+      "backend_safety": "local-rules",
+      "reason_safety": "TASK_IS_SAFETY"
+    },
+    {
+      "step": "30",
+      "probe_idx": 2,
+      "wan_configured_rtt_ms": 30,
+      "wan_measured_rtt_ms": 53.9,
+      "wan_probe_ok": true,
+      "backend_complex": "cloud-model",
+      "reason_complex": "WAN_OK",
+      "backend_safety": "local-rules",
+      "reason_safety": "TASK_IS_SAFETY"
+    },
+    {
+      "step": "60",
+      "probe_idx": 0,
+      "wan_configured_rtt_ms": 60,
+      "wan_measured_rtt_ms": 61.2,
+      "wan_probe_ok": true,
+      "backend_complex": "cloud-model",
+      "reason_complex": "WAN_OK",
+      "backend_safety": "local-rules",
+      "reason_safety": "TASK_IS_SAFETY"
+    },
+    {
+      "step": "60",
+      "probe_idx": 1,
+      "wan_configured_rtt_ms": 60,
+      "wan_measured_rtt_ms": 73.6,
+      "wan_probe_ok": true,
+      "backend_complex": "cloud-model",
+      "reason_complex": "WAN_OK",
+      "backend_safety": "local-rules",
+      "reason_safety": "TASK_IS_SAFETY"
+    },
+    {
+      "step": "60",
+      "probe_idx": 2,
+      "wan_configured_rtt_ms": 60,
+      "wan_measured_rtt_ms": 84.8,
+      "wan_probe_ok": true,
+      "backend_complex": "cloud-model",
+      "reason_complex": "WAN_OK",
+      "backend_safety": "local-rules",
+      "reason_safety": "TASK_IS_SAFETY"
+    },
+    {
+      "step": "120",
+      "probe_idx": 0,
+      "wan_configured_rtt_ms": 120,
+      "wan_measured_rtt_ms": 133.1,
+      "wan_probe_ok": true,
+      "backend_complex": "cloud-model",
+      "reason_complex": "WAN_OK",
+      "backend_safety": "local-rules",
+      "reason_safety": "TASK_IS_SAFETY"
+    },
+    {
+      "step": "120",
+      "probe_idx": 1,
+      "wan_configured_rtt_ms": 120,
+      "wan_measured_rtt_ms": 123.0,
+      "wan_probe_ok": true,
+      "backend_complex": "cloud-model",
+      "reason_complex": "WAN_OK",
+      "backend_safety": "local-rules",
+      "reason_safety": "TASK_IS_SAFETY"
+    },
+    {
+      "step": "120",
+      "probe_idx": 2,
+      "wan_configured_rtt_ms": 120,
+      "wan_measured_rtt_ms": 125.5,
+      "wan_probe_ok": true,
+      "backend_complex": "cloud-model",
+      "reason_complex": "WAN_OK",
+      "backend_safety": "local-rules",
+      "reason_safety": "TASK_IS_SAFETY"
+    },
+    {
+      "step": "200",
+      "probe_idx": 0,
+      "wan_configured_rtt_ms": 200,
+      "wan_measured_rtt_ms": 216.9,
+      "wan_probe_ok": true,
+      "backend_complex": "cloud-model",
+      "reason_complex": "WAN_OK",
+      "backend_safety": "local-rules",
+      "reason_safety": "TASK_IS_SAFETY"
+    },
+    {
+      "step": "200",
+      "probe_idx": 1,
+      "wan_configured_rtt_ms": 200,
+      "wan_measured_rtt_ms": 202.8,
+      "wan_probe_ok": true,
+      "backend_complex": "cloud-model",
+      "reason_complex": "WAN_OK",
+      "backend_safety": "local-rules",
+      "reason_safety": "TASK_IS_SAFETY"
+    },
+    {
+      "step": "200",
+      "probe_idx": 2,
+      "wan_configured_rtt_ms": 200,
+      "wan_measured_rtt_ms": 228.0,
+      "wan_probe_ok": true,
+      "backend_complex": "cloud-model",
+      "reason_complex": "WAN_OK",
+      "backend_safety": "local-rules",
+      "reason_safety": "TASK_IS_SAFETY"
+    },
+    {
+      "step": "280",
+      "probe_idx": 0,
+      "wan_configured_rtt_ms": 280,
+      "wan_measured_rtt_ms": 287.3,
+      "wan_probe_ok": true,
+      "backend_complex": "cloud-model",
+      "reason_complex": "WAN_OK",
+      "backend_safety": "local-rules",
+      "reason_safety": "TASK_IS_SAFETY"
+    },
+    {
+      "step": "280",
+      "probe_idx": 1,
+      "wan_configured_rtt_ms": 280,
+      "wan_measured_rtt_ms": 288.1,
+      "wan_probe_ok": true,
+      "backend_complex": "cloud-model",
+      "reason_complex": "WAN_OK",
+      "backend_safety": "local-rules",
+      "reason_safety": "TASK_IS_SAFETY"
+    },
+    {
+      "step": "280",
+      "probe_idx": 2,
+      "wan_configured_rtt_ms": 280,
+      "wan_measured_rtt_ms": 314.5,
+      "wan_probe_ok": true,
+      "backend_complex": "cloud-model",
+      "reason_complex": "WAN_OK",
+      "backend_safety": "local-rules",
+      "reason_safety": "TASK_IS_SAFETY"
+    },
+    {
+      "step": "320",
+      "probe_idx": 0,
+      "wan_configured_rtt_ms": 320,
+      "wan_measured_rtt_ms": 316.0,
+      "wan_probe_ok": true,
+      "backend_complex": "cloud-model",
+      "reason_complex": "WAN_OK",
+      "backend_safety": "local-rules",
+      "reason_safety": "TASK_IS_SAFETY"
+    },
+    {
+      "step": "320",
+      "probe_idx": 1,
+      "wan_configured_rtt_ms": 320,
+      "wan_measured_rtt_ms": 346.3,
+      "wan_probe_ok": true,
+      "backend_complex": "cloud-model",
+      "reason_complex": "WAN_OK",
+      "backend_safety": "local-rules",
+      "reason_safety": "TASK_IS_SAFETY"
+    },
+    {
+      "step": "320",
+      "probe_idx": 2,
+      "wan_configured_rtt_ms": 320,
+      "wan_measured_rtt_ms": 308.4,
+      "wan_probe_ok": true,
+      "backend_complex": "cloud-model",
+      "reason_complex": "WAN_OK",
+      "backend_safety": "local-rules",
+      "reason_safety": "TASK_IS_SAFETY"
+    },
+    {
+      "step": "400",
+      "probe_idx": 0,
+      "wan_configured_rtt_ms": 400,
+      "wan_measured_rtt_ms": 417.5,
+      "wan_probe_ok": true,
+      "backend_complex": "local-model",
+      "reason_complex": "WAN_JITTER_HIGH",
+      "backend_safety": "local-rules",
+      "reason_safety": "TASK_IS_SAFETY"
+    },
+    {
+      "step": "400",
+      "probe_idx": 1,
+      "wan_configured_rtt_ms": 400,
+      "wan_measured_rtt_ms": 398.6,
+      "wan_probe_ok": true,
+      "backend_complex": "cloud-model",
+      "reason_complex": "WAN_OK",
+      "backend_safety": "local-rules",
+      "reason_safety": "TASK_IS_SAFETY"
+    },
+    {
+      "step": "400",
+      "probe_idx": 2,
+      "wan_configured_rtt_ms": 400,
+      "wan_measured_rtt_ms": 427.1,
+      "wan_probe_ok": true,
+      "backend_complex": "cloud-model",
+      "reason_complex": "WAN_OK",
+      "backend_safety": "local-rules",
+      "reason_safety": "TASK_IS_SAFETY"
+    },
+    {
+      "step": "600",
+      "probe_idx": 0,
+      "wan_configured_rtt_ms": 600,
+      "wan_measured_rtt_ms": 624.2,
+      "wan_probe_ok": true,
+      "backend_complex": "local-model",
+      "reason_complex": "WAN_RTT_HIGH",
+      "backend_safety": "local-rules",
+      "reason_safety": "TASK_IS_SAFETY"
+    },
+    {
+      "step": "600",
+      "probe_idx": 1,
+      "wan_configured_rtt_ms": 600,
+      "wan_measured_rtt_ms": 620.2,
+      "wan_probe_ok": true,
+      "backend_complex": "local-model",
+      "reason_complex": "WAN_RTT_HIGH",
+      "backend_safety": "local-rules",
+      "reason_safety": "TASK_IS_SAFETY"
+    },
+    {
+      "step": "600",
+      "probe_idx": 2,
+      "wan_configured_rtt_ms": 600,
+      "wan_measured_rtt_ms": 620.5,
+      "wan_probe_ok": true,
+      "backend_complex": "local-model",
+      "reason_complex": "WAN_RTT_HIGH",
+      "backend_safety": "local-rules",
+      "reason_safety": "TASK_IS_SAFETY"
+    },
+    {
+      "step": "1000",
+      "probe_idx": 0,
+      "wan_configured_rtt_ms": 1000,
+      "wan_measured_rtt_ms": 982.9,
+      "wan_probe_ok": true,
+      "backend_complex": "local-model",
+      "reason_complex": "WAN_RTT_HIGH",
+      "backend_safety": "local-rules",
+      "reason_safety": "TASK_IS_SAFETY"
+    },
+    {
+      "step": "1000",
+      "probe_idx": 1,
+      "wan_configured_rtt_ms": 1000,
+      "wan_measured_rtt_ms": 965.1,
+      "wan_probe_ok": true,
+      "backend_complex": "local-model",
+      "reason_complex": "WAN_RTT_HIGH",
+      "backend_safety": "local-rules",
+      "reason_safety": "TASK_IS_SAFETY"
+    },
+    {
+      "step": "1000",
+      "probe_idx": 2,
+      "wan_configured_rtt_ms": 1000,
+      "wan_measured_rtt_ms": 988.4,
+      "wan_probe_ok": true,
+      "backend_complex": "local-model",
+      "reason_complex": "WAN_RTT_HIGH",
+      "backend_safety": "local-rules",
+      "reason_safety": "TASK_IS_SAFETY"
+    },
+    {
+      "step": "BLACKOUT",
+      "probe_idx": 0,
+      "wan_configured_rtt_ms": null,
+      "wan_measured_rtt_ms": null,
+      "wan_probe_ok": false,
+      "backend_complex": "local-model",
+      "reason_complex": "WAN_UNREACHABLE",
+      "backend_safety": "local-rules",
+      "reason_safety": "TASK_IS_SAFETY"
+    },
+    {
+      "step": "BLACKOUT",
+      "probe_idx": 1,
+      "wan_configured_rtt_ms": null,
+      "wan_measured_rtt_ms": null,
+      "wan_probe_ok": false,
+      "backend_complex": "local-model",
+      "reason_complex": "WAN_UNREACHABLE",
+      "backend_safety": "local-rules",
+      "reason_safety": "TASK_IS_SAFETY"
+    },
+    {
+      "step": "BLACKOUT",
+      "probe_idx": 2,
+      "wan_configured_rtt_ms": null,
+      "wan_measured_rtt_ms": null,
+      "wan_probe_ok": false,
+      "backend_complex": "local-model",
+      "reason_complex": "WAN_UNREACHABLE",
+      "backend_safety": "local-rules",
+      "reason_safety": "TASK_IS_SAFETY"
+    },
+    {
+      "step": "BLACKOUT",
+      "probe_idx": 0,
+      "wan_configured_rtt_ms": null,
+      "wan_measured_rtt_ms": null,
+      "wan_probe_ok": false,
+      "backend_complex": "local-model",
+      "reason_complex": "WAN_UNREACHABLE",
+      "backend_safety": "local-rules",
+      "reason_safety": "TASK_IS_SAFETY"
+    },
+    {
+      "step": "BLACKOUT",
+      "probe_idx": 1,
+      "wan_configured_rtt_ms": null,
+      "wan_measured_rtt_ms": null,
+      "wan_probe_ok": false,
+      "backend_complex": "local-model",
+      "reason_complex": "WAN_UNREACHABLE",
+      "backend_safety": "local-rules",
+      "reason_safety": "TASK_IS_SAFETY"
+    },
+    {
+      "step": "BLACKOUT",
+      "probe_idx": 2,
+      "wan_configured_rtt_ms": null,
+      "wan_measured_rtt_ms": null,
+      "wan_probe_ok": false,
+      "backend_complex": "local-model",
+      "reason_complex": "WAN_UNREACHABLE",
+      "backend_safety": "local-rules",
+      "reason_safety": "TASK_IS_SAFETY"
+    },
+    {
+      "step": "600",
+      "probe_idx": 0,
+      "wan_configured_rtt_ms": 600,
+      "wan_measured_rtt_ms": 610.6,
+      "wan_probe_ok": true,
+      "backend_complex": "local-model",
+      "reason_complex": "WAN_RTT_HIGH",
+      "backend_safety": "local-rules",
+      "reason_safety": "TASK_IS_SAFETY"
+    },
+    {
+      "step": "600",
+      "probe_idx": 1,
+      "wan_configured_rtt_ms": 600,
+      "wan_measured_rtt_ms": 627.0,
+      "wan_probe_ok": true,
+      "backend_complex": "local-model",
+      "reason_complex": "WAN_RTT_HIGH",
+      "backend_safety": "local-rules",
+      "reason_safety": "TASK_IS_SAFETY"
+    },
+    {
+      "step": "600",
+      "probe_idx": 2,
+      "wan_configured_rtt_ms": 600,
+      "wan_measured_rtt_ms": 587.1,
+      "wan_probe_ok": true,
+      "backend_complex": "local-model",
+      "reason_complex": "WAN_RTT_HIGH",
+      "backend_safety": "local-rules",
+      "reason_safety": "TASK_IS_SAFETY"
+    },
+    {
+      "step": "300",
+      "probe_idx": 0,
+      "wan_configured_rtt_ms": 300,
+      "wan_measured_rtt_ms": 303.5,
+      "wan_probe_ok": true,
+      "backend_complex": "local-model",
+      "reason_complex": "WAN_RTT_HIGH",
+      "backend_safety": "local-rules",
+      "reason_safety": "TASK_IS_SAFETY"
+    },
+    {
+      "step": "300",
+      "probe_idx": 1,
+      "wan_configured_rtt_ms": 300,
+      "wan_measured_rtt_ms": 320.6,
+      "wan_probe_ok": true,
+      "backend_complex": "local-model",
+      "reason_complex": "WAN_RTT_HIGH",
+      "backend_safety": "local-rules",
+      "reason_safety": "TASK_IS_SAFETY"
+    },
+    {
+      "step": "300",
+      "probe_idx": 2,
+      "wan_configured_rtt_ms": 300,
+      "wan_measured_rtt_ms": 342.8,
+      "wan_probe_ok": true,
+      "backend_complex": "local-model",
+      "reason_complex": "WAN_RTT_HIGH",
+      "backend_safety": "local-rules",
+      "reason_safety": "TASK_IS_SAFETY"
+    },
+    {
+      "step": "200",
+      "probe_idx": 0,
+      "wan_configured_rtt_ms": 200,
+      "wan_measured_rtt_ms": 197.7,
+      "wan_probe_ok": true,
+      "backend_complex": "local-model",
+      "reason_complex": "WAN_RTT_HIGH",
+      "backend_safety": "local-rules",
+      "reason_safety": "TASK_IS_SAFETY"
+    },
+    {
+      "step": "200",
+      "probe_idx": 1,
+      "wan_configured_rtt_ms": 200,
+      "wan_measured_rtt_ms": 220.4,
+      "wan_probe_ok": true,
+      "backend_complex": "local-model",
+      "reason_complex": "WAN_RTT_HIGH",
+      "backend_safety": "local-rules",
+      "reason_safety": "TASK_IS_SAFETY"
+    },
+    {
+      "step": "200",
+      "probe_idx": 2,
+      "wan_configured_rtt_ms": 200,
+      "wan_measured_rtt_ms": 237.8,
+      "wan_probe_ok": true,
+      "backend_complex": "local-model",
+      "reason_complex": "WAN_RTT_HIGH",
+      "backend_safety": "local-rules",
+      "reason_safety": "TASK_IS_SAFETY"
+    },
+    {
+      "step": "100",
+      "probe_idx": 0,
+      "wan_configured_rtt_ms": 100,
+      "wan_measured_rtt_ms": 134.2,
+      "wan_probe_ok": true,
+      "backend_complex": "local-model",
+      "reason_complex": "WAN_RTT_HIGH",
+      "backend_safety": "local-rules",
+      "reason_safety": "TASK_IS_SAFETY"
+    },
+    {
+      "step": "100",
+      "probe_idx": 1,
+      "wan_configured_rtt_ms": 100,
+      "wan_measured_rtt_ms": 104.1,
+      "wan_probe_ok": true,
+      "backend_complex": "local-model",
+      "reason_complex": "WAN_RTT_HIGH",
+      "backend_safety": "local-rules",
+      "reason_safety": "TASK_IS_SAFETY"
+    },
+    {
+      "step": "100",
+      "probe_idx": 2,
+      "wan_configured_rtt_ms": 100,
+      "wan_measured_rtt_ms": 128.8,
+      "wan_probe_ok": true,
+      "backend_complex": "local-model",
+      "reason_complex": "WAN_RTT_HIGH",
+      "backend_safety": "local-rules",
+      "reason_safety": "TASK_IS_SAFETY"
+    },
+    {
+      "step": "60",
+      "probe_idx": 0,
+      "wan_configured_rtt_ms": 60,
+      "wan_measured_rtt_ms": 73.5,
+      "wan_probe_ok": true,
+      "backend_complex": "local-model",
+      "reason_complex": "WAN_JITTER_HIGH",
+      "backend_safety": "local-rules",
+      "reason_safety": "TASK_IS_SAFETY"
+    },
+    {
+      "step": "60",
+      "probe_idx": 1,
+      "wan_configured_rtt_ms": 60,
+      "wan_measured_rtt_ms": 85.5,
+      "wan_probe_ok": true,
+      "backend_complex": "local-model",
+      "reason_complex": "WAN_JITTER_HIGH",
+      "backend_safety": "local-rules",
+      "reason_safety": "TASK_IS_SAFETY"
+    },
+    {
+      "step": "60",
+      "probe_idx": 2,
+      "wan_configured_rtt_ms": 60,
+      "wan_measured_rtt_ms": 89.3,
+      "wan_probe_ok": true,
+      "backend_complex": "local-model",
+      "reason_complex": "WAN_JITTER_HIGH",
+      "backend_safety": "local-rules",
+      "reason_safety": "TASK_IS_SAFETY"
+    },
+    {
+      "step": "30",
+      "probe_idx": 0,
+      "wan_configured_rtt_ms": 30,
+      "wan_measured_rtt_ms": 34.4,
+      "wan_probe_ok": true,
+      "backend_complex": "local-model",
+      "reason_complex": "WAN_JITTER_HIGH",
+      "backend_safety": "local-rules",
+      "reason_safety": "TASK_IS_SAFETY"
+    },
+    {
+      "step": "30",
+      "probe_idx": 1,
+      "wan_configured_rtt_ms": 30,
+      "wan_measured_rtt_ms": 33.0,
+      "wan_probe_ok": true,
+      "backend_complex": "cloud-model",
+      "reason_complex": "WAN_OK",
+      "backend_safety": "local-rules",
+      "reason_safety": "TASK_IS_SAFETY"
+    },
+    {
+      "step": "30",
+      "probe_idx": 2,
+      "wan_configured_rtt_ms": 30,
+      "wan_measured_rtt_ms": 49.3,
+      "wan_probe_ok": true,
+      "backend_complex": "cloud-model",
+      "reason_complex": "WAN_OK",
+      "backend_safety": "local-rules",
+      "reason_safety": "TASK_IS_SAFETY"
+    },
+    {
+      "step": "30",
+      "probe_idx": 0,
+      "wan_configured_rtt_ms": 30,
+      "wan_measured_rtt_ms": 34.0,
+      "wan_probe_ok": true,
+      "backend_complex": "cloud-model",
+      "reason_complex": "WAN_OK",
+      "backend_safety": "local-rules",
+      "reason_safety": "TASK_IS_SAFETY"
+    },
+    {
+      "step": "30",
+      "probe_idx": 1,
+      "wan_configured_rtt_ms": 30,
+      "wan_measured_rtt_ms": 57.4,
+      "wan_probe_ok": true,
+      "backend_complex": "cloud-model",
+      "reason_complex": "WAN_OK",
+      "backend_safety": "local-rules",
+      "reason_safety": "TASK_IS_SAFETY"
+    },
+    {
+      "step": "30",
+      "probe_idx": 2,
+      "wan_configured_rtt_ms": 30,
+      "wan_measured_rtt_ms": 34.2,
+      "wan_probe_ok": true,
+      "backend_complex": "cloud-model",
+      "reason_complex": "WAN_OK",
+      "backend_safety": "local-rules",
+      "reason_safety": "TASK_IS_SAFETY"
+    },
+    {
+      "step": "30",
+      "probe_idx": 0,
+      "wan_configured_rtt_ms": 30,
+      "wan_measured_rtt_ms": 33.4,
+      "wan_probe_ok": true,
+      "backend_complex": "cloud-model",
+      "reason_complex": "WAN_OK",
+      "backend_safety": "local-rules",
+      "reason_safety": "TASK_IS_SAFETY"
+    },
+    {
+      "step": "30",
+      "probe_idx": 1,
+      "wan_configured_rtt_ms": 30,
+      "wan_measured_rtt_ms": 34.0,
+      "wan_probe_ok": true,
+      "backend_complex": "cloud-model",
+      "reason_complex": "WAN_OK",
+      "backend_safety": "local-rules",
+      "reason_safety": "TASK_IS_SAFETY"
+    },
+    {
+      "step": "30",
+      "probe_idx": 2,
+      "wan_configured_rtt_ms": 30,
+      "wan_measured_rtt_ms": 34.6,
+      "wan_probe_ok": true,
+      "backend_complex": "cloud-model",
+      "reason_complex": "WAN_OK",
+      "backend_safety": "local-rules",
+      "reason_safety": "TASK_IS_SAFETY"
+    },
+    {
+      "step": "30",
+      "probe_idx": 0,
+      "wan_configured_rtt_ms": 30,
+      "wan_measured_rtt_ms": 34.0,
+      "wan_probe_ok": true,
+      "backend_complex": "cloud-model",
+      "reason_complex": "WAN_OK",
+      "backend_safety": "local-rules",
+      "reason_safety": "TASK_IS_SAFETY"
+    },
+    {
+      "step": "30",
+      "probe_idx": 1,
+      "wan_configured_rtt_ms": 30,
+      "wan_measured_rtt_ms": 35.9,
+      "wan_probe_ok": true,
+      "backend_complex": "cloud-model",
+      "reason_complex": "WAN_OK",
+      "backend_safety": "local-rules",
+      "reason_safety": "TASK_IS_SAFETY"
+    },
+    {
+      "step": "30",
+      "probe_idx": 2,
+      "wan_configured_rtt_ms": 30,
+      "wan_measured_rtt_ms": 35.2,
+      "wan_probe_ok": true,
+      "backend_complex": "cloud-model",
+      "reason_complex": "WAN_OK",
+      "backend_safety": "local-rules",
+      "reason_safety": "TASK_IS_SAFETY"
+    },
+    {
+      "step": "30",
+      "probe_idx": 0,
+      "wan_configured_rtt_ms": 30,
+      "wan_measured_rtt_ms": 33.9,
+      "wan_probe_ok": true,
+      "backend_complex": "cloud-model",
+      "reason_complex": "WAN_OK",
+      "backend_safety": "local-rules",
+      "reason_safety": "TASK_IS_SAFETY"
+    },
+    {
+      "step": "30",
+      "probe_idx": 1,
+      "wan_configured_rtt_ms": 30,
+      "wan_measured_rtt_ms": 47.5,
+      "wan_probe_ok": true,
+      "backend_complex": "cloud-model",
+      "reason_complex": "WAN_OK",
+      "backend_safety": "local-rules",
+      "reason_safety": "TASK_IS_SAFETY"
+    },
+    {
+      "step": "30",
+      "probe_idx": 2,
+      "wan_configured_rtt_ms": 30,
+      "wan_measured_rtt_ms": 34.4,
+      "wan_probe_ok": true,
+      "backend_complex": "cloud-model",
+      "reason_complex": "WAN_OK",
+      "backend_safety": "local-rules",
+      "reason_safety": "TASK_IS_SAFETY"
+    },
+    {
+      "step": "30",
+      "probe_idx": 0,
+      "wan_configured_rtt_ms": 30,
+      "wan_measured_rtt_ms": 33.7,
+      "wan_probe_ok": true,
+      "backend_complex": "cloud-model",
+      "reason_complex": "WAN_OK",
+      "backend_safety": "local-rules",
+      "reason_safety": "TASK_IS_SAFETY"
+    },
+    {
+      "step": "30",
+      "probe_idx": 1,
+      "wan_configured_rtt_ms": 30,
+      "wan_measured_rtt_ms": 34.6,
+      "wan_probe_ok": true,
+      "backend_complex": "cloud-model",
+      "reason_complex": "WAN_OK",
+      "backend_safety": "local-rules",
+      "reason_safety": "TASK_IS_SAFETY"
+    },
+    {
+      "step": "30",
+      "probe_idx": 2,
+      "wan_configured_rtt_ms": 30,
+      "wan_measured_rtt_ms": 45.1,
+      "wan_probe_ok": true,
+      "backend_complex": "cloud-model",
+      "reason_complex": "WAN_OK",
+      "backend_safety": "local-rules",
+      "reason_safety": "TASK_IS_SAFETY"
+    },
+    {
+      "step": "30",
+      "probe_idx": 0,
+      "wan_configured_rtt_ms": 30,
+      "wan_measured_rtt_ms": 53.0,
+      "wan_probe_ok": true,
+      "backend_complex": "cloud-model",
+      "reason_complex": "WAN_OK",
+      "backend_safety": "local-rules",
+      "reason_safety": "TASK_IS_SAFETY"
+    },
+    {
+      "step": "30",
+      "probe_idx": 1,
+      "wan_configured_rtt_ms": 30,
+      "wan_measured_rtt_ms": 57.3,
+      "wan_probe_ok": true,
+      "backend_complex": "cloud-model",
+      "reason_complex": "WAN_OK",
+      "backend_safety": "local-rules",
+      "reason_safety": "TASK_IS_SAFETY"
+    },
+    {
+      "step": "30",
+      "probe_idx": 2,
+      "wan_configured_rtt_ms": 30,
+      "wan_measured_rtt_ms": 59.9,
+      "wan_probe_ok": true,
+      "backend_complex": "cloud-model",
+      "reason_complex": "WAN_OK",
+      "backend_safety": "local-rules",
+      "reason_safety": "TASK_IS_SAFETY"
+    },
+    {
+      "step": "30",
+      "probe_idx": 0,
+      "wan_configured_rtt_ms": 30,
+      "wan_measured_rtt_ms": 58.0,
+      "wan_probe_ok": true,
+      "backend_complex": "cloud-model",
+      "reason_complex": "WAN_OK",
+      "backend_safety": "local-rules",
+      "reason_safety": "TASK_IS_SAFETY"
+    },
+    {
+      "step": "30",
+      "probe_idx": 1,
+      "wan_configured_rtt_ms": 30,
+      "wan_measured_rtt_ms": 34.8,
+      "wan_probe_ok": true,
+      "backend_complex": "cloud-model",
+      "reason_complex": "WAN_OK",
+      "backend_safety": "local-rules",
+      "reason_safety": "TASK_IS_SAFETY"
+    },
+    {
+      "step": "30",
+      "probe_idx": 2,
+      "wan_configured_rtt_ms": 30,
+      "wan_measured_rtt_ms": 47.7,
+      "wan_probe_ok": true,
+      "backend_complex": "cloud-model",
+      "reason_complex": "WAN_OK",
+      "backend_safety": "local-rules",
+      "reason_safety": "TASK_IS_SAFETY"
+    }
+  ],
+  "recovery": {
+    "recovered": true,
+    "probes_to_leave": 18,
+    "probes_after_blackout_to_cloud": 17,
+    "probes_to_recover": 31,
+    "total_probes": 72
+  }
+}

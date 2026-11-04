@@ -12,6 +12,7 @@
 #include <stdio.h>
 #include <string.h>
 #include <stdlib.h>
+#include <stdint.h>
 #include <stdbool.h>
 #include <ctype.h>
 #include <time.h>
@@ -241,7 +242,10 @@ void print_security_report(void) {
 }
 
 int security_module_init(void) {
-    memset(&g_total_checks, 0, sizeof(uint32_t) * 4);
+    g_total_checks  = 0;
+    g_allowed_count = 0;
+    g_blocked_count = 0;
+    g_severity_high = 0;
     printf("%s 安全模块就绪 (token-aware v2.0)\n", LOG_TAG);
     return 0;
 }
@@ -256,8 +260,20 @@ int main(void) {
     safe_system("light_control --location 客厅 --action on");
     safe_system("read_temperature --location 客厅");
     safe_system("date");
-    safe_system("curl -H \"Authorization: Bearer token\" https://api.example.com/v1/chat");
-    safe_system("ping -c 1 127.0.0.1");
+    /*
+     * 修复（2026-10-16）：这两条原先经 safe_system() **真正执行**，
+     * 即本"单元测试"会向 api.example.com 发起真实 HTTPS 请求、
+     * 向 127.0.0.1 发 ICMP。网络不可达或 DNS 慢时会长时间阻塞
+     * （实测复现过一次 >10 分钟的挂起，且非稳定复现）。
+     * 单元测试不应依赖外网：此处只检验"白名单是否放行"这一决策，
+     * 不再真正执行网络命令。command_is_safe() 同样会写审计日志并计数，
+     * 故下方 6 条断言不受影响。
+     */
+    printf("%s 决策检查: curl -> %s\n", LOG_TAG,
+           command_is_safe("curl -H \"Authorization: Bearer token\" https://api.example.com/v1/chat")
+           ? "ALLOW" : "BLOCK");
+    printf("%s 决策检查: ping -> %s\n", LOG_TAG,
+           command_is_safe("ping -c 1 127.0.0.1") ? "ALLOW" : "BLOCK");
 
     printf("\n=== 拦截命令 ===\n");
     safe_system("rm -rf /");

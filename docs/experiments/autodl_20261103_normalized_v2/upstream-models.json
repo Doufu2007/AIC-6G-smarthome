@@ -1,0 +1,30 @@
+{
+  "object": "list",
+  "data": [
+    {
+      "id": "sensehome-small",
+      "object": "model",
+      "created": 1793691692,
+      "owned_by": "vllm",
+      "root": "/root/autodl-tmp/models/small",
+      "parent": null,
+      "max_model_len": 4096,
+      "permission": [
+        {
+          "id": "modelperm-9dc2a2fd5608f112",
+          "object": "model_permission",
+          "created": 1793691692,
+          "allow_create_engine": false,
+          "allow_sampling": true,
+          "allow_logprobs": true,
+          "allow_search_indices": false,
+          "allow_view": true,
+          "allow_fine_tuning": false,
+          "organization": "*",
+          "group": null,
+          "is_blocking": false
+        }
+      ]
+    }
+  ]
+}

@@ -1,0 +1,619 @@
+{
+  "repository": "Qwen/Qwen2.5-7B-Instruct",
+  "revision": "a09a35458c702b33eeacc393d103063234e8bc28",
+  "workers": 4,
+  "chunk_bytes": 192966697,
+  "total_weight_bytes": 15231271888,
+  "shard_order": [
+    "model-00001-of-00004.safetensors",
+    "model-00002-of-00004.safetensors",
+    "model-00003-of-00004.safetensors",
+    "model-00004-of-00004.safetensors"
+  ],
+  "identities": {
+    "model-00001-of-00004.safetensors": {
+      "kind": "lfs_sha256",
+      "sha256": "a1333e6293854747c481288ea83b348226af178dd565c49b6f9495ba1966aba7",
+      "size": 3945441440
+    },
+    "model-00002-of-00004.safetensors": {
+      "kind": "lfs_sha256",
+      "sha256": "f5d25a2772cb825164a2a2c0fb6d51a87e282abf21e4dd75bc5cfb3cd0ea6185",
+      "size": 3864726352
+    },
+    "model-00003-of-00004.safetensors": {
+      "kind": "lfs_sha256",
+      "sha256": "8efdec4c1bc12317ae1a38dc42b595ce777738a64deea3fcb8a0a91381bcdfd5",
+      "size": 3864726424
+    },
+    "model-00004-of-00004.safetensors": {
+      "kind": "lfs_sha256",
+      "sha256": "1a72d403cdf0c1ec3cb7f289f17b394a01e64394c2e9b3c0f94dbce3faf879bd",
+      "size": 3556377672
+    }
+  },
+  "blocks": {
+    "model-00001-of-00004.safetensors": [
+      {
+        "shard": "model-00001-of-00004.safetensors",
+        "index": 0,
+        "start": 0,
+        "end": 192966696,
+        "part": "/root/autodl-tmp/models/large_parts/model-00001-of-00004.safetensors/part_0000"
+      },
+      {
+        "shard": "model-00001-of-00004.safetensors",
+        "index": 1,
+        "start": 192966697,
+        "end": 385933393,
+        "part": "/root/autodl-tmp/models/large_parts/model-00001-of-00004.safetensors/part_0001"
+      },
+      {
+        "shard": "model-00001-of-00004.safetensors",
+        "index": 2,
+        "start": 385933394,
+        "end": 578900090,
+        "part": "/root/autodl-tmp/models/large_parts/model-00001-of-00004.safetensors/part_0002"
+      },
+      {
+        "shard": "model-00001-of-00004.safetensors",
+        "index": 3,
+        "start": 578900091,
+        "end": 771866787,
+        "part": "/root/autodl-tmp/models/large_parts/model-00001-of-00004.safetensors/part_0003"
+      },
+      {
+        "shard": "model-00001-of-00004.safetensors",
+        "index": 4,
+        "start": 771866788,
+        "end": 964833484,
+        "part": "/root/autodl-tmp/models/large_parts/model-00001-of-00004.safetensors/part_0004"
+      },
+      {
+        "shard": "model-00001-of-00004.safetensors",
+        "index": 5,
+        "start": 964833485,
+        "end": 1157800181,
+        "part": "/root/autodl-tmp/models/large_parts/model-00001-of-00004.safetensors/part_0005"
+      },
+      {
+        "shard": "model-00001-of-00004.safetensors",
+        "index": 6,
+        "start": 1157800182,
+        "end": 1350766878,
+        "part": "/root/autodl-tmp/models/large_parts/model-00001-of-00004.safetensors/part_0006"
+      },
+      {
+        "shard": "model-00001-of-00004.safetensors",
+        "index": 7,
+        "start": 1350766879,
+        "end": 1543733575,
+        "part": "/root/autodl-tmp/models/large_parts/model-00001-of-00004.safetensors/part_0007"
+      },
+      {
+        "shard": "model-00001-of-00004.safetensors",
+        "index": 8,
+        "start": 1543733576,
+        "end": 1736700272,
+        "part": "/root/autodl-tmp/models/large_parts/model-00001-of-00004.safetensors/part_0008"
+      },
+      {
+        "shard": "model-00001-of-00004.safetensors",
+        "index": 9,
+        "start": 1736700273,
+        "end": 1929666969,
+        "part": "/root/autodl-tmp/models/large_parts/model-00001-of-00004.safetensors/part_0009"
+      },
+      {
+        "shard": "model-00001-of-00004.safetensors",
+        "index": 10,
+        "start": 1929666970,
+        "end": 2122633666,
+        "part": "/root/autodl-tmp/models/large_parts/model-00001-of-00004.safetensors/part_0010"
+      },
+      {
+        "shard": "model-00001-of-00004.safetensors",
+        "index": 11,
+        "start": 2122633667,
+        "end": 2315600363,
+        "part": "/root/autodl-tmp/models/large_parts/model-00001-of-00004.safetensors/part_0011"
+      },
+      {
+        "shard": "model-00001-of-00004.safetensors",
+        "index": 12,
+        "start": 2315600364,
+        "end": 2508567060,
+        "part": "/root/autodl-tmp/models/large_parts/model-00001-of-00004.safetensors/part_0012"
+      },
+      {
+        "shard": "model-00001-of-00004.safetensors",
+        "index": 13,
+        "start": 2508567061,
+        "end": 2701533757,
+        "part": "/root/autodl-tmp/models/large_parts/model-00001-of-00004.safetensors/part_0013"
+      },
+      {
+        "shard": "model-00001-of-00004.safetensors",
+        "index": 14,
+        "start": 2701533758,
+        "end": 2894500454,
+        "part": "/root/autodl-tmp/models/large_parts/model-00001-of-00004.safetensors/part_0014"
+      },
+      {
+        "shard": "model-00001-of-00004.safetensors",
+        "index": 15,
+        "start": 2894500455,
+        "end": 3087467151,
+        "part": "/root/autodl-tmp/models/large_parts/model-00001-of-00004.safetensors/part_0015"
+      },
+      {
+        "shard": "model-00001-of-00004.safetensors",
+        "index": 16,
+        "start": 3087467152,
+        "end": 3280433848,
+        "part": "/root/autodl-tmp/models/large_parts/model-00001-of-00004.safetensors/part_0016"
+      },
+      {
+        "shard": "model-00001-of-00004.safetensors",
+        "index": 17,
+        "start": 3280433849,
+        "end": 3473400545,
+        "part": "/root/autodl-tmp/models/large_parts/model-00001-of-00004.safetensors/part_0017"
+      },
+      {
+        "shard": "model-00001-of-00004.safetensors",
+        "index": 18,
+        "start": 3473400546,
+        "end": 3666367242,
+        "part": "/root/autodl-tmp/models/large_parts/model-00001-of-00004.safetensors/part_0018"
+      },
+      {
+        "shard": "model-00001-of-00004.safetensors",
+        "index": 19,
+        "start": 3666367243,
+        "end": 3859333939,
+        "part": "/root/autodl-tmp/models/large_parts/model-00001-of-00004.safetensors/part_0019"
+      },
+      {
+        "shard": "model-00001-of-00004.safetensors",
+        "index": 20,
+        "start": 3859333940,
+        "end": 3945441439,
+        "part": "/root/autodl-tmp/models/large_parts/model-00001-of-00004.safetensors/part_0020"
+      }
+    ],
+    "model-00002-of-00004.safetensors": [
+      {
+        "shard": "model-00002-of-00004.safetensors",
+        "index": 0,
+        "start": 0,
+        "end": 192966696,
+        "part": "/root/autodl-tmp/models/large_parts/model-00002-of-00004.safetensors/part_0000"
+      },
+      {
+        "shard": "model-00002-of-00004.safetensors",
+        "index": 1,
+        "start": 192966697,
+        "end": 385933393,
+        "part": "/root/autodl-tmp/models/large_parts/model-00002-of-00004.safetensors/part_0001"
+      },
+      {
+        "shard": "model-00002-of-00004.safetensors",
+        "index": 2,
+        "start": 385933394,
+        "end": 578900090,
+        "part": "/root/autodl-tmp/models/large_parts/model-00002-of-00004.safetensors/part_0002"
+      },
+      {
+        "shard": "model-00002-of-00004.safetensors",
+        "index": 3,
+        "start": 578900091,
+        "end": 771866787,
+        "part": "/root/autodl-tmp/models/large_parts/model-00002-of-00004.safetensors/part_0003"
+      },
+      {
+        "shard": "model-00002-of-00004.safetensors",
+        "index": 4,
+        "start": 771866788,
+        "end": 964833484,
+        "part": "/root/autodl-tmp/models/large_parts/model-00002-of-00004.safetensors/part_0004"
+      },
+      {
+        "shard": "model-00002-of-00004.safetensors",
+        "index": 5,
+        "start": 964833485,
+        "end": 1157800181,
+        "part": "/root/autodl-tmp/models/large_parts/model-00002-of-00004.safetensors/part_0005"
+      },
+      {
+        "shard": "model-00002-of-00004.safetensors",
+        "index": 6,
+        "start": 1157800182,
+        "end": 1350766878,
+        "part": "/root/autodl-tmp/models/large_parts/model-00002-of-00004.safetensors/part_0006"
+      },
+      {
+        "shard": "model-00002-of-00004.safetensors",
+        "index": 7,
+        "start": 1350766879,
+        "end": 1543733575,
+        "part": "/root/autodl-tmp/models/large_parts/model-00002-of-00004.safetensors/part_0007"
+      },
+      {
+        "shard": "model-00002-of-00004.safetensors",
+        "index": 8,
+        "start": 1543733576,
+        "end": 1736700272,
+        "part": "/root/autodl-tmp/models/large_parts/model-00002-of-00004.safetensors/part_0008"
+      },
+      {
+        "shard": "model-00002-of-00004.safetensors",
+        "index": 9,
+        "start": 1736700273,
+        "end": 1929666969,
+        "part": "/root/autodl-tmp/models/large_parts/model-00002-of-00004.safetensors/part_0009"
+      },
+      {
+        "shard": "model-00002-of-00004.safetensors",
+        "index": 10,
+        "start": 1929666970,
+        "end": 2122633666,
+        "part": "/root/autodl-tmp/models/large_parts/model-00002-of-00004.safetensors/part_0010"
+      },
+      {
+        "shard": "model-00002-of-00004.safetensors",
+        "index": 11,
+        "start": 2122633667,
+        "end": 2315600363,
+        "part": "/root/autodl-tmp/models/large_parts/model-00002-of-00004.safetensors/part_0011"
+      },
+      {
+        "shard": "model-00002-of-00004.safetensors",
+        "index": 12,
+        "start": 2315600364,
+        "end": 2508567060,
+        "part": "/root/autodl-tmp/models/large_parts/model-00002-of-00004.safetensors/part_0012"
+      },
+      {
+        "shard": "model-00002-of-00004.safetensors",
+        "index": 13,
+        "start": 2508567061,
+        "end": 2701533757,
+        "part": "/root/autodl-tmp/models/large_parts/model-00002-of-00004.safetensors/part_0013"
+      },
+      {
+        "shard": "model-00002-of-00004.safetensors",
+        "index": 14,
+        "start": 2701533758,
+        "end": 2894500454,
+        "part": "/root/autodl-tmp/models/large_parts/model-00002-of-00004.safetensors/part_0014"
+      },
+      {
+        "shard": "model-00002-of-00004.safetensors",
+        "index": 15,
+        "start": 2894500455,
+        "end": 3087467151,
+        "part": "/root/autodl-tmp/models/large_parts/model-00002-of-00004.safetensors/part_0015"
+      },
+      {
+        "shard": "model-00002-of-00004.safetensors",
+        "index": 16,
+        "start": 3087467152,
+        "end": 3280433848,
+        "part": "/root/autodl-tmp/models/large_parts/model-00002-of-00004.safetensors/part_0016"
+      },
+      {
+        "shard": "model-00002-of-00004.safetensors",
+        "index": 17,
+        "start": 3280433849,
+        "end": 3473400545,
+        "part": "/root/autodl-tmp/models/large_parts/model-00002-of-00004.safetensors/part_0017"
+      },
+      {
+        "shard": "model-00002-of-00004.safetensors",
+        "index": 18,
+        "start": 3473400546,
+        "end": 3666367242,
+        "part": "/root/autodl-tmp/models/large_parts/model-00002-of-00004.safetensors/part_0018"
+      },
+      {
+        "shard": "model-00002-of-00004.safetensors",
+        "index": 19,
+        "start": 3666367243,
+        "end": 3859333939,
+        "part": "/root/autodl-tmp/models/large_parts/model-00002-of-00004.safetensors/part_0019"
+      },
+      {
+        "shard": "model-00002-of-00004.safetensors",
+        "index": 20,
+        "start": 3859333940,
+        "end": 3864726351,
+        "part": "/root/autodl-tmp/models/large_parts/model-00002-of-00004.safetensors/part_0020"
+      }
+    ],
+    "model-00003-of-00004.safetensors": [
+      {
+        "shard": "model-00003-of-00004.safetensors",
+        "index": 0,
+        "start": 0,
+        "end": 192966696,
+        "part": "/root/autodl-tmp/models/large_parts/model-00003-of-00004.safetensors/part_0000"
+      },
+      {
+        "shard": "model-00003-of-00004.safetensors",
+        "index": 1,
+        "start": 192966697,
+        "end": 385933393,
+        "part": "/root/autodl-tmp/models/large_parts/model-00003-of-00004.safetensors/part_0001"
+      },
+      {
+        "shard": "model-00003-of-00004.safetensors",
+        "index": 2,
+        "start": 385933394,
+        "end": 578900090,
+        "part": "/root/autodl-tmp/models/large_parts/model-00003-of-00004.safetensors/part_0002"
+      },
+      {
+        "shard": "model-00003-of-00004.safetensors",
+        "index": 3,
+        "start": 578900091,
+        "end": 771866787,
+        "part": "/root/autodl-tmp/models/large_parts/model-00003-of-00004.safetensors/part_0003"
+      },
+      {
+        "shard": "model-00003-of-00004.safetensors",
+        "index": 4,
+        "start": 771866788,
+        "end": 964833484,
+        "part": "/root/autodl-tmp/models/large_parts/model-00003-of-00004.safetensors/part_0004"
+      },
+      {
+        "shard": "model-00003-of-00004.safetensors",
+        "index": 5,
+        "start": 964833485,
+        "end": 1157800181,
+        "part": "/root/autodl-tmp/models/large_parts/model-00003-of-00004.safetensors/part_0005"
+      },
+      {
+        "shard": "model-00003-of-00004.safetensors",
+        "index": 6,
+        "start": 1157800182,
+        "end": 1350766878,
+        "part": "/root/autodl-tmp/models/large_parts/model-00003-of-00004.safetensors/part_0006"
+      },
+      {
+        "shard": "model-00003-of-00004.safetensors",
+        "index": 7,
+        "start": 1350766879,
+        "end": 1543733575,
+        "part": "/root/autodl-tmp/models/large_parts/model-00003-of-00004.safetensors/part_0007"
+      },
+      {
+        "shard": "model-00003-of-00004.safetensors",
+        "index": 8,
+        "start": 1543733576,
+        "end": 1736700272,
+        "part": "/root/autodl-tmp/models/large_parts/model-00003-of-00004.safetensors/part_0008"
+      },
+      {
+        "shard": "model-00003-of-00004.safetensors",
+        "index": 9,
+        "start": 1736700273,
+        "end": 1929666969,
+        "part": "/root/autodl-tmp/models/large_parts/model-00003-of-00004.safetensors/part_0009"
+      },
+      {
+        "shard": "model-00003-of-00004.safetensors",
+        "index": 10,
+        "start": 1929666970,
+        "end": 2122633666,
+        "part": "/root/autodl-tmp/models/large_parts/model-00003-of-00004.safetensors/part_0010"
+      },
+      {
+        "shard": "model-00003-of-00004.safetensors",
+        "index": 11,
+        "start": 2122633667,
+        "end": 2315600363,
+        "part": "/root/autodl-tmp/models/large_parts/model-00003-of-00004.safetensors/part_0011"
+      },
+      {
+        "shard": "model-00003-of-00004.safetensors",
+        "index": 12,
+        "start": 2315600364,
+        "end": 2508567060,
+        "part": "/root/autodl-tmp/models/large_parts/model-00003-of-00004.safetensors/part_0012"
+      },
+      {
+        "shard": "model-00003-of-00004.safetensors",
+        "index": 13,
+        "start": 2508567061,
+        "end": 2701533757,
+        "part": "/root/autodl-tmp/models/large_parts/model-00003-of-00004.safetensors/part_0013"
+      },
+      {
+        "shard": "model-00003-of-00004.safetensors",
+        "index": 14,
+        "start": 2701533758,
+        "end": 2894500454,
+        "part": "/root/autodl-tmp/models/large_parts/model-00003-of-00004.safetensors/part_0014"
+      },
+      {
+        "shard": "model-00003-of-00004.safetensors",
+        "index": 15,
+        "start": 2894500455,
+        "end": 3087467151,
+        "part": "/root/autodl-tmp/models/large_parts/model-00003-of-00004.safetensors/part_0015"
+      },
+      {
+        "shard": "model-00003-of-00004.safetensors",
+        "index": 16,
+        "start": 3087467152,
+        "end": 3280433848,
+        "part": "/root/autodl-tmp/models/large_parts/model-00003-of-00004.safetensors/part_0016"
+      },
+      {
+        "shard": "model-00003-of-00004.safetensors",
+        "index": 17,
+        "start": 3280433849,
+        "end": 3473400545,
+        "part": "/root/autodl-tmp/models/large_parts/model-00003-of-00004.safetensors/part_0017"
+      },
+      {
+        "shard": "model-00003-of-00004.safetensors",
+        "index": 18,
+        "start": 3473400546,
+        "end": 3666367242,
+        "part": "/root/autodl-tmp/models/large_parts/model-00003-of-00004.safetensors/part_0018"
+      },
+      {
+        "shard": "model-00003-of-00004.safetensors",
+        "index": 19,
+        "start": 3666367243,
+        "end": 3859333939,
+        "part": "/root/autodl-tmp/models/large_parts/model-00003-of-00004.safetensors/part_0019"
+      },
+      {
+        "shard": "model-00003-of-00004.safetensors",
+        "index": 20,
+        "start": 3859333940,
+        "end": 3864726423,
+        "part": "/root/autodl-tmp/models/large_parts/model-00003-of-00004.safetensors/part_0020"
+      }
+    ],
+    "model-00004-of-00004.safetensors": [
+      {
+        "shard": "model-00004-of-00004.safetensors",
+        "index": 0,
+        "start": 0,
+        "end": 192966696,
+        "part": "/root/autodl-tmp/models/large_parts/model-00004-of-00004.safetensors/part_0000"
+      },
+      {
+        "shard": "model-00004-of-00004.safetensors",
+        "index": 1,
+        "start": 192966697,
+        "end": 385933393,
+        "part": "/root/autodl-tmp/models/large_parts/model-00004-of-00004.safetensors/part_0001"
+      },
+      {
+        "shard": "model-00004-of-00004.safetensors",
+        "index": 2,
+        "start": 385933394,
+        "end": 578900090,
+        "part": "/root/autodl-tmp/models/large_parts/model-00004-of-00004.safetensors/part_0002"
+      },
+      {
+        "shard": "model-00004-of-00004.safetensors",
+        "index": 3,
+        "start": 578900091,
+        "end": 771866787,
+        "part": "/root/autodl-tmp/models/large_parts/model-00004-of-00004.safetensors/part_0003"
+      },
+      {
+        "shard": "model-00004-of-00004.safetensors",
+        "index": 4,
+        "start": 771866788,
+        "end": 964833484,
+        "part": "/root/autodl-tmp/models/large_parts/model-00004-of-00004.safetensors/part_0004"
+      },
+      {
+        "shard": "model-00004-of-00004.safetensors",
+        "index": 5,
+        "start": 964833485,
+        "end": 1157800181,
+        "part": "/root/autodl-tmp/models/large_parts/model-00004-of-00004.safetensors/part_0005"
+      },
+      {
+        "shard": "model-00004-of-00004.safetensors",
+        "index": 6,
+        "start": 1157800182,
+        "end": 1350766878,
+        "part": "/root/autodl-tmp/models/large_parts/model-00004-of-00004.safetensors/part_0006"
+      },
+      {
+        "shard": "model-00004-of-00004.safetensors",
+        "index": 7,
+        "start": 1350766879,
+        "end": 1543733575,
+        "part": "/root/autodl-tmp/models/large_parts/model-00004-of-00004.safetensors/part_0007"
+      },
+      {
+        "shard": "model-00004-of-00004.safetensors",
+        "index": 8,
+        "start": 1543733576,
+        "end": 1736700272,
+        "part": "/root/autodl-tmp/models/large_parts/model-00004-of-00004.safetensors/part_0008"
+      },
+      {
+        "shard": "model-00004-of-00004.safetensors",
+        "index": 9,
+        "start": 1736700273,
+        "end": 1929666969,
+        "part": "/root/autodl-tmp/models/large_parts/model-00004-of-00004.safetensors/part_0009"
+      },
+      {
+        "shard": "model-00004-of-00004.safetensors",
+        "index": 10,
+        "start": 1929666970,
+        "end": 2122633666,
+        "part": "/root/autodl-tmp/models/large_parts/model-00004-of-00004.safetensors/part_0010"
+      },
+      {
+        "shard": "model-00004-of-00004.safetensors",
+        "index": 11,
+        "start": 2122633667,
+        "end": 2315600363,
+        "part": "/root/autodl-tmp/models/large_parts/model-00004-of-00004.safetensors/part_0011"
+      },
+      {
+        "shard": "model-00004-of-00004.safetensors",
+        "index": 12,
+        "start": 2315600364,
+        "end": 2508567060,
+        "part": "/root/autodl-tmp/models/large_parts/model-00004-of-00004.safetensors/part_0012"
+      },
+      {
+        "shard": "model-00004-of-00004.safetensors",
+        "index": 13,
+        "start": 2508567061,
+        "end": 2701533757,
+        "part": "/root/autodl-tmp/models/large_parts/model-00004-of-00004.safetensors/part_0013"
+      },
+      {
+        "shard": "model-00004-of-00004.safetensors",
+        "index": 14,
+        "start": 2701533758,
+        "end": 2894500454,
+        "part": "/root/autodl-tmp/models/large_parts/model-00004-of-00004.safetensors/part_0014"
+      },
+      {
+        "shard": "model-00004-of-00004.safetensors",
+        "index": 15,
+        "start": 2894500455,
+        "end": 3087467151,
+        "part": "/root/autodl-tmp/models/large_parts/model-00004-of-00004.safetensors/part_0015"
+      },
+      {
+        "shard": "model-00004-of-00004.safetensors",
+        "index": 16,
+        "start": 3087467152,
+        "end": 3280433848,
+        "part": "/root/autodl-tmp/models/large_parts/model-00004-of-00004.safetensors/part_0016"
+      },
+      {
+        "shard": "model-00004-of-00004.safetensors",
+        "index": 17,
+        "start": 3280433849,
+        "end": 3473400545,
+        "part": "/root/autodl-tmp/models/large_parts/model-00004-of-00004.safetensors/part_0017"
+      },
+      {
+        "shard": "model-00004-of-00004.safetensors",
+        "index": 18,
+        "start": 3473400546,
+        "end": 3556377671,
+        "part": "/root/autodl-tmp/models/large_parts/model-00004-of-00004.safetensors/part_0018"
+      }
+    ]
+  }
+}

@@ -1,0 +1,13 @@
+[
+  "/root/miniconda3/bin/python",
+  "/root/autodl-tmp/sensehome-adapter-recovery-v4/eval_model.py",
+  "--url",
+  "http://127.0.0.1:18092",
+  "--cases",
+  "/root/autodl-tmp/sensehome-adapter-recovery-v4/backends/eval_commands.jsonl",
+  "--out",
+  "/root/autodl-tmp/sensehome-evidence/small_preflight_20261103T043934_770815Z/eval.draft.json",
+  "--repeat",
+  "1",
+  "--allow-draft-labels"
+]

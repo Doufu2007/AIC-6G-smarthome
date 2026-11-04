@@ -104,7 +104,11 @@ echo "[4/5] 温湿度读取Tool单元测试..."
 cat > "${BUILD_DIR}/smoke_temp.c" << 'EOF'
 #include <stdio.h>
 #include <string.h>
-#define LOCATION_LIVING_ROOM 0
+/*
+ * 修复：不再 #define LOCATION_LIVING_ROOM 0，
+ * 该枚举值由 smart_home_tools.h 提供，
+ * 之前的宏定义会污染枚举声明导致编译失败。
+ */
 #include "../tools/tool_temperature_read.c"
 
 int main(void) {

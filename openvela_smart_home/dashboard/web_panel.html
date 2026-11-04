@@ -230,6 +230,15 @@ async function fetchPatrol() {
   } catch(e) {}
 }
 
+async function fetchHealth() {
+  try {
+    const r = await fetch('/api/health');
+    const d = await r.json();
+    const cloud = d.backends && d.backends['cloud-model'];
+    document.getElementById('llmInfo').textContent = cloud && cloud.ready ? 'cloud-model ready' : 'local-rules fallback';
+  } catch(e) {}
+}
+
 async function triggerPatrol() {
   appendLog('patrol','🧠 主动巡检','手动触发物理AI环境巡检...');
   try {
@@ -258,6 +267,8 @@ async function sendCmd(cmd) {
     });
     const d = await r.json();
 
+    if (d.backend) appendLog('observe','🛰️ Offload Route',
+      `backend=${d.backend} | reason=${d.reason || '—'} | total=${(d.latency||{}).total_user_ms ?? '—'}ms`);
     if (d.thought) appendLog('thought','💭 Thought', d.thought);
     for (const a of (d.actions||[])) appendLog('action','⚡ Action', a.description);
     if (d.observation) appendLog('observe','👁️ Observation', d.observation);
@@ -416,8 +427,8 @@ function toggleLight(loc) {
 }
 
 // 每2秒刷新状态 + 巡检日志
-setInterval(()=>{ fetchState(); fetchPatrol(); }, 2500);
-fetchState(); fetchPatrol();
+setInterval(()=>{ fetchState(); fetchPatrol(); fetchHealth(); }, 2500);
+fetchState(); fetchPatrol(); fetchHealth();
 renderSensorDetail();
 </script>
 </body>

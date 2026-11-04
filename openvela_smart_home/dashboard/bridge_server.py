@@ -20,14 +20,36 @@ import time
 import re
 import random
 import threading
+import atexit
+import tempfile
+from html import escape as html_escape
 from urllib.parse import urlparse
+from backend_monitor import BackendMonitor
+from device_actions import execute_device_actions
 
 # ============ 配置 ============
 PORT = 8080
 PATROL_INTERVAL = 60  # 主动巡检间隔（秒），0 表示禁用
+MAX_REQUEST_BODY_BYTES = 64 * 1024
+MAX_COMMAND_CHARS = 4096
 SCRIPT_DIR = os.path.dirname(os.path.abspath(__file__))
 PROJECT_DIR = os.path.dirname(SCRIPT_DIR)
 STATE_FILE = os.path.join(PROJECT_DIR, "device_state.json")
+NET_OFFLOAD_DIR = os.path.abspath(os.path.join(PROJECT_DIR, '..', 'SenseHome-6G', 'net_offload'))
+if os.path.isdir(NET_OFFLOAD_DIR) and NET_OFFLOAD_DIR not in sys.path:
+    sys.path.insert(0, NET_OFFLOAD_DIR)
+try:
+    from offload_gateway import (
+        BackendResult,
+        HttpJsonBackend,
+        LinkSnapshot,
+        OffloadGateway,
+        RuleBackend,
+        SubprocessPolicyClient,
+        append_jsonl,
+    )
+except ImportError:  # pragma: no cover
+    BackendResult = HttpJsonBackend = LinkSnapshot = OffloadGateway = RuleBackend = SubprocessPolicyClient = append_jsonl = None
 
 LOCATIONS = ["客厅", "卧室", "厨房", "浴室", "书房", "室外"]
 ROOM_ICONS = {"客厅": "🛋️", "卧室": "🛏️", "厨房": "🍳", "浴室": "🛁", "书房": "📚", "室外": "🌤️"}
@@ -36,6 +58,11 @@ ROOM_ICONS = {"客厅": "🛋️", "卧室": "🛏️", "厨房": "🍳", "浴�
 patrol_log = []          # 主动巡检日志
 patrol_running = False   # 巡检线程状态
 last_patrol_time = 0
+gateway = None
+gateway_backends = {}
+gateway_init_error = None
+backend_monitor = None
+device_action_lock = threading.RLock()
 
 # ============ 设备状态管理 ============
 def load_state():
@@ -59,10 +86,46 @@ def default_state():
     return state
 
 def save_state(state):
+    # Replace atomically so the monitor/patrol/UI never reads partial JSON.
+    # Errors propagate to the action boundary rather than reporting a device
+    # change that was never persisted.
+    directory = os.path.dirname(os.path.abspath(STATE_FILE))
+    fd, temporary = tempfile.mkstemp(prefix='.sensehome-state-', suffix='.json', dir=directory)
     try:
-        with open(STATE_FILE, 'w', encoding='utf-8') as f:
+        with os.fdopen(fd, 'w', encoding='utf-8') as f:
             json.dump(state, f, ensure_ascii=False, indent=2)
-    except: pass
+        os.replace(temporary, STATE_FILE)
+    finally:
+        if os.path.exists(temporary):
+            os.remove(temporary)
+
+
+def parse_json_request(raw_body):
+    """Parse a bounded JSON object before it reaches a command or device path."""
+    if not isinstance(raw_body, (bytes, bytearray)):
+        raise ValueError("INVALID_REQUEST_BODY")
+    if len(raw_body) > MAX_REQUEST_BODY_BYTES:
+        raise ValueError("REQUEST_TOO_LARGE")
+    try:
+        payload = json.loads(bytes(raw_body).decode("utf-8"))
+    except (UnicodeDecodeError, json.JSONDecodeError):
+        raise ValueError("INVALID_REQUEST_JSON") from None
+    if not isinstance(payload, dict):
+        raise ValueError("INVALID_REQUEST_OBJECT")
+    return payload
+
+
+def parse_command_payload(payload):
+    """Validate command input and preserve an optional structured context."""
+    if not isinstance(payload, dict):
+        raise ValueError("INVALID_REQUEST_OBJECT")
+    command = payload.get("command")
+    if not isinstance(command, str) or not command.strip() or len(command) > MAX_COMMAND_CHARS:
+        raise ValueError("INVALID_COMMAND")
+    context = payload.get("context", {})
+    if not isinstance(context, dict):
+        raise ValueError("INVALID_CONTEXT")
+    return {"command": command, "context": context}
 
 # ============ 传感器模拟（物理感知层） ============
 SENSOR_PROFILES = {
@@ -421,10 +484,222 @@ def extract_location(text):
         if loc in text:
             return loc
     aliases = {"起居室": "客厅", "主卧": "卧室", "卫生间": "浴室", "厕所": "浴室",
-               "WC": "浴室", "办公室": "书房", "户外": "室外", "阳台": "室外"}
+               "WC": "浴室", "办公室": "书房", "户外": "室外"}
     for a, r in aliases.items():
         if a in text: return r
     return None
+
+
+# ============ AI+6G 卸载网关 ============
+class _UnavailableBackend:
+    def __init__(self, name):
+        self.name = name
+
+    def infer(self, command, context=None):
+        return BackendResult(False, False, {}, [], error="BACKEND_NOT_CONFIGURED", source=self.name)
+
+    def health(self):
+        return {"ready": False, "backend": self.name, "error": "BACKEND_NOT_CONFIGURED"}
+
+
+class _UnavailablePolicy:
+    def update_links(self, link):
+        return 0.0
+
+    def decide(self, task_class, link):
+        return "local-rules", "POLICY_UNAVAILABLE", "C policy_cli unavailable"
+
+
+def _gateway_local_handler(command, context=None):
+    """将既有物理规则执行器注入 local-rules 后端。"""
+    state = load_state()
+    if OffloadGateway and OffloadGateway.classify(command) == 'safety':
+        if command.strip() == '查询安防状态':
+            security = state.get('security', {})
+            return {'answer': '演示安防状态：' + ('已布防' if security.get('armed') else '未布防'),
+                    'actions': [], 'observation': json.dumps(security, ensure_ascii=False),
+                    'semantic_complete': True}
+        return {'answer': '安全相关控制未获授权或未接入设备，请在现场确认并操作。',
+                'actions': [], 'semantic_complete': False}
+    if OffloadGateway and OffloadGateway.needs_plan(command):
+        return {'answer': '该指令包含多个目标、条件或否定要求，本地规则不执行部分动作；请拆成明确的单条指令。',
+                'actions': [], 'semantic_complete': False}
+    if any(w in command for w in ["我出门了", "拜拜", "再见", "离家模式"]):
+        steps, anomalies = execute_leave_home(state)
+        return {
+            "thought": "物理AI多设备协同：离家模式启动。",
+            "actions": [s for s in steps if s["type"] == "action"],
+            "observation": "\n".join(s["content"] for s in steps if s["type"] == "observe"),
+            "answer": f"离家模式已启动，发现门窗异常{anomalies}处。",
+            "semantic_complete": True,
+        }
+    fuzzy = handle_fuzzy_command(state, command)
+    if fuzzy:
+        fuzzy["semantic_complete"] = True
+        return fuzzy
+    standard = execute_command(state, command)
+    if standard:
+        standard["semantic_complete"] = True
+        return standard
+    return {
+        "thought": f'无法解析"{html_escape(command)}"，已安全停留在本地规则层。',
+        "actions": [],
+        "answer": f'暂不理解"{html_escape(command)}"。',
+        "semantic_complete": False,
+    }
+
+
+def _gateway_action_executor(actions, context=None):
+    """执行白名单结构化意图；不解释模型生成的命令文本。"""
+    with device_action_lock:
+        state = load_state()
+        result = execute_device_actions(state, actions)
+        save_state(state)
+        return result
+
+
+def apply_light_request(payload):
+    """Apply the explicit light API through the same allowlisted executor."""
+    if not isinstance(payload, dict):
+        raise ValueError("INVALID_REQUEST_OBJECT")
+    location = payload.get("location")
+    action = payload.get("action", "on")
+    if not isinstance(location, str) or location not in LOCATIONS:
+        raise ValueError("INVALID_LOCATION")
+    if action not in {"on", "off", "set"}:
+        raise ValueError("INVALID_LIGHT_ACTION")
+    params = {"location": location, "action": action}
+    if action == "set":
+        brightness = payload.get("brightness")
+        if type(brightness) is not int or not 0 <= brightness <= 100:
+            raise ValueError("INVALID_BRIGHTNESS")
+        params["brightness"] = brightness
+    elif "brightness" in payload:
+        raise ValueError("INVALID_LIGHT_PARAMETERS")
+    return _gateway_action_executor([{"name": "light_control", "params": params}])
+
+
+def _probe_gateway_links():
+    """返回后台探测缓存；PC 模拟器内设备可达性与模型就绪分开记录。"""
+    if backend_monitor is None:
+        return LinkSnapshot(lan_ok=True, lan_rtt_ms=0.0)
+    return LinkSnapshot(**backend_monitor.snapshot()["link"])
+
+
+def _init_gateway():
+    global gateway, gateway_backends, gateway_init_error, backend_monitor
+    gateway_backends = {"local-rules": RuleBackend(handler=_gateway_local_handler)} if RuleBackend else {}
+    cloud_url = os.environ.get("SENSEHOME_CLOUD_URL", "").strip()
+    local_url = os.environ.get("SENSEHOME_LOCAL_URL", "").strip()
+    def _backend_timeout(name, default):
+        try:
+            return max(0.05, float(os.environ.get(name, str(default))))
+        except (TypeError, ValueError):
+            return default
+    # Health polling must remain short so a dead model does not block the
+    # monitor. Inference gets its own budget because real GPU generation may
+    # legitimately take longer than /health or /probe.
+    infer_timeout_s = _backend_timeout("SENSEHOME_INFER_TIMEOUT_S", 2.0)
+    health_timeout_s = _backend_timeout("SENSEHOME_HEALTH_TIMEOUT_S", 0.5)
+    if HttpJsonBackend:
+        gateway_backends["cloud-model"] = (
+            HttpJsonBackend(cloud_url, "cloud-model", timeout_s=infer_timeout_s,
+                           health_timeout_s=health_timeout_s, inference_timeout_s=infer_timeout_s)
+            if cloud_url else _UnavailableBackend("cloud-model")
+        )
+        gateway_backends["local-model"] = (
+            HttpJsonBackend(local_url, "local-model", timeout_s=infer_timeout_s,
+                           health_timeout_s=health_timeout_s, inference_timeout_s=infer_timeout_s)
+            if local_url else _UnavailableBackend("local-model")
+        )
+    if backend_monitor:
+        backend_monitor.close()
+    backend_monitor = BackendMonitor(gateway_backends).start()
+    atexit.register(backend_monitor.close)
+
+    policy = _UnavailablePolicy()
+    cli_name = "policy_cli.exe" if os.name == "nt" else "policy_cli"
+    cli_path = os.environ.get("SENSEHOME_POLICY_CLI", os.path.join(NET_OFFLOAD_DIR, cli_name))
+    if SubprocessPolicyClient and os.path.isfile(cli_path):
+        try:
+            policy = SubprocessPolicyClient(cli_path)
+            atexit.register(policy.close)
+        except Exception as exc:  # noqa: BLE001
+            gateway_init_error = f"policy_cli_init:{type(exc).__name__}"
+    if OffloadGateway and RuleBackend:
+        event_path = os.environ.get("SENSEHOME_EVENT_LOG", os.path.join(PROJECT_DIR, "offload_events.jsonl"))
+        gateway = OffloadGateway(
+            policy=policy,
+            backends=gateway_backends,
+            link_snapshot=LinkSnapshot(),
+            link_probe=_probe_gateway_links,
+            event_sink=append_jsonl(event_path) if append_jsonl else None,
+            action_executor=_gateway_action_executor,
+        )
+
+
+def gateway_health():
+    if gateway is None:
+        return {"ready": False, "error": gateway_init_error or "GATEWAY_UNAVAILABLE"}
+    # Serving health must never wait for two sequential model HTTP timeouts.
+    health = backend_monitor.snapshot() if backend_monitor else gateway.health()
+    if gateway_init_error:
+        health["init_error"] = gateway_init_error
+    return health
+
+
+def _legacy_process_command(command):
+    state = load_state()
+    if any(w in command for w in ["我出门了", "拜拜", "再见", "离家模式"]):
+        steps, anomalies = execute_leave_home(state)
+        return {
+            "thought": "物理AI多设备协同：离家模式启动。感知环境→逐一关灯→关窗帘→安全检查→启动安防。",
+            "actions": [s for s in steps if s["type"] == "action"],
+            "observation": "\n".join([s["content"] for s in steps if s["type"] == "observe"]),
+            "answer": f"🏠 离家模式已启动！物理AI执行报告：\n✅ 全屋灯光已关闭\n✅ 全屋窗帘已拉上\n🔒 离家安防已布防\n⚠️ 门窗异常{anomalies}处",
+        }
+    fuzzy = handle_fuzzy_command(state, command)
+    if fuzzy:
+        return fuzzy
+    standard = execute_command(state, command)
+    if standard:
+        return standard
+    return {
+        "thought": f'无法解析"{command}"。尝试物理AI模糊理解...',
+        "actions": [{"description": "模糊指令匹配失败"}],
+        "answer": f'🤔 抱歉，暂不理解"{command}"。',
+    }
+
+
+def process_command(command, context=None):
+    if gateway is None:
+        return _legacy_process_command(command)
+    request_context = dict(context or {})
+    if backend_monitor:
+        monitored = backend_monitor.snapshot()
+        request_context["observation_age_ms"] = monitored.get("age_ms")
+        cloud = monitored.get("backends", {}).get("cloud-model", {})
+        fields = ("model_ready", "queue_ms", "free_mem_mb", "inflight")
+        observed = {field: cloud.get(field) for field in fields}
+        if "model_ready" not in cloud:
+            observed["model_ready"] = cloud.get("ready")
+        field_sources = {field: "backend_health_cache" for field in fields}
+        if cloud.get("queue_scope") == "wrapper_fail_fast_admission":
+            # The adapter has no waiting queue; that does not observe the
+            # upstream model server's queue. Carry missing telemetry as null.
+            observed["queue_ms"] = cloud.get("upstream_queue_ms")
+            field_sources["queue_ms"] = "upstream_queue_ms"
+            field_sources["inflight"] = "wrapper_inflight"
+        request_context["compute"] = {
+            **observed, "source": "backend_health_cache", "field_sources": field_sources,
+        }
+    event = gateway.handle(command, request_context)
+    result = dict(event.get("response") or {})
+    for key in ("event_id", "task_class", "backend", "reason", "policy_log", "link", "compute", "latency", "semantic_complete", "interface_ok", "model_ms", "fallback_from", "fallback_attempted", "refusal_reason", "error", "source"):
+        if key in event:
+            result[key] = event[key]
+    result["gateway_event"] = event
+    return result
 
 # ============ HTTP 服务器 ============
 class BridgeHandler(http.server.BaseHTTPRequestHandler):
@@ -437,6 +712,8 @@ class BridgeHandler(http.server.BaseHTTPRequestHandler):
         elif path == '/api/state':
             state = load_state()
             self.send_json(state)
+        elif path == '/api/health':
+            self.send_json(gateway_health())
         elif path == '/api/patrol/log':
             self.send_json({"log": patrol_log, "running": patrol_running,
                            "last": time.strftime("%H:%M:%S", time.localtime(last_patrol_time)) if last_patrol_time else "从未"})
@@ -450,62 +727,18 @@ class BridgeHandler(http.server.BaseHTTPRequestHandler):
         path = urlparse(self.path).path
 
         if path == '/api/command':
-            body = self._read_body()
             try:
-                data = json.loads(body)
-                command = data.get('command', '')
-            except: command = ''
-
-            if not command:
-                self.send_json({"error": "缺少 command"})
-                return
-
-            state = load_state()
-
-            # 优先级1: 特殊场景（离家模式）
-            if any(w in command for w in ["我出门了", "拜拜", "再见", "离家模式"]):
-                steps, anomalies = execute_leave_home(state)
-                result = {
-                    "thought": "物理AI多设备协同：离家模式启动。感知环境→逐一关灯→关窗帘→安全检查→启动安防。",
-                    "actions": [s for s in steps if s["type"] == "action"],
-                    "observation": "\n".join([s["content"] for s in steps if s["type"] == "observe"]),
-                    "answer": f"🏠 离家模式已启动！物理AI执行报告：\n✅ 全屋灯光已关闭\n✅ 全屋窗帘已拉上\n🔒 离家安防已布防\n⚠️ 门窗异常{anomalies}处\n\n🔐 您的家已进入安全守护模式。"
-                }
-                self.send_json(result)
-                return
-
-            # 优先级2: 模糊指令（物理AI：先感知再决策）
-            fuzzy = handle_fuzzy_command(state, command)
-            if fuzzy:
-                self.send_json(fuzzy)
-                return
-
-            # 优先级3: 标准指令
-            std = execute_command(state, command)
-            if std:
-                self.send_json(std)
-                return
-
-            # 未识别
-            self.send_json({
-                "thought": f'无法解析"{command}"。尝试物理AI模糊理解...',
-                "actions": [{"description": "模糊指令匹配失败"}],
-                "answer": f'🤔 抱歉，暂不理解"{command}"。试试：打开客厅的灯 | 现在室温多少度 | 有点冷 | 太暗了 | 我出门了 | 有人吗 | 空气怎么样'
-            })
+                data = parse_command_payload(parse_json_request(self._read_body()))
+                self.send_json(process_command(data["command"], data["context"]))
+            except ValueError as exc:
+                self.send_json({"error": str(exc)}, status=400)
 
         elif path == '/api/light':
-            body = self._read_body()
             try:
-                data = json.loads(body)
-                loc = data.get('location', '客厅')
-                action = data.get('action', 'on')
-                brightness = min(max(data.get('brightness', 100), 0), 100)
-            except: loc, action, brightness = '客厅', 'on', 100
-
-            state = load_state()
-            state["lights"][loc] = {"is_on": action != 'off', "brightness": brightness if action != 'off' else 0}
-            save_state(state)
-            self.send_json({"status": "ok"})
+                result = apply_light_request(parse_json_request(self._read_body()))
+                self.send_json({"status": "ok", **result})
+            except (ValueError, OSError) as exc:
+                self.send_json({"error": str(exc)}, status=400)
 
         elif path == '/api/patrol/toggle':
             global patrol_running
@@ -519,8 +752,13 @@ class BridgeHandler(http.server.BaseHTTPRequestHandler):
             self.send_error(404)
 
     def _read_body(self):
-        length = int(self.headers.get('Content-Length', 0))
-        return self.rfile.read(length).decode('utf-8') if length > 0 else '{}'
+        try:
+            length = int(self.headers.get('Content-Length', 0))
+        except (TypeError, ValueError):
+            raise ValueError("INVALID_CONTENT_LENGTH") from None
+        if length < 0 or length > MAX_REQUEST_BODY_BYTES:
+            raise ValueError("REQUEST_TOO_LARGE")
+        return self.rfile.read(length)
 
     def serve_file(self, filename, content_type):
         filepath = os.path.join(SCRIPT_DIR, filename)
@@ -535,9 +773,9 @@ class BridgeHandler(http.server.BaseHTTPRequestHandler):
         except FileNotFoundError:
             self.send_error(404)
 
-    def send_json(self, data):
+    def send_json(self, data, status=200):
         body = json.dumps(data, ensure_ascii=False, indent=2)
-        self.send_response(200)
+        self.send_response(status)
         self.send_header('Content-Type', 'application/json; charset=utf-8')
         self.send_header('Access-Control-Allow-Origin', '*')
         self.send_header('Content-Length', len(body.encode('utf-8')))
@@ -546,6 +784,13 @@ class BridgeHandler(http.server.BaseHTTPRequestHandler):
 
     def log_message(self, format, *args):
         print(f"[{time.strftime('%H:%M:%S')}] {args[0]}")
+
+try:
+    _init_gateway()
+except Exception as exc:  # pragma: no cover
+    gateway_init_error = f"gateway_init:{type(exc).__name__}"
+    gateway = None
+
 
 def main():
     port = PORT

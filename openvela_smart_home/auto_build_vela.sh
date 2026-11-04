@@ -280,6 +280,10 @@ inject_custom_tools() {
     cp "${TOOLS_DIR}/tool_temperature_read.c" "${TOOLS_TARGET}/"
     log_ok "tool_temperature_read.c 注入成功 ✓"
 
+    log_info "复制 device_state.c（状态持久化）..."
+    cp "${TOOLS_DIR}/device_state.c" "${TOOLS_TARGET}/"
+    log_ok "device_state.c 注入成功 ✓"
+
     # 复制 / 生成 Tool 头文件
     log_info "生成 tool 头文件..."
     cat > "${AI_AGENT_DIR}/include/smart_home_tools.h" << 'HEADER_EOF'
@@ -992,12 +996,12 @@ main() {
     BUILD_END=$(date +%s)
     DURATION=$((BUILD_END - BUILD_START))
     MINUTES=$((DURATION / 60))
-    SECONDS=$((DURATION % 60))
+    SECS=$((DURATION % 60))
 
     echo ""
     echo "╔══════════════════════════════════════════════╗"
     echo "║  🎉 构建全部完成！                           ║"
-    echo "║  耗时: ${MINUTES}分${SECONDS}秒                          ║"
+    echo "║  耗时: ${MINUTES}分${SECS}秒                          ║"
     echo "╚══════════════════════════════════════════════╝"
     echo ""
     log_info "请执行 ./start_simulator.sh 启动 QEMU 模拟器"

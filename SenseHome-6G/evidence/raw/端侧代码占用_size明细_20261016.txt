@@ -1,0 +1,14 @@
+# 端侧代码占用逐文件明细（size 统计，gcc -O2, host x86_64）
+# 生成时间 2026-10-16
+
+文件 | text | data | bss | 合计(字节)
+---|---|---|---|---
+command_whitelist.o | 3844 | 0 | 16 | 3860
+device_state.o | 5444 | 0 | 416 | 5860
+tool_curtain_control.o | 2044 | 0 | 48 | 2092
+tool_environment_monitor.o | 6848 | 0 | 16 | 6864
+tool_light_control.o | 4340 | 0 | 48 | 4388
+tool_security_control.o | 1696 | 16 | 48 | 1760
+tool_temperature_read.o | 3932 | 0 | 16 | 3948
+
+**合计** | 28148 | 16 | 608 | **28772**（28.0977 KB）

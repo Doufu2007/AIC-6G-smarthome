@@ -1,0 +1,80 @@
+{
+  "recorded_at": "2026-11-03 04:24:51",
+  "locked_full_experiment": {
+    "original": {
+      "path": "_work/evidence_final/results.json",
+      "bytes": 705476,
+      "sha256": "df0d74d19842797a8a6fb1d5f4db37fa804542640904085e9b558a73aeb433f0"
+    },
+    "derived": {
+      "path": "_work/evidence_final/results.corrected.json",
+      "bytes": 706347,
+      "sha256": "c7035a5170e1464b0fed31436e0839fba261b737ef0956a85a6f982444669a21"
+    },
+    "canonical": {
+      "path": "SenseHome-6G/net_offload/results/results.json",
+      "bytes": 706347,
+      "sha256": "c7035a5170e1464b0fed31436e0839fba261b737ef0956a85a6f982444669a21"
+    },
+    "requests": 480,
+    "derivation_scope": "probe_overheads recomputed only; raw_runs and summaries unchanged",
+    "source_version_limit": "No complete build/source manifest was saved with the original n=20 experiment. benchmark_source_sha256 in the derivation was recorded at correction time, not at original execution. No later manifest retroactively certifies the original complete source tree.",
+    "model_evidence": "STUB parameters and synthetic semantic contract; not GPU or language accuracy"
+  },
+  "dashboard_experiment": {
+    "results": {
+      "path": "SenseHome-6G/evidence/current/dashboard/dashboard_results.json",
+      "bytes": 43359,
+      "sha256": "8441db19b596b413cc88071a9b0b745f165e2eb2d4729b3caa09830885c12d70"
+    },
+    "requests": 160,
+    "scope": "C policy and Python rules with PC JSON device state, no physical actuator"
+  },
+  "current_validation": {
+    "report": {
+      "path": "SenseHome-6G/evidence/current/validation/verification.json",
+      "bytes": 1640,
+      "sha256": "8ddf500bd905df06ba023082b52b9285cfa905377d92d082705002ee02567289"
+    },
+    "build_manifest": {
+      "path": "SenseHome-6G/evidence/current/validation/build_manifest.json",
+      "bytes": 10811,
+      "sha256": "1ed7264f61212e221327ec41708e7ed02e01ab642d1907487506859da28bf98a"
+    },
+    "c_assertions": 87,
+    "python_tests": 83,
+    "numeric_gate_regression_tests": 3,
+    "smoke_requests": 24,
+    "smoke_infer_n_per_task": 1,
+    "smoke_transition": false,
+    "scope": "Current source compiles/tests and one-command smoke passes. This n=1 run does not replace the n=20 competition results.",
+    "post_full_experiment_changes": "Subsequent changes include partial health with unknown metrics, compound-command routing/fallback guard, metadata/timeout integration and reporting wording. Those paths are covered by current regression tests; full n=20 experiment was not rerun after all changes."
+  },
+  "material_hashes": {
+    "files": {
+      "SenseHome-6G/作品方案_场景设计_v1.md": {
+        "bytes": 26361,
+        "sha256": "003fe94f4cd6e14bf8e09b93655bbad1783b8a4441fb32de190ceaac9f5ecf5f"
+      },
+      "SenseHome-6G/作品方案_场景设计_v1.docx": {
+        "bytes": 638985,
+        "sha256": "c34ea763d94dd17a9aae88a08eb5f17a76c28d5fe60edd666f08bfeca48526f4"
+      },
+      "SenseHome-6G/作品方案_场景设计_v1.pdf": {
+        "bytes": 843782,
+        "sha256": "359d4257b03a0283cb6279196ee0cfda59acef60e2a1b5b653cb0fe4c7767b32"
+      }
+    },
+    "checks": {
+      "aigc_disclosure": true,
+      "http_loop": true,
+      "no_template_residue": true,
+      "page_count": 23,
+      "toc_entries_verified": 30,
+      "fonts_embedded": 8,
+      "privacy_forbidden_hits": 0,
+      "visual_qa": "All 23 pages in contact sheets plus full-resolution key pages; no overlap or clipping",
+      "renderer_output": "_work/docx_qa/final4"
+    }
+  }
+}

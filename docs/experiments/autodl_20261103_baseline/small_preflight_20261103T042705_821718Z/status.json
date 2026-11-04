@@ -1,0 +1,19 @@
+{
+  "status": "failed",
+  "scope": "draft_small_model_pipeline_preflight_only",
+  "label_status": "draft_labels_not_human_verified",
+  "started_at": "20261103T042705_821831Z",
+  "all_requests_from_real_model": false,
+  "formal_accuracy_evidence": false,
+  "finished_at": "20261103T042921_289246Z",
+  "summary": {
+    "n_cases": 20,
+    "n_http_ok": 19,
+    "n_action_correct": 12,
+    "action_accuracy_pct": 60.0,
+    "request_median_ms": 271.207,
+    "request_p95_ms": 527.368
+  },
+  "error_class": "RuntimeError",
+  "error": "PREFLIGHT_HAS_FAILED_OR_UNVERIFIED_REQUESTS_SEE_EVAL"
+}

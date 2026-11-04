@@ -1,0 +1,189 @@
+{
+    "generated_at":  "2026-11-02T20:21:07Z",
+    "commit":  "4845d71638d05d95d4686e5193c819c6140c73a0",
+    "os":  "Microsoft Windows NT 10.0.26200.0",
+    "compiler":  "gcc.exe (MinGW-W64 x86_64-msvcrt-posix-seh, built by Brecht Sanders, r6) 15.2.0",
+    "python":  "Python 3.13.7",
+    "working_tree_dirty":  true,
+    "python_tests_run":  true,
+    "sources":  [
+                    {
+                        "path":  "openvela_smart_home/dashboard/backend_monitor.py",
+                        "sha256":  "8B07A4038732415959337702EBEB82315B10EB913FFD599F700319ADA92F94E7"
+                    },
+                    {
+                        "path":  "openvela_smart_home/dashboard/bridge_server.py",
+                        "sha256":  "65B4CD3F8519C94653DA34A008092649D642075563C616DDA7D4D4A47DA12410"
+                    },
+                    {
+                        "path":  "openvela_smart_home/dashboard/device_actions.py",
+                        "sha256":  "B639E8E294E03A0171CEA74CEAA2D9F2BAE5C26166F019908E93AF0265865698"
+                    },
+                    {
+                        "path":  "openvela_smart_home/dashboard/tests/test_backend_monitor.py",
+                        "sha256":  "D61869A821DF83604C21ECF5DC0FF80066E29449822394239ECEDCF00657ED1D"
+                    },
+                    {
+                        "path":  "openvela_smart_home/dashboard/tests/test_device_actions.py",
+                        "sha256":  "9581E5A5DE598BAB413B54581ABAE1E7BB05E82D95277FFF9DF4B569EE19744F"
+                    },
+                    {
+                        "path":  "openvela_smart_home/dashboard/tests/test_gateway_bridge.py",
+                        "sha256":  "D2B84601B6FE4CC6E240DC6358633F26385CEE87AC63FDB6AB27F3AEC2042E95"
+                    },
+                    {
+                        "path":  "openvela_smart_home/dashboard/tests/test_remote_execution.py",
+                        "sha256":  "A937B862BB3646FC000FFE605E04B9CD18AD676D976989A2F4EB974CC65FA25B"
+                    },
+                    {
+                        "path":  "openvela_smart_home/dashboard/tests/test_web_panel_gateway.py",
+                        "sha256":  "60FB358C0515E4D0F5E51C603BB0419425988B529591601FCA7DEC7B5918BB71"
+                    },
+                    {
+                        "path":  "openvela_smart_home/dashboard/web_panel.html",
+                        "sha256":  "F7D5DC9EFD6D4CB56484872CDEAA86DA8A9C8C72D06BF99E28D3258D0E0F18DF"
+                    },
+                    {
+                        "path":  "SenseHome-6G/net_offload/backends/openai_backend.py",
+                        "sha256":  "4BDBC42D84D01B567D037F501438C9DC8C2676E88AE66C568E3A83CB7A2DF987"
+                    },
+                    {
+                        "path":  "SenseHome-6G/net_offload/backends/stub_backend.py",
+                        "sha256":  "F31DA5DCE87B040D36C4E58950E916F2B0573264727C4265EC43ABA62D44D3AA"
+                    },
+                    {
+                        "path":  "SenseHome-6G/net_offload/build.ps1",
+                        "sha256":  "92D96F303C09C4648742013D60A1EF525F4683EFE43C57BD948CD116DA39952D"
+                    },
+                    {
+                        "path":  "SenseHome-6G/net_offload/eval_model.py",
+                        "sha256":  "AE159311B4DEACBC16A4BE383690DD1F5581CECB9E6F2A6BDCBAD191285FA85A"
+                    },
+                    {
+                        "path":  "SenseHome-6G/net_offload/evidence.py",
+                        "sha256":  "90A78F0414E71C31BDBE4CD7B2251F32DA12665ECABAEB9F13CDB15AC5EC3086"
+                    },
+                    {
+                        "path":  "SenseHome-6G/net_offload/link_emulator.py",
+                        "sha256":  "56137D0CBC8AADE2689E8002BE2C894DDECEB8A90E34806076CE5AAF85887C00"
+                    },
+                    {
+                        "path":  "SenseHome-6G/net_offload/network_trace.py",
+                        "sha256":  "E001B7B4BC2E851CECEF43FCAB84379847E37C0F637BE2842534A0332DE445E0"
+                    },
+                    {
+                        "path":  "SenseHome-6G/net_offload/offload_bench.py",
+                        "sha256":  "E781E9C607C67ED19B872C52E513F5DFD2132F4AFC2B7AB0AA446DB10F2A6329"
+                    },
+                    {
+                        "path":  "SenseHome-6G/net_offload/offload_gateway.py",
+                        "sha256":  "3AE4289118A8AD981E1C2F96C8A8BA94790BF20B9BFE9B0093C60F9FA3C1B315"
+                    },
+                    {
+                        "path":  "SenseHome-6G/net_offload/offload_policy.c",
+                        "sha256":  "73895FA224A32FB76C4FAD26EB089969FCE9BD212DE5EFED8CC0BE2215C17B37"
+                    },
+                    {
+                        "path":  "SenseHome-6G/net_offload/offload_policy.h",
+                        "sha256":  "EBB5F15D2CB7D5E2C63E2E24F2A656490AB2D00053525B52EAEB44648503DA3C"
+                    },
+                    {
+                        "path":  "SenseHome-6G/net_offload/policy_cli.c",
+                        "sha256":  "ECA4E11EB89CCB46AE00ED6A4EFBFCE26AFF1BFF1F2F213060ACC5843B3A5610"
+                    },
+                    {
+                        "path":  "SenseHome-6G/net_offload/render_evidence_report.py",
+                        "sha256":  "E7346B8DEBC112EBA2FBFD11EC7409CDF9F0BD15D7C6689288E735F653318EFC"
+                    },
+                    {
+                        "path":  "SenseHome-6G/net_offload/run_evidence.ps1",
+                        "sha256":  "A07FB2B42F41864B670D8AD7E4988CDB225F71FF3EB8D7A5496661832C21F0D3"
+                    },
+                    {
+                        "path":  "SenseHome-6G/net_offload/test_compute_policy.c",
+                        "sha256":  "9E7DB7773517866BE46CCB8752DDBEF430B929C5C826BC20F803999FA9932572"
+                    },
+                    {
+                        "path":  "SenseHome-6G/net_offload/test_offload_policy.c",
+                        "sha256":  "74A5CA556E67C18BA7A9E54A1D8EC3757D784D4D0102DAB8E0429E0D15913462"
+                    },
+                    {
+                        "path":  "SenseHome-6G/net_offload/tests/__init__.py",
+                        "sha256":  "01BA4719C80B6FE911B091A7C05124B64EEECE964E09C058EF8F9805DACA546B"
+                    },
+                    {
+                        "path":  "SenseHome-6G/net_offload/tests/test_backend_health.py",
+                        "sha256":  "F8316DDDE5D92B01415DDD9158175012FD6C8FC02BB268B61E38D53DCE25CAB6"
+                    },
+                    {
+                        "path":  "SenseHome-6G/net_offload/tests/test_bench_latency.py",
+                        "sha256":  "415070020666DDD9474F8ED4DDCE8557B861ACF441BD1C173637784777DE6C47"
+                    },
+                    {
+                        "path":  "SenseHome-6G/net_offload/tests/test_deterministic_replay.py",
+                        "sha256":  "7C029E2EA08FA09A124E7F76646C104EE5F06AEEF950509ACC871558017C32DD"
+                    },
+                    {
+                        "path":  "SenseHome-6G/net_offload/tests/test_eval_model.py",
+                        "sha256":  "ACE2EF55224CD979ED975B898B41E131D247D15A726F5A8512CB76B9D8886ECE"
+                    },
+                    {
+                        "path":  "SenseHome-6G/net_offload/tests/test_event_sink.py",
+                        "sha256":  "83F48EB3F86F455E5E9E4D4DFBAFCF09341A9465A83B5910E219BA696682137B"
+                    },
+                    {
+                        "path":  "SenseHome-6G/net_offload/tests/test_evidence_schema.py",
+                        "sha256":  "E9CCC09C0EDACA49C50F6099FC967715B72D61F841D2152AB7DA288B58F4859A"
+                    },
+                    {
+                        "path":  "SenseHome-6G/net_offload/tests/test_gateway_action_execution.py",
+                        "sha256":  "8E1BBA59813301BD8B32847B09D52B618A936DEE152C794135277D635A275384"
+                    },
+                    {
+                        "path":  "SenseHome-6G/net_offload/tests/test_gateway_resilience.py",
+                        "sha256":  "CD2DF64E6CA83251F090C08A2DCD8B9920DB581CF9F8D1CD6A760D0241576492"
+                    },
+                    {
+                        "path":  "SenseHome-6G/net_offload/tests/test_latency_accounting.py",
+                        "sha256":  "D08E4CC00F8C2667AA5F87B5037E76A5083CEB1FC74EBA7BEE4A6A9B3B2F100B"
+                    },
+                    {
+                        "path":  "SenseHome-6G/net_offload/tests/test_local_routing_latency.py",
+                        "sha256":  "CA4ECEBCB5AB9FAA4CD0A57602A6C63FF37F88C3F4BE8C5E6B9358F948356C49"
+                    },
+                    {
+                        "path":  "SenseHome-6G/net_offload/tests/test_offload_gateway.py",
+                        "sha256":  "4D1EFBAF67A41B4ECE4CC42ECCEC1FA044F37B54A7D10DC2F50EC870E2842C35"
+                    },
+                    {
+                        "path":  "SenseHome-6G/net_offload/tests/test_openai_backend.py",
+                        "sha256":  "ADF986CC8945BF15D423EBB36365D29AC6ACC470E7822E2FAA8ADA9F1AAA384F"
+                    },
+                    {
+                        "path":  "SenseHome-6G/net_offload/tests/test_policy_cli_compute.py",
+                        "sha256":  "A916F6B3C567E2114F3171F68D15635FB7D97C08B00D199F770E8951C9887A7E"
+                    },
+                    {
+                        "path":  "SenseHome-6G/net_offload/tests/test_policy_cli_timeout.py",
+                        "sha256":  "F156AFE65D01CA603E6F32B5BE3481A6A51AD83823B0130082B424398427A5E8"
+                    },
+                    {
+                        "path":  "SenseHome-6G/net_offload/tests/test_trace.py",
+                        "sha256":  "DE0322B0EFBE9268598E7E383E2F6892A92D3B94066B36278588B815E44BCD48"
+                    }
+                ],
+    "artifacts":  [
+                      {
+                          "path":  "policy_cli.exe",
+                          "sha256":  "F00D6DAC3727C4A29A499E7CFBBD38F35F3E3D67FA1A1928C083051F8D297F0B"
+                      },
+                      {
+                          "path":  "test_offload_policy.exe",
+                          "sha256":  "305C82A557322E2812DFEB650A1139C70DFCDAFE4C3A4B484B7F4245D3E6D902"
+                      },
+                      {
+                          "path":  "test_compute_policy.exe",
+                          "sha256":  "6FB3A86E0A845AB27D8924DF00D03B47D66A26F8CC2F505D3191BB53B652DDA4"
+                      }
+                  ]
+}

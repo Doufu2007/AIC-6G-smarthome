@@ -1,0 +1,10 @@
+{
+  "command": [
+    "/root/miniconda3/bin/python",
+    "-c",
+    "import torch;import torch._inductor.lowering;import vllm;print(torch.__version__,vllm.__version__)"
+  ],
+  "exit_code": 0,
+  "stdout": "2.14.0+cu130 0.33.0\n",
+  "stderr": ""
+}

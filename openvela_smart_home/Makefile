@@ -23,7 +23,11 @@ TEST_DIR     = .test_build
 
 # ---- 源文件 ----
 TOOL_SRCS = $(TOOLS_DIR)/tool_light_control.c \
-            $(TOOLS_DIR)/tool_temperature_read.c
+            $(TOOLS_DIR)/tool_temperature_read.c \
+            $(TOOLS_DIR)/device_state.c \
+            $(TOOLS_DIR)/tool_curtain_control.c \
+            $(TOOLS_DIR)/tool_security_control.c \
+            $(TOOLS_DIR)/tool_environment_monitor.c
 
 TOOL_OBJS = $(patsubst $(TOOLS_DIR)/%.c,$(BUILD_DIR)/%.o,$(TOOL_SRCS))
 
@@ -45,20 +49,15 @@ $(BUILD_DIR)/libsmart_home.a: $(TOOL_OBJS)
 	@echo "  AR   $@"
 
 # ---- 编译 Tool 目标文件 ----
-$(BUILD_DIR)/tool_light_control.o: $(TOOLS_DIR)/tool_light_control.c
-	@mkdir -p $(BUILD_DIR)
-	$(CC) $(CFLAGS) -I$(TOOLS_DIR) -c $< -o $@
-	@echo "  CC   $@"
-
-$(BUILD_DIR)/tool_temperature_read.o: $(TOOLS_DIR)/tool_temperature_read.c
+$(BUILD_DIR)/%.o: $(TOOLS_DIR)/%.c
 	@mkdir -p $(BUILD_DIR)
 	$(CC) $(CFLAGS) -I$(TOOLS_DIR) -c $< -o $@
 	@echo "  CC   $@"
 
 # ---- 测试程序 ----
-$(BUILD_DIR)/test_light: $(BUILD_DIR)/tool_light_control.o
+$(BUILD_DIR)/test_light: $(BUILD_DIR)/tool_light_control.o $(BUILD_DIR)/device_state.o
 	@echo "  LD   $@"
-	$(CC) $(CFLAGS) -DTEST_BUILD -I$(TOOLS_DIR) $< $(LDFLAGS) -o $@ || \
+	$(CC) $(CFLAGS) -DTEST_BUILD -I$(TOOLS_DIR) $^ $(LDFLAGS) -o $@ || \
 		echo "  (跳过：需要实现完整链接)"
 
 $(BUILD_DIR)/test_temp: $(BUILD_DIR)/tool_temperature_read.o

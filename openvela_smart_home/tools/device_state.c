@@ -10,6 +10,12 @@
  *   - 赋予 Agent "记忆能力"，支持上下文感知操作
  *   - 用户说"调暗一点"时，Agent 能自动继承上次亮度上下文
  *   - Web Dashboard 可实时读取设备状态
+ *
+ * v2.2 修复：
+ *   - ensure_state_initialized: 初始化窗帘/安防/传感器字段
+ *   - device_state_save: 保存窗帘和安防状态
+ *   - device_state_load: 恢复窗帘和安防状态
+ *   - device_state_to_json: 防缓冲区溢出（snprintf 边界检查）
  */
 #include <stdio.h>
 #include <string.h>
@@ -24,16 +30,30 @@ static device_state_t g_device_state;
 
 /*
  * 确保设备状态已初始化（延迟初始化）
+ *
+ * 修复：初始化所有字段，包括窗帘/安防/传感器/安全模式，
+ * 避免使用未初始化的内存。
  */
 static void ensure_state_initialized(void) {
     if (g_device_state.initialized) return;
 
     for (int i = 0; i < 6; i++) {
+        /* 灯光 */
         g_device_state.lights[i].is_on      = false;
         g_device_state.lights[i].brightness  = 0;
+        /* 温湿度 */
         g_device_state.last_temp[i]          = 25.0f;
         g_device_state.last_hum[i]           = 60.0f;
+        /* 窗帘 */
+        g_device_state.curtains[i].is_open   = (i != LOCATION_BATHROOM);
+        g_device_state.curtains[i].position  = g_device_state.curtains[i].is_open ? 100 : 0;
+        /* 安防 */
+        g_device_state.security[i].locked        = true;
+        g_device_state.security[i].window_closed = (i != LOCATION_BATHROOM);
     }
+    /* 传感器数据：初始化为零（首次读取时才填充真实数据） */
+    memset(g_device_state.sensors, 0, sizeof(g_device_state.sensors));
+    g_device_state.security_mode = SECURITY_MODE_OFF;
     g_device_state.initialized = 1;
 }
 
@@ -50,20 +70,7 @@ static const char* loc_name(int idx) {
 /*
  * device_state_save - 将当前设备状态写入 JSON 文件
  *
- * JSON 格式示例：
- * {
- *   "lights": {
- *     "客厅": {"is_on": true, "brightness": 80},
- *     "卧室": {"is_on": false, "brightness": 0}
- *   },
- *   "temperature": {
- *     "客厅": {"temp": 25.0, "humidity": 60.0}
- *   },
- *   "context": {
- *     "last_action_target": "客厅",
- *     "last_action_type": "调亮度"
- *   }
- * }
+ * 修复：新增窗帘(curtains)和安防(security)状态的持久化。
  */
 int device_state_save(const char *filepath) {
     ensure_state_initialized();
@@ -96,6 +103,31 @@ int device_state_save(const char *filepath) {
                 g_device_state.last_hum[i],
                 (i < 5) ? "," : "");
     }
+    fprintf(fp, "  },\n");
+
+    /* curtains 部分 */
+    fprintf(fp, "  \"curtains\": {\n");
+    for (int i = 0; i < 6; i++) {
+        fprintf(fp, "    \"%s\": {\"is_open\": %s, \"position\": %d}%s\n",
+                loc_name(i),
+                g_device_state.curtains[i].is_open ? "true" : "false",
+                g_device_state.curtains[i].position,
+                (i < 5) ? "," : "");
+    }
+    fprintf(fp, "  },\n");
+
+    /* security 部分 */
+    fprintf(fp, "  \"security\": {\n");
+    fprintf(fp, "    \"mode\": %d,\n", (int)g_device_state.security_mode);
+    fprintf(fp, "    \"zones\": {\n");
+    for (int i = 0; i < 6; i++) {
+        fprintf(fp, "      \"%s\": {\"locked\": %s, \"window_closed\": %s}%s\n",
+                loc_name(i),
+                g_device_state.security[i].locked ? "true" : "false",
+                g_device_state.security[i].window_closed ? "true" : "false",
+                (i < 5) ? "," : "");
+    }
+    fprintf(fp, "    }\n");
     fprintf(fp, "  }\n");
 
     fprintf(fp, "}\n");
@@ -107,6 +139,8 @@ int device_state_save(const char *filepath) {
 
 /*
  * device_state_load - 从 JSON 文件恢复设备状态
+ *
+ * 修复：新增窗帘(curtains)和安防(security)状态的恢复。
  */
 int device_state_load(const char *filepath) {
     ensure_state_initialized();
@@ -120,12 +154,21 @@ int device_state_load(const char *filepath) {
     /* 简易 JSON 解析（不依赖第三方库） */
     char line[256];
     char current_loc[32] = "";
-    int in_lights = 0, in_temp = 0;
+    int in_lights = 0, in_temp = 0, in_curtains = 0, in_sec_zones = 0;
 
     while (fgets(line, sizeof(line), fp)) {
         /* 检测节 */
-        if (strstr(line, "\"lights\""))  { in_lights = 1; in_temp = 0; continue; }
-        if (strstr(line, "\"temperature\"")) { in_lights = 0; in_temp = 1; continue; }
+        if (strstr(line, "\"lights\""))       { in_lights = 1; in_temp = 0; in_curtains = 0; in_sec_zones = 0; continue; }
+        if (strstr(line, "\"temperature\""))   { in_lights = 0; in_temp = 1; in_curtains = 0; in_sec_zones = 0; continue; }
+        if (strstr(line, "\"curtains\""))      { in_lights = 0; in_temp = 0; in_curtains = 1; in_sec_zones = 0; continue; }
+        if (strstr(line, "\"zones\""))         { in_lights = 0; in_temp = 0; in_curtains = 0; in_sec_zones = 1; continue; }
+
+        /* security mode (非 zones 节) */
+        if (!in_sec_zones && strstr(line, "\"mode\"")) {
+            char *colon = strchr(line, ':');
+            if (colon) g_device_state.security_mode = (security_mode_t)atoi(colon + 1);
+            continue;
+        }
 
         /* 提取位置名 */
         char *q1 = strchr(line, '"');
@@ -173,6 +216,31 @@ int device_state_load(const char *filepath) {
                 if (colon) g_device_state.last_hum[idx] = (float)atof(colon + 1);
             }
         }
+        if (in_curtains) {
+            char *open_ptr = strstr(line, "\"is_open\"");
+            char *pos_ptr  = strstr(line, "\"position\"");
+
+            if (open_ptr) {
+                g_device_state.curtains[idx].is_open = (strstr(open_ptr, "true") != NULL);
+            }
+            if (pos_ptr) {
+                char *colon = strchr(pos_ptr, ':');
+                if (colon) {
+                    g_device_state.curtains[idx].position = (uint8_t)atoi(colon + 1);
+                }
+            }
+        }
+        if (in_sec_zones) {
+            char *lock_ptr = strstr(line, "\"locked\"");
+            char *win_ptr  = strstr(line, "\"window_closed\"");
+
+            if (lock_ptr) {
+                g_device_state.security[idx].locked = (strstr(lock_ptr, "true") != NULL);
+            }
+            if (win_ptr) {
+                g_device_state.security[idx].window_closed = (strstr(win_ptr, "true") != NULL);
+            }
+        }
     }
 
     fclose(fp);
@@ -183,33 +251,52 @@ int device_state_load(const char *filepath) {
 /*
  * device_state_to_json - 导出当前状态为完整 JSON 字符串
  *   供 Web Dashboard API 使用
+ *
+ * 修复：每次 snprintf 后检查 offset 边界，
+ * 防止缓冲区溢出和 size_t 回绕导致的段错误。
  */
 int device_state_to_json(char *buffer, size_t buf_size) {
     ensure_state_initialized();
 
-    int offset = 0;
-    offset += snprintf(buffer + offset, buf_size - offset, "{\n");
-    offset += snprintf(buffer + offset, buf_size - offset, "  \"lights\": {\n");
+    if (buf_size == 0) return TOOL_ERR_PARAM;
+    buffer[0] = '\0';
+
+    int offset = 0; int ret;
+    #define SAFE_APPEND(fmt, ...) do { \
+        if ((size_t)offset >= buf_size) break; \
+        ret = snprintf(buffer + offset, buf_size - offset, fmt, ##__VA_ARGS__); \
+        if (ret < 0) break; \
+        offset += ret; \
+    } while(0)
+
+    SAFE_APPEND("{\n");
+    SAFE_APPEND("  \"lights\": {\n");
     for (int i = 0; i < 6; i++) {
-        offset += snprintf(buffer + offset, buf_size - offset,
-                "    \"%s\": {\"is_on\": %s, \"brightness\": %d}%s\n",
+        SAFE_APPEND("    \"%s\": {\"is_on\": %s, \"brightness\": %d}%s\n",
                 loc_name(i),
                 g_device_state.lights[i].is_on ? "true" : "false",
                 g_device_state.lights[i].brightness,
                 (i < 5) ? "," : "");
     }
-    offset += snprintf(buffer + offset, buf_size - offset, "  },\n");
-    offset += snprintf(buffer + offset, buf_size - offset, "  \"temperature\": {\n");
+    SAFE_APPEND("  },\n");
+    SAFE_APPEND("  \"temperature\": {\n");
     for (int i = 0; i < 6; i++) {
-        offset += snprintf(buffer + offset, buf_size - offset,
-                "    \"%s\": {\"temp\": %.1f, \"humidity\": %.1f}%s\n",
+        SAFE_APPEND("    \"%s\": {\"temp\": %.1f, \"humidity\": %.1f}%s\n",
                 loc_name(i),
                 g_device_state.last_temp[i],
                 g_device_state.last_hum[i],
                 (i < 5) ? "," : "");
     }
-    offset += snprintf(buffer + offset, buf_size - offset, "  }\n");
-    offset += snprintf(buffer + offset, buf_size - offset, "}\n");
+    SAFE_APPEND("  }\n");
+    SAFE_APPEND("}\n");
+
+    #undef SAFE_APPEND
+
+    /* 确保结尾有 null */
+    if ((size_t)offset >= buf_size)
+        buffer[buf_size - 1] = '\0';
+    else
+        buffer[offset] = '\0';
 
     return TOOL_SUCCESS;
 }

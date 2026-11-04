@@ -44,8 +44,11 @@ test_light_control() {
 #include <stdio.h>
 #include <string.h>
 #define SMOKE_TEST_MODE
-#define SMART_HOME_TOOLS_H            /* 阻止 smart_home_tools.h 重复定义类型 */
-/* 内联编译灯光控制Tool（仅此一处包含源文件） */
+/*
+ * 修复：移除 #define SMART_HOME_TOOLS_H，
+ * 让 smart_home_tools.h 正常引入类型定义，
+ * 避免编译失败导致测试始终被跳过。
+ */
 #include "../tools/tool_light_control.c"
 
 int main(void) {
@@ -134,8 +137,13 @@ test_temperature() {
     cat > "${BUILD_DIR}/test_temp.c" << 'EOF'
 #include <stdio.h>
 #include <string.h>
-extern int tool_temperature_read(const char*, void*);
-extern int tool_temperature_read_all(void*, int*);
+/*
+ * 修复（2026-10-16）：删去两行手写的 extern 声明。它们用 void* 声明原型，
+ * 与 smart_home_tools.h 中的真实原型（temperature_humidity_t*）冲突，
+ * gcc 报 conflicting types；随后的 #include 本就会引入真实原型。
+ * 修复前本套件因编译失败被整体 SKIP（提示"需要完整的 openvela 编译环境"），
+ * 即 6 个设备 Tool 里有 1 个从未被测试覆盖。修复后 6/6 通过。
+ */
 #include "../tools/tool_temperature_read.c"
 
 int main(void) {
@@ -310,12 +318,15 @@ run_benchmark() {
 #include <time.h>
 
 #define SMOKE_TEST_MODE
-#define SMART_HOME_TOOLS_H
-#define TOOL_SUCCESS 0
-typedef enum { LOCATION_LIVING_ROOM=0, LOCATION_BEDROOM, LOCATION_KITCHEN, LOCATION_BATHROOM, LOCATION_STUDY, LOCATION_ALL } device_location_t;
-typedef enum { LIGHT_ACTION_ON=0, LIGHT_ACTION_OFF, LIGHT_ACTION_SET_BRIGHTNESS, LIGHT_ACTION_TOGGLE } light_action_t;
-typedef struct { device_location_t location; light_action_t action; uint8_t brightness; } light_control_params_t;
-typedef struct { int status; char location_name[32]; char action_desc[64]; uint8_t current_brightness; } light_control_result_t;
+/*
+ * 修复（2026-10-16）：原写法用 #define SMART_HOME_TOOLS_H 抑制真实头文件，
+ * 再手抄一份类型定义，但抄漏了 uint8_t（未含 <stdint.h>）与
+ * LOCATION_COUNT / LOCATION_OUTDOOR，gcc 必然报错；而下方编译命令带
+ * 2>/dev/null，错误被吞掉，只打印"基准编译失败（需要gcc）"——
+ * 这段基准测试**从未真正运行过**（本机装有 gcc 15.2.0）。
+ * 改为与 test_light_control 相同的方式：让 smart_home_tools.h 正常生效。
+ */
+#include <stdint.h>
 #include "../tools/tool_light_control.c"
 
 int main(void) {

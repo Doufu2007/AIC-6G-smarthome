@@ -1,0 +1,23 @@
+{
+  "scope": "real_model_draft_preflight",
+  "label_status": "draft_labels_not_human_verified",
+  "host": "autodl-container-d1b64790c7-eb967c87",
+  "gpu": "NVIDIA GeForce RTX 4080 SUPER",
+  "model": "Qwen2.5-1.5B-Instruct",
+  "served_model": "sensehome-small",
+  "model_revision": "989aa7980e4cf806f80c7fef2b1adb7bc71aa306",
+  "vllm_version": "0.33.0",
+  "wrapper": "openai_backend.py",
+  "endpoint": "127.0.0.1:18092",
+  "upstream": "127.0.0.1:8001/v1",
+  "dataset_sha256": "b071e8a7a9bd4962d2c6c601ddab6c12252bcbb4856abee0f71c7f5905255fcf",
+  "summary": {
+    "n_cases": 20,
+    "n_http_ok": 19,
+    "n_action_correct": 12,
+    "action_accuracy_pct_draft_only": 60.0,
+    "request_median_ms": 264.0745,
+    "request_p95_ms": 620.525
+  },
+  "interpretation": "真实 GPU 模型已通过 OpenAI-compatible wrapper 完成一轮 20 条草案标签预检；结果只证明模型接口与动作白名单链路可运行，不构成正式准确率，也不证明物理设备执行或 6G 空口。"
+}

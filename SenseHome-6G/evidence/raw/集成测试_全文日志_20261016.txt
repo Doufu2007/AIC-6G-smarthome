@@ -1,0 +1,58 @@
+
+╔══════════════════════════════════════════════╗
+║  openvela 智能家居 — 自动化测试套件 v2.0    ║
+╚══════════════════════════════════════════════╝
+
+[Test Suite 1] 灯光控制 Tool
+  [PASS] 1-开灯成功
+  [PASS] 1-开灯亮度100
+  [PASS] 2-调亮度成功
+  [PASS] 2-调亮度60
+  [PASS] 3-关灯成功
+  [PASS] 3-关灯亮度0
+  [PASS] 4-全屋操作成功
+  [PASS] 5-拒NULL params
+  [PASS] 6-拒NULL result
+  [PASS] 7-边界截断成功
+  [PASS] 7-截断为100
+  [PASS] 8-toggle成功
+
+[Test Suite 2] 温湿度读取 Tool
+  [PASS] T1-客厅读取成功
+  [PASS] T1-温度范围正常
+  [PASS] T2-拒NULL location
+  [PASS] T3-拒NULL result
+  [PASS] T4-未知位置回退成功
+  [PASS] T4-回退有数据
+
+[Test Suite 3] 命令白名单安全模块
+  [PASS] 3-合法echo通过
+  [PASS] 3-合法date通过
+  [PASS] 3-拦截rm命令
+  [PASS] 3-拦截reboot
+  [PASS] 3-拦截管道注入
+  [PASS] 3-审计报告生成
+
+[Test Suite 4] JSON 解析器（内嵌于 tool_registry）
+  [PASS] J1-解析location
+  [PASS] J1-location=客厅
+  [PASS] J1-解析action
+  [PASS] J1-解析brightness
+  [PASS] J1-brightness=80
+  [PASS] J2-解析室外
+  [PASS] J2-室外值
+  [PASS] J3-空格容错
+  [PASS] J3-brightness=50
+
+[Test Suite 5] Shell 脚本语法检查
+  [PASS] auto_build_vela.sh 语法检查通过
+  [PASS] switch_llm.sh 语法检查通过
+
+[Benchmark] 性能基准测试
+  灯光控制: 40177 ops/sec, 24.9 µs/op
+
+╔══════════════════════════════════════════════╗
+║  测试结果: 通过 35 / 失败 0 / 跳过 0 / 总计 35  ║
+╚══════════════════════════════════════════════╝
+
+所有测试通过！✓

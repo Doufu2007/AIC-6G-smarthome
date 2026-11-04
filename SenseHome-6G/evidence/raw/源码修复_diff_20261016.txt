@@ -1,0 +1,75 @@
+# 本次对端侧工程的两处源码修复（unified diff）
+# 生成 2026-10-16；原始文件备份在 _work/evidence_baseline/
+
+==================================================================
+## 1. test_runner.sh
+==================================================================
+--- "/c/Users/�\203\221�\202\205�\237�/Desktop/大学�\224\237活/AIC6G�\223项�\233_2026/_work/evidence_baseline/test_runner.sh.orig"	2026-07-06 11:44:48.642379600 +0800
++++ test_runner.sh	2026-10-16 09:56:31.949000700 +0800
+@@ -137,8 +137,13 @@
+     cat > "${BUILD_DIR}/test_temp.c" << 'EOF'
+ #include <stdio.h>
+ #include <string.h>
+-extern int tool_temperature_read(const char*, void*);
+-extern int tool_temperature_read_all(void*, int*);
++/*
++ * 修复（2026-10-16）：删去两行手写的 extern 声明。它们用 void* 声明原型，
++ * 与 smart_home_tools.h 中的真实原型（temperature_humidity_t*）冲突，
++ * gcc 报 conflicting types；随后的 #include 本就会引入真实原型。
++ * 修复前本套件因编译失败被整体 SKIP（提示"需要完整的 openvela 编译环境"），
++ * 即 6 个设备 Tool 里有 1 个从未被测试覆盖。修复后 6/6 通过。
++ */
+ #include "../tools/tool_temperature_read.c"
+ 
+ int main(void) {
+@@ -313,12 +318,15 @@
+ #include <time.h>
+ 
+ #define SMOKE_TEST_MODE
+-#define SMART_HOME_TOOLS_H
+-#define TOOL_SUCCESS 0
+-typedef enum { LOCATION_LIVING_ROOM=0, LOCATION_BEDROOM, LOCATION_KITCHEN, LOCATION_BATHROOM, LOCATION_STUDY, LOCATION_ALL } device_location_t;
+-typedef enum { LIGHT_ACTION_ON=0, LIGHT_ACTION_OFF, LIGHT_ACTION_SET_BRIGHTNESS, LIGHT_ACTION_TOGGLE } light_action_t;
+-typedef struct { device_location_t location; light_action_t action; uint8_t brightness; } light_control_params_t;
+-typedef struct { int status; char location_name[32]; char action_desc[64]; uint8_t current_brightness; } light_control_result_t;
++/*
++ * 修复（2026-10-16）：原写法用 #define SMART_HOME_TOOLS_H 抑制真实头文件，
++ * 再手抄一份类型定义，但抄漏了 uint8_t（未含 <stdint.h>）与
++ * LOCATION_COUNT / LOCATION_OUTDOOR，gcc 必然报错；而下方编译命令带
++ * 2>/dev/null，错误被吞掉，只打印"基准编译失败（需要gcc）"——
++ * 这段基准测试**从未真正运行过**（本机装有 gcc 15.2.0）。
++ * 改为与 test_light_control 相同的方式：让 smart_home_tools.h 正常生效。
++ */
++#include <stdint.h>
+ #include "../tools/tool_light_control.c"
+ 
+ int main(void) {
+
+==================================================================
+## 2. security/command_whitelist.c
+==================================================================
+--- "/c/Users/�\203\221�\202\205�\237�/Desktop/大学�\224\237活/AIC6G�\223项�\233_2026/_work/evidence_baseline/command_whitelist.c.orig"	2026-07-06 12:47:58.913677400 +0800
++++ security/command_whitelist.c	2026-10-16 10:03:32.996200500 +0800
+@@ -260,8 +260,20 @@
+     safe_system("light_control --location 客厅 --action on");
+     safe_system("read_temperature --location 客厅");
+     safe_system("date");
+-    safe_system("curl -H \"Authorization: Bearer token\" https://api.example.com/v1/chat");
+-    safe_system("ping -c 1 127.0.0.1");
++    /*
++     * 修复（2026-10-16）：这两条原先经 safe_system() **真正执行**，
++     * 即本"单元测试"会向 api.example.com 发起真实 HTTPS 请求、
++     * 向 127.0.0.1 发 ICMP。网络不可达或 DNS 慢时会长时间阻塞
++     * （实测复现过一次 >10 分钟的挂起，且非稳定复现）。
++     * 单元测试不应依赖外网：此处只检验"白名单是否放行"这一决策，
++     * 不再真正执行网络命令。command_is_safe() 同样会写审计日志并计数，
++     * 故下方 6 条断言不受影响。
++     */
++    printf("%s 决策检查: curl -> %s\n", LOG_TAG,
++           command_is_safe("curl -H \"Authorization: Bearer token\" https://api.example.com/v1/chat")
++           ? "ALLOW" : "BLOCK");
++    printf("%s 决策检查: ping -> %s\n", LOG_TAG,
++           command_is_safe("ping -c 1 127.0.0.1") ? "ALLOW" : "BLOCK");
+ 
+     printf("\n=== 拦截命令 ===\n");
+     safe_system("rm -rf /");

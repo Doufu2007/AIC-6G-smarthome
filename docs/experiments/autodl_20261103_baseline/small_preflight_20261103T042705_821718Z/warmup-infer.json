@@ -1,0 +1,32 @@
+{
+  "source": "real-model",
+  "configured_model": "sensehome-small",
+  "gpu_info": "NVIDIA GeForce RTX 4080 SUPER, 32760 MiB, 595.71.05",
+  "gpu_info_source": "environment_declared",
+  "model_revision": "989aa7980e4cf806f80c7fef2b1adb7bc71aa306",
+  "model_revision_source": "environment_declared",
+  "tier": "gateway",
+  "answer": "好的，我已经打开了客厅的灯。",
+  "actions": [
+    {
+      "name": "light_control",
+      "params": {
+        "location": "客厅",
+        "action": "on"
+      }
+    }
+  ],
+  "plan_valid": true,
+  "semantic_complete": false,
+  "model_ms": 1448.818,
+  "model_ms_kind": "upstream_http_wall_clock",
+  "model_ms_source": "measured",
+  "upstream_model": "sensehome-small",
+  "upstream_usage": {
+    "prompt_tokens": 274,
+    "total_tokens": 330,
+    "completion_tokens": 56,
+    "prompt_tokens_details": null,
+    "completion_tokens_details": null
+  }
+}

@@ -1,19 +1,45 @@
-# 忽略 openvela 系统源码（30GB 太大了，绝对不要上传！）
-openvela_workspace/
-openvela/
+﻿# Generated build and test outputs
 build_*/
-*.log
+.pytest_cache/
+__pycache__/
+**/__pycache__/
+*.pyc
 *.o
 *.a
 *.so
-
-# 忽略 IDE 和系统垃圾
-.vscode/
-.idea/
-.DS_Store
+*.dll
+*.exe
+*.log
 *.tmp
 *.swp
+.test_build/
+openvela_workspace/
+openvela/
 
-# 忽略 Python 缓存
-__pycache__/
-*.pyc
+# Local research extraction and scratch work
+_work/
+.research_*/
+openvela-SenseHome-main/
+
+# Local credentials and private review data
+.env
+.env.*
+!.env.example
+*.private.json
+*.pem
+*.key
+*token*.txt
+*password*.txt
+
+# Intermediate media and duplicate local archives
+docs/video/**/*.wav
+dist/*
+!dist/final/
+!dist/final/**
+!dist/SenseHome_AI6G_演示视频_20261103_v2.mp4
+!dist/SenseHome_本地审阅包_20261103_v18.zip
+!dist/SenseHome_本地审阅包_20261103_v18.sha256.json
+SenseHome：基于偏好习得的物理AI智能家居系统.zip
+.research_*
+提交前检查单.md
+参赛选手承诺书*.pdf

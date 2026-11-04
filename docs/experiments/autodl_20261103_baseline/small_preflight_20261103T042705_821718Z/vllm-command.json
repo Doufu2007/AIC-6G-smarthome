@@ -1,0 +1,21 @@
+[
+  "/root/miniconda3/bin/python",
+  "-m",
+  "vllm.entrypoints.openai.api_server",
+  "--model",
+  "/root/autodl-tmp/models/small",
+  "--served-model-name",
+  "sensehome-small",
+  "--host",
+  "127.0.0.1",
+  "--port",
+  "8001",
+  "--dtype",
+  "auto",
+  "--max-model-len",
+  "4096",
+  "--gpu-memory-utilization",
+  "0.9",
+  "--seed",
+  "20261103"
+]

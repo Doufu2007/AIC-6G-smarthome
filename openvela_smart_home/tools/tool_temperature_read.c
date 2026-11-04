@@ -103,9 +103,19 @@ static float local_rand(void) {
 static void simulate_sensor_read(const sensor_profile_t *profile,
                                  float *temperature,
                                  float *humidity) {
-    /* rand1, rand2 ∈ (0, 1)，确保 log 参数 ∈ (0, 1) */
-    float rand1 = local_rand() * 0.999999f + 0.000001f;  /* (1e-6, 1.0) 开区间 */
+    /*
+     * 修复：rand1, rand2 必须严格在 (0, 1) 开区间内。
+     * 由于浮点舍入，乘法+加法后仍可能恰好等于 1.0，
+     * 此时 logf(1.0) = 0 → sqrtf(-0) = 0（合法），
+     * 但仍需防御 logf 参数 ≤ 0。使用 clamp 确保安全。
+     */
+    float rand1 = local_rand() * 0.999999f + 0.000001f;
     float rand2 = local_rand() * 0.999999f + 0.000001f;
+    /* 防御性截断：确保严格位于 (1e-7, 1-1e-7) */
+    if (rand1 <= 0.0f) rand1 = 1e-7f;
+    if (rand1 >= 1.0f) rand1 = 1.0f - 1e-7f;
+    if (rand2 <= 0.0f) rand2 = 1e-7f;
+    if (rand2 >= 1.0f) rand2 = 1.0f - 1e-7f;
 
     /* Box-Muller 变换：rand1, rand2 → 标准正态分布 */
     float noise = sqrtf(-2.0f * logf(rand1)) * cosf(2.0f * 3.14159265f * rand2);

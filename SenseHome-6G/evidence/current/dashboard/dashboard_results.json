@@ -1,0 +1,1515 @@
+{
+  "meta": {
+    "generated_at": "2026-11-03 03:57:14",
+    "source": "dashboard-device-simulator",
+    "scope": "C policy + real Python Dashboard rules + simulated JSON device state; no physical actuator"
+  },
+  "summaries": [
+    {
+      "phase": "P1-normal",
+      "task": "simple",
+      "n": 20,
+      "p50_wall_ms": 3.545,
+      "p95_wall_ms": 4.434,
+      "n_state_confirmed": 20
+    },
+    {
+      "phase": "P1-normal",
+      "task": "safety",
+      "n": 20,
+      "p50_wall_ms": 1.291,
+      "p95_wall_ms": 1.637,
+      "n_state_confirmed": 20
+    },
+    {
+      "phase": "P2-degraded",
+      "task": "simple",
+      "n": 20,
+      "p50_wall_ms": 3.398,
+      "p95_wall_ms": 4.388,
+      "n_state_confirmed": 20
+    },
+    {
+      "phase": "P2-degraded",
+      "task": "safety",
+      "n": 20,
+      "p50_wall_ms": 1.242,
+      "p95_wall_ms": 1.608,
+      "n_state_confirmed": 20
+    },
+    {
+      "phase": "P3-wan-down",
+      "task": "simple",
+      "n": 20,
+      "p50_wall_ms": 3.066,
+      "p95_wall_ms": 3.757,
+      "n_state_confirmed": 20
+    },
+    {
+      "phase": "P3-wan-down",
+      "task": "safety",
+      "n": 20,
+      "p50_wall_ms": 1.341,
+      "p95_wall_ms": 1.621,
+      "n_state_confirmed": 20
+    },
+    {
+      "phase": "P4-all-down",
+      "task": "simple",
+      "n": 20,
+      "p50_wall_ms": 3.783,
+      "p95_wall_ms": 4.237,
+      "n_state_confirmed": 20
+    },
+    {
+      "phase": "P4-all-down",
+      "task": "safety",
+      "n": 20,
+      "p50_wall_ms": 1.427,
+      "p95_wall_ms": 1.711,
+      "n_state_confirmed": 20
+    }
+  ],
+  "rows": [
+    {
+      "phase": "P1-normal",
+      "task": "simple",
+      "index": 0,
+      "event_id": "ae3bfb30440e47b0814b061dd370ca9e",
+      "wall_ms": 21.647199988365173,
+      "state_confirmed": true,
+      "source": "dashboard-device-simulator"
+    },
+    {
+      "phase": "P1-normal",
+      "task": "simple",
+      "index": 1,
+      "event_id": "4c864565bf8d4fa1894efa4e89cfc203",
+      "wall_ms": 4.30400000186637,
+      "state_confirmed": true,
+      "source": "dashboard-device-simulator"
+    },
+    {
+      "phase": "P1-normal",
+      "task": "simple",
+      "index": 2,
+      "event_id": "995620c953214ee3aab50b540df4015c",
+      "wall_ms": 4.094100004294887,
+      "state_confirmed": true,
+      "source": "dashboard-device-simulator"
+    },
+    {
+      "phase": "P1-normal",
+      "task": "simple",
+      "index": 3,
+      "event_id": "a20f8a0e439042f7b2e7379d8163b1cc",
+      "wall_ms": 3.5968000011052936,
+      "state_confirmed": true,
+      "source": "dashboard-device-simulator"
+    },
+    {
+      "phase": "P1-normal",
+      "task": "simple",
+      "index": 4,
+      "event_id": "f1ebe01c08a84deb85c78c006f2d7b5a",
+      "wall_ms": 3.1694000062998384,
+      "state_confirmed": true,
+      "source": "dashboard-device-simulator"
+    },
+    {
+      "phase": "P1-normal",
+      "task": "simple",
+      "index": 5,
+      "event_id": "3d27ff132bce4b1180c177a3dc6138a9",
+      "wall_ms": 4.016499995486811,
+      "state_confirmed": true,
+      "source": "dashboard-device-simulator"
+    },
+    {
+      "phase": "P1-normal",
+      "task": "simple",
+      "index": 6,
+      "event_id": "6c46902702f6456e8e2917243de3a5a8",
+      "wall_ms": 3.490500006591901,
+      "state_confirmed": true,
+      "source": "dashboard-device-simulator"
+    },
+    {
+      "phase": "P1-normal",
+      "task": "simple",
+      "index": 7,
+      "event_id": "7f22a56281524149aa11c49deb30779c",
+      "wall_ms": 3.5980000102426857,
+      "state_confirmed": true,
+      "source": "dashboard-device-simulator"
+    },
+    {
+      "phase": "P1-normal",
+      "task": "simple",
+      "index": 8,
+      "event_id": "3ec7c6d82e30410aa8ac84c74cf217dd",
+      "wall_ms": 4.434100002981722,
+      "state_confirmed": true,
+      "source": "dashboard-device-simulator"
+    },
+    {
+      "phase": "P1-normal",
+      "task": "simple",
+      "index": 9,
+      "event_id": "a6ad0fa6de914743bdf95b3113270dc2",
+      "wall_ms": 3.4937000018544495,
+      "state_confirmed": true,
+      "source": "dashboard-device-simulator"
+    },
+    {
+      "phase": "P1-normal",
+      "task": "simple",
+      "index": 10,
+      "event_id": "94ac8cc94d9e4c1981be0de98c501865",
+      "wall_ms": 3.023100027348846,
+      "state_confirmed": true,
+      "source": "dashboard-device-simulator"
+    },
+    {
+      "phase": "P1-normal",
+      "task": "simple",
+      "index": 11,
+      "event_id": "8140a37e15734b29b51349beebd63c48",
+      "wall_ms": 3.600900003220886,
+      "state_confirmed": true,
+      "source": "dashboard-device-simulator"
+    },
+    {
+      "phase": "P1-normal",
+      "task": "simple",
+      "index": 12,
+      "event_id": "9ee02aeeb365489b8ba3afaef47f68b1",
+      "wall_ms": 3.3953000092878938,
+      "state_confirmed": true,
+      "source": "dashboard-device-simulator"
+    },
+    {
+      "phase": "P1-normal",
+      "task": "simple",
+      "index": 13,
+      "event_id": "0077ae83a81c4386ba3a25b5c19f1f30",
+      "wall_ms": 2.8116999892517924,
+      "state_confirmed": true,
+      "source": "dashboard-device-simulator"
+    },
+    {
+      "phase": "P1-normal",
+      "task": "simple",
+      "index": 14,
+      "event_id": "52ec3157463b4fa4a51cf5275dd66f7d",
+      "wall_ms": 3.757800004677847,
+      "state_confirmed": true,
+      "source": "dashboard-device-simulator"
+    },
+    {
+      "phase": "P1-normal",
+      "task": "simple",
+      "index": 15,
+      "event_id": "d67f69388f6d4bef9305071db20eaf7b",
+      "wall_ms": 3.115500003332272,
+      "state_confirmed": true,
+      "source": "dashboard-device-simulator"
+    },
+    {
+      "phase": "P1-normal",
+      "task": "simple",
+      "index": 16,
+      "event_id": "02612e6805214c8c83a07b3d143726fe",
+      "wall_ms": 3.8921000086702406,
+      "state_confirmed": true,
+      "source": "dashboard-device-simulator"
+    },
+    {
+      "phase": "P1-normal",
+      "task": "simple",
+      "index": 17,
+      "event_id": "d26c9e9e2fe045cfb7e3bf51f614044c",
+      "wall_ms": 2.885900001274422,
+      "state_confirmed": true,
+      "source": "dashboard-device-simulator"
+    },
+    {
+      "phase": "P1-normal",
+      "task": "simple",
+      "index": 18,
+      "event_id": "2ca79a1ba2f04408adde018c14976df1",
+      "wall_ms": 3.492399991955608,
+      "state_confirmed": true,
+      "source": "dashboard-device-simulator"
+    },
+    {
+      "phase": "P1-normal",
+      "task": "simple",
+      "index": 19,
+      "event_id": "f629090e113340c194f75640d6b32adc",
+      "wall_ms": 3.301299992017448,
+      "state_confirmed": true,
+      "source": "dashboard-device-simulator"
+    },
+    {
+      "phase": "P1-normal",
+      "task": "safety",
+      "index": 0,
+      "event_id": "40a2ed40f6f84a73aba66f8fba4df200",
+      "wall_ms": 1.6010999970603734,
+      "state_confirmed": true,
+      "source": "dashboard-device-simulator"
+    },
+    {
+      "phase": "P1-normal",
+      "task": "safety",
+      "index": 1,
+      "event_id": "10fdb33952ef4537aa53bc91cf33bcee",
+      "wall_ms": 1.3018999889027327,
+      "state_confirmed": true,
+      "source": "dashboard-device-simulator"
+    },
+    {
+      "phase": "P1-normal",
+      "task": "safety",
+      "index": 2,
+      "event_id": "b5b84aa4715d469b913f59e1994f4e6d",
+      "wall_ms": 1.258200005395338,
+      "state_confirmed": true,
+      "source": "dashboard-device-simulator"
+    },
+    {
+      "phase": "P1-normal",
+      "task": "safety",
+      "index": 3,
+      "event_id": "76f4cb55fe1946e6ba62f2bd81077f78",
+      "wall_ms": 1.3605999993160367,
+      "state_confirmed": true,
+      "source": "dashboard-device-simulator"
+    },
+    {
+      "phase": "P1-normal",
+      "task": "safety",
+      "index": 4,
+      "event_id": "31dc5f3ad1354d7082d80f4d0b9ba733",
+      "wall_ms": 1.02530000731349,
+      "state_confirmed": true,
+      "source": "dashboard-device-simulator"
+    },
+    {
+      "phase": "P1-normal",
+      "task": "safety",
+      "index": 5,
+      "event_id": "adb39d03038e4c5885b47ee28b7ccb8d",
+      "wall_ms": 1.1169999779667705,
+      "state_confirmed": true,
+      "source": "dashboard-device-simulator"
+    },
+    {
+      "phase": "P1-normal",
+      "task": "safety",
+      "index": 6,
+      "event_id": "018a9b9bfe2147168f075ccb7c4a7e55",
+      "wall_ms": 1.107799995224923,
+      "state_confirmed": true,
+      "source": "dashboard-device-simulator"
+    },
+    {
+      "phase": "P1-normal",
+      "task": "safety",
+      "index": 7,
+      "event_id": "e3df7fbf693f431a9c0aa0a42750073a",
+      "wall_ms": 1.268699998036027,
+      "state_confirmed": true,
+      "source": "dashboard-device-simulator"
+    },
+    {
+      "phase": "P1-normal",
+      "task": "safety",
+      "index": 8,
+      "event_id": "96733f3be9d84d1b9a0557ad77fa67b1",
+      "wall_ms": 1.3660000113304704,
+      "state_confirmed": true,
+      "source": "dashboard-device-simulator"
+    },
+    {
+      "phase": "P1-normal",
+      "task": "safety",
+      "index": 9,
+      "event_id": "b4f44490568a46c48e180df54d8213be",
+      "wall_ms": 1.1812000011559576,
+      "state_confirmed": true,
+      "source": "dashboard-device-simulator"
+    },
+    {
+      "phase": "P1-normal",
+      "task": "safety",
+      "index": 10,
+      "event_id": "baaf9487678e4659bda9fc9eacf840cb",
+      "wall_ms": 1.1477000080049038,
+      "state_confirmed": true,
+      "source": "dashboard-device-simulator"
+    },
+    {
+      "phase": "P1-normal",
+      "task": "safety",
+      "index": 11,
+      "event_id": "cecf26c01ac5469a8453b779891a5ec3",
+      "wall_ms": 1.231599977472797,
+      "state_confirmed": true,
+      "source": "dashboard-device-simulator"
+    },
+    {
+      "phase": "P1-normal",
+      "task": "safety",
+      "index": 12,
+      "event_id": "74561f76d26542ce829fda8b9ceb5d97",
+      "wall_ms": 1.6372999816667289,
+      "state_confirmed": true,
+      "source": "dashboard-device-simulator"
+    },
+    {
+      "phase": "P1-normal",
+      "task": "safety",
+      "index": 13,
+      "event_id": "c6b15cfbd2b64c2685ff61b09cc56671",
+      "wall_ms": 1.3394999841693789,
+      "state_confirmed": true,
+      "source": "dashboard-device-simulator"
+    },
+    {
+      "phase": "P1-normal",
+      "task": "safety",
+      "index": 14,
+      "event_id": "096d434a2f60405f99056b7997aeb687",
+      "wall_ms": 1.2793999921996146,
+      "state_confirmed": true,
+      "source": "dashboard-device-simulator"
+    },
+    {
+      "phase": "P1-normal",
+      "task": "safety",
+      "index": 15,
+      "event_id": "2c05765cdd904fd9b1dd525a40ba8765",
+      "wall_ms": 1.663100003497675,
+      "state_confirmed": true,
+      "source": "dashboard-device-simulator"
+    },
+    {
+      "phase": "P1-normal",
+      "task": "safety",
+      "index": 16,
+      "event_id": "3111ee85613448d59f1983ac5ffcdc7f",
+      "wall_ms": 1.303199998801574,
+      "state_confirmed": true,
+      "source": "dashboard-device-simulator"
+    },
+    {
+      "phase": "P1-normal",
+      "task": "safety",
+      "index": 17,
+      "event_id": "25e26327460b448b912a9adc45d8f2b6",
+      "wall_ms": 1.1187000200152397,
+      "state_confirmed": true,
+      "source": "dashboard-device-simulator"
+    },
+    {
+      "phase": "P1-normal",
+      "task": "safety",
+      "index": 18,
+      "event_id": "8728359b23b04838889c0436e4799f7f",
+      "wall_ms": 1.3207999872975051,
+      "state_confirmed": true,
+      "source": "dashboard-device-simulator"
+    },
+    {
+      "phase": "P1-normal",
+      "task": "safety",
+      "index": 19,
+      "event_id": "015f88dbd80c43829dc4095f1144379b",
+      "wall_ms": 1.364099996862933,
+      "state_confirmed": true,
+      "source": "dashboard-device-simulator"
+    },
+    {
+      "phase": "P2-degraded",
+      "task": "simple",
+      "index": 0,
+      "event_id": "384577667d6e481eb7e6295830ac165b",
+      "wall_ms": 4.606000002240762,
+      "state_confirmed": true,
+      "source": "dashboard-device-simulator"
+    },
+    {
+      "phase": "P2-degraded",
+      "task": "simple",
+      "index": 1,
+      "event_id": "d08a7fff0fca4f7da4f9c6cbb98adb23",
+      "wall_ms": 3.5678999847732484,
+      "state_confirmed": true,
+      "source": "dashboard-device-simulator"
+    },
+    {
+      "phase": "P2-degraded",
+      "task": "simple",
+      "index": 2,
+      "event_id": "2b6b0807082a4191864e61db51ab7b68",
+      "wall_ms": 4.3876999989151955,
+      "state_confirmed": true,
+      "source": "dashboard-device-simulator"
+    },
+    {
+      "phase": "P2-degraded",
+      "task": "simple",
+      "index": 3,
+      "event_id": "e047d6fc7ccc4593841dac26e4e79c09",
+      "wall_ms": 3.191199997672811,
+      "state_confirmed": true,
+      "source": "dashboard-device-simulator"
+    },
+    {
+      "phase": "P2-degraded",
+      "task": "simple",
+      "index": 4,
+      "event_id": "8a9a52a20a0049d7b4bd9b7bd5f705d8",
+      "wall_ms": 3.0661000055260956,
+      "state_confirmed": true,
+      "source": "dashboard-device-simulator"
+    },
+    {
+      "phase": "P2-degraded",
+      "task": "simple",
+      "index": 5,
+      "event_id": "2673b5db176c45e3ab6f4c32beaf02fb",
+      "wall_ms": 3.9819999947212636,
+      "state_confirmed": true,
+      "source": "dashboard-device-simulator"
+    },
+    {
+      "phase": "P2-degraded",
+      "task": "simple",
+      "index": 6,
+      "event_id": "a1cbd86901bc4770918fd1db49571bb8",
+      "wall_ms": 3.356999979587272,
+      "state_confirmed": true,
+      "source": "dashboard-device-simulator"
+    },
+    {
+      "phase": "P2-degraded",
+      "task": "simple",
+      "index": 7,
+      "event_id": "6769eb1c30494f75856b63f5acea89cf",
+      "wall_ms": 2.959400007966906,
+      "state_confirmed": true,
+      "source": "dashboard-device-simulator"
+    },
+    {
+      "phase": "P2-degraded",
+      "task": "simple",
+      "index": 8,
+      "event_id": "710056a66fa942b78b5a79ff04179fc3",
+      "wall_ms": 3.259900026023388,
+      "state_confirmed": true,
+      "source": "dashboard-device-simulator"
+    },
+    {
+      "phase": "P2-degraded",
+      "task": "simple",
+      "index": 9,
+      "event_id": "6cc3562bd67b41a7b0ed5fc011246ea7",
+      "wall_ms": 4.071100003784522,
+      "state_confirmed": true,
+      "source": "dashboard-device-simulator"
+    },
+    {
+      "phase": "P2-degraded",
+      "task": "simple",
+      "index": 10,
+      "event_id": "8bfa66847eac462e972a51b3add5e678",
+      "wall_ms": 4.2449999891687185,
+      "state_confirmed": true,
+      "source": "dashboard-device-simulator"
+    },
+    {
+      "phase": "P2-degraded",
+      "task": "simple",
+      "index": 11,
+      "event_id": "ab439eefde164771b219ab0be537bf37",
+      "wall_ms": 3.2629000197630376,
+      "state_confirmed": true,
+      "source": "dashboard-device-simulator"
+    },
+    {
+      "phase": "P2-degraded",
+      "task": "simple",
+      "index": 12,
+      "event_id": "c571bada2bf24cf0acf4c8946e30049f",
+      "wall_ms": 3.439699998125434,
+      "state_confirmed": true,
+      "source": "dashboard-device-simulator"
+    },
+    {
+      "phase": "P2-degraded",
+      "task": "simple",
+      "index": 13,
+      "event_id": "5cf6747a8b7d48bf9a4f86bf3a48f177",
+      "wall_ms": 3.934199979994446,
+      "state_confirmed": true,
+      "source": "dashboard-device-simulator"
+    },
+    {
+      "phase": "P2-degraded",
+      "task": "simple",
+      "index": 14,
+      "event_id": "27b609c02eda4347a901ee114e278d4c",
+      "wall_ms": 3.7406000192277133,
+      "state_confirmed": true,
+      "source": "dashboard-device-simulator"
+    },
+    {
+      "phase": "P2-degraded",
+      "task": "simple",
+      "index": 15,
+      "event_id": "b2af8b4c4ada4a71bf599b79ae4c374d",
+      "wall_ms": 2.7640000043902546,
+      "state_confirmed": true,
+      "source": "dashboard-device-simulator"
+    },
+    {
+      "phase": "P2-degraded",
+      "task": "simple",
+      "index": 16,
+      "event_id": "fbc57371f2454e8db33177db86adb7a1",
+      "wall_ms": 4.215900000417605,
+      "state_confirmed": true,
+      "source": "dashboard-device-simulator"
+    },
+    {
+      "phase": "P2-degraded",
+      "task": "simple",
+      "index": 17,
+      "event_id": "0e822f9b60964392a16e7dd2e560538b",
+      "wall_ms": 3.0986999918241054,
+      "state_confirmed": true,
+      "source": "dashboard-device-simulator"
+    },
+    {
+      "phase": "P2-degraded",
+      "task": "simple",
+      "index": 18,
+      "event_id": "3ba9bf015e9b47b188bfd204fce5d5e4",
+      "wall_ms": 2.94550001854077,
+      "state_confirmed": true,
+      "source": "dashboard-device-simulator"
+    },
+    {
+      "phase": "P2-degraded",
+      "task": "simple",
+      "index": 19,
+      "event_id": "3a9aacc54785431ea9733a5335472a29",
+      "wall_ms": 3.024799982085824,
+      "state_confirmed": true,
+      "source": "dashboard-device-simulator"
+    },
+    {
+      "phase": "P2-degraded",
+      "task": "safety",
+      "index": 0,
+      "event_id": "a369a937efbc439daf5ce1dbfedf4ac4",
+      "wall_ms": 1.6318999987561256,
+      "state_confirmed": true,
+      "source": "dashboard-device-simulator"
+    },
+    {
+      "phase": "P2-degraded",
+      "task": "safety",
+      "index": 1,
+      "event_id": "69c4643127364eafb1fed3c60fb65092",
+      "wall_ms": 1.2217999901622534,
+      "state_confirmed": true,
+      "source": "dashboard-device-simulator"
+    },
+    {
+      "phase": "P2-degraded",
+      "task": "safety",
+      "index": 2,
+      "event_id": "e683f4f7f0344f8489c902a2ca5e159c",
+      "wall_ms": 1.2537000002339482,
+      "state_confirmed": true,
+      "source": "dashboard-device-simulator"
+    },
+    {
+      "phase": "P2-degraded",
+      "task": "safety",
+      "index": 3,
+      "event_id": "48354c9aa44c41b1a51fce92ce4aa44d",
+      "wall_ms": 1.1764999944716692,
+      "state_confirmed": true,
+      "source": "dashboard-device-simulator"
+    },
+    {
+      "phase": "P2-degraded",
+      "task": "safety",
+      "index": 4,
+      "event_id": "2d7a554b45e140c5a94c3179854dde62",
+      "wall_ms": 1.0375000128988177,
+      "state_confirmed": true,
+      "source": "dashboard-device-simulator"
+    },
+    {
+      "phase": "P2-degraded",
+      "task": "safety",
+      "index": 5,
+      "event_id": "b35131959b37488c9c186cc96aea89dc",
+      "wall_ms": 0.9748000011313707,
+      "state_confirmed": true,
+      "source": "dashboard-device-simulator"
+    },
+    {
+      "phase": "P2-degraded",
+      "task": "safety",
+      "index": 6,
+      "event_id": "5e4522c07f16483d8469285b9c25ae7e",
+      "wall_ms": 1.6078999906312674,
+      "state_confirmed": true,
+      "source": "dashboard-device-simulator"
+    },
+    {
+      "phase": "P2-degraded",
+      "task": "safety",
+      "index": 7,
+      "event_id": "85860128069843b88dcbc83004df802b",
+      "wall_ms": 1.264699996681884,
+      "state_confirmed": true,
+      "source": "dashboard-device-simulator"
+    },
+    {
+      "phase": "P2-degraded",
+      "task": "safety",
+      "index": 8,
+      "event_id": "2ed9796354b74f6eae6cc7eed46aa81e",
+      "wall_ms": 1.28749999566935,
+      "state_confirmed": true,
+      "source": "dashboard-device-simulator"
+    },
+    {
+      "phase": "P2-degraded",
+      "task": "safety",
+      "index": 9,
+      "event_id": "2a40d7e1b0e840b9b3284e60eb62cb90",
+      "wall_ms": 1.2457000266294926,
+      "state_confirmed": true,
+      "source": "dashboard-device-simulator"
+    },
+    {
+      "phase": "P2-degraded",
+      "task": "safety",
+      "index": 10,
+      "event_id": "7d64d896bd144ddfb6bad52f54e47ea3",
+      "wall_ms": 1.1919999960809946,
+      "state_confirmed": true,
+      "source": "dashboard-device-simulator"
+    },
+    {
+      "phase": "P2-degraded",
+      "task": "safety",
+      "index": 11,
+      "event_id": "92728bdec54742ef841ce8ce0ee070b8",
+      "wall_ms": 1.3575999764725566,
+      "state_confirmed": true,
+      "source": "dashboard-device-simulator"
+    },
+    {
+      "phase": "P2-degraded",
+      "task": "safety",
+      "index": 12,
+      "event_id": "d8adf33f96054502a10fd742c980ce2f",
+      "wall_ms": 1.0238999966531992,
+      "state_confirmed": true,
+      "source": "dashboard-device-simulator"
+    },
+    {
+      "phase": "P2-degraded",
+      "task": "safety",
+      "index": 13,
+      "event_id": "c417787837f44fe28e60f2b00d1a8f76",
+      "wall_ms": 1.2533999979496002,
+      "state_confirmed": true,
+      "source": "dashboard-device-simulator"
+    },
+    {
+      "phase": "P2-degraded",
+      "task": "safety",
+      "index": 14,
+      "event_id": "2a07ebf8db044f3690f7bc60b1c88325",
+      "wall_ms": 1.2372999917715788,
+      "state_confirmed": true,
+      "source": "dashboard-device-simulator"
+    },
+    {
+      "phase": "P2-degraded",
+      "task": "safety",
+      "index": 15,
+      "event_id": "a539d94f096d4edbbb8d29c45039653f",
+      "wall_ms": 0.9898999996948987,
+      "state_confirmed": true,
+      "source": "dashboard-device-simulator"
+    },
+    {
+      "phase": "P2-degraded",
+      "task": "safety",
+      "index": 16,
+      "event_id": "8f8291acf1984afd82654be6b6290740",
+      "wall_ms": 1.3355000119190663,
+      "state_confirmed": true,
+      "source": "dashboard-device-simulator"
+    },
+    {
+      "phase": "P2-degraded",
+      "task": "safety",
+      "index": 17,
+      "event_id": "7ccd375acf3a418eb57677a640f2dee7",
+      "wall_ms": 1.1535000230651349,
+      "state_confirmed": true,
+      "source": "dashboard-device-simulator"
+    },
+    {
+      "phase": "P2-degraded",
+      "task": "safety",
+      "index": 18,
+      "event_id": "e3e2883ab39d4245a6beaddd99ea84d4",
+      "wall_ms": 1.3636999938171357,
+      "state_confirmed": true,
+      "source": "dashboard-device-simulator"
+    },
+    {
+      "phase": "P2-degraded",
+      "task": "safety",
+      "index": 19,
+      "event_id": "0388d763dd42465b92345b4259837566",
+      "wall_ms": 1.0963999957311898,
+      "state_confirmed": true,
+      "source": "dashboard-device-simulator"
+    },
+    {
+      "phase": "P3-wan-down",
+      "task": "simple",
+      "index": 0,
+      "event_id": "b1460e7bca2e44fa82a9a225369da6d9",
+      "wall_ms": 3.6797000211663544,
+      "state_confirmed": true,
+      "source": "dashboard-device-simulator"
+    },
+    {
+      "phase": "P3-wan-down",
+      "task": "simple",
+      "index": 1,
+      "event_id": "d3fb26ac374b4eeb8f796d439dc4dad7",
+      "wall_ms": 3.1789999920874834,
+      "state_confirmed": true,
+      "source": "dashboard-device-simulator"
+    },
+    {
+      "phase": "P3-wan-down",
+      "task": "simple",
+      "index": 2,
+      "event_id": "c6bb78c6f3794df9b4c2cca0a20386fb",
+      "wall_ms": 3.7567999970633537,
+      "state_confirmed": true,
+      "source": "dashboard-device-simulator"
+    },
+    {
+      "phase": "P3-wan-down",
+      "task": "simple",
+      "index": 3,
+      "event_id": "7722c5ff2cbd4bcfaaf80859cddf9eab",
+      "wall_ms": 2.8725000156555325,
+      "state_confirmed": true,
+      "source": "dashboard-device-simulator"
+    },
+    {
+      "phase": "P3-wan-down",
+      "task": "simple",
+      "index": 4,
+      "event_id": "f2e5c2990bbc4991b3673d7d92d2379c",
+      "wall_ms": 2.855800004908815,
+      "state_confirmed": true,
+      "source": "dashboard-device-simulator"
+    },
+    {
+      "phase": "P3-wan-down",
+      "task": "simple",
+      "index": 5,
+      "event_id": "bf5fd4ba20a54b7db024f32aedae6828",
+      "wall_ms": 3.159100015182048,
+      "state_confirmed": true,
+      "source": "dashboard-device-simulator"
+    },
+    {
+      "phase": "P3-wan-down",
+      "task": "simple",
+      "index": 6,
+      "event_id": "7cd4c34032464a49a53dcd4cb5cac13f",
+      "wall_ms": 3.3890000195242465,
+      "state_confirmed": true,
+      "source": "dashboard-device-simulator"
+    },
+    {
+      "phase": "P3-wan-down",
+      "task": "simple",
+      "index": 7,
+      "event_id": "320c9d11c7e54f0eae3d93bb9e3c6580",
+      "wall_ms": 2.7483000012580305,
+      "state_confirmed": true,
+      "source": "dashboard-device-simulator"
+    },
+    {
+      "phase": "P3-wan-down",
+      "task": "simple",
+      "index": 8,
+      "event_id": "9e7b320263b64ac6ba6f5e2f142230e2",
+      "wall_ms": 2.9146000160835683,
+      "state_confirmed": true,
+      "source": "dashboard-device-simulator"
+    },
+    {
+      "phase": "P3-wan-down",
+      "task": "simple",
+      "index": 9,
+      "event_id": "747271f7f30c4e6daf80975ba55df4dc",
+      "wall_ms": 2.6842000079341233,
+      "state_confirmed": true,
+      "source": "dashboard-device-simulator"
+    },
+    {
+      "phase": "P3-wan-down",
+      "task": "simple",
+      "index": 10,
+      "event_id": "bd36c1f29bd74e4984dc2d41c04a8e8e",
+      "wall_ms": 3.5140000109095126,
+      "state_confirmed": true,
+      "source": "dashboard-device-simulator"
+    },
+    {
+      "phase": "P3-wan-down",
+      "task": "simple",
+      "index": 11,
+      "event_id": "fa0018a4142b478fa59661a43dcb9692",
+      "wall_ms": 3.274799993960187,
+      "state_confirmed": true,
+      "source": "dashboard-device-simulator"
+    },
+    {
+      "phase": "P3-wan-down",
+      "task": "simple",
+      "index": 12,
+      "event_id": "7991da6c6c104c3ca25fb63dfb1403da",
+      "wall_ms": 2.4930000072345138,
+      "state_confirmed": true,
+      "source": "dashboard-device-simulator"
+    },
+    {
+      "phase": "P3-wan-down",
+      "task": "simple",
+      "index": 13,
+      "event_id": "bc29fd94e54f4115a1c660705ea0f956",
+      "wall_ms": 3.0901999853085726,
+      "state_confirmed": true,
+      "source": "dashboard-device-simulator"
+    },
+    {
+      "phase": "P3-wan-down",
+      "task": "simple",
+      "index": 14,
+      "event_id": "7e8528d779b2422b8710b337a2a4eaba",
+      "wall_ms": 3.2489000004716218,
+      "state_confirmed": true,
+      "source": "dashboard-device-simulator"
+    },
+    {
+      "phase": "P3-wan-down",
+      "task": "simple",
+      "index": 15,
+      "event_id": "741b729478ec43119d0785b44e7fa7fc",
+      "wall_ms": 3.8300000014714897,
+      "state_confirmed": true,
+      "source": "dashboard-device-simulator"
+    },
+    {
+      "phase": "P3-wan-down",
+      "task": "simple",
+      "index": 16,
+      "event_id": "c5b23771e257417f876f21b3a247a1e6",
+      "wall_ms": 3.0414999928325415,
+      "state_confirmed": true,
+      "source": "dashboard-device-simulator"
+    },
+    {
+      "phase": "P3-wan-down",
+      "task": "simple",
+      "index": 17,
+      "event_id": "f04bd74c018c4e54b84f4ba3c1b7aedb",
+      "wall_ms": 2.920700004324317,
+      "state_confirmed": true,
+      "source": "dashboard-device-simulator"
+    },
+    {
+      "phase": "P3-wan-down",
+      "task": "simple",
+      "index": 18,
+      "event_id": "a71fd34a27df439780bc54e89a0c9a65",
+      "wall_ms": 2.665000007255003,
+      "state_confirmed": true,
+      "source": "dashboard-device-simulator"
+    },
+    {
+      "phase": "P3-wan-down",
+      "task": "simple",
+      "index": 19,
+      "event_id": "e13489b0d6b44f54a9b4aa53cef1b30a",
+      "wall_ms": 2.850899996701628,
+      "state_confirmed": true,
+      "source": "dashboard-device-simulator"
+    },
+    {
+      "phase": "P3-wan-down",
+      "task": "safety",
+      "index": 0,
+      "event_id": "3adcfac52c854d7bb3fee10fea298afa",
+      "wall_ms": 1.7735000001266599,
+      "state_confirmed": true,
+      "source": "dashboard-device-simulator"
+    },
+    {
+      "phase": "P3-wan-down",
+      "task": "safety",
+      "index": 1,
+      "event_id": "e0abc9c03ce84da7a44df486f8e03b59",
+      "wall_ms": 1.213999988976866,
+      "state_confirmed": true,
+      "source": "dashboard-device-simulator"
+    },
+    {
+      "phase": "P3-wan-down",
+      "task": "safety",
+      "index": 2,
+      "event_id": "221a2831c9384c3e8b1ff749ed123b24",
+      "wall_ms": 1.0840999893844128,
+      "state_confirmed": true,
+      "source": "dashboard-device-simulator"
+    },
+    {
+      "phase": "P3-wan-down",
+      "task": "safety",
+      "index": 3,
+      "event_id": "2119c3f38e9f41f3be1f45c0de2b9846",
+      "wall_ms": 1.031499996315688,
+      "state_confirmed": true,
+      "source": "dashboard-device-simulator"
+    },
+    {
+      "phase": "P3-wan-down",
+      "task": "safety",
+      "index": 4,
+      "event_id": "966c4d697ff64fa584b2ab698089842a",
+      "wall_ms": 1.1026999854948372,
+      "state_confirmed": true,
+      "source": "dashboard-device-simulator"
+    },
+    {
+      "phase": "P3-wan-down",
+      "task": "safety",
+      "index": 5,
+      "event_id": "7d6bf24b51f6461cb2a6ad1cf4bbe7dd",
+      "wall_ms": 1.448700000764802,
+      "state_confirmed": true,
+      "source": "dashboard-device-simulator"
+    },
+    {
+      "phase": "P3-wan-down",
+      "task": "safety",
+      "index": 6,
+      "event_id": "05583443840f44bf8c8ef7e171c87331",
+      "wall_ms": 1.1199000000488013,
+      "state_confirmed": true,
+      "source": "dashboard-device-simulator"
+    },
+    {
+      "phase": "P3-wan-down",
+      "task": "safety",
+      "index": 7,
+      "event_id": "f491528005544c16a3ede6ec8abd1252",
+      "wall_ms": 1.3841000036336482,
+      "state_confirmed": true,
+      "source": "dashboard-device-simulator"
+    },
+    {
+      "phase": "P3-wan-down",
+      "task": "safety",
+      "index": 8,
+      "event_id": "11492754568146919135403868a4b670",
+      "wall_ms": 1.3000000035390258,
+      "state_confirmed": true,
+      "source": "dashboard-device-simulator"
+    },
+    {
+      "phase": "P3-wan-down",
+      "task": "safety",
+      "index": 9,
+      "event_id": "0dd97954992c4663960439643c9d25da",
+      "wall_ms": 1.336699991952628,
+      "state_confirmed": true,
+      "source": "dashboard-device-simulator"
+    },
+    {
+      "phase": "P3-wan-down",
+      "task": "safety",
+      "index": 10,
+      "event_id": "ee368d37db3244a2904d60f2d7608370",
+      "wall_ms": 1.1938000097870827,
+      "state_confirmed": true,
+      "source": "dashboard-device-simulator"
+    },
+    {
+      "phase": "P3-wan-down",
+      "task": "safety",
+      "index": 11,
+      "event_id": "78b869167a8e4e30936463b37ebdcabb",
+      "wall_ms": 1.4312999846879393,
+      "state_confirmed": true,
+      "source": "dashboard-device-simulator"
+    },
+    {
+      "phase": "P3-wan-down",
+      "task": "safety",
+      "index": 12,
+      "event_id": "147dc05c754c423f84ec9ef0e7cba003",
+      "wall_ms": 1.581299991812557,
+      "state_confirmed": true,
+      "source": "dashboard-device-simulator"
+    },
+    {
+      "phase": "P3-wan-down",
+      "task": "safety",
+      "index": 13,
+      "event_id": "263cc0871d7149ec99f29c09fb38e4e4",
+      "wall_ms": 1.4561999996658415,
+      "state_confirmed": true,
+      "source": "dashboard-device-simulator"
+    },
+    {
+      "phase": "P3-wan-down",
+      "task": "safety",
+      "index": 14,
+      "event_id": "47260f8ec6e2416fb97f606f7063da5c",
+      "wall_ms": 1.6210000030696392,
+      "state_confirmed": true,
+      "source": "dashboard-device-simulator"
+    },
+    {
+      "phase": "P3-wan-down",
+      "task": "safety",
+      "index": 15,
+      "event_id": "ee50cc3433a04d7b94379d9963599b4f",
+      "wall_ms": 1.3673999928869307,
+      "state_confirmed": true,
+      "source": "dashboard-device-simulator"
+    },
+    {
+      "phase": "P3-wan-down",
+      "task": "safety",
+      "index": 16,
+      "event_id": "df5553476a594f2886feb0fcceb344ff",
+      "wall_ms": 1.2916999985463917,
+      "state_confirmed": true,
+      "source": "dashboard-device-simulator"
+    },
+    {
+      "phase": "P3-wan-down",
+      "task": "safety",
+      "index": 17,
+      "event_id": "55d95d6336224b099513c8024834bbb8",
+      "wall_ms": 1.4828000275883824,
+      "state_confirmed": true,
+      "source": "dashboard-device-simulator"
+    },
+    {
+      "phase": "P3-wan-down",
+      "task": "safety",
+      "index": 18,
+      "event_id": "194b5320a8d747569ae8d6696ddd6234",
+      "wall_ms": 1.298599992878735,
+      "state_confirmed": true,
+      "source": "dashboard-device-simulator"
+    },
+    {
+      "phase": "P3-wan-down",
+      "task": "safety",
+      "index": 19,
+      "event_id": "fccd8f241fbd49628b08cb3257fb1ad6",
+      "wall_ms": 1.3455000007525086,
+      "state_confirmed": true,
+      "source": "dashboard-device-simulator"
+    },
+    {
+      "phase": "P4-all-down",
+      "task": "simple",
+      "index": 0,
+      "event_id": "84857009cf8142f1b1cdcd2a9960dff8",
+      "wall_ms": 3.8410999986808747,
+      "state_confirmed": true,
+      "source": "dashboard-device-simulator"
+    },
+    {
+      "phase": "P4-all-down",
+      "task": "simple",
+      "index": 1,
+      "event_id": "5b2ba51a4952407fba1b9a51cb004198",
+      "wall_ms": 2.835199993569404,
+      "state_confirmed": true,
+      "source": "dashboard-device-simulator"
+    },
+    {
+      "phase": "P4-all-down",
+      "task": "simple",
+      "index": 2,
+      "event_id": "fc66b76f49664e9e8671bf15d495a43b",
+      "wall_ms": 3.163799992762506,
+      "state_confirmed": true,
+      "source": "dashboard-device-simulator"
+    },
+    {
+      "phase": "P4-all-down",
+      "task": "simple",
+      "index": 3,
+      "event_id": "da05d2877f0241e2ae8fe7e7f95cc363",
+      "wall_ms": 3.4211000020150095,
+      "state_confirmed": true,
+      "source": "dashboard-device-simulator"
+    },
+    {
+      "phase": "P4-all-down",
+      "task": "simple",
+      "index": 4,
+      "event_id": "ac88b55d54354f9681bcfcfcedd0dcac",
+      "wall_ms": 4.141899989917874,
+      "state_confirmed": true,
+      "source": "dashboard-device-simulator"
+    },
+    {
+      "phase": "P4-all-down",
+      "task": "simple",
+      "index": 5,
+      "event_id": "a25642ee8e1249feaacd08e49ccfa5a1",
+      "wall_ms": 3.2479999936185777,
+      "state_confirmed": true,
+      "source": "dashboard-device-simulator"
+    },
+    {
+      "phase": "P4-all-down",
+      "task": "simple",
+      "index": 6,
+      "event_id": "f2e31ba1a17a4a388bcd687efab91f99",
+      "wall_ms": 3.4826000046450645,
+      "state_confirmed": true,
+      "source": "dashboard-device-simulator"
+    },
+    {
+      "phase": "P4-all-down",
+      "task": "simple",
+      "index": 7,
+      "event_id": "f07dac5e92fc4f688bd61661f1f7a71e",
+      "wall_ms": 3.313200024422258,
+      "state_confirmed": true,
+      "source": "dashboard-device-simulator"
+    },
+    {
+      "phase": "P4-all-down",
+      "task": "simple",
+      "index": 8,
+      "event_id": "a69a45e7ee4a495cb010bee7f17e8fc2",
+      "wall_ms": 3.40330001199618,
+      "state_confirmed": true,
+      "source": "dashboard-device-simulator"
+    },
+    {
+      "phase": "P4-all-down",
+      "task": "simple",
+      "index": 9,
+      "event_id": "b142cc48da02430db97ad1f20b177ce0",
+      "wall_ms": 3.6752999876625836,
+      "state_confirmed": true,
+      "source": "dashboard-device-simulator"
+    },
+    {
+      "phase": "P4-all-down",
+      "task": "simple",
+      "index": 10,
+      "event_id": "f531e4f6ca364cf0b13e13581256a954",
+      "wall_ms": 4.0025000052992254,
+      "state_confirmed": true,
+      "source": "dashboard-device-simulator"
+    },
+    {
+      "phase": "P4-all-down",
+      "task": "simple",
+      "index": 11,
+      "event_id": "b464701ba1e34783baa2f4c1da583962",
+      "wall_ms": 3.9634000277146697,
+      "state_confirmed": true,
+      "source": "dashboard-device-simulator"
+    },
+    {
+      "phase": "P4-all-down",
+      "task": "simple",
+      "index": 12,
+      "event_id": "a0f2f8cc51344371a6f7e4f570ce119c",
+      "wall_ms": 4.23739998950623,
+      "state_confirmed": true,
+      "source": "dashboard-device-simulator"
+    },
+    {
+      "phase": "P4-all-down",
+      "task": "simple",
+      "index": 13,
+      "event_id": "e6eee9a5ebd84eb3aa1d47653f086038",
+      "wall_ms": 3.865200007567182,
+      "state_confirmed": true,
+      "source": "dashboard-device-simulator"
+    },
+    {
+      "phase": "P4-all-down",
+      "task": "simple",
+      "index": 14,
+      "event_id": "2bd66e758ba2470e8343757fbca3d5ce",
+      "wall_ms": 3.9794000040274113,
+      "state_confirmed": true,
+      "source": "dashboard-device-simulator"
+    },
+    {
+      "phase": "P4-all-down",
+      "task": "simple",
+      "index": 15,
+      "event_id": "124760da834949278257533ec1baee45",
+      "wall_ms": 3.725199989276007,
+      "state_confirmed": true,
+      "source": "dashboard-device-simulator"
+    },
+    {
+      "phase": "P4-all-down",
+      "task": "simple",
+      "index": 16,
+      "event_id": "8a255d49af174fb48006a51dc04afcde",
+      "wall_ms": 3.8696000119671226,
+      "state_confirmed": true,
+      "source": "dashboard-device-simulator"
+    },
+    {
+      "phase": "P4-all-down",
+      "task": "simple",
+      "index": 17,
+      "event_id": "b81982fb32a249609b84939ea95b11e0",
+      "wall_ms": 3.9689000113867223,
+      "state_confirmed": true,
+      "source": "dashboard-device-simulator"
+    },
+    {
+      "phase": "P4-all-down",
+      "task": "simple",
+      "index": 18,
+      "event_id": "d93c689f772a4651bc09a3c2d2e407a5",
+      "wall_ms": 4.3978999892715365,
+      "state_confirmed": true,
+      "source": "dashboard-device-simulator"
+    },
+    {
+      "phase": "P4-all-down",
+      "task": "simple",
+      "index": 19,
+      "event_id": "8d1671f6c74b48c4b276eab607f11916",
+      "wall_ms": 3.5487999848555773,
+      "state_confirmed": true,
+      "source": "dashboard-device-simulator"
+    },
+    {
+      "phase": "P4-all-down",
+      "task": "safety",
+      "index": 0,
+      "event_id": "0c94f5e42b194df3bed88604d41c9f80",
+      "wall_ms": 2.0080000103916973,
+      "state_confirmed": true,
+      "source": "dashboard-device-simulator"
+    },
+    {
+      "phase": "P4-all-down",
+      "task": "safety",
+      "index": 1,
+      "event_id": "b38897bf389f417bba05859bfedd1347",
+      "wall_ms": 1.7108999891206622,
+      "state_confirmed": true,
+      "source": "dashboard-device-simulator"
+    },
+    {
+      "phase": "P4-all-down",
+      "task": "safety",
+      "index": 2,
+      "event_id": "00e7459668824816b147d0b8717c5d48",
+      "wall_ms": 1.1932999768760055,
+      "state_confirmed": true,
+      "source": "dashboard-device-simulator"
+    },
+    {
+      "phase": "P4-all-down",
+      "task": "safety",
+      "index": 3,
+      "event_id": "1a598e33a14f484fa0a9e287823c0660",
+      "wall_ms": 1.632300001801923,
+      "state_confirmed": true,
+      "source": "dashboard-device-simulator"
+    },
+    {
+      "phase": "P4-all-down",
+      "task": "safety",
+      "index": 4,
+      "event_id": "fe3afbe5171a410b97568e2be0b9f215",
+      "wall_ms": 1.2937000137753785,
+      "state_confirmed": true,
+      "source": "dashboard-device-simulator"
+    },
+    {
+      "phase": "P4-all-down",
+      "task": "safety",
+      "index": 5,
+      "event_id": "0b1a890c563f4c9e985e4628454357df",
+      "wall_ms": 1.511100010247901,
+      "state_confirmed": true,
+      "source": "dashboard-device-simulator"
+    },
+    {
+      "phase": "P4-all-down",
+      "task": "safety",
+      "index": 6,
+      "event_id": "03484bb0785b46f1b9734a3516b24a33",
+      "wall_ms": 1.3386000064201653,
+      "state_confirmed": true,
+      "source": "dashboard-device-simulator"
+    },
+    {
+      "phase": "P4-all-down",
+      "task": "safety",
+      "index": 7,
+      "event_id": "59909ccb0b464db9a39fb239071fc7ab",
+      "wall_ms": 1.3462999777402729,
+      "state_confirmed": true,
+      "source": "dashboard-device-simulator"
+    },
+    {
+      "phase": "P4-all-down",
+      "task": "safety",
+      "index": 8,
+      "event_id": "0d25da3213664de98ce0c24c5c348941",
+      "wall_ms": 1.4826999977231026,
+      "state_confirmed": true,
+      "source": "dashboard-device-simulator"
+    },
+    {
+      "phase": "P4-all-down",
+      "task": "safety",
+      "index": 9,
+      "event_id": "d5df1dcfc06f4cce9a1a777b7be8d717",
+      "wall_ms": 1.2676999904215336,
+      "state_confirmed": true,
+      "source": "dashboard-device-simulator"
+    },
+    {
+      "phase": "P4-all-down",
+      "task": "safety",
+      "index": 10,
+      "event_id": "f0b9c4246fe4428bb96537e5ee93d09e",
+      "wall_ms": 1.3848000089637935,
+      "state_confirmed": true,
+      "source": "dashboard-device-simulator"
+    },
+    {
+      "phase": "P4-all-down",
+      "task": "safety",
+      "index": 11,
+      "event_id": "d6e820d0ef984e3bb63f3d6a3f1c317c",
+      "wall_ms": 1.4584000164177269,
+      "state_confirmed": true,
+      "source": "dashboard-device-simulator"
+    },
+    {
+      "phase": "P4-all-down",
+      "task": "safety",
+      "index": 12,
+      "event_id": "3e457c801cd24fa38ac5622efd77b9d2",
+      "wall_ms": 1.5011999930720776,
+      "state_confirmed": true,
+      "source": "dashboard-device-simulator"
+    },
+    {
+      "phase": "P4-all-down",
+      "task": "safety",
+      "index": 13,
+      "event_id": "c4107cc1a5fb46399ff5aa2bc6a5da7b",
+      "wall_ms": 1.3962000084575266,
+      "state_confirmed": true,
+      "source": "dashboard-device-simulator"
+    },
+    {
+      "phase": "P4-all-down",
+      "task": "safety",
+      "index": 14,
+      "event_id": "361975dd312c4636bd37ffa656e395e6",
+      "wall_ms": 1.655700005358085,
+      "state_confirmed": true,
+      "source": "dashboard-device-simulator"
+    },
+    {
+      "phase": "P4-all-down",
+      "task": "safety",
+      "index": 15,
+      "event_id": "c6550a7544974bc2b5b6102d5f43f837",
+      "wall_ms": 1.5562000044155866,
+      "state_confirmed": true,
+      "source": "dashboard-device-simulator"
+    },
+    {
+      "phase": "P4-all-down",
+      "task": "safety",
+      "index": 16,
+      "event_id": "8b9580c55e524886a4483da2f6212c30",
+      "wall_ms": 1.5373000060208142,
+      "state_confirmed": true,
+      "source": "dashboard-device-simulator"
+    },
+    {
+      "phase": "P4-all-down",
+      "task": "safety",
+      "index": 17,
+      "event_id": "6c789c5005e4462185c8600b81f21531",
+      "wall_ms": 1.342800009297207,
+      "state_confirmed": true,
+      "source": "dashboard-device-simulator"
+    },
+    {
+      "phase": "P4-all-down",
+      "task": "safety",
+      "index": 18,
+      "event_id": "393144ca9a3e49d4b760737e88bbcf4d",
+      "wall_ms": 1.243299979250878,
+      "state_confirmed": true,
+      "source": "dashboard-device-simulator"
+    },
+    {
+      "phase": "P4-all-down",
+      "task": "safety",
+      "index": 19,
+      "event_id": "268cfb9ee38f41f4ba63d2f446c4390d",
+      "wall_ms": 1.3767000054940581,
+      "state_confirmed": true,
+      "source": "dashboard-device-simulator"
+    }
+  ]
+}
