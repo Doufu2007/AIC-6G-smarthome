@@ -125,6 +125,46 @@ class PlannerMetricsV6Tests(unittest.TestCase):
             self.assertEqual(sample['valid_plan_rate'], .25)
             self.assertEqual(sample['planner_response_ok'], 3)
 
+    def test_rule_corrected_read_plans_do_not_gain_raw_model_quality_credit(self):
+        with ExitStack() as stack:
+            folder = Path(stack.enter_context(tempfile.TemporaryDirectory()))
+            with patch.dict(os.environ, {
+                'SENSEHOME_POLICY_CLI': str(folder / 'absent-policy'),
+                'SENSEHOME_STATE_FILE': str(folder / 'state.json'),
+                'SENSEHOME_EVENT_LOG': str(folder / 'events.jsonl'),
+                'SENSEHOME_REQUEST_DB': str(folder / 'requests.sqlite3'),
+                'SENSEHOME_RECEIPT_DB': '', 'SENSEHOME_LOCAL_URL': '', 'SENSEHOME_CLOUD_URL': '',
+            }):
+                spec = importlib.util.spec_from_file_location('v6_corrected_read_metrics_fused', ROOT / 'docs/deployment/fused_eval.py')
+                module = importlib.util.module_from_spec(spec)
+                sys.modules[spec.name] = module
+                stack.callback(sys.modules.pop, spec.name, None)
+                spec.loader.exec_module(module)
+            backend = module.DirectModelBackend('http://127.0.0.1:1/v1', 'fixture', 'local', evidence_kind='fixture')
+            expected = [{'name': 'read_temperature', 'params': {'location': '客厅'}}]
+            for raw in ([], [{'name': 'read_temperature', 'params': {'location': '卧室'}}]):
+                with self.subTest(raw=raw):
+                    upstream = {'choices': [{'message': {'content': json.dumps({'answer': '', 'actions': raw})}}]}
+                    with patch.object(module.RecordingService, '_upstream', return_value=(upstream, 1.)):
+                        result = backend.infer('查看客厅温度')
+                    self.assertTrue(result.ok)
+                    self.assertEqual(result.actions, expected)
+                    self.assertEqual(backend.attempts[-1]['response']['raw_model_actions'], raw)
+                    self.assertTrue(backend.attempts[-1]['response']['action_normalization']['changed'])
+                    sample = backend.resource_snapshot()['cost_by_task']['read_single']
+                    self.assertEqual(sample['valid_plans'], 0)
+                    self.assertEqual(sample['valid_plan_rate'], 0)
+            sample = backend.resource_snapshot()['cost_by_task']['read_single']
+            self.assertEqual(sample['samples'], 2)
+            self.assertEqual(sample['planner_response_ok'], 2)
+            upstream = {'choices': [{'message': {'content': json.dumps({'answer': '', 'actions': expected})}}]}
+            with patch.object(module.RecordingService, '_upstream', return_value=(upstream, 1.)):
+                self.assertTrue(backend.infer('查看客厅温度').ok)
+            sample = backend.resource_snapshot()['cost_by_task']['read_single']
+            self.assertEqual(sample['samples'], 3)
+            self.assertEqual(sample['valid_plans'], 1)
+            self.assertAlmostEqual(sample['valid_plan_rate'], 1 / 3)
+
 
 if __name__ == '__main__':
     unittest.main()

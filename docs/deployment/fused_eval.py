@@ -33,7 +33,7 @@ ROOT = Path(__file__).resolve().parents[2]
 NET = ROOT / "SenseHome-6G/net_offload"
 sys.path.insert(0, str(NET))
 sys.path.insert(0, str(ROOT / "openvela_smart_home/dashboard"))
-from backends.openai_backend import BackendConfig, BackendError, InferenceService, MAX_RESPONSE_BYTES  # noqa: E402
+from backends.openai_backend import BackendConfig, BackendError, InferenceService, MAX_RESPONSE_BYTES, validate_actions  # noqa: E402
 from eval_model import actions_equal, load_cases  # noqa: E402
 from experiment_inputs import canonical_hash, load_json, load_profiles  # noqa: E402
 from offload_gateway import BackendResult, HttpJsonBackend, LinkSnapshot, OffloadGateway, RuleBackend  # noqa: E402
@@ -264,8 +264,16 @@ class DirectModelBackend:
             self._admission.release()
             raise
         rows = deepcopy(service.exchanges)
-        valid_plan = (result.ok and isinstance(result.actions, list) and bool(result.actions)
-                      and validate_goal_plan(command, result.actions) is None)
+        # A deterministic adapter repair may remain executable, but cannot
+        # award semantic quality credit to an empty or incorrect model plan.
+        quality_actions = response.get('raw_model_actions', result.actions)
+        valid_plan = False
+        if result.ok and isinstance(quality_actions, list) and quality_actions:
+            try:
+                validated = validate_actions(quality_actions)
+                valid_plan = validate_goal_plan(command, validated) is None
+            except (TypeError, ValueError, KeyError):
+                pass
         self.metrics.finished(token, success=result.ok, valid_plan=valid_plan)
         self._admission.release()
         attempt = {"request": request, "adapter_status": status,
