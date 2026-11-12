@@ -1,0 +1,136 @@
+{
+  "schema": "sensehome.cost-result.v1",
+  "scenario_name": "本机运行边界：1000请求归一化假设，未知项保持null",
+  "currency": "CNY",
+  "result_kind": "parameterized scenario, not an invoice or measured total cost",
+  "input_evidence_statuses": [
+    "assumption",
+    "unknown"
+  ],
+  "monthly_requests": 1000,
+  "monthly_cloud_routed_requests": 0,
+  "monthly_cloud_attempts": 0.0,
+  "local_active_hours": null,
+  "energy_kwh": null,
+  "monthly_components": {
+    "hardware_amortization": null,
+    "electricity": null,
+    "cloud_tokens": 0.0,
+    "operations": null,
+    "network": null
+  },
+  "monthly_known_subtotal": 0.0,
+  "monthly_total": null,
+  "per_1000_requests_components": {
+    "hardware_amortization": null,
+    "electricity": null,
+    "cloud_tokens": 0.0,
+    "operations": null,
+    "network": null
+  },
+  "per_1000_requests_known_subtotal": 0.0,
+  "per_1000_requests_total": null,
+  "unknown_parameters": [
+    "input_tokens_per_cloud_attempt",
+    "output_tokens_per_cloud_attempt",
+    "cloud_input_per_million",
+    "cloud_output_per_million",
+    "gateway_purchase",
+    "idle_watts",
+    "active_watts",
+    "local_seconds_per_request",
+    "electricity_per_kwh",
+    "monthly_operations",
+    "monthly_network"
+  ],
+  "unknown_cost_components": [
+    "hardware_amortization",
+    "electricity",
+    "operations",
+    "network"
+  ],
+  "parameters": {
+    "monthly_requests": {
+      "value": 1000,
+      "status": "assumption",
+      "source": "归一化演示负载假设，不是本月真实请求量"
+    },
+    "cloud_fraction": {
+      "value": 0,
+      "status": "assumption",
+      "source": "本轮仅本机服务，无云调用；这里将同部署方式作为月情景假设，不外推实际月账单"
+    },
+    "input_tokens_per_cloud_attempt": {
+      "value": null,
+      "status": "unknown",
+      "source": "未取得实际值；资源基线仅有RSS/CPU/共享GPU遥测，不能换算此项。见host_resources_summary.json"
+    },
+    "output_tokens_per_cloud_attempt": {
+      "value": null,
+      "status": "unknown",
+      "source": "未取得实际值；资源基线仅有RSS/CPU/共享GPU遥测，不能换算此项。见host_resources_summary.json"
+    },
+    "cloud_attempts_per_routed_request": {
+      "value": 1,
+      "status": "assumption",
+      "source": "演示情景假设；不是采购、运行或用户需求实测。见 cost_model.md"
+    },
+    "cloud_input_per_million": {
+      "value": null,
+      "status": "unknown",
+      "source": "未取得实际值；资源基线仅有RSS/CPU/共享GPU遥测，不能换算此项。见host_resources_summary.json"
+    },
+    "cloud_output_per_million": {
+      "value": null,
+      "status": "unknown",
+      "source": "未取得实际值；资源基线仅有RSS/CPU/共享GPU遥测，不能换算此项。见host_resources_summary.json"
+    },
+    "gateway_purchase": {
+      "value": null,
+      "status": "unknown",
+      "source": "未取得实际值；资源基线仅有RSS/CPU/共享GPU遥测，不能换算此项。见host_resources_summary.json"
+    },
+    "amortization_months": {
+      "value": 36,
+      "status": "assumption",
+      "source": "仅为摊销期情景假设；没有实际采购价"
+    },
+    "monthly_uptime_hours": {
+      "value": 720,
+      "status": "assumption",
+      "source": "按30天全天候情景；不是实际开机时长"
+    },
+    "idle_watts": {
+      "value": null,
+      "status": "unknown",
+      "source": "未取得实际值；资源基线仅有RSS/CPU/共享GPU遥测，不能换算此项。见host_resources_summary.json"
+    },
+    "active_watts": {
+      "value": null,
+      "status": "unknown",
+      "source": "未取得实际值；资源基线仅有RSS/CPU/共享GPU遥测，不能换算此项。见host_resources_summary.json"
+    },
+    "local_seconds_per_request": {
+      "value": null,
+      "status": "unknown",
+      "source": "未取得实际值；资源基线仅有RSS/CPU/共享GPU遥测，不能换算此项。见host_resources_summary.json"
+    },
+    "electricity_per_kwh": {
+      "value": null,
+      "status": "unknown",
+      "source": "未取得实际值；资源基线仅有RSS/CPU/共享GPU遥测，不能换算此项。见host_resources_summary.json"
+    },
+    "monthly_operations": {
+      "value": null,
+      "status": "unknown",
+      "source": "未取得实际值；资源基线仅有RSS/CPU/共享GPU遥测，不能换算此项。见host_resources_summary.json"
+    },
+    "monthly_network": {
+      "value": null,
+      "status": "unknown",
+      "source": "未取得实际值；资源基线仅有RSS/CPU/共享GPU遥测，不能换算此项。见host_resources_summary.json"
+    }
+  },
+  "scope": "One always-on gateway, serialized average local work; token-only cloud API; no tax, finance, device purchase, audio, paid tools or failure compensation unless included in inputs.",
+  "energy_boundary": "Whole-gateway idle plus incremental local-active power. CPU/RSS/TDP alone cannot supply watts. Probes, cloud-wait work and failed local work require integrated measurements or explicit allocation."
+}

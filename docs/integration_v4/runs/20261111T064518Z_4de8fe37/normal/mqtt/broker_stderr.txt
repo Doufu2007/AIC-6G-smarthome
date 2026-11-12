@@ -1,0 +1,59 @@
+INFO:amqtt.broker.plugins:Loading plugins from config
+INFO:transitions.core:Executed callback '<bound method Broker._log_state_change of <amqtt.broker.Broker object at 0x00000133827478C0>>'
+INFO:transitions.core:Finished processing state new exit callbacks.
+INFO:transitions.core:Finished processing state starting enter callbacks.
+INFO:amqtt.broker:Listener 'default' bind to 127.0.0.1:0 (max_connections=0)
+INFO:transitions.core:Finished processing state starting exit callbacks.
+INFO:transitions.core:Finished processing state started enter callbacks.
+INFO:amqtt.broker:Starting session expiration monitor.
+INFO:amqtt.broker:Listener 'default': 1/∞ connections acquired
+INFO:amqtt.broker:Connection from 127.0.0.1:54220 on listener 'default'
+INFO:transitions.core:Finished processing state new exit callbacks.
+INFO:transitions.core:Executed callback '<bound method Session._on_enter_connected of Session(clientId=entity-86e534967c294e12973b6b99d4939248, state=connected)>'
+INFO:transitions.core:Finished processing state connected enter callbacks.
+INFO:amqtt.broker:Listener 'default': 2/∞ connections acquired
+INFO:amqtt.broker:Connection from 127.0.0.1:54224 on listener 'default'
+INFO:transitions.core:Finished processing state new exit callbacks.
+INFO:transitions.core:Executed callback '<bound method Session._on_enter_connected of Session(clientId=gateway-4feebf47e8d64bd7a8ab8bb82c98e080, state=connected)>'
+INFO:transitions.core:Finished processing state connected enter callbacks.
+INFO:transitions.core:Finished processing state connected exit callbacks.
+INFO:transitions.core:Executed callback '<bound method Session._on_enter_disconnected of Session(clientId=gateway-4feebf47e8d64bd7a8ab8bb82c98e080, state=disconnected)>'
+INFO:transitions.core:Finished processing state disconnected enter callbacks.
+INFO:amqtt.broker:Listener 'default': 1/∞ connections acquired
+INFO:amqtt.broker:Listener 'default': 2/∞ connections acquired
+INFO:amqtt.broker:Connection from 127.0.0.1:54227 on listener 'default'
+INFO:transitions.core:Finished processing state new exit callbacks.
+INFO:transitions.core:Executed callback '<bound method Session._on_enter_connected of Session(clientId=gateway-177329f92d1e470392d64ec051fd9803, state=connected)>'
+INFO:transitions.core:Finished processing state connected enter callbacks.
+INFO:transitions.core:Finished processing state connected exit callbacks.
+INFO:transitions.core:Executed callback '<bound method Session._on_enter_disconnected of Session(clientId=gateway-177329f92d1e470392d64ec051fd9803, state=disconnected)>'
+INFO:transitions.core:Finished processing state disconnected enter callbacks.
+INFO:amqtt.broker:Listener 'default': 1/∞ connections acquired
+INFO:transitions.core:Finished processing state connected exit callbacks.
+INFO:transitions.core:Executed callback '<bound method Session._on_enter_disconnected of Session(clientId=entity-86e534967c294e12973b6b99d4939248, state=disconnected)>'
+INFO:transitions.core:Finished processing state disconnected enter callbacks.
+INFO:amqtt.broker:Listener 'default': 0/∞ connections acquired
+INFO:amqtt.broker:Listener 'default': 1/∞ connections acquired
+INFO:amqtt.broker:Connection from 127.0.0.1:62345 on listener 'default'
+INFO:transitions.core:Finished processing state new exit callbacks.
+INFO:transitions.core:Executed callback '<bound method Session._on_enter_connected of Session(clientId=entity-c65d936af7664836b28ca73360722298, state=connected)>'
+INFO:transitions.core:Finished processing state connected enter callbacks.
+INFO:amqtt.broker:Listener 'default': 2/∞ connections acquired
+INFO:amqtt.broker:Connection from 127.0.0.1:62348 on listener 'default'
+INFO:transitions.core:Finished processing state new exit callbacks.
+INFO:transitions.core:Executed callback '<bound method Session._on_enter_connected of Session(clientId=gateway-cd956d8801d546a2b47828598a65a1f4, state=connected)>'
+INFO:transitions.core:Finished processing state connected enter callbacks.
+INFO:transitions.core:Finished processing state connected exit callbacks.
+INFO:transitions.core:Executed callback '<bound method Session._on_enter_disconnected of Session(clientId=gateway-cd956d8801d546a2b47828598a65a1f4, state=disconnected)>'
+INFO:transitions.core:Finished processing state disconnected enter callbacks.
+INFO:amqtt.broker:Listener 'default': 1/∞ connections acquired
+INFO:transitions.core:Finished processing state connected exit callbacks.
+INFO:transitions.core:Executed callback '<bound method Session._on_enter_disconnected of Session(clientId=entity-c65d936af7664836b28ca73360722298, state=disconnected)>'
+INFO:transitions.core:Finished processing state disconnected enter callbacks.
+INFO:amqtt.broker:Listener 'default': 0/∞ connections acquired
+INFO:amqtt.broker:Shutting down broker...
+INFO:transitions.core:Finished processing state started exit callbacks.
+INFO:transitions.core:Finished processing state stopping enter callbacks.
+INFO:amqtt.broker:Broker closed
+INFO:transitions.core:Finished processing state stopping exit callbacks.
+INFO:transitions.core:Finished processing state stopped enter callbacks.

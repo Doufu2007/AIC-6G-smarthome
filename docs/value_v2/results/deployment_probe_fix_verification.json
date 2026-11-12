@@ -1,0 +1,101 @@
+{
+  "schema": "sensehome.deployment-probe-fix-verification.v1",
+  "checked_at_utc": "2026-11-10T20:23:52.466976+00:00",
+  "scope": "Only temporary literal-loopback HTTP fixtures. No model or external-host requests.",
+  "environment_proxy_fixture": {
+    "target_requests": [
+      "/v1/models",
+      "/v1/models"
+    ],
+    "proxy_requests": [],
+    "result": {
+      "schema": "sensehome.deployment-check.v2",
+      "declared_status": "test-fixture",
+      "hosts": {
+        "local": "127.0.0.1",
+        "cloud": "127.0.0.1"
+      },
+      "both_slots_loopback": true,
+      "syntactically_distinct_hosts": false,
+      "two_host_deployment_verified": false,
+      "scope": "URL shape and optional read-only model inventory only. Host identity, independent hardware, WAN path, queue telemetry, actuator delivery and task success require separate deployment evidence.",
+      "read_only_loopback_probes": {
+        "local": {
+          "method": "GET",
+          "requested_url": "http://127.0.0.1:62356/v1/models",
+          "inference_requests": 0,
+          "transport": "direct-http.client-no-proxy-no-redirect",
+          "connected_peer": {
+            "address": "127.0.0.1",
+            "port": 62356
+          },
+          "http_status": 200,
+          "models": [
+            "expected-live-model"
+          ]
+        },
+        "cloud": {
+          "method": "GET",
+          "requested_url": "http://127.0.0.1:62356/v1/models",
+          "inference_requests": 0,
+          "transport": "direct-http.client-no-proxy-no-redirect",
+          "connected_peer": {
+            "address": "127.0.0.1",
+            "port": 62356
+          },
+          "http_status": 200,
+          "models": [
+            "expected-live-model"
+          ]
+        }
+      }
+    },
+    "passed": true
+  },
+  "redirect_fixture": {
+    "origin_requests": [
+      "/v1/models",
+      "/v1/models"
+    ],
+    "redirect_target_requests": [],
+    "result": {
+      "schema": "sensehome.deployment-check.v2",
+      "declared_status": "test-fixture",
+      "hosts": {
+        "local": "127.0.0.1",
+        "cloud": "127.0.0.1"
+      },
+      "both_slots_loopback": true,
+      "syntactically_distinct_hosts": false,
+      "two_host_deployment_verified": false,
+      "scope": "URL shape and optional read-only model inventory only. Host identity, independent hardware, WAN path, queue telemetry, actuator delivery and task success require separate deployment evidence.",
+      "read_only_loopback_probes": {
+        "local": {
+          "method": "GET",
+          "requested_url": "http://127.0.0.1:50062/v1/models",
+          "inference_requests": 0,
+          "transport": "direct-http.client-no-proxy-no-redirect",
+          "connected_peer": {
+            "address": "127.0.0.1",
+            "port": 50062
+          },
+          "http_status": 302,
+          "error": "HTTP_REDIRECT_REFUSED"
+        },
+        "cloud": {
+          "method": "GET",
+          "requested_url": "http://127.0.0.1:50062/v1/models",
+          "inference_requests": 0,
+          "transport": "direct-http.client-no-proxy-no-redirect",
+          "connected_peer": {
+            "address": "127.0.0.1",
+            "port": 50062
+          },
+          "http_status": 302,
+          "error": "HTTP_REDIRECT_REFUSED"
+        }
+      }
+    },
+    "passed": true
+  }
+}

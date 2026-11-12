@@ -1,0 +1,36 @@
+{
+  "processes": [
+    {
+      "role": "broker",
+      "pid": 41904,
+      "argv": [
+        "C:\\Program Files\\Python313\\python.exe",
+        "-X",
+        "utf8",
+        "C:\\Users\\郑傅韬\\Desktop\\大学生活\\AIC\\AIC6G专项赛_2026\\场景赛道\\SenseHome-6G\\net_offload\\mqtt_receipts.py",
+        "--broker",
+        "--directory",
+        "C:\\Users\\郑傅韬\\Desktop\\大学生活\\AIC\\AIC6G专项赛_2026\\场景赛道\\docs\\integration_v4\\runs\\20261111T063352Z_099fc803\\normal\\mqtt",
+        "--port",
+        "0"
+      ]
+    },
+    {
+      "role": "entity",
+      "pid": 19416,
+      "argv": [
+        "C:\\Program Files\\Python313\\python.exe",
+        "-X",
+        "utf8",
+        "C:\\Users\\郑傅韬\\Desktop\\大学生活\\AIC\\AIC6G专项赛_2026\\场景赛道\\SenseHome-6G\\net_offload\\mqtt_receipts.py",
+        "--entity",
+        "--directory",
+        "C:\\Users\\郑傅韬\\Desktop\\大学生活\\AIC\\AIC6G专项赛_2026\\场景赛道\\docs\\integration_v4\\runs\\20261111T063352Z_099fc803\\normal\\mqtt",
+        "--port",
+        "58039",
+        "--platform-id",
+        "software-home"
+      ]
+    }
+  ]
+}

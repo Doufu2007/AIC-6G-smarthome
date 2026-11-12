@@ -81,7 +81,7 @@ body {
 .log-header { padding: 16px 20px; border-bottom: 1px solid #1a3040;
               display: flex; align-items: center; gap: 8px; }
 .log-header h2 { font-size: 16px; }
-.live-dot { width: 8px; height: 8px; background: #4caf50; border-radius: 50%; animation: pulse 1.5s infinite; }
+.live-dot { width: 8px; height: 8px; background: #7a8a9a; border-radius: 50%; }
 @keyframes pulse { 0%,100%{opacity:1} 50%{opacity:0.3} }
 .log-container { flex: 1; overflow-y: auto; padding: 12px 20px; }
 .log-entry { margin-bottom: 12px; padding: 12px; border-radius: 8px;
@@ -95,12 +95,15 @@ body {
 .log-entry.patrol  { background: #1a2010; border-left: 3px solid #ff9e64; }
 .log-step { font-size: 10px; color: #5a6a7a; margin-bottom: 2px; text-transform: uppercase;
             letter-spacing: 1px; }
+.log-content { white-space: pre-wrap; overflow-wrap: anywhere; }
 .patrol-badge { display: inline-block; font-size: 10px; background: #3a2a10; color: #ff9e64;
                 padding: 1px 8px; border-radius: 6px; margin-left: 6px; }
 
 /* 状态栏 */
 .status-bar { padding: 10px 20px; border-top: 1px solid #1a3040; display: flex;
-              justify-content: space-between; font-size: 11px; color: #5a6a7a; }
+              flex-wrap: wrap; gap: 8px; justify-content: space-between; font-size: 11px; color: #7a8a9a; }
+#llmInfo { flex-basis: 100%; white-space: pre-wrap; overflow-wrap: anywhere; line-height: 1.6; }
+.light-slider:disabled { opacity: .35; cursor: not-allowed; }
 .status-dot { width: 6px; height: 6px; border-radius: 50%; display: inline-block; margin-right: 4px; }
 
 /* 输入栏 */
@@ -116,6 +119,19 @@ body {
 .hints span { padding: 2px 8px; background: #0f1e2c; border-radius: 6px; cursor: pointer; }
 .hints span:hover { background: #142d3d; color: #7a8a9a; }
 .hints span.fuzzy { color: #ff9e64; border: 1px dashed #3a2a10; }
+.left-panel, .center-panel, .right-panel { min-width: 0; }
+.input-bar input { min-width: 0; }
+@media (max-width: 1100px) {
+  body { display: block; height: auto; min-height: 100vh; overflow: auto; }
+  .left-panel, .center-panel, .right-panel { width: 100%; flex: none; overflow: visible; }
+  .center-panel, .right-panel { border: 0; border-top: 1px solid #1a3040; }
+  .sensor-detail { overflow: visible !important; }
+  .log-container { flex: none; overflow: visible; }
+}
+@media (max-width: 600px) {
+  .room-grid, #sensorGrid { grid-template-columns: minmax(0, 1fr) !important; }
+  .header { flex-wrap: wrap; }
+}
 </style>
 </head>
 <body>
@@ -125,7 +141,7 @@ body {
   <div class="header">
     <span class="logo">🤖</span>
     <h1>openvela 物理AI</h1>
-    <span class="badge">感知→决策→执行</span>
+    <span class="badge">PC设备仿真 · 非实物控制</span>
   </div>
 
   <div class="quick-actions">
@@ -138,7 +154,7 @@ body {
   <div class="section-title">🏠 房间控制面板</div>
   <div class="room-grid" id="roomGrid"></div>
 
-  <div class="section-title">📡 物理感知层 — 多传感器状态</div>
+  <div class="section-title">📡 仿真传感器状态 — 来自网关</div>
   <div class="room-grid" id="sensorGrid" style="grid-template-columns:1fr 1fr 1fr;"></div>
 </div>
 
@@ -164,7 +180,7 @@ body {
 <div class="right-panel">
   <div class="log-header">
     <div class="live-dot"></div>
-    <h2>🧠 ReAct 推理链</h2>
+    <h2>🧠 网关执行记录</h2>
   </div>
 
   <div class="hints">
@@ -177,17 +193,15 @@ body {
 
   <div class="log-container" id="logContainer">
     <div class="log-entry answer">
-      <div class="log-step">物理AI 就绪</div>
-      <div class="log-content">👋 物理AI智能家居系统已启动。
-<b>核心能力：</b>主动感知 → 模糊理解 → 自主决策 → 多设备协同执行。
-试试说"<span style="color:#ff9e64">有点冷</span>"、"<span style="color:#ff9e64">太暗了</span>"或"<span style="color:#ff9e64">我出门了</span>"。</div>
+      <div class="log-step">等待网关确认</div>
+      <div class="log-content">这是PC设备仿真演示。设备与传感器状态来自网关，不代表真实家居或6G网络测量。连接状态以健康信息为准；请求失败时请先查询状态再重试。</div>
     </div>
   </div>
 
   <div class="status-bar">
-    <span><span class="status-dot" style="background:#4caf50"></span>QEMU模拟器</span>
-    <span id="llmInfo">DeepSeek</span>
-    <span id="patrolStatus">巡检: --</span>
+    <span id="stateStatus">设备状态: 未知</span>
+    <span id="llmInfo">模型端点: 未知</span>
+    <span id="patrolStatus">巡检: 未知</span>
     <span id="lastUpdate">更新: --</span>
   </div>
 
@@ -197,6 +211,13 @@ body {
     <input id="cmdInput" placeholder="输入自然语言指令..."
            onkeydown="if(event.key==='Enter')sendCmd()">
     <button onclick="sendCmd()">发送</button>
+    <button onclick="recoverPendingRequest()">回查上次请求</button>
+  </div>
+  <div style="padding:8px 20px;font-size:12px;display:flex;gap:8px;flex-wrap:wrap;align-items:center;">
+    <button onclick="archivePendingRequest()">结束等待并保留记录</button>
+    <select id="requestHistorySelect" aria-label="历史待确认请求"></select>
+    <button onclick="recoverArchivedRequest()">回查历史请求</button>
+    <span>结束等待后，旧请求仍可能执行；历史记录可继续回查。</span>
   </div>
 </div>
 
@@ -204,196 +225,336 @@ body {
 const LOCS = ['客厅','卧室','厨房','浴室','书房','室外'];
 const ICONS = ['🛋️','🛏️','🍳','🛁','📚','🌤️'];
 let state = {};
+const CLIENT_STORAGE = typeof sessionStorage !== 'undefined' ? sessionStorage : null;
+function savedClientValue(key) { try { return CLIENT_STORAGE?.getItem(key); } catch(e) { return null; } }
+function saveClientValue(key,value) { try { if(value===null) CLIENT_STORAGE?.removeItem(key); else CLIENT_STORAGE?.setItem(key,value); } catch(e) {} }
+function requestId() {
+  if (typeof crypto !== 'undefined' && crypto.randomUUID) return crypto.randomUUID();
+  return 'req-'+Date.now().toString(36)+'-'+Math.random().toString(36).slice(2,14);
+}
+const SESSION_ID = savedClientValue('sensehome.sessionId') || requestId();
+saveClientValue('sensehome.sessionId', SESSION_ID);
+let pendingRequest = null;
+try { pendingRequest=JSON.parse(savedClientValue('sensehome.pendingRequest')||'null'); } catch(e) {}
+if (!isObject(pendingRequest) || typeof pendingRequest.id!=='string' || !/^[A-Za-z0-9_.-]{1,64}$/.test(pendingRequest.id)) pendingRequest=null;
+function savePending(value) { pendingRequest=value; saveClientValue('sensehome.pendingRequest',value ? JSON.stringify(value):null); }
+function clearPending(id) { if(pendingRequest?.id===id) savePending(null); }
+let requestHistory=[];
+try { requestHistory=JSON.parse(savedClientValue('sensehome.requestHistory')||'[]'); } catch(e) {}
+if(!Array.isArray(requestHistory)) requestHistory=[];
+requestHistory=requestHistory.filter(item=>isObject(item)&&typeof item.id==='string'&&/^[A-Za-z0-9_.-]{1,64}$/.test(item.id));
+function renderRequestHistory() {
+  document.getElementById('requestHistorySelect').innerHTML=requestHistory.length ? requestHistory.map(item=>
+    `<option value="${escapeHtml(item.id)}">${escapeHtml(item.command||item.kind)} (${escapeHtml(item.id)}) ${escapeHtml(item.request_state||'未确认')}</option>`).join('') : '<option value="">暂无历史待确认请求</option>';
+}
+function archivePendingRequest() {
+  if(!pendingRequest) { appendLog('observe','暂无待等待请求','历史记录仍可回查。'); return; }
+  const pending=pendingRequest;
+  if(!requestHistory.some(item=>item.id===pending.id)) requestHistory.push({...pending,archived_at:Date.now(),request_state:'未确认'});
+  saveClientValue('sensehome.requestHistory',JSON.stringify(requestHistory));
+  clearPending(pending.id);
+  renderRequestHistory();
+  appendLog('observe','已结束等待，保留原请求记录','旧请求仍可能执行。新意图使用独立ID；可随时回查旧请求，不会自动重发。');
+}
+async function recoverArchivedRequest(id) {
+  const key=typeof id==='string'?id:document.getElementById('requestHistorySelect').value;
+  const item=requestHistory.find(entry=>entry.id===key);
+  if(!item) return null;
+  try {
+    const data=await readJsonResponse(await fetch('/api/requests/'+encodeURIComponent(key)));
+    if(data.command_id!==key) throw Error('REQUEST_ID_MISMATCH');
+    item.request_state=data.request_state||'未确认';
+    saveClientValue('sensehome.requestHistory',JSON.stringify(requestHistory));
+    renderRequestHistory();
+    appendLog('observe',data.task_complete?'历史请求已确认完成':'历史请求回查',data.answer||data.error||'完成情况未确认。');
+    return data;
+  } catch(e) { appendLog('observe','历史请求回查失败','记录已保留，请恢复连接后再查。'); return null; }
+}
+renderRequestHistory();
+function pendingFinished(data) {
+  return data.request_state==='finished' || (!data.request_state && typeof data.semantic_complete==='boolean' && typeof data.interface_ok==='boolean' && Array.isArray(data.actions) && data.execution_state!=='unknown');
+}
+async function recoverPendingRequest() {
+  if (!pendingRequest) { appendLog('observe','暂无待回查请求','上次已收到最终结果。'); return null; }
+  const pending = pendingRequest;
+  try {
+    const data=await readJsonResponse(await fetch('/api/requests/'+encodeURIComponent(pending.id)));
+    if(data.command_id!==pending.id) throw Error('REQUEST_ID_MISMATCH');
+    if(pendingFinished(data)) {
+      clearPending(pending.id);
+      appendLog('observe',data.task_complete?'原请求已确认完成':'原请求已结束',data.answer||data.error||'已查询原请求结果。');
+      fetchState();
+    } else {
+      appendLog('observe','原请求执行未确认',(data.answer||data.error||'保留原请求ID，请稍后继续回查。')+' 如需提交其他意图，可点击“结束等待并保留记录”。');
+    }
+    return data;
+  } catch(e) { appendLog('observe','执行未确认','原请求ID已保留；请恢复连接后回查，不会自动重发。'); return null; }
+}
+async function beginClientRequest(command,kind='command') {
+  if(pendingRequest) {
+    appendLog('observe','正在回查上次请求','上次请求尚未确认，先查询其结果。');
+    await recoverPendingRequest();
+    return null;
+  }
+  const value={id:requestId(),command,kind};
+  savePending(value);
+  return value;
+}
 
+function isObject(value) {
+  return value !== null && typeof value === 'object' && !Array.isArray(value);
+}
+function escapeHtml(value) {
+  return String(value ?? '').replace(/[&<>"']/g, c => ({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[c]));
+}
+function finiteNumber(value, min=-Infinity, max=Infinity) {
+  return typeof value === 'number' && Number.isFinite(value) && value >= min && value <= max;
+}
+function numberText(value, digits=0, unit='') {
+  return finiteNumber(value) ? value.toFixed(digits)+unit : '未知';
+}
+function boolText(value, yes, no) {
+  return typeof value === 'boolean' ? (value ? yes : no) : '未知';
+}
+function roomData(group, loc) {
+  return isObject(state[group]) && isObject(state[group][loc]) ? state[group][loc] : {};
+}
+async function readJsonResponse(response) {
+  if (!response.ok) throw new Error('HTTP_'+response.status);
+  const data = await response.json();
+  if (!isObject(data)) throw new Error('INVALID_JSON_OBJECT');
+  return data;
+}
+function validState(data) {
+  if (!['lights','curtains','temperature'].every(k => isObject(data[k]))) return false;
+  return LOCS.every(loc => {
+    const l=data.lights[loc], c=data.curtains[loc], t=data.temperature[loc];
+    return isObject(l) && typeof l.is_on==='boolean' && finiteNumber(l.brightness,0,100) &&
+      isObject(c) && typeof c.is_open==='boolean' && finiteNumber(c.position,0,100) &&
+      isObject(t) && finiteNumber(t.temp,-80,100) && finiteNumber(t.humidity,0,100);
+  });
+}
+function clearState() {
+  state = {};
+  document.getElementById('stateStatus').textContent = '设备状态: 未知（未连接或响应无效）';
+  renderRooms(); renderSensorDetail();
+}
 async function fetchState() {
   try {
-    const r = await fetch('/api/state'); state = await r.json();
+    const data = await readJsonResponse(await fetch('/api/state'));
+    if (!validState(data)) throw new Error('INVALID_STATE');
+    state = data;
+    const observation=isObject(data._mqtt_observation)?data._mqtt_observation:null;
+    if(observation && (observation.stale || observation.unknown)) {
+      document.getElementById('stateStatus').textContent = '设备状态: 当前未知；以下为最后观测，年龄 '+numberText(observation.age_ms/1000,1,'秒')+'，最后采样 '+(finiteNumber(observation.sampled_at)?new Date(observation.sampled_at*1000).toLocaleTimeString():'未知');
+    } else {
+      document.getElementById('stateStatus').textContent = '设备状态: 网关PC仿真快照 '+new Date().toLocaleTimeString();
+    }
     renderRooms(); renderSensorDetail();
-  } catch(e) {}
+  } catch(e) { clearState(); }
 }
 async function fetchPatrol() {
   try {
-    const r = await fetch('/api/patrol/log'); const d = await r.json();
+    const d = await readJsonResponse(await fetch('/api/patrol/log'));
+    if (typeof d.running!=='boolean' || !Array.isArray(d.log)) throw new Error('INVALID_PATROL');
     document.getElementById('patrolStatus').textContent = '巡检: '+(d.running?'运行中':'已停止');
     document.getElementById('patrolHint').textContent =
-      d.running ? '⚡ 主动巡检运行中 — AI自主感知环境并自动决策' : '';
-    if (d.log && d.log.length) {
-      let h = '';
-      for(let i=0; i<Math.min(d.log.length,3); i++) {
-        const l = d.log[i];
-        h += `<div style="margin:4px 0;padding:4px 8px;background:#0f1e2c;border-radius:4px;">
-          <b>${l.time}</b> 主动决策${l.auto_decisions}项 | 异常${(l.anomalies||[]).length}项
-          ${l.actions.map(a=>'<br>↳ '+a).join('')}</div>`;
-      }
-      document.getElementById('patrolMini').innerHTML = h || '暂无巡检记录';
+      d.running ? 'PC仿真巡检运行中，传感器数据由网关生成。' : '';
+    let h = '';
+    for (const entry of d.log.slice(0,3)) {
+      if (!isObject(entry) || !Array.isArray(entry.actions) || !Array.isArray(entry.anomalies)) continue;
+      h += `<div style="margin:4px 0;padding:4px 8px;background:#0f1e2c;border-radius:4px;">
+        <b>${escapeHtml(entry.time)}</b> 网关记录 ${escapeHtml(numberText(entry.auto_decisions))} 项 | 异常 ${entry.anomalies.length} 项
+        ${entry.actions.map(a=>'<br>↳ '+escapeHtml(a)).join('')}</div>`;
     }
-  } catch(e) {}
+    document.getElementById('patrolMini').innerHTML = h || '暂无有效巡检记录';
+  } catch(e) {
+    document.getElementById('patrolStatus').textContent = '巡检: 未知';
+    document.getElementById('patrolHint').textContent = '巡检状态未确认';
+    document.getElementById('patrolMini').textContent = '巡检记录未知';
+  }
 }
 
 async function fetchHealth() {
   try {
-    const r = await fetch('/api/health');
-    const d = await r.json();
-    const cloud = d.backends && d.backends['cloud-model'];
-    document.getElementById('llmInfo').textContent = cloud && cloud.ready ? 'cloud-model ready' : 'local-rules fallback';
-  } catch(e) {}
+    const d = await readJsonResponse(await fetch('/api/health'));
+    if (!isObject(d.backends)) throw new Error('INVALID_HEALTH');
+    const lines = ['local-model','cloud-model'].map(name => {
+      const b = isObject(d.backends[name]) ? d.backends[name] : {};
+      const age = isObject(d.endpoint_age_ms) ? d.endpoint_age_ms[name] : undefined;
+      const queue = b.queue_scope==='wrapper_fail_fast_admission' ? b.upstream_queue_ms : b.queue_ms;
+      const source = typeof b.source==='string' ? b.source : 'backend_health_cache';
+      return `${name}: ready=${boolText(b.ready,'true','false')} | reachable=${boolText(b.reachable,'true','false')} | age=${numberText(age,1,'ms')}\n`+
+        `queue=${numberText(queue,1,'ms')} | free_mem=${numberText(b.free_mem_mb,0,'MB')} | source=${source}`;
+    });
+    lines.push('链路来源: '+(typeof d.link_basis==='string' ? d.link_basis : '未知'));
+    document.getElementById('llmInfo').textContent = lines.join('\n');
+  } catch(e) { document.getElementById('llmInfo').textContent = 'local-model: 未知 | cloud-model: 未知\n模型健康与链路来源: 未知'; }
 }
 
 async function triggerPatrol() {
-  appendLog('patrol','🧠 主动巡检','手动触发物理AI环境巡检...');
+  const pending=await beginClientRequest('服务器主动巡检','patrol');
+  if(!pending) return;
+  appendLog('patrol','PC仿真巡检请求','等待网关响应...');
   try {
-    const r = await fetch('/api/patrol/trigger'); const d = await r.json();
-    if (d.report) {
-      appendLog('patrol','🔍 巡检完成',`主动决策 <b>${d.report.auto_decisions}</b> 项 | 异常 <b>${(d.report.anomalies||[]).length}</b> 项`);
-      d.report.actions.forEach(a => appendLog('action','🔄 自动执行', a));
-      d.report.anomalies.forEach(a => appendLog('observe','⚠️ 异常', a));
+    const d = await readJsonResponse(await fetch('/api/patrol/trigger',{method:'POST',headers:{'Content-Type':'application/json'},body:JSON.stringify({context:{session_id:SESSION_ID,command_id:pending.id}})}));
+    if (!isObject(d.report) || !Array.isArray(d.report.actions) || !Array.isArray(d.report.anomalies)) throw new Error('INVALID_PATROL_REPORT');
+    if(pendingFinished(d.report)) clearPending(pending.id);
+    if (d.status!=='ok' || d.report.active!==true || d.report.task_complete!==true || d.report.error) {
+      appendLog('observe','巡检未完成 / 执行未确认',d.report.answer||d.report.error||'未获得全部巡检结果。');
+      return;
     }
+    appendLog('patrol','网关报告巡检完成（PC仿真）',`记录 ${numberText(d.report.auto_decisions)} 项 | 异常 ${d.report.anomalies.length} 项`);
+    d.report.actions.forEach(a => appendLog('action','网关动作报告（PC仿真）', a));
+    d.report.anomalies.forEach(a => appendLog('observe','网关异常报告', a));
     fetchPatrol(); fetchState();
-  } catch(e) { appendLog('observe','⚠️','巡检API未连接'); }
+  } catch(e) { clearState(); appendLog('observe','巡检执行未确认','未获得有效网关响应，请查询设备状态后再操作。'); }
 }
 
 async function sendCmd(cmd) {
   const inp = document.getElementById('cmdInput');
   const text = cmd || inp.value.trim();
   if (!text) return;
+  const pending=await beginClientRequest(text);
+  if(!pending) return;
   if (!cmd) inp.value = '';
 
-  appendLog('thought','🤔 Thought',`分析用户指令: "${text}"`);
+  appendLog('step','用户请求',text);
 
   try {
     const r = await fetch('/api/command', {
       method:'POST', headers:{'Content-Type':'application/json'},
-      body: JSON.stringify({command:text})
+      body: JSON.stringify({command:text,context:{session_id:SESSION_ID,command_id:pending.id}})
     });
-    const d = await r.json();
+    const d = await readJsonResponse(r);
+    if (typeof d.semantic_complete!=='boolean' || typeof d.interface_ok!=='boolean' || !Array.isArray(d.actions) ||
+        !d.actions.every(a => typeof a==='string' || (isObject(a) && typeof a.description==='string'))) {
+      throw new Error('INVALID_COMMAND_RESULT');
+    }
+    if(pendingFinished(d)) clearPending(pending.id);
 
-    if (d.backend) appendLog('observe','🛰️ Offload Route',
-      `backend=${d.backend} | reason=${d.reason || '—'} | total=${(d.latency||{}).total_user_ms ?? '—'}ms`);
-    if (d.thought) appendLog('thought','💭 Thought', d.thought);
-    for (const a of (d.actions||[])) appendLog('action','⚡ Action', a.description);
-    if (d.observation) appendLog('observe','👁️ Observation', d.observation);
-    if (d.answer) appendLog('answer','✅ Final Answer', d.answer);
+    const event = isObject(d.gateway_event) ? d.gateway_event : {};
+    const plannerResponse = isObject(event.response) ? event.response : {};
+    const recovery = isObject(d.recovery) ? d.recovery : isObject(plannerResponse.recovery) ? plannerResponse.recovery : {};
+    const selected = d.selected_backend || event.selected_backend || '未知';
+    const source = d.source || event.source || '未知';
+    const actual = d.actual_backend || plannerResponse.actual_backend || recovery.actual_backend || source;
+    appendLog('observe','网关路由报告',
+      `C初选backend=${selected} | reason=${d.reason || '未知'}\n实际规划来源=${actual} | source=${source}\n网关执行后端=${d.backend || '未知'} | total=${numberText((d.latency||{}).total_user_ms,1,'ms')}`);
+    if (recovery.attempted || recovery.primary_error) {
+      const primaryResponse = isObject(recovery.primary_response) ? recovery.primary_response : {};
+      const primaryStatus = isObject(recovery.primary_status) ? recovery.primary_status : {};
+      appendLog('observe','规划恢复记录',
+        `首端=${recovery.from || '未知'} | 首端错误=${recovery.primary_error || primaryStatus.error || '未知'}\n首端上游错误=${primaryResponse.error || '未知'} | 替代端=${recovery.to || '未知'}\n替代规划尝试=${boolText(recovery.attempted,'是','否')} | reason=${recovery.reason || '未知'}`);
+    }
+    if (typeof d.thought==='string') appendLog('thought','网关说明', d.thought);
+    const complete = d.semantic_complete && d.interface_ok;
+    for (const a of d.actions) appendLog(complete?'action':'observe', complete?'网关动作报告（PC仿真）':'网关返回动作（完成未确认）', typeof a==='string'?a:a.description);
+    if (typeof d.observation==='string') appendLog('observe','网关观测报告（PC仿真）', d.observation);
+    if (complete) {
+      if (typeof d.answer==='string' && d.answer) {
+        const modelReply = String(actual).includes('-model') || String(source).includes('real-model');
+        appendLog('observe', modelReply?'规划器原文（执行前接口答复）':'网关答复原文', d.answer);
+      }
+      appendLog('answer','网关报告完成（PC仿真）','网关已确认本次任务完成，具体动作与观测见上方记录。');
+    } else {
+      appendLog('observe','任务未完成 / 执行未确认', typeof d.answer==='string' ? d.answer : '网关未提供文字回答，请查询设备状态。');
+    }
 
     setTimeout(()=>{ fetchState(); fetchPatrol(); }, 400);
   } catch(e) {
-    // 离线模式
-    simulateLocal(text);
+    clearState();
+    appendLog('observe','执行未确认','未获得有效网关响应，请查询设备状态后再操作。响应丢失时，请求可能已被网关处理。');
   }
-}
-
-function simulateLocal(text) {
-  if (text.includes('冷')) {
-    appendLog('thought','💭 Thought','模糊指令"有点冷"→物理AI先感知环境温度');
-    appendLog('action','⚡ Action','tool_sensor_read(location="客厅") → 查询温度');
-    appendLog('observe','👁️ Observation','[Sensor] 客厅温度=18.5°C，体感偏冷');
-    appendLog('action','⚡ Action','物理AI决策：温度<20°C → 建议开启暖气至22°C');
-    appendLog('answer','✅ 答案','🥶 客厅18.5°C确实偏冷。物理AI已自主判断需升温至22°C。');
-  } else if (text.includes('暗')) {
-    appendLog('thought','💭 Thought','模糊指令"太暗了"→物理AI先查询光照传感器');
-    appendLog('action','⚡ Action','tool_sensor_read→光照=1200lux<3000lux→自动开灯80%');
-    appendLog('observe','👁️ Observation','[Sensor] 光照1200lux | [Light] 已开启80%');
-    appendLog('answer','✅ 答案','💡 光照仅1200lux，已自动开灯80%。感知→决策→执行闭环。');
-  } else if (text.includes('出门')||text.includes('拜拜')) {
-    appendLog('thought','💭 Thought','多设备协同：离家模式启动');
-    appendLog('action','⚡ Action','Step1: sensor_read_all→环境感知');
-    appendLog('action','⚡ Action','Step2: light_control("全屋",关灯)');
-    appendLog('action','⚡ Action','Step3: curtain_control("全屋",关闭)');
-    appendLog('action','⚡ Action','Step4-5: security_control→门窗检查→安防布防');
-    appendLog('answer','✅ 最终','🏠 离家模式已启动！灯光+窗帘+安防多设备协同完成。');
-  } else if (text.includes('闷')||text.includes('透气')) {
-    appendLog('thought','💭 Thought','模糊指令"不透气"→物理AI查询CO2传感器');
-    appendLog('action','⚡ Action','tool_sensor_read→CO2=950ppm>800ppm→自动开窗');
-    appendLog('answer','✅ 答案','🌬️ CO2浓度950ppm偏高，已自动开窗通风。');
-  } else {
-    appendLog('answer','🤔','暂不支持离线模式的完整推理，请启动 bridge_server.py');
-  }
-  fetchState();
 }
 
 function appendLog(type, step, content) {
   const c = document.getElementById('logContainer');
   const d = document.createElement('div');
   d.className = 'log-entry ' + type;
-  d.innerHTML = `<div class="log-step">${step}</div><div class="log-content">${content}</div>`;
+  d.innerHTML = `<div class="log-step">${escapeHtml(step)}</div><div class="log-content">${escapeHtml(content)}</div>`;
   c.appendChild(d); c.scrollTop = c.scrollHeight;
   document.getElementById('lastUpdate').textContent = '更新: '+new Date().toLocaleTimeString();
 }
 
 function renderRooms() {
   const g = document.getElementById('roomGrid'); g.innerHTML = '';
-  const sl = document.getElementById('sensorLoc'); sl.innerHTML = '';
+  const sl = document.getElementById('sensorLoc');
+  const selected = sl.value || '客厅';
+  sl.innerHTML = '';
 
   LOCS.forEach((loc,i) => {
     if (loc==='室外') return;
-    const l = (state.lights||{})[loc]||{is_on:false,brightness:0};
-    const t = (state.temperature||{})[loc]||{temp:25.0,humidity:60.0};
-    const cu = (state.curtains||{})[loc]||{is_open:true,position:100};
-    const s = (state.sensors||{})[loc]||{};
+    const l = roomData('lights',loc), t = roomData('temperature',loc);
+    const cu = roomData('curtains',loc), s = roomData('sensors',loc);
+    const lightKnown = typeof l.is_on==='boolean' && finiteNumber(l.brightness,0,100);
 
     const card = document.createElement('div');
     card.className = 'room-card'+(l.is_on?' active':'');
     card.innerHTML = `
       <div class="room-header">
         <span class="room-name">${ICONS[i]} ${loc}</span>
-        <span style="font-size:10px;color:${l.is_on?'#64d8ff':'#3a4a5a'}">${l.is_on?'🟢':'⚫'}</span>
+        <span style="font-size:10px;color:${l.is_on?'#64d8ff':'#7a8a9a'}">${boolText(l.is_on,'开','关')}</span>
       </div>
       <div class="light-row">
         <span>💡</span>
-        <input class="light-slider" type="range" min="0" max="100" value="${l.brightness}"
+        <input class="light-slider" type="range" min="0" max="100" value="${lightKnown?l.brightness:0}" ${lightKnown?'':'disabled'}
                oninput="updateLight('${loc}',this.value)">
-        <span class="bri-val">${l.brightness}%</span>
+        <span class="bri-val">${numberText(l.brightness,0,'%')}</span>
       </div>
       <div class="sensor-mini">
-        <span class="sensor-tag">🌡️ ${t.temp}°C</span>
-        <span class="sensor-tag">💧 ${t.humidity}%</span>
-        <span class="sensor-tag">🪟 ${cu.is_open?'开':'关'}</span>
+        <span class="sensor-tag">🌡️ ${numberText(t.temp,1,'°C')}</span>
+        <span class="sensor-tag">💧 ${numberText(t.humidity,1,'%')}</span>
+        <span class="sensor-tag">🪟 ${boolText(cu.is_open,'开','关')}</span>
       </div>
       <div class="status-mini">
-        <span style="color:#5a6a7a">👤 ${(s.motion_detected)?'有人':'无人'}</span>
-        <span style="color:${(s.pm25||0)>75?'#f44336':'#5a6a7a'}">PM2.5 ${(s.pm25||0).toFixed(0)}</span>
+        <span style="color:#7a8a9a">👤 ${boolText(s.motion_detected,'有人','无人')}</span>
+        <span style="color:${finiteNumber(s.pm25,0)&&s.pm25>75?'#f44336':'#7a8a9a'}">PM2.5 ${numberText(finiteNumber(s.pm25,0)?s.pm25:undefined)}</span>
       </div>
     `;
-    card.addEventListener('click', e => { if(e.target.tagName!=='INPUT') toggleLight(loc); });
+    card.addEventListener('click', e => { if(lightKnown && e.target.tagName!=='INPUT') toggleLight(loc); });
     g.appendChild(card);
 
     const opt = document.createElement('option'); opt.value = loc; opt.textContent = ICONS[i]+' '+loc;
-    if (loc==='客厅') opt.selected = true;
+    if (loc===selected) opt.selected = true;
     sl.appendChild(opt);
   });
 }
 
 function renderSensorDetail() {
-  const loc = document.getElementById('sensorLoc').value || '客厅';
-  const s = (state.sensors||{})[loc]||{};
-  const sec = (state.security||{mode:'off',armed:false});
+  const selected = document.getElementById('sensorLoc').value;
+  const loc = LOCS.includes(selected) ? selected : '客厅';
+  const s = roomData('sensors',loc);
+  const sec = isObject(state.security) ? state.security : {};
 
   const bars = [
-    {label:'☀️ 光照强度', val:s.illuminance||0, max:80000, unit:'lux',
+    {label:'☀️ 光照强度', val:s.illuminance, max:80000, unit:'lux',
      color: v=>v>50000?'danger':v>20000?'warn':'good'},
-    {label:'🌡️ PM2.5', val:s.pm25||0, max:150, unit:'μg/m³',
+    {label:'🌡️ PM2.5', val:s.pm25, max:150, unit:'μg/m³',
      color: v=>v>75?'danger':v>35?'warn':'good'},
-    {label:'💨 CO2浓度', val:s.co2||0, max:2000, unit:'ppm',
+    {label:'💨 CO2浓度', val:s.co2, max:2000, unit:'ppm',
      color: v=>v>1000?'danger':v>800?'warn':'good'},
-    {label:'🔊 噪音', val:s.noise||0, max:90, unit:'dB',
+    {label:'🔊 噪音', val:s.noise, max:90, unit:'dB',
      color: v=>v>60?'danger':v>45?'warn':'good'},
   ];
 
-  let h = `<div style="margin-bottom:12px;font-size:13px;color:#64d8ff;">📍 ${loc} 物理状态</div>`;
+  let h = `<div style="margin-bottom:12px;font-size:13px;color:#64d8ff;">📍 ${loc} 网关仿真状态</div>`;
   bars.forEach(b => {
-    const pct = Math.min(b.val/b.max*100, 100);
-    const cls = b.color(b.val);
+    const known = finiteNumber(b.val,0);
+    const pct = known ? Math.min(b.val/b.max*100, 100) : 0;
+    const cls = known ? b.color(b.val) : 'info';
     h += `<div class="sensor-bar">
-      <div class="label"><span>${b.label}</span><span style="color:${cls==='danger'?'#f44336':cls==='warn'?'#ffab40':'#4caf50'}">${b.val.toFixed(1)} ${b.unit}</span></div>
+      <div class="label"><span>${b.label}</span><span style="color:${!known?'#7a8a9a':cls==='danger'?'#f44336':cls==='warn'?'#ffab40':'#4caf50'}">${numberText(known?b.val:undefined,1,' '+b.unit)}</span></div>
       <div class="track"><div class="fill ${cls}" style="width:${pct}%"></div></div>
     </div>`;
   });
 
   // 数字→物理映射
   h += `<div style="margin-top:14px;padding:10px;background:#0f1e2c;border-radius:8px;font-size:11px;">
-    <div style="color:#ff9e64;margin-bottom:6px;">🔗 数字→物理映射 (Digital → Physical)</div>`;
-  h += `<div style="color:#7a8a9a;">👤 人体红外: ${s.motion_detected?'<span style="color:#4caf50">检测到人</span>':'<span style="color:#5a6a7a">无人</span>'} → ${s.motion_detected?'保持设备运行':'节能关灯'}</div>`;
-  h += `<div style="color:#7a8a9a;">🚪 门磁: ${s.door_open?'<span style="color:#f44336">门开</span>':'<span style="color:#4caf50">门关</span>'} | 🪟 窗磁: ${s.window_open?'<span style="color:#f44336">窗开</span>':'<span style="color:#4caf50">窗关</span>'}</div>`;
-  h += `<div style="color:#7a8a9a;margin-top:4px;">🔒 安防模式: <b>${sec.mode==='away'?'离家已布防':sec.mode==='off'?'未布防':sec.mode}</b></div>`;
+    <div style="color:#ff9e64;margin-bottom:6px;">网关状态快照（PC仿真）</div>`;
+  h += `<div style="color:#7a8a9a;">👤 人体红外: ${boolText(s.motion_detected,'检测到人','无人')}</div>`;
+  h += `<div style="color:#7a8a9a;">🚪 门磁: ${boolText(s.door_open,'门开','门关')} | 🪟 窗磁: ${boolText(s.window_open,'窗开','窗关')}</div>`;
+  h += `<div style="color:#7a8a9a;margin-top:4px;">🔒 安防模式: <b>${escapeHtml(typeof sec.mode==='string' ? sec.mode : '未知')}</b> | 布防: ${boolText(sec.armed,'是','否')}</div>`;
   h += `</div>`;
 
   document.getElementById('sensorDetail').innerHTML = h;
@@ -402,16 +563,16 @@ function renderSensorDetail() {
   const sg = document.getElementById('sensorGrid'); sg.innerHTML = '';
   LOCS.forEach((loc,i) => {
     if (loc==='室外') return;
-    const s = (state.sensors||{})[loc]||{};
+    const s = roomData('sensors',loc);
     const card = document.createElement('div');
     card.className = 'room-card';
     card.style.padding = '10px';
     card.innerHTML = `
       <div style="font-size:12px;font-weight:600;margin-bottom:6px;">${ICONS[i]} ${loc}</div>
       <div style="font-size:10px;color:#7a8a9a;">
-        ☀️ ${(s.illuminance||0).toFixed(0)}lux | 👤 ${s.motion_detected?'有人':'无人'}<br>
-        PM2.5 ${(s.pm25||0).toFixed(0)} | CO2 ${(s.co2||0).toFixed(0)}<br>
-        🚪${s.door_open?'<span style="color:#f44336">开</span>':'关'} 🪟${s.window_open?'<span style="color:#f44336">开</span>':'关'}
+        ☀️ ${numberText(finiteNumber(s.illuminance,0)?s.illuminance:undefined,0,'lux')} | 👤 ${boolText(s.motion_detected,'有人','无人')}<br>
+        PM2.5 ${numberText(finiteNumber(s.pm25,0)?s.pm25:undefined)} | CO2 ${numberText(finiteNumber(s.co2,0)?s.co2:undefined)}<br>
+        🚪${boolText(s.door_open,'开','关')} 🪟${boolText(s.window_open,'开','关')}
       </div>
     `;
     sg.appendChild(card);
@@ -419,17 +580,19 @@ function renderSensorDetail() {
 }
 
 function updateLight(loc, val) {
+  if (!LOCS.includes(loc) || typeof roomData('lights',loc).is_on!=='boolean' || !finiteNumber(Number(val),0,100)) return;
   sendCmd(val>0 ? `将${loc}灯光调到${val}%` : `关闭${loc}的灯`);
 }
 function toggleLight(loc) {
-  const l = (state.lights||{})[loc]||{is_on:false};
+  const l = roomData('lights',loc);
+  if (!LOCS.includes(loc) || typeof l.is_on!=='boolean') return;
   sendCmd(l.is_on ? `关闭${loc}的灯` : `打开${loc}的灯`);
 }
 
-// 每2秒刷新状态 + 巡检日志
+// 每2.5秒刷新；连接失败必须显式恢复未知状态。
 setInterval(()=>{ fetchState(); fetchPatrol(); fetchHealth(); }, 2500);
 fetchState(); fetchPatrol(); fetchHealth();
-renderSensorDetail();
+renderRooms(); renderSensorDetail();
 </script>
 </body>
 </html>

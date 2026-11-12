@@ -1,0 +1,196 @@
+✖ fetch rejection does not fabricate an action (28.967ms)
+✖ HTTP 503 with success-looking body does not fabricate an action (1.5729ms)
+✖ malformed JSON does not fabricate an action (1.5519ms)
+✖ business failure remains unconfirmed and does not label its answer success (2.3643ms)
+✖ only structured successful gateway result can report completion; output is escaped (1.4512ms)
+✖ HTTP200 invalid result is not trusted (1.3695ms)
+✖ state HTTP failure and invalid schema clear confirmation rather than invent defaults (3.8923ms)
+✖ missing sensors do not display fake zero or absence (1.5813ms)
+✖ health shows both endpoints and unknown telemetry, including failed transport (1.7313ms)
+ℹ tests 9
+ℹ suites 0
+ℹ pass 0
+ℹ fail 9
+ℹ cancelled 0
+ℹ skipped 0
+ℹ todo 0
+ℹ duration_ms 177.838
+
+✖ failing tests:
+
+test at docs\demo_v3\dashboard\test_dashboard.cjs:34:4
+✖ fetch rejection does not fabricate an action (28.967ms)
+  AssertionError [ERR_ASSERTION]: Expected values to be strictly equal:
+  
+  1 !== 0
+  
+      at TestContext.<anonymous> (C:\Users\郑傅韬\Desktop\大学生活\AIC\AIC6G专项赛_2026\场景赛道\docs\demo_v3\dashboard\test_dashboard.cjs:37:30)
+      at async Test.run (node:internal/test_runner/test:1113:7)
+      at async startSubtestAfterBootstrap (node:internal/test_runner/harness:358:3) {
+    generatedMessage: true,
+    code: 'ERR_ASSERTION',
+    actual: 1,
+    expected: 0,
+    operator: 'strictEqual',
+    diff: 'simple'
+  }
+
+test at docs\demo_v3\dashboard\test_dashboard.cjs:34:4
+✖ HTTP 503 with success-looking body does not fabricate an action (1.5729ms)
+  AssertionError [ERR_ASSERTION]: Expected values to be strictly equal:
+  
+  1 !== 0
+  
+      at TestContext.<anonymous> (C:\Users\郑傅韬\Desktop\大学生活\AIC\AIC6G专项赛_2026\场景赛道\docs\demo_v3\dashboard\test_dashboard.cjs:37:30)
+      at async Test.run (node:internal/test_runner/test:1113:7)
+      at async Test.processPendingSubtests (node:internal/test_runner/test:788:7) {
+    generatedMessage: true,
+    code: 'ERR_ASSERTION',
+    actual: 1,
+    expected: 0,
+    operator: 'strictEqual',
+    diff: 'simple'
+  }
+
+test at docs\demo_v3\dashboard\test_dashboard.cjs:34:4
+✖ malformed JSON does not fabricate an action (1.5519ms)
+  AssertionError [ERR_ASSERTION]: Expected values to be strictly equal:
+  
+  1 !== 0
+  
+      at TestContext.<anonymous> (C:\Users\郑傅韬\Desktop\大学生活\AIC\AIC6G专项赛_2026\场景赛道\docs\demo_v3\dashboard\test_dashboard.cjs:37:30)
+      at async Test.run (node:internal/test_runner/test:1113:7)
+      at async Test.processPendingSubtests (node:internal/test_runner/test:788:7) {
+    generatedMessage: true,
+    code: 'ERR_ASSERTION',
+    actual: 1,
+    expected: 0,
+    operator: 'strictEqual',
+    diff: 'simple'
+  }
+
+test at docs\demo_v3\dashboard\test_dashboard.cjs:43:1
+✖ business failure remains unconfirmed and does not label its answer success (2.3643ms)
+  AssertionError [ERR_ASSERTION]: The input did not match the regular expression /未完成/. Input:
+  
+  '<div class="log-step">🤔 Thought</div><div class="log-content">分析用户指令: "有点暗"</div>\n' +
+    '<div class="log-step">✅ Final Answer</div><div class="log-content">请指定房间</div>'
+  
+      at TestContext.<anonymous> (C:\Users\郑傅韬\Desktop\大学生活\AIC\AIC6G专项赛_2026\场景赛道\docs\demo_v3\dashboard\test_dashboard.cjs:46:37)
+      at async Test.run (node:internal/test_runner/test:1113:7)
+      at async Test.processPendingSubtests (node:internal/test_runner/test:788:7) {
+    generatedMessage: true,
+    code: 'ERR_ASSERTION',
+    actual: '<div class="log-step">🤔 Thought</div><div class="log-content">分析用户指令: "有点暗"</div>\n<div class="log-step">✅ Final Answer</div><div class="log-content">请指定房间</div>',
+    expected: /未完成/,
+    operator: 'match',
+    diff: 'simple'
+  }
+
+test at docs\demo_v3\dashboard\test_dashboard.cjs:49:1
+✖ only structured successful gateway result can report completion; output is escaped (1.4512ms)
+  AssertionError [ERR_ASSERTION]: The input did not match the regular expression /网关报告完成/. Input:
+  
+  '<div class="log-step">🤔 Thought</div><div class="log-content">分析用户指令: "<img onerror=evil()>"</div>\n' +
+    '<div class="log-step">🛰️ Offload Route</div><div class="log-content">backend=local-rules | reason=<script>bad</script> | total=—ms</div>\n' +
+    '<div class="log-step">⚡ Action</div><div class="log-content"><img src=x onerror=bad()></div>\n' +
+    '<div class="log-step">✅ Final Answer</div><div class="log-content"><b>已完成</b></div>'
+  
+      at TestContext.<anonymous> (C:\Users\郑傅韬\Desktop\大学生活\AIC\AIC6G专项赛_2026\场景赛道\docs\demo_v3\dashboard\test_dashboard.cjs:52:10)
+      at async Test.run (node:internal/test_runner/test:1113:7)
+      at async Test.processPendingSubtests (node:internal/test_runner/test:788:7) {
+    generatedMessage: true,
+    code: 'ERR_ASSERTION',
+    actual: '<div class="log-step">🤔 Thought</div><div class="log-content">分析用户指令: "<img onerror=evil()>"</div>\n<div class="log-step">🛰️ Offload Route</div><div class="log-content">backend=local-rules | reason=<script>bad</script> | total=—ms</div>\n<div class="log-step">⚡ Action</div><div class="log-content"><img src=x onerror=bad()></div>\n<div class="log-step">✅ Final Answer</div><div class="log-content"><b>已完成</b></div>',
+    expected: /网关报告完成/,
+    operator: 'match',
+    diff: 'simple'
+  }
+
+test at docs\demo_v3\dashboard\test_dashboard.cjs:56:1
+✖ HTTP200 invalid result is not trusted (1.3695ms)
+  AssertionError [ERR_ASSERTION]: The input did not match the regular expression /执行未确认/. Input:
+  
+  '<div class="log-step">🤔 Thought</div><div class="log-content">分析用户指令: "开灯"</div>\n' +
+    '<div class="log-step">⚡ Action</div><div class="log-content">undefined</div>\n' +
+    '<div class="log-step">⚡ Action</div><div class="log-content">undefined</div>\n' +
+    '<div class="log-step">⚡ Action</div><div class="log-content">undefined</div>\n' +
+    '<div class="log-step">⚡ Action</div><div class="log-content">undefined</div>\n' +
+    '<div class="log-step">✅ Final Answer</div><div class="log-content">成功</div>'
+  
+      at TestContext.<anonymous> (C:\Users\郑傅韬\Desktop\大学生活\AIC\AIC6G专项赛_2026\场景赛道\docs\demo_v3\dashboard\test_dashboard.cjs:58:40)
+      at async Test.run (node:internal/test_runner/test:1113:7)
+      at async Test.processPendingSubtests (node:internal/test_runner/test:788:7) {
+    generatedMessage: true,
+    code: 'ERR_ASSERTION',
+    actual: '<div class="log-step">🤔 Thought</div><div class="log-content">分析用户指令: "开灯"</div>\n<div class="log-step">⚡ Action</div><div class="log-content">undefined</div>\n<div class="log-step">⚡ Action</div><div class="log-content">undefined</div>\n<div class="log-step">⚡ Action</div><div class="log-content">undefined</div>\n<div class="log-step">⚡ Action</div><div class="log-content">undefined</div>\n<div class="log-step">✅ Final Answer</div><div class="log-content">成功</div>',
+    expected: /执行未确认/,
+    operator: 'match',
+    diff: 'simple'
+  }
+
+test at docs\demo_v3\dashboard\test_dashboard.cjs:62:1
+✖ state HTTP failure and invalid schema clear confirmation rather than invent defaults (3.8923ms)
+  AssertionError [ERR_ASSERTION]: Expected values to be strictly equal:
+  + actual - expected
+  
+  + '{"error":"not ready"}'
+  - '{}'
+  
+      at TestContext.<anonymous> (C:\Users\郑傅韬\Desktop\大学生活\AIC\AIC6G专项赛_2026\场景赛道\docs\demo_v3\dashboard\test_dashboard.cjs:66:10)
+      at async Test.run (node:internal/test_runner/test:1113:7)
+      at async Test.processPendingSubtests (node:internal/test_runner/test:788:7) {
+    generatedMessage: true,
+    code: 'ERR_ASSERTION',
+    actual: '{"error":"not ready"}',
+    expected: '{}',
+    operator: 'strictEqual',
+    diff: 'simple'
+  }
+
+test at docs\demo_v3\dashboard\test_dashboard.cjs:73:1
+✖ missing sensors do not display fake zero or absence (1.5813ms)
+  AssertionError [ERR_ASSERTION]: The input did not match the regular expression /未知/. Input:
+  
+  '<div style="margin-bottom:12px;font-size:13px;color:#64d8ff;">📍 客厅 物理状态</div><div class="sensor-bar">\n' +
+    '      <div class="label"><span>☀️ 光照强度</span><span style="color:#4caf50">0.0 lux</span></div>\n' +
+    '      <div class="track"><div class="fill good" style="width:0%"></div></div>\n' +
+    '    </div><div class="sensor-bar">\n' +
+    '      <div class="label"><span>🌡️ PM2.5</span><span style="color:#4caf50">0.0 μg/m³</span></div>\n' +
+    '      <div class="track"><div class="fill good" style="width:0%"></div></div>\n' +
+    '    </div><div class="sensor-bar">\n' +
+    '      <div class="label"><span>💨 CO2浓度</span><span style="color:#4caf50">0.0 ppm</span></div>\n' +
+    '      <div class="track"><div class="fill good" style="width:0%"></div></div>\n' +
+    '    </div><div class="sensor-bar">\n' +
+    '      <div class="label"><span>🔊 噪音</span><span style="color:#4caf50">0.0 dB</span></div>\n' +
+    '      <div class="track"><div class="fill good" style="width:0%"></div></div>\n' +
+    '    </div><div style="margin-top:14px;padding:10px;background:#0f1e2c;border-radius:8px;font-size:11px;">\n' +
+    '    <div style="color:#ff9e64;margin-bottom:6px;">🔗 数字→物理映射 (Digital → Physical)</div><div style="color:#7a8a9a;">👤 人体红外: <span style="color:#5a6a7a">无人</span> → 节能关灯</div><div style="color:#7a8a9a;">🚪 门磁: <span style="color:#4caf50">门关</span> | 🪟 窗磁: <span style="color:#4caf50">窗关</span></div><div style="color:#7a8a9a;margin-top:4px;">🔒 安防模式: <b>undefined</b></div></div>'
+  
+      at TestContext.<anonymous> (C:\Users\郑傅韬\Desktop\大学生活\AIC\AIC6G专项赛_2026\场景赛道\docs\demo_v3\dashboard\test_dashboard.cjs:75:10)
+      at async Test.run (node:internal/test_runner/test:1113:7)
+      at async Test.processPendingSubtests (node:internal/test_runner/test:788:7) {
+    generatedMessage: true,
+    code: 'ERR_ASSERTION',
+    actual: '<div style="margin-bottom:12px;font-size:13px;color:#64d8ff;">📍 客厅 物理状态</div><div class="sensor-bar">\n      <div class="label"><span>☀️ 光照强度</span><span style="color:#4caf50">0.0 lux</span></div>\n      <div class="track"><div class="fill good" style="width:0%"></div></div>\n    </div><div class="sensor-bar">\n      <div class="label"><span>🌡️ PM2.5</span><span style="color:#4caf50">0.0 μg/m³</span></div>\n      <div class="track"><div class="fill good" style="width:0%"></div></div>\n    </div><div class="sensor-bar">\n      <div class="label"><span>💨 CO2浓度</span><span style="color:#4caf50">0.0 ppm</span></div>\n      <div class="track"><div class="fill good" style="width:0%"></div></div>\n    </div><div class="sensor-bar">\n      <div class="label"><span>🔊 噪音</span><span style="color:#4caf50">0.0 dB</span></div>\n      <div class="track"><div class="fill good" style="width:0%"></div></div>\n    </div><div style="margin-top:14px;padding:10px;background:#0f1e2c;border-radius:8px;font-size:11px;">\n    <div style="color:#ff9e64;margin-bottom:6px;">🔗 数字→物理映射 (Digital → Physical)</div><div style="color:#7a8a9a;">👤 人体红外: <span style="color:#5a6a7a">无人</span> → 节能关灯</div><div style="color:#7a8a9a;">🚪 门磁: <span style="color:#4caf50">门关</span> | 🪟 窗磁: <span style="color:#4caf50">窗关</span></div><div style="color:#7a8a9a;margin-top:4px;">🔒 安防模式: <b>undefined</b></div></div>',
+    expected: /未知/,
+    operator: 'match',
+    diff: 'simple'
+  }
+
+test at docs\demo_v3\dashboard\test_dashboard.cjs:79:1
+✖ health shows both endpoints and unknown telemetry, including failed transport (1.7313ms)
+  AssertionError [ERR_ASSERTION]: The input did not match the regular expression /local-model/. Input:
+  
+  'local-rules fallback'
+  
+      at TestContext.<anonymous> (C:\Users\郑傅韬\Desktop\大学生活\AIC\AIC6G专项赛_2026\场景赛道\docs\demo_v3\dashboard\test_dashboard.cjs:82:10)
+      at async Test.run (node:internal/test_runner/test:1113:7)
+      at async Test.processPendingSubtests (node:internal/test_runner/test:788:7) {
+    generatedMessage: true,
+    code: 'ERR_ASSERTION',
+    actual: 'local-rules fallback',
+    expected: /local-model/,
+    operator: 'match',
+    diff: 'simple'
+  }

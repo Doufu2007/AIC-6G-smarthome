@@ -1,0 +1,269 @@
+{
+  "schema": "sensehome.post-health-failure-registration.v3",
+  "registered_at_utc": "2026-11-11T02:52:36.105934+00:00",
+  "startup_amendment": {
+    "previous_attempt": "docs/experiments/20261111_race_v3",
+    "previous_registration_sha256": "5c8abb6c0ce149af83db02cd551714a7b585596fc69d6be6ab05c9eae5b013c4",
+    "reason": "Windows excluded ports prevented first service bind. No model POST or evaluation rows existed. Change ports only and bind preflight; same design, inputs, models, prompt, policy and scoring."
+  },
+  "planned_rows": 36,
+  "paired_blocks": 18,
+  "schedule": [
+    {
+      "condition": "healthy",
+      "repeat": 0,
+      "case_id": "C01",
+      "arms": [
+        "baseline",
+        "recovery"
+      ]
+    },
+    {
+      "condition": "healthy",
+      "repeat": 0,
+      "case_id": "C04",
+      "arms": [
+        "recovery",
+        "baseline"
+      ]
+    },
+    {
+      "condition": "healthy",
+      "repeat": 1,
+      "case_id": "C01",
+      "arms": [
+        "recovery",
+        "baseline"
+      ]
+    },
+    {
+      "condition": "healthy",
+      "repeat": 1,
+      "case_id": "C04",
+      "arms": [
+        "baseline",
+        "recovery"
+      ]
+    },
+    {
+      "condition": "healthy",
+      "repeat": 2,
+      "case_id": "C01",
+      "arms": [
+        "baseline",
+        "recovery"
+      ]
+    },
+    {
+      "condition": "healthy",
+      "repeat": 2,
+      "case_id": "C04",
+      "arms": [
+        "recovery",
+        "baseline"
+      ]
+    },
+    {
+      "condition": "local_post503",
+      "repeat": 0,
+      "case_id": "C01",
+      "arms": [
+        "baseline",
+        "recovery"
+      ]
+    },
+    {
+      "condition": "local_post503",
+      "repeat": 0,
+      "case_id": "C04",
+      "arms": [
+        "recovery",
+        "baseline"
+      ]
+    },
+    {
+      "condition": "local_post503",
+      "repeat": 1,
+      "case_id": "C01",
+      "arms": [
+        "recovery",
+        "baseline"
+      ]
+    },
+    {
+      "condition": "local_post503",
+      "repeat": 1,
+      "case_id": "C04",
+      "arms": [
+        "baseline",
+        "recovery"
+      ]
+    },
+    {
+      "condition": "local_post503",
+      "repeat": 2,
+      "case_id": "C01",
+      "arms": [
+        "baseline",
+        "recovery"
+      ]
+    },
+    {
+      "condition": "local_post503",
+      "repeat": 2,
+      "case_id": "C04",
+      "arms": [
+        "recovery",
+        "baseline"
+      ]
+    },
+    {
+      "condition": "both_post503",
+      "repeat": 0,
+      "case_id": "C01",
+      "arms": [
+        "baseline",
+        "recovery"
+      ]
+    },
+    {
+      "condition": "both_post503",
+      "repeat": 0,
+      "case_id": "C04",
+      "arms": [
+        "recovery",
+        "baseline"
+      ]
+    },
+    {
+      "condition": "both_post503",
+      "repeat": 1,
+      "case_id": "C01",
+      "arms": [
+        "recovery",
+        "baseline"
+      ]
+    },
+    {
+      "condition": "both_post503",
+      "repeat": 1,
+      "case_id": "C04",
+      "arms": [
+        "baseline",
+        "recovery"
+      ]
+    },
+    {
+      "condition": "both_post503",
+      "repeat": 2,
+      "case_id": "C01",
+      "arms": [
+        "baseline",
+        "recovery"
+      ]
+    },
+    {
+      "condition": "both_post503",
+      "repeat": 2,
+      "case_id": "C04",
+      "arms": [
+        "recovery",
+        "baseline"
+      ]
+    }
+  ],
+  "cases": [
+    {
+      "id": "C01",
+      "category": "implicit",
+      "command": "客厅有点暗",
+      "expected_actions": [
+        {
+          "name": "light_control",
+          "params": {
+            "location": "客厅",
+            "brightness": 60
+          }
+        }
+      ],
+      "human_reviewed": true,
+      "label_source": "human_reviewed_freeze_20261103"
+    },
+    {
+      "id": "C04",
+      "category": "multi_intent",
+      "command": "关闭书房的灯并打开书房窗帘",
+      "expected_actions": [
+        {
+          "name": "light_control",
+          "params": {
+            "location": "书房",
+            "action": "off"
+          }
+        },
+        {
+          "name": "curtain_control",
+          "params": {
+            "location": "书房",
+            "action": "open"
+          }
+        }
+      ],
+      "human_reviewed": true,
+      "label_source": "human_reviewed_freeze_20261103"
+    }
+  ],
+  "case_source_sha256": "3a2d50c6dca46712df5b1c26fdf6fbcfa0f76a79164b9c99f3cc07be9d7e0b06",
+  "policy_config": {
+    "schema_version": "sensehome.policy.v1",
+    "queue_max_ms": 300,
+    "inflight_max": 8,
+    "free_mem_min_mb": 256,
+    "local_infer_ms": 1116,
+    "cloud_infer_ms": 1361,
+    "switch_margin_ms": 15,
+    "recovery_samples": 3,
+    "timeout_ms": 800,
+    "observation_max_age_ms": 2000,
+    "observation_lookup_ms": 0.2,
+    "policy_model_ms": 0.2,
+    "execution_model_ms": 0.1,
+    "rule_model_ms": 1
+  },
+  "calibration_source": "unchanged v1 1116/1361ms",
+  "recovery_launch_budget_ms": 10000,
+  "source_sha256": {
+    "docs/demo_v3/planning_recovery.py": "5706f7514fec3ea4454d6d7fa4eebab769c64e2a60bd68bcca1de680e8c8f553",
+    "docs/demo_v3/race_matrix.py": "7c6721b70a724c4b03fb23533dcec8ad45876c329109c3716a388962b468f862",
+    "docs/demo_v3/runtime.py": "330a01159f79dda885c8acd137607d111b59ad959676689548039fb47c291ac5",
+    "docs/demo_v3/local_models.json": "45fa69de5595770100289bece32065f78d3c5783808192082c3d8d4b24af0b45",
+    "docs/deployment/fused_eval.py": "37c8060aea5ee827a871a2b2624fc64f9134fbd125d8a15d0dc2ba7a046d14ca",
+    "SenseHome-6G/net_offload/offload_gateway.py": "d9f63dc5b6ffe73266777d8100e29842fce2d13005fd08baee8c997bf36793ef",
+    "SenseHome-6G/net_offload/resource_policy.py": "84a924664541b2e21458fa4e78130b1d31ee4e5f16ff6e859d11d951c23b3593",
+    "SenseHome-6G/net_offload/offload_policy.c": "58a772ddf879bb14480a3d715ac97b34fc64f811274a4a76a66c123f2c8f8135",
+    "SenseHome-6G/net_offload/offload_policy.h": "304ff38f9685bbd7bbf7fd2c2602dcf19e9c74a25d127b9f1070aa749c891702",
+    "SenseHome-6G/net_offload/policy_cli.c": "c88b50574b5b29a9bca81fe46bab26d7f8e6710edf24e514ee0c632349af82b8",
+    "SenseHome-6G/net_offload/backends/openai_backend.py": "c8e82dc2f9693cede4417fc73df9e487266aea400b6aca7c0978155a58e3d7d5",
+    "SenseHome-6G/net_offload/eval_model.py": "2e6bd2f615590d3639061c59bcb8d8012fba9916a5130a3148b03283544c1395",
+    "openvela_smart_home/dashboard/bridge_server.py": "16c0edf80492483464f9796a678cfce9f2f91a284db83fba6758720bd1785770",
+    "openvela_smart_home/dashboard/device_actions.py": "b639e8e294e03a0171cea74ceaa2d9f2bae5c26166f019908e93af0265865698",
+    "SenseHome-6G/net_offload/policy_cli.exe": "04c8f57dd7c26a8168540c67410f9e5a63f4e818c3c5a97841c1510f6a2db72e",
+    "docs/deployment/real_fault_eval_v2.py": "1af0fa45ae1710c842375ebae699a5ea552518be6bc3ff62f5f2a3fbbd5c90f5",
+    "SenseHome-6G/net_offload/backends/eval_commands.reviewed.jsonl": "3a2d50c6dca46712df5b1c26fdf6fbcfa0f76a79164b9c99f3cc07be9d7e0b06",
+    "SenseHome-6G/net_offload/experiments/policy_config.json": "d76b772582fdf8d5b6417c77b55870a61b747fd797d290eb9b32b91cbd500449",
+    "SenseHome-6G/net_offload/experiments/service_profiles.json": "f258c15b35db282c5c7065857b842e3b3b65ed8f5a5d81cff692494b1dd99da7",
+    "docs/experiments/20261111_fused_real/reviewed_20_sealed_repeat3/calibration.json": "d30a6d3db818f044572cce3a4c0c49eebb8bcd9e37fbe0ec679ad1c8079c234f"
+  },
+  "manipulation": "For each block, both proxies healthy during actual GET /models; only afterward switch local or both proxies to POST503. GET /models continues forwarding inventory; no health or C observation override.",
+  "comparison": "Original C joint selection and original gateway in both arms. Recovery arm adds one eligible alternate planner before the gateway execution contract. Arm order alternates; state resets each arm; independent C instances per arm and condition.",
+  "primary_outcome": "frozen nonempty task completion + simulation state confirmation without gateway fallback/error",
+  "secondary": [
+    "model POST/503 attempts",
+    "once-only executor call count",
+    "all-request gateway wall time",
+    "actual planning source"
+  ],
+  "warmup": "one model POST per actual model before matrix, using a fixed non-evaluation command; separate file",
+  "stop_rule": "one registered run; preserve all failures; no post-result config/prompt/model/label optimization",
+  "scope": "Two previously reviewed commands repeated, same PC/GPU, software proxy POST failures, JSON devices; not user generalization, real WAN, service crash or 6G."
+}

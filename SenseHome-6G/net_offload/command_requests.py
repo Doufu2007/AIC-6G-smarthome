@@ -37,6 +37,8 @@ class RequestJournal:
         self.path = Path(path).resolve()
         self.path.parent.mkdir(parents=True, exist_ok=True)
         with closing(self._connect()) as db, db:
+            # Serialize schema inspection with ALTER across independent starts.
+            db.execute('BEGIN IMMEDIATE')
             db.execute('CREATE TABLE IF NOT EXISTS requests (command_id TEXT PRIMARY KEY, '
                        'request_hash TEXT NOT NULL, command TEXT NOT NULL, context_json TEXT NOT NULL, '
                        'result_json TEXT, created_at REAL NOT NULL, updated_at REAL NOT NULL)')

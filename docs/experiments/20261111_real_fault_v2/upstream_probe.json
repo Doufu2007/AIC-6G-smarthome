@@ -1,0 +1,131 @@
+{
+  "checked_at": "2026-11-10T19:58:39.652667+00:00",
+  "probes": {
+    "local": {
+      "started_at": "2026-11-10T19:58:39.639900+00:00",
+      "method": "GET",
+      "path": "models",
+      "request": null,
+      "http_status": 200,
+      "response": {
+        "models": [
+          {
+            "name": "Qwen2.5-1.5B-Instruct-Q4_K_M",
+            "model": "Qwen2.5-1.5B-Instruct-Q4_K_M",
+            "modified_at": "",
+            "size": "",
+            "digest": "",
+            "type": "model",
+            "description": "",
+            "tags": [
+              ""
+            ],
+            "capabilities": [
+              "completion"
+            ],
+            "parameters": "",
+            "details": {
+              "parent_model": "",
+              "format": "gguf",
+              "family": "",
+              "families": [
+                ""
+              ],
+              "parameter_size": "",
+              "quantization_level": ""
+            }
+          }
+        ],
+        "object": "list",
+        "data": [
+          {
+            "id": "Qwen2.5-1.5B-Instruct-Q4_K_M",
+            "aliases": [
+              "Qwen2.5-1.5B-Instruct-Q4_K_M"
+            ],
+            "tags": [],
+            "object": "model",
+            "created": 1794340719,
+            "owned_by": "llamacpp",
+            "meta": {
+              "vocab_type": true,
+              "n_vocab": 151936,
+              "n_ctx": 2048,
+              "n_ctx_train": 32768,
+              "n_embd": 1536,
+              "n_params": 1777088000,
+              "size": 1111370240,
+              "ftype": "Q4_K - Medium"
+            }
+          }
+        ]
+      },
+      "response_text": "{\"models\":[{\"name\":\"Qwen2.5-1.5B-Instruct-Q4_K_M\",\"model\":\"Qwen2.5-1.5B-Instruct-Q4_K_M\",\"modified_at\":\"\",\"size\":\"\",\"digest\":\"\",\"type\":\"model\",\"description\":\"\",\"tags\":[\"\"],\"capabilities\":[\"completion\"],\"parameters\":\"\",\"details\":{\"parent_model\":\"\",\"format\":\"gguf\",\"family\":\"\",\"families\":[\"\"],\"parameter_size\":\"\",\"quantization_level\":\"\"}}],\"object\":\"list\",\"data\":[{\"id\":\"Qwen2.5-1.5B-Instruct-Q4_K_M\",\"aliases\":[\"Qwen2.5-1.5B-Instruct-Q4_K_M\"],\"tags\":[],\"object\":\"model\",\"created\":1794340719,\"owned_by\":\"llamacpp\",\"meta\":{\"vocab_type\":true,\"n_vocab\":151936,\"n_ctx\":2048,\"n_ctx_train\":32768,\"n_embd\":1536,\"n_params\":1777088000,\"size\":1111370240,\"ftype\":\"Q4_K - Medium\"}}]}",
+      "error": null,
+      "wall_ms": 10.823
+    },
+    "cloud": {
+      "started_at": "2026-11-10T19:58:39.651009+00:00",
+      "method": "GET",
+      "path": "models",
+      "request": null,
+      "http_status": 200,
+      "response": {
+        "models": [
+          {
+            "name": "Qwen3-4B-Q4_K_M",
+            "model": "Qwen3-4B-Q4_K_M",
+            "modified_at": "",
+            "size": "",
+            "digest": "",
+            "type": "model",
+            "description": "",
+            "tags": [
+              ""
+            ],
+            "capabilities": [
+              "completion"
+            ],
+            "parameters": "",
+            "details": {
+              "parent_model": "",
+              "format": "gguf",
+              "family": "",
+              "families": [
+                ""
+              ],
+              "parameter_size": "",
+              "quantization_level": ""
+            }
+          }
+        ],
+        "object": "list",
+        "data": [
+          {
+            "id": "Qwen3-4B-Q4_K_M",
+            "aliases": [
+              "Qwen3-4B-Q4_K_M"
+            ],
+            "tags": [],
+            "object": "model",
+            "created": 1794340719,
+            "owned_by": "llamacpp",
+            "meta": {
+              "vocab_type": true,
+              "n_vocab": 151936,
+              "n_ctx": 2048,
+              "n_ctx_train": 40960,
+              "n_embd": 2560,
+              "n_params": 4022468096,
+              "size": 2491323904,
+              "ftype": "Q4_K - Medium"
+            }
+          }
+        ]
+      },
+      "response_text": "{\"models\":[{\"name\":\"Qwen3-4B-Q4_K_M\",\"model\":\"Qwen3-4B-Q4_K_M\",\"modified_at\":\"\",\"size\":\"\",\"digest\":\"\",\"type\":\"model\",\"description\":\"\",\"tags\":[\"\"],\"capabilities\":[\"completion\"],\"parameters\":\"\",\"details\":{\"parent_model\":\"\",\"format\":\"gguf\",\"family\":\"\",\"families\":[\"\"],\"parameter_size\":\"\",\"quantization_level\":\"\"}}],\"object\":\"list\",\"data\":[{\"id\":\"Qwen3-4B-Q4_K_M\",\"aliases\":[\"Qwen3-4B-Q4_K_M\"],\"tags\":[],\"object\":\"model\",\"created\":1794340719,\"owned_by\":\"llamacpp\",\"meta\":{\"vocab_type\":true,\"n_vocab\":151936,\"n_ctx\":2048,\"n_ctx_train\":40960,\"n_embd\":2560,\"n_params\":4022468096,\"size\":2491323904,\"ftype\":\"Q4_K - Medium\"}}]}",
+      "error": null,
+      "wall_ms": 1.444
+    }
+  }
+}

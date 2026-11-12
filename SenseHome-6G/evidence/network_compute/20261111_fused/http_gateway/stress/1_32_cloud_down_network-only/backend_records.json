@@ -1,0 +1,2238 @@
+{
+  "local": [
+    {
+      "endpoint": "local",
+      "trace_index": 0,
+      "request_key": "stress:20261119:cloud_down:5:32:1:network-only",
+      "status": 200,
+      "source": "live_stub_queue",
+      "measured_handler_ms": 17.61659999465337,
+      "injected_serialization_ms": 0.07416,
+      "result": {
+        "answer": "fixed planner stub",
+        "measured_queue_ms": 0.008899995009414852,
+        "measured_service_ms": 12.739300000248477,
+        "injected_service_ms": 12,
+        "actions": [
+          {
+            "name": "light_control",
+            "params": {
+              "location": "\u5ba2\u5385",
+              "brightness": 75
+            }
+          }
+        ],
+        "semantic_complete": false,
+        "source": "http-contract-fixture-not-AI",
+        "model_ms": 12.739300000248477,
+        "measured_fixture_network_delay_ms": 3.5356000007595867,
+        "experiment_request_key": "stress:20261119:cloud_down:5:32:1:network-only"
+      }
+    },
+    {
+      "endpoint": "local",
+      "trace_index": 0,
+      "request_key": "stress:20261119:cloud_down:15:32:1:network-only",
+      "status": 200,
+      "source": "live_stub_queue",
+      "measured_handler_ms": 17.54849999997532,
+      "injected_serialization_ms": 0.07536,
+      "result": {
+        "answer": "fixed planner stub",
+        "measured_queue_ms": 0.013700002455152571,
+        "measured_service_ms": 12.827599995944183,
+        "injected_service_ms": 12,
+        "actions": [
+          {
+            "name": "light_control",
+            "params": {
+              "location": "\u5ba2\u5385",
+              "brightness": 75
+            }
+          }
+        ],
+        "semantic_complete": false,
+        "source": "http-contract-fixture-not-AI",
+        "model_ms": 12.827599995944183,
+        "measured_fixture_network_delay_ms": 3.3760000005713664,
+        "experiment_request_key": "stress:20261119:cloud_down:15:32:1:network-only"
+      }
+    },
+    {
+      "endpoint": "local",
+      "trace_index": 0,
+      "request_key": "stress:20261119:cloud_down:11:32:1:network-only",
+      "status": 200,
+      "source": "live_stub_queue",
+      "measured_handler_ms": 20.61400000093272,
+      "injected_serialization_ms": 0.07488,
+      "result": {
+        "answer": "fixed planner stub",
+        "measured_queue_ms": 4.514100000960752,
+        "measured_service_ms": 12.08799999585608,
+        "injected_service_ms": 12,
+        "actions": [
+          {
+            "name": "light_control",
+            "params": {
+              "location": "\u5ba2\u5385",
+              "brightness": 75
+            }
+          }
+        ],
+        "semantic_complete": false,
+        "source": "http-contract-fixture-not-AI",
+        "model_ms": 12.08799999585608,
+        "measured_fixture_network_delay_ms": 3.091799997491762,
+        "experiment_request_key": "stress:20261119:cloud_down:11:32:1:network-only"
+      }
+    },
+    {
+      "endpoint": "local",
+      "trace_index": 0,
+      "request_key": "stress:20261119:cloud_down:20:32:1:network-only",
+      "status": 200,
+      "source": "live_stub_queue",
+      "measured_handler_ms": 22.10380000178702,
+      "injected_serialization_ms": 0.07504,
+      "result": {
+        "answer": "fixed planner stub",
+        "measured_queue_ms": 4.485299999942072,
+        "measured_service_ms": 12.562999996589497,
+        "injected_service_ms": 12,
+        "actions": [
+          {
+            "name": "light_control",
+            "params": {
+              "location": "\u5ba2\u5385",
+              "brightness": 75
+            }
+          }
+        ],
+        "semantic_complete": false,
+        "source": "http-contract-fixture-not-AI",
+        "model_ms": 12.562999996589497,
+        "measured_fixture_network_delay_ms": 3.708199998072814,
+        "experiment_request_key": "stress:20261119:cloud_down:20:32:1:network-only"
+      }
+    },
+    {
+      "endpoint": "local",
+      "trace_index": 0,
+      "request_key": "stress:20261119:cloud_down:25:32:1:network-only",
+      "status": 200,
+      "source": "live_stub_queue",
+      "measured_handler_ms": 25.96629999607103,
+      "injected_serialization_ms": 0.07512,
+      "result": {
+        "answer": "fixed planner stub",
+        "measured_queue_ms": 8.033400001295377,
+        "measured_service_ms": 12.741200000164099,
+        "injected_service_ms": 12,
+        "actions": [
+          {
+            "name": "light_control",
+            "params": {
+              "location": "\u5ba2\u5385",
+              "brightness": 75
+            }
+          }
+        ],
+        "semantic_complete": false,
+        "source": "http-contract-fixture-not-AI",
+        "model_ms": 12.741200000164099,
+        "measured_fixture_network_delay_ms": 3.6150000014458783,
+        "experiment_request_key": "stress:20261119:cloud_down:25:32:1:network-only"
+      }
+    },
+    {
+      "endpoint": "local",
+      "trace_index": 0,
+      "request_key": "stress:20261119:cloud_down:1:32:1:network-only",
+      "status": 200,
+      "source": "live_stub_queue",
+      "measured_handler_ms": 29.33599999960279,
+      "injected_serialization_ms": 0.07488,
+      "result": {
+        "answer": "fixed planner stub",
+        "measured_queue_ms": 7.536099998105783,
+        "measured_service_ms": 16.119399995659478,
+        "injected_service_ms": 12,
+        "actions": [
+          {
+            "name": "light_control",
+            "params": {
+              "location": "\u5ba2\u5385",
+              "brightness": 75
+            }
+          }
+        ],
+        "semantic_complete": false,
+        "source": "http-contract-fixture-not-AI",
+        "model_ms": 16.119399995659478,
+        "measured_fixture_network_delay_ms": 3.880399999616202,
+        "experiment_request_key": "stress:20261119:cloud_down:1:32:1:network-only"
+      }
+    },
+    {
+      "endpoint": "local",
+      "trace_index": 0,
+      "request_key": "stress:20261119:cloud_down:31:32:1:network-only",
+      "status": 200,
+      "source": "live_stub_queue",
+      "measured_handler_ms": 30.823699999018572,
+      "injected_serialization_ms": 0.07392,
+      "result": {
+        "answer": "fixed planner stub",
+        "measured_queue_ms": 12.207199994008988,
+        "measured_service_ms": 12.93479999731062,
+        "injected_service_ms": 12,
+        "actions": [
+          {
+            "name": "light_control",
+            "params": {
+              "location": "\u5ba2\u5385",
+              "brightness": 75
+            }
+          }
+        ],
+        "semantic_complete": false,
+        "source": "http-contract-fixture-not-AI",
+        "model_ms": 12.93479999731062,
+        "measured_fixture_network_delay_ms": 3.4750999984680675,
+        "experiment_request_key": "stress:20261119:cloud_down:31:32:1:network-only"
+      }
+    },
+    {
+      "endpoint": "local",
+      "trace_index": 0,
+      "request_key": "stress:20261119:cloud_down:6:32:1:network-only",
+      "status": 200,
+      "source": "live_stub_queue",
+      "measured_handler_ms": 30.71809999528341,
+      "injected_serialization_ms": 0.07496,
+      "result": {
+        "answer": "fixed planner stub",
+        "measured_queue_ms": 13.01709999825107,
+        "measured_service_ms": 12.771000001521315,
+        "injected_service_ms": 12,
+        "actions": [
+          {
+            "name": "light_control",
+            "params": {
+              "location": "\u5ba2\u5385",
+              "brightness": 75
+            }
+          }
+        ],
+        "semantic_complete": false,
+        "source": "http-contract-fixture-not-AI",
+        "model_ms": 12.771000001521315,
+        "measured_fixture_network_delay_ms": 3.3752000017557293,
+        "experiment_request_key": "stress:20261119:cloud_down:6:32:1:network-only"
+      }
+    },
+    {
+      "endpoint": "local",
+      "trace_index": 0,
+      "request_key": "stress:20261119:cloud_down:21:32:1:network-only",
+      "status": 200,
+      "source": "live_stub_queue",
+      "measured_handler_ms": 30.50430000439519,
+      "injected_serialization_ms": 0.07496,
+      "result": {
+        "answer": "fixed planner stub",
+        "measured_queue_ms": 12.67770000413293,
+        "measured_service_ms": 12.706199995591305,
+        "injected_service_ms": 12,
+        "actions": [
+          {
+            "name": "light_control",
+            "params": {
+              "location": "\u5ba2\u5385",
+              "brightness": 75
+            }
+          }
+        ],
+        "semantic_complete": false,
+        "source": "http-contract-fixture-not-AI",
+        "model_ms": 12.706199995591305,
+        "measured_fixture_network_delay_ms": 4.061299994646106,
+        "experiment_request_key": "stress:20261119:cloud_down:21:32:1:network-only"
+      }
+    },
+    {
+      "endpoint": "local",
+      "trace_index": 0,
+      "request_key": "stress:20261119:cloud_down:26:32:1:network-only",
+      "status": 200,
+      "source": "live_stub_queue",
+      "measured_handler_ms": 28.536600002553314,
+      "injected_serialization_ms": 0.07496,
+      "result": {
+        "answer": "fixed planner stub",
+        "measured_queue_ms": 11.034899995138403,
+        "measured_service_ms": 12.840800001868047,
+        "injected_service_ms": 12,
+        "actions": [
+          {
+            "name": "light_control",
+            "params": {
+              "location": "\u5ba2\u5385",
+              "brightness": 75
+            }
+          }
+        ],
+        "semantic_complete": false,
+        "source": "http-contract-fixture-not-AI",
+        "model_ms": 12.840800001868047,
+        "measured_fixture_network_delay_ms": 3.207100002327934,
+        "experiment_request_key": "stress:20261119:cloud_down:26:32:1:network-only"
+      }
+    },
+    {
+      "endpoint": "local",
+      "trace_index": 0,
+      "request_key": "stress:20261119:cloud_down:28:32:1:network-only",
+      "status": 200,
+      "source": "live_stub_queue",
+      "measured_handler_ms": 28.12419999827398,
+      "injected_serialization_ms": 0.07496,
+      "result": {
+        "answer": "fixed planner stub",
+        "measured_queue_ms": 10.4496999992989,
+        "measured_service_ms": 12.619000000995584,
+        "injected_service_ms": 12,
+        "actions": [
+          {
+            "name": "light_control",
+            "params": {
+              "location": "\u5ba2\u5385",
+              "brightness": 75
+            }
+          }
+        ],
+        "semantic_complete": false,
+        "source": "http-contract-fixture-not-AI",
+        "model_ms": 12.619000000995584,
+        "measured_fixture_network_delay_ms": 3.3194999996339902,
+        "experiment_request_key": "stress:20261119:cloud_down:28:32:1:network-only"
+      }
+    },
+    {
+      "endpoint": "local",
+      "trace_index": 0,
+      "request_key": "stress:20261119:cloud_down:10:32:1:network-only",
+      "status": 200,
+      "source": "live_stub_queue",
+      "measured_handler_ms": 26.22249999694759,
+      "injected_serialization_ms": 0.07488,
+      "result": {
+        "answer": "fixed planner stub",
+        "measured_queue_ms": 9.220100000675302,
+        "measured_service_ms": 12.50669999717502,
+        "injected_service_ms": 12,
+        "actions": [
+          {
+            "name": "light_control",
+            "params": {
+              "location": "\u5ba2\u5385",
+              "brightness": 75
+            }
+          }
+        ],
+        "semantic_complete": false,
+        "source": "http-contract-fixture-not-AI",
+        "model_ms": 12.50669999717502,
+        "measured_fixture_network_delay_ms": 3.3458000034443103,
+        "experiment_request_key": "stress:20261119:cloud_down:10:32:1:network-only"
+      }
+    },
+    {
+      "endpoint": "local",
+      "trace_index": 0,
+      "request_key": "stress:20261119:cloud_down:16:32:1:network-only",
+      "status": 200,
+      "source": "live_stub_queue",
+      "measured_handler_ms": 29.96970000094734,
+      "injected_serialization_ms": 0.07504,
+      "result": {
+        "answer": "fixed planner stub",
+        "measured_queue_ms": 12.887700002465863,
+        "measured_service_ms": 12.672199998633005,
+        "injected_service_ms": 12,
+        "actions": [
+          {
+            "name": "light_control",
+            "params": {
+              "location": "\u5ba2\u5385",
+              "brightness": 75
+            }
+          }
+        ],
+        "semantic_complete": false,
+        "source": "http-contract-fixture-not-AI",
+        "model_ms": 12.672199998633005,
+        "measured_fixture_network_delay_ms": 3.440000000409782,
+        "experiment_request_key": "stress:20261119:cloud_down:16:32:1:network-only"
+      }
+    },
+    {
+      "endpoint": "local",
+      "trace_index": 0,
+      "request_key": "stress:20261119:cloud_down:18:32:1:network-only",
+      "status": 200,
+      "source": "live_stub_queue",
+      "measured_handler_ms": 31.747099994390737,
+      "injected_serialization_ms": 0.07504,
+      "result": {
+        "answer": "fixed planner stub",
+        "measured_queue_ms": 13.64070000272477,
+        "measured_service_ms": 12.473999995563645,
+        "injected_service_ms": 12,
+        "actions": [
+          {
+            "name": "light_control",
+            "params": {
+              "location": "\u5ba2\u5385",
+              "brightness": 75
+            }
+          }
+        ],
+        "semantic_complete": false,
+        "source": "http-contract-fixture-not-AI",
+        "model_ms": 12.473999995563645,
+        "measured_fixture_network_delay_ms": 4.0529999969294295,
+        "experiment_request_key": "stress:20261119:cloud_down:18:32:1:network-only"
+      }
+    },
+    {
+      "endpoint": "local",
+      "trace_index": 0,
+      "request_key": "stress:20261119:cloud_down:30:32:1:network-only",
+      "status": 200,
+      "source": "live_stub_queue",
+      "measured_handler_ms": 35.14780000114115,
+      "injected_serialization_ms": 0.07504,
+      "result": {
+        "answer": "fixed planner stub",
+        "measured_queue_ms": 17.995299996982794,
+        "measured_service_ms": 12.234599998919293,
+        "injected_service_ms": 12,
+        "actions": [
+          {
+            "name": "light_control",
+            "params": {
+              "location": "\u5ba2\u5385",
+              "brightness": 75
+            }
+          }
+        ],
+        "semantic_complete": false,
+        "source": "http-contract-fixture-not-AI",
+        "model_ms": 12.234599998919293,
+        "measured_fixture_network_delay_ms": 3.452199998719152,
+        "experiment_request_key": "stress:20261119:cloud_down:30:32:1:network-only"
+      }
+    },
+    {
+      "endpoint": "local",
+      "trace_index": 0,
+      "request_key": "stress:20261119:cloud_down:0:32:1:network-only",
+      "status": 200,
+      "source": "live_stub_queue",
+      "measured_handler_ms": 40.26319999684347,
+      "injected_serialization_ms": 0.0748,
+      "result": {
+        "answer": "fixed planner stub",
+        "measured_queue_ms": 14.76610000099754,
+        "measured_service_ms": 17.901499995787162,
+        "injected_service_ms": 12,
+        "actions": [
+          {
+            "name": "light_control",
+            "params": {
+              "location": "\u5ba2\u5385",
+              "brightness": 75
+            }
+          }
+        ],
+        "semantic_complete": false,
+        "source": "http-contract-fixture-not-AI",
+        "model_ms": 17.901499995787162,
+        "measured_fixture_network_delay_ms": 3.300700002000667,
+        "experiment_request_key": "stress:20261119:cloud_down:0:32:1:network-only"
+      }
+    },
+    {
+      "endpoint": "local",
+      "trace_index": 0,
+      "request_key": "stress:20261119:cloud_down:13:32:1:network-only",
+      "status": 200,
+      "source": "live_stub_queue",
+      "measured_handler_ms": 42.94169999775477,
+      "injected_serialization_ms": 0.07504,
+      "result": {
+        "answer": "fixed planner stub",
+        "measured_queue_ms": 25.429500004975125,
+        "measured_service_ms": 12.58840000082273,
+        "injected_service_ms": 12,
+        "actions": [
+          {
+            "name": "light_control",
+            "params": {
+              "location": "\u5ba2\u5385",
+              "brightness": 75
+            }
+          }
+        ],
+        "semantic_complete": false,
+        "source": "http-contract-fixture-not-AI",
+        "model_ms": 12.58840000082273,
+        "measured_fixture_network_delay_ms": 3.2113999986904673,
+        "experiment_request_key": "stress:20261119:cloud_down:13:32:1:network-only"
+      }
+    },
+    {
+      "endpoint": "local",
+      "trace_index": 0,
+      "request_key": "stress:20261119:cloud_down:23:32:1:network-only",
+      "status": 200,
+      "source": "live_stub_queue",
+      "measured_handler_ms": 36.467600002652034,
+      "injected_serialization_ms": 0.07512,
+      "result": {
+        "answer": "fixed planner stub",
+        "measured_queue_ms": 19.31479999620933,
+        "measured_service_ms": 13.186700001824647,
+        "injected_service_ms": 12,
+        "actions": [
+          {
+            "name": "light_control",
+            "params": {
+              "location": "\u5ba2\u5385",
+              "brightness": 75
+            }
+          }
+        ],
+        "semantic_complete": false,
+        "source": "http-contract-fixture-not-AI",
+        "model_ms": 13.186700001824647,
+        "measured_fixture_network_delay_ms": 2.8846999994129874,
+        "experiment_request_key": "stress:20261119:cloud_down:23:32:1:network-only"
+      }
+    },
+    {
+      "endpoint": "local",
+      "trace_index": 0,
+      "request_key": "stress:20261119:cloud_down:3:32:1:network-only",
+      "status": 200,
+      "source": "live_stub_queue",
+      "measured_handler_ms": 43.78650000580819,
+      "injected_serialization_ms": 0.07496,
+      "result": {
+        "answer": "fixed planner stub",
+        "measured_queue_ms": 27.657999999064486,
+        "measured_service_ms": 12.136400000599679,
+        "injected_service_ms": 12,
+        "actions": [
+          {
+            "name": "light_control",
+            "params": {
+              "location": "\u5ba2\u5385",
+              "brightness": 75
+            }
+          }
+        ],
+        "semantic_complete": false,
+        "source": "http-contract-fixture-not-AI",
+        "model_ms": 12.136400000599679,
+        "measured_fixture_network_delay_ms": 3.166800001054071,
+        "experiment_request_key": "stress:20261119:cloud_down:3:32:1:network-only"
+      }
+    },
+    {
+      "endpoint": "local",
+      "trace_index": 0,
+      "request_key": "stress:20261119:cloud_down:8:32:1:network-only",
+      "status": 200,
+      "source": "live_stub_queue",
+      "measured_handler_ms": 41.05680000066059,
+      "injected_serialization_ms": 0.07504,
+      "result": {
+        "answer": "fixed planner stub",
+        "measured_queue_ms": 16.429499999503605,
+        "measured_service_ms": 12.495100003434345,
+        "injected_service_ms": 12,
+        "actions": [
+          {
+            "name": "light_control",
+            "params": {
+              "location": "\u5ba2\u5385",
+              "brightness": 75
+            }
+          }
+        ],
+        "semantic_complete": false,
+        "source": "http-contract-fixture-not-AI",
+        "model_ms": 12.495100003434345,
+        "measured_fixture_network_delay_ms": 10.923100002401043,
+        "experiment_request_key": "stress:20261119:cloud_down:8:32:1:network-only"
+      }
+    },
+    {
+      "endpoint": "local",
+      "trace_index": 0,
+      "request_key": "stress:20261119:cloud_down:33:32:1:network-only",
+      "status": 200,
+      "source": "live_stub_queue",
+      "measured_handler_ms": 40.72930000256747,
+      "injected_serialization_ms": 0.07488,
+      "result": {
+        "answer": "fixed planner stub",
+        "measured_queue_ms": 21.954600000754,
+        "measured_service_ms": 12.458599994715769,
+        "injected_service_ms": 12,
+        "actions": [
+          {
+            "name": "light_control",
+            "params": {
+              "location": "\u5ba2\u5385",
+              "brightness": 75
+            }
+          }
+        ],
+        "semantic_complete": false,
+        "source": "http-contract-fixture-not-AI",
+        "model_ms": 12.458599994715769,
+        "measured_fixture_network_delay_ms": 3.3785999985411763,
+        "experiment_request_key": "stress:20261119:cloud_down:33:32:1:network-only"
+      }
+    },
+    {
+      "endpoint": "local",
+      "trace_index": 0,
+      "request_key": "stress:20261119:cloud_down:35:32:1:network-only",
+      "status": 200,
+      "source": "live_stub_queue",
+      "measured_handler_ms": 37.42840000631986,
+      "injected_serialization_ms": 0.07488,
+      "result": {
+        "answer": "fixed planner stub",
+        "measured_queue_ms": 21.03700000589015,
+        "measured_service_ms": 12.226999999256805,
+        "injected_service_ms": 12,
+        "actions": [
+          {
+            "name": "light_control",
+            "params": {
+              "location": "\u5ba2\u5385",
+              "brightness": 75
+            }
+          }
+        ],
+        "semantic_complete": false,
+        "source": "http-contract-fixture-not-AI",
+        "model_ms": 12.226999999256805,
+        "measured_fixture_network_delay_ms": 3.147199997329153,
+        "experiment_request_key": "stress:20261119:cloud_down:35:32:1:network-only"
+      }
+    },
+    {
+      "endpoint": "local",
+      "trace_index": 0,
+      "request_key": "stress:20261119:cloud_down:36:32:1:network-only",
+      "status": 200,
+      "source": "live_stub_queue",
+      "measured_handler_ms": 40.42029999982333,
+      "injected_serialization_ms": 0.0752,
+      "result": {
+        "answer": "fixed planner stub",
+        "measured_queue_ms": 24.035700000240467,
+        "measured_service_ms": 12.374500001897104,
+        "injected_service_ms": 12,
+        "actions": [
+          {
+            "name": "light_control",
+            "params": {
+              "location": "\u5ba2\u5385",
+              "brightness": 75
+            }
+          }
+        ],
+        "semantic_complete": false,
+        "source": "http-contract-fixture-not-AI",
+        "model_ms": 12.374500001897104,
+        "measured_fixture_network_delay_ms": 3.1252999979187734,
+        "experiment_request_key": "stress:20261119:cloud_down:36:32:1:network-only"
+      }
+    },
+    {
+      "endpoint": "local",
+      "trace_index": 0,
+      "request_key": "stress:20261119:cloud_down:38:32:1:network-only",
+      "status": 200,
+      "source": "live_stub_queue",
+      "measured_handler_ms": 26.721300004282966,
+      "injected_serialization_ms": 0.07504,
+      "result": {
+        "answer": "fixed planner stub",
+        "measured_queue_ms": 9.970700004487298,
+        "measured_service_ms": 12.417799996910617,
+        "injected_service_ms": 12,
+        "actions": [
+          {
+            "name": "light_control",
+            "params": {
+              "location": "\u5ba2\u5385",
+              "brightness": 75
+            }
+          }
+        ],
+        "semantic_complete": false,
+        "source": "http-contract-fixture-not-AI",
+        "model_ms": 12.417799996910617,
+        "measured_fixture_network_delay_ms": 2.969500004837755,
+        "experiment_request_key": "stress:20261119:cloud_down:38:32:1:network-only"
+      }
+    },
+    {
+      "endpoint": "local",
+      "trace_index": 0,
+      "request_key": "stress:20261119:cloud_down:40:32:1:network-only",
+      "status": 200,
+      "source": "live_stub_queue",
+      "measured_handler_ms": 16.717699996661395,
+      "injected_serialization_ms": 0.07512,
+      "result": {
+        "answer": "fixed planner stub",
+        "measured_queue_ms": 0.011000003723893315,
+        "measured_service_ms": 12.368700001388788,
+        "injected_service_ms": 12,
+        "actions": [
+          {
+            "name": "light_control",
+            "params": {
+              "location": "\u5ba2\u5385",
+              "brightness": 75
+            }
+          }
+        ],
+        "semantic_complete": false,
+        "source": "http-contract-fixture-not-AI",
+        "model_ms": 12.368700001388788,
+        "measured_fixture_network_delay_ms": 3.338499998790212,
+        "experiment_request_key": "stress:20261119:cloud_down:40:32:1:network-only"
+      }
+    },
+    {
+      "endpoint": "local",
+      "trace_index": 0,
+      "request_key": "stress:20261119:cloud_down:41:32:1:network-only",
+      "status": 200,
+      "source": "live_stub_queue",
+      "measured_handler_ms": 15.692200002376921,
+      "injected_serialization_ms": 0.07528,
+      "result": {
+        "answer": "fixed planner stub",
+        "measured_queue_ms": 0.011399999493733048,
+        "measured_service_ms": 12.215100003231782,
+        "injected_service_ms": 12,
+        "actions": [
+          {
+            "name": "light_control",
+            "params": {
+              "location": "\u5ba2\u5385",
+              "brightness": 75
+            }
+          }
+        ],
+        "semantic_complete": false,
+        "source": "http-contract-fixture-not-AI",
+        "model_ms": 12.215100003231782,
+        "measured_fixture_network_delay_ms": 2.8372999950079247,
+        "experiment_request_key": "stress:20261119:cloud_down:41:32:1:network-only"
+      }
+    },
+    {
+      "endpoint": "local",
+      "trace_index": 0,
+      "request_key": "stress:20261119:cloud_down:43:32:1:network-only",
+      "status": 200,
+      "source": "live_stub_queue",
+      "measured_handler_ms": 16.821000004711095,
+      "injected_serialization_ms": 0.07528,
+      "result": {
+        "answer": "fixed planner stub",
+        "measured_queue_ms": 0.009900002623908222,
+        "measured_service_ms": 12.178400000266265,
+        "injected_service_ms": 12,
+        "actions": [
+          {
+            "name": "light_control",
+            "params": {
+              "location": "\u5ba2\u5385",
+              "brightness": 75
+            }
+          }
+        ],
+        "semantic_complete": false,
+        "source": "http-contract-fixture-not-AI",
+        "model_ms": 12.178400000266265,
+        "measured_fixture_network_delay_ms": 3.603399993153289,
+        "experiment_request_key": "stress:20261119:cloud_down:43:32:1:network-only"
+      }
+    },
+    {
+      "endpoint": "local",
+      "trace_index": 0,
+      "request_key": "stress:20261119:cloud_down:45:32:1:network-only",
+      "status": 200,
+      "source": "live_stub_queue",
+      "measured_handler_ms": 16.14799999515526,
+      "injected_serialization_ms": 0.0752,
+      "result": {
+        "answer": "fixed planner stub",
+        "measured_queue_ms": 0.017300000763498247,
+        "measured_service_ms": 12.185599996882956,
+        "injected_service_ms": 12,
+        "actions": [
+          {
+            "name": "light_control",
+            "params": {
+              "location": "\u5ba2\u5385",
+              "brightness": 75
+            }
+          }
+        ],
+        "semantic_complete": false,
+        "source": "http-contract-fixture-not-AI",
+        "model_ms": 12.185599996882956,
+        "measured_fixture_network_delay_ms": 3.311000000394415,
+        "experiment_request_key": "stress:20261119:cloud_down:45:32:1:network-only"
+      }
+    },
+    {
+      "endpoint": "local",
+      "trace_index": 0,
+      "request_key": "stress:20261119:cloud_down:46:32:1:network-only",
+      "status": 200,
+      "source": "live_stub_queue",
+      "measured_handler_ms": 17.348899993521627,
+      "injected_serialization_ms": 0.07496,
+      "result": {
+        "answer": "fixed planner stub",
+        "measured_queue_ms": 0.6747999941580929,
+        "measured_service_ms": 12.54480000352487,
+        "injected_service_ms": 12,
+        "actions": [
+          {
+            "name": "light_control",
+            "params": {
+              "location": "\u5ba2\u5385",
+              "brightness": 75
+            }
+          }
+        ],
+        "semantic_complete": false,
+        "source": "http-contract-fixture-not-AI",
+        "model_ms": 12.54480000352487,
+        "measured_fixture_network_delay_ms": 3.0578000005334616,
+        "experiment_request_key": "stress:20261119:cloud_down:46:32:1:network-only"
+      }
+    },
+    {
+      "endpoint": "local",
+      "trace_index": 0,
+      "request_key": "stress:20261119:cloud_down:50:32:1:network-only",
+      "status": 200,
+      "source": "live_stub_queue",
+      "measured_handler_ms": 16.55860000028042,
+      "injected_serialization_ms": 0.07528,
+      "result": {
+        "answer": "fixed planner stub",
+        "measured_queue_ms": 0.013799995940644294,
+        "measured_service_ms": 12.453499999537598,
+        "injected_service_ms": 12,
+        "actions": [
+          {
+            "name": "light_control",
+            "params": {
+              "location": "\u5ba2\u5385",
+              "brightness": 75
+            }
+          }
+        ],
+        "semantic_complete": false,
+        "source": "http-contract-fixture-not-AI",
+        "model_ms": 12.453499999537598,
+        "measured_fixture_network_delay_ms": 3.281900004367344,
+        "experiment_request_key": "stress:20261119:cloud_down:50:32:1:network-only"
+      }
+    },
+    {
+      "endpoint": "local",
+      "trace_index": 0,
+      "request_key": "stress:20261119:cloud_down:51:32:1:network-only",
+      "status": 200,
+      "source": "live_stub_queue",
+      "measured_handler_ms": 16.927399999985937,
+      "injected_serialization_ms": 0.07528,
+      "result": {
+        "answer": "fixed planner stub",
+        "measured_queue_ms": 0.016199999663513154,
+        "measured_service_ms": 12.491599998611491,
+        "injected_service_ms": 12,
+        "actions": [
+          {
+            "name": "light_control",
+            "params": {
+              "location": "\u5ba2\u5385",
+              "brightness": 75
+            }
+          }
+        ],
+        "semantic_complete": false,
+        "source": "http-contract-fixture-not-AI",
+        "model_ms": 12.491599998611491,
+        "measured_fixture_network_delay_ms": 3.2245000038528815,
+        "experiment_request_key": "stress:20261119:cloud_down:51:32:1:network-only"
+      }
+    },
+    {
+      "endpoint": "local",
+      "trace_index": 0,
+      "request_key": "stress:20261119:cloud_down:48:32:1:network-only",
+      "status": 200,
+      "source": "live_stub_queue",
+      "measured_handler_ms": 18.03940000536386,
+      "injected_serialization_ms": 0.07528,
+      "result": {
+        "answer": "fixed planner stub",
+        "measured_queue_ms": 0.012699994840659201,
+        "measured_service_ms": 12.262600001122337,
+        "injected_service_ms": 12,
+        "actions": [
+          {
+            "name": "light_control",
+            "params": {
+              "location": "\u5ba2\u5385",
+              "brightness": 75
+            }
+          }
+        ],
+        "semantic_complete": false,
+        "source": "http-contract-fixture-not-AI",
+        "model_ms": 12.262600001122337,
+        "measured_fixture_network_delay_ms": 3.679400004330091,
+        "experiment_request_key": "stress:20261119:cloud_down:48:32:1:network-only"
+      }
+    },
+    {
+      "endpoint": "local",
+      "trace_index": 0,
+      "request_key": "stress:20261119:cloud_down:53:32:1:network-only",
+      "status": 200,
+      "source": "live_stub_queue",
+      "measured_handler_ms": 20.462400003452785,
+      "injected_serialization_ms": 0.0752,
+      "result": {
+        "answer": "fixed planner stub",
+        "measured_queue_ms": 3.5806000014417805,
+        "measured_service_ms": 12.827500002458692,
+        "injected_service_ms": 12,
+        "actions": [
+          {
+            "name": "light_control",
+            "params": {
+              "location": "\u5ba2\u5385",
+              "brightness": 75
+            }
+          }
+        ],
+        "semantic_complete": false,
+        "source": "http-contract-fixture-not-AI",
+        "model_ms": 12.827500002458692,
+        "measured_fixture_network_delay_ms": 3.2664999962435104,
+        "experiment_request_key": "stress:20261119:cloud_down:53:32:1:network-only"
+      }
+    },
+    {
+      "endpoint": "local",
+      "trace_index": 0,
+      "request_key": "stress:20261119:cloud_down:55:32:1:network-only",
+      "status": 200,
+      "source": "live_stub_queue",
+      "measured_handler_ms": 15.900799997325521,
+      "injected_serialization_ms": 0.07504,
+      "result": {
+        "answer": "fixed planner stub",
+        "measured_queue_ms": 0.01049999991664663,
+        "measured_service_ms": 12.08549999864772,
+        "injected_service_ms": 12,
+        "actions": [
+          {
+            "name": "light_control",
+            "params": {
+              "location": "\u5ba2\u5385",
+              "brightness": 75
+            }
+          }
+        ],
+        "semantic_complete": false,
+        "source": "http-contract-fixture-not-AI",
+        "model_ms": 12.08549999864772,
+        "measured_fixture_network_delay_ms": 3.033000000868924,
+        "experiment_request_key": "stress:20261119:cloud_down:55:32:1:network-only"
+      }
+    },
+    {
+      "endpoint": "local",
+      "trace_index": 0,
+      "request_key": "stress:20261119:cloud_down:56:32:1:network-only",
+      "status": 200,
+      "source": "live_stub_queue",
+      "measured_handler_ms": 16.838699993968476,
+      "injected_serialization_ms": 0.0752,
+      "result": {
+        "answer": "fixed planner stub",
+        "measured_queue_ms": 0.01930000144056976,
+        "measured_service_ms": 12.936599996464793,
+        "injected_service_ms": 12,
+        "actions": [
+          {
+            "name": "light_control",
+            "params": {
+              "location": "\u5ba2\u5385",
+              "brightness": 75
+            }
+          }
+        ],
+        "semantic_complete": false,
+        "source": "http-contract-fixture-not-AI",
+        "model_ms": 12.936599996464793,
+        "measured_fixture_network_delay_ms": 3.0654000001959503,
+        "experiment_request_key": "stress:20261119:cloud_down:56:32:1:network-only"
+      }
+    },
+    {
+      "endpoint": "local",
+      "trace_index": 0,
+      "request_key": "stress:20261119:cloud_down:58:32:1:network-only",
+      "status": 200,
+      "source": "live_stub_queue",
+      "measured_handler_ms": 17.556600003445055,
+      "injected_serialization_ms": 0.07528,
+      "result": {
+        "answer": "fixed planner stub",
+        "measured_queue_ms": 0.014400000509340316,
+        "measured_service_ms": 12.366799994197208,
+        "injected_service_ms": 12,
+        "actions": [
+          {
+            "name": "light_control",
+            "params": {
+              "location": "\u5ba2\u5385",
+              "brightness": 75
+            }
+          }
+        ],
+        "semantic_complete": false,
+        "source": "http-contract-fixture-not-AI",
+        "model_ms": 12.366799994197208,
+        "measured_fixture_network_delay_ms": 3.8260000001173466,
+        "experiment_request_key": "stress:20261119:cloud_down:58:32:1:network-only"
+      }
+    },
+    {
+      "endpoint": "local",
+      "trace_index": 0,
+      "request_key": "stress:20261119:cloud_down:60:32:1:network-only",
+      "status": 200,
+      "source": "live_stub_queue",
+      "measured_handler_ms": 18.30609999888111,
+      "injected_serialization_ms": 0.07536,
+      "result": {
+        "answer": "fixed planner stub",
+        "measured_queue_ms": 0.012299999070819467,
+        "measured_service_ms": 13.790400000289083,
+        "injected_service_ms": 12,
+        "actions": [
+          {
+            "name": "light_control",
+            "params": {
+              "location": "\u5ba2\u5385",
+              "brightness": 75
+            }
+          }
+        ],
+        "semantic_complete": false,
+        "source": "http-contract-fixture-not-AI",
+        "model_ms": 13.790400000289083,
+        "measured_fixture_network_delay_ms": 3.2597000026726164,
+        "experiment_request_key": "stress:20261119:cloud_down:60:32:1:network-only"
+      }
+    },
+    {
+      "endpoint": "local",
+      "trace_index": 0,
+      "request_key": "stress:20261119:cloud_down:61:32:1:network-only",
+      "status": 200,
+      "source": "live_stub_queue",
+      "measured_handler_ms": 17.092300004151184,
+      "injected_serialization_ms": 0.07528,
+      "result": {
+        "answer": "fixed planner stub",
+        "measured_queue_ms": 0.017600003047846258,
+        "measured_service_ms": 12.972299999091774,
+        "injected_service_ms": 12,
+        "actions": [
+          {
+            "name": "light_control",
+            "params": {
+              "location": "\u5ba2\u5385",
+              "brightness": 75
+            }
+          }
+        ],
+        "semantic_complete": false,
+        "source": "http-contract-fixture-not-AI",
+        "model_ms": 12.972299999091774,
+        "measured_fixture_network_delay_ms": 3.2840999992913567,
+        "experiment_request_key": "stress:20261119:cloud_down:61:32:1:network-only"
+      }
+    },
+    {
+      "endpoint": "local",
+      "trace_index": 0,
+      "request_key": "stress:20261119:cloud_down:63:32:1:network-only",
+      "status": 200,
+      "source": "live_stub_queue",
+      "measured_handler_ms": 16.71159999386873,
+      "injected_serialization_ms": 0.07528,
+      "result": {
+        "answer": "fixed planner stub",
+        "measured_queue_ms": 0.017700003809295595,
+        "measured_service_ms": 12.475000003178138,
+        "injected_service_ms": 12,
+        "actions": [
+          {
+            "name": "light_control",
+            "params": {
+              "location": "\u5ba2\u5385",
+              "brightness": 75
+            }
+          }
+        ],
+        "semantic_complete": false,
+        "source": "http-contract-fixture-not-AI",
+        "model_ms": 12.475000003178138,
+        "measured_fixture_network_delay_ms": 3.4083999998983927,
+        "experiment_request_key": "stress:20261119:cloud_down:63:32:1:network-only"
+      }
+    },
+    {
+      "endpoint": "local",
+      "trace_index": 0,
+      "request_key": "stress:20261119:cloud_down:66:32:1:network-only",
+      "status": 200,
+      "source": "live_stub_queue",
+      "measured_handler_ms": 16.78389999869978,
+      "injected_serialization_ms": 0.07528,
+      "result": {
+        "answer": "fixed planner stub",
+        "measured_queue_ms": 0.018800004909280688,
+        "measured_service_ms": 12.543400000140537,
+        "injected_service_ms": 12,
+        "actions": [
+          {
+            "name": "light_control",
+            "params": {
+              "location": "\u5ba2\u5385",
+              "brightness": 75
+            }
+          }
+        ],
+        "semantic_complete": false,
+        "source": "http-contract-fixture-not-AI",
+        "model_ms": 12.543400000140537,
+        "measured_fixture_network_delay_ms": 3.407899996091146,
+        "experiment_request_key": "stress:20261119:cloud_down:66:32:1:network-only"
+      }
+    },
+    {
+      "endpoint": "local",
+      "trace_index": 0,
+      "request_key": "stress:20261119:cloud_down:65:32:1:network-only",
+      "status": 200,
+      "source": "live_stub_queue",
+      "measured_handler_ms": 16.845099999045487,
+      "injected_serialization_ms": 0.07536,
+      "result": {
+        "answer": "fixed planner stub",
+        "measured_queue_ms": 0.012800002878066152,
+        "measured_service_ms": 12.544500001240522,
+        "injected_service_ms": 12,
+        "actions": [
+          {
+            "name": "light_control",
+            "params": {
+              "location": "\u5ba2\u5385",
+              "brightness": 75
+            }
+          }
+        ],
+        "semantic_complete": false,
+        "source": "http-contract-fixture-not-AI",
+        "model_ms": 12.544500001240522,
+        "measured_fixture_network_delay_ms": 3.1428000002051704,
+        "experiment_request_key": "stress:20261119:cloud_down:65:32:1:network-only"
+      }
+    },
+    {
+      "endpoint": "local",
+      "trace_index": 0,
+      "request_key": "stress:20261119:cloud_down:68:32:1:network-only",
+      "status": 200,
+      "source": "live_stub_queue",
+      "measured_handler_ms": 16.562899996642955,
+      "injected_serialization_ms": 0.07504,
+      "result": {
+        "answer": "fixed planner stub",
+        "measured_queue_ms": 0.013799995940644294,
+        "measured_service_ms": 12.19350000610575,
+        "injected_service_ms": 12,
+        "actions": [
+          {
+            "name": "light_control",
+            "params": {
+              "location": "\u5ba2\u5385",
+              "brightness": 75
+            }
+          }
+        ],
+        "semantic_complete": false,
+        "source": "http-contract-fixture-not-AI",
+        "model_ms": 12.19350000610575,
+        "measured_fixture_network_delay_ms": 3.382199996849522,
+        "experiment_request_key": "stress:20261119:cloud_down:68:32:1:network-only"
+      }
+    },
+    {
+      "endpoint": "local",
+      "trace_index": 0,
+      "request_key": "stress:20261119:cloud_down:70:32:1:network-only",
+      "status": 200,
+      "source": "live_stub_queue",
+      "measured_handler_ms": 17.073299997719005,
+      "injected_serialization_ms": 0.07504,
+      "result": {
+        "answer": "fixed planner stub",
+        "measured_queue_ms": 0.017400001524947584,
+        "measured_service_ms": 12.52080000267597,
+        "injected_service_ms": 12,
+        "actions": [
+          {
+            "name": "light_control",
+            "params": {
+              "location": "\u5ba2\u5385",
+              "brightness": 75
+            }
+          }
+        ],
+        "semantic_complete": false,
+        "source": "http-contract-fixture-not-AI",
+        "model_ms": 12.52080000267597,
+        "measured_fixture_network_delay_ms": 3.481599997030571,
+        "experiment_request_key": "stress:20261119:cloud_down:70:32:1:network-only"
+      }
+    },
+    {
+      "endpoint": "local",
+      "trace_index": 0,
+      "request_key": "stress:20261119:cloud_down:73:32:1:network-only",
+      "status": 200,
+      "source": "live_stub_queue",
+      "measured_handler_ms": 17.75449999695411,
+      "injected_serialization_ms": 0.0752,
+      "result": {
+        "answer": "fixed planner stub",
+        "measured_queue_ms": 0.01670000347075984,
+        "measured_service_ms": 13.269900002342183,
+        "injected_service_ms": 12,
+        "actions": [
+          {
+            "name": "light_control",
+            "params": {
+              "location": "\u5ba2\u5385",
+              "brightness": 75
+            }
+          }
+        ],
+        "semantic_complete": false,
+        "source": "http-contract-fixture-not-AI",
+        "model_ms": 13.269900002342183,
+        "measured_fixture_network_delay_ms": 3.0879999976605177,
+        "experiment_request_key": "stress:20261119:cloud_down:73:32:1:network-only"
+      }
+    },
+    {
+      "endpoint": "local",
+      "trace_index": 0,
+      "request_key": "stress:20261119:cloud_down:71:32:1:network-only",
+      "status": 200,
+      "source": "live_stub_queue",
+      "measured_handler_ms": 17.329800000879914,
+      "injected_serialization_ms": 0.07512,
+      "result": {
+        "answer": "fixed planner stub",
+        "measured_queue_ms": 0.01569999585626647,
+        "measured_service_ms": 12.453800001821946,
+        "injected_service_ms": 12,
+        "actions": [
+          {
+            "name": "light_control",
+            "params": {
+              "location": "\u5ba2\u5385",
+              "brightness": 75
+            }
+          }
+        ],
+        "semantic_complete": false,
+        "source": "http-contract-fixture-not-AI",
+        "model_ms": 12.453800001821946,
+        "measured_fixture_network_delay_ms": 3.518000004987698,
+        "experiment_request_key": "stress:20261119:cloud_down:71:32:1:network-only"
+      }
+    },
+    {
+      "endpoint": "local",
+      "trace_index": 0,
+      "request_key": "stress:20261119:cloud_down:75:32:1:network-only",
+      "status": 200,
+      "source": "live_stub_queue",
+      "measured_handler_ms": 16.962200003035832,
+      "injected_serialization_ms": 0.07512,
+      "result": {
+        "answer": "fixed planner stub",
+        "measured_queue_ms": 0.017299993487540632,
+        "measured_service_ms": 12.507800005550962,
+        "injected_service_ms": 12,
+        "actions": [
+          {
+            "name": "light_control",
+            "params": {
+              "location": "\u5ba2\u5385",
+              "brightness": 75
+            }
+          }
+        ],
+        "semantic_complete": false,
+        "source": "http-contract-fixture-not-AI",
+        "model_ms": 12.507800005550962,
+        "measured_fixture_network_delay_ms": 3.24949999776436,
+        "experiment_request_key": "stress:20261119:cloud_down:75:32:1:network-only"
+      }
+    },
+    {
+      "endpoint": "local",
+      "trace_index": 0,
+      "request_key": "stress:20261119:cloud_down:76:32:1:network-only",
+      "status": 200,
+      "source": "live_stub_queue",
+      "measured_handler_ms": 16.657100000884384,
+      "injected_serialization_ms": 0.07528,
+      "result": {
+        "answer": "fixed planner stub",
+        "measured_queue_ms": 0.012299999070819467,
+        "measured_service_ms": 12.393400000291876,
+        "injected_service_ms": 12,
+        "actions": [
+          {
+            "name": "light_control",
+            "params": {
+              "location": "\u5ba2\u5385",
+              "brightness": 75
+            }
+          }
+        ],
+        "semantic_complete": false,
+        "source": "http-contract-fixture-not-AI",
+        "model_ms": 12.393400000291876,
+        "measured_fixture_network_delay_ms": 3.4069999965140596,
+        "experiment_request_key": "stress:20261119:cloud_down:76:32:1:network-only"
+      }
+    },
+    {
+      "endpoint": "local",
+      "trace_index": 0,
+      "request_key": "stress:20261119:cloud_down:78:32:1:network-only",
+      "status": 200,
+      "source": "live_stub_queue",
+      "measured_handler_ms": 16.59819999622414,
+      "injected_serialization_ms": 0.0752,
+      "result": {
+        "answer": "fixed planner stub",
+        "measured_queue_ms": 0.08320000051753595,
+        "measured_service_ms": 12.657200000830926,
+        "injected_service_ms": 12,
+        "actions": [
+          {
+            "name": "light_control",
+            "params": {
+              "location": "\u5ba2\u5385",
+              "brightness": 75
+            }
+          }
+        ],
+        "semantic_complete": false,
+        "source": "http-contract-fixture-not-AI",
+        "model_ms": 12.657200000830926,
+        "measured_fixture_network_delay_ms": 3.0656999952043407,
+        "experiment_request_key": "stress:20261119:cloud_down:78:32:1:network-only"
+      }
+    },
+    {
+      "endpoint": "local",
+      "trace_index": 0,
+      "request_key": "stress:20261119:cloud_down:81:32:1:network-only",
+      "status": 200,
+      "source": "live_stub_queue",
+      "measured_handler_ms": 17.02090000617318,
+      "injected_serialization_ms": 0.07512,
+      "result": {
+        "answer": "fixed planner stub",
+        "measured_queue_ms": 0.015799996617715806,
+        "measured_service_ms": 12.580899994645733,
+        "injected_service_ms": 12,
+        "actions": [
+          {
+            "name": "light_control",
+            "params": {
+              "location": "\u5ba2\u5385",
+              "brightness": 75
+            }
+          }
+        ],
+        "semantic_complete": false,
+        "source": "http-contract-fixture-not-AI",
+        "model_ms": 12.580899994645733,
+        "measured_fixture_network_delay_ms": 2.928599998995196,
+        "experiment_request_key": "stress:20261119:cloud_down:81:32:1:network-only"
+      }
+    },
+    {
+      "endpoint": "local",
+      "trace_index": 0,
+      "request_key": "stress:20261119:cloud_down:80:32:1:network-only",
+      "status": 200,
+      "source": "live_stub_queue",
+      "measured_handler_ms": 17.391700006555766,
+      "injected_serialization_ms": 0.0752,
+      "result": {
+        "answer": "fixed planner stub",
+        "measured_queue_ms": 0.012200005585327744,
+        "measured_service_ms": 12.270300001546275,
+        "injected_service_ms": 12,
+        "actions": [
+          {
+            "name": "light_control",
+            "params": {
+              "location": "\u5ba2\u5385",
+              "brightness": 75
+            }
+          }
+        ],
+        "semantic_complete": false,
+        "source": "http-contract-fixture-not-AI",
+        "model_ms": 12.270300001546275,
+        "measured_fixture_network_delay_ms": 3.523699997458607,
+        "experiment_request_key": "stress:20261119:cloud_down:80:32:1:network-only"
+      }
+    },
+    {
+      "endpoint": "local",
+      "trace_index": 0,
+      "request_key": "stress:20261119:cloud_down:83:32:1:network-only",
+      "status": 200,
+      "source": "live_stub_queue",
+      "measured_handler_ms": 17.07670000178041,
+      "injected_serialization_ms": 0.07512,
+      "result": {
+        "answer": "fixed planner stub",
+        "measured_queue_ms": 0.016699996194802225,
+        "measured_service_ms": 12.78660000389209,
+        "injected_service_ms": 12,
+        "actions": [
+          {
+            "name": "light_control",
+            "params": {
+              "location": "\u5ba2\u5385",
+              "brightness": 75
+            }
+          }
+        ],
+        "semantic_complete": false,
+        "source": "http-contract-fixture-not-AI",
+        "model_ms": 12.78660000389209,
+        "measured_fixture_network_delay_ms": 3.0159000016283244,
+        "experiment_request_key": "stress:20261119:cloud_down:83:32:1:network-only"
+      }
+    },
+    {
+      "endpoint": "local",
+      "trace_index": 0,
+      "request_key": "stress:20261119:cloud_down:85:32:1:network-only",
+      "status": 200,
+      "source": "live_stub_queue",
+      "measured_handler_ms": 16.828700005135033,
+      "injected_serialization_ms": 0.07512,
+      "result": {
+        "answer": "fixed planner stub",
+        "measured_queue_ms": 0.014400000509340316,
+        "measured_service_ms": 12.51609999599168,
+        "injected_service_ms": 12,
+        "actions": [
+          {
+            "name": "light_control",
+            "params": {
+              "location": "\u5ba2\u5385",
+              "brightness": 75
+            }
+          }
+        ],
+        "semantic_complete": false,
+        "source": "http-contract-fixture-not-AI",
+        "model_ms": 12.51609999599168,
+        "measured_fixture_network_delay_ms": 3.4808999989763834,
+        "experiment_request_key": "stress:20261119:cloud_down:85:32:1:network-only"
+      }
+    },
+    {
+      "endpoint": "local",
+      "trace_index": 0,
+      "request_key": "stress:20261119:cloud_down:86:32:1:network-only",
+      "status": 200,
+      "source": "live_stub_queue",
+      "measured_handler_ms": 15.88880000053905,
+      "injected_serialization_ms": 0.07528,
+      "result": {
+        "answer": "fixed planner stub",
+        "measured_queue_ms": 0.014900004316587001,
+        "measured_service_ms": 12.364300004264805,
+        "injected_service_ms": 12,
+        "actions": [
+          {
+            "name": "light_control",
+            "params": {
+              "location": "\u5ba2\u5385",
+              "brightness": 75
+            }
+          }
+        ],
+        "semantic_complete": false,
+        "source": "http-contract-fixture-not-AI",
+        "model_ms": 12.364300004264805,
+        "measured_fixture_network_delay_ms": 2.8366999977151863,
+        "experiment_request_key": "stress:20261119:cloud_down:86:32:1:network-only"
+      }
+    },
+    {
+      "endpoint": "local",
+      "trace_index": 0,
+      "request_key": "stress:20261119:cloud_down:88:32:1:network-only",
+      "status": 200,
+      "source": "live_stub_queue",
+      "measured_handler_ms": 17.518699998618104,
+      "injected_serialization_ms": 0.07512,
+      "result": {
+        "answer": "fixed planner stub",
+        "measured_queue_ms": 0.013800003216601908,
+        "measured_service_ms": 12.82560000254307,
+        "injected_service_ms": 12,
+        "actions": [
+          {
+            "name": "light_control",
+            "params": {
+              "location": "\u5ba2\u5385",
+              "brightness": 75
+            }
+          }
+        ],
+        "semantic_complete": false,
+        "source": "http-contract-fixture-not-AI",
+        "model_ms": 12.82560000254307,
+        "measured_fixture_network_delay_ms": 3.0767000062041916,
+        "experiment_request_key": "stress:20261119:cloud_down:88:32:1:network-only"
+      }
+    },
+    {
+      "endpoint": "local",
+      "trace_index": 0,
+      "request_key": "stress:20261119:cloud_down:90:32:1:network-only",
+      "status": 200,
+      "source": "live_stub_queue",
+      "measured_handler_ms": 16.830900000059046,
+      "injected_serialization_ms": 0.0752,
+      "result": {
+        "answer": "fixed planner stub",
+        "measured_queue_ms": 0.01599999814061448,
+        "measured_service_ms": 12.527500002761371,
+        "injected_service_ms": 12,
+        "actions": [
+          {
+            "name": "light_control",
+            "params": {
+              "location": "\u5ba2\u5385",
+              "brightness": 75
+            }
+          }
+        ],
+        "semantic_complete": false,
+        "source": "http-contract-fixture-not-AI",
+        "model_ms": 12.527500002761371,
+        "measured_fixture_network_delay_ms": 3.0617000011261553,
+        "experiment_request_key": "stress:20261119:cloud_down:90:32:1:network-only"
+      }
+    },
+    {
+      "endpoint": "local",
+      "trace_index": 0,
+      "request_key": "stress:20261119:cloud_down:91:32:1:network-only",
+      "status": 200,
+      "source": "live_stub_queue",
+      "measured_handler_ms": 16.21329999761656,
+      "injected_serialization_ms": 0.07528,
+      "result": {
+        "answer": "fixed planner stub",
+        "measured_queue_ms": 0.016199999663513154,
+        "measured_service_ms": 12.193599999591243,
+        "injected_service_ms": 12,
+        "actions": [
+          {
+            "name": "light_control",
+            "params": {
+              "location": "\u5ba2\u5385",
+              "brightness": 75
+            }
+          }
+        ],
+        "semantic_complete": false,
+        "source": "http-contract-fixture-not-AI",
+        "model_ms": 12.193599999591243,
+        "measured_fixture_network_delay_ms": 3.1469000023207627,
+        "experiment_request_key": "stress:20261119:cloud_down:91:32:1:network-only"
+      }
+    },
+    {
+      "endpoint": "local",
+      "trace_index": 0,
+      "request_key": "stress:20261119:cloud_down:93:32:1:network-only",
+      "status": 200,
+      "source": "live_stub_queue",
+      "measured_handler_ms": 16.808600004878826,
+      "injected_serialization_ms": 0.07528,
+      "result": {
+        "answer": "fixed planner stub",
+        "measured_queue_ms": 0.013600001693703234,
+        "measured_service_ms": 12.578399997437373,
+        "injected_service_ms": 12,
+        "actions": [
+          {
+            "name": "light_control",
+            "params": {
+              "location": "\u5ba2\u5385",
+              "brightness": 75
+            }
+          }
+        ],
+        "semantic_complete": false,
+        "source": "http-contract-fixture-not-AI",
+        "model_ms": 12.578399997437373,
+        "measured_fixture_network_delay_ms": 3.2224000024143606,
+        "experiment_request_key": "stress:20261119:cloud_down:93:32:1:network-only"
+      }
+    },
+    {
+      "endpoint": "local",
+      "trace_index": 0,
+      "request_key": "stress:20261119:cloud_down:95:32:1:network-only",
+      "status": 200,
+      "source": "live_stub_queue",
+      "measured_handler_ms": 17.994900001212955,
+      "injected_serialization_ms": 0.07528,
+      "result": {
+        "answer": "fixed planner stub",
+        "measured_queue_ms": 0.014800003555137664,
+        "measured_service_ms": 12.340200002654456,
+        "injected_service_ms": 12,
+        "actions": [
+          {
+            "name": "light_control",
+            "params": {
+              "location": "\u5ba2\u5385",
+              "brightness": 75
+            }
+          }
+        ],
+        "semantic_complete": false,
+        "source": "http-contract-fixture-not-AI",
+        "model_ms": 12.340200002654456,
+        "measured_fixture_network_delay_ms": 3.2528000010643154,
+        "experiment_request_key": "stress:20261119:cloud_down:95:32:1:network-only"
+      }
+    },
+    {
+      "endpoint": "local",
+      "trace_index": 0,
+      "request_key": "stress:20261119:cloud_down:96:32:1:network-only",
+      "status": 200,
+      "source": "live_stub_queue",
+      "measured_handler_ms": 15.847800001210999,
+      "injected_serialization_ms": 0.0752,
+      "result": {
+        "answer": "fixed planner stub",
+        "measured_queue_ms": 0.01410000550094992,
+        "measured_service_ms": 12.324199997237884,
+        "injected_service_ms": 12,
+        "actions": [
+          {
+            "name": "light_control",
+            "params": {
+              "location": "\u5ba2\u5385",
+              "brightness": 75
+            }
+          }
+        ],
+        "semantic_complete": false,
+        "source": "http-contract-fixture-not-AI",
+        "model_ms": 12.324199997237884,
+        "measured_fixture_network_delay_ms": 2.8535999954328872,
+        "experiment_request_key": "stress:20261119:cloud_down:96:32:1:network-only"
+      }
+    },
+    {
+      "endpoint": "local",
+      "trace_index": 0,
+      "request_key": "stress:20261119:cloud_down:98:32:1:network-only",
+      "status": 200,
+      "source": "live_stub_queue",
+      "measured_handler_ms": 16.091099998448044,
+      "injected_serialization_ms": 0.07512,
+      "result": {
+        "answer": "fixed planner stub",
+        "measured_queue_ms": 0.01920000067912042,
+        "measured_service_ms": 12.384199995722156,
+        "injected_service_ms": 12,
+        "actions": [
+          {
+            "name": "light_control",
+            "params": {
+              "location": "\u5ba2\u5385",
+              "brightness": 75
+            }
+          }
+        ],
+        "semantic_complete": false,
+        "source": "http-contract-fixture-not-AI",
+        "model_ms": 12.384199995722156,
+        "measured_fixture_network_delay_ms": 2.8288000030443072,
+        "experiment_request_key": "stress:20261119:cloud_down:98:32:1:network-only"
+      }
+    },
+    {
+      "endpoint": "local",
+      "trace_index": 0,
+      "request_key": "stress:20261119:cloud_down:100:32:1:network-only",
+      "status": 200,
+      "source": "live_stub_queue",
+      "measured_handler_ms": 16.496500000357628,
+      "injected_serialization_ms": 0.0752,
+      "result": {
+        "answer": "fixed planner stub",
+        "measured_queue_ms": 0.016699996194802225,
+        "measured_service_ms": 12.63719999406021,
+        "injected_service_ms": 12,
+        "actions": [
+          {
+            "name": "light_control",
+            "params": {
+              "location": "\u5ba2\u5385",
+              "brightness": 75
+            }
+          }
+        ],
+        "semantic_complete": false,
+        "source": "http-contract-fixture-not-AI",
+        "model_ms": 12.63719999406021,
+        "measured_fixture_network_delay_ms": 3.064199998334516,
+        "experiment_request_key": "stress:20261119:cloud_down:100:32:1:network-only"
+      }
+    },
+    {
+      "endpoint": "local",
+      "trace_index": 0,
+      "request_key": "stress:20261119:cloud_down:101:32:1:network-only",
+      "status": 200,
+      "source": "live_stub_queue",
+      "measured_handler_ms": 16.347099997801706,
+      "injected_serialization_ms": 0.07536,
+      "result": {
+        "answer": "fixed planner stub",
+        "measured_queue_ms": 0.012099997547920793,
+        "measured_service_ms": 12.300900001719128,
+        "injected_service_ms": 12,
+        "actions": [
+          {
+            "name": "light_control",
+            "params": {
+              "location": "\u5ba2\u5385",
+              "brightness": 75
+            }
+          }
+        ],
+        "semantic_complete": false,
+        "source": "http-contract-fixture-not-AI",
+        "model_ms": 12.300900001719128,
+        "measured_fixture_network_delay_ms": 3.064000004087575,
+        "experiment_request_key": "stress:20261119:cloud_down:101:32:1:network-only"
+      }
+    },
+    {
+      "endpoint": "local",
+      "trace_index": 0,
+      "request_key": "stress:20261119:cloud_down:103:32:1:network-only",
+      "status": 200,
+      "source": "live_stub_queue",
+      "measured_handler_ms": 17.440799994801637,
+      "injected_serialization_ms": 0.07536,
+      "result": {
+        "answer": "fixed planner stub",
+        "measured_queue_ms": 0.01799999881768599,
+        "measured_service_ms": 12.675800004217308,
+        "injected_service_ms": 12,
+        "actions": [
+          {
+            "name": "light_control",
+            "params": {
+              "location": "\u5ba2\u5385",
+              "brightness": 75
+            }
+          }
+        ],
+        "semantic_complete": false,
+        "source": "http-contract-fixture-not-AI",
+        "model_ms": 12.675800004217308,
+        "measured_fixture_network_delay_ms": 3.3961000008275732,
+        "experiment_request_key": "stress:20261119:cloud_down:103:32:1:network-only"
+      }
+    },
+    {
+      "endpoint": "local",
+      "trace_index": 0,
+      "request_key": "stress:20261119:cloud_down:105:32:1:network-only",
+      "status": 200,
+      "source": "live_stub_queue",
+      "measured_handler_ms": 16.670600001816638,
+      "injected_serialization_ms": 0.07536,
+      "result": {
+        "answer": "fixed planner stub",
+        "measured_queue_ms": 0.01200000406242907,
+        "measured_service_ms": 12.494900001911446,
+        "injected_service_ms": 12,
+        "actions": [
+          {
+            "name": "light_control",
+            "params": {
+              "location": "\u5ba2\u5385",
+              "brightness": 75
+            }
+          }
+        ],
+        "semantic_complete": false,
+        "source": "http-contract-fixture-not-AI",
+        "model_ms": 12.494900001911446,
+        "measured_fixture_network_delay_ms": 3.5213999944971874,
+        "experiment_request_key": "stress:20261119:cloud_down:105:32:1:network-only"
+      }
+    },
+    {
+      "endpoint": "local",
+      "trace_index": 0,
+      "request_key": "stress:20261119:cloud_down:106:32:1:network-only",
+      "status": 200,
+      "source": "live_stub_queue",
+      "measured_handler_ms": 16.358500004571397,
+      "injected_serialization_ms": 0.0752,
+      "result": {
+        "answer": "fixed planner stub",
+        "measured_queue_ms": 0.012500000593718141,
+        "measured_service_ms": 12.45770000241464,
+        "injected_service_ms": 12,
+        "actions": [
+          {
+            "name": "light_control",
+            "params": {
+              "location": "\u5ba2\u5385",
+              "brightness": 75
+            }
+          }
+        ],
+        "semantic_complete": false,
+        "source": "http-contract-fixture-not-AI",
+        "model_ms": 12.45770000241464,
+        "measured_fixture_network_delay_ms": 3.220899998268578,
+        "experiment_request_key": "stress:20261119:cloud_down:106:32:1:network-only"
+      }
+    },
+    {
+      "endpoint": "local",
+      "trace_index": 0,
+      "request_key": "stress:20261119:cloud_down:108:32:1:network-only",
+      "status": 200,
+      "source": "live_stub_queue",
+      "measured_handler_ms": 17.535799997858703,
+      "injected_serialization_ms": 0.07536,
+      "result": {
+        "answer": "fixed planner stub",
+        "measured_queue_ms": 0.015600002370774746,
+        "measured_service_ms": 13.343099999474362,
+        "injected_service_ms": 12,
+        "actions": [
+          {
+            "name": "light_control",
+            "params": {
+              "location": "\u5ba2\u5385",
+              "brightness": 75
+            }
+          }
+        ],
+        "semantic_complete": false,
+        "source": "http-contract-fixture-not-AI",
+        "model_ms": 13.343099999474362,
+        "measured_fixture_network_delay_ms": 3.393899998627603,
+        "experiment_request_key": "stress:20261119:cloud_down:108:32:1:network-only"
+      }
+    },
+    {
+      "endpoint": "local",
+      "trace_index": 0,
+      "request_key": "stress:20261119:cloud_down:110:32:1:network-only",
+      "status": 200,
+      "source": "live_stub_queue",
+      "measured_handler_ms": 16.755799995735288,
+      "injected_serialization_ms": 0.07536,
+      "result": {
+        "answer": "fixed planner stub",
+        "measured_queue_ms": 0.011199997970834374,
+        "measured_service_ms": 12.671899996348657,
+        "injected_service_ms": 12,
+        "actions": [
+          {
+            "name": "light_control",
+            "params": {
+              "location": "\u5ba2\u5385",
+              "brightness": 75
+            }
+          }
+        ],
+        "semantic_complete": false,
+        "source": "http-contract-fixture-not-AI",
+        "model_ms": 12.671899996348657,
+        "measured_fixture_network_delay_ms": 3.268600004957989,
+        "experiment_request_key": "stress:20261119:cloud_down:110:32:1:network-only"
+      }
+    },
+    {
+      "endpoint": "local",
+      "trace_index": 0,
+      "request_key": "stress:20261119:cloud_down:111:32:1:network-only",
+      "status": 200,
+      "source": "live_stub_queue",
+      "measured_handler_ms": 16.190100002859253,
+      "injected_serialization_ms": 0.07536,
+      "result": {
+        "answer": "fixed planner stub",
+        "measured_queue_ms": 0.013299999409355223,
+        "measured_service_ms": 12.318199995206669,
+        "injected_service_ms": 12,
+        "actions": [
+          {
+            "name": "light_control",
+            "params": {
+              "location": "\u5ba2\u5385",
+              "brightness": 75
+            }
+          }
+        ],
+        "semantic_complete": false,
+        "source": "http-contract-fixture-not-AI",
+        "model_ms": 12.318199995206669,
+        "measured_fixture_network_delay_ms": 3.198499995050952,
+        "experiment_request_key": "stress:20261119:cloud_down:111:32:1:network-only"
+      }
+    },
+    {
+      "endpoint": "local",
+      "trace_index": 0,
+      "request_key": "stress:20261119:cloud_down:113:32:1:network-only",
+      "status": 200,
+      "source": "live_stub_queue",
+      "measured_handler_ms": 16.95859999745153,
+      "injected_serialization_ms": 0.07528,
+      "result": {
+        "answer": "fixed planner stub",
+        "measured_queue_ms": 0.009800001862458885,
+        "measured_service_ms": 12.13580000330694,
+        "injected_service_ms": 12,
+        "actions": [
+          {
+            "name": "light_control",
+            "params": {
+              "location": "\u5ba2\u5385",
+              "brightness": 75
+            }
+          }
+        ],
+        "semantic_complete": false,
+        "source": "http-contract-fixture-not-AI",
+        "model_ms": 12.13580000330694,
+        "measured_fixture_network_delay_ms": 3.1616999985999428,
+        "experiment_request_key": "stress:20261119:cloud_down:113:32:1:network-only"
+      }
+    },
+    {
+      "endpoint": "local",
+      "trace_index": 0,
+      "request_key": "stress:20261119:cloud_down:115:32:1:network-only",
+      "status": 200,
+      "source": "live_stub_queue",
+      "measured_handler_ms": 17.35019999614451,
+      "injected_serialization_ms": 0.0752,
+      "result": {
+        "answer": "fixed planner stub",
+        "measured_queue_ms": 0.016999998479150236,
+        "measured_service_ms": 12.32460000028368,
+        "injected_service_ms": 12,
+        "actions": [
+          {
+            "name": "light_control",
+            "params": {
+              "location": "\u5ba2\u5385",
+              "brightness": 75
+            }
+          }
+        ],
+        "semantic_complete": false,
+        "source": "http-contract-fixture-not-AI",
+        "model_ms": 12.32460000028368,
+        "measured_fixture_network_delay_ms": 3.546499996446073,
+        "experiment_request_key": "stress:20261119:cloud_down:115:32:1:network-only"
+      }
+    },
+    {
+      "endpoint": "local",
+      "trace_index": 0,
+      "request_key": "stress:20261119:cloud_down:116:32:1:network-only",
+      "status": 200,
+      "source": "live_stub_queue",
+      "measured_handler_ms": 16.00719999987632,
+      "injected_serialization_ms": 0.07528,
+      "result": {
+        "answer": "fixed planner stub",
+        "measured_queue_ms": 0.016500001947861165,
+        "measured_service_ms": 12.218900003063027,
+        "injected_service_ms": 12,
+        "actions": [
+          {
+            "name": "light_control",
+            "params": {
+              "location": "\u5ba2\u5385",
+              "brightness": 75
+            }
+          }
+        ],
+        "semantic_complete": false,
+        "source": "http-contract-fixture-not-AI",
+        "model_ms": 12.218900003063027,
+        "measured_fixture_network_delay_ms": 2.900699997553602,
+        "experiment_request_key": "stress:20261119:cloud_down:116:32:1:network-only"
+      }
+    },
+    {
+      "endpoint": "local",
+      "trace_index": 0,
+      "request_key": "stress:20261119:cloud_down:118:32:1:network-only",
+      "status": 200,
+      "source": "live_stub_queue",
+      "measured_handler_ms": 17.33290000265697,
+      "injected_serialization_ms": 0.07536,
+      "result": {
+        "answer": "fixed planner stub",
+        "measured_queue_ms": 0.014000004739500582,
+        "measured_service_ms": 12.524800004030112,
+        "injected_service_ms": 12,
+        "actions": [
+          {
+            "name": "light_control",
+            "params": {
+              "location": "\u5ba2\u5385",
+              "brightness": 75
+            }
+          }
+        ],
+        "semantic_complete": false,
+        "source": "http-contract-fixture-not-AI",
+        "model_ms": 12.524800004030112,
+        "measured_fixture_network_delay_ms": 3.007600003911648,
+        "experiment_request_key": "stress:20261119:cloud_down:118:32:1:network-only"
+      }
+    },
+    {
+      "endpoint": "local",
+      "trace_index": 0,
+      "request_key": "stress:20261119:cloud_down:120:32:1:network-only",
+      "status": 200,
+      "source": "live_stub_queue",
+      "measured_handler_ms": 16.379399996367283,
+      "injected_serialization_ms": 0.07512,
+      "result": {
+        "answer": "fixed planner stub",
+        "measured_queue_ms": 0.01649999467190355,
+        "measured_service_ms": 12.40779999352526,
+        "injected_service_ms": 12,
+        "actions": [
+          {
+            "name": "light_control",
+            "params": {
+              "location": "\u5ba2\u5385",
+              "brightness": 75
+            }
+          }
+        ],
+        "semantic_complete": false,
+        "source": "http-contract-fixture-not-AI",
+        "model_ms": 12.40779999352526,
+        "measured_fixture_network_delay_ms": 3.344299999298528,
+        "experiment_request_key": "stress:20261119:cloud_down:120:32:1:network-only"
+      }
+    },
+    {
+      "endpoint": "local",
+      "trace_index": 0,
+      "request_key": "stress:20261119:cloud_down:121:32:1:network-only",
+      "status": 200,
+      "source": "live_stub_queue",
+      "measured_handler_ms": 16.168599999218713,
+      "injected_serialization_ms": 0.07536,
+      "result": {
+        "answer": "fixed planner stub",
+        "measured_queue_ms": 0.014500001270789653,
+        "measured_service_ms": 12.517300005129073,
+        "injected_service_ms": 12,
+        "actions": [
+          {
+            "name": "light_control",
+            "params": {
+              "location": "\u5ba2\u5385",
+              "brightness": 75
+            }
+          }
+        ],
+        "semantic_complete": false,
+        "source": "http-contract-fixture-not-AI",
+        "model_ms": 12.517300005129073,
+        "measured_fixture_network_delay_ms": 2.835700004652608,
+        "experiment_request_key": "stress:20261119:cloud_down:121:32:1:network-only"
+      }
+    },
+    {
+      "endpoint": "local",
+      "trace_index": 0,
+      "request_key": "stress:20261119:cloud_down:123:32:1:network-only",
+      "status": 200,
+      "source": "live_stub_queue",
+      "measured_handler_ms": 17.902899999171495,
+      "injected_serialization_ms": 0.07544,
+      "result": {
+        "answer": "fixed planner stub",
+        "measured_queue_ms": 0.020499996026046574,
+        "measured_service_ms": 13.043500002822839,
+        "injected_service_ms": 12,
+        "actions": [
+          {
+            "name": "light_control",
+            "params": {
+              "location": "\u5ba2\u5385",
+              "brightness": 75
+            }
+          }
+        ],
+        "semantic_complete": false,
+        "source": "http-contract-fixture-not-AI",
+        "model_ms": 13.043500002822839,
+        "measured_fixture_network_delay_ms": 3.0731000006198883,
+        "experiment_request_key": "stress:20261119:cloud_down:123:32:1:network-only"
+      }
+    },
+    {
+      "endpoint": "local",
+      "trace_index": 0,
+      "request_key": "stress:20261119:cloud_down:125:32:1:network-only",
+      "status": 200,
+      "source": "live_stub_queue",
+      "measured_handler_ms": 16.624800002318807,
+      "injected_serialization_ms": 0.07544,
+      "result": {
+        "answer": "fixed planner stub",
+        "measured_queue_ms": 0.01630000042496249,
+        "measured_service_ms": 12.542199998279102,
+        "injected_service_ms": 12,
+        "actions": [
+          {
+            "name": "light_control",
+            "params": {
+              "location": "\u5ba2\u5385",
+              "brightness": 75
+            }
+          }
+        ],
+        "semantic_complete": false,
+        "source": "http-contract-fixture-not-AI",
+        "model_ms": 12.542199998279102,
+        "measured_fixture_network_delay_ms": 3.3751999944797717,
+        "experiment_request_key": "stress:20261119:cloud_down:125:32:1:network-only"
+      }
+    },
+    {
+      "endpoint": "local",
+      "trace_index": 0,
+      "request_key": "stress:20261119:cloud_down:126:32:1:network-only",
+      "status": 200,
+      "source": "live_stub_queue",
+      "measured_handler_ms": 16.400900000007823,
+      "injected_serialization_ms": 0.07536,
+      "result": {
+        "answer": "fixed planner stub",
+        "measured_queue_ms": 0.018999999156221747,
+        "measured_service_ms": 12.48699999996461,
+        "injected_service_ms": 12,
+        "actions": [
+          {
+            "name": "light_control",
+            "params": {
+              "location": "\u5ba2\u5385",
+              "brightness": 75
+            }
+          }
+        ],
+        "semantic_complete": false,
+        "source": "http-contract-fixture-not-AI",
+        "model_ms": 12.48699999996461,
+        "measured_fixture_network_delay_ms": 3.2045999978436157,
+        "experiment_request_key": "stress:20261119:cloud_down:126:32:1:network-only"
+      }
+    }
+  ],
+  "cloud": []
+}

@@ -27,7 +27,7 @@ import copy
 import uuid
 from html import escape as html_escape
 from urllib.parse import urlparse
-from bounded_http import BoundedHTTPServer
+from bounded_http import BoundedHTTPServer, ReadDeadlineHandlerMixin
 from backend_monitor import BackendMonitor
 from device_actions import execute_device_actions
 from state_freshness import StateFreshness, SingleFlightRefresh, valid_sample_time
@@ -184,6 +184,16 @@ def parse_json_request(raw_body):
     return payload
 
 
+def parse_request_context(payload):
+    """Both mutation routes accept object context; explicit JSON null is invalid."""
+    if not isinstance(payload, dict):
+        raise ValueError('INVALID_REQUEST_OBJECT')
+    context = payload.get('context', {})
+    if not isinstance(context, dict):
+        raise ValueError('INVALID_CONTEXT')
+    return context
+
+
 def parse_command_payload(payload):
     """Validate command input and preserve an optional structured context."""
     if not isinstance(payload, dict):
@@ -191,9 +201,7 @@ def parse_command_payload(payload):
     command = payload.get("command")
     if not isinstance(command, str) or not command.strip() or len(command) > MAX_COMMAND_CHARS:
         raise ValueError("INVALID_COMMAND")
-    context = payload.get("context", {})
-    if not isinstance(context, dict):
-        raise ValueError("INVALID_CONTEXT")
+    context = parse_request_context(payload)
     return {"command": command, "context": context}
 
 # ============ 传感器模拟（物理感知层） ============
@@ -741,6 +749,12 @@ def _gateway_local_handler_unlocked(command, context=None):
                 'actions': [], 'semantic_complete': False}
     if command.strip() in {"我出门了", "拜拜", "再见", "离家模式"}:
         return _execute_leave_scene(context)
+    plan = request_goals(command)
+    if plan is not None:
+        execution_context = {**dict(context or {}), '_receipt_command': command}
+        executed = _gateway_action_executor(plan, execution_context)
+        return {**executed, 'plan_source': 'server_bounded_grammar',
+                'simulated_execution_confirmed': bool(executed.get('task_complete'))}
     if OffloadGateway and OffloadGateway.needs_plan(command):
         return {'answer': '本地规则未完整理解该请求，交由规划器或进一步澄清。',
                 'actions': [], 'semantic_complete': False, 'error': 'UNRESOLVED_NO_NLU'}
@@ -1348,7 +1362,10 @@ def process_command(command, context=None, internal=None):
         }
         if supports_observation:
             observation = _decision_observation(monitored, OffloadGateway.classify(command), command)
-    if observation is None:
+    compile_explicit = isinstance(gateway, OffloadGateway) and request_goals(command) is not None
+    if compile_explicit:
+        event = gateway.handle(command, request_context, observation=observation, prefer_explicit_rules=True)
+    elif observation is None:
         event = gateway.handle(command, request_context)
     else:
         event = gateway.handle(command, request_context, observation=observation)
@@ -1379,7 +1396,8 @@ def _get_request_journal():
 def process_http_command(command, context=None, *, patrol=False):
     """Reserve the user request ID before clarification, policy or model calls."""
     from durable_receipts import checked_id
-    clean = {key: value for key, value in dict(context or {}).items() if not str(key).startswith('_')}
+    context = parse_request_context({'context': {} if context is None else context})
+    clean = {key: value for key, value in context.items() if not str(key).startswith('_')}
     clean['command_id'] = checked_id(clean.get('command_id', uuid.uuid4().hex))
     if 'session_id' in clean:
         checked_id(clean['session_id'])
@@ -1465,7 +1483,7 @@ def lookup_http_request(command_id):
     return journal.reconcile(command_id, update)
 
 # ============ HTTP 服务器 ============
-class BridgeHandler(http.server.BaseHTTPRequestHandler):
+class BridgeHandler(ReadDeadlineHandlerMixin, http.server.BaseHTTPRequestHandler):
 
     def do_GET(self):
         path = urlparse(self.path).path
@@ -1513,7 +1531,7 @@ class BridgeHandler(http.server.BaseHTTPRequestHandler):
         elif path == '/api/patrol/trigger':
             try:
                 payload = parse_json_request(self._read_body())
-                report = process_http_command('服务器主动巡检', payload.get('context', {}), patrol=True)
+                report = process_http_command('服务器主动巡检', parse_request_context(payload), patrol=True)
                 self.send_json({'status': 'ok' if report.get('task_complete') else 'incomplete', 'report': report})
             except ValueError as exc:
                 self.send_json({'error': str(exc)}, status=400)

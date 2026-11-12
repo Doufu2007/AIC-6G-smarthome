@@ -1,0 +1,18 @@
+PASS  healthy compute preserves cloud selection
+PASS  unavailable cloud model falls back to local model
+PASS  overloaded compute falls back to local model
+PASS  simple task remains local rules under compute overload
+PASS  safety task remains local rules under compute overload
+PASS  compute thresholds exactly at budget preserve cloud selection
+PASS  one megabyte below compute budget falls back
+PASS  one request above concurrency budget falls back
+PASS  WAN failure reason is preserved when compute is also unhealthy
+PASS  LAN failure forces local rules regardless of compute
+PASS  NULL network and compute inputs use conservative defaults
+PASS  NULL compute does not affect simple task routing
+PASS  unknown compute metrics have explicit -1 sentinel
+PASS  known unavailable model routes locally when memory and queue are unknown
+PASS  unknown memory is not treated as observed low memory
+PASS  known inflight overload is actionable without model-ready or memory telemetry
+PASS  all unknown compute leaves link policy unchanged
+=== compute policy: 0 failed ===

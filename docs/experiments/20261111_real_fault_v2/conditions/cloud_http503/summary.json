@@ -1,0 +1,197 @@
+{
+  "n_rows": 24,
+  "n_skipped": 0,
+  "n_runner_failed": 0,
+  "aggregation_rule": "source classes remain separate; no pooled real/synthetic accuracy or latency",
+  "by_arm_and_evidence": {
+    "fixed-local": {
+      "real-model": {
+        "n_rows": 6,
+        "n_model_http_ok": 6,
+        "n_interface_ok": 6,
+        "n_action_correct": 6,
+        "n_action_scorable": 6,
+        "n_state_outcome_correct": 6,
+        "n_simulated_execution_success": 6,
+        "n_completed": 6,
+        "n_raw_model_action_match": 6,
+        "n_normalized_model_action_match": 6,
+        "n_empty_expected": 0,
+        "n_empty_expected_structure_match": 0,
+        "n_protection_refusal": 0,
+        "n_failures": 0,
+        "model_calls": 6,
+        "gateway_median_ms": 712.7155,
+        "gateway_p95_ms": 836.067
+      }
+    },
+    "fixed-cloud": {
+      "fallback": {
+        "n_rows": 6,
+        "n_model_http_ok": 0,
+        "n_interface_ok": 6,
+        "n_action_correct": 0,
+        "n_action_scorable": 6,
+        "n_state_outcome_correct": 3,
+        "n_simulated_execution_success": 0,
+        "n_completed": 0,
+        "n_raw_model_action_match": 0,
+        "n_normalized_model_action_match": 0,
+        "n_empty_expected": 0,
+        "n_empty_expected_structure_match": 0,
+        "n_protection_refusal": 0,
+        "n_failures": 6,
+        "model_calls": 6,
+        "gateway_median_ms": 5.5165,
+        "gateway_p95_ms": 23.397
+      }
+    },
+    "network-only": {
+      "real-model": {
+        "n_rows": 6,
+        "n_model_http_ok": 6,
+        "n_interface_ok": 6,
+        "n_action_correct": 6,
+        "n_action_scorable": 6,
+        "n_state_outcome_correct": 6,
+        "n_simulated_execution_success": 6,
+        "n_completed": 6,
+        "n_raw_model_action_match": 6,
+        "n_normalized_model_action_match": 6,
+        "n_empty_expected": 0,
+        "n_empty_expected_structure_match": 0,
+        "n_protection_refusal": 0,
+        "n_failures": 0,
+        "model_calls": 6,
+        "gateway_median_ms": 714.764,
+        "gateway_p95_ms": 846.951
+      }
+    },
+    "joint": {
+      "real-model": {
+        "n_rows": 6,
+        "n_model_http_ok": 6,
+        "n_interface_ok": 6,
+        "n_action_correct": 6,
+        "n_action_scorable": 6,
+        "n_state_outcome_correct": 6,
+        "n_simulated_execution_success": 6,
+        "n_completed": 6,
+        "n_raw_model_action_match": 6,
+        "n_normalized_model_action_match": 6,
+        "n_empty_expected": 0,
+        "n_empty_expected_structure_match": 0,
+        "n_protection_refusal": 0,
+        "n_failures": 0,
+        "model_calls": 6,
+        "gateway_median_ms": 696.539,
+        "gateway_p95_ms": 892.883
+      }
+    }
+  },
+  "paired_latency": {
+    "fixed-local": {
+      "n_valid_paired_rows": 6,
+      "joint_minus_baseline_median_ms": -8.24150000000003,
+      "scope": "same-input correctly planned real-model rows only; shared-host sequential interference remains"
+    },
+    "fixed-cloud": {
+      "n_valid_paired_rows": 0,
+      "joint_minus_baseline_median_ms": null,
+      "scope": "same-input correctly planned real-model rows only; shared-host sequential interference remains"
+    },
+    "network-only": {
+      "n_valid_paired_rows": 6,
+      "joint_minus_baseline_median_ms": -13.674500000000023,
+      "scope": "same-input correctly planned real-model rows only; shared-host sequential interference remains"
+    }
+  },
+  "by_task_scope": {
+    "complex_planning": {
+      "fixed-local": {
+        "real-model": {
+          "n_rows": 6,
+          "n_model_http_ok": 6,
+          "n_interface_ok": 6,
+          "n_action_correct": 6,
+          "n_action_scorable": 6,
+          "n_state_outcome_correct": 6,
+          "n_simulated_execution_success": 6,
+          "n_completed": 6,
+          "n_raw_model_action_match": 6,
+          "n_normalized_model_action_match": 6,
+          "n_empty_expected": 0,
+          "n_empty_expected_structure_match": 0,
+          "n_protection_refusal": 0,
+          "n_failures": 0,
+          "model_calls": 6,
+          "gateway_median_ms": 712.7155,
+          "gateway_p95_ms": 836.067
+        }
+      },
+      "fixed-cloud": {
+        "fallback": {
+          "n_rows": 6,
+          "n_model_http_ok": 0,
+          "n_interface_ok": 6,
+          "n_action_correct": 0,
+          "n_action_scorable": 6,
+          "n_state_outcome_correct": 3,
+          "n_simulated_execution_success": 0,
+          "n_completed": 0,
+          "n_raw_model_action_match": 0,
+          "n_normalized_model_action_match": 0,
+          "n_empty_expected": 0,
+          "n_empty_expected_structure_match": 0,
+          "n_protection_refusal": 0,
+          "n_failures": 6,
+          "model_calls": 6,
+          "gateway_median_ms": 5.5165,
+          "gateway_p95_ms": 23.397
+        }
+      },
+      "network-only": {
+        "real-model": {
+          "n_rows": 6,
+          "n_model_http_ok": 6,
+          "n_interface_ok": 6,
+          "n_action_correct": 6,
+          "n_action_scorable": 6,
+          "n_state_outcome_correct": 6,
+          "n_simulated_execution_success": 6,
+          "n_completed": 6,
+          "n_raw_model_action_match": 6,
+          "n_normalized_model_action_match": 6,
+          "n_empty_expected": 0,
+          "n_empty_expected_structure_match": 0,
+          "n_protection_refusal": 0,
+          "n_failures": 0,
+          "model_calls": 6,
+          "gateway_median_ms": 714.764,
+          "gateway_p95_ms": 846.951
+        }
+      },
+      "joint": {
+        "real-model": {
+          "n_rows": 6,
+          "n_model_http_ok": 6,
+          "n_interface_ok": 6,
+          "n_action_correct": 6,
+          "n_action_scorable": 6,
+          "n_state_outcome_correct": 6,
+          "n_simulated_execution_success": 6,
+          "n_completed": 6,
+          "n_raw_model_action_match": 6,
+          "n_normalized_model_action_match": 6,
+          "n_empty_expected": 0,
+          "n_empty_expected_structure_match": 0,
+          "n_protection_refusal": 0,
+          "n_failures": 0,
+          "model_calls": 6,
+          "gateway_median_ms": 696.539,
+          "gateway_p95_ms": 892.883
+        }
+      }
+    }
+  }
+}

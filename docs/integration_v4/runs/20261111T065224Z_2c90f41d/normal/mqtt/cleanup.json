@@ -1,0 +1,37 @@
+{
+  "owned_processes": [
+    {
+      "role": "entity",
+      "pid": 25188,
+      "exit_code": 0,
+      "forced_termination": false,
+      "reason": "requested_entity_restart",
+      "argv": [
+        "C:\\Program Files\\Python313\\python.exe",
+        "-X",
+        "utf8",
+        "C:\\Users\\郑傅韬\\Desktop\\大学生活\\AIC\\AIC6G专项赛_2026\\场景赛道\\SenseHome-6G\\net_offload\\mqtt_receipts.py",
+        "--entity",
+        "--directory",
+        "C:\\Users\\郑傅韬\\Desktop\\大学生活\\AIC\\AIC6G专项赛_2026\\场景赛道\\docs\\integration_v4\\runs\\20261111T065224Z_2c90f41d\\normal\\mqtt",
+        "--port",
+        "65142",
+        "--platform-id",
+        "software-home"
+      ]
+    },
+    {
+      "role": "entity",
+      "pid": 24968,
+      "exit_code": 0,
+      "forced_termination": false
+    },
+    {
+      "role": "broker",
+      "pid": 39880,
+      "exit_code": 0,
+      "forced_termination": false
+    }
+  ],
+  "all_stopped": true
+}

@@ -1,0 +1,36 @@
+{
+  "schema": "sensehome.trial-finalize.v2",
+  "scope": "automated local PC/HTTP checks; not external user feedback or real model inference",
+  "completed_at_utc": "2026-11-10T20:23:14.457565+00:00",
+  "commands": [
+    {
+      "command": [
+        "python",
+        "-m",
+        "pytest",
+        "-q",
+        "docs/trial_v2/test_collector.py",
+        "docs/trial_v2/test_isolated_gateway.py"
+      ],
+      "exit_code": 0
+    },
+    {
+      "command": [
+        "python",
+        "docs/trial_v2/smoke_http.py"
+      ],
+      "exit_code": 0
+    }
+  ],
+  "source_sha256": {
+    "collector.py": "6385eaaa603c587445c7ba0b0c703c49f148e42bb4757b50401764410d6d0ef9",
+    "run_isolated_gateway.py": "1333d1bb0ffc479d20707b44438f9815b2af613cf0acb9e06c1cec5ec24eef60",
+    "test_collector.py": "d011b4a68d80fd1ceb3eb932491ceb34a7d2e249dcb77a427f83ab907e4efc6e",
+    "test_isolated_gateway.py": "f279e6efc5d60a9282763399dfe72b1b49e4da12aa4149ab7c69f3081d395569",
+    "index.html": "216718c98ad73647677617217790e422bfc33de0bfcc941e5161cefa076af56c",
+    "README.md": "34e89dbafaaa65337ad723ee7c72e433080df7c07c79f8f488d0ad3220d7957e"
+  },
+  "status": "passed",
+  "external_participant_feedback_count": 0,
+  "browser_acceptance": "pending_main_agent"
+}

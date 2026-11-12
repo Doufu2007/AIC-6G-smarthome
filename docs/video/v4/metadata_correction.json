@@ -1,0 +1,21 @@
+{
+  "schema": "sensehome.video-runtime-metadata-correction.v4",
+  "corrects": [
+    "docs/video/v4/final_runtime_manifest.json:policy_arm",
+    "docs/video/v4/final_capture/run_manifest.json:policy_arm"
+  ],
+  "raw_manifest_and_captured_sources_preserved": true,
+  "inherited_snapshot_value": "joint",
+  "actual_strategy": "local-first",
+  "actual_event_policy_arm": "static-local",
+  "events_checked": 4,
+  "cause": "policy_arm is inherited from the v3 initialization snapshot. IntegratedSession then applies the registered v4 strategy by setting the policy object's arm, without updating that inherited snapshot field.",
+  "authoritative_execution_evidence": [
+    "docs/video/v4/final_runtime_manifest.json:strategy",
+    "docs/video/v4/final_runtime_manifest.json:strategy_source",
+    "docs/video/v4/final_runtime_records.json:records[*].response.body.gateway_event.policy.arm"
+  ],
+  "scope": "Metadata correction only. The final capture used local-first/static-local. Do not describe it as joint execution. Raw responses, captured source bytes, model calls and their hashes remain unchanged.",
+  "next_version_maintenance": "Synchronize the inherited policy_arm manifest field after applying a v4 strategy. Do not modify the sealed captured source for this correction.",
+  "review_finding": "V4-R05 / P2 / resolved by explicit metadata correction"
+}

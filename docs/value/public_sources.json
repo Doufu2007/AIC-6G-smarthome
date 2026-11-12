@@ -1,0 +1,155 @@
+{
+  "schema": "sensehome.public-sources.v1",
+  "records": [
+    {
+      "id": "S1",
+      "publisher": "Home Assistant",
+      "title": "Assist",
+      "url": "https://www.home-assistant.io/voice_control/",
+      "accessed_local_date": "2026-11-11",
+      "timezone": "Asia/Singapore",
+      "method": "firecrawl CLI 1.26.3 keyless scrape",
+      "source_snapshot_sha256": "35349bf602596d9d14541e94d9fc0f2d021bb613af5529eba4e35f5001bc7677",
+      "excerpts": [
+        "It lets you control your smart home with natural language, and it can run fully on your own hardware",
+        "It can work locally or, if you prefer, use one of the latest large language models to handle more conversational requests."
+      ],
+      "support_scope": "支持已存在本地自然语言智能家居路线；不支持本作品优于它或市场规模的推断。"
+    },
+    {
+      "id": "S2",
+      "publisher": "Home Assistant",
+      "title": "Local Assist pipeline",
+      "url": "https://www.home-assistant.io/voice_control/voice_remote_local_assistant/",
+      "accessed_local_date": "2026-11-11",
+      "timezone": "Asia/Singapore",
+      "method": "firecrawl CLI 1.26.3 keyless scrape",
+      "source_snapshot_sha256": "15d202d64d1767f2ef933161359ccb4323964e74f2624ba094b1ba075fbe627a",
+      "excerpts": [
+        "Assist can run entirely on your own hardware.",
+        "Only supports a subset",
+        "quality can change quite a bit."
+      ],
+      "support_scope": "支持本地语音各环节、模型能力和硬件取舍；官方特定设备时延不是本机实测。"
+    },
+    {
+      "id": "S3",
+      "publisher": "Home Assistant",
+      "title": "Ollama integration",
+      "url": "https://www.home-assistant.io/integrations/ollama/",
+      "accessed_local_date": "2026-11-11",
+      "timezone": "Asia/Singapore",
+      "method": "firecrawl CLI 1.26.3 keyless scrape",
+      "source_snapshot_sha256": "10d0f71b19ed141b2de3269e0adfed7286167c4e479e9f0746aad68771a36083",
+      "excerpts": [
+        "Controlling Home Assistant is an experimental feature",
+        "Only models that support [Tools](https://ollama.com/search?c=tools) may control Home Assistant.",
+        "Note that smaller models are more likely to make mistakes than larger models."
+      ],
+      "support_scope": "支持本地LLM设备控制已存在且有权限/能力限制；不支持本作品中文准确率。"
+    },
+    {
+      "id": "S4",
+      "publisher": "Home Assistant",
+      "title": "Assist with an AI personality",
+      "url": "https://www.home-assistant.io/voice_control/assist_create_open_ai_personality/",
+      "accessed_local_date": "2026-11-11",
+      "timezone": "Asia/Singapore",
+      "method": "firecrawl CLI 1.26.3 keyless scrape",
+      "source_snapshot_sha256": "913e43853d2f2f64e4924329f936b4de081a0cae58a3467d42fb9c5d89b46035",
+      "excerpts": [
+        "if the intent can be answered by Home Assistant it will.",
+        "If you deselect the option, all the intents will go through the agent."
+      ],
+      "support_scope": "支持HA已有本地意图优先再用LLM的设置；不能以规则优先或回退宣称独创。"
+    },
+    {
+      "id": "S5",
+      "publisher": "Home Assistant",
+      "title": "OpenAI integration",
+      "url": "https://www.home-assistant.io/integrations/openai_conversation/",
+      "accessed_local_date": "2026-11-11",
+      "timezone": "Asia/Singapore",
+      "method": "firecrawl CLI 1.26.3 keyless scrape",
+      "source_snapshot_sha256": "942c2c30dab15b37c6a304dfeef2538f06520ada9f28e30b8c697dc9e6afe293",
+      "excerpts": [
+        "You can control what devices and entities it can access from the [exposed entities page](https://my.home-assistant.io/redirect/voice_assistants)."
+      ],
+      "support_scope": "支持已有云模型设备控制及实体授权；不能把本作品动作白名单描述成唯一。"
+    },
+    {
+      "id": "S6",
+      "publisher": "ITU-R",
+      "title": "Recommendation ITU-R M.2160-0 (11/2023)",
+      "url": "https://www.itu.int/dms_pubrec/itu-r/rec/m/R-REC-M.2160-0-202311-I!!PDF-E.pdf",
+      "accessed_local_date": "2026-11-11",
+      "timezone": "Asia/Singapore",
+      "method": "firecrawl CLI 1.26.3 keyless scrape",
+      "source_snapshot_sha256": "2e866040a92b49e54eb921aae36aae3fa61854ecc9342c3f48ede409921abde0",
+      "excerpts": [
+        "This usage scenario would support distributed computing and AI applications.",
+        "offloading of heavy computation operations across devices and",
+        "computing resource orchestration and chaining."
+      ],
+      "support_scope": "§3 Artificial Intelligence and Communication 支持通信与计算协同愿景；不证明本系统接入6G或实现分布式模型切分。"
+    },
+    {
+      "id": "S7",
+      "publisher": "ETSI",
+      "title": "Multi-access Edge Computing (MEC)",
+      "url": "https://www.etsi.org/technical-groups/mec/",
+      "accessed_local_date": "2026-11-11",
+      "timezone": "Asia/Singapore",
+      "method": "firecrawl CLI 1.26.3 keyless scrape",
+      "source_snapshot_sha256": "268afed36486e81a03f7ee2e5b012bc416fdf626ac5606689e37f19d7282ceb9",
+      "excerpts": [
+        "Multi-access Edge Computing (MEC) offers application developers and content providers cloud-computing capabilities and an IT service environment at the edge of the network.",
+        "MEC is not only focused on mobile networks, but also fixed and WLAN accesses"
+      ],
+      "support_scope": "支持边缘应用和网络信息API演进路径；低时延高带宽为官方背景描述，不能当本作品测量。"
+    },
+    {
+      "id": "S8",
+      "publisher": "lm-sys/RouteLLM",
+      "title": "RouteLLM README",
+      "url": "https://github.com/lm-sys/RouteLLM",
+      "accessed_local_date": "2026-11-11",
+      "timezone": "Asia/Singapore",
+      "method": "firecrawl CLI 1.26.3 keyless scrape",
+      "source_snapshot_sha256": "8f9ce3d89c7acbc62cd71c753d6798129e8a2c1102a2794b6cd11ba8bd4d888d",
+      "excerpts": [
+        "RouteLLM is a framework for serving and evaluating LLM routers.",
+        "Each routing request has a _cost threshold_ that controls the tradeoff between cost and quality."
+      ],
+      "support_scope": "支持通用模型路由和成本质量折中已存在；不迁移其benchmark收益数字到本系统。"
+    },
+    {
+      "id": "S9",
+      "publisher": "DeepSeek API",
+      "title": "Models & Pricing",
+      "url": "https://api-docs.deepseek.com/quick_start/pricing",
+      "accessed_local_date": "2026-11-11",
+      "timezone": "Asia/Singapore",
+      "method": "firecrawl CLI 1.26.3 keyless scrape",
+      "source_snapshot_sha256": "8e9f083072bd6017e5859bf8271273dd8a902ce5f002d972b436ecc40e8aaaf6",
+      "excerpts": [
+        "Model prices are listed in units of per 1M tokens.",
+        "**| PEAK | $0.3 | $1.32 |**",
+        "**| PEAK | $1.2 | $3.96 |**",
+        "Product prices may vary and DeepSeek reserves the right to adjust them."
+      ],
+      "support_scope": "仅作可替换的公开API报价参数；未调用、未计费，也不证明与本地模型质量相等。"
+    }
+  ],
+  "pricing_snapshot": {
+    "source_id": "S9",
+    "currency": "USD",
+    "model": "deepseek-flash",
+    "model_version": "DeepSeek-V4.1-Flash-1017",
+    "mode": "peak, cache-miss input, token-only",
+    "input_per_million": 0.3,
+    "output_per_million": 1.2,
+    "notes": "按访问当日官方页面；未发出API推理请求。缓存命中与非高峰另价；示例不用折扣，不做汇率换算。"
+  },
+  "scope": "官方能力/愿景/报价快照；不是访谈、试点、市场规模或本系统性能证据。"
+}

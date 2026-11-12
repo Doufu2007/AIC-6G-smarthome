@@ -1,0 +1,142 @@
+{
+  "status": "passed",
+  "reviewer": "author offline audit; no fresh independent review",
+  "no_model_requests": true,
+  "conditions": {
+    "healthy": {
+      "n_rows": 24,
+      "n_pair_blocks": 6,
+      "n_runner_failed": 0,
+      "n_skipped": 0,
+      "source_snapshot_and_current_match": true,
+      "registration_before_run": true,
+      "all_scores_recomputed": true,
+      "paired_inputs_match": true,
+      "measured_proxy_waits": {
+        "local": {
+          "n_posts_including_warmup": 19,
+          "min_ms": 0.009,
+          "median_ms": 0.013,
+          "max_ms": 0.035
+        },
+        "cloud": {
+          "n_posts_including_warmup": 7,
+          "min_ms": 0.009,
+          "median_ms": 0.012,
+          "max_ms": 0.035
+        }
+      },
+      "report_sha256": "8ba988fe6a6787a3bd69666b7756e67795b569cc4ce6543b6419dd839b332543",
+      "rows_sha256": "255aeee0068b29e0c2a9562cdc2173e44fc8e837ecbf8dbed289036b2836e50d",
+      "proxy_records_sha256": "3dbbf44660ecf62808aef2b2dbd4ee89ada7b967accc03d6087db9bbdc4e5304"
+    },
+    "cloud_http503": {
+      "n_rows": 24,
+      "n_pair_blocks": 6,
+      "n_runner_failed": 0,
+      "n_skipped": 0,
+      "source_snapshot_and_current_match": true,
+      "registration_before_run": true,
+      "all_scores_recomputed": true,
+      "paired_inputs_match": true,
+      "measured_proxy_waits": {
+        "local": {
+          "n_posts_including_warmup": 19,
+          "min_ms": 0.009,
+          "median_ms": 0.012,
+          "max_ms": 0.024
+        }
+      },
+      "report_sha256": "4a301a5394832d54d4c26dc239442ae2b243f97b39eb637f7d2c3abc40864604",
+      "rows_sha256": "7b54b75130a2096323ec43d736c35586f4f149033751defe21ab4702b776d069",
+      "proxy_records_sha256": "29f46a13278c15ae265e21ecf143639a835750dd86ac5854bfe307eab46a8cc6"
+    },
+    "local_http503": {
+      "n_rows": 24,
+      "n_pair_blocks": 6,
+      "n_runner_failed": 0,
+      "n_skipped": 0,
+      "source_snapshot_and_current_match": true,
+      "registration_before_run": true,
+      "all_scores_recomputed": true,
+      "paired_inputs_match": true,
+      "measured_proxy_waits": {
+        "cloud": {
+          "n_posts_including_warmup": 13,
+          "min_ms": 0.009,
+          "median_ms": 0.014,
+          "max_ms": 0.032
+        }
+      },
+      "report_sha256": "97329ffd95d56b994205b7b819ab061abbe174c9a4551b51e0886ce780070e2a",
+      "rows_sha256": "6aa038b212f0d15e36a9181098beb664e6c45e069ceda4b0bbe203b5629b2d45",
+      "proxy_records_sha256": "93d0afd3c8d5ee8f4c2dec155024e67c8bd08e0abd18a8603f80099347810cce"
+    },
+    "cloud_admission700": {
+      "n_rows": 24,
+      "n_pair_blocks": 6,
+      "n_runner_failed": 0,
+      "n_skipped": 0,
+      "source_snapshot_and_current_match": true,
+      "registration_before_run": true,
+      "all_scores_recomputed": true,
+      "paired_inputs_match": true,
+      "measured_proxy_waits": {
+        "local": {
+          "n_posts_including_warmup": 19,
+          "min_ms": 0.009,
+          "median_ms": 0.013,
+          "max_ms": 0.098
+        },
+        "cloud": {
+          "n_posts_including_warmup": 7,
+          "min_ms": 701.068,
+          "median_ms": 707.084,
+          "max_ms": 714.228
+        }
+      },
+      "report_sha256": "c9212061e981af61a27dcc974455cb7fe7471588c237ae14dd7caa6f784643ce",
+      "rows_sha256": "0f9f8ef9a22f52be1f626b1050c97e891fce391179953966ca8ec1531e2db694",
+      "proxy_records_sha256": "2ec4589d31a3d33a3bf642adc0522e4e2b4448851ab1c07ac9a1f4c460c99d6f"
+    },
+    "local_admission700": {
+      "n_rows": 24,
+      "n_pair_blocks": 6,
+      "n_runner_failed": 0,
+      "n_skipped": 0,
+      "source_snapshot_and_current_match": true,
+      "registration_before_run": true,
+      "all_scores_recomputed": true,
+      "paired_inputs_match": true,
+      "measured_proxy_waits": {
+        "local": {
+          "n_posts_including_warmup": 13,
+          "min_ms": 700.899,
+          "median_ms": 705.437,
+          "max_ms": 714.735
+        },
+        "cloud": {
+          "n_posts_including_warmup": 13,
+          "min_ms": 0.009,
+          "median_ms": 0.013,
+          "max_ms": 0.032
+        }
+      },
+      "report_sha256": "846362fa7b14067a7da7ca4dd0c8674c7e5a46c5c6f96723057a3fea2bcaffe2",
+      "rows_sha256": "38e4fe5ab1c622afa15bd083835c81f7d1154dba3e979e3bcdc21ecdd715a6ea",
+      "proxy_records_sha256": "cf627135b362f2e36c5da06178d6b7d3696fb4aa9f963be9fff61d2c27a32fe4"
+    }
+  },
+  "n_rows": 120,
+  "paired_proxy_post_attempts": 120,
+  "paired_actual_model_post_attempts": 102,
+  "paired_actual_model_post_http200": 102,
+  "warmup_proxy_post_attempts": 10,
+  "warmup_actual_model_post_attempts": 8,
+  "model_inventory_gets": 60,
+  "proxy_telemetry_gets": 60,
+  "registered_at": "2026-11-10T19:58:08.649303+00:00",
+  "registration_sha256": "926b4e18b0aa1428f31d8f7a90886c65e928f8ce7191abd4a2a4cdff4decf630",
+  "summary_sha256": "9b64bb49ffcba595133d791dd0adc1290a64101f66172e30f351256cd3e7f767",
+  "checked_at": "2026-11-10T20:28:18.898847+00:00"
+}

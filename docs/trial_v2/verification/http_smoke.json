@@ -1,0 +1,31 @@
+{
+  "schema": "sensehome.collector-http-smoke.v2",
+  "started_at_utc": "2026-11-10T20:23:18.701211+00:00",
+  "scope": "automation_test local HTTP fixture; no real user, model or physical device evidence",
+  "checks": [
+    "Chinese HTML served with concrete same-origin token",
+    "Token, Origin, Host and fixed-route boundaries reject unauthorized access",
+    "Disagreement writes no record",
+    "Real local HTTP200 fixture claim with no action/state change is not task completion",
+    "Explicit submit stores automation cohort separately; CSV neutralizes formulas and JSON preserves raw text",
+    "Withdrawal deletes the saved record"
+  ],
+  "summary_after_automation_submit": {
+    "participant_feedback_count": 0,
+    "valid_connected_trial_count": 0,
+    "developer_self_test_count": 0,
+    "automation_test_count": 1,
+    "human_identity_verified": false,
+    "scope": "anonymous explicit submissions; cohort is operator-declared; no inferred population statistics"
+  },
+  "summary_after_withdrawal": {
+    "participant_feedback_count": 0,
+    "valid_connected_trial_count": 0,
+    "developer_self_test_count": 0,
+    "automation_test_count": 0,
+    "human_identity_verified": false,
+    "scope": "anonymous explicit submissions; cohort is operator-declared; no inferred population statistics"
+  },
+  "status": "passed",
+  "finished_at_utc": "2026-11-10T20:23:19.939061+00:00"
+}

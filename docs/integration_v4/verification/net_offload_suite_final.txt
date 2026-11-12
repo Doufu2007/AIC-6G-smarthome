@@ -1,0 +1,21 @@
+...................................[14:52:36] GET /api/health HTTP/1.1
+HTTP matrix seed=20261116 arm=joint rows=70
+HTTP stress c=1 healthy rep=0 joint
+HTTP stress c=1 healthy rep=0 network-only
+HTTP stress c=1 cloud_down rep=0 joint
+HTTP stress c=1 cloud_down rep=0 network-only
+.HTTP matrix seed=20261116 arm=joint rows=70
+HTTP stress c=1 healthy rep=0 joint
+HTTP stress c=1 healthy rep=0 network-only
+HTTP stress c=1 cloud_down rep=0 joint
+HTTP stress c=1 cloud_down rep=0 network-only
+.HTTP matrix seed=20261116 arm=joint rows=70
+HTTP stress c=1 healthy rep=0 joint
+HTTP stress c=1 healthy rep=0 network-only
+HTTP stress c=1 cloud_down rep=0 joint
+HTTP stress c=1 cloud_down rep=0 network-only
+......................................................................................................................
+----------------------------------------------------------------------
+Ran 155 tests in 74.960s
+
+OK

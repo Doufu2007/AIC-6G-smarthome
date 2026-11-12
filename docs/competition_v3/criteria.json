@@ -1,0 +1,82 @@
+{
+  "schema": "sensehome.official-scene-criteria-gap.v3",
+  "checked_at": "2026-11-11",
+  "track": "场景设计",
+  "official_sources": [
+    {
+      "path": "附件1-作品提交要求.pdf",
+      "sha256": "889d49c1f33ded274c301c81f4efd899977b84e303d132631f0edeeea2a4f439"
+    },
+    {
+      "path": "附件2-作品方案大纲与评分标准.pdf",
+      "sha256": "f4d611c26b49d378821c976cf9555b0d90ea98c4b2e3d411bd4d31a0f7441542"
+    },
+    {
+      "path": "关于举办第八届AIC首届人工智能+6G青年创新创业专项赛的通知.pdf",
+      "sha256": "13043e81e864d531ec85986eac73d1ec38efb0334aaea3f7b97ee17373f340ed"
+    }
+  ],
+  "official_score": {
+    "total": 100,
+    "dimensions": [
+      {"id": "scene_authenticity", "name": "场景真实性", "points": 20, "official_points": ["业务需求真实明确、痛点清晰", "需求来源可信", "KPI可度量"]},
+      {"id": "solution_innovation", "name": "方案创新性", "points": 10, "official_points": ["AI+6G融合应用创新点", "方案设计新颖度与差异化"]},
+      {"id": "technical_feasibility", "name": "技术落地性", "points": 30, "official_points": ["技术路线可行", "实施路径清晰", "验证（试点）成效或验证计划合理", "与现有系统兼容"]},
+      {"id": "industrial_value", "name": "产业价值与推广前景", "points": 20, "official_points": ["应用效果可量化", "可复制可推广性", "产业带动与市场空间"]},
+      {"id": "defense", "name": "答辩表现", "points": 10, "official_points": ["陈述条理与重点", "质询回应质量", "专业素养与应变能力"]},
+      {"id": "teamwork", "name": "团队协作", "points": 10, "official_points": ["分工明确度", "配合默契度", "组织管理与协同机制"]}
+    ]
+  },
+  "status_legend": {
+    "达成": "材料或测试已提供可核验事实，但仍受适用范围约束",
+    "部分": "有设计或软件证据，关键业务/外部验证仍缺",
+    "缺证": "官方要点尚无当前项目的可核验证据",
+    "形式阻断": "提交前必须取得或核验，否则材料可能不完整"
+  },
+  "gap_summary": {
+    "scene_authenticity": {"points": 20, "status": "部分", "strong_evidence": ["目标角色与流程", "KPI分母/计时边界", "公开二手技术观察", "可执行匿名试用工具"], "missing": ["本项目真实需求方/访谈", "真实业务基线", "客户确认的阈值/损失"]},
+    "solution_innovation": {"points": 10, "status": "部分", "strong_evidence": ["C策略联合网络与算力观测", "三档能力", "动作合同与证据流水线"], "missing": ["同条件竞品对照", "真实6G/MEC融合或无线资源证据", "专利/软著/标准提案（如主张）"]},
+    "technical_feasibility": {"points": 30, "status": "部分", "strong_evidence": ["架构/流程图", "C/Python网关", "600条旧矩阵", "240条本机联测", "120条受控HTTP故障实验", "安全和失败闭环"], "missing": ["独立主机", "真实WAN/6G", "物理执行回执", "标准平台兼容验收", "物理联锁/长期稳定性"]},
+    "industrial_value": {"points": 20, "status": "部分偏弱", "strong_evidence": ["量化软件指标", "复制包与部署清单", "参数化成本工具"], "missing": ["客户/市场规模证据", "真实安装维护成本", "试点效果和推广伙伴", "实际产业化收益"]},
+    "defense": {"points": 10, "status": "部分", "strong_evidence": ["17页答辩材料", "证据索引", "边界披露"], "missing": ["证据绑定的20问答稿", "现场质询演练记录", "真实演示设备或独立复现实验"]},
+    "teamwork": {"points": 10, "status": "部分", "strong_evidence": ["真实单人RACI/工作包", "实验注册与独立复核", "版本和材料核对机制"], "missing": ["多成员协同证据", "导师/合作/试点资源（如需）", "现场多人答辩配合"]}
+  },
+  "submission_checks": [
+    {"id": "name", "requirement": "作品名称不超过20字", "status": "达成", "evidence": "6G链路自适应家庭AI推理系统，15字"},
+    {"id": "abstract", "requirement": "作品简介300—500字", "status": "达成", "evidence": "v2方案简介约399字"},
+    {"id": "plan_pdf", "requirement": "方案PDF不超过15MB", "status": "达成", "evidence": "v2方案PDF约0.96MB"},
+    {"id": "video", "requirement": "MP4，3—5分钟且不超过300MB", "status": "形式达成/内容部分", "evidence": "283.658秒、约5MB；历史软件JSON回放"},
+    {"id": "defense_pdf", "requirement": "答辩PPT统一保存为PDF", "status": "达成", "evidence": "v2答辩PDF"},
+    {"id": "evidence_pdf", "requirement": "佐证材料合并为一个PDF", "status": "达成", "evidence": "v2佐证PDF"},
+    {"id": "other_link", "requirement": "其他材料提供有效永久分享链接与提取码", "status": "形式阻断", "evidence": "当前未核验赛事网盘链接"},
+    {"id": "originality", "requirement": "原创、真实性、第三方资源/开源/许可披露", "status": "部分", "evidence": "NOTICE、LICENSE、THIRD_PARTY和模型许可；无专利/软著证明"},
+    {"id": "aigc", "requirement": "如使用生成式AI，全面如实说明并负责", "status": "达成", "evidence": "v2方案生成式AI使用说明"},
+    {"id": "anonymous", "requirement": "材料不出现单位名称、LOGO、指导教师信息", "status": "当前材料达成", "evidence": "v2匿名评审版；上传前仍需扫描"}
+  ],
+  "local_actions": [
+    "生成官方评分—证据—页码索引",
+    "增加标准HTTP/MQTT/REST合同fixture和部署doctor",
+    "生成20个答辩追问及证据绑定稿",
+    "补平台迁移、最小BOM、回滚和维护工时字段",
+    "补公开对标的已做/新增/未证明三列",
+    "上传前扫描匿名性、文件大小、视频时长和网盘命名"
+  ],
+  "external_dependencies": [
+    "真实集成商或住户需求访谈/授权原话",
+    "授权物理设备、传感器和执行回执",
+    "两台独立主机、真实WAN或运营商/MEC接口",
+    "采购、电费、电价、维护工时和客户收益凭据",
+    "真实专利、软著或标准提案材料（若主张）",
+    "有效永久其他材料分享链接"
+  ],
+  "claims_policy": {
+    "no_official_national_first_cutoff": true,
+    "no_award_guarantee": true,
+    "same_machine_shared_gpu": true,
+    "pc_device_simulation": true,
+    "external_project_feedback_count": 0,
+    "actual_total_cost": null,
+    "real_6g_air_interface_verified": false,
+    "physical_actuator_verified": false
+  }
+}

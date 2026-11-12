@@ -1,0 +1,130 @@
+{
+  "schema": "sensehome.submission-checks.v4",
+  "version": "20261111_v4",
+  "title": "6G链路自适应家庭AI推理系统",
+  "name_chars": 15,
+  "abstract_chars": 392,
+  "plan_pdf_bytes": 786526,
+  "checks": [
+    {
+      "item": "作品名称≤20字",
+      "passed": true
+    },
+    {
+      "item": "简介300—500字",
+      "passed": true
+    },
+    {
+      "item": "方案PDF≤15MB",
+      "passed": true
+    },
+    {
+      "item": "答辩PDF",
+      "passed": true
+    },
+    {
+      "item": "单一合并佐证PDF",
+      "passed": true
+    },
+    {
+      "item": "视频3—5分钟≤300MB",
+      "passed": true,
+      "evidence": "docs/video/v4/manifest.json",
+      "video_path": "dist/final/20261111_v4/SenseHome_当前软件证据回放_20261111_v4.mp4",
+      "duration_seconds": 250.376,
+      "size_bytes": 4994364,
+      "sha256": "d4d507268a614a4b77e665cfcd6e6a7f98594ff20114842d08069bc922410b6f",
+      "metadata_matches_actual_file": true,
+      "recording_kind": "current_real_software_records_replay_with_evidence_explanation",
+      "editing_boundaries": [
+        "all visual cards drawn from current source fields; no screenshot reconstruction",
+        "scene ordering and dwell times are editorial; displayed runtime milliseconds are unmodified recorded values",
+        "recovery scenes replay registered raw rows without new model inference",
+        "no historical v1 video, desktop screenshot or CUA capture used",
+        "no physical actuator, WAN, independent cloud or 6G air-interface claim"
+      ],
+      "synthetic_voice": {
+        "engine": "Windows System.Speech",
+        "voice": "Microsoft Huihui Desktop",
+        "human_voice_recording": false,
+        "speech_alignment": [
+          {
+            "scene": 1,
+            "raw_seconds": 33.112925170068024,
+            "aligned_seconds": 24,
+            "atempo_ratio": 1.4030900495791534
+          },
+          {
+            "scene": 2,
+            "raw_seconds": 48.782267573696146,
+            "aligned_seconds": 44,
+            "atempo_ratio": 1.1188593480205538
+          },
+          {
+            "scene": 3,
+            "raw_seconds": 33.91160997732426,
+            "aligned_seconds": 28,
+            "atempo_ratio": 1.2286815209175457
+          },
+          {
+            "scene": 4,
+            "raw_seconds": 38.42081632653061,
+            "aligned_seconds": 32,
+            "atempo_ratio": 1.215848617928184
+          },
+          {
+            "scene": 5,
+            "raw_seconds": 36.900226757369616,
+            "aligned_seconds": 34,
+            "atempo_ratio": 1.0982210344455243
+          },
+          {
+            "scene": 6,
+            "raw_seconds": 42.98952380952381,
+            "aligned_seconds": 34,
+            "atempo_ratio": 1.2794501133786849
+          },
+          {
+            "scene": 7,
+            "raw_seconds": 39.220589569161,
+            "aligned_seconds": 32,
+            "atempo_ratio": 1.2411578977582594
+          },
+          {
+            "scene": 8,
+            "raw_seconds": 31.463673469387754,
+            "aligned_seconds": 22,
+            "atempo_ratio": 1.4566515495086922
+          }
+        ],
+        "narration": "docs/video/v4/builds/20261111T071753_609704Z/narration.json"
+      },
+      "runtime_metadata_correction": "docs/video/v4/metadata_correction.json",
+      "claim_boundary": "时长与格式核验；实际操作和剪辑来源另按视频清单核查"
+    },
+    {
+      "item": "其他材料永久分享链接与提取码",
+      "passed": false
+    },
+    {
+      "item": "真人需求/独立部署/物理设备",
+      "passed": false,
+      "note": "事实缺项；非所有六项均已完成"
+    }
+  ],
+  "external_feedback_count": 0,
+  "actual_total_cost": null,
+  "final_human_review_and_upload": "pending",
+  "anonymous_scan": {
+    "passed": true,
+    "files": [
+      "SenseHome_场景设计方案_20261111_v4.docx",
+      "SenseHome_场景设计答辩_20261111_v4.pptx",
+      "SenseHome_场景设计方案_20261111_v4.pdf",
+      "SenseHome_场景设计答辩_20261111_v4.pdf",
+      "SenseHome_合并佐证材料_20261111_v4.pdf",
+      "作品简介.txt"
+    ],
+    "patterns_checked": 9
+  }
+}

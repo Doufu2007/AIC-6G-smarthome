@@ -1,0 +1,384 @@
+{
+  "schema": "sensehome.live-model-runtime.v3",
+  "checked_at_utc": "2026-11-11T02:52:41.896601+00:00",
+  "python": "3.13.7 (tags/v3.13.7:bcee1c3, Aug 14 2025, 14:15:11) [MSC v.1944 64 bit (AMD64)]",
+  "runtime": {
+    "path": "C:\\Users\\郑傅韬\\Desktop\\大学生活\\AIC\\AIC6G专项赛_2026\\创新赛道\\_work\\local_llm_v6\\bin\\llama-server.exe",
+    "bytes": 9216,
+    "sha256": "f156c6fcfb61c7dd259e2c577ccbab214185083650f18a9cdfdfb9c38d6cf3b3"
+  },
+  "runtime_dependencies": {
+    "ggml-base.dll": {
+      "path": "C:\\Users\\郑傅韬\\Desktop\\大学生活\\AIC\\AIC6G专项赛_2026\\创新赛道\\_work\\local_llm_v6\\bin\\ggml-base.dll",
+      "bytes": 796672,
+      "sha256": "cd2603e0ba72b57f830455293185748a998be147b380f16965a973f484ada9e5"
+    },
+    "ggml-cpu-alderlake.dll": {
+      "path": "C:\\Users\\郑傅韬\\Desktop\\大学生活\\AIC\\AIC6G专项赛_2026\\创新赛道\\_work\\local_llm_v6\\bin\\ggml-cpu-alderlake.dll",
+      "bytes": 1231360,
+      "sha256": "2bee7689149fcf3f0112002a85eca55c279c5c088a584dd83cd2433d9312bc15"
+    },
+    "ggml-cpu-cannonlake.dll": {
+      "path": "C:\\Users\\郑傅韬\\Desktop\\大学生活\\AIC\\AIC6G专项赛_2026\\创新赛道\\_work\\local_llm_v6\\bin\\ggml-cpu-cannonlake.dll",
+      "bytes": 1449984,
+      "sha256": "5124c61d027dfcb82a0ed988dfbf4c0ea7ec95f692d4574a824fb77c2e18eeec"
+    },
+    "ggml-cpu-cascadelake.dll": {
+      "path": "C:\\Users\\郑傅韬\\Desktop\\大学生活\\AIC\\AIC6G专项赛_2026\\创新赛道\\_work\\local_llm_v6\\bin\\ggml-cpu-cascadelake.dll",
+      "bytes": 1435136,
+      "sha256": "c6a79ad792b7e18002889c8b4d0c8fde7cd7b9f24344f08000a381ef9af23dcf"
+    },
+    "ggml-cpu-cooperlake.dll": {
+      "path": "C:\\Users\\郑傅韬\\Desktop\\大学生活\\AIC\\AIC6G专项赛_2026\\创新赛道\\_work\\local_llm_v6\\bin\\ggml-cpu-cooperlake.dll",
+      "bytes": 1435648,
+      "sha256": "9c708128b5a58005144d74f7224d5d1e56b4719151b63d70f9d88943e3c07bd1"
+    },
+    "ggml-cpu-haswell.dll": {
+      "path": "C:\\Users\\郑傅韬\\Desktop\\大学生活\\AIC\\AIC6G专项赛_2026\\创新赛道\\_work\\local_llm_v6\\bin\\ggml-cpu-haswell.dll",
+      "bytes": 1236992,
+      "sha256": "355dbeacd74b59a49129db49f9abfbf611acd7a9db827c8b4d7922b75070a34e"
+    },
+    "ggml-cpu-icelake.dll": {
+      "path": "C:\\Users\\郑傅韬\\Desktop\\大学生活\\AIC\\AIC6G专项赛_2026\\创新赛道\\_work\\local_llm_v6\\bin\\ggml-cpu-icelake.dll",
+      "bytes": 1441792,
+      "sha256": "bb96cf1a3324a87cbe43c44f3c30e2bacc4e0e1f0f11f4745eee5847353bcef1"
+    },
+    "ggml-cpu-ivybridge.dll": {
+      "path": "C:\\Users\\郑傅韬\\Desktop\\大学生活\\AIC\\AIC6G专项赛_2026\\创新赛道\\_work\\local_llm_v6\\bin\\ggml-cpu-ivybridge.dll",
+      "bytes": 1128448,
+      "sha256": "dae774e6f52b977e357bc3d97b93df05a00d0b397d71755962e237498beb3a7b"
+    },
+    "ggml-cpu-piledriver.dll": {
+      "path": "C:\\Users\\郑傅韬\\Desktop\\大学生活\\AIC\\AIC6G专项赛_2026\\创新赛道\\_work\\local_llm_v6\\bin\\ggml-cpu-piledriver.dll",
+      "bytes": 1132544,
+      "sha256": "9ef3d5ee166de057bcc1b9276f42efeb54c0b58e6772f80c8243e750d7109c35"
+    },
+    "ggml-cpu-sandybridge.dll": {
+      "path": "C:\\Users\\郑傅韬\\Desktop\\大学生活\\AIC\\AIC6G专项赛_2026\\创新赛道\\_work\\local_llm_v6\\bin\\ggml-cpu-sandybridge.dll",
+      "bytes": 1108992,
+      "sha256": "9fdedb44733dbbec53c7d1087ccc7270a0e248bd89ae5e71c14f78206ef256a0"
+    },
+    "ggml-cpu-sapphirerapids.dll": {
+      "path": "C:\\Users\\郑傅韬\\Desktop\\大学生活\\AIC\\AIC6G专项赛_2026\\创新赛道\\_work\\local_llm_v6\\bin\\ggml-cpu-sapphirerapids.dll",
+      "bytes": 1712640,
+      "sha256": "f2246c1c47a2a8a3749cd74d71e5dd2a78577a5c68cbb0403175a7b08495cbda"
+    },
+    "ggml-cpu-skylakex.dll": {
+      "path": "C:\\Users\\郑傅韬\\Desktop\\大学生活\\AIC\\AIC6G专项赛_2026\\创新赛道\\_work\\local_llm_v6\\bin\\ggml-cpu-skylakex.dll",
+      "bytes": 1443328,
+      "sha256": "4d57d36144f42d7c29b2a67d88ad7251c9dd1776bb6ef954bcf142d5b3c08f73"
+    },
+    "ggml-cpu-sse42.dll": {
+      "path": "C:\\Users\\郑傅韬\\Desktop\\大学生活\\AIC\\AIC6G专项赛_2026\\创新赛道\\_work\\local_llm_v6\\bin\\ggml-cpu-sse42.dll",
+      "bytes": 933376,
+      "sha256": "597e4a12ef2b28ae1f5d5a0af1faa5dcc53212bdc4b15f966abac71f47239306"
+    },
+    "ggml-cpu-x64.dll": {
+      "path": "C:\\Users\\郑傅韬\\Desktop\\大学生活\\AIC\\AIC6G专项赛_2026\\创新赛道\\_work\\local_llm_v6\\bin\\ggml-cpu-x64.dll",
+      "bytes": 925184,
+      "sha256": "5ed04a90b6193377ba14e8c1dca88dfeb0544dae196d610d7a92b268e20543d8"
+    },
+    "ggml-cpu-zen4.dll": {
+      "path": "C:\\Users\\郑傅韬\\Desktop\\大学生活\\AIC\\AIC6G专项赛_2026\\创新赛道\\_work\\local_llm_v6\\bin\\ggml-cpu-zen4.dll",
+      "bytes": 1442304,
+      "sha256": "e051b474a192064f03b831cb223087f7df0daa25861658790f2ae88dd243805f"
+    },
+    "ggml-rpc.dll": {
+      "path": "C:\\Users\\郑傅韬\\Desktop\\大学生活\\AIC\\AIC6G专项赛_2026\\创新赛道\\_work\\local_llm_v6\\bin\\ggml-rpc.dll",
+      "bytes": 168448,
+      "sha256": "fd0f79c26c25fdd342928f0404f9e12c05ca4bdc6592cff8a36374a4e24915f3"
+    },
+    "ggml-vulkan.dll": {
+      "path": "C:\\Users\\郑傅韬\\Desktop\\大学生活\\AIC\\AIC6G专项赛_2026\\创新赛道\\_work\\local_llm_v6\\bin\\ggml-vulkan.dll",
+      "bytes": 43319296,
+      "sha256": "86f8e03c38b87b8773bfc806c28ec060ffed47969154bd29b4dd6702213f1c0b"
+    },
+    "ggml.dll": {
+      "path": "C:\\Users\\郑傅韬\\Desktop\\大学生活\\AIC\\AIC6G专项赛_2026\\创新赛道\\_work\\local_llm_v6\\bin\\ggml.dll",
+      "bytes": 79872,
+      "sha256": "52c375a006ca3aa802f47c50b883b29c9ba41c7c6dfc2a96a718beb4ed944b40"
+    },
+    "libomp.dll": {
+      "path": "C:\\Users\\郑傅韬\\Desktop\\大学生活\\AIC\\AIC6G专项赛_2026\\创新赛道\\_work\\local_llm_v6\\bin\\libomp.dll",
+      "bytes": 768000,
+      "sha256": "a12116ba72d1d6820407cf30be23da04ce79d6bb8a71a5ee71759c5a1faa6f1c"
+    },
+    "llama-batched-bench-impl.dll": {
+      "path": "C:\\Users\\郑傅韬\\Desktop\\大学生活\\AIC\\AIC6G专项赛_2026\\创新赛道\\_work\\local_llm_v6\\bin\\llama-batched-bench-impl.dll",
+      "bytes": 61440,
+      "sha256": "4e4575c489ceda652afdfdf1445d8354a1ec1baa93ca631453829b7b0befc0d7"
+    },
+    "llama-bench-impl.dll": {
+      "path": "C:\\Users\\郑傅韬\\Desktop\\大学生活\\AIC\\AIC6G专项赛_2026\\创新赛道\\_work\\local_llm_v6\\bin\\llama-bench-impl.dll",
+      "bytes": 397824,
+      "sha256": "f36e9ec42059835fcec5d83e75664aed0dd8ea7099de93ce7565599a4772a7d0"
+    },
+    "llama-cli-impl.dll": {
+      "path": "C:\\Users\\郑傅韬\\Desktop\\大学生活\\AIC\\AIC6G专项赛_2026\\创新赛道\\_work\\local_llm_v6\\bin\\llama-cli-impl.dll",
+      "bytes": 3296768,
+      "sha256": "58c9fe0e909fe3d4fdb69912c6749d5328bf664ae9da8705c41e9c3ccf1bf89a"
+    },
+    "llama-common.dll": {
+      "path": "C:\\Users\\郑傅韬\\Desktop\\大学生活\\AIC\\AIC6G专项赛_2026\\创新赛道\\_work\\local_llm_v6\\bin\\llama-common.dll",
+      "bytes": 7774208,
+      "sha256": "99834085a3ee03a8e903f5f3b6100a6c49bd1b0b64e6dfd52170a0760ce7897a"
+    },
+    "llama-completion-impl.dll": {
+      "path": "C:\\Users\\郑傅韬\\Desktop\\大学生活\\AIC\\AIC6G专项赛_2026\\创新赛道\\_work\\local_llm_v6\\bin\\llama-completion-impl.dll",
+      "bytes": 133632,
+      "sha256": "f279c0bfab2769924792f818756fd7e3a9206fd08c7955056acc055470532f96"
+    },
+    "llama-fit-params-impl.dll": {
+      "path": "C:\\Users\\郑傅韬\\Desktop\\大学生活\\AIC\\AIC6G专项赛_2026\\创新赛道\\_work\\local_llm_v6\\bin\\llama-fit-params-impl.dll",
+      "bytes": 41472,
+      "sha256": "61bb87763a2d54671d04d569abc83191d88c1f1f76afc9bf2dbf9fac2b14bc31"
+    },
+    "llama-perplexity-impl.dll": {
+      "path": "C:\\Users\\郑傅韬\\Desktop\\大学生活\\AIC\\AIC6G专项赛_2026\\创新赛道\\_work\\local_llm_v6\\bin\\llama-perplexity-impl.dll",
+      "bytes": 194048,
+      "sha256": "cc42e68cd7712cebcac4805fc70b3d77bb79c7a30545355cf3a97c2d4bbe837c"
+    },
+    "llama-quantize-impl.dll": {
+      "path": "C:\\Users\\郑傅韬\\Desktop\\大学生活\\AIC\\AIC6G专项赛_2026\\创新赛道\\_work\\local_llm_v6\\bin\\llama-quantize-impl.dll",
+      "bytes": 137216,
+      "sha256": "57401538aa186b7700a3142dc8b7323509382c054fbf5037a240b9cf59f722cd"
+    },
+    "llama-server-impl.dll": {
+      "path": "C:\\Users\\郑傅韬\\Desktop\\大学生活\\AIC\\AIC6G专项赛_2026\\创新赛道\\_work\\local_llm_v6\\bin\\llama-server-impl.dll",
+      "bytes": 8904192,
+      "sha256": "b7b05aef4636b30357cc1fc1e62b832d09b0f608f1d40d78c4ff99b52d97f96d"
+    },
+    "llama.dll": {
+      "path": "C:\\Users\\郑傅韬\\Desktop\\大学生活\\AIC\\AIC6G专项赛_2026\\创新赛道\\_work\\local_llm_v6\\bin\\llama.dll",
+      "bytes": 3165184,
+      "sha256": "6bb4edebf33785cf808dd7fc3964096317df5df63cc44c8918967903edabe633"
+    },
+    "mtmd.dll": {
+      "path": "C:\\Users\\郑傅韬\\Desktop\\大学生活\\AIC\\AIC6G专项赛_2026\\创新赛道\\_work\\local_llm_v6\\bin\\mtmd.dll",
+      "bytes": 1772032,
+      "sha256": "6606247614f88d665693aae9b178f9bd1c704268d13997d0961112690ceb3027"
+    }
+  },
+  "models": {
+    "local": {
+      "path": "C:\\Users\\郑傅韬\\Desktop\\大学生活\\AIC\\AIC6G专项赛_2026\\创新赛道\\_work\\local_llm_v5\\qwen2.5-1.5b-instruct-q4_k_m.gguf",
+      "bytes": 1117320736,
+      "sha256": "6a1a2eb6d15622bf3c96857206351ba97e1af16c30d7a74ee38970e434e9407e",
+      "model_id": "Qwen2.5-1.5B-Instruct-Q4_K_M",
+      "port": 18552
+    },
+    "cloud": {
+      "path": "C:\\Users\\郑傅韬\\Desktop\\大学生活\\AIC\\AIC6G专项赛_2026\\创新赛道\\_work\\local_llm_v6\\Qwen3-4B-Q4_K_M.gguf",
+      "bytes": 2497280256,
+      "sha256": "7485fe6f11af29433bc51cab58009521f205840f5b4ae3a32fa7f92e8534fdf5",
+      "model_id": "Qwen3-4B-Q4_K_M",
+      "port": 18554
+    }
+  },
+  "scope": "existing file integrity and launch plan; not live model, deployment or physical-device certification",
+  "network": "literal loopback only; both candidates share this PC/GPU",
+  "config_sha256": "45fa69de5595770100289bece32065f78d3c5783808192082c3d8d4b24af0b45",
+  "started_at_utc": "2026-11-11T02:52:41.899465+00:00",
+  "children": [
+    {
+      "tier": "local",
+      "pid": 30912,
+      "argv": [
+        "C:\\Users\\郑傅韬\\Desktop\\大学生活\\AIC\\AIC6G专项赛_2026\\创新赛道\\_work\\local_llm_v6\\bin\\llama-server.exe",
+        "-m",
+        "C:\\Users\\郑傅韬\\Desktop\\大学生活\\AIC\\AIC6G专项赛_2026\\创新赛道\\_work\\local_llm_v5\\qwen2.5-1.5b-instruct-q4_k_m.gguf",
+        "--alias",
+        "Qwen2.5-1.5B-Instruct-Q4_K_M",
+        "--host",
+        "127.0.0.1",
+        "--port",
+        "18552",
+        "-c",
+        "2048",
+        "-np",
+        "1",
+        "-ngl",
+        "99",
+        "--flash-attn",
+        "on",
+        "--no-webui",
+        "--metrics"
+      ],
+      "launched_at_utc": "2026-11-11T02:52:41.913181+00:00",
+      "model_sha256": "6a1a2eb6d15622bf3c96857206351ba97e1af16c30d7a74ee38970e434e9407e",
+      "runtime_sha256": "f156c6fcfb61c7dd259e2c577ccbab214185083650f18a9cdfdfb9c38d6cf3b3",
+      "health": {
+        "requested_url": "http://127.0.0.1:18552/health",
+        "http_status": 200,
+        "response": {
+          "status": "ok"
+        },
+        "error": null,
+        "wall_ms": 21.275
+      },
+      "inventory": {
+        "requested_url": "http://127.0.0.1:18552/v1/models",
+        "http_status": 200,
+        "response": {
+          "models": [
+            {
+              "name": "Qwen2.5-1.5B-Instruct-Q4_K_M",
+              "model": "Qwen2.5-1.5B-Instruct-Q4_K_M",
+              "modified_at": "",
+              "size": "",
+              "digest": "",
+              "type": "model",
+              "description": "",
+              "tags": [
+                ""
+              ],
+              "capabilities": [
+                "completion"
+              ],
+              "parameters": "",
+              "details": {
+                "parent_model": "",
+                "format": "gguf",
+                "family": "",
+                "families": [
+                  ""
+                ],
+                "parameter_size": "",
+                "quantization_level": ""
+              }
+            }
+          ],
+          "object": "list",
+          "data": [
+            {
+              "id": "Qwen2.5-1.5B-Instruct-Q4_K_M",
+              "aliases": [
+                "Qwen2.5-1.5B-Instruct-Q4_K_M"
+              ],
+              "tags": [],
+              "object": "model",
+              "created": 1794365569,
+              "owned_by": "llamacpp",
+              "meta": {
+                "vocab_type": true,
+                "n_vocab": 151936,
+                "n_ctx": 2048,
+                "n_ctx_train": 32768,
+                "n_embd": 1536,
+                "n_params": 1777088000,
+                "size": 1111370240,
+                "ftype": "Q4_K - Medium"
+              }
+            }
+          ]
+        },
+        "error": null,
+        "wall_ms": 1.85
+      },
+      "ready_at_utc": "2026-11-11T02:52:49.910747+00:00",
+      "exit_code": 1
+    },
+    {
+      "tier": "cloud",
+      "pid": 3600,
+      "argv": [
+        "C:\\Users\\郑傅韬\\Desktop\\大学生活\\AIC\\AIC6G专项赛_2026\\创新赛道\\_work\\local_llm_v6\\bin\\llama-server.exe",
+        "-m",
+        "C:\\Users\\郑傅韬\\Desktop\\大学生活\\AIC\\AIC6G专项赛_2026\\创新赛道\\_work\\local_llm_v6\\Qwen3-4B-Q4_K_M.gguf",
+        "--alias",
+        "Qwen3-4B-Q4_K_M",
+        "--host",
+        "127.0.0.1",
+        "--port",
+        "18554",
+        "-c",
+        "2048",
+        "-np",
+        "1",
+        "-ngl",
+        "99",
+        "--flash-attn",
+        "on",
+        "--no-webui",
+        "--metrics",
+        "--reasoning-budget",
+        "0"
+      ],
+      "launched_at_utc": "2026-11-11T02:52:49.922288+00:00",
+      "model_sha256": "7485fe6f11af29433bc51cab58009521f205840f5b4ae3a32fa7f92e8534fdf5",
+      "runtime_sha256": "f156c6fcfb61c7dd259e2c577ccbab214185083650f18a9cdfdfb9c38d6cf3b3",
+      "health": {
+        "requested_url": "http://127.0.0.1:18554/health",
+        "http_status": 200,
+        "response": {
+          "status": "ok"
+        },
+        "error": null,
+        "wall_ms": 20.692
+      },
+      "inventory": {
+        "requested_url": "http://127.0.0.1:18554/v1/models",
+        "http_status": 200,
+        "response": {
+          "models": [
+            {
+              "name": "Qwen3-4B-Q4_K_M",
+              "model": "Qwen3-4B-Q4_K_M",
+              "modified_at": "",
+              "size": "",
+              "digest": "",
+              "type": "model",
+              "description": "",
+              "tags": [
+                ""
+              ],
+              "capabilities": [
+                "completion"
+              ],
+              "parameters": "",
+              "details": {
+                "parent_model": "",
+                "format": "gguf",
+                "family": "",
+                "families": [
+                  ""
+                ],
+                "parameter_size": "",
+                "quantization_level": ""
+              }
+            }
+          ],
+          "object": "list",
+          "data": [
+            {
+              "id": "Qwen3-4B-Q4_K_M",
+              "aliases": [
+                "Qwen3-4B-Q4_K_M"
+              ],
+              "tags": [],
+              "object": "model",
+              "created": 1794365579,
+              "owned_by": "llamacpp",
+              "meta": {
+                "vocab_type": true,
+                "n_vocab": 151936,
+                "n_ctx": 2048,
+                "n_ctx_train": 40960,
+                "n_embd": 2560,
+                "n_params": 4022468096,
+                "size": 2491323904,
+                "ftype": "Q4_K - Medium"
+              }
+            }
+          ]
+        },
+        "error": null,
+        "wall_ms": 1.165
+      },
+      "ready_at_utc": "2026-11-11T02:52:59.377101+00:00",
+      "exit_code": 1
+    }
+  ],
+  "status": "stopped",
+  "finished_at_utc": "2026-11-11T02:53:37.311257+00:00"
+}

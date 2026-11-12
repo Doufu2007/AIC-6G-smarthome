@@ -1,0 +1,71 @@
+{
+  "schema": "sensehome.resource-summary.v1",
+  "source": "docs/experiments/20261111_local_resources/baseline.json",
+  "source_sha256": "bc356694bf830ea696ae1c73cbe6be6a77bcf3e3462d59581af6af2d668c6544",
+  "started_utc": "2026-11-10T18:17:52.770523+00:00",
+  "finished_utc": "2026-11-10T18:18:21.885623+00:00",
+  "sample_count": 30,
+  "ram_total_bytes": 16344801280,
+  "ram_available_bytes": {
+    "min": 906969088,
+    "median": 1054959616.0,
+    "max": 1104297984
+  },
+  "host_cpu_pct": {
+    "min": 6.7,
+    "median": 13.899999999999999,
+    "max": 25.3
+  },
+  "models": [
+    {
+      "label": "small",
+      "file_name": "qwen2.5-1.5b-instruct-q4_k_m.gguf",
+      "bytes": 1117320736,
+      "sha256": "6a1a2eb6d15622bf3c96857206351ba97e1af16c30d7a74ee38970e434e9407e"
+    },
+    {
+      "label": "large",
+      "file_name": "Qwen3-4B-Q4_K_M.gguf",
+      "bytes": 2497280256,
+      "sha256": "7485fe6f11af29433bc51cab58009521f205840f5b4ae3a32fa7f92e8534fdf5"
+    }
+  ],
+  "processes": {
+    "small": {
+      "rss_bytes": {
+        "min": 1170309120,
+        "median": 1170309120.0,
+        "max": 1170493440
+      },
+      "cpu_time_delta_s": 0.21875
+    },
+    "large": {
+      "rss_bytes": {
+        "min": 2724466688,
+        "median": 2724466688.0,
+        "max": 2724839424
+      },
+      "cpu_time_delta_s": 0.109375
+    }
+  },
+  "gpu_name": "NVIDIA GeForce RTX 4050 Laptop GPU",
+  "gpu_memory_total_mib": 6141.0,
+  "gpu_memory_used_mib": {
+    "min": 3735.0,
+    "median": 3735.0,
+    "max": 3735.0
+  },
+  "gpu_board_power_w": {
+    "min": 2.51,
+    "median": 2.53,
+    "max": 2.58
+  },
+  "scope": "30-second baseline residency, not per-request or wall energy; GPU shared between two model processes and other applications.",
+  "unknown": [
+    "wall_idle_watts",
+    "wall_active_watts",
+    "electricity_tariff",
+    "gateway_purchase_cost",
+    "per_request_energy"
+  ]
+}

@@ -1,0 +1,231 @@
+{
+  "schema": "sensehome.fair-recovery-results.v4",
+  "n_rows": 96,
+  "primary_rows": 72,
+  "runner_failed": 0,
+  "by_arm": {
+    "local-first": {
+      "n": 24,
+      "completed": 20,
+      "median_total_wall_ms_all_requests": 955.506,
+      "executor_calls": 20,
+      "proxy_post": 32,
+      "model_post": 20,
+      "proxy_503": 12
+    },
+    "second-first": {
+      "n": 24,
+      "completed": 20,
+      "median_total_wall_ms_all_requests": 1265.0945000000002,
+      "executor_calls": 20,
+      "proxy_post": 32,
+      "model_post": 20,
+      "proxy_503": 12
+    },
+    "joint": {
+      "n": 24,
+      "completed": 20,
+      "median_total_wall_ms_all_requests": 976.297,
+      "executor_calls": 20,
+      "proxy_post": 32,
+      "model_post": 20,
+      "proxy_503": 12
+    }
+  },
+  "by_condition": {
+    "healthy": {
+      "local-first": {
+        "n": 4,
+        "completed": 4,
+        "median_total_wall_ms_all_requests": 836.415,
+        "executor_calls": 4,
+        "proxy_post": 4,
+        "model_post": 4,
+        "proxy_503": 0
+      },
+      "second-first": {
+        "n": 4,
+        "completed": 4,
+        "median_total_wall_ms_all_requests": 1430.7965,
+        "executor_calls": 4,
+        "proxy_post": 4,
+        "model_post": 4,
+        "proxy_503": 0
+      },
+      "joint": {
+        "n": 4,
+        "completed": 4,
+        "median_total_wall_ms_all_requests": 806.901,
+        "executor_calls": 4,
+        "proxy_post": 4,
+        "model_post": 4,
+        "proxy_503": 0
+      }
+    },
+    "local_wait700": {
+      "local-first": {
+        "n": 4,
+        "completed": 4,
+        "median_total_wall_ms_all_requests": 1615.7175,
+        "executor_calls": 4,
+        "proxy_post": 4,
+        "model_post": 4,
+        "proxy_503": 0
+      },
+      "second-first": {
+        "n": 4,
+        "completed": 4,
+        "median_total_wall_ms_all_requests": 1303.4265,
+        "executor_calls": 4,
+        "proxy_post": 4,
+        "model_post": 4,
+        "proxy_503": 0
+      },
+      "joint": {
+        "n": 4,
+        "completed": 4,
+        "median_total_wall_ms_all_requests": 1338.1965,
+        "executor_calls": 4,
+        "proxy_post": 4,
+        "model_post": 4,
+        "proxy_503": 0
+      }
+    },
+    "second_wait700": {
+      "local-first": {
+        "n": 4,
+        "completed": 4,
+        "median_total_wall_ms_all_requests": 805.8375,
+        "executor_calls": 4,
+        "proxy_post": 4,
+        "model_post": 4,
+        "proxy_503": 0
+      },
+      "second-first": {
+        "n": 4,
+        "completed": 4,
+        "median_total_wall_ms_all_requests": 2020.487,
+        "executor_calls": 4,
+        "proxy_post": 4,
+        "model_post": 4,
+        "proxy_503": 0
+      },
+      "joint": {
+        "n": 4,
+        "completed": 4,
+        "median_total_wall_ms_all_requests": 852.028,
+        "executor_calls": 4,
+        "proxy_post": 4,
+        "model_post": 4,
+        "proxy_503": 0
+      }
+    },
+    "local_post503": {
+      "local-first": {
+        "n": 4,
+        "completed": 4,
+        "median_total_wall_ms_all_requests": 1358.6619999999998,
+        "executor_calls": 4,
+        "proxy_post": 8,
+        "model_post": 4,
+        "proxy_503": 4
+      },
+      "second-first": {
+        "n": 4,
+        "completed": 4,
+        "median_total_wall_ms_all_requests": 1216.4115000000002,
+        "executor_calls": 4,
+        "proxy_post": 4,
+        "model_post": 4,
+        "proxy_503": 0
+      },
+      "joint": {
+        "n": 4,
+        "completed": 4,
+        "median_total_wall_ms_all_requests": 1300.3029999999999,
+        "executor_calls": 4,
+        "proxy_post": 8,
+        "model_post": 4,
+        "proxy_503": 4
+      }
+    },
+    "second_post503": {
+      "local-first": {
+        "n": 4,
+        "completed": 4,
+        "median_total_wall_ms_all_requests": 803.423,
+        "executor_calls": 4,
+        "proxy_post": 4,
+        "model_post": 4,
+        "proxy_503": 0
+      },
+      "second-first": {
+        "n": 4,
+        "completed": 4,
+        "median_total_wall_ms_all_requests": 872.9175,
+        "executor_calls": 4,
+        "proxy_post": 8,
+        "model_post": 4,
+        "proxy_503": 4
+      },
+      "joint": {
+        "n": 4,
+        "completed": 4,
+        "median_total_wall_ms_all_requests": 801.483,
+        "executor_calls": 4,
+        "proxy_post": 4,
+        "model_post": 4,
+        "proxy_503": 0
+      }
+    },
+    "both_post503": {
+      "local-first": {
+        "n": 4,
+        "completed": 0,
+        "median_total_wall_ms_all_requests": 62.807,
+        "executor_calls": 0,
+        "proxy_post": 8,
+        "model_post": 0,
+        "proxy_503": 8
+      },
+      "second-first": {
+        "n": 4,
+        "completed": 0,
+        "median_total_wall_ms_all_requests": 57.475,
+        "executor_calls": 0,
+        "proxy_post": 8,
+        "model_post": 0,
+        "proxy_503": 8
+      },
+      "joint": {
+        "n": 4,
+        "completed": 0,
+        "median_total_wall_ms_all_requests": 50.281499999999994,
+        "executor_calls": 0,
+        "proxy_post": 8,
+        "model_post": 0,
+        "proxy_503": 8
+      }
+    }
+  },
+  "ancillary_empty_plan": {
+    "local-first": {
+      "n": 8,
+      "safe_no_action_structure": 8
+    },
+    "second-first": {
+      "n": 8,
+      "safe_no_action_structure": 8
+    },
+    "joint": {
+      "n": 8,
+      "safe_no_action_structure": 8
+    }
+  },
+  "recommendation": {
+    "arm": "local-first",
+    "rule": "maximize completed primary rows; then minimize median actual total wall over ALL primary requests including failures; then local-first,second-first,joint order",
+    "scope": "provisional default for this one-host four-command reviewed regression and six equally weighted controlled conditions; not generalization or significance"
+  },
+  "source_hashes_unchanged": true
+}

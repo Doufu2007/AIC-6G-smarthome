@@ -1,0 +1,19 @@
+{
+  "passed": true,
+  "mode": "synthetic_modeled_trace",
+  "raw_rows": 58800,
+  "paired_requests": 8400,
+  "switches_checked": 390,
+  "exact_C_policy_rerun": true,
+  "checks": [
+    "artifact hashes",
+    "source hashes",
+    "trace hashes and validation",
+    "all arms share exact per-request inputs",
+    "complete matrix",
+    "latency components and outcomes",
+    "percentiles and intervals",
+    "switch before/after",
+    "local safety isolation"
+  ]
+}

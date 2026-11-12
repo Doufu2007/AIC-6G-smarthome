@@ -116,7 +116,7 @@ class LargeRecoveryTests(unittest.TestCase):
             with contextlib.redirect_stdout(io.StringIO()):
                 packager.build(bundle, include_large=True)
             with zipfile.ZipFile(bundle) as archive:
-                self.assertEqual(len(archive.namelist()), 7)
+                self.assertEqual(len(archive.namelist()), 8)
                 self.assertIn("autodl_large_recovery.py", archive.namelist())
                 labels = [json.loads(line) for line in archive.read("backends/eval_commands.jsonl").decode().splitlines()]
                 self.assertEqual(len(labels), 20)

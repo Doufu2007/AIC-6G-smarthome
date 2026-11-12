@@ -1,0 +1,501 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>openvela 物理AI - 智能家居控制面板</title>
+<style>
+* { margin: 0; padding: 0; box-sizing: border-box; }
+body {
+  font-family: -apple-system, 'Segoe UI', 'PingFang SC', 'Microsoft YaHei', sans-serif;
+  background: #0b1721;
+  color: #d0d8e0;
+  display: flex; height: 100vh; overflow: hidden;
+}
+
+/* 面板布局 */
+.left-panel   { flex: 1.2; overflow-y: auto; padding: 20px; }
+.center-panel { width: 360px; background: #08121a; display: flex; flex-direction: column;
+                border-left: 1px solid #1a3040; border-right: 1px solid #1a3040; }
+.right-panel  { width: 420px; background: #08121a; display: flex; flex-direction: column; }
+
+/* 标题区 */
+.header { display: flex; align-items: center; gap: 10px; margin-bottom: 16px; }
+.header .logo { font-size: 26px; }
+.header h1 { font-size: 19px; font-weight: 700; color: #64d8ff; }
+.header .badge { font-size: 10px; background: #1a3a50; color: #ff9e64; padding: 3px 10px;
+                border-radius: 10px; letter-spacing: 1px; }
+
+/* 快捷操作 */
+.quick-actions { display: flex; gap: 8px; margin-bottom: 16px; flex-wrap: wrap; }
+.btn { padding: 8px 16px; border: 1px solid #1a3040; border-radius: 8px; background: #0f1e2a;
+       color: #c0d0e0; cursor: pointer; font-size: 13px; transition: all 0.2s; white-space: nowrap; }
+.btn:hover { border-color: #64d8ff; background: #142d3d; }
+.btn.accent { background: #1a3a50; color: #ff9e64; border-color: #2a5a70; }
+.btn.accent:hover { background: #1e4a60; }
+
+/* 区域标签 */
+.section-title { font-size: 14px; font-weight: 600; color: #64d8ff; margin: 16px 0 10px;
+                 padding-bottom: 6px; border-bottom: 1px solid #1a3040; }
+
+/* 房间卡片网格 */
+.room-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 10px; }
+.room-card {
+  background: #0f1e2c; border: 1px solid #152d3d; border-radius: 12px; padding: 14px;
+  transition: all 0.25s; cursor: pointer; position: relative;
+}
+.room-card:hover { border-color: #3a6080; transform: translateY(-1px); }
+.room-card.active { border-color: #64d8ff; box-shadow: 0 0 16px rgba(100,216,255,0.12); }
+
+.room-header { display: flex; justify-content: space-between; align-items: center; margin-bottom: 10px; }
+.room-name { font-size: 15px; font-weight: 600; }
+
+/* 灯光滑块 */
+.light-row { display: flex; align-items: center; gap: 8px; }
+.light-slider { -webkit-appearance: none; flex: 1; height: 5px; border-radius: 3px;
+                background: #1a3040; outline: none; }
+.light-slider::-webkit-slider-thumb { -webkit-appearance: none; width: 16px; height: 16px;
+    border-radius: 50%; background: #64d8ff; cursor: pointer; }
+.bri-val { font-size: 12px; color: #7a8a9a; min-width: 36px; text-align: right; }
+
+/* 传感器迷你行 */
+.sensor-mini { display: flex; gap: 10px; margin-top: 8px; font-size: 11px; flex-wrap: wrap; }
+.sensor-tag { display: flex; align-items: center; gap: 3px; padding: 2px 7px;
+              background: #0a1822; border-radius: 5px; }
+.sensor-tag.warn { background: #2a1a10; color: #ff9e64; }
+
+/* 窗帘/安防指示 */
+.status-mini { display: flex; gap: 10px; margin-top: 6px; font-size: 11px; }
+
+/* 传感器详情面板（中间栏） */
+.sensor-detail { padding: 2px 0; }
+.sensor-bar { margin: 6px 0; }
+.sensor-bar .label { font-size: 11px; color: #5a6a7a; margin-bottom: 2px; display: flex;
+                     justify-content: space-between; }
+.sensor-bar .track { height: 4px; background: #1a3040; border-radius: 2px; overflow: hidden; }
+.sensor-bar .fill { height: 100%; border-radius: 2px; transition: width 0.5s; }
+.fill.good { background: #4caf50; } .fill.warn { background: #ffab40; } .fill.danger { background: #f44336; }
+.fill.info { background: #64b5f6; }
+
+/* ReAct 推理链 */
+.log-header { padding: 16px 20px; border-bottom: 1px solid #1a3040;
+              display: flex; align-items: center; gap: 8px; }
+.log-header h2 { font-size: 16px; }
+.live-dot { width: 8px; height: 8px; background: #7a8a9a; border-radius: 50%; }
+@keyframes pulse { 0%,100%{opacity:1} 50%{opacity:0.3} }
+.log-container { flex: 1; overflow-y: auto; padding: 12px 20px; }
+.log-entry { margin-bottom: 12px; padding: 12px; border-radius: 8px;
+             animation: slideIn 0.3s; font-size: 12px; line-height: 1.6; }
+@keyframes slideIn { from{opacity:0;transform:translateX(15px)} to{opacity:1;transform:translateX(0)} }
+.log-entry.step    { background: #0f1e2a; border-left: 3px solid #1a3040; }
+.log-entry.thought { background: #1a2a1a; border-left: 3px solid #ffab40; }
+.log-entry.action  { background: #1a1a2e; border-left: 3px solid #7c4dff; }
+.log-entry.observe { background: #1a2a2a; border-left: 3px solid #4caf50; }
+.log-entry.answer  { background: #162a1a; border-left: 3px solid #64d8ff; }
+.log-entry.patrol  { background: #1a2010; border-left: 3px solid #ff9e64; }
+.log-step { font-size: 10px; color: #5a6a7a; margin-bottom: 2px; text-transform: uppercase;
+            letter-spacing: 1px; }
+.log-content { white-space: pre-wrap; overflow-wrap: anywhere; }
+.patrol-badge { display: inline-block; font-size: 10px; background: #3a2a10; color: #ff9e64;
+                padding: 1px 8px; border-radius: 6px; margin-left: 6px; }
+
+/* 状态栏 */
+.status-bar { padding: 10px 20px; border-top: 1px solid #1a3040; display: flex;
+              flex-wrap: wrap; gap: 8px; justify-content: space-between; font-size: 11px; color: #7a8a9a; }
+#llmInfo { flex-basis: 100%; white-space: pre-wrap; overflow-wrap: anywhere; line-height: 1.6; }
+.light-slider:disabled { opacity: .35; cursor: not-allowed; }
+.status-dot { width: 6px; height: 6px; border-radius: 50%; display: inline-block; margin-right: 4px; }
+
+/* 输入栏 */
+.patrol-hint { padding: 6px 20px; font-size: 10px; color: #ff9e64; }
+.input-bar { padding: 12px 20px; border-top: 1px solid #1a3040; display: flex; gap: 6px; }
+.input-bar input { flex: 1; padding: 9px 14px; border: 1px solid #1a3040; border-radius: 8px;
+                   background: #0f1e2c; color: #d0d8e0; font-size: 13px; outline: none; }
+.input-bar input:focus { border-color: #64d8ff; }
+.input-bar button { padding: 9px 18px; border: none; border-radius: 8px; background: #1a4a60;
+                    color: #64d8ff; cursor: pointer; font-size: 13px; }
+.input-bar button:hover { background: #1e5a70; }
+.hints { padding: 4px 20px 0; font-size: 10px; color: #3a4a5a; display: flex; gap: 6px; flex-wrap: wrap; }
+.hints span { padding: 2px 8px; background: #0f1e2c; border-radius: 6px; cursor: pointer; }
+.hints span:hover { background: #142d3d; color: #7a8a9a; }
+.hints span.fuzzy { color: #ff9e64; border: 1px dashed #3a2a10; }
+.left-panel, .center-panel, .right-panel { min-width: 0; }
+.input-bar input { min-width: 0; }
+@media (max-width: 1100px) {
+  body { display: block; height: auto; min-height: 100vh; overflow: auto; }
+  .left-panel, .center-panel, .right-panel { width: 100%; flex: none; overflow: visible; }
+  .center-panel, .right-panel { border: 0; border-top: 1px solid #1a3040; }
+  .sensor-detail { overflow: visible !important; }
+  .log-container { flex: none; overflow: visible; }
+}
+@media (max-width: 600px) {
+  .room-grid, #sensorGrid { grid-template-columns: minmax(0, 1fr) !important; }
+  .header { flex-wrap: wrap; }
+}
+</style>
+</head>
+<body>
+
+<!-- ===== 左侧：房间控制 + 传感器概览 ===== -->
+<div class="left-panel">
+  <div class="header">
+    <span class="logo">🤖</span>
+    <h1>openvela 物理AI</h1>
+    <span class="badge">PC设备仿真 · 非实物控制</span>
+  </div>
+
+  <div class="quick-actions">
+    <button class="btn accent" onclick="sendCmd('我出门了')">🏠 离家模式</button>
+    <button class="btn accent" onclick="sendCmd('早上好')">☀️ 早安模式</button>
+    <button class="btn" onclick="sendCmd('打开所有灯')">💡 全屋开灯</button>
+    <button class="btn" onclick="sendCmd('关闭所有灯')">🌙 全屋关灯</button>
+  </div>
+
+  <div class="section-title">🏠 房间控制面板</div>
+  <div class="room-grid" id="roomGrid"></div>
+
+  <div class="section-title">📡 仿真传感器状态 — 来自网关</div>
+  <div class="room-grid" id="sensorGrid" style="grid-template-columns:1fr 1fr 1fr;"></div>
+</div>
+
+<!-- ===== 中间：传感器详情仪表盘 ===== -->
+<div class="center-panel">
+  <div style="padding:16px 20px;border-bottom:1px solid #1a3040;">
+    <span style="font-size:14px;font-weight:600;">📊 环境仪表盘</span>
+    <select id="sensorLoc" onchange="renderSensorDetail()" style="margin-left:10px;padding:4px 8px;
+      background:#0f1e2c;color:#c0d0e0;border:1px solid #1a3040;border-radius:4px;font-size:12px;">
+    </select>
+  </div>
+  <div class="sensor-detail" id="sensorDetail" style="padding:16px 20px;overflow-y:auto;flex:1;"></div>
+
+  <!-- 主动巡检日志 -->
+  <div style="padding:12px 20px;border-top:1px solid #1a3040;">
+    <span style="font-size:12px;font-weight:600;color:#ff9e64;">🔄 主动巡检</span>
+    <button class="btn" style="float:right;font-size:10px;padding:3px 10px;" onclick="triggerPatrol()">立即巡检</button>
+  </div>
+  <div id="patrolMini" style="padding:0 20px 12px;font-size:11px;color:#5a6a7a;max-height:120px;overflow-y:auto;"></div>
+</div>
+
+<!-- ===== 右侧：ReAct 推理链 ===== -->
+<div class="right-panel">
+  <div class="log-header">
+    <div class="live-dot"></div>
+    <h2>🧠 网关执行记录</h2>
+  </div>
+
+  <div class="hints">
+    <span onclick="sendCmd('打开客厅的灯')">💡 开灯</span>
+    <span onclick="sendCmd('现在室温多少度')">🌡️ 温湿度</span>
+    <span class="fuzzy" onclick="sendCmd('有点冷')">🥶 有点冷</span>
+    <span class="fuzzy" onclick="sendCmd('太暗了')">🌑 太暗了</span>
+    <span class="fuzzy" onclick="sendCmd('不透气')">😮‍💨 不透气</span>
+  </div>
+
+  <div class="log-container" id="logContainer">
+    <div class="log-entry answer">
+      <div class="log-step">等待网关确认</div>
+      <div class="log-content">这是PC设备仿真演示。设备与传感器状态来自网关，不代表真实家居或6G网络测量。连接状态以健康信息为准；请求失败时请先查询状态再重试。</div>
+    </div>
+  </div>
+
+  <div class="status-bar">
+    <span id="stateStatus">设备状态: 未知</span>
+    <span id="llmInfo">模型端点: 未知</span>
+    <span id="patrolStatus">巡检: 未知</span>
+    <span id="lastUpdate">更新: --</span>
+  </div>
+
+  <div class="patrol-hint" id="patrolHint"></div>
+
+  <div class="input-bar">
+    <input id="cmdInput" placeholder="输入自然语言指令..."
+           onkeydown="if(event.key==='Enter')sendCmd()">
+    <button onclick="sendCmd()">发送</button>
+  </div>
+</div>
+
+<script>
+const LOCS = ['客厅','卧室','厨房','浴室','书房','室外'];
+const ICONS = ['🛋️','🛏️','🍳','🛁','📚','🌤️'];
+let state = {};
+
+function isObject(value) {
+  return value !== null && typeof value === 'object' && !Array.isArray(value);
+}
+function escapeHtml(value) {
+  return String(value ?? '').replace(/[&<>"']/g, c => ({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[c]));
+}
+function finiteNumber(value, min=-Infinity, max=Infinity) {
+  return typeof value === 'number' && Number.isFinite(value) && value >= min && value <= max;
+}
+function numberText(value, digits=0, unit='') {
+  return finiteNumber(value) ? value.toFixed(digits)+unit : '未知';
+}
+function boolText(value, yes, no) {
+  return typeof value === 'boolean' ? (value ? yes : no) : '未知';
+}
+function roomData(group, loc) {
+  return isObject(state[group]) && isObject(state[group][loc]) ? state[group][loc] : {};
+}
+async function readJsonResponse(response) {
+  if (!response.ok) throw new Error('HTTP_'+response.status);
+  const data = await response.json();
+  if (!isObject(data)) throw new Error('INVALID_JSON_OBJECT');
+  return data;
+}
+function validState(data) {
+  if (!['lights','curtains','temperature'].every(k => isObject(data[k]))) return false;
+  return LOCS.every(loc => {
+    const l=data.lights[loc], c=data.curtains[loc], t=data.temperature[loc];
+    return isObject(l) && typeof l.is_on==='boolean' && finiteNumber(l.brightness,0,100) &&
+      isObject(c) && typeof c.is_open==='boolean' && finiteNumber(c.position,0,100) &&
+      isObject(t) && finiteNumber(t.temp,-80,100) && finiteNumber(t.humidity,0,100);
+  });
+}
+function clearState() {
+  state = {};
+  document.getElementById('stateStatus').textContent = '设备状态: 未知（未连接或响应无效）';
+  renderRooms(); renderSensorDetail();
+}
+async function fetchState() {
+  try {
+    const data = await readJsonResponse(await fetch('/api/state'));
+    if (!validState(data)) throw new Error('INVALID_STATE');
+    state = data;
+    document.getElementById('stateStatus').textContent = '设备状态: 网关PC仿真快照 '+new Date().toLocaleTimeString();
+    renderRooms(); renderSensorDetail();
+  } catch(e) { clearState(); }
+}
+async function fetchPatrol() {
+  try {
+    const d = await readJsonResponse(await fetch('/api/patrol/log'));
+    if (typeof d.running!=='boolean' || !Array.isArray(d.log)) throw new Error('INVALID_PATROL');
+    document.getElementById('patrolStatus').textContent = '巡检: '+(d.running?'运行中':'已停止');
+    document.getElementById('patrolHint').textContent =
+      d.running ? 'PC仿真巡检运行中，传感器数据由网关生成。' : '';
+    let h = '';
+    for (const entry of d.log.slice(0,3)) {
+      if (!isObject(entry) || !Array.isArray(entry.actions) || !Array.isArray(entry.anomalies)) continue;
+      h += `<div style="margin:4px 0;padding:4px 8px;background:#0f1e2c;border-radius:4px;">
+        <b>${escapeHtml(entry.time)}</b> 网关记录 ${escapeHtml(numberText(entry.auto_decisions))} 项 | 异常 ${entry.anomalies.length} 项
+        ${entry.actions.map(a=>'<br>↳ '+escapeHtml(a)).join('')}</div>`;
+    }
+    document.getElementById('patrolMini').innerHTML = h || '暂无有效巡检记录';
+  } catch(e) {
+    document.getElementById('patrolStatus').textContent = '巡检: 未知';
+    document.getElementById('patrolHint').textContent = '巡检状态未确认';
+    document.getElementById('patrolMini').textContent = '巡检记录未知';
+  }
+}
+
+async function fetchHealth() {
+  try {
+    const d = await readJsonResponse(await fetch('/api/health'));
+    if (!isObject(d.backends)) throw new Error('INVALID_HEALTH');
+    const lines = ['local-model','cloud-model'].map(name => {
+      const b = isObject(d.backends[name]) ? d.backends[name] : {};
+      const age = isObject(d.endpoint_age_ms) ? d.endpoint_age_ms[name] : undefined;
+      const queue = b.queue_scope==='wrapper_fail_fast_admission' ? b.upstream_queue_ms : b.queue_ms;
+      const source = typeof b.source==='string' ? b.source : 'backend_health_cache';
+      return `${name}: ready=${boolText(b.ready,'true','false')} | reachable=${boolText(b.reachable,'true','false')} | age=${numberText(age,1,'ms')}\n`+
+        `queue=${numberText(queue,1,'ms')} | free_mem=${numberText(b.free_mem_mb,0,'MB')} | source=${source}`;
+    });
+    lines.push('链路来源: '+(typeof d.link_basis==='string' ? d.link_basis : '未知'));
+    document.getElementById('llmInfo').textContent = lines.join('\n');
+  } catch(e) { document.getElementById('llmInfo').textContent = 'local-model: 未知 | cloud-model: 未知\n模型健康与链路来源: 未知'; }
+}
+
+async function triggerPatrol() {
+  appendLog('patrol','PC仿真巡检请求','等待网关响应...');
+  try {
+    const d = await readJsonResponse(await fetch('/api/patrol/trigger'));
+    if (d.status!=='ok' || !isObject(d.report) || !Array.isArray(d.report.actions) || !Array.isArray(d.report.anomalies)) throw new Error('INVALID_PATROL_REPORT');
+    appendLog('patrol','网关报告巡检完成（PC仿真）',`记录 ${numberText(d.report.auto_decisions)} 项 | 异常 ${d.report.anomalies.length} 项`);
+    d.report.actions.forEach(a => appendLog('action','网关动作报告（PC仿真）', a));
+    d.report.anomalies.forEach(a => appendLog('observe','网关异常报告', a));
+    fetchPatrol(); fetchState();
+  } catch(e) { clearState(); appendLog('observe','巡检执行未确认','未获得有效网关响应，请查询设备状态后再操作。'); }
+}
+
+async function sendCmd(cmd) {
+  const inp = document.getElementById('cmdInput');
+  const text = cmd || inp.value.trim();
+  if (!text) return;
+  if (!cmd) inp.value = '';
+
+  appendLog('step','用户请求',text);
+
+  try {
+    const r = await fetch('/api/command', {
+      method:'POST', headers:{'Content-Type':'application/json'},
+      body: JSON.stringify({command:text})
+    });
+    const d = await readJsonResponse(r);
+    if (typeof d.semantic_complete!=='boolean' || typeof d.interface_ok!=='boolean' || !Array.isArray(d.actions) ||
+        !d.actions.every(a => typeof a==='string' || (isObject(a) && typeof a.description==='string'))) {
+      throw new Error('INVALID_COMMAND_RESULT');
+    }
+
+    const event = isObject(d.gateway_event) ? d.gateway_event : {};
+    const plannerResponse = isObject(event.response) ? event.response : {};
+    const recovery = isObject(d.recovery) ? d.recovery : isObject(plannerResponse.recovery) ? plannerResponse.recovery : {};
+    const selected = d.selected_backend || event.selected_backend || '未知';
+    const source = d.source || event.source || '未知';
+    const actual = d.actual_backend || plannerResponse.actual_backend || recovery.actual_backend || source;
+    appendLog('observe','网关路由报告',
+      `C初选backend=${selected} | reason=${d.reason || '未知'}\n实际规划来源=${actual} | source=${source}\n网关执行后端=${d.backend || '未知'} | total=${numberText((d.latency||{}).total_user_ms,1,'ms')}`);
+    if (recovery.attempted || recovery.primary_error) {
+      const primaryResponse = isObject(recovery.primary_response) ? recovery.primary_response : {};
+      const primaryStatus = isObject(recovery.primary_status) ? recovery.primary_status : {};
+      appendLog('observe','规划恢复记录',
+        `首端=${recovery.from || '未知'} | 首端错误=${recovery.primary_error || primaryStatus.error || '未知'}\n首端上游错误=${primaryResponse.error || '未知'} | 替代端=${recovery.to || '未知'}\n替代规划尝试=${boolText(recovery.attempted,'是','否')} | reason=${recovery.reason || '未知'}`);
+    }
+    if (typeof d.thought==='string') appendLog('thought','网关说明', d.thought);
+    const complete = d.semantic_complete && d.interface_ok;
+    for (const a of d.actions) appendLog(complete?'action':'observe', complete?'网关动作报告（PC仿真）':'网关返回动作（完成未确认）', typeof a==='string'?a:a.description);
+    if (typeof d.observation==='string') appendLog('observe','网关观测报告（PC仿真）', d.observation);
+    if (complete) {
+      if (typeof d.answer==='string' && d.answer) {
+        const modelReply = String(actual).includes('-model') || String(source).includes('real-model');
+        appendLog('observe', modelReply?'规划器原文（执行前接口答复）':'网关答复原文', d.answer);
+      }
+      appendLog('answer','网关报告完成（PC仿真）','网关已确认本次任务完成，具体动作与观测见上方记录。');
+    } else {
+      appendLog('observe','任务未完成 / 执行未确认', typeof d.answer==='string' ? d.answer : '网关未提供文字回答，请查询设备状态。');
+    }
+
+    setTimeout(()=>{ fetchState(); fetchPatrol(); }, 400);
+  } catch(e) {
+    clearState();
+    appendLog('observe','执行未确认','未获得有效网关响应，请查询设备状态后再操作。响应丢失时，请求可能已被网关处理。');
+  }
+}
+
+function appendLog(type, step, content) {
+  const c = document.getElementById('logContainer');
+  const d = document.createElement('div');
+  d.className = 'log-entry ' + type;
+  d.innerHTML = `<div class="log-step">${escapeHtml(step)}</div><div class="log-content">${escapeHtml(content)}</div>`;
+  c.appendChild(d); c.scrollTop = c.scrollHeight;
+  document.getElementById('lastUpdate').textContent = '更新: '+new Date().toLocaleTimeString();
+}
+
+function renderRooms() {
+  const g = document.getElementById('roomGrid'); g.innerHTML = '';
+  const sl = document.getElementById('sensorLoc');
+  const selected = sl.value || '客厅';
+  sl.innerHTML = '';
+
+  LOCS.forEach((loc,i) => {
+    if (loc==='室外') return;
+    const l = roomData('lights',loc), t = roomData('temperature',loc);
+    const cu = roomData('curtains',loc), s = roomData('sensors',loc);
+    const lightKnown = typeof l.is_on==='boolean' && finiteNumber(l.brightness,0,100);
+
+    const card = document.createElement('div');
+    card.className = 'room-card'+(l.is_on?' active':'');
+    card.innerHTML = `
+      <div class="room-header">
+        <span class="room-name">${ICONS[i]} ${loc}</span>
+        <span style="font-size:10px;color:${l.is_on?'#64d8ff':'#7a8a9a'}">${boolText(l.is_on,'开','关')}</span>
+      </div>
+      <div class="light-row">
+        <span>💡</span>
+        <input class="light-slider" type="range" min="0" max="100" value="${lightKnown?l.brightness:0}" ${lightKnown?'':'disabled'}
+               oninput="updateLight('${loc}',this.value)">
+        <span class="bri-val">${numberText(l.brightness,0,'%')}</span>
+      </div>
+      <div class="sensor-mini">
+        <span class="sensor-tag">🌡️ ${numberText(t.temp,1,'°C')}</span>
+        <span class="sensor-tag">💧 ${numberText(t.humidity,1,'%')}</span>
+        <span class="sensor-tag">🪟 ${boolText(cu.is_open,'开','关')}</span>
+      </div>
+      <div class="status-mini">
+        <span style="color:#7a8a9a">👤 ${boolText(s.motion_detected,'有人','无人')}</span>
+        <span style="color:${finiteNumber(s.pm25,0)&&s.pm25>75?'#f44336':'#7a8a9a'}">PM2.5 ${numberText(finiteNumber(s.pm25,0)?s.pm25:undefined)}</span>
+      </div>
+    `;
+    card.addEventListener('click', e => { if(lightKnown && e.target.tagName!=='INPUT') toggleLight(loc); });
+    g.appendChild(card);
+
+    const opt = document.createElement('option'); opt.value = loc; opt.textContent = ICONS[i]+' '+loc;
+    if (loc===selected) opt.selected = true;
+    sl.appendChild(opt);
+  });
+}
+
+function renderSensorDetail() {
+  const selected = document.getElementById('sensorLoc').value;
+  const loc = LOCS.includes(selected) ? selected : '客厅';
+  const s = roomData('sensors',loc);
+  const sec = isObject(state.security) ? state.security : {};
+
+  const bars = [
+    {label:'☀️ 光照强度', val:s.illuminance, max:80000, unit:'lux',
+     color: v=>v>50000?'danger':v>20000?'warn':'good'},
+    {label:'🌡️ PM2.5', val:s.pm25, max:150, unit:'μg/m³',
+     color: v=>v>75?'danger':v>35?'warn':'good'},
+    {label:'💨 CO2浓度', val:s.co2, max:2000, unit:'ppm',
+     color: v=>v>1000?'danger':v>800?'warn':'good'},
+    {label:'🔊 噪音', val:s.noise, max:90, unit:'dB',
+     color: v=>v>60?'danger':v>45?'warn':'good'},
+  ];
+
+  let h = `<div style="margin-bottom:12px;font-size:13px;color:#64d8ff;">📍 ${loc} 网关仿真状态</div>`;
+  bars.forEach(b => {
+    const known = finiteNumber(b.val,0);
+    const pct = known ? Math.min(b.val/b.max*100, 100) : 0;
+    const cls = known ? b.color(b.val) : 'info';
+    h += `<div class="sensor-bar">
+      <div class="label"><span>${b.label}</span><span style="color:${!known?'#7a8a9a':cls==='danger'?'#f44336':cls==='warn'?'#ffab40':'#4caf50'}">${numberText(known?b.val:undefined,1,' '+b.unit)}</span></div>
+      <div class="track"><div class="fill ${cls}" style="width:${pct}%"></div></div>
+    </div>`;
+  });
+
+  // 数字→物理映射
+  h += `<div style="margin-top:14px;padding:10px;background:#0f1e2c;border-radius:8px;font-size:11px;">
+    <div style="color:#ff9e64;margin-bottom:6px;">网关状态快照（PC仿真）</div>`;
+  h += `<div style="color:#7a8a9a;">👤 人体红外: ${boolText(s.motion_detected,'检测到人','无人')}</div>`;
+  h += `<div style="color:#7a8a9a;">🚪 门磁: ${boolText(s.door_open,'门开','门关')} | 🪟 窗磁: ${boolText(s.window_open,'窗开','窗关')}</div>`;
+  h += `<div style="color:#7a8a9a;margin-top:4px;">🔒 安防模式: <b>${escapeHtml(typeof sec.mode==='string' ? sec.mode : '未知')}</b> | 布防: ${boolText(sec.armed,'是','否')}</div>`;
+  h += `</div>`;
+
+  document.getElementById('sensorDetail').innerHTML = h;
+
+  // 传感器概览卡片
+  const sg = document.getElementById('sensorGrid'); sg.innerHTML = '';
+  LOCS.forEach((loc,i) => {
+    if (loc==='室外') return;
+    const s = roomData('sensors',loc);
+    const card = document.createElement('div');
+    card.className = 'room-card';
+    card.style.padding = '10px';
+    card.innerHTML = `
+      <div style="font-size:12px;font-weight:600;margin-bottom:6px;">${ICONS[i]} ${loc}</div>
+      <div style="font-size:10px;color:#7a8a9a;">
+        ☀️ ${numberText(finiteNumber(s.illuminance,0)?s.illuminance:undefined,0,'lux')} | 👤 ${boolText(s.motion_detected,'有人','无人')}<br>
+        PM2.5 ${numberText(finiteNumber(s.pm25,0)?s.pm25:undefined)} | CO2 ${numberText(finiteNumber(s.co2,0)?s.co2:undefined)}<br>
+        🚪${boolText(s.door_open,'开','关')} 🪟${boolText(s.window_open,'开','关')}
+      </div>
+    `;
+    sg.appendChild(card);
+  });
+}
+
+function updateLight(loc, val) {
+  if (!LOCS.includes(loc) || typeof roomData('lights',loc).is_on!=='boolean' || !finiteNumber(Number(val),0,100)) return;
+  sendCmd(val>0 ? `将${loc}灯光调到${val}%` : `关闭${loc}的灯`);
+}
+function toggleLight(loc) {
+  const l = roomData('lights',loc);
+  if (!LOCS.includes(loc) || typeof l.is_on!=='boolean') return;
+  sendCmd(l.is_on ? `关闭${loc}的灯` : `打开${loc}的灯`);
+}
+
+// 每2.5秒刷新；连接失败必须显式恢复未知状态。
+setInterval(()=>{ fetchState(); fetchPatrol(); fetchHealth(); }, 2500);
+fetchState(); fetchPatrol(); fetchHealth();
+renderRooms(); renderSensorDetail();
+</script>
+</body>
+</html>

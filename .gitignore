@@ -41,5 +41,37 @@ dist/*
 !dist/SenseHome_本地审阅包_20261103_v18.sha256.json
 SenseHome：基于偏好习得的物理AI智能家居系统.zip
 .research_*
+.firecrawl/
 提交前检查单.md
 参赛选手承诺书*.pdf
+
+# Anonymous participant records stay local unless explicitly approved for release.
+docs/trial_v4/data/
+docs/trial_v2/data/
+docs/trial_v4/*export*.json
+docs/trial_v4/*export*.csv
+
+# Private runtime data and scratch uploads
+/openvela_smart_home/offload_events.jsonl
+/tmp/
+/output/
+/zzj(1).zip
+*.pdb
+
+# Internal review bundles retain local-only records; publish anonymous bundles.
+/dist/final/**/*本地审阅包*
+/dist/final/**/*内部复现审阅包*
+
+# Lossless public .gz copies and their checksums are kept alongside these logs.
+/SenseHome-6G/evidence/network_compute/20261111_fused/replay/raw_requests.jsonl
+/SenseHome-6G/evidence/network_compute/20261111_fused/http_gateway/raw_requests.jsonl
+
+# Curated frozen evidence, distinct from current build/runtime outputs.
+!docs/experiments/20261111_fused_real/challenge_12_sealed_development_repeat3/source_snapshot/policy_cli.exe
+!docs/experiments/20261111_fused_real/controlled_faults_sealed/source_snapshot/policy_cli.exe
+!docs/experiments/20261111_fused_real/holdout_12_programmatic_repeat3/source_snapshot/policy_cli.exe
+!docs/experiments/20261111_fused_real/reviewed_20_sealed_repeat3/source_snapshot/policy_cli.exe
+!docs/experiments_v4/frozen_source/SenseHome-6G/net_offload/policy_cli.exe
+!docs/operations_v4/source_snapshot/SenseHome-6G/net_offload/policy_cli.exe
+!docs/experiments_v4/cloud_server.log
+!docs/experiments_v4/local_server.log

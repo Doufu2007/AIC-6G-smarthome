@@ -1,0 +1,75 @@
+{
+  "n_rows": 24,
+  "status": "finished",
+  "by_arm": {
+    "fixed-local": {
+      "n_rows": 6,
+      "n_completed": 6,
+      "n_protection_refusal": 0,
+      "n_fallback": 0,
+      "n_interface_ok": 6,
+      "proxy_post_attempts": 6,
+      "actual_upstream_model_post_attempts": 6,
+      "actual_upstream_model_post_http200": 6,
+      "gateway_median_ms_all_requests": 729.9135,
+      "gateway_max_ms_all_requests": 838.332,
+      "selected_backend_counts": {
+        "local-model": 6,
+        "cloud-model": 0,
+        "local-rules": 0
+      }
+    },
+    "fixed-cloud": {
+      "n_rows": 6,
+      "n_completed": 6,
+      "n_protection_refusal": 0,
+      "n_fallback": 0,
+      "n_interface_ok": 6,
+      "proxy_post_attempts": 6,
+      "actual_upstream_model_post_attempts": 6,
+      "actual_upstream_model_post_http200": 6,
+      "gateway_median_ms_all_requests": 1113.954,
+      "gateway_max_ms_all_requests": 1146.109,
+      "selected_backend_counts": {
+        "local-model": 0,
+        "cloud-model": 6,
+        "local-rules": 0
+      }
+    },
+    "network-only": {
+      "n_rows": 6,
+      "n_completed": 6,
+      "n_protection_refusal": 0,
+      "n_fallback": 0,
+      "n_interface_ok": 6,
+      "proxy_post_attempts": 6,
+      "actual_upstream_model_post_attempts": 6,
+      "actual_upstream_model_post_http200": 6,
+      "gateway_median_ms_all_requests": 721.0035,
+      "gateway_max_ms_all_requests": 903.081,
+      "selected_backend_counts": {
+        "local-model": 6,
+        "cloud-model": 0,
+        "local-rules": 0
+      }
+    },
+    "joint": {
+      "n_rows": 6,
+      "n_completed": 6,
+      "n_protection_refusal": 0,
+      "n_fallback": 0,
+      "n_interface_ok": 6,
+      "proxy_post_attempts": 6,
+      "actual_upstream_model_post_attempts": 6,
+      "actual_upstream_model_post_http200": 6,
+      "gateway_median_ms_all_requests": 708.981,
+      "gateway_max_ms_all_requests": 847.369,
+      "selected_backend_counts": {
+        "local-model": 6,
+        "cloud-model": 0,
+        "local-rules": 0
+      }
+    }
+  },
+  "statistics": "descriptive; 2 commands repeated on one shared host, no independent-user significance inference"
+}

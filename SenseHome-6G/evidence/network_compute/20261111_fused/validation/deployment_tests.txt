@@ -1,0 +1,30 @@
+test_cloud_unknown_lan_stays_unknown_and_injection_is_explicit (test_capture_real_gateway.CaptureTests.test_cloud_unknown_lan_stays_unknown_and_injection_is_explicit) ... ok
+test_existing_directory_is_never_overwritten (test_capture_real_gateway.CaptureTests.test_existing_directory_is_never_overwritten) ... ok
+test_gateway_executes_actual_c_policy_and_isolated_json_state (test_capture_real_gateway.CaptureTests.test_gateway_executes_actual_c_policy_and_isolated_json_state) ... ok
+test_unsafe_model_action_is_preserved_before_gateway_fallback (test_capture_real_gateway.CaptureTests.test_unsafe_model_action_is_preserved_before_gateway_fallback) ... ok
+test_download_only_indexed_shards_max_four_workers_resume_and_verify (test_large_recovery.LargeRecoveryTests.test_download_only_indexed_shards_max_four_workers_resume_and_verify) ... ok
+test_frozen_revision_mismatch_blocks_download (test_large_recovery.LargeRecoveryTests.test_frozen_revision_mismatch_blocks_download) ... ok
+test_large_bundle_contains_both_scripts_and_draft_labels (test_large_recovery.LargeRecoveryTests.test_large_bundle_contains_both_scripts_and_draft_labels) ... ok
+test_large_preflight_has_distinct_ports_identity_and_small_stop_gate (test_large_recovery.LargeRecoveryTests.test_large_preflight_has_distinct_ports_identity_and_small_stop_gate) ... ok
+test_missing_lfs_metadata_is_not_accepted (test_large_recovery.LargeRecoveryTests.test_missing_lfs_metadata_is_not_accepted) ... ok
+test_cloud_capture_without_explicit_injection_is_blocked (test_large_recovery.SharedPreflightTests.test_cloud_capture_without_explicit_injection_is_blocked) ... ok
+test_parameterized_interface_error_still_captures_but_is_not_success (test_large_recovery.SharedPreflightTests.test_parameterized_interface_error_still_captures_but_is_not_success) ... ok
+test_small_identity_and_no_optional_hook_remain_default (test_large_recovery.SharedPreflightTests.test_small_identity_and_no_optional_hook_remain_default) ... ok
+test_upstream_unavailable_blocks_capture (test_large_recovery.SharedPreflightTests.test_upstream_unavailable_blocks_capture) ... ok
+test_wrong_revision_blocks_capture (test_large_recovery.SharedPreflightTests.test_wrong_revision_blocks_capture) ... ok
+test_api_correct_lfs_hash_is_accepted (test_recovery_helpers.RecoveryContractTests.test_api_correct_lfs_hash_is_accepted) ... ok
+test_bundle_import_layout_draft_labels_and_hashes (test_recovery_helpers.RecoveryContractTests.test_bundle_import_layout_draft_labels_and_hashes) ... ok
+test_existing_download_file_resumes_without_discarding_prefix (test_recovery_helpers.RecoveryContractTests.test_existing_download_file_resumes_without_discarding_prefix) ... ok
+test_http_error_json_preserved_and_loopback_proxy_disabled (test_recovery_helpers.RecoveryContractTests.test_http_error_json_preserved_and_loopback_proxy_disabled) ... ok
+test_only_missing_parts_downloaded_and_logs_excluded_then_full_weight_reused (test_recovery_helpers.RecoveryContractTests.test_only_missing_parts_downloaded_and_logs_excluded_then_full_weight_reused) ... ok
+test_partial_part_resumes_tail_and_retries_truncated_transfer (test_recovery_helpers.RecoveryContractTests.test_partial_part_resumes_tail_and_retries_truncated_transfer) ... ok
+test_range_ignored_cannot_replace_part (test_recovery_helpers.RecoveryContractTests.test_range_ignored_cannot_replace_part) ... ok
+test_redirect_keeps_head_range_and_selected_commit_header (test_recovery_helpers.RecoveryContractTests.test_redirect_keeps_head_range_and_selected_commit_header) ... ok
+test_revision_header_mismatch_blocks_weights (test_recovery_helpers.RecoveryContractTests.test_revision_header_mismatch_blocks_weights) ... ok
+test_size_matched_corrupt_part_cannot_publish_weight (test_recovery_helpers.RecoveryContractTests.test_size_matched_corrupt_part_cannot_publish_weight) ... ok
+test_weight_sha256_constant_is_64_lowercase_hex (test_recovery_helpers.RecoveryContractTests.test_weight_sha256_constant_is_64_lowercase_hex) ... ok
+
+----------------------------------------------------------------------
+Ran 25 tests in 7.816s
+
+OK

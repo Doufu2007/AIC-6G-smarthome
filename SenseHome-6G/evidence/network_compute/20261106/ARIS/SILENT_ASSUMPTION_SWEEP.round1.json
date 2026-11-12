@@ -1,0 +1,127 @@
+{
+  "reviewer": {
+    "model": "gpt-6.1-sol",
+    "reasoning_effort": "xhigh",
+    "review_independence": "same-family",
+    "acceptance_status": "provisional",
+    "route_note": "The skill's default gpt-6-astra is unavailable in the supplied host model list; the documented capability fallback selected gpt-6.1-sol/xhigh.",
+    "scope": "Read-only source and assumption-ledger review with deterministic local reproductions. No cross-family acceptance, physical-system validation, or competition-readiness assessment."
+  },
+  "snapshot_note": "These are first-pass findings against the initially read A-001 through A-020 ledger and source snapshot. The executor edited shared files during review. Later observed corrections are recorded explicitly below and require a bounded second sweep; they do not erase the original findings.",
+  "undeclared": [
+    {
+      "site": "SenseHome-6G/net_offload/offload_policy.c:311-316,359-418; resource_policy.py:33-40; experiment_stats.py:35-36",
+      "decision": "The joint policy minimizes an additive estimated inference-plus-queue-plus-transport cost, subject to resource/network gates and hysteresis. Service deadline and reliability-target fields evaluate outcomes rather than impose reservations or admission guarantees.",
+      "why_it_matters": "This determines what improved deadline attainment can mean. The implementation is not a deadline scheduler or reliability-guaranteeing resource allocator merely because profiles contain those targets.",
+      "class": "semantic",
+      "later_observation": "The executor added A-023 after notification."
+    },
+    {
+      "site": "SenseHome-6G/net_offload/offload_policy.c:359-381,397-414; resource_policy.py:39-40",
+      "decision": "Initially, network-only omitted compute gates and unconditionally preferred cloud whenever both endpoints passed network eligibility, whereas joint used estimated-cost minimization. Compute-only omitted network eligibility, transport costs, and network-recovery hold. No-hysteresis removed both switching margin and recovery-sample hold.",
+      "why_it_matters": "These definitions determine the causal interpretation of ablations. The initial network-only arm changed the optimization objective as well as removing compute information, so its comparison did not isolate compute awareness.",
+      "class": "semantic",
+      "later_observation": "A-025 now declares an intended matched-objective network-only comparison and requires correction before final runs. The code change was not independently revalidated in this first-pass response."
+    },
+    {
+      "site": "SenseHome-6G/net_offload/experiment_inputs.py:17-20,94-97,145,155; experiment_http_gateway.py:281-295,330-334",
+      "decision": "The workload uses a fixed 60/20/20 complex/simple/safety mix, equal phase counts, and a fixed scenario order. Trace at_ms values describe ordering, but the HTTP matrix executes sequentially without pacing requests to those timestamps.",
+      "why_it_matters": "Overall rates summarize this constructed mix and phase history, not observed household demand or a measured 10-requests-per-second arrival process. Scenario order also affects stateful recovery and switching.",
+      "class": "semantic",
+      "later_observation": "The executor added A-024 after notification."
+    },
+    {
+      "site": "SenseHome-6G/net_offload/experiment_http_gateway.py:51-52,275-276,309,340-349; experiments/policy_config.json:4,6-7",
+      "decision": "HTTP experiments calibrate local/cloud inference estimates to 12/35 ms instead of the shipped 100/35 ms defaults; stress additionally raises the policy inflight cap from 8 to 64 while retaining bounded fixture capacities of 2 local and 8 cloud service slots.",
+      "why_it_matters": "Measured behavior is the default code path under explicit experimental calibration, not an unmodified default configuration. These changes directly alter route preference, admission, and queue behavior.",
+      "class": "semantic",
+      "later_observation": "The executor added A-026 after notification."
+    },
+    {
+      "site": "openvela_smart_home/dashboard/bridge_server.py:631-641; SenseHome-6G/net_offload/experiment_http_gateway.py:165,203; experiments/policy_config.json:10; experiment_replay.py:75-76,88-94",
+      "decision": "The policy configuration's 800 ms timeout applies to modeled replay. Actual HTTP operation uses separate health/inference/client socket waiting budgets of 0.5/2/8 seconds, not one hard end-to-end cancellation deadline.",
+      "why_it_matters": "Identical-looking effective policy configurations do not give modeled and measured runs identical timeout semantics. Changing timeout_ms does not change Dashboard inference waiting time.",
+      "class": "semantic",
+      "later_observation": "The executor added A-027 and runtime_timeouts metadata after notification."
+    },
+    {
+      "site": "SenseHome-6G/net_offload/experiment_stats.py:11-29,32-55,59-93,105-110",
+      "decision": "Latency quantiles use type-7 interpolation over all requests including failures; deadline attainment requires both contract completion and elapsed time within budget; Wilson intervals are descriptive; paired deterministic-replay effects use 2000 bootstrap draws over seed-level means.",
+      "why_it_matters": "These are the estimands and uncertainty conventions behind reported results. In particular, fast failures remain in latency quantiles, and synthetic correlated requests do not provide independent field-reliability evidence.",
+      "class": "semantic",
+      "later_observation": "The executor added A-028 after notification."
+    },
+    {
+      "site": "SenseHome-6G/net_offload/offload_gateway.py:617-638",
+      "decision": "A request-time model transport/backend failure falls directly to local rules rather than attempting the other model endpoint on the same request; model-refusal responses remain terminal.",
+      "why_it_matters": "A dual-endpoint selection policy does not imply model-to-model failover for an already dispatched request. Completion and fallback-rate interpretations depend on this distinction.",
+      "class": "semantic",
+      "later_observation": "The executor added A-022 during review."
+    }
+  ],
+  "stale_rows": [
+    {
+      "id": "A-015",
+      "site": "Initially openvela_smart_home/dashboard/bridge_server.py:514-519,649-666",
+      "declared": "Failed gateway initialization returns unavailable without execution.",
+      "observed_at_discovery": "Missing or failed C-policy startup installed _UnavailablePolicy but still constructed a gateway. Its local-rules selection allowed commands to mutate device state.",
+      "current_status": "Resolved in the subsequently observed source. An independent read-only reproduction using a missing policy path now returned GATEWAY_UNAVAILABLE, interface_ok=false, semantic_complete=false, and no light change."
+    },
+    {
+      "id": "A-007",
+      "site": "Initially SenseHome-6G/net_offload/resource_policy.py:43-47; openvela_smart_home/dashboard/bridge_server.py:748,768; offload_gateway.py:443",
+      "declared": "Recovery counts distinct monitor observations, not repeated request reads.",
+      "observed_at_discovery": "Only the immediately previous observation identity was remembered. Concurrent requests snapshot before acquiring the policy lock, so observations can arrive out of order and the same identity can advance recovery again.",
+      "current_status": "The executor added an integer sequence high-water mark and out-of-order fail-closed handling at resource_policy.py:46-55. Source correction observed; its new regression was not independently executed during this first pass."
+    }
+  ],
+  "concrete_bugs": [
+    {
+      "severity": "P1",
+      "site": "openvela_smart_home/dashboard/web_panel.html:283-286,323-327; SenseHome-6G/net_offload/offload_gateway.py:245-249",
+      "issue": "Remote/model response text is interpreted as browser HTML.",
+      "evidence": "Remote thought, observation, answer, and action-description strings flow into appendLog, whose innerHTML template inserts content without escaping. HttpJsonBackend accepts arbitrary answer text independently of the validated action list.",
+      "consequence": "A model-supplied img/onerror payload can execute same-origin JavaScript and issue device API requests outside the reviewed structured action plan. This crosses the existing model-output trust boundary, not merely a malicious-local-user boundary.",
+      "verification": "Direct source data-flow inspection; no browser exploit was executed.",
+      "current_status": "Open at the last observed web_panel.html snapshot."
+    },
+    {
+      "severity": "P1",
+      "site": "Initially SenseHome-6G/net_offload/offload_gateway.py:411-417; openvela_smart_home/dashboard/bridge_server.py:390-398,538-540",
+      "issue": "A common negated command was executed affirmatively.",
+      "evidence": "With actual parser code and only state I/O mocked, command '别打开客厅灯' produced needs_plan=false, task=simple, semantic_complete=true, and living-room brightness=100.",
+      "consequence": "The local fallback can perform the opposite of a user's instruction while reporting successful completion.",
+      "verification": "Deterministic local reproduction completed.",
+      "current_status": "The executor subsequently added a 别-pattern guard at offload_gateway.py:413. That source correction was observed but not independently rerun in this first pass."
+    },
+    {
+      "severity": "P2",
+      "site": "Initially openvela_smart_home/dashboard/web_panel.html:134; bridge_server.py:390-398",
+      "issue": "The visible whole-house-on button opened only the living-room light.",
+      "evidence": "The button sends '打开所有灯'. The generic open-light branch selected extract_location(command) or 客厅. A deterministic reproduction returned semantic_complete=true while all other indoor lights stayed off.",
+      "consequence": "An existing first-screen control reported completion for a partial effect.",
+      "verification": "Deterministic local reproduction completed.",
+      "current_status": "The executor subsequently guarded all-house/bulk phrases as complex requests. This prevents the observed partial local execution, but the button's eventual supported or refused behavior needs second-pass verification."
+    },
+    {
+      "severity": "P2",
+      "site": "Initially SenseHome-6G/net_offload/resource_policy.py:43-47; offload_policy.c:370-379",
+      "issue": "Out-of-order cached requests could satisfy recovery using a repeated observation.",
+      "evidence": "Against the actual C binary, sequence blocked-id1, healthy-id2, healthy-id3, healthy-id2 produced recovery logs 0/3, 1/3, 2/3, 3/3 and selected cloud on the repeated id2. Only two distinct healthy observations existed.",
+      "consequence": "Concurrent request ordering could defeat the declared three-distinct-observation recovery hold.",
+      "verification": "Deterministic direct-client/C-binary reproduction completed.",
+      "current_status": "High-water source correction observed; independent rerun pending second sweep."
+    }
+  ],
+  "semantic_undeclared": 7,
+  "verdict": "gaps",
+  "positive_findings": [
+    "The inspected default command path constructs server-owned resource observations rather than accepting request-supplied policy or telemetry overrides.",
+    "Missing queue, memory, and bandwidth observations remain explicit in event inputs; configured inference times are identified as estimates.",
+    "Monotonic cache-age computation and per-endpoint ages are present.",
+    "The HTTP experiment explicitly distinguishes configured workload pairing from identical measured telemetry and does not compute paired causal HTTP effects.",
+    "The experiment scope and fixed-fixture/model limitations are explicitly recorded.",
+    "The observed missing-policy initialization correction independently reproduced the intended no-action unavailable response."
+  ],
+  "next_gate": "Run the bounded second sweep against the updated ledger and source, independently verify the recovery/negation/UI corrections, and resolve or explicitly defer the remaining model-text HTML trust-boundary finding. A same-family clean result remains provisional."
+}

@@ -1,0 +1,116 @@
+Browser tab: 2, Title: "openvela 物理AI - 智能家居控制面板", URL: "http://127.0.0.1:8879/".
+0 AXWebArea openvela 物理AI - 智能家居控制面板, URL: 127.0.0.1:8879/
+	1 container
+		2 text 🤖
+		3 heading openvela 物理AI, Value: 1
+			4 text openvela 物理AI
+		5 text PC设备仿真 · 非实物控制
+		6 button 🏠 离家模式
+		7 button ☀️ 早安模式
+		8 button 💡 全屋开灯
+		9 button 🌙 全屋关灯
+		10 text 🏠 房间控制面板
+		11 container roomGrid
+			214 container
+				215 text 🛋️ 客厅 未知 💡
+				216 slider (disabled, settable, integer) 0
+				217 text 未知 🌡️ 未知 💧 未知 🪟 未知 👤 未知 PM2.5 未知
+			218 container
+				219 text 🛏️ 卧室 未知 💡
+				220 slider (disabled, settable, integer) 0
+				221 text 未知 🌡️ 未知 💧 未知 🪟 未知 👤 未知 PM2.5 未知
+			222 container
+				223 text 🍳 厨房 未知 💡
+				224 slider (disabled, settable, integer) 0
+				225 text 未知 🌡️ 未知 💧 未知 🪟 未知 👤 未知 PM2.5 未知
+			226 container
+				227 text 🛁 浴室 未知 💡
+				228 slider (disabled, settable, integer) 0
+				229 text 未知 🌡️ 未知 💧 未知 🪟 未知 👤 未知 PM2.5 未知
+			230 container
+				231 text 📚 书房 未知 💡
+				232 slider (disabled, settable, integer) 0
+				233 text 未知 🌡️ 未知 💧 未知 🪟 未知 👤 未知 PM2.5 未知
+		32 text 📡 仿真传感器状态 — 来自网关
+		33 container sensorGrid
+			234 container
+				235 text 🛋️ 客厅 ☀️ 未知 | 👤 未知
+				236 text PM2.5 未知 | CO2 未知
+				237 text 🚪未知 🪟未知
+			238 container
+				239 text 🛏️ 卧室 ☀️ 未知 | 👤 未知
+				240 text PM2.5 未知 | CO2 未知
+				241 text 🚪未知 🪟未知
+			242 container
+				243 text 🍳 厨房 ☀️ 未知 | 👤 未知
+				244 text PM2.5 未知 | CO2 未知
+				245 text 🚪未知 🪟未知
+			246 container
+				247 text 🛁 浴室 ☀️ 未知 | 👤 未知
+				248 text PM2.5 未知 | CO2 未知
+				249 text 🚪未知 🪟未知
+			250 container
+				251 text 📚 书房 ☀️ 未知 | 👤 未知
+				252 text PM2.5 未知 | CO2 未知
+				253 text 🚪未知 🪟未知
+	54 container
+		55 text 📊 环境仪表盘
+		56 pop up button (collapsed, settable) Value: 🛋️ 客厅, ID: sensorLoc, Secondary Actions: Expand
+			57 menu
+				254 (selected) 🛋️ 客厅
+				255 🛏️ 卧室
+				256 🍳 厨房
+				257 🛁 浴室
+				258 📚 书房
+	63 container sensorDetail
+		259 text 📍 客厅 网关仿真状态
+		260 text ☀️ 光照强度 未知 🌡️ PM2.5 未知 💨 CO2浓度 未知 🔊 噪音 未知
+		261 text 网关状态快照（PC仿真）
+		262 text 👤 人体红外: 未知
+		263 text 🚪 门磁: 未知 | 🪟 窗磁: 未知
+		264 container
+			265 text 🔒 安防模式:  未知  | 布防: 未知
+	71 container
+		72 text 🔄 主动巡检
+		73 button 立即巡检
+	266 text 巡检记录未知
+	75 heading 🧠 网关执行记录, Value: 2
+		76 text 🧠 网关执行记录
+	77 text 💡 开灯
+	78 text 🌡️ 温湿度
+	79 text 🥶 有点冷
+	80 text 🌑 太暗了
+	81 text 😮‍💨 不透气
+	82 container logContainer
+		83 text 等待网关确认
+		84 text 这是PC设备仿真演示。设备与传感器状态来自网关，不代表真实家居或6G网络测量。连接状态以健康信息为准；请求失败时请先查询状态再重试。
+		145 text 用户请求
+		146 text 打开客厅的灯
+		147 text 网关路由报告
+		148 text backend=local-rules | reason=TASK_IS_SIMPLE | total=7.2ms
+		149 text 网关动作报告（PC仿真）
+		150 text 客厅灯光亮度=100%
+		151 text 网关观测报告（PC仿真）
+		152 text 客厅灯光亮度=100%
+		153 text 网关报告完成（PC仿真）
+		154 text 已在本机模拟设备中完成：客厅灯光亮度=100%
+		208 text 用户请求
+		209 text 有点暗
+		210 text 网关路由报告
+		211 text backend=local-rules | reason=STATIC_BASELINE | total=3.4ms
+		212 text 任务未完成 / 执行未确认
+		213 text 请指定受支持的房间和需要调整的目标。
+		267 text 用户请求
+		268 text 把客厅的灯调暗一点
+		269 text 执行未确认
+		270 text 未获得有效网关响应，请查询设备状态后再操作。响应丢失时，请求可能已被网关处理。
+	271 text 设备状态: 未知（未连接或响应无效）
+	272 text local-model: 未知 | cloud-model: 未知
+模型健康与链路来源: 未知
+	273 text 巡检: 未知
+	274 text 更新: 10:57:35
+	275 text 巡检状态未确认
+	90 text field (settable) cmdInput
+	91 button 发送
+
+The focused UI element is 91 button 发送

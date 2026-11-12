@@ -15,17 +15,21 @@ class BackendMonitor:
         self._lock = threading.Lock()
         self._stop = threading.Event()
         self._thread = None
+        self._sampled_monotonic = None
+        self._endpoint_sampled_monotonic = {}
         self._latest = {'status': 'warming-up', 'backends': {}, 'sampled_at': None,
                         'link': {'wan_ok': False, 'wan_rtt_ms': None, 'lan_ok': True, 'lan_rtt_ms': 0.0},
                         'link_basis': 'HTTP endpoint RTT; devices simulated in gateway process'}
 
     def refresh_once(self):
         health = {}
+        endpoint_sampled_monotonic = {}
         for name, backend in self.backends.items():
             try:
                 health[name] = dict(backend.health())
             except Exception as exc:
                 health[name] = {'ready': False, 'reachable': False, 'error': type(exc).__name__}
+            endpoint_sampled_monotonic[name] = time.monotonic()
         cloud = health.get('cloud-model', {})
         latest = {'status': 'sampled', 'backends': health, 'sampled_at': time.time(),
                   'link': {'wan_ok': bool(cloud.get('reachable', False)),
@@ -34,11 +38,30 @@ class BackendMonitor:
                   'link_basis': self._latest['link_basis']}
         with self._lock:
             self._latest = latest
+            self._endpoint_sampled_monotonic = endpoint_sampled_monotonic
+            self._sampled_monotonic = (
+                min(endpoint_sampled_monotonic.values())
+                if endpoint_sampled_monotonic else time.monotonic()
+            )
 
     def snapshot(self):
         with self._lock:
             snapshot = copy.deepcopy(self._latest)
-        snapshot['age_ms'] = None if snapshot['sampled_at'] is None else round((time.time() - snapshot['sampled_at']) * 1000, 1)
+            sampled_monotonic = self._sampled_monotonic
+            endpoint_sampled_monotonic = dict(self._endpoint_sampled_monotonic)
+        now = time.monotonic()
+        snapshot['endpoint_age_ms'] = {
+            name: round(max(0.0, now - sampled_at) * 1000, 1)
+            for name, sampled_at in endpoint_sampled_monotonic.items()
+        }
+        snapshot['age_ms'] = None if sampled_monotonic is None else round(
+            max(0.0, now - sampled_monotonic) * 1000, 1
+        )
+        for name, backend in self.backends.items():
+            # Pure, adapter-owned counters: do not perform network I/O here.
+            live = getattr(backend, 'resource_snapshot', None)
+            if callable(live) and name in snapshot.get('backends', {}):
+                snapshot['backends'][name].update(live())
         return snapshot
 
     def start(self):

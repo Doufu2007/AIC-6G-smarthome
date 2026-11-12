@@ -1,0 +1,127 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "urn:sensehome:software-device-contract-fixture:v1",
+  "title": "SenseHome 软件设备合同 fixture（非 Matter、非实物设备协议）",
+  "description": "独立软件模拟接口的设计合同。运行时还需按当前授权房间和状态执行白名单校验。",
+  "oneOf": [
+    {"$ref": "#/$defs/command"},
+    {"$ref": "#/$defs/receipt"},
+    {"$ref": "#/$defs/state"},
+    {"$ref": "#/$defs/error"}
+  ],
+  "$defs": {
+    "commandId": {"type": "string", "pattern": "^[A-Za-z0-9][A-Za-z0-9_.-]{0,63}$"},
+    "location": {"type": "string", "minLength": 1, "description": "必须是服务实例初始状态中授权的房间；不能仅凭 schema 判断授权。"},
+    "lightParams": {
+      "type": "object", "required": ["location"], "additionalProperties": false,
+      "properties": {
+        "location": {"$ref": "#/$defs/location"},
+        "action": {"enum": ["on", "off", "set"]},
+        "brightness": {"type": "integer", "minimum": 0, "maximum": 100}
+      },
+      "anyOf": [{"required": ["action"]}, {"required": ["brightness"]}]
+    },
+    "curtainParams": {
+      "type": "object", "required": ["location"], "additionalProperties": false,
+      "properties": {
+        "location": {"$ref": "#/$defs/location"},
+        "action": {"enum": ["open", "close", "set"]},
+        "position": {"type": "integer", "minimum": 0, "maximum": 100}
+      },
+      "anyOf": [{"required": ["action"]}, {"required": ["position"]}]
+    },
+    "readParams": {
+      "type": "object", "required": ["location"], "additionalProperties": false,
+      "properties": {"location": {"$ref": "#/$defs/location"}}
+    },
+    "action": {
+      "oneOf": [
+        {"type": "object", "required": ["name", "params"], "additionalProperties": false,
+         "properties": {"name": {"const": "light_control"}, "params": {"$ref": "#/$defs/lightParams"}}},
+        {"type": "object", "required": ["name", "params"], "additionalProperties": false,
+         "properties": {"name": {"const": "curtain_control"}, "params": {"$ref": "#/$defs/curtainParams"}}},
+        {"type": "object", "required": ["name", "params"], "additionalProperties": false,
+         "properties": {"name": {"const": "read_temperature"}, "params": {"$ref": "#/$defs/readParams"}}}
+      ]
+    },
+    "command": {
+      "type": "object", "required": ["command_id", "expected_state_version", "actions"], "additionalProperties": false,
+      "properties": {
+        "command_id": {"$ref": "#/$defs/commandId"},
+        "expected_state_version": {"type": "integer", "minimum": 0},
+        "actions": {"type": "array", "minItems": 1, "maxItems": 16, "items": {"$ref": "#/$defs/action"}}
+      }
+    },
+    "receipt": {
+      "type": "object", "additionalProperties": false,
+      "required": ["schema", "evidence_kind", "store_id", "store_persistence", "command_id", "payload_sha256", "status", "http_status", "state_version_before", "state_version_after", "fixture_commit_count", "error", "requested_action_count", "actions", "observation", "created_at_utc"],
+      "properties": {
+        "schema": {"const": "sensehome.device-receipt.v1"},
+        "evidence_kind": {"const": "software-device-contract-fixture"},
+        "store_id": {"type": "string", "pattern": "^[a-f0-9]{32}$"},
+        "store_persistence": {"const": "memory_until_server_stops"},
+        "command_id": {"$ref": "#/$defs/commandId"},
+        "payload_sha256": {"type": "string", "pattern": "^[a-f0-9]{64}$"},
+        "status": {"enum": ["applied", "rejected"]},
+        "http_status": {"enum": [200, 409, 422]},
+        "state_version_before": {"type": "integer", "minimum": 0},
+        "state_version_after": {"type": "integer", "minimum": 0},
+        "fixture_commit_count": {"type": "integer", "minimum": 0, "maximum": 1},
+        "error": {"type": ["string", "null"]},
+        "requested_action_count": {"type": "integer", "minimum": 0},
+        "actions": {"type": "array", "maxItems": 16, "items": {
+          "type": "object", "required": ["name", "params", "description"], "additionalProperties": false,
+          "properties": {"name": {"enum": ["light_control", "curtain_control", "read_temperature"]}, "params": {"type": "object"}, "description": {"type": "string"}}
+        }},
+        "observation": {"type": "string"},
+        "created_at_utc": {"type": "string", "format": "date-time"}
+      },
+      "allOf": [
+        {"if": {"properties": {"status": {"const": "applied"}}},
+         "then": {"properties": {"http_status": {"const": 200}, "fixture_commit_count": {"const": 1}, "error": {"type": "null"}, "actions": {"minItems": 1}, "requested_action_count": {"minimum": 1, "maximum": 16}}}},
+        {"if": {"properties": {"status": {"const": "rejected"}}},
+         "then": {"properties": {"http_status": {"enum": [409, 422]}, "fixture_commit_count": {"const": 0}, "error": {"type": "string"}, "actions": {"maxItems": 0}}}}
+      ]
+    },
+    "state": {
+      "type": "object", "additionalProperties": false,
+      "required": ["schema", "evidence_kind", "store_id", "store_persistence", "state_version", "applied_commands", "state", "observed_at_utc", "state_age_ms"],
+      "properties": {
+        "schema": {"const": "sensehome.device-state.v1"},
+        "evidence_kind": {"const": "software-device-contract-fixture"},
+        "store_id": {"type": "string", "pattern": "^[a-f0-9]{32}$"},
+        "store_persistence": {"const": "memory_until_server_stops"},
+        "state_version": {"type": "integer", "minimum": 0},
+        "applied_commands": {"type": "integer", "minimum": 0},
+        "observed_at_utc": {"type": "string", "format": "date-time"},
+        "state_age_ms": {"type": "number", "minimum": 0},
+        "state": {
+          "type": "object", "required": ["lights", "curtains", "temperature"], "additionalProperties": false,
+          "properties": {
+            "lights": {"type": "object", "additionalProperties": {
+              "type": "object", "required": ["is_on", "brightness"], "additionalProperties": false,
+              "properties": {"is_on": {"type": "boolean"}, "brightness": {"type": "integer", "minimum": 0, "maximum": 100}}
+            }},
+            "curtains": {"type": "object", "additionalProperties": {
+              "type": "object", "required": ["is_open", "position"], "additionalProperties": false,
+              "properties": {"is_open": {"type": "boolean"}, "position": {"type": "integer", "minimum": 0, "maximum": 100}}
+            }},
+            "temperature": {"type": "object", "additionalProperties": {
+              "type": "object", "required": ["temp", "humidity"], "additionalProperties": false,
+              "properties": {"temp": {"type": "number"}, "humidity": {"type": "number"}}
+            }}
+          }
+        }
+      }
+    },
+    "error": {
+      "type": "object", "required": ["schema", "evidence_kind", "store_id", "store_persistence", "error"],
+      "properties": {
+        "schema": {"const": "sensehome.device-error.v1"},
+        "evidence_kind": {"const": "software-device-contract-fixture"},
+        "store_id": {"type": "string"}, "store_persistence": {"const": "memory_until_server_stops"},
+        "error": {"type": "string"}, "execution_state": {"const": "unknown"}
+      }
+    }
+  }
+}

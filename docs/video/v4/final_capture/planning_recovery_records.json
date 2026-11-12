@@ -1,0 +1,228 @@
+{
+  "cloud-model": [],
+  "local-model": [
+    {
+      "attempted": false,
+      "from": "local-model",
+      "to": "cloud-model",
+      "actual_backend": "local-model",
+      "primary_error": null,
+      "primary_status": {
+        "ok": true,
+        "semantic_complete": false,
+        "action_count": 2,
+        "error": null,
+        "failure_kind": null,
+        "source": "real-model",
+        "model_ms": 1424.285
+      },
+      "secondary_status": null,
+      "primary_response": {
+        "source": "real-model",
+        "configured_model": "Qwen2.5-1.5B-Instruct-Q4_K_M",
+        "gpu_info": "unknown",
+        "gpu_info_source": "environment_declared",
+        "model_revision": "6a1a2eb6d15622bf3c96857206351ba97e1af16c30d7a74ee38970e434e9407e",
+        "model_revision_source": "environment_declared",
+        "tier": "local",
+        "answer": "动作计划已生成，等待网关执行确认。",
+        "actions": [
+          {
+            "name": "light_control",
+            "params": {
+              "location": "客厅",
+              "action": "set",
+              "brightness": 60
+            }
+          },
+          {
+            "name": "light_control",
+            "params": {
+              "location": "卧室",
+              "action": "set",
+              "brightness": 30
+            }
+          }
+        ],
+        "plan_valid": true,
+        "semantic_complete": false,
+        "model_ms": 1424.285,
+        "model_ms_kind": "upstream_http_wall_clock",
+        "model_ms_source": "measured",
+        "upstream_model": "Qwen2.5-1.5B-Instruct-Q4_K_M",
+        "upstream_usage": {
+          "completion_tokens": 117,
+          "prompt_tokens": 712,
+          "total_tokens": 829,
+          "prompt_tokens_details": {
+            "cached_tokens": 0
+          }
+        }
+      },
+      "secondary_response": null,
+      "secondary_health": null,
+      "primary_ms": 1427.321,
+      "health_ms": 0.0,
+      "secondary_ms": 0.0,
+      "elapsed_ms": 1427.434,
+      "budget_ms": 10000.0,
+      "budget_scope": "secondary_launch_only",
+      "reason": "primary_success"
+    },
+    {
+      "attempted": false,
+      "from": "local-model",
+      "to": "cloud-model",
+      "actual_backend": "local-model",
+      "primary_error": "HTTP_422",
+      "primary_status": {
+        "ok": false,
+        "semantic_complete": false,
+        "action_count": 0,
+        "error": "HTTP_422",
+        "failure_kind": "model_refusal",
+        "source": "real-model",
+        "model_ms": null
+      },
+      "secondary_status": null,
+      "primary_response": {
+        "error": "MODEL_ACTION_TARGET_UNMENTIONED",
+        "source": "real-model",
+        "configured_model": "Qwen2.5-1.5B-Instruct-Q4_K_M",
+        "gpu_info": "unknown",
+        "gpu_info_source": "environment_declared",
+        "model_revision": "6a1a2eb6d15622bf3c96857206351ba97e1af16c30d7a74ee38970e434e9407e",
+        "model_revision_source": "environment_declared",
+        "tier": "local"
+      },
+      "secondary_response": null,
+      "secondary_health": null,
+      "primary_ms": 357.224,
+      "health_ms": 0.0,
+      "secondary_ms": 0.0,
+      "elapsed_ms": 357.307,
+      "budget_ms": 10000.0,
+      "budget_scope": "secondary_launch_only",
+      "reason": "not_recoverable"
+    },
+    {
+      "attempted": false,
+      "from": "local-model",
+      "to": "cloud-model",
+      "actual_backend": "local-model",
+      "primary_error": null,
+      "primary_status": {
+        "ok": true,
+        "semantic_complete": false,
+        "action_count": 0,
+        "error": null,
+        "failure_kind": null,
+        "source": "real-model",
+        "model_ms": 236.008
+      },
+      "secondary_status": null,
+      "primary_response": {
+        "source": "real-model",
+        "configured_model": "Qwen2.5-1.5B-Instruct-Q4_K_M",
+        "gpu_info": "unknown",
+        "gpu_info_source": "environment_declared",
+        "model_revision": "6a1a2eb6d15622bf3c96857206351ba97e1af16c30d7a74ee38970e434e9407e",
+        "model_revision_source": "environment_declared",
+        "tier": "local",
+        "answer": "操作已拒绝，因为这是不安全的命令。",
+        "actions": [],
+        "plan_valid": true,
+        "semantic_complete": false,
+        "model_ms": 236.008,
+        "model_ms_kind": "upstream_http_wall_clock",
+        "model_ms_source": "measured",
+        "upstream_model": "Qwen2.5-1.5B-Instruct-Q4_K_M",
+        "upstream_usage": {
+          "completion_tokens": 19,
+          "prompt_tokens": 693,
+          "total_tokens": 712,
+          "prompt_tokens_details": {
+            "cached_tokens": 571
+          }
+        }
+      },
+      "secondary_response": null,
+      "secondary_health": null,
+      "primary_ms": 236.795,
+      "health_ms": 0.0,
+      "secondary_ms": 0.0,
+      "elapsed_ms": 236.893,
+      "budget_ms": 10000.0,
+      "budget_scope": "secondary_launch_only",
+      "reason": "primary_success"
+    },
+    {
+      "attempted": false,
+      "from": "local-model",
+      "to": "cloud-model",
+      "actual_backend": "local-model",
+      "primary_error": null,
+      "primary_status": {
+        "ok": true,
+        "semantic_complete": false,
+        "action_count": 2,
+        "error": null,
+        "failure_kind": null,
+        "source": "real-model",
+        "model_ms": 1209.748
+      },
+      "secondary_status": null,
+      "primary_response": {
+        "source": "real-model",
+        "configured_model": "Qwen2.5-1.5B-Instruct-Q4_K_M",
+        "gpu_info": "unknown",
+        "gpu_info_source": "environment_declared",
+        "model_revision": "6a1a2eb6d15622bf3c96857206351ba97e1af16c30d7a74ee38970e434e9407e",
+        "model_revision_source": "environment_declared",
+        "tier": "local",
+        "answer": "动作计划已生成，等待网关执行确认。",
+        "actions": [
+          {
+            "name": "light_control",
+            "params": {
+              "location": "客厅",
+              "action": "set",
+              "brightness": 60
+            }
+          },
+          {
+            "name": "light_control",
+            "params": {
+              "location": "卧室",
+              "action": "set",
+              "brightness": 30
+            }
+          }
+        ],
+        "plan_valid": true,
+        "semantic_complete": false,
+        "model_ms": 1209.748,
+        "model_ms_kind": "upstream_http_wall_clock",
+        "model_ms_source": "measured",
+        "upstream_model": "Qwen2.5-1.5B-Instruct-Q4_K_M",
+        "upstream_usage": {
+          "completion_tokens": 117,
+          "prompt_tokens": 698,
+          "total_tokens": 815,
+          "prompt_tokens_details": {
+            "cached_tokens": 571
+          }
+        }
+      },
+      "secondary_response": null,
+      "secondary_health": null,
+      "primary_ms": 1210.732,
+      "health_ms": 0.0,
+      "secondary_ms": 0.0,
+      "elapsed_ms": 1210.812,
+      "budget_ms": 10000.0,
+      "budget_scope": "secondary_launch_only",
+      "reason": "primary_success"
+    }
+  ]
+}

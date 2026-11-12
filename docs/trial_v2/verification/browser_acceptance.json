@@ -1,0 +1,50 @@
+{
+  "schema": "sensehome.browser-acceptance.v2",
+  "checked_at_utc": "2026-11-10T20:29:04.734369+00:00",
+  "kind": "automation_test",
+  "operator_role": "developer_self_test",
+  "tool": "unified-computer-use cua_repl",
+  "scope": "primary-agent observed localhost UI interaction; not human participant feedback",
+  "observed_checks": [
+    {
+      "action": "Start without consent",
+      "observed": "Rejected; consent page retained"
+    },
+    {
+      "action": "Start automation session with developer role",
+      "observed": "Task UI shown; quotation permission remained unselected"
+    },
+    {
+      "action": "Preset T1: open living-room light",
+      "observed": "Actual localhost gateway request; preset action and simulated state confirmed"
+    },
+    {
+      "action": "Preset T2: set two rooms brightness",
+      "observed": "Actual localhost gateway request; complete preset confirmation failed; failure retained in memory"
+    },
+    {
+      "action": "Cancel without saving",
+      "observed": "UI returned to consent; discarded, not retained; external feedback 0 and connected external sessions 0"
+    }
+  ],
+  "persisted_trial_json_files_after_cancel": 0,
+  "external_feedback_count": 0,
+  "protected_before_sha256": {
+    "openvela_smart_home\\device_state.json": "22a1550ab65c3db310291c778f67e9d0b3a8b19838a1ebc6fd40ca79f33e929d",
+    "openvela_smart_home\\offload_events.jsonl": null
+  },
+  "protected_after_sha256": {
+    "openvela_smart_home\\device_state.json": "22a1550ab65c3db310291c778f67e9d0b3a8b19838a1ebc6fd40ca79f33e929d",
+    "openvela_smart_home\\offload_events.jsonl": null
+  },
+  "protected_files_unchanged": true,
+  "process_stop": "tool-managed foreground process stopped after UI check; post-stop hashes independently compared here",
+  "source_sha256": {
+    "openvela_smart_home\\dashboard\\bridge_server.py": "16c0edf80492483464f9796a678cfce9f2f91a284db83fba6758720bd1785770",
+    "openvela_smart_home\\dashboard\\device_actions.py": "b639e8e294e03a0171cea74ceaa2d9f2bae5c26166f019908e93af0265865698",
+    "SenseHome-6G\\net_offload\\offload_policy.c": "58a772ddf879bb14480a3d715ac97b34fc64f811274a4a76a66c123f2c8f8135",
+    "SenseHome-6G\\net_offload\\policy_cli.exe": "04c8f57dd7c26a8168540c67410f9e5a63f4e818c3c5a97841c1510f6a2db72e"
+  },
+  "run_manifest_sha256": "93bb6e580193f3d0cac5fbfcb20a79c085a993ecccaca76d3c5c59f739169440",
+  "evidence_limit": "This authored observation log is not an independent recording of a human trial; no positive feedback was submitted."
+}

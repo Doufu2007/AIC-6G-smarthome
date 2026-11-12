@@ -1,0 +1,16 @@
+{
+  "schema_version": "sensehome.policy.v1",
+  "queue_max_ms": 300,
+  "inflight_max": 8,
+  "free_mem_min_mb": 256,
+  "local_infer_ms": 12,
+  "cloud_infer_ms": 35,
+  "switch_margin_ms": 15,
+  "recovery_samples": 3,
+  "timeout_ms": 800,
+  "observation_max_age_ms": 2000,
+  "observation_lookup_ms": 0.2,
+  "policy_model_ms": 0.2,
+  "execution_model_ms": 0.1,
+  "rule_model_ms": 1
+}

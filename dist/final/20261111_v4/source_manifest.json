@@ -1,0 +1,394 @@
+{
+  "schema": "sensehome.material-manifest.v4",
+  "version": "20261111_v4",
+  "created_at_utc": "2026-11-11T07:41:11.155326+00:00",
+  "inputs": {
+    "schema": "sensehome.material-inputs.v4",
+    "version": "20261111_v4",
+    "selection_policy": "Explicit paths only. Never choose a run by recency or overwrite sealed earlier packages.",
+    "baseline_registration": "docs/experiments_v4/registration.json",
+    "baseline_summary": "docs/experiments_v4/results.json",
+    "baseline_verification": "docs/experiments_v4/verification.json",
+    "baseline_rows": "docs/experiments_v4/rows.jsonl",
+    "integration_summary": "docs/integration_v4/runs/20261111T070837Z_7cfbfcf3/summary.json",
+    "integration_verification": "docs/integration_v4/runs/20261111T070837Z_7cfbfcf3/offline_audit.json",
+    "integration_events": "docs/integration_v4/runs/20261111T070837Z_7cfbfcf3/normal/offload_events.jsonl",
+    "operations_results": "docs/operations_v4/results.json",
+    "video_manifest": "docs/video/v4/manifest.json",
+    "external_feedback_count": 0,
+    "actual_total_cost": null,
+    "permanent_share_url": null,
+    "extraction_code": null
+  },
+  "sources": [
+    {
+      "path": "docs/competition_v3/criteria.json",
+      "sha256": "b87f5efc06cd44adcb1f198413fefe7cda01bc10370935cbf2cdb33e8b984782",
+      "bytes": 6550
+    },
+    {
+      "path": "附件1-作品提交要求.pdf",
+      "sha256": "889d49c1f33ded274c301c81f4efd899977b84e303d132631f0edeeea2a4f439",
+      "bytes": 161303
+    },
+    {
+      "path": "附件2-作品方案大纲与评分标准.pdf",
+      "sha256": "f4d611c26b49d378821c976cf9555b0d90ea98c4b2e3d411bd4d31a0f7441542",
+      "bytes": 183701
+    },
+    {
+      "path": "docs/execution/2026-11-11-evidence-v3.md",
+      "sha256": "ba0ddb82729ee9c0aeeff52ac001c165994ab0c410b3a11aa33e173cae33d5b4",
+      "bytes": 3823
+    },
+    {
+      "path": "docs/experiments/20261111_fused_real/sealed_evidence_index.json",
+      "sha256": "c7a5f98cc4c81f498f7454e19d64d6bc3d0011c7bd1b919c41ce1be243544490",
+      "bytes": 16227
+    },
+    {
+      "path": "docs/experiments/20261111_real_fault_v2/summary.json",
+      "sha256": "9b64bb49ffcba595133d791dd0adc1290a64101f66172e30f351256cd3e7f767",
+      "bytes": 13344
+    },
+    {
+      "path": "docs/experiments/20261111_race_v3_portfix/summary.json",
+      "sha256": "e27282dba66705e9255ada6a9316e252433d9611499708d24b0580c19a1243f7",
+      "bytes": 1527
+    },
+    {
+      "path": "docs/experiments/20261111_race_v3_portfix/rows.jsonl",
+      "sha256": "b7ce17f342d75633a911931b734879cd28d26cc086d41d3d46c8e4b25edcb288",
+      "bytes": 997194
+    },
+    {
+      "path": "docs/value/public_sources.json",
+      "sha256": "0c1d514084f067820b7c55ed4cf3997096fd859fce0c6815b39778087a8a8f7e",
+      "bytes": 7792
+    },
+    {
+      "path": "docs/value_v2/results/ledger_current_result.json",
+      "sha256": "9c0fe638e248c50fef79c629893aad211b23e3dd57e83cb7e4d0781b247f162c",
+      "bytes": 2907
+    },
+    {
+      "path": "docs/competition_v4/results_inputs.json",
+      "sha256": "d919ead10ee8934fead18b339618c71a535ec790a6b88d637603cfa714a2ff24",
+      "bytes": 966
+    },
+    {
+      "path": "docs/submission/build_submission_v4.py",
+      "sha256": "2752e21b6edb3a9e163fbdc0a5be79b56e11a01c5277e58359d9ea5c47b95664",
+      "bytes": 70900
+    },
+    {
+      "path": "docs/experiments_v4/post_analysis.json",
+      "sha256": "3e2aa7f0a78581acf32e7a6348d3697b4407af167beae563a945684d2451fa02",
+      "bytes": 8703
+    },
+    {
+      "path": "docs/experiments_v4/recommendation.json",
+      "sha256": "a488d4e1ea423f022f0396f9c98bb9b9787e374225cdfe4f9fe4722f9e77ccf6",
+      "bytes": 1654
+    },
+    {
+      "path": "docs/experiments_v4/final_manifest.json",
+      "sha256": "6eff402175eacf8c6f5235a1e712d0d43efee7ca1df2ce3a1ed776cb4ef1c559",
+      "bytes": 2786
+    },
+    {
+      "path": "docs/operations_v4/registration.json",
+      "sha256": "67de82fc769890fa94d6cc8597e9db892f65728472dca5cbad14a3e5bce4da87",
+      "bytes": 7399
+    },
+    {
+      "path": "docs/operations_v4/rows.jsonl",
+      "sha256": "700c4bba4b596048a693415bdf1dc58a6c2f41e8c6dfd28a74c6dcc56430ba0e",
+      "bytes": 1520618
+    },
+    {
+      "path": "docs/operations_v4/resource_samples.json",
+      "sha256": "4b53668da64baec6e13787bcd442585a89f7b14cb55e3ae351f7a8cfcc1aae9a",
+      "bytes": 217004
+    },
+    {
+      "path": "docs/integration_v4/LATEST.json",
+      "sha256": "af9fe70643e9cebbb219ff7b06d6edb371df8f2716aea7b52c45d78c7ff18ba1",
+      "bytes": 789
+    },
+    {
+      "path": "docs/integration_v4/verification/final_verification.json",
+      "sha256": "23ef9db674a4862e41dda9e4f6a838b64c26c20a688a3b687fd525567b044b46",
+      "bytes": 878
+    },
+    {
+      "path": "docs/reviews/2026-11-11-v4-independent-review.md",
+      "sha256": "d26451cbe5ee66d871181e1703580efbfe8f9255917fcf4ad8596a45e759fd70",
+      "bytes": 9188
+    },
+    {
+      "path": "docs/reviews/2026-11-11-v4-independent-review.json",
+      "sha256": "d7d431a1df13f95764639e660e490e10fba0e67f50c4ac069766a539667a43be",
+      "bytes": 7441
+    },
+    {
+      "path": "docs/video/v4/metadata_correction.json",
+      "sha256": "4062897ce814e751ffd64f1d5153e463c7b7e886bfe2a0c87e8df29cf36e1bb8",
+      "bytes": 1357
+    },
+    {
+      "path": "docs/video/v4/visual_review.json",
+      "sha256": "afff4bca755b34f9fc3a005c23b4bd5916a7bd52683d91b5d6da53facb4fdc8f",
+      "bytes": 2103
+    },
+    {
+      "path": "docs/experiments_v4/registration.json",
+      "sha256": "4e4afc334c442d4b8ba7faacb7cf708b1576eb5bc873238b8697041062177840",
+      "bytes": 17517
+    },
+    {
+      "path": "docs/experiments_v4/results.json",
+      "sha256": "ef2bb39991becdbdba0d2afc84cc95d373efe2e45ccd79711b116eb9fbf7bb12",
+      "bytes": 6027
+    },
+    {
+      "path": "docs/experiments_v4/verification.json",
+      "sha256": "de47c6e0cf5dde5b042b54858ea01aa0a2e97d11e78d703e45290f84c597b503",
+      "bytes": 1180
+    },
+    {
+      "path": "docs/experiments_v4/rows.jsonl",
+      "sha256": "dea460dcf6525270c9d997bfab7f7d1a2383ec950a9c35534337b7b17653d432",
+      "bytes": 4087616
+    },
+    {
+      "path": "docs/integration_v4/runs/20261111T070837Z_7cfbfcf3/summary.json",
+      "sha256": "5d65ed8b866818aa82aa990b01dfaccfc498742951e3eebacc7b92e5f76a8919",
+      "bytes": 582
+    },
+    {
+      "path": "docs/integration_v4/runs/20261111T070837Z_7cfbfcf3/offline_audit.json",
+      "sha256": "5fd72e44af8561b2823bf56b5a573f7e3755739988046e239562c241276e2e4c",
+      "bytes": 1392
+    },
+    {
+      "path": "docs/integration_v4/runs/20261111T070837Z_7cfbfcf3/normal/offload_events.jsonl",
+      "sha256": "d3bdc03829a5aadd3bc651f809c85bb9164b765151186d6d30e9df99f13b8d44",
+      "bytes": 22591
+    },
+    {
+      "path": "docs/operations_v4/results.json",
+      "sha256": "4a0dc9467b1892f43973ecdd6fa82e93e9310d30ce712a8d38b919878191a642",
+      "bytes": 5860
+    },
+    {
+      "path": "docs/video/v4/manifest.json",
+      "sha256": "d780d74d20ee9e9aeb801d558acdc72273fcb9168fc6189d1a2a25e18d9cb46c",
+      "bytes": 9041
+    },
+    {
+      "path": "docs/video/v4/final_runtime_records.json",
+      "sha256": "14e79b65b7a6387afa6c25b22758f53185c6175b7e096cf67254c1464402da32",
+      "bytes": 164253
+    },
+    {
+      "path": "docs/video/v4/final_runtime_manifest.json",
+      "sha256": "df990fda78745d71b9e976479424e7a1b950484841d8b273e66552d6f69e0c48",
+      "bytes": 16983
+    },
+    {
+      "path": "docs/integration_v4/runs/20261111T070837Z_7cfbfcf3/normal/http_results.json",
+      "sha256": "e8d8c3518f97c2a1180765406804605d8b43f2430382181d1ccce734ee56059e",
+      "bytes": 85227
+    },
+    {
+      "path": "docs/integration_v4/runs/20261111T070837Z_7cfbfcf3/ack_loss/http_results.json",
+      "sha256": "ea760061b34691b713fe845f8eeb855b1408aa6d7eb090a31de685ebe1ef9e68",
+      "bytes": 50267
+    }
+  ],
+  "outputs": [
+    {
+      "path": "dist/final/20261111_v4/SenseHome_场景设计方案_20261111_v4.docx",
+      "bytes": 158163,
+      "sha256": "ee300246b6f25a46fd1222e84b38a0ef3a97cfdaa772b394a3b28c20669db927"
+    },
+    {
+      "path": "dist/final/20261111_v4/SenseHome_场景设计答辩_20261111_v4.pptx",
+      "bytes": 67116,
+      "sha256": "8a4fdd2656e0b4e6c7c76e8fb25290f671bc3bba067e3b785013d242b04b57d9"
+    },
+    {
+      "path": "dist/final/20261111_v4/SenseHome_场景设计方案_20261111_v4.pdf",
+      "bytes": 786526,
+      "sha256": "20fa2514810e76bc9585d355fe48900f3423d8c317112ea12220512e18844edb"
+    },
+    {
+      "path": "dist/final/20261111_v4/SenseHome_场景设计答辩_20261111_v4.pdf",
+      "bytes": 271475,
+      "sha256": "1dbfcca5e3910c6f0aa453cc275a286a27104f238e3a02742e99f186a17adf19"
+    },
+    {
+      "path": "dist/final/20261111_v4/SenseHome_合并佐证材料_20261111_v4.pdf",
+      "bytes": 121172,
+      "sha256": "e6f36b727027ab1448b28988a704a1f576cdec17755299f0ee4d962fba668ae3"
+    },
+    {
+      "path": "dist/final/20261111_v4/作品简介.txt",
+      "bytes": 1110,
+      "sha256": "cfa4b174f54a51db07add6f23095958b1c9372d0b2972686abe75380e1d37a86"
+    },
+    {
+      "path": "dist/final/20261111_v4/SenseHome_当前软件证据回放_20261111_v4.mp4",
+      "bytes": 4994364,
+      "sha256": "d4d507268a614a4b77e665cfcd6e6a7f98594ff20114842d08069bc922410b6f"
+    }
+  ],
+  "authoring": "Fallback: existing local python-docx/python-pptx/reportlab and LibreOffice; load_workspace_dependencies unavailable in enabled tool catalog.",
+  "skills_read": [
+    "documents",
+    "pdf",
+    "presentations"
+  ],
+  "qa": {
+    "SenseHome_场景设计方案_20261111_v4.pdf": {
+      "pages": 14,
+      "size_bytes": 786526,
+      "sha256": "20fa2514810e76bc9585d355fe48900f3423d8c317112ea12220512e18844edb",
+      "png_dir": "_work/submission_20261111_v4/plan",
+      "page_text_chars": [
+        564,
+        443,
+        463,
+        362,
+        459,
+        428,
+        512,
+        521,
+        475,
+        467,
+        482,
+        426,
+        542,
+        452
+      ]
+    },
+    "SenseHome_场景设计答辩_20261111_v4.pdf": {
+      "pages": 13,
+      "size_bytes": 271475,
+      "sha256": "1dbfcca5e3910c6f0aa453cc275a286a27104f238e3a02742e99f186a17adf19",
+      "png_dir": "_work/submission_20261111_v4/slides",
+      "page_text_chars": [
+        111,
+        93,
+        139,
+        135,
+        112,
+        187,
+        157,
+        103,
+        176,
+        87,
+        120,
+        109,
+        90
+      ]
+    },
+    "SenseHome_合并佐证材料_20261111_v4.pdf": {
+      "pages": 14,
+      "size_bytes": 121172,
+      "sha256": "e6f36b727027ab1448b28988a704a1f576cdec17755299f0ee4d962fba668ae3",
+      "png_dir": "_work/submission_20261111_v4/evidence",
+      "page_text_chars": [
+        376,
+        432,
+        443,
+        279,
+        506,
+        560,
+        479,
+        380,
+        374,
+        365,
+        403,
+        758,
+        612,
+        541
+      ]
+    }
+  },
+  "visual_review": "passed",
+  "claims": 12,
+  "visual_review_record": {
+    "plan_pages": [
+      1,
+      2,
+      3,
+      4,
+      5,
+      6,
+      7,
+      8,
+      9,
+      10,
+      11,
+      12,
+      13,
+      14
+    ],
+    "slides_pages": [
+      1,
+      2,
+      3,
+      4,
+      5,
+      6,
+      7,
+      8,
+      9,
+      10,
+      11,
+      12,
+      13
+    ],
+    "evidence_pages": [
+      1,
+      2,
+      3,
+      4,
+      5,
+      6,
+      7,
+      8,
+      9,
+      10,
+      11,
+      12,
+      13,
+      14
+    ],
+    "final_incremental_pages": {
+      "plan": [
+        13
+      ],
+      "evidence": [
+        6,
+        7,
+        8,
+        13,
+        14
+      ]
+    },
+    "findings": [],
+    "docx_skill_render": {
+      "pages": 14,
+      "all_pages_visually_checked": true,
+      "final_text_matches_formal_pdf_all_pages": true,
+      "final_incremental_visual_page": 13,
+      "directory": "_work/submission_20261111_v4/docx_skill_final_render",
+      "warning": "Non-fatal Windows stdout UTF-8 reader warning; exit 0 and complete 14-page PDF/PNG outputs verified."
+    }
+  },
+  "qa_report": "docs/competition_v4/material_qa.md",
+  "qa_record": "dist/final/20261111_v4/material_qa.json"
+}

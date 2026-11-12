@@ -1,6 +1,12 @@
 # 当前运行依赖与复用范围
 
-记录日期：2026-11-03。范围是本轮 `net_offload` 软件台架、C 策略进程、PC Dashboard 及已交付但尚未部署到 GPU 的模型适配器。运行版本取自 `net_offload/build_manifest.json`；manifest 另保存源码、二进制 SHA256 与 Git 工作区状态。生成提交文档、图像和 PDF 的编辑工具不属于模型后端或设备运行时。
+记录日期：2026-11-03；2026-11-11 增量更新。范围是 `net_offload` 软件台架、C 策略进程、PC Dashboard 和真实模型适配器。11月3日已运行过AutoDL小模型，11月11日按用户要求复用本机双模型服务；不能再将模型适配器概括为“尚未部署到GPU”。旧运行版本取自 `net_offload/build_manifest.json`；融合r3采用其独立证据清单。生成提交文档、图像和 PDF 的编辑工具不属于模型后端或设备运行时。
+
+## 2026-11-11 本机复用增量
+
+复用已有 llama.cpp b11010 / Vulkan 服务，Qwen2.5-1.5B-Instruct Q4_K_M 与 Qwen3-4B Q4_K_M 同机、同 GPU 运行。模型许可副本（Apache-2.0）、llama.cpp 许可（MIT）、资产 SHA256 和实际资源采样见 `docs/experiments/20261111_local_resources/`。资产仅作为推理服务使用，权重、运行时二进制不随提交包分发；已有服务未被重启、停止或修改。
+
+`capture_local_resources.py` 使用 psutil 采集主机/进程资源，属于实验采集工具的额外依赖，精确版本保留在采样 JSON；核心网关运行仍使用 Python 标准库。本机双模型不等同于真实云边异地部署或6G网络；共享 GPU 的时延不能外推生产 SLA。
 
 ## 本轮已运行
 

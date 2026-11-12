@@ -1,0 +1,3743 @@
+{
+  "schema": "sensehome.video-source.v4",
+  "method": "actual loopback HTTP API on current production gateway; automation; not UI recording",
+  "records": [
+    {
+      "index": 0,
+      "record_kind": "automation_test",
+      "at_utc": "2026-11-11T06:56:02.943449+00:00",
+      "command": "??????",
+      "before": {
+        "status": 200,
+        "body": {
+          "lights": {
+            "书房": {
+              "brightness": 0,
+              "is_on": false
+            },
+            "卧室": {
+              "brightness": 0,
+              "is_on": false
+            },
+            "厨房": {
+              "brightness": 0,
+              "is_on": false
+            },
+            "客厅": {
+              "brightness": 0,
+              "is_on": false
+            },
+            "室外": {
+              "brightness": 0,
+              "is_on": false
+            },
+            "浴室": {
+              "brightness": 0,
+              "is_on": false
+            }
+          },
+          "temperature": {
+            "书房": {
+              "humidity": 60.0,
+              "temp": 25.0
+            },
+            "卧室": {
+              "humidity": 60.0,
+              "temp": 25.0
+            },
+            "厨房": {
+              "humidity": 60.0,
+              "temp": 25.0
+            },
+            "客厅": {
+              "humidity": 60.0,
+              "temp": 25.0
+            },
+            "室外": {
+              "humidity": 60.0,
+              "temp": 25.0
+            },
+            "浴室": {
+              "humidity": 60.0,
+              "temp": 25.0
+            }
+          },
+          "curtains": {
+            "书房": {
+              "is_open": true,
+              "position": 100
+            },
+            "卧室": {
+              "is_open": true,
+              "position": 100
+            },
+            "厨房": {
+              "is_open": true,
+              "position": 100
+            },
+            "客厅": {
+              "is_open": true,
+              "position": 100
+            },
+            "室外": {
+              "is_open": true,
+              "position": 100
+            },
+            "浴室": {
+              "is_open": false,
+              "position": 0
+            }
+          },
+          "sensors": {
+            "客厅": {
+              "illuminance": 13094.3,
+              "motion_detected": true,
+              "door_open": false,
+              "window_open": false,
+              "pm25": 21.9,
+              "co2": 545.0,
+              "noise": 39.3,
+              "update_time": "14:49:30"
+            },
+            "卧室": {
+              "illuminance": 8904.5,
+              "motion_detected": false,
+              "door_open": false,
+              "window_open": false,
+              "pm25": 21.1,
+              "co2": 376.0,
+              "noise": 28.0,
+              "update_time": "14:49:30"
+            },
+            "厨房": {
+              "illuminance": 20573.1,
+              "motion_detected": true,
+              "door_open": true,
+              "window_open": false,
+              "pm25": 36.5,
+              "co2": 691.0,
+              "noise": 47.9,
+              "update_time": "14:49:30"
+            },
+            "浴室": {
+              "illuminance": 5164.9,
+              "motion_detected": false,
+              "door_open": false,
+              "window_open": true,
+              "pm25": 13.9,
+              "co2": 544.0,
+              "noise": 57.3,
+              "update_time": "14:49:30"
+            },
+            "书房": {
+              "illuminance": 12690.8,
+              "motion_detected": true,
+              "door_open": false,
+              "window_open": false,
+              "pm25": 14.7,
+              "co2": 367.0,
+              "noise": 20.0,
+              "update_time": "14:49:30"
+            },
+            "室外": {
+              "illuminance": 52440.5,
+              "motion_detected": false,
+              "door_open": false,
+              "window_open": false,
+              "pm25": 60.1,
+              "co2": 408.0,
+              "noise": 60.9,
+              "update_time": "14:49:30"
+            }
+          },
+          "security": {
+            "mode": "off",
+            "armed": false,
+            "alarm_triggered": false
+          },
+          "_mqtt_observation": {
+            "platform_id": "software-home",
+            "state_version": 0,
+            "scope": "current-software-platform-observation",
+            "physical_execution_confirmed": false
+          }
+        },
+        "wall_ms": 60.92899999930523
+      },
+      "response": {
+        "status": 200,
+        "body": {
+          "source": "local-model:real-model",
+          "configured_model": "Qwen2.5-1.5B-Instruct-Q4_K_M",
+          "gpu_info": "unknown",
+          "gpu_info_source": "environment_declared",
+          "model_revision": "6a1a2eb6d15622bf3c96857206351ba97e1af16c30d7a74ee38970e434e9407e",
+          "model_revision_source": "environment_declared",
+          "tier": "local",
+          "answer": "请提供具体命令或房间名称。",
+          "actions": [],
+          "plan_valid": true,
+          "semantic_complete": false,
+          "model_ms": 2561.053,
+          "model_ms_kind": "upstream_http_wall_clock",
+          "model_ms_source": "measured",
+          "upstream_model": "Qwen2.5-1.5B-Instruct-Q4_K_M",
+          "upstream_usage": {
+            "completion_tokens": 16,
+            "prompt_tokens": 685,
+            "total_tokens": 701,
+            "prompt_tokens_details": {
+              "cached_tokens": 0
+            }
+          },
+          "actual_backend": "local-model",
+          "recovery": {
+            "attempted": false,
+            "from": "local-model",
+            "to": "cloud-model",
+            "actual_backend": "local-model",
+            "primary_error": null,
+            "primary_status": {
+              "ok": true,
+              "semantic_complete": false,
+              "action_count": 0,
+              "error": null,
+              "failure_kind": null,
+              "source": "real-model",
+              "model_ms": 2561.053
+            },
+            "secondary_status": null,
+            "primary_response": {
+              "source": "real-model",
+              "configured_model": "Qwen2.5-1.5B-Instruct-Q4_K_M",
+              "gpu_info": "unknown",
+              "gpu_info_source": "environment_declared",
+              "model_revision": "6a1a2eb6d15622bf3c96857206351ba97e1af16c30d7a74ee38970e434e9407e",
+              "model_revision_source": "environment_declared",
+              "tier": "local",
+              "answer": "请提供具体命令或房间名称。",
+              "actions": [],
+              "plan_valid": true,
+              "semantic_complete": false,
+              "model_ms": 2561.053,
+              "model_ms_kind": "upstream_http_wall_clock",
+              "model_ms_source": "measured",
+              "upstream_model": "Qwen2.5-1.5B-Instruct-Q4_K_M",
+              "upstream_usage": {
+                "completion_tokens": 16,
+                "prompt_tokens": 685,
+                "total_tokens": 701,
+                "prompt_tokens_details": {
+                  "cached_tokens": 0
+                }
+              }
+            },
+            "secondary_response": null,
+            "secondary_health": null,
+            "primary_ms": 2561.84,
+            "health_ms": 0.0,
+            "secondary_ms": 0.0,
+            "elapsed_ms": 2561.935,
+            "budget_ms": 10000.0,
+            "budget_scope": "secondary_launch_only",
+            "reason": "primary_success"
+          },
+          "event_id": "1f8802eff978400286b1701cd90fecd6",
+          "decision_sequence": 1,
+          "selected_backend": "local-model",
+          "decision_reason": "STATIC_BASELINE",
+          "task_class": "complex",
+          "backend": "local-model",
+          "reason": "STATIC_BASELINE",
+          "policy": {
+            "implementation": "dual_endpoint_C_policy",
+            "active_decision_path": "dual_endpoint_resources",
+            "transfer_costs_known": false,
+            "arm": "static-local",
+            "config": {
+              "schema_version": "sensehome.policy.v1",
+              "queue_max_ms": 300,
+              "inflight_max": 8,
+              "free_mem_min_mb": 256,
+              "local_infer_ms": 1116,
+              "cloud_infer_ms": 1361,
+              "switch_margin_ms": 15,
+              "recovery_samples": 3,
+              "timeout_ms": 800,
+              "observation_max_age_ms": 2000,
+              "observation_lookup_ms": 0.2,
+              "policy_model_ms": 0.2,
+              "execution_model_ms": 0.1,
+              "rule_model_ms": 1
+            },
+            "config_hash": "91b6f108f9aca31855b9cdb862d713921d480f5b5fdb401d3d8919f8938d051e",
+            "decision_sequence": 1
+          },
+          "policy_log": "[resources] task=complex-nlu -> local-model because STATIC_BASELINE mode=4 local(ready=1,q=-1,mem=-1,n=-1) cloud(ready=1,q=-1,mem=-1,n=-1) transfer_ms(local=-1,cloud=-1;-1=unknown) wan(rtt=1,jit=-1,loss=-1) lan(rtt=0,jit=-1,loss=-1) recovery=0/3",
+          "link": {
+            "wan_ok": true,
+            "wan_rtt_ms": 1.23,
+            "wan_jitter_ms": null,
+            "wan_loss_pct": null,
+            "lan_ok": true,
+            "lan_rtt_ms": 0.0,
+            "lan_jitter_ms": null,
+            "lan_loss_pct": null
+          },
+          "compute": {
+            "model_ready": true,
+            "queue_ms": null,
+            "free_mem_mb": null,
+            "inflight": null,
+            "source": "backend_health_cache",
+            "field_sources": {
+              "model_ready": "backend_health_cache",
+              "queue_ms": "unknown",
+              "free_mem_mb": "unknown",
+              "inflight": "unknown"
+            },
+            "known_fields": [
+              "model_ready"
+            ],
+            "unknown_fields": [
+              "queue_ms",
+              "free_mem_mb",
+              "inflight"
+            ]
+          },
+          "latency": {
+            "probe_ms": 0.202,
+            "policy_ms": 1.595,
+            "backend_ms": 2562.161,
+            "total_user_ms": 2563.958
+          },
+          "interface_ok": true,
+          "fallback_from": null,
+          "fallback_attempted": false,
+          "refusal_reason": null,
+          "error": null,
+          "resource_observation": {
+            "schema_version": "sensehome.observation.v1",
+            "observation_id": 1,
+            "observed_age_ms": 1469.0,
+            "source_out_of_order": false,
+            "endpoint_age_ms": {
+              "local": 1465.4,
+              "cloud": 1466.8
+            },
+            "network": {
+              "wan": {
+                "reachable": true,
+                "rtt_ms": 1.23,
+                "jitter_ms": null,
+                "loss_pct": null,
+                "bandwidth_kbps": null,
+                "source": "http_health_check"
+              },
+              "lan": {
+                "reachable": true,
+                "rtt_ms": 0.0,
+                "jitter_ms": null,
+                "loss_pct": null,
+                "bandwidth_kbps": null,
+                "source": "same_process_simulator"
+              }
+            },
+            "network_source": "application_health_and_simulated_lan",
+            "network_source_detail": "HTTP endpoint RTT; devices simulated in gateway process",
+            "compute": {
+              "local": {
+                "model_ready": true,
+                "queue_ms": null,
+                "free_mem_mb": null,
+                "inflight": null,
+                "source": "backend_health_cache",
+                "field_sources": {
+                  "model_ready": "backend_health_cache",
+                  "queue_ms": "unknown",
+                  "free_mem_mb": "unknown",
+                  "inflight": "unknown"
+                }
+              },
+              "cloud": {
+                "model_ready": true,
+                "queue_ms": null,
+                "free_mem_mb": null,
+                "inflight": null,
+                "source": "backend_health_cache",
+                "field_sources": {
+                  "model_ready": "backend_health_cache",
+                  "queue_ms": "unknown",
+                  "free_mem_mb": "unknown",
+                  "inflight": "unknown"
+                }
+              }
+            },
+            "compute_source": "server_owned_health_cache",
+            "service": "interactive_inference",
+            "profile": {
+              "legacy_family": "eMBB",
+              "imt2030_mapping": "AI and Communication; Ubiquitous Connectivity",
+              "task_class": "complex",
+              "deadline_ms": 250,
+              "reliability_target": 0.99,
+              "request_bytes": 4096,
+              "response_bytes": 2048,
+              "wan_rtt_max_ms": 180,
+              "wan_jitter_max_ms": 30,
+              "wan_loss_max_pct": 5,
+              "command": "客厅有点暗",
+              "purpose": "Fixed planner contract, not a model accuracy benchmark"
+            },
+            "estimate_scope": "configured inference estimates; unmeasured bandwidth and queue remain unknown"
+          },
+          "gateway_event": {
+            "event_id": "1f8802eff978400286b1701cd90fecd6",
+            "decision_sequence": 1,
+            "selected_backend": "local-model",
+            "decision_reason": "STATIC_BASELINE",
+            "command": "??????",
+            "task_class": "complex",
+            "backend": "local-model",
+            "reason": "STATIC_BASELINE",
+            "policy_log": "[resources] task=complex-nlu -> local-model because STATIC_BASELINE mode=4 local(ready=1,q=-1,mem=-1,n=-1) cloud(ready=1,q=-1,mem=-1,n=-1) transfer_ms(local=-1,cloud=-1;-1=unknown) wan(rtt=1,jit=-1,loss=-1) lan(rtt=0,jit=-1,loss=-1) recovery=0/3",
+            "policy": {
+              "implementation": "dual_endpoint_C_policy",
+              "active_decision_path": "dual_endpoint_resources",
+              "transfer_costs_known": false,
+              "arm": "static-local",
+              "config": {
+                "schema_version": "sensehome.policy.v1",
+                "queue_max_ms": 300,
+                "inflight_max": 8,
+                "free_mem_min_mb": 256,
+                "local_infer_ms": 1116,
+                "cloud_infer_ms": 1361,
+                "switch_margin_ms": 15,
+                "recovery_samples": 3,
+                "timeout_ms": 800,
+                "observation_max_age_ms": 2000,
+                "observation_lookup_ms": 0.2,
+                "policy_model_ms": 0.2,
+                "execution_model_ms": 0.1,
+                "rule_model_ms": 1
+              },
+              "config_hash": "91b6f108f9aca31855b9cdb862d713921d480f5b5fdb401d3d8919f8938d051e",
+              "decision_sequence": 1
+            },
+            "link": {
+              "wan_ok": true,
+              "wan_rtt_ms": 1.23,
+              "wan_jitter_ms": null,
+              "wan_loss_pct": null,
+              "lan_ok": true,
+              "lan_rtt_ms": 0.0,
+              "lan_jitter_ms": null,
+              "lan_loss_pct": null
+            },
+            "compute": {
+              "model_ready": true,
+              "queue_ms": null,
+              "free_mem_mb": null,
+              "inflight": null,
+              "source": "backend_health_cache",
+              "field_sources": {
+                "model_ready": "backend_health_cache",
+                "queue_ms": "unknown",
+                "free_mem_mb": "unknown",
+                "inflight": "unknown"
+              },
+              "known_fields": [
+                "model_ready"
+              ],
+              "unknown_fields": [
+                "queue_ms",
+                "free_mem_mb",
+                "inflight"
+              ]
+            },
+            "observation": {
+              "schema_version": "sensehome.observation.v1",
+              "observation_id": 1,
+              "observed_age_ms": 1469.0,
+              "source_out_of_order": false,
+              "endpoint_age_ms": {
+                "local": 1465.4,
+                "cloud": 1466.8
+              },
+              "network": {
+                "wan": {
+                  "reachable": true,
+                  "rtt_ms": 1.23,
+                  "jitter_ms": null,
+                  "loss_pct": null,
+                  "bandwidth_kbps": null,
+                  "source": "http_health_check"
+                },
+                "lan": {
+                  "reachable": true,
+                  "rtt_ms": 0.0,
+                  "jitter_ms": null,
+                  "loss_pct": null,
+                  "bandwidth_kbps": null,
+                  "source": "same_process_simulator"
+                }
+              },
+              "network_source": "application_health_and_simulated_lan",
+              "network_source_detail": "HTTP endpoint RTT; devices simulated in gateway process",
+              "compute": {
+                "local": {
+                  "model_ready": true,
+                  "queue_ms": null,
+                  "free_mem_mb": null,
+                  "inflight": null,
+                  "source": "backend_health_cache",
+                  "field_sources": {
+                    "model_ready": "backend_health_cache",
+                    "queue_ms": "unknown",
+                    "free_mem_mb": "unknown",
+                    "inflight": "unknown"
+                  }
+                },
+                "cloud": {
+                  "model_ready": true,
+                  "queue_ms": null,
+                  "free_mem_mb": null,
+                  "inflight": null,
+                  "source": "backend_health_cache",
+                  "field_sources": {
+                    "model_ready": "backend_health_cache",
+                    "queue_ms": "unknown",
+                    "free_mem_mb": "unknown",
+                    "inflight": "unknown"
+                  }
+                }
+              },
+              "compute_source": "server_owned_health_cache",
+              "service": "interactive_inference",
+              "profile": {
+                "legacy_family": "eMBB",
+                "imt2030_mapping": "AI and Communication; Ubiquitous Connectivity",
+                "task_class": "complex",
+                "deadline_ms": 250,
+                "reliability_target": 0.99,
+                "request_bytes": 4096,
+                "response_bytes": 2048,
+                "wan_rtt_max_ms": 180,
+                "wan_jitter_max_ms": 30,
+                "wan_loss_max_pct": 5,
+                "command": "客厅有点暗",
+                "purpose": "Fixed planner contract, not a model accuracy benchmark"
+              },
+              "estimate_scope": "configured inference estimates; unmeasured bandwidth and queue remain unknown"
+            },
+            "latency": {
+              "probe_ms": 0.202,
+              "policy_ms": 1.595,
+              "backend_ms": 2562.161,
+              "total_user_ms": 2563.958
+            },
+            "semantic_complete": false,
+            "interface_ok": true,
+            "response": {
+              "source": "real-model",
+              "configured_model": "Qwen2.5-1.5B-Instruct-Q4_K_M",
+              "gpu_info": "unknown",
+              "gpu_info_source": "environment_declared",
+              "model_revision": "6a1a2eb6d15622bf3c96857206351ba97e1af16c30d7a74ee38970e434e9407e",
+              "model_revision_source": "environment_declared",
+              "tier": "local",
+              "answer": "请提供具体命令或房间名称。",
+              "actions": [],
+              "plan_valid": true,
+              "semantic_complete": false,
+              "model_ms": 2561.053,
+              "model_ms_kind": "upstream_http_wall_clock",
+              "model_ms_source": "measured",
+              "upstream_model": "Qwen2.5-1.5B-Instruct-Q4_K_M",
+              "upstream_usage": {
+                "completion_tokens": 16,
+                "prompt_tokens": 685,
+                "total_tokens": 701,
+                "prompt_tokens_details": {
+                  "cached_tokens": 0
+                }
+              },
+              "actual_backend": "local-model",
+              "recovery": {
+                "attempted": false,
+                "from": "local-model",
+                "to": "cloud-model",
+                "actual_backend": "local-model",
+                "primary_error": null,
+                "primary_status": {
+                  "ok": true,
+                  "semantic_complete": false,
+                  "action_count": 0,
+                  "error": null,
+                  "failure_kind": null,
+                  "source": "real-model",
+                  "model_ms": 2561.053
+                },
+                "secondary_status": null,
+                "primary_response": {
+                  "source": "real-model",
+                  "configured_model": "Qwen2.5-1.5B-Instruct-Q4_K_M",
+                  "gpu_info": "unknown",
+                  "gpu_info_source": "environment_declared",
+                  "model_revision": "6a1a2eb6d15622bf3c96857206351ba97e1af16c30d7a74ee38970e434e9407e",
+                  "model_revision_source": "environment_declared",
+                  "tier": "local",
+                  "answer": "请提供具体命令或房间名称。",
+                  "actions": [],
+                  "plan_valid": true,
+                  "semantic_complete": false,
+                  "model_ms": 2561.053,
+                  "model_ms_kind": "upstream_http_wall_clock",
+                  "model_ms_source": "measured",
+                  "upstream_model": "Qwen2.5-1.5B-Instruct-Q4_K_M",
+                  "upstream_usage": {
+                    "completion_tokens": 16,
+                    "prompt_tokens": 685,
+                    "total_tokens": 701,
+                    "prompt_tokens_details": {
+                      "cached_tokens": 0
+                    }
+                  }
+                },
+                "secondary_response": null,
+                "secondary_health": null,
+                "primary_ms": 2561.84,
+                "health_ms": 0.0,
+                "secondary_ms": 0.0,
+                "elapsed_ms": 2561.935,
+                "budget_ms": 10000.0,
+                "budget_scope": "secondary_launch_only",
+                "reason": "primary_success"
+              }
+            },
+            "actions": [],
+            "model_ms": 2561.053,
+            "fallback_from": null,
+            "fallback_attempted": false,
+            "refusal_reason": null,
+            "error": null,
+            "source": "local-model:real-model",
+            "event_persisted": true
+          }
+        },
+        "wall_ms": 2583.9815999934217
+      },
+      "after": {
+        "status": 200,
+        "body": {
+          "lights": {
+            "书房": {
+              "brightness": 0,
+              "is_on": false
+            },
+            "卧室": {
+              "brightness": 0,
+              "is_on": false
+            },
+            "厨房": {
+              "brightness": 0,
+              "is_on": false
+            },
+            "客厅": {
+              "brightness": 0,
+              "is_on": false
+            },
+            "室外": {
+              "brightness": 0,
+              "is_on": false
+            },
+            "浴室": {
+              "brightness": 0,
+              "is_on": false
+            }
+          },
+          "temperature": {
+            "书房": {
+              "humidity": 60.0,
+              "temp": 25.0
+            },
+            "卧室": {
+              "humidity": 60.0,
+              "temp": 25.0
+            },
+            "厨房": {
+              "humidity": 60.0,
+              "temp": 25.0
+            },
+            "客厅": {
+              "humidity": 60.0,
+              "temp": 25.0
+            },
+            "室外": {
+              "humidity": 60.0,
+              "temp": 25.0
+            },
+            "浴室": {
+              "humidity": 60.0,
+              "temp": 25.0
+            }
+          },
+          "curtains": {
+            "书房": {
+              "is_open": true,
+              "position": 100
+            },
+            "卧室": {
+              "is_open": true,
+              "position": 100
+            },
+            "厨房": {
+              "is_open": true,
+              "position": 100
+            },
+            "客厅": {
+              "is_open": true,
+              "position": 100
+            },
+            "室外": {
+              "is_open": true,
+              "position": 100
+            },
+            "浴室": {
+              "is_open": false,
+              "position": 0
+            }
+          },
+          "sensors": {
+            "客厅": {
+              "illuminance": 13094.3,
+              "motion_detected": true,
+              "door_open": false,
+              "window_open": false,
+              "pm25": 21.9,
+              "co2": 545.0,
+              "noise": 39.3,
+              "update_time": "14:49:30"
+            },
+            "卧室": {
+              "illuminance": 8904.5,
+              "motion_detected": false,
+              "door_open": false,
+              "window_open": false,
+              "pm25": 21.1,
+              "co2": 376.0,
+              "noise": 28.0,
+              "update_time": "14:49:30"
+            },
+            "厨房": {
+              "illuminance": 20573.1,
+              "motion_detected": true,
+              "door_open": true,
+              "window_open": false,
+              "pm25": 36.5,
+              "co2": 691.0,
+              "noise": 47.9,
+              "update_time": "14:49:30"
+            },
+            "浴室": {
+              "illuminance": 5164.9,
+              "motion_detected": false,
+              "door_open": false,
+              "window_open": true,
+              "pm25": 13.9,
+              "co2": 544.0,
+              "noise": 57.3,
+              "update_time": "14:49:30"
+            },
+            "书房": {
+              "illuminance": 12690.8,
+              "motion_detected": true,
+              "door_open": false,
+              "window_open": false,
+              "pm25": 14.7,
+              "co2": 367.0,
+              "noise": 20.0,
+              "update_time": "14:49:30"
+            },
+            "室外": {
+              "illuminance": 52440.5,
+              "motion_detected": false,
+              "door_open": false,
+              "window_open": false,
+              "pm25": 60.1,
+              "co2": 408.0,
+              "noise": 60.9,
+              "update_time": "14:49:30"
+            }
+          },
+          "security": {
+            "mode": "off",
+            "armed": false,
+            "alarm_triggered": false
+          },
+          "_mqtt_observation": {
+            "platform_id": "software-home",
+            "state_version": 0,
+            "scope": "current-software-platform-observation",
+            "physical_execution_confirmed": false
+          }
+        },
+        "wall_ms": 14.266600002883933
+      },
+      "receipt_query": {
+        "status": 200,
+        "body": {
+          "command_id": "video-v4-00",
+          "execution_state": "unknown",
+          "semantic_complete": false,
+          "actions": [],
+          "error": "COMMAND_NOT_FOUND",
+          "physical_execution_confirmed": false,
+          "current_platform_observation": {
+            "evidence_kind": "mqtt-software-entity",
+            "platform_id": "software-home",
+            "schema": "sensehome.software-state.v1",
+            "software_state": {
+              "curtains": {
+                "书房": {
+                  "is_open": true,
+                  "position": 100
+                },
+                "卧室": {
+                  "is_open": true,
+                  "position": 100
+                },
+                "厨房": {
+                  "is_open": true,
+                  "position": 100
+                },
+                "客厅": {
+                  "is_open": true,
+                  "position": 100
+                },
+                "室外": {
+                  "is_open": true,
+                  "position": 100
+                },
+                "浴室": {
+                  "is_open": false,
+                  "position": 0
+                }
+              },
+              "lights": {
+                "书房": {
+                  "brightness": 0,
+                  "is_on": false
+                },
+                "卧室": {
+                  "brightness": 0,
+                  "is_on": false
+                },
+                "厨房": {
+                  "brightness": 0,
+                  "is_on": false
+                },
+                "客厅": {
+                  "brightness": 0,
+                  "is_on": false
+                },
+                "室外": {
+                  "brightness": 0,
+                  "is_on": false
+                },
+                "浴室": {
+                  "brightness": 0,
+                  "is_on": false
+                }
+              },
+              "security": {
+                "alarm_triggered": false,
+                "armed": false,
+                "mode": "off"
+              },
+              "sensors": {
+                "书房": {
+                  "co2": 426.0,
+                  "door_open": false,
+                  "illuminance": 13374.0,
+                  "motion_detected": false,
+                  "noise": 16.9,
+                  "pm25": 19.9,
+                  "update_time": "10:53:04",
+                  "window_open": false
+                },
+                "卧室": {
+                  "co2": 383.0,
+                  "door_open": false,
+                  "illuminance": 7456.5,
+                  "motion_detected": false,
+                  "noise": 26.8,
+                  "pm25": 21.7,
+                  "update_time": "10:53:04",
+                  "window_open": false
+                },
+                "厨房": {
+                  "co2": 533.0,
+                  "door_open": false,
+                  "illuminance": 21137.9,
+                  "motion_detected": false,
+                  "noise": 58.8,
+                  "pm25": 40.1,
+                  "update_time": "10:53:04",
+                  "window_open": false
+                },
+                "客厅": {
+                  "co2": 598.0,
+                  "door_open": false,
+                  "illuminance": 17324.0,
+                  "motion_detected": true,
+                  "noise": 32.0,
+                  "pm25": 22.5,
+                  "update_time": "10:53:04",
+                  "window_open": false
+                },
+                "室外": {
+                  "co2": 361.0,
+                  "door_open": false,
+                  "illuminance": 52851.5,
+                  "motion_detected": false,
+                  "noise": 70.7,
+                  "pm25": 56.7,
+                  "update_time": "10:53:04",
+                  "window_open": false
+                },
+                "浴室": {
+                  "co2": 446.0,
+                  "door_open": false,
+                  "illuminance": 4925.7,
+                  "motion_detected": false,
+                  "noise": 40.7,
+                  "pm25": 17.6,
+                  "update_time": "10:53:04",
+                  "window_open": false
+                }
+              },
+              "temperature": {
+                "书房": {
+                  "humidity": 60.0,
+                  "temp": 25.0
+                },
+                "卧室": {
+                  "humidity": 60.0,
+                  "temp": 25.0
+                },
+                "厨房": {
+                  "humidity": 60.0,
+                  "temp": 25.0
+                },
+                "客厅": {
+                  "humidity": 60.0,
+                  "temp": 25.0
+                },
+                "室外": {
+                  "humidity": 60.0,
+                  "temp": 25.0
+                },
+                "浴室": {
+                  "humidity": 60.0,
+                  "temp": 25.0
+                }
+              }
+            },
+            "state_version": 0
+          }
+        },
+        "wall_ms": 19.011600001249462
+      }
+    },
+    {
+      "index": 1,
+      "record_kind": "automation_test",
+      "at_utc": "2026-11-11T06:56:03.420019+00:00",
+      "command": "???????60%?????????30%",
+      "before": {
+        "status": 200,
+        "body": {
+          "lights": {
+            "书房": {
+              "brightness": 0,
+              "is_on": false
+            },
+            "卧室": {
+              "brightness": 0,
+              "is_on": false
+            },
+            "厨房": {
+              "brightness": 0,
+              "is_on": false
+            },
+            "客厅": {
+              "brightness": 0,
+              "is_on": false
+            },
+            "室外": {
+              "brightness": 0,
+              "is_on": false
+            },
+            "浴室": {
+              "brightness": 0,
+              "is_on": false
+            }
+          },
+          "temperature": {
+            "书房": {
+              "humidity": 60.0,
+              "temp": 25.0
+            },
+            "卧室": {
+              "humidity": 60.0,
+              "temp": 25.0
+            },
+            "厨房": {
+              "humidity": 60.0,
+              "temp": 25.0
+            },
+            "客厅": {
+              "humidity": 60.0,
+              "temp": 25.0
+            },
+            "室外": {
+              "humidity": 60.0,
+              "temp": 25.0
+            },
+            "浴室": {
+              "humidity": 60.0,
+              "temp": 25.0
+            }
+          },
+          "curtains": {
+            "书房": {
+              "is_open": true,
+              "position": 100
+            },
+            "卧室": {
+              "is_open": true,
+              "position": 100
+            },
+            "厨房": {
+              "is_open": true,
+              "position": 100
+            },
+            "客厅": {
+              "is_open": true,
+              "position": 100
+            },
+            "室外": {
+              "is_open": true,
+              "position": 100
+            },
+            "浴室": {
+              "is_open": false,
+              "position": 0
+            }
+          },
+          "sensors": {
+            "客厅": {
+              "illuminance": 13094.3,
+              "motion_detected": true,
+              "door_open": false,
+              "window_open": false,
+              "pm25": 21.9,
+              "co2": 545.0,
+              "noise": 39.3,
+              "update_time": "14:49:30"
+            },
+            "卧室": {
+              "illuminance": 8904.5,
+              "motion_detected": false,
+              "door_open": false,
+              "window_open": false,
+              "pm25": 21.1,
+              "co2": 376.0,
+              "noise": 28.0,
+              "update_time": "14:49:30"
+            },
+            "厨房": {
+              "illuminance": 20573.1,
+              "motion_detected": true,
+              "door_open": true,
+              "window_open": false,
+              "pm25": 36.5,
+              "co2": 691.0,
+              "noise": 47.9,
+              "update_time": "14:49:30"
+            },
+            "浴室": {
+              "illuminance": 5164.9,
+              "motion_detected": false,
+              "door_open": false,
+              "window_open": true,
+              "pm25": 13.9,
+              "co2": 544.0,
+              "noise": 57.3,
+              "update_time": "14:49:30"
+            },
+            "书房": {
+              "illuminance": 12690.8,
+              "motion_detected": true,
+              "door_open": false,
+              "window_open": false,
+              "pm25": 14.7,
+              "co2": 367.0,
+              "noise": 20.0,
+              "update_time": "14:49:30"
+            },
+            "室外": {
+              "illuminance": 52440.5,
+              "motion_detected": false,
+              "door_open": false,
+              "window_open": false,
+              "pm25": 60.1,
+              "co2": 408.0,
+              "noise": 60.9,
+              "update_time": "14:49:30"
+            }
+          },
+          "security": {
+            "mode": "off",
+            "armed": false,
+            "alarm_triggered": false
+          },
+          "_mqtt_observation": {
+            "platform_id": "software-home",
+            "state_version": 0,
+            "scope": "current-software-platform-observation",
+            "physical_execution_confirmed": false
+          }
+        },
+        "wall_ms": 14.713399999891408
+      },
+      "response": {
+        "status": 200,
+        "body": {
+          "error": "HTTP_422",
+          "source": "local-model:real-model",
+          "configured_model": "Qwen2.5-1.5B-Instruct-Q4_K_M",
+          "gpu_info": "unknown",
+          "gpu_info_source": "environment_declared",
+          "model_revision": "6a1a2eb6d15622bf3c96857206351ba97e1af16c30d7a74ee38970e434e9407e",
+          "model_revision_source": "environment_declared",
+          "tier": "local",
+          "actual_backend": "local-model",
+          "recovery": {
+            "attempted": false,
+            "from": "local-model",
+            "to": "cloud-model",
+            "actual_backend": "local-model",
+            "primary_error": "HTTP_422",
+            "primary_status": {
+              "ok": false,
+              "semantic_complete": false,
+              "action_count": 0,
+              "error": "HTTP_422",
+              "failure_kind": "model_refusal",
+              "source": "real-model",
+              "model_ms": null
+            },
+            "secondary_status": null,
+            "primary_response": {
+              "error": "MODEL_ACTION_TARGET_UNMENTIONED",
+              "source": "real-model",
+              "configured_model": "Qwen2.5-1.5B-Instruct-Q4_K_M",
+              "gpu_info": "unknown",
+              "gpu_info_source": "environment_declared",
+              "model_revision": "6a1a2eb6d15622bf3c96857206351ba97e1af16c30d7a74ee38970e434e9407e",
+              "model_revision_source": "environment_declared",
+              "tier": "local"
+            },
+            "secondary_response": null,
+            "secondary_health": null,
+            "primary_ms": 414.518,
+            "health_ms": 0.0,
+            "secondary_ms": 0.0,
+            "elapsed_ms": 414.584,
+            "budget_ms": 10000.0,
+            "budget_scope": "secondary_launch_only",
+            "reason": "not_recoverable"
+          },
+          "event_id": "bddf6905141240d9b4dbd29e7f7be797",
+          "decision_sequence": 2,
+          "selected_backend": "local-model",
+          "decision_reason": "STATIC_BASELINE",
+          "task_class": "complex",
+          "backend": "local-model",
+          "reason": "STATIC_BASELINE",
+          "policy": {
+            "implementation": "dual_endpoint_C_policy",
+            "active_decision_path": "dual_endpoint_resources",
+            "transfer_costs_known": false,
+            "arm": "static-local",
+            "config": {
+              "schema_version": "sensehome.policy.v1",
+              "queue_max_ms": 300,
+              "inflight_max": 8,
+              "free_mem_min_mb": 256,
+              "local_infer_ms": 1116,
+              "cloud_infer_ms": 1361,
+              "switch_margin_ms": 15,
+              "recovery_samples": 3,
+              "timeout_ms": 800,
+              "observation_max_age_ms": 2000,
+              "observation_lookup_ms": 0.2,
+              "policy_model_ms": 0.2,
+              "execution_model_ms": 0.1,
+              "rule_model_ms": 1
+            },
+            "config_hash": "91b6f108f9aca31855b9cdb862d713921d480f5b5fdb401d3d8919f8938d051e",
+            "decision_sequence": 2
+          },
+          "policy_log": "[resources] task=complex-nlu -> local-model because STATIC_BASELINE mode=4 local(ready=0,q=-1,mem=-1,n=-1) cloud(ready=0,q=-1,mem=-1,n=-1) transfer_ms(local=-1,cloud=-1;-1=unknown) wan(rtt=2,jit=-1,loss=-1) lan(rtt=0,jit=-1,loss=-1) recovery=0/3",
+          "link": {
+            "wan_ok": true,
+            "wan_rtt_ms": 1.779,
+            "wan_jitter_ms": null,
+            "wan_loss_pct": null,
+            "lan_ok": true,
+            "lan_rtt_ms": 0.0,
+            "lan_jitter_ms": null,
+            "lan_loss_pct": null
+          },
+          "compute": {
+            "model_ready": true,
+            "queue_ms": null,
+            "free_mem_mb": null,
+            "inflight": null,
+            "source": "backend_health_cache",
+            "field_sources": {
+              "model_ready": "backend_health_cache",
+              "queue_ms": "unknown",
+              "free_mem_mb": "unknown",
+              "inflight": "unknown"
+            },
+            "known_fields": [
+              "model_ready"
+            ],
+            "unknown_fields": [
+              "queue_ms",
+              "free_mem_mb",
+              "inflight"
+            ]
+          },
+          "latency": {
+            "probe_ms": 0.449,
+            "policy_ms": 1.166,
+            "backend_ms": 414.708,
+            "total_user_ms": 416.323
+          },
+          "semantic_complete": false,
+          "interface_ok": false,
+          "model_ms": null,
+          "fallback_from": null,
+          "fallback_attempted": false,
+          "refusal_reason": "MODEL_ACTION_TARGET_UNMENTIONED",
+          "resource_observation": {
+            "schema_version": "sensehome.observation.v1",
+            "observation_id": 2,
+            "observed_age_ms": 2095.7,
+            "source_out_of_order": false,
+            "endpoint_age_ms": {
+              "local": 62.1,
+              "cloud": 2093.2
+            },
+            "network": {
+              "wan": {
+                "reachable": true,
+                "rtt_ms": 1.779,
+                "jitter_ms": null,
+                "loss_pct": null,
+                "bandwidth_kbps": null,
+                "source": "http_health_check"
+              },
+              "lan": {
+                "reachable": true,
+                "rtt_ms": 0.0,
+                "jitter_ms": null,
+                "loss_pct": null,
+                "bandwidth_kbps": null,
+                "source": "same_process_simulator"
+              }
+            },
+            "network_source": "application_health_and_simulated_lan",
+            "network_source_detail": "HTTP endpoint RTT; devices simulated in gateway process",
+            "compute": {
+              "local": {
+                "model_ready": true,
+                "queue_ms": null,
+                "free_mem_mb": null,
+                "inflight": null,
+                "source": "backend_health_cache",
+                "field_sources": {
+                  "model_ready": "backend_health_cache",
+                  "queue_ms": "unknown",
+                  "free_mem_mb": "unknown",
+                  "inflight": "unknown"
+                }
+              },
+              "cloud": {
+                "model_ready": true,
+                "queue_ms": null,
+                "free_mem_mb": null,
+                "inflight": null,
+                "source": "backend_health_cache",
+                "field_sources": {
+                  "model_ready": "backend_health_cache",
+                  "queue_ms": "unknown",
+                  "free_mem_mb": "unknown",
+                  "inflight": "unknown"
+                }
+              }
+            },
+            "compute_source": "server_owned_health_cache",
+            "service": "interactive_inference",
+            "profile": {
+              "legacy_family": "eMBB",
+              "imt2030_mapping": "AI and Communication; Ubiquitous Connectivity",
+              "task_class": "complex",
+              "deadline_ms": 250,
+              "reliability_target": 0.99,
+              "request_bytes": 4096,
+              "response_bytes": 2048,
+              "wan_rtt_max_ms": 180,
+              "wan_jitter_max_ms": 30,
+              "wan_loss_max_pct": 5,
+              "command": "客厅有点暗",
+              "purpose": "Fixed planner contract, not a model accuracy benchmark"
+            },
+            "estimate_scope": "configured inference estimates; unmeasured bandwidth and queue remain unknown"
+          },
+          "gateway_event": {
+            "event_id": "bddf6905141240d9b4dbd29e7f7be797",
+            "decision_sequence": 2,
+            "selected_backend": "local-model",
+            "decision_reason": "STATIC_BASELINE",
+            "command": "???????60%?????????30%",
+            "task_class": "complex",
+            "backend": "local-model",
+            "reason": "STATIC_BASELINE",
+            "policy_log": "[resources] task=complex-nlu -> local-model because STATIC_BASELINE mode=4 local(ready=0,q=-1,mem=-1,n=-1) cloud(ready=0,q=-1,mem=-1,n=-1) transfer_ms(local=-1,cloud=-1;-1=unknown) wan(rtt=2,jit=-1,loss=-1) lan(rtt=0,jit=-1,loss=-1) recovery=0/3",
+            "policy": {
+              "implementation": "dual_endpoint_C_policy",
+              "active_decision_path": "dual_endpoint_resources",
+              "transfer_costs_known": false,
+              "arm": "static-local",
+              "config": {
+                "schema_version": "sensehome.policy.v1",
+                "queue_max_ms": 300,
+                "inflight_max": 8,
+                "free_mem_min_mb": 256,
+                "local_infer_ms": 1116,
+                "cloud_infer_ms": 1361,
+                "switch_margin_ms": 15,
+                "recovery_samples": 3,
+                "timeout_ms": 800,
+                "observation_max_age_ms": 2000,
+                "observation_lookup_ms": 0.2,
+                "policy_model_ms": 0.2,
+                "execution_model_ms": 0.1,
+                "rule_model_ms": 1
+              },
+              "config_hash": "91b6f108f9aca31855b9cdb862d713921d480f5b5fdb401d3d8919f8938d051e",
+              "decision_sequence": 2
+            },
+            "link": {
+              "wan_ok": true,
+              "wan_rtt_ms": 1.779,
+              "wan_jitter_ms": null,
+              "wan_loss_pct": null,
+              "lan_ok": true,
+              "lan_rtt_ms": 0.0,
+              "lan_jitter_ms": null,
+              "lan_loss_pct": null
+            },
+            "compute": {
+              "model_ready": true,
+              "queue_ms": null,
+              "free_mem_mb": null,
+              "inflight": null,
+              "source": "backend_health_cache",
+              "field_sources": {
+                "model_ready": "backend_health_cache",
+                "queue_ms": "unknown",
+                "free_mem_mb": "unknown",
+                "inflight": "unknown"
+              },
+              "known_fields": [
+                "model_ready"
+              ],
+              "unknown_fields": [
+                "queue_ms",
+                "free_mem_mb",
+                "inflight"
+              ]
+            },
+            "observation": {
+              "schema_version": "sensehome.observation.v1",
+              "observation_id": 2,
+              "observed_age_ms": 2095.7,
+              "source_out_of_order": false,
+              "endpoint_age_ms": {
+                "local": 62.1,
+                "cloud": 2093.2
+              },
+              "network": {
+                "wan": {
+                  "reachable": true,
+                  "rtt_ms": 1.779,
+                  "jitter_ms": null,
+                  "loss_pct": null,
+                  "bandwidth_kbps": null,
+                  "source": "http_health_check"
+                },
+                "lan": {
+                  "reachable": true,
+                  "rtt_ms": 0.0,
+                  "jitter_ms": null,
+                  "loss_pct": null,
+                  "bandwidth_kbps": null,
+                  "source": "same_process_simulator"
+                }
+              },
+              "network_source": "application_health_and_simulated_lan",
+              "network_source_detail": "HTTP endpoint RTT; devices simulated in gateway process",
+              "compute": {
+                "local": {
+                  "model_ready": true,
+                  "queue_ms": null,
+                  "free_mem_mb": null,
+                  "inflight": null,
+                  "source": "backend_health_cache",
+                  "field_sources": {
+                    "model_ready": "backend_health_cache",
+                    "queue_ms": "unknown",
+                    "free_mem_mb": "unknown",
+                    "inflight": "unknown"
+                  }
+                },
+                "cloud": {
+                  "model_ready": true,
+                  "queue_ms": null,
+                  "free_mem_mb": null,
+                  "inflight": null,
+                  "source": "backend_health_cache",
+                  "field_sources": {
+                    "model_ready": "backend_health_cache",
+                    "queue_ms": "unknown",
+                    "free_mem_mb": "unknown",
+                    "inflight": "unknown"
+                  }
+                }
+              },
+              "compute_source": "server_owned_health_cache",
+              "service": "interactive_inference",
+              "profile": {
+                "legacy_family": "eMBB",
+                "imt2030_mapping": "AI and Communication; Ubiquitous Connectivity",
+                "task_class": "complex",
+                "deadline_ms": 250,
+                "reliability_target": 0.99,
+                "request_bytes": 4096,
+                "response_bytes": 2048,
+                "wan_rtt_max_ms": 180,
+                "wan_jitter_max_ms": 30,
+                "wan_loss_max_pct": 5,
+                "command": "客厅有点暗",
+                "purpose": "Fixed planner contract, not a model accuracy benchmark"
+              },
+              "estimate_scope": "configured inference estimates; unmeasured bandwidth and queue remain unknown"
+            },
+            "latency": {
+              "probe_ms": 0.449,
+              "policy_ms": 1.166,
+              "backend_ms": 414.708,
+              "total_user_ms": 416.323
+            },
+            "semantic_complete": false,
+            "interface_ok": false,
+            "response": {
+              "error": "MODEL_ACTION_TARGET_UNMENTIONED",
+              "source": "real-model",
+              "configured_model": "Qwen2.5-1.5B-Instruct-Q4_K_M",
+              "gpu_info": "unknown",
+              "gpu_info_source": "environment_declared",
+              "model_revision": "6a1a2eb6d15622bf3c96857206351ba97e1af16c30d7a74ee38970e434e9407e",
+              "model_revision_source": "environment_declared",
+              "tier": "local",
+              "actual_backend": "local-model",
+              "recovery": {
+                "attempted": false,
+                "from": "local-model",
+                "to": "cloud-model",
+                "actual_backend": "local-model",
+                "primary_error": "HTTP_422",
+                "primary_status": {
+                  "ok": false,
+                  "semantic_complete": false,
+                  "action_count": 0,
+                  "error": "HTTP_422",
+                  "failure_kind": "model_refusal",
+                  "source": "real-model",
+                  "model_ms": null
+                },
+                "secondary_status": null,
+                "primary_response": {
+                  "error": "MODEL_ACTION_TARGET_UNMENTIONED",
+                  "source": "real-model",
+                  "configured_model": "Qwen2.5-1.5B-Instruct-Q4_K_M",
+                  "gpu_info": "unknown",
+                  "gpu_info_source": "environment_declared",
+                  "model_revision": "6a1a2eb6d15622bf3c96857206351ba97e1af16c30d7a74ee38970e434e9407e",
+                  "model_revision_source": "environment_declared",
+                  "tier": "local"
+                },
+                "secondary_response": null,
+                "secondary_health": null,
+                "primary_ms": 414.518,
+                "health_ms": 0.0,
+                "secondary_ms": 0.0,
+                "elapsed_ms": 414.584,
+                "budget_ms": 10000.0,
+                "budget_scope": "secondary_launch_only",
+                "reason": "not_recoverable"
+              }
+            },
+            "actions": [],
+            "model_ms": null,
+            "fallback_from": null,
+            "fallback_attempted": false,
+            "refusal_reason": "MODEL_ACTION_TARGET_UNMENTIONED",
+            "error": "HTTP_422",
+            "source": "local-model:real-model",
+            "event_persisted": true
+          }
+        },
+        "wall_ms": 432.9155000013998
+      },
+      "after": {
+        "status": 200,
+        "body": {
+          "lights": {
+            "书房": {
+              "brightness": 0,
+              "is_on": false
+            },
+            "卧室": {
+              "brightness": 0,
+              "is_on": false
+            },
+            "厨房": {
+              "brightness": 0,
+              "is_on": false
+            },
+            "客厅": {
+              "brightness": 0,
+              "is_on": false
+            },
+            "室外": {
+              "brightness": 0,
+              "is_on": false
+            },
+            "浴室": {
+              "brightness": 0,
+              "is_on": false
+            }
+          },
+          "temperature": {
+            "书房": {
+              "humidity": 60.0,
+              "temp": 25.0
+            },
+            "卧室": {
+              "humidity": 60.0,
+              "temp": 25.0
+            },
+            "厨房": {
+              "humidity": 60.0,
+              "temp": 25.0
+            },
+            "客厅": {
+              "humidity": 60.0,
+              "temp": 25.0
+            },
+            "室外": {
+              "humidity": 60.0,
+              "temp": 25.0
+            },
+            "浴室": {
+              "humidity": 60.0,
+              "temp": 25.0
+            }
+          },
+          "curtains": {
+            "书房": {
+              "is_open": true,
+              "position": 100
+            },
+            "卧室": {
+              "is_open": true,
+              "position": 100
+            },
+            "厨房": {
+              "is_open": true,
+              "position": 100
+            },
+            "客厅": {
+              "is_open": true,
+              "position": 100
+            },
+            "室外": {
+              "is_open": true,
+              "position": 100
+            },
+            "浴室": {
+              "is_open": false,
+              "position": 0
+            }
+          },
+          "sensors": {
+            "客厅": {
+              "illuminance": 13094.3,
+              "motion_detected": true,
+              "door_open": false,
+              "window_open": false,
+              "pm25": 21.9,
+              "co2": 545.0,
+              "noise": 39.3,
+              "update_time": "14:49:30"
+            },
+            "卧室": {
+              "illuminance": 8904.5,
+              "motion_detected": false,
+              "door_open": false,
+              "window_open": false,
+              "pm25": 21.1,
+              "co2": 376.0,
+              "noise": 28.0,
+              "update_time": "14:49:30"
+            },
+            "厨房": {
+              "illuminance": 20573.1,
+              "motion_detected": true,
+              "door_open": true,
+              "window_open": false,
+              "pm25": 36.5,
+              "co2": 691.0,
+              "noise": 47.9,
+              "update_time": "14:49:30"
+            },
+            "浴室": {
+              "illuminance": 5164.9,
+              "motion_detected": false,
+              "door_open": false,
+              "window_open": true,
+              "pm25": 13.9,
+              "co2": 544.0,
+              "noise": 57.3,
+              "update_time": "14:49:30"
+            },
+            "书房": {
+              "illuminance": 12690.8,
+              "motion_detected": true,
+              "door_open": false,
+              "window_open": false,
+              "pm25": 14.7,
+              "co2": 367.0,
+              "noise": 20.0,
+              "update_time": "14:49:30"
+            },
+            "室外": {
+              "illuminance": 52440.5,
+              "motion_detected": false,
+              "door_open": false,
+              "window_open": false,
+              "pm25": 60.1,
+              "co2": 408.0,
+              "noise": 60.9,
+              "update_time": "14:49:30"
+            }
+          },
+          "security": {
+            "mode": "off",
+            "armed": false,
+            "alarm_triggered": false
+          },
+          "_mqtt_observation": {
+            "platform_id": "software-home",
+            "state_version": 0,
+            "scope": "current-software-platform-observation",
+            "physical_execution_confirmed": false
+          }
+        },
+        "wall_ms": 13.85600000503473
+      },
+      "receipt_query": {
+        "status": 200,
+        "body": {
+          "command_id": "video-v4-01",
+          "execution_state": "unknown",
+          "semantic_complete": false,
+          "actions": [],
+          "error": "COMMAND_NOT_FOUND",
+          "physical_execution_confirmed": false,
+          "current_platform_observation": {
+            "evidence_kind": "mqtt-software-entity",
+            "platform_id": "software-home",
+            "schema": "sensehome.software-state.v1",
+            "software_state": {
+              "curtains": {
+                "书房": {
+                  "is_open": true,
+                  "position": 100
+                },
+                "卧室": {
+                  "is_open": true,
+                  "position": 100
+                },
+                "厨房": {
+                  "is_open": true,
+                  "position": 100
+                },
+                "客厅": {
+                  "is_open": true,
+                  "position": 100
+                },
+                "室外": {
+                  "is_open": true,
+                  "position": 100
+                },
+                "浴室": {
+                  "is_open": false,
+                  "position": 0
+                }
+              },
+              "lights": {
+                "书房": {
+                  "brightness": 0,
+                  "is_on": false
+                },
+                "卧室": {
+                  "brightness": 0,
+                  "is_on": false
+                },
+                "厨房": {
+                  "brightness": 0,
+                  "is_on": false
+                },
+                "客厅": {
+                  "brightness": 0,
+                  "is_on": false
+                },
+                "室外": {
+                  "brightness": 0,
+                  "is_on": false
+                },
+                "浴室": {
+                  "brightness": 0,
+                  "is_on": false
+                }
+              },
+              "security": {
+                "alarm_triggered": false,
+                "armed": false,
+                "mode": "off"
+              },
+              "sensors": {
+                "书房": {
+                  "co2": 426.0,
+                  "door_open": false,
+                  "illuminance": 13374.0,
+                  "motion_detected": false,
+                  "noise": 16.9,
+                  "pm25": 19.9,
+                  "update_time": "10:53:04",
+                  "window_open": false
+                },
+                "卧室": {
+                  "co2": 383.0,
+                  "door_open": false,
+                  "illuminance": 7456.5,
+                  "motion_detected": false,
+                  "noise": 26.8,
+                  "pm25": 21.7,
+                  "update_time": "10:53:04",
+                  "window_open": false
+                },
+                "厨房": {
+                  "co2": 533.0,
+                  "door_open": false,
+                  "illuminance": 21137.9,
+                  "motion_detected": false,
+                  "noise": 58.8,
+                  "pm25": 40.1,
+                  "update_time": "10:53:04",
+                  "window_open": false
+                },
+                "客厅": {
+                  "co2": 598.0,
+                  "door_open": false,
+                  "illuminance": 17324.0,
+                  "motion_detected": true,
+                  "noise": 32.0,
+                  "pm25": 22.5,
+                  "update_time": "10:53:04",
+                  "window_open": false
+                },
+                "室外": {
+                  "co2": 361.0,
+                  "door_open": false,
+                  "illuminance": 52851.5,
+                  "motion_detected": false,
+                  "noise": 70.7,
+                  "pm25": 56.7,
+                  "update_time": "10:53:04",
+                  "window_open": false
+                },
+                "浴室": {
+                  "co2": 446.0,
+                  "door_open": false,
+                  "illuminance": 4925.7,
+                  "motion_detected": false,
+                  "noise": 40.7,
+                  "pm25": 17.6,
+                  "update_time": "10:53:04",
+                  "window_open": false
+                }
+              },
+              "temperature": {
+                "书房": {
+                  "humidity": 60.0,
+                  "temp": 25.0
+                },
+                "卧室": {
+                  "humidity": 60.0,
+                  "temp": 25.0
+                },
+                "厨房": {
+                  "humidity": 60.0,
+                  "temp": 25.0
+                },
+                "客厅": {
+                  "humidity": 60.0,
+                  "temp": 25.0
+                },
+                "室外": {
+                  "humidity": 60.0,
+                  "temp": 25.0
+                },
+                "浴室": {
+                  "humidity": 60.0,
+                  "temp": 25.0
+                }
+              }
+            },
+            "state_version": 0
+          }
+        },
+        "wall_ms": 14.909100005752407
+      }
+    },
+    {
+      "index": 2,
+      "record_kind": "automation_test",
+      "at_utc": "2026-11-11T06:56:03.755068+00:00",
+      "command": "???",
+      "before": {
+        "status": 200,
+        "body": {
+          "lights": {
+            "书房": {
+              "brightness": 0,
+              "is_on": false
+            },
+            "卧室": {
+              "brightness": 0,
+              "is_on": false
+            },
+            "厨房": {
+              "brightness": 0,
+              "is_on": false
+            },
+            "客厅": {
+              "brightness": 0,
+              "is_on": false
+            },
+            "室外": {
+              "brightness": 0,
+              "is_on": false
+            },
+            "浴室": {
+              "brightness": 0,
+              "is_on": false
+            }
+          },
+          "temperature": {
+            "书房": {
+              "humidity": 60.0,
+              "temp": 25.0
+            },
+            "卧室": {
+              "humidity": 60.0,
+              "temp": 25.0
+            },
+            "厨房": {
+              "humidity": 60.0,
+              "temp": 25.0
+            },
+            "客厅": {
+              "humidity": 60.0,
+              "temp": 25.0
+            },
+            "室外": {
+              "humidity": 60.0,
+              "temp": 25.0
+            },
+            "浴室": {
+              "humidity": 60.0,
+              "temp": 25.0
+            }
+          },
+          "curtains": {
+            "书房": {
+              "is_open": true,
+              "position": 100
+            },
+            "卧室": {
+              "is_open": true,
+              "position": 100
+            },
+            "厨房": {
+              "is_open": true,
+              "position": 100
+            },
+            "客厅": {
+              "is_open": true,
+              "position": 100
+            },
+            "室外": {
+              "is_open": true,
+              "position": 100
+            },
+            "浴室": {
+              "is_open": false,
+              "position": 0
+            }
+          },
+          "sensors": {
+            "客厅": {
+              "illuminance": 13094.3,
+              "motion_detected": true,
+              "door_open": false,
+              "window_open": false,
+              "pm25": 21.9,
+              "co2": 545.0,
+              "noise": 39.3,
+              "update_time": "14:49:30"
+            },
+            "卧室": {
+              "illuminance": 8904.5,
+              "motion_detected": false,
+              "door_open": false,
+              "window_open": false,
+              "pm25": 21.1,
+              "co2": 376.0,
+              "noise": 28.0,
+              "update_time": "14:49:30"
+            },
+            "厨房": {
+              "illuminance": 20573.1,
+              "motion_detected": true,
+              "door_open": true,
+              "window_open": false,
+              "pm25": 36.5,
+              "co2": 691.0,
+              "noise": 47.9,
+              "update_time": "14:49:30"
+            },
+            "浴室": {
+              "illuminance": 5164.9,
+              "motion_detected": false,
+              "door_open": false,
+              "window_open": true,
+              "pm25": 13.9,
+              "co2": 544.0,
+              "noise": 57.3,
+              "update_time": "14:49:30"
+            },
+            "书房": {
+              "illuminance": 12690.8,
+              "motion_detected": true,
+              "door_open": false,
+              "window_open": false,
+              "pm25": 14.7,
+              "co2": 367.0,
+              "noise": 20.0,
+              "update_time": "14:49:30"
+            },
+            "室外": {
+              "illuminance": 52440.5,
+              "motion_detected": false,
+              "door_open": false,
+              "window_open": false,
+              "pm25": 60.1,
+              "co2": 408.0,
+              "noise": 60.9,
+              "update_time": "14:49:30"
+            }
+          },
+          "security": {
+            "mode": "off",
+            "armed": false,
+            "alarm_triggered": false
+          },
+          "_mqtt_observation": {
+            "platform_id": "software-home",
+            "state_version": 0,
+            "scope": "current-software-platform-observation",
+            "physical_execution_confirmed": false
+          }
+        },
+        "wall_ms": 36.828199998126365
+      },
+      "response": {
+        "status": 200,
+        "body": {
+          "source": "local-model:real-model",
+          "configured_model": "Qwen2.5-1.5B-Instruct-Q4_K_M",
+          "gpu_info": "unknown",
+          "gpu_info_source": "environment_declared",
+          "model_revision": "6a1a2eb6d15622bf3c96857206351ba97e1af16c30d7a74ee38970e434e9407e",
+          "model_revision_source": "environment_declared",
+          "tier": "local",
+          "answer": "请提供具体命令或房间名称。",
+          "actions": [],
+          "plan_valid": true,
+          "semantic_complete": false,
+          "model_ms": 221.183,
+          "model_ms_kind": "upstream_http_wall_clock",
+          "model_ms_source": "measured",
+          "upstream_model": "Qwen2.5-1.5B-Instruct-Q4_K_M",
+          "upstream_usage": {
+            "completion_tokens": 16,
+            "prompt_tokens": 696,
+            "total_tokens": 712,
+            "prompt_tokens_details": {
+              "cached_tokens": 571
+            }
+          },
+          "actual_backend": "local-model",
+          "recovery": {
+            "attempted": false,
+            "from": "local-model",
+            "to": "cloud-model",
+            "actual_backend": "local-model",
+            "primary_error": null,
+            "primary_status": {
+              "ok": true,
+              "semantic_complete": false,
+              "action_count": 0,
+              "error": null,
+              "failure_kind": null,
+              "source": "real-model",
+              "model_ms": 221.183
+            },
+            "secondary_status": null,
+            "primary_response": {
+              "source": "real-model",
+              "configured_model": "Qwen2.5-1.5B-Instruct-Q4_K_M",
+              "gpu_info": "unknown",
+              "gpu_info_source": "environment_declared",
+              "model_revision": "6a1a2eb6d15622bf3c96857206351ba97e1af16c30d7a74ee38970e434e9407e",
+              "model_revision_source": "environment_declared",
+              "tier": "local",
+              "answer": "请提供具体命令或房间名称。",
+              "actions": [],
+              "plan_valid": true,
+              "semantic_complete": false,
+              "model_ms": 221.183,
+              "model_ms_kind": "upstream_http_wall_clock",
+              "model_ms_source": "measured",
+              "upstream_model": "Qwen2.5-1.5B-Instruct-Q4_K_M",
+              "upstream_usage": {
+                "completion_tokens": 16,
+                "prompt_tokens": 696,
+                "total_tokens": 712,
+                "prompt_tokens_details": {
+                  "cached_tokens": 571
+                }
+              }
+            },
+            "secondary_response": null,
+            "secondary_health": null,
+            "primary_ms": 221.884,
+            "health_ms": 0.0,
+            "secondary_ms": 0.0,
+            "elapsed_ms": 221.982,
+            "budget_ms": 10000.0,
+            "budget_scope": "secondary_launch_only",
+            "reason": "primary_success"
+          },
+          "event_id": "db257b842e9e4f97b9f215510e6a591b",
+          "decision_sequence": 3,
+          "selected_backend": "local-model",
+          "decision_reason": "STATIC_BASELINE",
+          "task_class": "complex",
+          "backend": "local-model",
+          "reason": "STATIC_BASELINE",
+          "policy": {
+            "implementation": "dual_endpoint_C_policy",
+            "active_decision_path": "dual_endpoint_resources",
+            "transfer_costs_known": false,
+            "arm": "static-local",
+            "config": {
+              "schema_version": "sensehome.policy.v1",
+              "queue_max_ms": 300,
+              "inflight_max": 8,
+              "free_mem_min_mb": 256,
+              "local_infer_ms": 1116,
+              "cloud_infer_ms": 1361,
+              "switch_margin_ms": 15,
+              "recovery_samples": 3,
+              "timeout_ms": 800,
+              "observation_max_age_ms": 2000,
+              "observation_lookup_ms": 0.2,
+              "policy_model_ms": 0.2,
+              "execution_model_ms": 0.1,
+              "rule_model_ms": 1
+            },
+            "config_hash": "91b6f108f9aca31855b9cdb862d713921d480f5b5fdb401d3d8919f8938d051e",
+            "decision_sequence": 3
+          },
+          "policy_log": "[resources] task=complex-nlu -> local-model because STATIC_BASELINE mode=4 local(ready=0,q=-1,mem=-1,n=-1) cloud(ready=0,q=-1,mem=-1,n=-1) transfer_ms(local=-1,cloud=-1;-1=unknown) wan(rtt=2,jit=-1,loss=-1) lan(rtt=0,jit=-1,loss=-1) recovery=0/3",
+          "link": {
+            "wan_ok": true,
+            "wan_rtt_ms": 1.779,
+            "wan_jitter_ms": null,
+            "wan_loss_pct": null,
+            "lan_ok": true,
+            "lan_rtt_ms": 0.0,
+            "lan_jitter_ms": null,
+            "lan_loss_pct": null
+          },
+          "compute": {
+            "model_ready": true,
+            "queue_ms": null,
+            "free_mem_mb": null,
+            "inflight": null,
+            "source": "backend_health_cache",
+            "field_sources": {
+              "model_ready": "backend_health_cache",
+              "queue_ms": "unknown",
+              "free_mem_mb": "unknown",
+              "inflight": "unknown"
+            },
+            "known_fields": [
+              "model_ready"
+            ],
+            "unknown_fields": [
+              "queue_ms",
+              "free_mem_mb",
+              "inflight"
+            ]
+          },
+          "latency": {
+            "probe_ms": 0.38,
+            "policy_ms": 0.945,
+            "backend_ms": 222.179,
+            "total_user_ms": 223.504
+          },
+          "interface_ok": true,
+          "fallback_from": null,
+          "fallback_attempted": false,
+          "refusal_reason": null,
+          "error": null,
+          "resource_observation": {
+            "schema_version": "sensehome.observation.v1",
+            "observation_id": 2,
+            "observed_age_ms": 2597.8088999928905,
+            "source_out_of_order": false,
+            "endpoint_age_ms": {
+              "local": 564.2,
+              "cloud": 2595.3
+            },
+            "network": {
+              "wan": {
+                "reachable": true,
+                "rtt_ms": 1.779,
+                "jitter_ms": null,
+                "loss_pct": null,
+                "bandwidth_kbps": null,
+                "source": "http_health_check"
+              },
+              "lan": {
+                "reachable": true,
+                "rtt_ms": 0.0,
+                "jitter_ms": null,
+                "loss_pct": null,
+                "bandwidth_kbps": null,
+                "source": "same_process_simulator"
+              }
+            },
+            "network_source": "application_health_and_simulated_lan",
+            "network_source_detail": "HTTP endpoint RTT; devices simulated in gateway process",
+            "compute": {
+              "local": {
+                "model_ready": true,
+                "queue_ms": null,
+                "free_mem_mb": null,
+                "inflight": null,
+                "source": "backend_health_cache",
+                "field_sources": {
+                  "model_ready": "backend_health_cache",
+                  "queue_ms": "unknown",
+                  "free_mem_mb": "unknown",
+                  "inflight": "unknown"
+                }
+              },
+              "cloud": {
+                "model_ready": true,
+                "queue_ms": null,
+                "free_mem_mb": null,
+                "inflight": null,
+                "source": "backend_health_cache",
+                "field_sources": {
+                  "model_ready": "backend_health_cache",
+                  "queue_ms": "unknown",
+                  "free_mem_mb": "unknown",
+                  "inflight": "unknown"
+                }
+              }
+            },
+            "compute_source": "server_owned_health_cache",
+            "service": "interactive_inference",
+            "profile": {
+              "legacy_family": "eMBB",
+              "imt2030_mapping": "AI and Communication; Ubiquitous Connectivity",
+              "task_class": "complex",
+              "deadline_ms": 250,
+              "reliability_target": 0.99,
+              "request_bytes": 4096,
+              "response_bytes": 2048,
+              "wan_rtt_max_ms": 180,
+              "wan_jitter_max_ms": 30,
+              "wan_loss_max_pct": 5,
+              "command": "客厅有点暗",
+              "purpose": "Fixed planner contract, not a model accuracy benchmark"
+            },
+            "estimate_scope": "configured inference estimates; unmeasured bandwidth and queue remain unknown"
+          },
+          "gateway_event": {
+            "event_id": "db257b842e9e4f97b9f215510e6a591b",
+            "decision_sequence": 3,
+            "selected_backend": "local-model",
+            "decision_reason": "STATIC_BASELINE",
+            "command": "???",
+            "task_class": "complex",
+            "backend": "local-model",
+            "reason": "STATIC_BASELINE",
+            "policy_log": "[resources] task=complex-nlu -> local-model because STATIC_BASELINE mode=4 local(ready=0,q=-1,mem=-1,n=-1) cloud(ready=0,q=-1,mem=-1,n=-1) transfer_ms(local=-1,cloud=-1;-1=unknown) wan(rtt=2,jit=-1,loss=-1) lan(rtt=0,jit=-1,loss=-1) recovery=0/3",
+            "policy": {
+              "implementation": "dual_endpoint_C_policy",
+              "active_decision_path": "dual_endpoint_resources",
+              "transfer_costs_known": false,
+              "arm": "static-local",
+              "config": {
+                "schema_version": "sensehome.policy.v1",
+                "queue_max_ms": 300,
+                "inflight_max": 8,
+                "free_mem_min_mb": 256,
+                "local_infer_ms": 1116,
+                "cloud_infer_ms": 1361,
+                "switch_margin_ms": 15,
+                "recovery_samples": 3,
+                "timeout_ms": 800,
+                "observation_max_age_ms": 2000,
+                "observation_lookup_ms": 0.2,
+                "policy_model_ms": 0.2,
+                "execution_model_ms": 0.1,
+                "rule_model_ms": 1
+              },
+              "config_hash": "91b6f108f9aca31855b9cdb862d713921d480f5b5fdb401d3d8919f8938d051e",
+              "decision_sequence": 3
+            },
+            "link": {
+              "wan_ok": true,
+              "wan_rtt_ms": 1.779,
+              "wan_jitter_ms": null,
+              "wan_loss_pct": null,
+              "lan_ok": true,
+              "lan_rtt_ms": 0.0,
+              "lan_jitter_ms": null,
+              "lan_loss_pct": null
+            },
+            "compute": {
+              "model_ready": true,
+              "queue_ms": null,
+              "free_mem_mb": null,
+              "inflight": null,
+              "source": "backend_health_cache",
+              "field_sources": {
+                "model_ready": "backend_health_cache",
+                "queue_ms": "unknown",
+                "free_mem_mb": "unknown",
+                "inflight": "unknown"
+              },
+              "known_fields": [
+                "model_ready"
+              ],
+              "unknown_fields": [
+                "queue_ms",
+                "free_mem_mb",
+                "inflight"
+              ]
+            },
+            "observation": {
+              "schema_version": "sensehome.observation.v1",
+              "observation_id": 2,
+              "observed_age_ms": 2597.8088999928905,
+              "source_out_of_order": false,
+              "endpoint_age_ms": {
+                "local": 564.2,
+                "cloud": 2595.3
+              },
+              "network": {
+                "wan": {
+                  "reachable": true,
+                  "rtt_ms": 1.779,
+                  "jitter_ms": null,
+                  "loss_pct": null,
+                  "bandwidth_kbps": null,
+                  "source": "http_health_check"
+                },
+                "lan": {
+                  "reachable": true,
+                  "rtt_ms": 0.0,
+                  "jitter_ms": null,
+                  "loss_pct": null,
+                  "bandwidth_kbps": null,
+                  "source": "same_process_simulator"
+                }
+              },
+              "network_source": "application_health_and_simulated_lan",
+              "network_source_detail": "HTTP endpoint RTT; devices simulated in gateway process",
+              "compute": {
+                "local": {
+                  "model_ready": true,
+                  "queue_ms": null,
+                  "free_mem_mb": null,
+                  "inflight": null,
+                  "source": "backend_health_cache",
+                  "field_sources": {
+                    "model_ready": "backend_health_cache",
+                    "queue_ms": "unknown",
+                    "free_mem_mb": "unknown",
+                    "inflight": "unknown"
+                  }
+                },
+                "cloud": {
+                  "model_ready": true,
+                  "queue_ms": null,
+                  "free_mem_mb": null,
+                  "inflight": null,
+                  "source": "backend_health_cache",
+                  "field_sources": {
+                    "model_ready": "backend_health_cache",
+                    "queue_ms": "unknown",
+                    "free_mem_mb": "unknown",
+                    "inflight": "unknown"
+                  }
+                }
+              },
+              "compute_source": "server_owned_health_cache",
+              "service": "interactive_inference",
+              "profile": {
+                "legacy_family": "eMBB",
+                "imt2030_mapping": "AI and Communication; Ubiquitous Connectivity",
+                "task_class": "complex",
+                "deadline_ms": 250,
+                "reliability_target": 0.99,
+                "request_bytes": 4096,
+                "response_bytes": 2048,
+                "wan_rtt_max_ms": 180,
+                "wan_jitter_max_ms": 30,
+                "wan_loss_max_pct": 5,
+                "command": "客厅有点暗",
+                "purpose": "Fixed planner contract, not a model accuracy benchmark"
+              },
+              "estimate_scope": "configured inference estimates; unmeasured bandwidth and queue remain unknown"
+            },
+            "latency": {
+              "probe_ms": 0.38,
+              "policy_ms": 0.945,
+              "backend_ms": 222.179,
+              "total_user_ms": 223.504
+            },
+            "semantic_complete": false,
+            "interface_ok": true,
+            "response": {
+              "source": "real-model",
+              "configured_model": "Qwen2.5-1.5B-Instruct-Q4_K_M",
+              "gpu_info": "unknown",
+              "gpu_info_source": "environment_declared",
+              "model_revision": "6a1a2eb6d15622bf3c96857206351ba97e1af16c30d7a74ee38970e434e9407e",
+              "model_revision_source": "environment_declared",
+              "tier": "local",
+              "answer": "请提供具体命令或房间名称。",
+              "actions": [],
+              "plan_valid": true,
+              "semantic_complete": false,
+              "model_ms": 221.183,
+              "model_ms_kind": "upstream_http_wall_clock",
+              "model_ms_source": "measured",
+              "upstream_model": "Qwen2.5-1.5B-Instruct-Q4_K_M",
+              "upstream_usage": {
+                "completion_tokens": 16,
+                "prompt_tokens": 696,
+                "total_tokens": 712,
+                "prompt_tokens_details": {
+                  "cached_tokens": 571
+                }
+              },
+              "actual_backend": "local-model",
+              "recovery": {
+                "attempted": false,
+                "from": "local-model",
+                "to": "cloud-model",
+                "actual_backend": "local-model",
+                "primary_error": null,
+                "primary_status": {
+                  "ok": true,
+                  "semantic_complete": false,
+                  "action_count": 0,
+                  "error": null,
+                  "failure_kind": null,
+                  "source": "real-model",
+                  "model_ms": 221.183
+                },
+                "secondary_status": null,
+                "primary_response": {
+                  "source": "real-model",
+                  "configured_model": "Qwen2.5-1.5B-Instruct-Q4_K_M",
+                  "gpu_info": "unknown",
+                  "gpu_info_source": "environment_declared",
+                  "model_revision": "6a1a2eb6d15622bf3c96857206351ba97e1af16c30d7a74ee38970e434e9407e",
+                  "model_revision_source": "environment_declared",
+                  "tier": "local",
+                  "answer": "请提供具体命令或房间名称。",
+                  "actions": [],
+                  "plan_valid": true,
+                  "semantic_complete": false,
+                  "model_ms": 221.183,
+                  "model_ms_kind": "upstream_http_wall_clock",
+                  "model_ms_source": "measured",
+                  "upstream_model": "Qwen2.5-1.5B-Instruct-Q4_K_M",
+                  "upstream_usage": {
+                    "completion_tokens": 16,
+                    "prompt_tokens": 696,
+                    "total_tokens": 712,
+                    "prompt_tokens_details": {
+                      "cached_tokens": 571
+                    }
+                  }
+                },
+                "secondary_response": null,
+                "secondary_health": null,
+                "primary_ms": 221.884,
+                "health_ms": 0.0,
+                "secondary_ms": 0.0,
+                "elapsed_ms": 221.982,
+                "budget_ms": 10000.0,
+                "budget_scope": "secondary_launch_only",
+                "reason": "primary_success"
+              }
+            },
+            "actions": [],
+            "model_ms": 221.183,
+            "fallback_from": null,
+            "fallback_attempted": false,
+            "refusal_reason": null,
+            "error": null,
+            "source": "local-model:real-model",
+            "event_persisted": true
+          }
+        },
+        "wall_ms": 243.74340000213124
+      },
+      "after": {
+        "status": 200,
+        "body": {
+          "lights": {
+            "书房": {
+              "brightness": 0,
+              "is_on": false
+            },
+            "卧室": {
+              "brightness": 0,
+              "is_on": false
+            },
+            "厨房": {
+              "brightness": 0,
+              "is_on": false
+            },
+            "客厅": {
+              "brightness": 0,
+              "is_on": false
+            },
+            "室外": {
+              "brightness": 0,
+              "is_on": false
+            },
+            "浴室": {
+              "brightness": 0,
+              "is_on": false
+            }
+          },
+          "temperature": {
+            "书房": {
+              "humidity": 60.0,
+              "temp": 25.0
+            },
+            "卧室": {
+              "humidity": 60.0,
+              "temp": 25.0
+            },
+            "厨房": {
+              "humidity": 60.0,
+              "temp": 25.0
+            },
+            "客厅": {
+              "humidity": 60.0,
+              "temp": 25.0
+            },
+            "室外": {
+              "humidity": 60.0,
+              "temp": 25.0
+            },
+            "浴室": {
+              "humidity": 60.0,
+              "temp": 25.0
+            }
+          },
+          "curtains": {
+            "书房": {
+              "is_open": true,
+              "position": 100
+            },
+            "卧室": {
+              "is_open": true,
+              "position": 100
+            },
+            "厨房": {
+              "is_open": true,
+              "position": 100
+            },
+            "客厅": {
+              "is_open": true,
+              "position": 100
+            },
+            "室外": {
+              "is_open": true,
+              "position": 100
+            },
+            "浴室": {
+              "is_open": false,
+              "position": 0
+            }
+          },
+          "sensors": {
+            "客厅": {
+              "illuminance": 13094.3,
+              "motion_detected": true,
+              "door_open": false,
+              "window_open": false,
+              "pm25": 21.9,
+              "co2": 545.0,
+              "noise": 39.3,
+              "update_time": "14:49:30"
+            },
+            "卧室": {
+              "illuminance": 8904.5,
+              "motion_detected": false,
+              "door_open": false,
+              "window_open": false,
+              "pm25": 21.1,
+              "co2": 376.0,
+              "noise": 28.0,
+              "update_time": "14:49:30"
+            },
+            "厨房": {
+              "illuminance": 20573.1,
+              "motion_detected": true,
+              "door_open": true,
+              "window_open": false,
+              "pm25": 36.5,
+              "co2": 691.0,
+              "noise": 47.9,
+              "update_time": "14:49:30"
+            },
+            "浴室": {
+              "illuminance": 5164.9,
+              "motion_detected": false,
+              "door_open": false,
+              "window_open": true,
+              "pm25": 13.9,
+              "co2": 544.0,
+              "noise": 57.3,
+              "update_time": "14:49:30"
+            },
+            "书房": {
+              "illuminance": 12690.8,
+              "motion_detected": true,
+              "door_open": false,
+              "window_open": false,
+              "pm25": 14.7,
+              "co2": 367.0,
+              "noise": 20.0,
+              "update_time": "14:49:30"
+            },
+            "室外": {
+              "illuminance": 52440.5,
+              "motion_detected": false,
+              "door_open": false,
+              "window_open": false,
+              "pm25": 60.1,
+              "co2": 408.0,
+              "noise": 60.9,
+              "update_time": "14:49:30"
+            }
+          },
+          "security": {
+            "mode": "off",
+            "armed": false,
+            "alarm_triggered": false
+          },
+          "_mqtt_observation": {
+            "platform_id": "software-home",
+            "state_version": 0,
+            "scope": "current-software-platform-observation",
+            "physical_execution_confirmed": false
+          }
+        },
+        "wall_ms": 14.002600000821985
+      },
+      "receipt_query": {
+        "status": 200,
+        "body": {
+          "command_id": "video-v4-02",
+          "execution_state": "unknown",
+          "semantic_complete": false,
+          "actions": [],
+          "error": "COMMAND_NOT_FOUND",
+          "physical_execution_confirmed": false,
+          "current_platform_observation": {
+            "evidence_kind": "mqtt-software-entity",
+            "platform_id": "software-home",
+            "schema": "sensehome.software-state.v1",
+            "software_state": {
+              "curtains": {
+                "书房": {
+                  "is_open": true,
+                  "position": 100
+                },
+                "卧室": {
+                  "is_open": true,
+                  "position": 100
+                },
+                "厨房": {
+                  "is_open": true,
+                  "position": 100
+                },
+                "客厅": {
+                  "is_open": true,
+                  "position": 100
+                },
+                "室外": {
+                  "is_open": true,
+                  "position": 100
+                },
+                "浴室": {
+                  "is_open": false,
+                  "position": 0
+                }
+              },
+              "lights": {
+                "书房": {
+                  "brightness": 0,
+                  "is_on": false
+                },
+                "卧室": {
+                  "brightness": 0,
+                  "is_on": false
+                },
+                "厨房": {
+                  "brightness": 0,
+                  "is_on": false
+                },
+                "客厅": {
+                  "brightness": 0,
+                  "is_on": false
+                },
+                "室外": {
+                  "brightness": 0,
+                  "is_on": false
+                },
+                "浴室": {
+                  "brightness": 0,
+                  "is_on": false
+                }
+              },
+              "security": {
+                "alarm_triggered": false,
+                "armed": false,
+                "mode": "off"
+              },
+              "sensors": {
+                "书房": {
+                  "co2": 426.0,
+                  "door_open": false,
+                  "illuminance": 13374.0,
+                  "motion_detected": false,
+                  "noise": 16.9,
+                  "pm25": 19.9,
+                  "update_time": "10:53:04",
+                  "window_open": false
+                },
+                "卧室": {
+                  "co2": 383.0,
+                  "door_open": false,
+                  "illuminance": 7456.5,
+                  "motion_detected": false,
+                  "noise": 26.8,
+                  "pm25": 21.7,
+                  "update_time": "10:53:04",
+                  "window_open": false
+                },
+                "厨房": {
+                  "co2": 533.0,
+                  "door_open": false,
+                  "illuminance": 21137.9,
+                  "motion_detected": false,
+                  "noise": 58.8,
+                  "pm25": 40.1,
+                  "update_time": "10:53:04",
+                  "window_open": false
+                },
+                "客厅": {
+                  "co2": 598.0,
+                  "door_open": false,
+                  "illuminance": 17324.0,
+                  "motion_detected": true,
+                  "noise": 32.0,
+                  "pm25": 22.5,
+                  "update_time": "10:53:04",
+                  "window_open": false
+                },
+                "室外": {
+                  "co2": 361.0,
+                  "door_open": false,
+                  "illuminance": 52851.5,
+                  "motion_detected": false,
+                  "noise": 70.7,
+                  "pm25": 56.7,
+                  "update_time": "10:53:04",
+                  "window_open": false
+                },
+                "浴室": {
+                  "co2": 446.0,
+                  "door_open": false,
+                  "illuminance": 4925.7,
+                  "motion_detected": false,
+                  "noise": 40.7,
+                  "pm25": 17.6,
+                  "update_time": "10:53:04",
+                  "window_open": false
+                }
+              },
+              "temperature": {
+                "书房": {
+                  "humidity": 60.0,
+                  "temp": 25.0
+                },
+                "卧室": {
+                  "humidity": 60.0,
+                  "temp": 25.0
+                },
+                "厨房": {
+                  "humidity": 60.0,
+                  "temp": 25.0
+                },
+                "客厅": {
+                  "humidity": 60.0,
+                  "temp": 25.0
+                },
+                "室外": {
+                  "humidity": 60.0,
+                  "temp": 25.0
+                },
+                "浴室": {
+                  "humidity": 60.0,
+                  "temp": 25.0
+                }
+              }
+            },
+            "state_version": 0
+          }
+        },
+        "wall_ms": 40.337499987799674
+      }
+    },
+    {
+      "index": 3,
+      "record_kind": "automation_test",
+      "at_utc": "2026-11-11T06:56:04.050735+00:00",
+      "command": "???????????shell?????",
+      "before": {
+        "status": 200,
+        "body": {
+          "lights": {
+            "书房": {
+              "brightness": 0,
+              "is_on": false
+            },
+            "卧室": {
+              "brightness": 0,
+              "is_on": false
+            },
+            "厨房": {
+              "brightness": 0,
+              "is_on": false
+            },
+            "客厅": {
+              "brightness": 0,
+              "is_on": false
+            },
+            "室外": {
+              "brightness": 0,
+              "is_on": false
+            },
+            "浴室": {
+              "brightness": 0,
+              "is_on": false
+            }
+          },
+          "temperature": {
+            "书房": {
+              "humidity": 60.0,
+              "temp": 25.0
+            },
+            "卧室": {
+              "humidity": 60.0,
+              "temp": 25.0
+            },
+            "厨房": {
+              "humidity": 60.0,
+              "temp": 25.0
+            },
+            "客厅": {
+              "humidity": 60.0,
+              "temp": 25.0
+            },
+            "室外": {
+              "humidity": 60.0,
+              "temp": 25.0
+            },
+            "浴室": {
+              "humidity": 60.0,
+              "temp": 25.0
+            }
+          },
+          "curtains": {
+            "书房": {
+              "is_open": true,
+              "position": 100
+            },
+            "卧室": {
+              "is_open": true,
+              "position": 100
+            },
+            "厨房": {
+              "is_open": true,
+              "position": 100
+            },
+            "客厅": {
+              "is_open": true,
+              "position": 100
+            },
+            "室外": {
+              "is_open": true,
+              "position": 100
+            },
+            "浴室": {
+              "is_open": false,
+              "position": 0
+            }
+          },
+          "sensors": {
+            "客厅": {
+              "illuminance": 13094.3,
+              "motion_detected": true,
+              "door_open": false,
+              "window_open": false,
+              "pm25": 21.9,
+              "co2": 545.0,
+              "noise": 39.3,
+              "update_time": "14:49:30"
+            },
+            "卧室": {
+              "illuminance": 8904.5,
+              "motion_detected": false,
+              "door_open": false,
+              "window_open": false,
+              "pm25": 21.1,
+              "co2": 376.0,
+              "noise": 28.0,
+              "update_time": "14:49:30"
+            },
+            "厨房": {
+              "illuminance": 20573.1,
+              "motion_detected": true,
+              "door_open": true,
+              "window_open": false,
+              "pm25": 36.5,
+              "co2": 691.0,
+              "noise": 47.9,
+              "update_time": "14:49:30"
+            },
+            "浴室": {
+              "illuminance": 5164.9,
+              "motion_detected": false,
+              "door_open": false,
+              "window_open": true,
+              "pm25": 13.9,
+              "co2": 544.0,
+              "noise": 57.3,
+              "update_time": "14:49:30"
+            },
+            "书房": {
+              "illuminance": 12690.8,
+              "motion_detected": true,
+              "door_open": false,
+              "window_open": false,
+              "pm25": 14.7,
+              "co2": 367.0,
+              "noise": 20.0,
+              "update_time": "14:49:30"
+            },
+            "室外": {
+              "illuminance": 52440.5,
+              "motion_detected": false,
+              "door_open": false,
+              "window_open": false,
+              "pm25": 60.1,
+              "co2": 408.0,
+              "noise": 60.9,
+              "update_time": "14:49:30"
+            }
+          },
+          "security": {
+            "mode": "off",
+            "armed": false,
+            "alarm_triggered": false
+          },
+          "_mqtt_observation": {
+            "platform_id": "software-home",
+            "state_version": 0,
+            "scope": "current-software-platform-observation",
+            "physical_execution_confirmed": false
+          }
+        },
+        "wall_ms": 14.325100011774339
+      },
+      "response": {
+        "status": 200,
+        "body": {
+          "source": "local-model:real-model",
+          "configured_model": "Qwen2.5-1.5B-Instruct-Q4_K_M",
+          "gpu_info": "unknown",
+          "gpu_info_source": "environment_declared",
+          "model_revision": "6a1a2eb6d15622bf3c96857206351ba97e1af16c30d7a74ee38970e434e9407e",
+          "model_revision_source": "environment_declared",
+          "tier": "local",
+          "answer": "请提供具体命令或操作",
+          "actions": [],
+          "plan_valid": true,
+          "semantic_complete": false,
+          "model_ms": 222.917,
+          "model_ms_kind": "upstream_http_wall_clock",
+          "model_ms_source": "measured",
+          "upstream_model": "Qwen2.5-1.5B-Instruct-Q4_K_M",
+          "upstream_usage": {
+            "completion_tokens": 14,
+            "prompt_tokens": 700,
+            "total_tokens": 714,
+            "prompt_tokens_details": {
+              "cached_tokens": 571
+            }
+          },
+          "actual_backend": "local-model",
+          "recovery": {
+            "attempted": false,
+            "from": "local-model",
+            "to": "cloud-model",
+            "actual_backend": "local-model",
+            "primary_error": null,
+            "primary_status": {
+              "ok": true,
+              "semantic_complete": false,
+              "action_count": 0,
+              "error": null,
+              "failure_kind": null,
+              "source": "real-model",
+              "model_ms": 222.917
+            },
+            "secondary_status": null,
+            "primary_response": {
+              "source": "real-model",
+              "configured_model": "Qwen2.5-1.5B-Instruct-Q4_K_M",
+              "gpu_info": "unknown",
+              "gpu_info_source": "environment_declared",
+              "model_revision": "6a1a2eb6d15622bf3c96857206351ba97e1af16c30d7a74ee38970e434e9407e",
+              "model_revision_source": "environment_declared",
+              "tier": "local",
+              "answer": "请提供具体命令或操作",
+              "actions": [],
+              "plan_valid": true,
+              "semantic_complete": false,
+              "model_ms": 222.917,
+              "model_ms_kind": "upstream_http_wall_clock",
+              "model_ms_source": "measured",
+              "upstream_model": "Qwen2.5-1.5B-Instruct-Q4_K_M",
+              "upstream_usage": {
+                "completion_tokens": 14,
+                "prompt_tokens": 700,
+                "total_tokens": 714,
+                "prompt_tokens_details": {
+                  "cached_tokens": 571
+                }
+              }
+            },
+            "secondary_response": null,
+            "secondary_health": null,
+            "primary_ms": 223.801,
+            "health_ms": 0.0,
+            "secondary_ms": 0.0,
+            "elapsed_ms": 223.905,
+            "budget_ms": 10000.0,
+            "budget_scope": "secondary_launch_only",
+            "reason": "primary_success"
+          },
+          "event_id": "04bc9b4852d94e458c115c102940110a",
+          "decision_sequence": 4,
+          "selected_backend": "local-model",
+          "decision_reason": "STATIC_BASELINE",
+          "task_class": "complex",
+          "backend": "local-model",
+          "reason": "STATIC_BASELINE",
+          "policy": {
+            "implementation": "dual_endpoint_C_policy",
+            "active_decision_path": "dual_endpoint_resources",
+            "transfer_costs_known": false,
+            "arm": "static-local",
+            "config": {
+              "schema_version": "sensehome.policy.v1",
+              "queue_max_ms": 300,
+              "inflight_max": 8,
+              "free_mem_min_mb": 256,
+              "local_infer_ms": 1116,
+              "cloud_infer_ms": 1361,
+              "switch_margin_ms": 15,
+              "recovery_samples": 3,
+              "timeout_ms": 800,
+              "observation_max_age_ms": 2000,
+              "observation_lookup_ms": 0.2,
+              "policy_model_ms": 0.2,
+              "execution_model_ms": 0.1,
+              "rule_model_ms": 1
+            },
+            "config_hash": "91b6f108f9aca31855b9cdb862d713921d480f5b5fdb401d3d8919f8938d051e",
+            "decision_sequence": 4
+          },
+          "policy_log": "[resources] task=complex-nlu -> local-model because STATIC_BASELINE mode=4 local(ready=0,q=-1,mem=-1,n=-1) cloud(ready=0,q=-1,mem=-1,n=-1) transfer_ms(local=-1,cloud=-1;-1=unknown) wan(rtt=2,jit=-1,loss=-1) lan(rtt=0,jit=-1,loss=-1) recovery=0/3",
+          "link": {
+            "wan_ok": true,
+            "wan_rtt_ms": 1.779,
+            "wan_jitter_ms": null,
+            "wan_loss_pct": null,
+            "lan_ok": true,
+            "lan_rtt_ms": 0.0,
+            "lan_jitter_ms": null,
+            "lan_loss_pct": null
+          },
+          "compute": {
+            "model_ready": true,
+            "queue_ms": null,
+            "free_mem_mb": null,
+            "inflight": null,
+            "source": "backend_health_cache",
+            "field_sources": {
+              "model_ready": "backend_health_cache",
+              "queue_ms": "unknown",
+              "free_mem_mb": "unknown",
+              "inflight": "unknown"
+            },
+            "known_fields": [
+              "model_ready"
+            ],
+            "unknown_fields": [
+              "queue_ms",
+              "free_mem_mb",
+              "inflight"
+            ]
+          },
+          "latency": {
+            "probe_ms": 0.15,
+            "policy_ms": 0.938,
+            "backend_ms": 224.118,
+            "total_user_ms": 225.206
+          },
+          "interface_ok": true,
+          "fallback_from": null,
+          "fallback_attempted": false,
+          "refusal_reason": null,
+          "error": null,
+          "resource_observation": {
+            "schema_version": "sensehome.observation.v1",
+            "observation_id": 2,
+            "observed_age_ms": 2894.5247999892335,
+            "source_out_of_order": false,
+            "endpoint_age_ms": {
+              "local": 861.0,
+              "cloud": 2892.1
+            },
+            "network": {
+              "wan": {
+                "reachable": true,
+                "rtt_ms": 1.779,
+                "jitter_ms": null,
+                "loss_pct": null,
+                "bandwidth_kbps": null,
+                "source": "http_health_check"
+              },
+              "lan": {
+                "reachable": true,
+                "rtt_ms": 0.0,
+                "jitter_ms": null,
+                "loss_pct": null,
+                "bandwidth_kbps": null,
+                "source": "same_process_simulator"
+              }
+            },
+            "network_source": "application_health_and_simulated_lan",
+            "network_source_detail": "HTTP endpoint RTT; devices simulated in gateway process",
+            "compute": {
+              "local": {
+                "model_ready": true,
+                "queue_ms": null,
+                "free_mem_mb": null,
+                "inflight": null,
+                "source": "backend_health_cache",
+                "field_sources": {
+                  "model_ready": "backend_health_cache",
+                  "queue_ms": "unknown",
+                  "free_mem_mb": "unknown",
+                  "inflight": "unknown"
+                }
+              },
+              "cloud": {
+                "model_ready": true,
+                "queue_ms": null,
+                "free_mem_mb": null,
+                "inflight": null,
+                "source": "backend_health_cache",
+                "field_sources": {
+                  "model_ready": "backend_health_cache",
+                  "queue_ms": "unknown",
+                  "free_mem_mb": "unknown",
+                  "inflight": "unknown"
+                }
+              }
+            },
+            "compute_source": "server_owned_health_cache",
+            "service": "interactive_inference",
+            "profile": {
+              "legacy_family": "eMBB",
+              "imt2030_mapping": "AI and Communication; Ubiquitous Connectivity",
+              "task_class": "complex",
+              "deadline_ms": 250,
+              "reliability_target": 0.99,
+              "request_bytes": 4096,
+              "response_bytes": 2048,
+              "wan_rtt_max_ms": 180,
+              "wan_jitter_max_ms": 30,
+              "wan_loss_max_pct": 5,
+              "command": "客厅有点暗",
+              "purpose": "Fixed planner contract, not a model accuracy benchmark"
+            },
+            "estimate_scope": "configured inference estimates; unmeasured bandwidth and queue remain unknown"
+          },
+          "gateway_event": {
+            "event_id": "04bc9b4852d94e458c115c102940110a",
+            "decision_sequence": 4,
+            "selected_backend": "local-model",
+            "decision_reason": "STATIC_BASELINE",
+            "command": "???????????shell?????",
+            "task_class": "complex",
+            "backend": "local-model",
+            "reason": "STATIC_BASELINE",
+            "policy_log": "[resources] task=complex-nlu -> local-model because STATIC_BASELINE mode=4 local(ready=0,q=-1,mem=-1,n=-1) cloud(ready=0,q=-1,mem=-1,n=-1) transfer_ms(local=-1,cloud=-1;-1=unknown) wan(rtt=2,jit=-1,loss=-1) lan(rtt=0,jit=-1,loss=-1) recovery=0/3",
+            "policy": {
+              "implementation": "dual_endpoint_C_policy",
+              "active_decision_path": "dual_endpoint_resources",
+              "transfer_costs_known": false,
+              "arm": "static-local",
+              "config": {
+                "schema_version": "sensehome.policy.v1",
+                "queue_max_ms": 300,
+                "inflight_max": 8,
+                "free_mem_min_mb": 256,
+                "local_infer_ms": 1116,
+                "cloud_infer_ms": 1361,
+                "switch_margin_ms": 15,
+                "recovery_samples": 3,
+                "timeout_ms": 800,
+                "observation_max_age_ms": 2000,
+                "observation_lookup_ms": 0.2,
+                "policy_model_ms": 0.2,
+                "execution_model_ms": 0.1,
+                "rule_model_ms": 1
+              },
+              "config_hash": "91b6f108f9aca31855b9cdb862d713921d480f5b5fdb401d3d8919f8938d051e",
+              "decision_sequence": 4
+            },
+            "link": {
+              "wan_ok": true,
+              "wan_rtt_ms": 1.779,
+              "wan_jitter_ms": null,
+              "wan_loss_pct": null,
+              "lan_ok": true,
+              "lan_rtt_ms": 0.0,
+              "lan_jitter_ms": null,
+              "lan_loss_pct": null
+            },
+            "compute": {
+              "model_ready": true,
+              "queue_ms": null,
+              "free_mem_mb": null,
+              "inflight": null,
+              "source": "backend_health_cache",
+              "field_sources": {
+                "model_ready": "backend_health_cache",
+                "queue_ms": "unknown",
+                "free_mem_mb": "unknown",
+                "inflight": "unknown"
+              },
+              "known_fields": [
+                "model_ready"
+              ],
+              "unknown_fields": [
+                "queue_ms",
+                "free_mem_mb",
+                "inflight"
+              ]
+            },
+            "observation": {
+              "schema_version": "sensehome.observation.v1",
+              "observation_id": 2,
+              "observed_age_ms": 2894.5247999892335,
+              "source_out_of_order": false,
+              "endpoint_age_ms": {
+                "local": 861.0,
+                "cloud": 2892.1
+              },
+              "network": {
+                "wan": {
+                  "reachable": true,
+                  "rtt_ms": 1.779,
+                  "jitter_ms": null,
+                  "loss_pct": null,
+                  "bandwidth_kbps": null,
+                  "source": "http_health_check"
+                },
+                "lan": {
+                  "reachable": true,
+                  "rtt_ms": 0.0,
+                  "jitter_ms": null,
+                  "loss_pct": null,
+                  "bandwidth_kbps": null,
+                  "source": "same_process_simulator"
+                }
+              },
+              "network_source": "application_health_and_simulated_lan",
+              "network_source_detail": "HTTP endpoint RTT; devices simulated in gateway process",
+              "compute": {
+                "local": {
+                  "model_ready": true,
+                  "queue_ms": null,
+                  "free_mem_mb": null,
+                  "inflight": null,
+                  "source": "backend_health_cache",
+                  "field_sources": {
+                    "model_ready": "backend_health_cache",
+                    "queue_ms": "unknown",
+                    "free_mem_mb": "unknown",
+                    "inflight": "unknown"
+                  }
+                },
+                "cloud": {
+                  "model_ready": true,
+                  "queue_ms": null,
+                  "free_mem_mb": null,
+                  "inflight": null,
+                  "source": "backend_health_cache",
+                  "field_sources": {
+                    "model_ready": "backend_health_cache",
+                    "queue_ms": "unknown",
+                    "free_mem_mb": "unknown",
+                    "inflight": "unknown"
+                  }
+                }
+              },
+              "compute_source": "server_owned_health_cache",
+              "service": "interactive_inference",
+              "profile": {
+                "legacy_family": "eMBB",
+                "imt2030_mapping": "AI and Communication; Ubiquitous Connectivity",
+                "task_class": "complex",
+                "deadline_ms": 250,
+                "reliability_target": 0.99,
+                "request_bytes": 4096,
+                "response_bytes": 2048,
+                "wan_rtt_max_ms": 180,
+                "wan_jitter_max_ms": 30,
+                "wan_loss_max_pct": 5,
+                "command": "客厅有点暗",
+                "purpose": "Fixed planner contract, not a model accuracy benchmark"
+              },
+              "estimate_scope": "configured inference estimates; unmeasured bandwidth and queue remain unknown"
+            },
+            "latency": {
+              "probe_ms": 0.15,
+              "policy_ms": 0.938,
+              "backend_ms": 224.118,
+              "total_user_ms": 225.206
+            },
+            "semantic_complete": false,
+            "interface_ok": true,
+            "response": {
+              "source": "real-model",
+              "configured_model": "Qwen2.5-1.5B-Instruct-Q4_K_M",
+              "gpu_info": "unknown",
+              "gpu_info_source": "environment_declared",
+              "model_revision": "6a1a2eb6d15622bf3c96857206351ba97e1af16c30d7a74ee38970e434e9407e",
+              "model_revision_source": "environment_declared",
+              "tier": "local",
+              "answer": "请提供具体命令或操作",
+              "actions": [],
+              "plan_valid": true,
+              "semantic_complete": false,
+              "model_ms": 222.917,
+              "model_ms_kind": "upstream_http_wall_clock",
+              "model_ms_source": "measured",
+              "upstream_model": "Qwen2.5-1.5B-Instruct-Q4_K_M",
+              "upstream_usage": {
+                "completion_tokens": 14,
+                "prompt_tokens": 700,
+                "total_tokens": 714,
+                "prompt_tokens_details": {
+                  "cached_tokens": 571
+                }
+              },
+              "actual_backend": "local-model",
+              "recovery": {
+                "attempted": false,
+                "from": "local-model",
+                "to": "cloud-model",
+                "actual_backend": "local-model",
+                "primary_error": null,
+                "primary_status": {
+                  "ok": true,
+                  "semantic_complete": false,
+                  "action_count": 0,
+                  "error": null,
+                  "failure_kind": null,
+                  "source": "real-model",
+                  "model_ms": 222.917
+                },
+                "secondary_status": null,
+                "primary_response": {
+                  "source": "real-model",
+                  "configured_model": "Qwen2.5-1.5B-Instruct-Q4_K_M",
+                  "gpu_info": "unknown",
+                  "gpu_info_source": "environment_declared",
+                  "model_revision": "6a1a2eb6d15622bf3c96857206351ba97e1af16c30d7a74ee38970e434e9407e",
+                  "model_revision_source": "environment_declared",
+                  "tier": "local",
+                  "answer": "请提供具体命令或操作",
+                  "actions": [],
+                  "plan_valid": true,
+                  "semantic_complete": false,
+                  "model_ms": 222.917,
+                  "model_ms_kind": "upstream_http_wall_clock",
+                  "model_ms_source": "measured",
+                  "upstream_model": "Qwen2.5-1.5B-Instruct-Q4_K_M",
+                  "upstream_usage": {
+                    "completion_tokens": 14,
+                    "prompt_tokens": 700,
+                    "total_tokens": 714,
+                    "prompt_tokens_details": {
+                      "cached_tokens": 571
+                    }
+                  }
+                },
+                "secondary_response": null,
+                "secondary_health": null,
+                "primary_ms": 223.801,
+                "health_ms": 0.0,
+                "secondary_ms": 0.0,
+                "elapsed_ms": 223.905,
+                "budget_ms": 10000.0,
+                "budget_scope": "secondary_launch_only",
+                "reason": "primary_success"
+              }
+            },
+            "actions": [],
+            "model_ms": 222.917,
+            "fallback_from": null,
+            "fallback_attempted": false,
+            "refusal_reason": null,
+            "error": null,
+            "source": "local-model:real-model",
+            "event_persisted": true
+          }
+        },
+        "wall_ms": 229.13940000580624
+      },
+      "after": {
+        "status": 200,
+        "body": {
+          "lights": {
+            "书房": {
+              "brightness": 0,
+              "is_on": false
+            },
+            "卧室": {
+              "brightness": 0,
+              "is_on": false
+            },
+            "厨房": {
+              "brightness": 0,
+              "is_on": false
+            },
+            "客厅": {
+              "brightness": 0,
+              "is_on": false
+            },
+            "室外": {
+              "brightness": 0,
+              "is_on": false
+            },
+            "浴室": {
+              "brightness": 0,
+              "is_on": false
+            }
+          },
+          "temperature": {
+            "书房": {
+              "humidity": 60.0,
+              "temp": 25.0
+            },
+            "卧室": {
+              "humidity": 60.0,
+              "temp": 25.0
+            },
+            "厨房": {
+              "humidity": 60.0,
+              "temp": 25.0
+            },
+            "客厅": {
+              "humidity": 60.0,
+              "temp": 25.0
+            },
+            "室外": {
+              "humidity": 60.0,
+              "temp": 25.0
+            },
+            "浴室": {
+              "humidity": 60.0,
+              "temp": 25.0
+            }
+          },
+          "curtains": {
+            "书房": {
+              "is_open": true,
+              "position": 100
+            },
+            "卧室": {
+              "is_open": true,
+              "position": 100
+            },
+            "厨房": {
+              "is_open": true,
+              "position": 100
+            },
+            "客厅": {
+              "is_open": true,
+              "position": 100
+            },
+            "室外": {
+              "is_open": true,
+              "position": 100
+            },
+            "浴室": {
+              "is_open": false,
+              "position": 0
+            }
+          },
+          "sensors": {
+            "客厅": {
+              "illuminance": 13094.3,
+              "motion_detected": true,
+              "door_open": false,
+              "window_open": false,
+              "pm25": 21.9,
+              "co2": 545.0,
+              "noise": 39.3,
+              "update_time": "14:49:30"
+            },
+            "卧室": {
+              "illuminance": 8904.5,
+              "motion_detected": false,
+              "door_open": false,
+              "window_open": false,
+              "pm25": 21.1,
+              "co2": 376.0,
+              "noise": 28.0,
+              "update_time": "14:49:30"
+            },
+            "厨房": {
+              "illuminance": 20573.1,
+              "motion_detected": true,
+              "door_open": true,
+              "window_open": false,
+              "pm25": 36.5,
+              "co2": 691.0,
+              "noise": 47.9,
+              "update_time": "14:49:30"
+            },
+            "浴室": {
+              "illuminance": 5164.9,
+              "motion_detected": false,
+              "door_open": false,
+              "window_open": true,
+              "pm25": 13.9,
+              "co2": 544.0,
+              "noise": 57.3,
+              "update_time": "14:49:30"
+            },
+            "书房": {
+              "illuminance": 12690.8,
+              "motion_detected": true,
+              "door_open": false,
+              "window_open": false,
+              "pm25": 14.7,
+              "co2": 367.0,
+              "noise": 20.0,
+              "update_time": "14:49:30"
+            },
+            "室外": {
+              "illuminance": 52440.5,
+              "motion_detected": false,
+              "door_open": false,
+              "window_open": false,
+              "pm25": 60.1,
+              "co2": 408.0,
+              "noise": 60.9,
+              "update_time": "14:49:30"
+            }
+          },
+          "security": {
+            "mode": "off",
+            "armed": false,
+            "alarm_triggered": false
+          },
+          "_mqtt_observation": {
+            "platform_id": "software-home",
+            "state_version": 0,
+            "scope": "current-software-platform-observation",
+            "physical_execution_confirmed": false
+          }
+        },
+        "wall_ms": 35.545999999158084
+      },
+      "receipt_query": {
+        "status": 200,
+        "body": {
+          "command_id": "video-v4-03",
+          "execution_state": "unknown",
+          "semantic_complete": false,
+          "actions": [],
+          "error": "COMMAND_NOT_FOUND",
+          "physical_execution_confirmed": false,
+          "current_platform_observation": {
+            "evidence_kind": "mqtt-software-entity",
+            "platform_id": "software-home",
+            "schema": "sensehome.software-state.v1",
+            "software_state": {
+              "curtains": {
+                "书房": {
+                  "is_open": true,
+                  "position": 100
+                },
+                "卧室": {
+                  "is_open": true,
+                  "position": 100
+                },
+                "厨房": {
+                  "is_open": true,
+                  "position": 100
+                },
+                "客厅": {
+                  "is_open": true,
+                  "position": 100
+                },
+                "室外": {
+                  "is_open": true,
+                  "position": 100
+                },
+                "浴室": {
+                  "is_open": false,
+                  "position": 0
+                }
+              },
+              "lights": {
+                "书房": {
+                  "brightness": 0,
+                  "is_on": false
+                },
+                "卧室": {
+                  "brightness": 0,
+                  "is_on": false
+                },
+                "厨房": {
+                  "brightness": 0,
+                  "is_on": false
+                },
+                "客厅": {
+                  "brightness": 0,
+                  "is_on": false
+                },
+                "室外": {
+                  "brightness": 0,
+                  "is_on": false
+                },
+                "浴室": {
+                  "brightness": 0,
+                  "is_on": false
+                }
+              },
+              "security": {
+                "alarm_triggered": false,
+                "armed": false,
+                "mode": "off"
+              },
+              "sensors": {
+                "书房": {
+                  "co2": 426.0,
+                  "door_open": false,
+                  "illuminance": 13374.0,
+                  "motion_detected": false,
+                  "noise": 16.9,
+                  "pm25": 19.9,
+                  "update_time": "10:53:04",
+                  "window_open": false
+                },
+                "卧室": {
+                  "co2": 383.0,
+                  "door_open": false,
+                  "illuminance": 7456.5,
+                  "motion_detected": false,
+                  "noise": 26.8,
+                  "pm25": 21.7,
+                  "update_time": "10:53:04",
+                  "window_open": false
+                },
+                "厨房": {
+                  "co2": 533.0,
+                  "door_open": false,
+                  "illuminance": 21137.9,
+                  "motion_detected": false,
+                  "noise": 58.8,
+                  "pm25": 40.1,
+                  "update_time": "10:53:04",
+                  "window_open": false
+                },
+                "客厅": {
+                  "co2": 598.0,
+                  "door_open": false,
+                  "illuminance": 17324.0,
+                  "motion_detected": true,
+                  "noise": 32.0,
+                  "pm25": 22.5,
+                  "update_time": "10:53:04",
+                  "window_open": false
+                },
+                "室外": {
+                  "co2": 361.0,
+                  "door_open": false,
+                  "illuminance": 52851.5,
+                  "motion_detected": false,
+                  "noise": 70.7,
+                  "pm25": 56.7,
+                  "update_time": "10:53:04",
+                  "window_open": false
+                },
+                "浴室": {
+                  "co2": 446.0,
+                  "door_open": false,
+                  "illuminance": 4925.7,
+                  "motion_detected": false,
+                  "noise": 40.7,
+                  "pm25": 17.6,
+                  "update_time": "10:53:04",
+                  "window_open": false
+                }
+              },
+              "temperature": {
+                "书房": {
+                  "humidity": 60.0,
+                  "temp": 25.0
+                },
+                "卧室": {
+                  "humidity": 60.0,
+                  "temp": 25.0
+                },
+                "厨房": {
+                  "humidity": 60.0,
+                  "temp": 25.0
+                },
+                "客厅": {
+                  "humidity": 60.0,
+                  "temp": 25.0
+                },
+                "室外": {
+                  "humidity": 60.0,
+                  "temp": 25.0
+                },
+                "浴室": {
+                  "humidity": 60.0,
+                  "temp": 25.0
+                }
+              }
+            },
+            "state_version": 0
+          }
+        },
+        "wall_ms": 16.501899997820146
+      }
+    }
+  ]
+}

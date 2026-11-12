@@ -1,0 +1,11 @@
+{
+  "schema_version": "sensehome.dataset-use-transition.v1",
+  "dataset_sha256": "908c302a1e50a892301773d82ce1e0687086f6d73abba1c0de83e811bf74a9b0",
+  "original_label_status": "programmatically_derived_not_human_reviewed",
+  "first_run": "../challenge_12_final_repeat3",
+  "first_run_scope": "frozen before first challenge inference; no tuning on this collection before first run",
+  "development_trigger": ["D02 underspecified device request caused guessed mutations", "U01 unsupported-device compound request caused partial mutations"],
+  "subsequent_use_scope": "development_regression",
+  "prohibited_claim": "Subsequent patched runs are not unseen generalization or an independent holdout",
+  "frozen_labels_modified": false
+}

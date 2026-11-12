@@ -1,0 +1,160 @@
+{
+  "schema": "sensehome.intrinsic-repair.v5",
+  "finalized_at_utc": "2026-11-12T04:24:18.507210+00:00",
+  "status": "implemented_and_verified_within_software_scope",
+  "fixes": [
+    {
+      "id": "F01",
+      "description": "完整目标与当前状态验收",
+      "status": "implemented_and_tested"
+    },
+    {
+      "id": "F02",
+      "description": "规则理解与空计划恢复",
+      "status": "implemented_and_tested"
+    },
+    {
+      "id": "F03",
+      "description": "会话澄清与目标持久合同",
+      "status": "implemented_and_tested"
+    },
+    {
+      "id": "F04",
+      "description": "有界HTTP并发与非阻塞查询",
+      "status": "implemented_and_tested"
+    },
+    {
+      "id": "F05",
+      "description": "规划至发布的绝对截止时间",
+      "status": "implemented_and_tested"
+    },
+    {
+      "id": "F06",
+      "description": "MQTT断连恢复与未知只查询",
+      "status": "implemented_and_tested"
+    },
+    {
+      "id": "F07",
+      "description": "采样时间与状态新鲜度",
+      "status": "implemented_and_tested"
+    },
+    {
+      "id": "F08",
+      "description": "页面幂等、历史回查与等待退出",
+      "status": "implemented_and_tested"
+    },
+    {
+      "id": "F09",
+      "description": "统一场景巡检与能力范围",
+      "status": "implemented_and_tested"
+    },
+    {
+      "id": "F10",
+      "description": "完整应用持久重启与目录锁",
+      "status": "implemented_and_tested"
+    },
+    {
+      "id": "F11",
+      "description": "真实适配器观测和分任务在线代价",
+      "status": "implemented_and_tested"
+    }
+  ],
+  "python_active_source": {
+    "tests_passed": 384,
+    "subtests_passed": 194,
+    "seconds": 169.96,
+    "log": "_work/intrinsic_fix/checks_20261112T042109Z/python_tests.txt",
+    "runner_receipt": "_work/intrinsic_fix/checks_20261112T042109Z/result.json"
+  },
+  "historical_compatibility": {
+    "tests_passed": 5,
+    "log": "_work/intrinsic_fix/checks_20261112T042109Z/historical_compatibility_tests.txt",
+    "separate_interpreter": true
+  },
+  "javascript": {
+    "tests_passed": 5,
+    "log": "_work/intrinsic_fix/dashboard_final.txt"
+  },
+  "real_model_smokes": [
+    {
+      "summary": "_work/intrinsic_fixes/real_smoke_20261112T034709Z_ea07f57a/summary.json",
+      "sha256": "4d2f76c657fa13e4a90b4052db88d33cb74318ec4e2faae625bec38e2c718a6f",
+      "status": "failed_or_incomplete",
+      "real_model_http_post_count": 1,
+      "complex_task_complete": false,
+      "checks_count": 16,
+      "failed_checks": [
+        "complex_task_complete"
+      ]
+    },
+    {
+      "summary": "_work/intrinsic_fixes/real_smoke_20261112T041541Z_63d214ad/summary.json",
+      "sha256": "848ac67d26c4c38d9dabf424fa89befeafcf7ae819e82f67ce879ae2b8b1b1e0",
+      "status": "failed_or_incomplete",
+      "real_model_http_post_count": 2,
+      "complex_task_complete": false,
+      "checks_count": 16,
+      "failed_checks": [
+        "complex_task_complete"
+      ]
+    },
+    {
+      "summary": "_work/intrinsic_fixes/real_smoke_20261112T042041Z_4ab4a80a/summary.json",
+      "sha256": "9581c6bfbce0b399a1afc64ec3a0c16e819571929c08bd691e58277de22ba056",
+      "status": "passed",
+      "real_model_http_post_count": 2,
+      "complex_task_complete": true,
+      "checks_count": 16,
+      "failed_checks": []
+    }
+  ],
+  "independent_review": "docs/intrinsic_v5/final_review.md",
+  "source_sha256": {
+    "SenseHome-6G/net_offload/backends/openai_backend.py": "8e6da06ec10406e424fd2aef7eba4b334acc88f660ae34e63be4f396b6a69f39",
+    "SenseHome-6G/net_offload/command_requests.py": "151ead39572b7ffb2a9b3e58afab88508f525ced3868e70715b10bbcf51f3afe",
+    "SenseHome-6G/net_offload/durable_receipts.py": "94dbc947081bf49b7c9272010233d78a61c869b84a0dab4227a9935193b52bfb",
+    "SenseHome-6G/net_offload/mqtt_receipts.py": "f52887e7f3c787eceef9177b8a538e444e67e6c2297ed60f7368070d5dadd310",
+    "SenseHome-6G/net_offload/offload_gateway.py": "b4613726ce03c202d33bad065552643aa3cdbe8cda1f8864992a32badaa39cd3",
+    "SenseHome-6G/net_offload/online_metrics.py": "c36a6ce592c1c80540cdbb23b8eeccbb193b1c04cb5f55c2acf9ab9364d5ff2b",
+    "SenseHome-6G/net_offload/resource_policy.py": "c8a8cd23fa7877116867d7961341e5322a3d7cae04fb641c162167b260fac706",
+    "SenseHome-6G/net_offload/target_contract.py": "52b89e4850595c69b5ecbf430594a59e3858245549beb2cbfbdea4a554e20c07",
+    "docs/demo_v3/planning_recovery.py": "0e1329223325b4b0f5637afde40f97c46fd8214ad85707dcfb3400dd673c743a",
+    "docs/demo_v3/run_live.py": "b7e8bebd39c7fa05bd534d30e9d23ea7ec36ec17f9fb2cbda0dc599aa578d4f8",
+    "docs/demo_v4/live_v4.py": "3fe2c270d43482169d16d7b8b75634de210241b5c45ebde49e67a16fdd4340a8",
+    "docs/deployment/fused_eval.py": "2e8272977fe4d625aabd009cf64fb587ed2caded1383c7803d68b2e91d32e9e4",
+    "docs/trial_v2/run_isolated_gateway.py": "82062794fedd4005fe8df728df28b79b4f0731831e822b68961ea92f51a57ca7",
+    "openvela_smart_home/dashboard/backend_monitor.py": "a6506decb238a099f6def9090c13bfeeecfce55e69f7eae3c3d7aad686002229",
+    "openvela_smart_home/dashboard/bounded_http.py": "de7fc7fb613901ae3a4278f738f38f1434a2b813b39dd44e31cc670d21903215",
+    "openvela_smart_home/dashboard/bridge_server.py": "e0078d4e1afcecaadcc64a787c0647df4a782062552b1f0da521ec1f6f891de0",
+    "openvela_smart_home/dashboard/clarification_sessions.py": "a2ca98d285b1c05292977fce6e967cb3abbc889f7a6423ec21debc00f7ea4e6d",
+    "openvela_smart_home/dashboard/device_actions.py": "b0ad12762be33a617991924c0cdcef536fd326484b8d094114cadc46fa1baee6",
+    "openvela_smart_home/dashboard/state_freshness.py": "ac4eab463393a04868e85008a26cc01354bb3da181a53dc6d8e99ca757b54a79",
+    "openvela_smart_home/dashboard/web_panel.html": "a13340ad1837bf231e3a29fbfa6715d3e87af0360b02a79911a0c11b53474642",
+    "openvela_smart_home/device_state.json": "22a1550ab65c3db310291c778f67e9d0b3a8b19838a1ebc6fd40ca79f33e929d",
+    "openvela_smart_home/offload_events.jsonl": "f8871ff4c70a5c03e5fbd7e6fc32ea224a61c6cae34279545c674ae3da3abc54"
+  },
+  "protected_files_unchanged": true,
+  "sealed_preservation": {
+    "preserved_package_count": 6,
+    "preservation_checks": 137,
+    "preservation_matches": 137,
+    "preservation_mismatches": [],
+    "material_reference_checks": 93,
+    "material_reference_matches": 93,
+    "material_reference_mismatches": [],
+    "current_source_differences": 24
+  },
+  "scope": {
+    "devices": "MQTT software entities / isolated local simulation",
+    "physical_execution_confirmed": false,
+    "actual_6g_measurement": false,
+    "joint_superiority_proved": false,
+    "model_quality_scope": "one development smoke command per code version; all three rounds retained; no population accuracy claim",
+    "security_arming": "not supported; full leave-home task remains incomplete"
+  },
+  "historical_failures": {
+    "mqtt_startup_timeout": "One full run timed out on broker startup; isolated 1/1 plus lifecycle 7/7 and final full run passed; no timeout increase.",
+    "first_two_model_smokes": "Retained unmodified; empty primary, then invalid secondary; no action or false completion.",
+    "root_pytest_collection": "45 old snapshot module-name conflicts; active and frozen compatibility suites run separately."
+  }
+}

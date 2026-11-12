@@ -1,0 +1,90 @@
+{
+  "schema_version": "sensehome.programmatic-holdout-registration.v1",
+  "registered_at": "2026-11-10T18:53:51.831996+00:00",
+  "status": "frozen_before_any_holdout_model_inference",
+  "seed": 2026111126,
+  "n_cases": 12,
+  "repeat": 3,
+  "arms": [
+    "fixed-local",
+    "fixed-cloud",
+    "network-only",
+    "joint"
+  ],
+  "expected_raw_rows": 144,
+  "label_status": "preregistered_programmatic_holdout_not_human_reviewed",
+  "scope": "programmatic combination holdout under frozen implementation; not human-language or real-user generalization",
+  "generation_rules": {
+    "rooms_in_order": [
+      "客厅",
+      "卧室",
+      "厨房",
+      "浴室",
+      "书房",
+      "室外"
+    ],
+    "percentage_pool": [
+      11,
+      17,
+      26,
+      34,
+      39,
+      47,
+      53,
+      62,
+      69,
+      73,
+      82,
+      91
+    ],
+    "random_operations": "random.Random(seed); sample 12 percentages without replacement, then sample 10 ordered room pairs without replacement within each pair",
+    "numeric_cases": "4 cross-room light/curtain combinations; alternating device order; successive sampled percentages",
+    "switch_cases": "2 cross-room light on + curtain close / light off + curtain open combinations",
+    "read_cases": "2 dual-room temperature/humidity requests",
+    "ambiguity_cases": "1 missing room curtain percentage; 1 specified room but unspecified device",
+    "unsupported_cases": "2 mixed requests with plug or air conditioner plus an allowlisted light action; whole request expects no action",
+    "collision_rule": "all exact commands distinct and absent from both prior datasets; no outcome-based resampling"
+  },
+  "post_run_rule": "one evaluation only; preserve every response/failure; no prompt, guard, configuration, dataset or model tuning based on these results",
+  "dataset_file": "holdout.programmatic.jsonl",
+  "dataset_sha256": "7fcd602bd87d631223ddc17008fca022f42f995e38996e230906c85197e9f2a1",
+  "generator_sha256": "f49a4da8e260e26bee2a68676761e39f91405f9629b9ff213a2893f16160d444",
+  "source_sha256": {
+    "docs\\deployment\\fused_eval.py": "37c8060aea5ee827a871a2b2624fc64f9134fbd125d8a15d0dc2ba7a046d14ca",
+    "SenseHome-6G\\net_offload\\offload_gateway.py": "d9f63dc5b6ffe73266777d8100e29842fce2d13005fd08baee8c997bf36793ef",
+    "SenseHome-6G\\net_offload\\resource_policy.py": "84a924664541b2e21458fa4e78130b1d31ee4e5f16ff6e859d11d951c23b3593",
+    "SenseHome-6G\\net_offload\\offload_policy.c": "58a772ddf879bb14480a3d715ac97b34fc64f811274a4a76a66c123f2c8f8135",
+    "SenseHome-6G\\net_offload\\offload_policy.h": "304ff38f9685bbd7bbf7fd2c2602dcf19e9c74a25d127b9f1070aa749c891702",
+    "SenseHome-6G\\net_offload\\policy_cli.c": "c88b50574b5b29a9bca81fe46bab26d7f8e6710edf24e514ee0c632349af82b8",
+    "SenseHome-6G\\net_offload\\backends\\openai_backend.py": "c8e82dc2f9693cede4417fc73df9e487266aea400b6aca7c0978155a58e3d7d5",
+    "SenseHome-6G\\net_offload\\eval_model.py": "2e6bd2f615590d3639061c59bcb8d8012fba9916a5130a3148b03283544c1395",
+    "openvela_smart_home\\dashboard\\bridge_server.py": "16c0edf80492483464f9796a678cfce9f2f91a284db83fba6758720bd1785770",
+    "openvela_smart_home\\dashboard\\device_actions.py": "b639e8e294e03a0171cea74ceaa2d9f2bae5c26166f019908e93af0265865698",
+    "SenseHome-6G\\net_offload\\policy_cli.exe": "04c8f57dd7c26a8168540c67410f9e5a63f4e818c3c5a97841c1510f6a2db72e"
+  },
+  "previous_dataset_sha256": {
+    "SenseHome-6G\\net_offload\\backends\\eval_commands.reviewed.jsonl": "3a2d50c6dca46712df5b1c26fdf6fbcfa0f76a79164b9c99f3cc07be9d7e0b06",
+    "docs\\experiments\\20261111_fused_real\\challenge_frozen\\challenge.programmatic.jsonl": "908c302a1e50a892301773d82ce1e0687086f6d73abba1c0de83e811bf74a9b0"
+  },
+  "calibration_sha256": "d30a6d3db818f044572cce3a4c0c49eebb8bcd9e37fbe0ec679ad1c8079c234f",
+  "calibration_cost_ms": {
+    "local": 1116,
+    "cloud": 1361
+  },
+  "policy_config": {
+    "schema_version": "sensehome.policy.v1",
+    "queue_max_ms": 300,
+    "inflight_max": 8,
+    "free_mem_min_mb": 256,
+    "local_infer_ms": 1116,
+    "cloud_infer_ms": 1361,
+    "switch_margin_ms": 15,
+    "recovery_samples": 3,
+    "timeout_ms": 800,
+    "observation_max_age_ms": 2000,
+    "observation_lookup_ms": 0.2,
+    "policy_model_ms": 0.2,
+    "execution_model_ms": 0.1,
+    "rule_model_ms": 1
+  }
+}

@@ -1,0 +1,273 @@
+{
+  "n_rows": 72,
+  "n_skipped": 0,
+  "n_runner_failed": 0,
+  "aggregation_rule": "source classes remain separate; no pooled real/synthetic accuracy or latency",
+  "by_arm_and_evidence": {
+    "fixed-local": {
+      "real-model": {
+        "n_rows": 18,
+        "n_model_http_ok": 18,
+        "n_interface_ok": 18,
+        "n_action_correct": 18,
+        "n_action_scorable": 18,
+        "n_state_outcome_correct": 18,
+        "n_simulated_execution_success": 18,
+        "n_completed": 18,
+        "n_raw_model_action_match": 18,
+        "n_normalized_model_action_match": 18,
+        "n_empty_expected": 0,
+        "n_empty_expected_structure_match": 0,
+        "n_protection_refusal": 0,
+        "n_failures": 0,
+        "model_calls": 18,
+        "gateway_median_ms": 815.6205,
+        "gateway_p95_ms": 911.987
+      }
+    },
+    "fixed-cloud": {
+      "real-model": {
+        "n_rows": 18,
+        "n_model_http_ok": 18,
+        "n_interface_ok": 18,
+        "n_action_correct": 18,
+        "n_action_scorable": 18,
+        "n_state_outcome_correct": 18,
+        "n_simulated_execution_success": 18,
+        "n_completed": 18,
+        "n_raw_model_action_match": 18,
+        "n_normalized_model_action_match": 18,
+        "n_empty_expected": 0,
+        "n_empty_expected_structure_match": 0,
+        "n_protection_refusal": 0,
+        "n_failures": 0,
+        "model_calls": 18,
+        "gateway_median_ms": 645.163,
+        "gateway_p95_ms": 809.256
+      }
+    },
+    "network-only": {
+      "real-model": {
+        "n_rows": 12,
+        "n_model_http_ok": 12,
+        "n_interface_ok": 12,
+        "n_action_correct": 12,
+        "n_action_scorable": 12,
+        "n_state_outcome_correct": 12,
+        "n_simulated_execution_success": 12,
+        "n_completed": 12,
+        "n_raw_model_action_match": 12,
+        "n_normalized_model_action_match": 12,
+        "n_empty_expected": 0,
+        "n_empty_expected_structure_match": 0,
+        "n_protection_refusal": 0,
+        "n_failures": 0,
+        "model_calls": 12,
+        "gateway_median_ms": 710.7764999999999,
+        "gateway_p95_ms": 883.786
+      },
+      "local-rules": {
+        "n_rows": 6,
+        "n_model_http_ok": 0,
+        "n_interface_ok": 6,
+        "n_action_correct": 0,
+        "n_action_scorable": 6,
+        "n_state_outcome_correct": 3,
+        "n_simulated_execution_success": 0,
+        "n_completed": 0,
+        "n_raw_model_action_match": 0,
+        "n_normalized_model_action_match": 0,
+        "n_empty_expected": 0,
+        "n_empty_expected_structure_match": 0,
+        "n_protection_refusal": 0,
+        "n_failures": 0,
+        "model_calls": 0,
+        "gateway_median_ms": 2.0075,
+        "gateway_p95_ms": 4.162
+      }
+    },
+    "joint": {
+      "real-model": {
+        "n_rows": 7,
+        "n_model_http_ok": 7,
+        "n_interface_ok": 7,
+        "n_action_correct": 7,
+        "n_action_scorable": 7,
+        "n_state_outcome_correct": 7,
+        "n_simulated_execution_success": 7,
+        "n_completed": 7,
+        "n_raw_model_action_match": 7,
+        "n_normalized_model_action_match": 7,
+        "n_empty_expected": 0,
+        "n_empty_expected_structure_match": 0,
+        "n_protection_refusal": 0,
+        "n_failures": 0,
+        "model_calls": 7,
+        "gateway_median_ms": 581.119,
+        "gateway_p95_ms": 839.181
+      },
+      "local-rules": {
+        "n_rows": 11,
+        "n_model_http_ok": 0,
+        "n_interface_ok": 11,
+        "n_action_correct": 0,
+        "n_action_scorable": 11,
+        "n_state_outcome_correct": 6,
+        "n_simulated_execution_success": 0,
+        "n_completed": 0,
+        "n_raw_model_action_match": 0,
+        "n_normalized_model_action_match": 0,
+        "n_empty_expected": 0,
+        "n_empty_expected_structure_match": 0,
+        "n_protection_refusal": 0,
+        "n_failures": 0,
+        "model_calls": 0,
+        "gateway_median_ms": 2.019,
+        "gateway_p95_ms": 2.609
+      }
+    }
+  },
+  "paired_latency": {
+    "fixed-local": {
+      "n_valid_paired_rows": 7,
+      "joint_minus_baseline_median_ms": -15.95399999999995,
+      "scope": "same-input correctly planned real-model rows only; shared-host sequential interference remains"
+    },
+    "fixed-cloud": {
+      "n_valid_paired_rows": 7,
+      "joint_minus_baseline_median_ms": 61.275999999999954,
+      "scope": "same-input correctly planned real-model rows only; shared-host sequential interference remains"
+    },
+    "network-only": {
+      "n_valid_paired_rows": 7,
+      "joint_minus_baseline_median_ms": -29.384000000000015,
+      "scope": "same-input correctly planned real-model rows only; shared-host sequential interference remains"
+    }
+  },
+  "by_task_scope": {
+    "complex_planning": {
+      "fixed-local": {
+        "real-model": {
+          "n_rows": 18,
+          "n_model_http_ok": 18,
+          "n_interface_ok": 18,
+          "n_action_correct": 18,
+          "n_action_scorable": 18,
+          "n_state_outcome_correct": 18,
+          "n_simulated_execution_success": 18,
+          "n_completed": 18,
+          "n_raw_model_action_match": 18,
+          "n_normalized_model_action_match": 18,
+          "n_empty_expected": 0,
+          "n_empty_expected_structure_match": 0,
+          "n_protection_refusal": 0,
+          "n_failures": 0,
+          "model_calls": 18,
+          "gateway_median_ms": 815.6205,
+          "gateway_p95_ms": 911.987
+        }
+      },
+      "fixed-cloud": {
+        "real-model": {
+          "n_rows": 18,
+          "n_model_http_ok": 18,
+          "n_interface_ok": 18,
+          "n_action_correct": 18,
+          "n_action_scorable": 18,
+          "n_state_outcome_correct": 18,
+          "n_simulated_execution_success": 18,
+          "n_completed": 18,
+          "n_raw_model_action_match": 18,
+          "n_normalized_model_action_match": 18,
+          "n_empty_expected": 0,
+          "n_empty_expected_structure_match": 0,
+          "n_protection_refusal": 0,
+          "n_failures": 0,
+          "model_calls": 18,
+          "gateway_median_ms": 645.163,
+          "gateway_p95_ms": 809.256
+        }
+      },
+      "network-only": {
+        "real-model": {
+          "n_rows": 12,
+          "n_model_http_ok": 12,
+          "n_interface_ok": 12,
+          "n_action_correct": 12,
+          "n_action_scorable": 12,
+          "n_state_outcome_correct": 12,
+          "n_simulated_execution_success": 12,
+          "n_completed": 12,
+          "n_raw_model_action_match": 12,
+          "n_normalized_model_action_match": 12,
+          "n_empty_expected": 0,
+          "n_empty_expected_structure_match": 0,
+          "n_protection_refusal": 0,
+          "n_failures": 0,
+          "model_calls": 12,
+          "gateway_median_ms": 710.7764999999999,
+          "gateway_p95_ms": 883.786
+        },
+        "local-rules": {
+          "n_rows": 6,
+          "n_model_http_ok": 0,
+          "n_interface_ok": 6,
+          "n_action_correct": 0,
+          "n_action_scorable": 6,
+          "n_state_outcome_correct": 3,
+          "n_simulated_execution_success": 0,
+          "n_completed": 0,
+          "n_raw_model_action_match": 0,
+          "n_normalized_model_action_match": 0,
+          "n_empty_expected": 0,
+          "n_empty_expected_structure_match": 0,
+          "n_protection_refusal": 0,
+          "n_failures": 0,
+          "model_calls": 0,
+          "gateway_median_ms": 2.0075,
+          "gateway_p95_ms": 4.162
+        }
+      },
+      "joint": {
+        "real-model": {
+          "n_rows": 7,
+          "n_model_http_ok": 7,
+          "n_interface_ok": 7,
+          "n_action_correct": 7,
+          "n_action_scorable": 7,
+          "n_state_outcome_correct": 7,
+          "n_simulated_execution_success": 7,
+          "n_completed": 7,
+          "n_raw_model_action_match": 7,
+          "n_normalized_model_action_match": 7,
+          "n_empty_expected": 0,
+          "n_empty_expected_structure_match": 0,
+          "n_protection_refusal": 0,
+          "n_failures": 0,
+          "model_calls": 7,
+          "gateway_median_ms": 581.119,
+          "gateway_p95_ms": 839.181
+        },
+        "local-rules": {
+          "n_rows": 11,
+          "n_model_http_ok": 0,
+          "n_interface_ok": 11,
+          "n_action_correct": 0,
+          "n_action_scorable": 11,
+          "n_state_outcome_correct": 6,
+          "n_simulated_execution_success": 0,
+          "n_completed": 0,
+          "n_raw_model_action_match": 0,
+          "n_normalized_model_action_match": 0,
+          "n_empty_expected": 0,
+          "n_empty_expected_structure_match": 0,
+          "n_protection_refusal": 0,
+          "n_failures": 0,
+          "model_calls": 0,
+          "gateway_median_ms": 2.019,
+          "gateway_p95_ms": 2.609
+        }
+      }
+    }
+  }
+}

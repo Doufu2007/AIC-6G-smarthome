@@ -1,0 +1,72 @@
+FFFFFF                                                                   [100%]
+================================== FAILURES ===================================
+_ test_cli_serves_page_and_real_rules_success_failure_then_stops_without_touching_originals _
+
+private_run = WindowsPath('C:/Users/郑傅韬/Desktop/大学生活/AIC/AIC6G专项赛_2026/场景赛道/_work/demo_v3/automated_live_test_c7abyhd6/new_run')
+
+    def test_cli_serves_page_and_real_rules_success_failure_then_stops_without_touching_originals(private_run):
+        script = HERE / 'run_live.py'
+>       assert script.is_file(), 'The one-command live runner is missing'
+E       AssertionError: The one-command live runner is missing
+E       assert False
+E        +  where False = is_file()
+E        +    where is_file = WindowsPath('C:/Users/郑傅韬/Desktop/大学生活/AIC/AIC6G专项赛_2026/场景赛道/docs/demo_v3/run_live.py').is_file
+
+docs\demo_v3\test_run_live.py:53: AssertionError
+_____ test_import_factory_binds_loopback_and_closes_even_without_serving ______
+
+private_run = WindowsPath('C:/Users/郑傅韬/Desktop/大学生活/AIC/AIC6G专项赛_2026/场景赛道/_work/demo_v3/automated_live_test_pfek3_nn/new_run')
+
+    def test_import_factory_binds_loopback_and_closes_even_without_serving(private_run):
+>       import run_live
+E       ModuleNotFoundError: No module named 'run_live'
+
+docs\demo_v3\test_run_live.py:104: ModuleNotFoundError
+_______ test_run_directory_cannot_reuse_existing_or_escape_private_root _______
+
+private_run = WindowsPath('C:/Users/郑傅韬/Desktop/大学生活/AIC/AIC6G专项赛_2026/场景赛道/_work/demo_v3/automated_live_test_y7uu_8sx/new_run')
+tmp_path = WindowsPath('C:/Users/郑傅韬/AppData/Local/Temp/pytest-of-郑傅韬/pytest-502/test_run_directory_cannot_reus0')
+
+    def test_run_directory_cannot_reuse_existing_or_escape_private_root(private_run, tmp_path):
+>       import run_live
+E       ModuleNotFoundError: No module named 'run_live'
+
+docs\demo_v3\test_run_live.py:118: ModuleNotFoundError
+_____________ test_bind_failure_releases_real_policy_and_monitor ______________
+
+private_run = WindowsPath('C:/Users/郑傅韬/Desktop/大学生活/AIC/AIC6G专项赛_2026/场景赛道/_work/demo_v3/automated_live_test_w8j0i4rs/new_run')
+monkeypatch = <_pytest.monkeypatch.MonkeyPatch object at 0x000002422C3B82B0>
+
+    def test_bind_failure_releases_real_policy_and_monitor(private_run, monkeypatch):
+>       import run_live
+E       ModuleNotFoundError: No module named 'run_live'
+
+docs\demo_v3\test_run_live.py:131: ModuleNotFoundError
+_ test_models_wires_real_HTTP_adapters_C_choice_and_once_only_planner_recovery _
+
+private_run = WindowsPath('C:/Users/郑傅韬/Desktop/大学生活/AIC/AIC6G专项赛_2026/场景赛道/_work/demo_v3/automated_live_test_72zwhofj/new_run')
+monkeypatch = <_pytest.monkeypatch.MonkeyPatch object at 0x000002422C3B8640>
+
+    def test_models_wires_real_HTTP_adapters_C_choice_and_once_only_planner_recovery(private_run, monkeypatch):
+>       import run_live
+E       ModuleNotFoundError: No module named 'run_live'
+
+docs\demo_v3\test_run_live.py:213: ModuleNotFoundError
+___________ test_model_start_failure_still_closes_own_runtime_and_C ___________
+
+private_run = WindowsPath('C:/Users/郑傅韬/Desktop/大学生活/AIC/AIC6G专项赛_2026/场景赛道/_work/demo_v3/automated_live_test_he_rodfz/new_run')
+monkeypatch = <_pytest.monkeypatch.MonkeyPatch object at 0x000002422C30F2F0>
+
+    def test_model_start_failure_still_closes_own_runtime_and_C(private_run, monkeypatch):
+>       import run_live
+E       ModuleNotFoundError: No module named 'run_live'
+
+docs\demo_v3\test_run_live.py:249: ModuleNotFoundError
+=========================== short test summary info ===========================
+FAILED docs/demo_v3/test_run_live.py::test_cli_serves_page_and_real_rules_success_failure_then_stops_without_touching_originals
+FAILED docs/demo_v3/test_run_live.py::test_import_factory_binds_loopback_and_closes_even_without_serving
+FAILED docs/demo_v3/test_run_live.py::test_run_directory_cannot_reuse_existing_or_escape_private_root
+FAILED docs/demo_v3/test_run_live.py::test_bind_failure_releases_real_policy_and_monitor
+FAILED docs/demo_v3/test_run_live.py::test_models_wires_real_HTTP_adapters_C_choice_and_once_only_planner_recovery
+FAILED docs/demo_v3/test_run_live.py::test_model_start_failure_still_closes_own_runtime_and_C
+6 failed in 0.55s

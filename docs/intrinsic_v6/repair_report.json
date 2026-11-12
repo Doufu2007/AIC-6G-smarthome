@@ -1,0 +1,27 @@
+{
+  "schema": "sensehome.intrinsic-v6-repairs.v1",
+  "status": "verified",
+  "active_tests_passed": 423,
+  "active_subtests_passed": 258,
+  "historical_tests_passed": 5,
+  "client_tests_passed": 5,
+  "source_unchanged_during_checks": true,
+  "original_files_unchanged": true,
+  "fixed": [
+    "V6-01",
+    "V6-02",
+    "V6-03",
+    "V6-04",
+    "V6-05",
+    "V6-06",
+    "V6-07",
+    "corrupt-state-preservation",
+    "patrol-single-owner",
+    "bounded-explicit-compilation",
+    "original-planner-quality-counts",
+    "concurrent-schema-migration"
+  ],
+  "evidence_scope": "Isolated software regressions with controlled model responses and owned MQTT software entities. No new real model, hardware or 6G experiment.",
+  "checks": "checks/result.json",
+  "review": "code_review.md"
+}

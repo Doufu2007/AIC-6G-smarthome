@@ -1,0 +1,59 @@
+{
+  "schema": "sensehome.isolated-live-dashboard.v3",
+  "started_at_utc": "2026-11-11T06:43:52.289294+00:00",
+  "status": "stopped",
+  "binding": "127.0.0.1",
+  "mode": "rules-only",
+  "model_endpoints_configured": false,
+  "patrol_interval_s": 0,
+  "run_dir": "_work/demo_v3/live_20261111T064352_a209d9c4",
+  "record_kind": "developer_self_test",
+  "scope": "Original C selection and gateway executor; optional Python alternate planner; PC JSON devices. Two model slots share one local PC/GPU. No physical devices, external users, real WAN or 6G measurement.",
+  "protected_before_sha256": {
+    "openvela_smart_home/device_state.json": null,
+    "openvela_smart_home/offload_events.jsonl": null
+  },
+  "source_sha256": {
+    "openvela_smart_home/dashboard/bridge_server.py": "58e498e0a8827070c97591db9cadeec140337c687640f5b89a395b2c46eb7a63",
+    "openvela_smart_home/dashboard/device_actions.py": "b639e8e294e03a0171cea74ceaa2d9f2bae5c26166f019908e93af0265865698",
+    "openvela_smart_home/dashboard/backend_monitor.py": "f492423236e2b9c66bdb19499ed58097b0d93ec4273523674024fbc47eeb8507",
+    "openvela_smart_home/dashboard/web_panel.html": "2828245613d5b23dea4c0f875818929b05f34ccdba3b422b9f0d5a10b9fd6afd",
+    "SenseHome-6G/net_offload/offload_policy.c": "58a772ddf879bb14480a3d715ac97b34fc64f811274a4a76a66c123f2c8f8135",
+    "SenseHome-6G/net_offload/policy_cli.exe": "04c8f57dd7c26a8168540c67410f9e5a63f4e818c3c5a97841c1510f6a2db72e",
+    "docs/demo_v3/runtime.py": "330a01159f79dda885c8acd137607d111b59ad959676689548039fb47c291ac5",
+    "docs/demo_v3/planning_recovery.py": "5706f7514fec3ea4454d6d7fa4eebab769c64e2a60bd68bcca1de680e8c8f553",
+    "docs/demo_v3/run_live.py": "712d8db2d006c0f51d08451ac0d45d7252a6668587d024b6239dcc17178a9bcf",
+    "docs/deployment/fused_eval.py": null
+  },
+  "health_source": "actual backend health HTTP requests, cached by production BackendMonitor; unobserved queue, memory, jitter, loss and bandwidth remain unknown",
+  "policy_config": {
+    "schema_version": "sensehome.policy.v1",
+    "queue_max_ms": 300,
+    "inflight_max": 8,
+    "free_mem_min_mb": 256,
+    "local_infer_ms": 1116,
+    "cloud_infer_ms": 1361,
+    "switch_margin_ms": 15,
+    "recovery_samples": 3,
+    "timeout_ms": 800,
+    "observation_max_age_ms": 2000,
+    "observation_lookup_ms": 0.2,
+    "policy_model_ms": 0.2,
+    "execution_model_ms": 0.1,
+    "rule_model_ms": 1
+  },
+  "policy_arm": "rules-only",
+  "owned_policy_pid": 29996,
+  "calibration_source": "docs/experiments/20261111_fused_real/reviewed_20_sealed_repeat3/calibration.json",
+  "calibration_sha256": "d30a6d3db818f044572cce3a4c0c49eebb8bcd9e37fbe0ec679ad1c8079c234f",
+  "port": 61131,
+  "gateway_url": "http://127.0.0.1:61131",
+  "monitor_thread_stopped": true,
+  "policy_process_exit_code": 0,
+  "finished_at_utc": "2026-11-11T06:45:53.226426+00:00",
+  "protected_after_sha256": {
+    "openvela_smart_home/device_state.json": null,
+    "openvela_smart_home/offload_events.jsonl": null
+  },
+  "original_state_and_events_unchanged": true
+}

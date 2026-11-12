@@ -230,7 +230,7 @@ class RecoveryContractTests(unittest.TestCase):
                 packager.build(bundle)
             with zipfile.ZipFile(bundle) as archive:
                 archive.extractall(base / "unpacked")
-                self.assertEqual(len(archive.namelist()), 6)
+                self.assertEqual(len(archive.namelist()), 7)
                 self.assertFalse(any("reviewed" in name for name in archive.namelist()))
             unpacked = base / "unpacked"
             manifest = json.loads((unpacked / "bundle-manifest.json").read_text(encoding="utf-8"))

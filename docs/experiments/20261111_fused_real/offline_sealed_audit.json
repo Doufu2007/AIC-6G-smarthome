@@ -1,0 +1,334 @@
+{
+  "schema_version": "sensehome.offline-sealed-audit.v1",
+  "checked_at_utc": "2026-11-10T19:09:35.026127+00:00",
+  "reviewer": "primary agent offline verification; not a fresh independent review",
+  "status": "passed",
+  "no_http_or_inference_calls": true,
+  "n_saved_rows": 600,
+  "n_actual_model_http_calls": 415,
+  "n_readonly_health_http_calls": 300,
+  "holdout_registration": {
+    "registered_at": "2026-11-10T18:53:51.831996+00:00",
+    "run_started_at": "2026-11-10T18:53:52.918805+00:00",
+    "registered_before_run": true,
+    "data_source_calibration_config_match": true,
+    "exact_command_overlap_with_previous_sets": 0,
+    "registration_sha256": "6bfdbcae57bf87636b7a25e322fc20eec9fed65f000e637b0df7ac589aa7ce85",
+    "dataset_sha256": "7fcd602bd87d631223ddc17008fca022f42f995e38996e230906c85197e9f2a1",
+    "scope": "programmatic combination holdout under frozen implementation; not human-language or real-user generalization"
+  },
+  "runs": {
+    "reviewed_20_sealed_repeat3": {
+      "status": "finished",
+      "n_rows": 240,
+      "n_pair_blocks": 60,
+      "n_model_http_calls": 84,
+      "n_health_http_calls": 120,
+      "n_runner_failed": 0,
+      "n_skipped": 0,
+      "dataset": {
+        "sha256": "3a2d50c6dca46712df5b1c26fdf6fbcfa0f76a79164b9c99f3cc07be9d7e0b06",
+        "label_status": "human_reviewed",
+        "label_sources": [
+          "human_reviewed_freeze_20261103"
+        ],
+        "use_scope": "human_frozen_regression"
+      },
+      "per_arm": {
+        "fixed-local": {
+          "n_rows": 60,
+          "nonempty_n": 36,
+          "nonempty_completed": 36,
+          "empty_n": 24,
+          "empty_no_action_no_mutation": 24,
+          "protection_refusals": 6,
+          "upstream_model_calls": 21
+        },
+        "fixed-cloud": {
+          "n_rows": 60,
+          "nonempty_n": 36,
+          "nonempty_completed": 36,
+          "empty_n": 24,
+          "empty_no_action_no_mutation": 24,
+          "protection_refusals": 3,
+          "upstream_model_calls": 21
+        },
+        "network-only": {
+          "n_rows": 60,
+          "nonempty_n": 36,
+          "nonempty_completed": 36,
+          "empty_n": 24,
+          "empty_no_action_no_mutation": 24,
+          "protection_refusals": 6,
+          "upstream_model_calls": 21
+        },
+        "joint": {
+          "n_rows": 60,
+          "nonempty_n": 36,
+          "nonempty_completed": 36,
+          "empty_n": 24,
+          "empty_no_action_no_mutation": 24,
+          "protection_refusals": 6,
+          "upstream_model_calls": 21
+        }
+      },
+      "sha256": {
+        "report.json": "d695368596da69fe400cea10991584932742cd43bd60bd85ab16290693725322",
+        "rows.jsonl": "9fa73ba1a74b1ddb66a64e2fac7dd9d8050ab09a45ed03a4fbab3f978143314b",
+        "blocks.jsonl": "29ff0734959a5e21ad5a390f545295965ea1045f4f00abfdca1ef06d6881f49d",
+        "summary.json": "b0ed9da27872aba21cad050485c0b7106c024774ff5b9d18da19afee605d4f7f",
+        "summary.md": "3b8e947cac8ed4f67071ca26ad4af56771d5ecd40dfa664c7f8a30182ac7b7a5",
+        "calibration.json": "d30a6d3db818f044572cce3a4c0c49eebb8bcd9e37fbe0ec679ad1c8079c234f"
+      },
+      "source_sha256": {
+        "docs\\deployment\\fused_eval.py": "37c8060aea5ee827a871a2b2624fc64f9134fbd125d8a15d0dc2ba7a046d14ca",
+        "SenseHome-6G\\net_offload\\offload_gateway.py": "d9f63dc5b6ffe73266777d8100e29842fce2d13005fd08baee8c997bf36793ef",
+        "SenseHome-6G\\net_offload\\resource_policy.py": "84a924664541b2e21458fa4e78130b1d31ee4e5f16ff6e859d11d951c23b3593",
+        "SenseHome-6G\\net_offload\\offload_policy.c": "58a772ddf879bb14480a3d715ac97b34fc64f811274a4a76a66c123f2c8f8135",
+        "SenseHome-6G\\net_offload\\offload_policy.h": "304ff38f9685bbd7bbf7fd2c2602dcf19e9c74a25d127b9f1070aa749c891702",
+        "SenseHome-6G\\net_offload\\policy_cli.c": "c88b50574b5b29a9bca81fe46bab26d7f8e6710edf24e514ee0c632349af82b8",
+        "SenseHome-6G\\net_offload\\backends\\openai_backend.py": "c8e82dc2f9693cede4417fc73df9e487266aea400b6aca7c0978155a58e3d7d5",
+        "SenseHome-6G\\net_offload\\eval_model.py": "2e6bd2f615590d3639061c59bcb8d8012fba9916a5130a3148b03283544c1395",
+        "openvela_smart_home\\dashboard\\bridge_server.py": "16c0edf80492483464f9796a678cfce9f2f91a284db83fba6758720bd1785770",
+        "openvela_smart_home\\dashboard\\device_actions.py": "b639e8e294e03a0171cea74ceaa2d9f2bae5c26166f019908e93af0265865698",
+        "SenseHome-6G\\net_offload\\policy_cli.exe": "04c8f57dd7c26a8168540c67410f9e5a63f4e818c3c5a97841c1510f6a2db72e"
+      },
+      "source_current_matches": true
+    },
+    "challenge_12_sealed_development_repeat3": {
+      "status": "finished",
+      "n_rows": 144,
+      "n_pair_blocks": 36,
+      "n_model_http_calls": 144,
+      "n_health_http_calls": 72,
+      "n_runner_failed": 0,
+      "n_skipped": 0,
+      "dataset": {
+        "sha256": "908c302a1e50a892301773d82ce1e0687086f6d73abba1c0de83e811bf74a9b0",
+        "label_status": "draft_labels_not_human_verified",
+        "label_sources": [
+          "programmatically_derived_not_human_reviewed"
+        ],
+        "use_scope": "development_regression"
+      },
+      "per_arm": {
+        "fixed-local": {
+          "n_rows": 36,
+          "nonempty_n": 18,
+          "nonempty_completed": 15,
+          "empty_n": 18,
+          "empty_no_action_no_mutation": 18,
+          "protection_refusals": 12,
+          "upstream_model_calls": 36
+        },
+        "fixed-cloud": {
+          "n_rows": 36,
+          "nonempty_n": 18,
+          "nonempty_completed": 12,
+          "empty_n": 18,
+          "empty_no_action_no_mutation": 18,
+          "protection_refusals": 18,
+          "upstream_model_calls": 36
+        },
+        "network-only": {
+          "n_rows": 36,
+          "nonempty_n": 18,
+          "nonempty_completed": 15,
+          "empty_n": 18,
+          "empty_no_action_no_mutation": 18,
+          "protection_refusals": 12,
+          "upstream_model_calls": 36
+        },
+        "joint": {
+          "n_rows": 36,
+          "nonempty_n": 18,
+          "nonempty_completed": 15,
+          "empty_n": 18,
+          "empty_no_action_no_mutation": 18,
+          "protection_refusals": 12,
+          "upstream_model_calls": 36
+        }
+      },
+      "sha256": {
+        "report.json": "e2a16bd49e5a448e6bb1f32b2f58a124a20e76fc2946a586abe5f3d49b01ac43",
+        "rows.jsonl": "ca57888e754976afde4524f4694bc557b95b369bb39bdce305209e396a6cfc1d",
+        "blocks.jsonl": "fb3f938536174ec513d2d4ff02c6b1b57fb8587e8c8ed92383abf0967b2c0dec",
+        "summary.json": "fa1e2ceed83a89ff5e4637a0a6cd4246a7f9d714758579f2384793dc4f05a4ef",
+        "summary.md": "d45e14270ea238a461aaba6538e416ac9d6159e850fccd9f255df56c4494c3c2",
+        "calibration.json": "d30a6d3db818f044572cce3a4c0c49eebb8bcd9e37fbe0ec679ad1c8079c234f"
+      },
+      "source_sha256": {
+        "docs\\deployment\\fused_eval.py": "37c8060aea5ee827a871a2b2624fc64f9134fbd125d8a15d0dc2ba7a046d14ca",
+        "SenseHome-6G\\net_offload\\offload_gateway.py": "d9f63dc5b6ffe73266777d8100e29842fce2d13005fd08baee8c997bf36793ef",
+        "SenseHome-6G\\net_offload\\resource_policy.py": "84a924664541b2e21458fa4e78130b1d31ee4e5f16ff6e859d11d951c23b3593",
+        "SenseHome-6G\\net_offload\\offload_policy.c": "58a772ddf879bb14480a3d715ac97b34fc64f811274a4a76a66c123f2c8f8135",
+        "SenseHome-6G\\net_offload\\offload_policy.h": "304ff38f9685bbd7bbf7fd2c2602dcf19e9c74a25d127b9f1070aa749c891702",
+        "SenseHome-6G\\net_offload\\policy_cli.c": "c88b50574b5b29a9bca81fe46bab26d7f8e6710edf24e514ee0c632349af82b8",
+        "SenseHome-6G\\net_offload\\backends\\openai_backend.py": "c8e82dc2f9693cede4417fc73df9e487266aea400b6aca7c0978155a58e3d7d5",
+        "SenseHome-6G\\net_offload\\eval_model.py": "2e6bd2f615590d3639061c59bcb8d8012fba9916a5130a3148b03283544c1395",
+        "openvela_smart_home\\dashboard\\bridge_server.py": "16c0edf80492483464f9796a678cfce9f2f91a284db83fba6758720bd1785770",
+        "openvela_smart_home\\dashboard\\device_actions.py": "b639e8e294e03a0171cea74ceaa2d9f2bae5c26166f019908e93af0265865698",
+        "SenseHome-6G\\net_offload\\policy_cli.exe": "04c8f57dd7c26a8168540c67410f9e5a63f4e818c3c5a97841c1510f6a2db72e"
+      },
+      "source_current_matches": true
+    },
+    "controlled_faults_sealed": {
+      "status": "finished",
+      "n_rows": 72,
+      "n_pair_blocks": 18,
+      "n_model_http_calls": 55,
+      "n_health_http_calls": 36,
+      "n_runner_failed": 0,
+      "n_skipped": 0,
+      "dataset": {
+        "sha256": "3a2d50c6dca46712df5b1c26fdf6fbcfa0f76a79164b9c99f3cc07be9d7e0b06",
+        "label_status": "human_reviewed",
+        "label_sources": [
+          "human_reviewed_freeze_20261103"
+        ],
+        "use_scope": "human_frozen_regression",
+        "selected_case_ids": [
+          "C01",
+          "C04"
+        ]
+      },
+      "per_arm": {
+        "fixed-local": {
+          "n_rows": 18,
+          "nonempty_n": 18,
+          "nonempty_completed": 18,
+          "empty_n": 0,
+          "empty_no_action_no_mutation": 0,
+          "protection_refusals": 0,
+          "upstream_model_calls": 18
+        },
+        "fixed-cloud": {
+          "n_rows": 18,
+          "nonempty_n": 18,
+          "nonempty_completed": 18,
+          "empty_n": 0,
+          "empty_no_action_no_mutation": 0,
+          "protection_refusals": 0,
+          "upstream_model_calls": 18
+        },
+        "network-only": {
+          "n_rows": 18,
+          "nonempty_n": 18,
+          "nonempty_completed": 12,
+          "empty_n": 0,
+          "empty_no_action_no_mutation": 0,
+          "protection_refusals": 0,
+          "upstream_model_calls": 12
+        },
+        "joint": {
+          "n_rows": 18,
+          "nonempty_n": 18,
+          "nonempty_completed": 7,
+          "empty_n": 0,
+          "empty_no_action_no_mutation": 0,
+          "protection_refusals": 0,
+          "upstream_model_calls": 7
+        }
+      },
+      "sha256": {
+        "report.json": "806d89da396906c7f26f894c60beb3254eec108152d6591b3909d423553a8a90",
+        "rows.jsonl": "23ceaa52b8af160e85ea7aa5af07d707f170c12190427c554d115f868df8e9f3",
+        "blocks.jsonl": "f0092a7e0e7c2d5d34490424925bf12df5ec961f3ed19763453a7c46613eb9aa",
+        "summary.json": "554fdd6063bb4bf76e78b1292c761ad21ee450a1be4be0582eb2f23786c041d1",
+        "summary.md": "af08dab76dc205baadfedfa0b08bdcd06686ea48bb6552b10a923308989cd188",
+        "calibration.json": "d30a6d3db818f044572cce3a4c0c49eebb8bcd9e37fbe0ec679ad1c8079c234f"
+      },
+      "source_sha256": {
+        "docs\\deployment\\fused_eval.py": "37c8060aea5ee827a871a2b2624fc64f9134fbd125d8a15d0dc2ba7a046d14ca",
+        "SenseHome-6G\\net_offload\\offload_gateway.py": "d9f63dc5b6ffe73266777d8100e29842fce2d13005fd08baee8c997bf36793ef",
+        "SenseHome-6G\\net_offload\\resource_policy.py": "84a924664541b2e21458fa4e78130b1d31ee4e5f16ff6e859d11d951c23b3593",
+        "SenseHome-6G\\net_offload\\offload_policy.c": "58a772ddf879bb14480a3d715ac97b34fc64f811274a4a76a66c123f2c8f8135",
+        "SenseHome-6G\\net_offload\\offload_policy.h": "304ff38f9685bbd7bbf7fd2c2602dcf19e9c74a25d127b9f1070aa749c891702",
+        "SenseHome-6G\\net_offload\\policy_cli.c": "c88b50574b5b29a9bca81fe46bab26d7f8e6710edf24e514ee0c632349af82b8",
+        "SenseHome-6G\\net_offload\\backends\\openai_backend.py": "c8e82dc2f9693cede4417fc73df9e487266aea400b6aca7c0978155a58e3d7d5",
+        "SenseHome-6G\\net_offload\\eval_model.py": "2e6bd2f615590d3639061c59bcb8d8012fba9916a5130a3148b03283544c1395",
+        "openvela_smart_home\\dashboard\\bridge_server.py": "16c0edf80492483464f9796a678cfce9f2f91a284db83fba6758720bd1785770",
+        "openvela_smart_home\\dashboard\\device_actions.py": "b639e8e294e03a0171cea74ceaa2d9f2bae5c26166f019908e93af0265865698",
+        "SenseHome-6G\\net_offload\\policy_cli.exe": "04c8f57dd7c26a8168540c67410f9e5a63f4e818c3c5a97841c1510f6a2db72e"
+      },
+      "source_current_matches": true
+    },
+    "holdout_12_programmatic_repeat3": {
+      "status": "finished",
+      "n_rows": 144,
+      "n_pair_blocks": 36,
+      "n_model_http_calls": 132,
+      "n_health_http_calls": 72,
+      "n_runner_failed": 0,
+      "n_skipped": 0,
+      "dataset": {
+        "sha256": "7fcd602bd87d631223ddc17008fca022f42f995e38996e230906c85197e9f2a1",
+        "label_status": "draft_labels_not_human_verified",
+        "label_sources": [
+          "preregistered_programmatic_holdout_not_human_reviewed"
+        ],
+        "use_scope": "programmatic_contract_check"
+      },
+      "per_arm": {
+        "fixed-local": {
+          "n_rows": 36,
+          "nonempty_n": 24,
+          "nonempty_completed": 21,
+          "empty_n": 12,
+          "empty_no_action_no_mutation": 12,
+          "protection_refusals": 9,
+          "upstream_model_calls": 33
+        },
+        "fixed-cloud": {
+          "n_rows": 36,
+          "nonempty_n": 24,
+          "nonempty_completed": 24,
+          "empty_n": 12,
+          "empty_no_action_no_mutation": 12,
+          "protection_refusals": 6,
+          "upstream_model_calls": 33
+        },
+        "network-only": {
+          "n_rows": 36,
+          "nonempty_n": 24,
+          "nonempty_completed": 21,
+          "empty_n": 12,
+          "empty_no_action_no_mutation": 12,
+          "protection_refusals": 9,
+          "upstream_model_calls": 33
+        },
+        "joint": {
+          "n_rows": 36,
+          "nonempty_n": 24,
+          "nonempty_completed": 21,
+          "empty_n": 12,
+          "empty_no_action_no_mutation": 12,
+          "protection_refusals": 9,
+          "upstream_model_calls": 33
+        }
+      },
+      "sha256": {
+        "report.json": "1b4e1f8182cb62d1d42b0982cf713bd463b2cde49b3a2eace65b45e1ffcdd947",
+        "rows.jsonl": "aa1c7639d4f0d5ad0e7a9aa3a6351a84a7ec225fcd487640dd4d07f588812c1f",
+        "blocks.jsonl": "79a354d72ac0922f4bc1989b70b78ff03a99cadf9e7121ecc1d429bc1cea9346",
+        "summary.json": "ae044f658aa625281f9e20f0cc6b16a8e53f5d26059da74343558300b066f18a",
+        "summary.md": "be48ec86e60c4887e90c5c9d6c558f166c700a4290dd24b6c6f2cbd631bdebe4",
+        "calibration.json": "d30a6d3db818f044572cce3a4c0c49eebb8bcd9e37fbe0ec679ad1c8079c234f"
+      },
+      "source_sha256": {
+        "docs\\deployment\\fused_eval.py": "37c8060aea5ee827a871a2b2624fc64f9134fbd125d8a15d0dc2ba7a046d14ca",
+        "SenseHome-6G\\net_offload\\offload_gateway.py": "d9f63dc5b6ffe73266777d8100e29842fce2d13005fd08baee8c997bf36793ef",
+        "SenseHome-6G\\net_offload\\resource_policy.py": "84a924664541b2e21458fa4e78130b1d31ee4e5f16ff6e859d11d951c23b3593",
+        "SenseHome-6G\\net_offload\\offload_policy.c": "58a772ddf879bb14480a3d715ac97b34fc64f811274a4a76a66c123f2c8f8135",
+        "SenseHome-6G\\net_offload\\offload_policy.h": "304ff38f9685bbd7bbf7fd2c2602dcf19e9c74a25d127b9f1070aa749c891702",
+        "SenseHome-6G\\net_offload\\policy_cli.c": "c88b50574b5b29a9bca81fe46bab26d7f8e6710edf24e514ee0c632349af82b8",
+        "SenseHome-6G\\net_offload\\backends\\openai_backend.py": "c8e82dc2f9693cede4417fc73df9e487266aea400b6aca7c0978155a58e3d7d5",
+        "SenseHome-6G\\net_offload\\eval_model.py": "2e6bd2f615590d3639061c59bcb8d8012fba9916a5130a3148b03283544c1395",
+        "openvela_smart_home\\dashboard\\bridge_server.py": "16c0edf80492483464f9796a678cfce9f2f91a284db83fba6758720bd1785770",
+        "openvela_smart_home\\dashboard\\device_actions.py": "b639e8e294e03a0171cea74ceaa2d9f2bae5c26166f019908e93af0265865698",
+        "SenseHome-6G\\net_offload\\policy_cli.exe": "04c8f57dd7c26a8168540c67410f9e5a63f4e818c3c5a97841c1510f6a2db72e"
+      },
+      "source_current_matches": true
+    }
+  }
+}

@@ -1,0 +1,251 @@
+{
+  "schema": "sensehome.video-manifest.v4",
+  "video_path": "dist/final/20261111_v4/SenseHome_当前软件证据回放_20261111_v4.mp4",
+  "duration_seconds": 250.376,
+  "size_bytes": 4994364,
+  "sha256": "d4d507268a614a4b77e665cfcd6e6a7f98594ff20114842d08069bc922410b6f",
+  "created_at_utc": "2026-11-11T07:18:44.960239+00:00",
+  "recording_kind": "current_real_software_records_replay_with_evidence_explanation",
+  "version": "20261111_v4",
+  "source": "docs/video/v4/final_runtime_records.json",
+  "runtime_manifest": "docs/video/v4/final_runtime_manifest.json",
+  "source_sha256": {
+    "docs/video/v4/final_runtime_records.json": "14e79b65b7a6387afa6c25b22758f53185c6175b7e096cf67254c1464402da32",
+    "docs/video/v4/final_runtime_manifest.json": "df990fda78745d71b9e976479424e7a1b950484841d8b273e66552d6f69e0c48",
+    "docs/experiments_v4/registration.json": "4e4afc334c442d4b8ba7faacb7cf708b1576eb5bc873238b8697041062177840",
+    "docs/experiments_v4/results.json": "ef2bb39991becdbdba0d2afc84cc95d373efe2e45ccd79711b116eb9fbf7bb12",
+    "docs/experiments_v4/rows.jsonl": "dea460dcf6525270c9d997bfab7f7d1a2383ec950a9c35534337b7b17653d432",
+    "docs/operations_v4/results.json": "4a0dc9467b1892f43973ecdd6fa82e93e9310d30ce712a8d38b919878191a642",
+    "docs/integration_v4/LATEST.json": "af9fe70643e9cebbb219ff7b06d6edb371df8f2716aea7b52c45d78c7ff18ba1",
+    "docs/integration_v4/runs/20261111T070837Z_7cfbfcf3/summary.json": "5d65ed8b866818aa82aa990b01dfaccfc498742951e3eebacc7b92e5f76a8919",
+    "docs/integration_v4/runs/20261111T070837Z_7cfbfcf3/offline_audit.json": "5fd72e44af8561b2823bf56b5a573f7e3755739988046e239562c241276e2e4c",
+    "docs/integration_v4/runs/20261111T070837Z_7cfbfcf3/normal/http_results.json": "e8d8c3518f97c2a1180765406804605d8b43f2430382181d1ccce734ee56059e",
+    "docs/integration_v4/runs/20261111T070837Z_7cfbfcf3/ack_loss/http_results.json": "ea760061b34691b713fe845f8eeb855b1408aa6d7eb090a31de685ebe1ef9e68"
+  },
+  "builder_sha256": "87b9bdbe740def84a9daccfbca413e6087bca1a1ea53d711db0d02578cabee58",
+  "source_hashes_unchanged_during_build": true,
+  "scene_durations": [
+    24,
+    44,
+    28,
+    32,
+    34,
+    34,
+    32,
+    22
+  ],
+  "total_editorial_seconds": 250,
+  "frames": [
+    {
+      "path": "docs/video/v4/builds/20261111T071753_609704Z/scene_01_overview.png",
+      "scene": 1,
+      "title": "让家庭 AI 的每一步都有据可查",
+      "variant": "overview"
+    },
+    {
+      "path": "docs/video/v4/builds/20261111T071753_609704Z/scene_02_rule.png",
+      "scene": 2,
+      "title": "一条简单指令，经过正式执行通道",
+      "variant": "rule"
+    },
+    {
+      "path": "docs/video/v4/builds/20261111T071753_609704Z/scene_02_model.png",
+      "scene": 2,
+      "title": "模型先给计划，再经白名单与回执确认",
+      "variant": "model"
+    },
+    {
+      "path": "docs/video/v4/builds/20261111T071753_609704Z/scene_03_empty.png",
+      "scene": 3,
+      "title": "缺少目标与注入请求，保留原始结果",
+      "variant": "empty"
+    },
+    {
+      "path": "docs/video/v4/builds/20261111T071753_609704Z/scene_04_comparison.png",
+      "scene": 4,
+      "title": "同一恢复器下，只改变初选策略",
+      "variant": "comparison"
+    },
+    {
+      "path": "docs/video/v4/builds/20261111T071753_609704Z/scene_05_recovery.png",
+      "scene": 5,
+      "title": "失败行也展示：恢复成功与双端失败",
+      "variant": "recovery"
+    },
+    {
+      "path": "docs/video/v4/builds/20261111T071753_609704Z/scene_06_receipt.png",
+      "scene": 6,
+      "title": "持久回执：未知只查，完成不重发",
+      "variant": "receipt"
+    },
+    {
+      "path": "docs/video/v4/builds/20261111T071753_609704Z/scene_07_operations.png",
+      "scene": 7,
+      "title": "新目录部署与 120 秒规则负载",
+      "variant": "operations"
+    },
+    {
+      "path": "docs/video/v4/builds/20261111T071753_609704Z/scene_08_delivery.png",
+      "scene": 8,
+      "title": "从结论回到文件，从文件追到原始证据",
+      "variant": "delivery"
+    }
+  ],
+  "editing_boundaries": [
+    "all visual cards drawn from current source fields; no screenshot reconstruction",
+    "scene ordering and dwell times are editorial; displayed runtime milliseconds are unmodified recorded values",
+    "recovery scenes replay registered raw rows without new model inference",
+    "no historical v1 video, desktop screenshot or CUA capture used",
+    "no physical actuator, WAN, independent cloud or 6G air-interface claim"
+  ],
+  "persistent_header": "真实运行数据回放 · 非连续现场录屏 · 软件实体非实物",
+  "synthetic_voice": {
+    "engine": "Windows System.Speech",
+    "voice": "Microsoft Huihui Desktop",
+    "human_voice_recording": false,
+    "speech_alignment": [
+      {
+        "scene": 1,
+        "raw_seconds": 33.112925170068024,
+        "aligned_seconds": 24,
+        "atempo_ratio": 1.4030900495791534
+      },
+      {
+        "scene": 2,
+        "raw_seconds": 48.782267573696146,
+        "aligned_seconds": 44,
+        "atempo_ratio": 1.1188593480205538
+      },
+      {
+        "scene": 3,
+        "raw_seconds": 33.91160997732426,
+        "aligned_seconds": 28,
+        "atempo_ratio": 1.2286815209175457
+      },
+      {
+        "scene": 4,
+        "raw_seconds": 38.42081632653061,
+        "aligned_seconds": 32,
+        "atempo_ratio": 1.215848617928184
+      },
+      {
+        "scene": 5,
+        "raw_seconds": 36.900226757369616,
+        "aligned_seconds": 34,
+        "atempo_ratio": 1.0982210344455243
+      },
+      {
+        "scene": 6,
+        "raw_seconds": 42.98952380952381,
+        "aligned_seconds": 34,
+        "atempo_ratio": 1.2794501133786849
+      },
+      {
+        "scene": 7,
+        "raw_seconds": 39.220589569161,
+        "aligned_seconds": 32,
+        "atempo_ratio": 1.2411578977582594
+      },
+      {
+        "scene": 8,
+        "raw_seconds": 31.463673469387754,
+        "aligned_seconds": 22,
+        "atempo_ratio": 1.4566515495086922
+      }
+    ],
+    "narration": "docs/video/v4/builds/20261111T071753_609704Z/narration.json"
+  },
+  "probe": {
+    "programs": [],
+    "streams": [
+      {
+        "codec_name": "h264",
+        "width": 1920,
+        "height": 1080,
+        "r_frame_rate": "10/1"
+      },
+      {
+        "codec_name": "aac",
+        "sample_rate": "22050",
+        "r_frame_rate": "0/0"
+      }
+    ],
+    "format": {
+      "duration": "250.376000",
+      "size": "4994364"
+    }
+  },
+  "build_directory": "docs/video/v4/builds/20261111T071753_609704Z",
+  "encoded_frame_checks": [
+    {
+      "scene": 1,
+      "at_seconds": 12.0,
+      "frame": "docs/video/v4/builds/20261111T071753_609704Z/check_01_0.png"
+    },
+    {
+      "scene": 2,
+      "at_seconds": 33,
+      "frame": "docs/video/v4/builds/20261111T071753_609704Z/check_02_0.png"
+    },
+    {
+      "scene": 2,
+      "at_seconds": 55,
+      "frame": "docs/video/v4/builds/20261111T071753_609704Z/check_02_1.png"
+    },
+    {
+      "scene": 3,
+      "at_seconds": 82.0,
+      "frame": "docs/video/v4/builds/20261111T071753_609704Z/check_03_0.png"
+    },
+    {
+      "scene": 4,
+      "at_seconds": 112.0,
+      "frame": "docs/video/v4/builds/20261111T071753_609704Z/check_04_0.png"
+    },
+    {
+      "scene": 5,
+      "at_seconds": 145.0,
+      "frame": "docs/video/v4/builds/20261111T071753_609704Z/check_05_0.png"
+    },
+    {
+      "scene": 6,
+      "at_seconds": 179.0,
+      "frame": "docs/video/v4/builds/20261111T071753_609704Z/check_06_0.png"
+    },
+    {
+      "scene": 7,
+      "at_seconds": 212.0,
+      "frame": "docs/video/v4/builds/20261111T071753_609704Z/check_07_0.png"
+    },
+    {
+      "scene": 8,
+      "at_seconds": 239.0,
+      "frame": "docs/video/v4/builds/20261111T071753_609704Z/check_08_0.png"
+    }
+  ],
+  "visual_inspection": {
+    "status": "PASS",
+    "report": "docs/video/v4/visual_review.json",
+    "encoded_frames_inspected": 9,
+    "no_clipping_observed": true
+  },
+  "tool_versions": {
+    "python": "3.13.7 (tags/v3.13.7:bcee1c3, Aug 14 2025, 14:15:11) [MSC v.1944 64 bit (AMD64)]",
+    "pillow": "12.3.0",
+    "ffmpeg": "ffmpeg version git-2019-10-22-0b8956b Copyright (c) 2000-2019 the FFmpeg developers",
+    "ffprobe": "ffprobe version git-2019-10-22-0b8956b Copyright (c) 2007-2019 the FFmpeg developers"
+  },
+  "runtime_capture_source_snapshot": "docs/video/v4/final_capture/source_snapshot",
+  "runtime_capture_validated_flags": {
+    "status": "stopped",
+    "sources_unchanged": true,
+    "original_state_and_events_unchanged": true,
+    "mqtt_enabled": true,
+    "physical_execution_confirmed": false
+  },
+  "full_decode_check": {
+    "passed": true,
+    "log": "docs/video/v4/builds/20261111T071753_609704Z/full_decode_check.txt"
+  },
+  "permanent_external_link": null
+}

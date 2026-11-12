@@ -1,0 +1,122 @@
+{
+  "status": "passed",
+  "title_chars": 15,
+  "abstract_chars": 399,
+  "pdf_pages": {
+    "SenseHome_佐证材料_20261111.pdf": 13,
+    "SenseHome_场景设计方案_20261111.pdf": 16,
+    "SenseHome_场景设计答辩_20261111.pdf": 14
+  },
+  "pptx_validation": [
+    {
+      "tool": "inspect_presentation_package_integrity.py",
+      "exit_code": 0,
+      "result": {
+        "chart_count": 1,
+        "claim_boundary": "Structural package checks only; no slide text, notes, formulas, chart values, or native PowerPoint execution were inspected.",
+        "finding_count": 0,
+        "findings": [],
+        "notes_parts_skipped": 14,
+        "relationship_part_count": 44,
+        "slide_count": 14,
+        "status": "pass"
+      }
+    },
+    {
+      "tool": "inspect_presentation_layout_geometry.py",
+      "exit_code": 0,
+      "result": {
+        "finding_count": 0,
+        "findings": [],
+        "slide_count": 14,
+        "slide_size_in": [
+          13.3333,
+          7.5
+        ],
+        "warning_count": 0,
+        "warnings": []
+      }
+    }
+  ],
+  "anonymous_text_scan": "passed; no known personal identity, unit name, placeholders or internal tooling explanation in PDFs",
+  "scope": "four final matrices remain separate: 240 human-frozen regression, 144 development, 72 injected observations, 144 preregistered programmatic holdout; r3 synthetic, historical AutoDL and PC state replay separate",
+  "render_review": "Earlier plan/slide/evidence pages visually inspected from LibreOffice/PyMuPDF PNGs; latest plan holdout/diagrams and evidence holdout/resource pages rechecked by primary agent; no clipped text, overlap, orphan page or replacement glyph observed",
+  "runtime_fallback": "Codex dependency loader unconfigured and artifact-tool absent. Authorized existing local Python libraries, LibreOffice and ffmpeg; no global installs. Skill render_docx.py attempted but missing pdf2image; native LibreOffice PDF and PyMuPDF PNG rendering used and inspected.",
+  "video": {
+    "version": "20261111",
+    "duration_s": 283.658,
+    "size_bytes": 5004120,
+    "sha256": "a1873d09c7fc3b70c1a5b9a76875cf181cb977ddcdbb221aea75027ddf627dba",
+    "probe": {
+      "programs": [],
+      "streams": [
+        {
+          "codec_name": "h264",
+          "width": 1920,
+          "height": 1080,
+          "r_frame_rate": "10/1"
+        },
+        {
+          "codec_name": "aac",
+          "r_frame_rate": "0/0"
+        }
+      ],
+      "format": {
+        "duration": "283.658000",
+        "size": "5004120"
+      }
+    },
+    "method": "evidence explanation slides, synthetic voice, 2026-11-03 actual software JSON state replay; no physical actuator or 6G air interface",
+    "scene_durations": [
+      14,
+      16,
+      17,
+      20,
+      16,
+      22,
+      22,
+      22,
+      24,
+      36,
+      21,
+      18,
+      17,
+      18
+    ],
+    "narration": "docs\\submission\\20261111\\narration.json",
+    "replay_source": "docs/video/v2/software_replay.json",
+    "replay_sha256": "8eada8a5fb603b9def2a29c5f64f11e8517402f21af0330a3ef797d9989033e8"
+  },
+  "deliverables": [
+    {
+      "path": "SenseHome_佐证材料_20261111.pdf",
+      "bytes": 124198,
+      "sha256": "a5d1ebcf832868286b2fee6e33a9f433a9d608ee2d8f527984566bebc56baf16"
+    },
+    {
+      "path": "SenseHome_场景设计方案_20261111.docx",
+      "bytes": 215563,
+      "sha256": "ebd8c51b79d1111440a31d1a880ce7b0cbda1fd4747cb4b30f4a3c3bb6d8fb1f"
+    },
+    {
+      "path": "SenseHome_场景设计方案_20261111.pdf",
+      "bytes": 760642,
+      "sha256": "400634384a1481833aa2d4cc96445577dd93b96c864f8db5d86154e9fbf98a6b"
+    },
+    {
+      "path": "SenseHome_场景设计答辩_20261111.pdf",
+      "bytes": 1304288,
+      "sha256": "d306b6bef50eb491645536b70491daf582dda08374613f5ba3804e177fd8b5af"
+    },
+    {
+      "path": "SenseHome_场景设计答辩_20261111.pptx",
+      "bytes": 78498,
+      "sha256": "89828063c0012fa2fb678575d77afd9b0e9aaad8ea97a17754c3461bccd83cb7"
+    },
+    {
+      "path": "SenseHome_演示视频_20261111.mp4",
+      "bytes": 5004120,
+      "sha256": "a1873d09c7fc3b70c1a5b9a76875cf181cb977ddcdbb221aea75027ddf627dba"
+    }
+  ]
+}

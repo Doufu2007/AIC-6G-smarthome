@@ -1,0 +1,89 @@
+{
+  "pdfs": {
+    "SenseHome_场景设计方案_20261111_v2.pdf": {
+      "pages": 23,
+      "sha256_passed": true,
+      "text_bounds_passed": true
+    },
+    "SenseHome_场景设计答辩_20261111_v2.pdf": {
+      "pages": 17,
+      "sha256_passed": true,
+      "text_bounds_passed": true
+    },
+    "SenseHome_第二版补证报告_20261111.pdf": {
+      "pages": 7,
+      "sha256_passed": true,
+      "text_bounds_passed": true
+    },
+    "SenseHome_佐证材料_20261111_v2.pdf": {
+      "pages": 20,
+      "sha256_passed": true,
+      "text_bounds_passed": true
+    }
+  },
+  "unchanged_visual_pages": {
+    "plan": [
+      2,
+      3,
+      4,
+      5,
+      6,
+      7,
+      8,
+      9,
+      10,
+      11,
+      12,
+      14,
+      15,
+      16
+    ],
+    "slides": [
+      1,
+      2,
+      3,
+      4,
+      5,
+      6,
+      7,
+      8,
+      10,
+      11,
+      12,
+      13
+    ],
+    "evidence": [
+      1,
+      2,
+      3,
+      4,
+      5,
+      6,
+      7,
+      8,
+      9,
+      10,
+      11,
+      12
+    ]
+  },
+  "contact_sheets": [
+    "_work\\submission_20261111_v2\\supplement-contact-1.jpg",
+    "_work\\submission_20261111_v2\\supplement-contact-2.jpg",
+    "_work\\submission_20261111_v2\\plan-new-contact-1.jpg",
+    "_work\\submission_20261111_v2\\plan-new-contact-2.jpg",
+    "_work\\submission_20261111_v2\\slides-new-contact-1.jpg",
+    "_work\\submission_20261111_v2\\plan-inherited-changed-contact-1.jpg",
+    "_work\\submission_20261111_v2\\slides-inherited-changed-contact-1.jpg",
+    "_work\\submission_20261111_v2\\evidence-inherited-changed-contact-1.jpg"
+  ],
+  "visual_review": "passed_primary_agent",
+  "visual_review_scope": "all new/changed pages rendered and visually inspected; inherited pages pixel-identical to previously reviewed v1 except the three explicitly re-reviewed edits",
+  "integrated_tests": {
+    "command": "python -m pytest -q docs/deployment/test_real_fault_eval_v2.py docs/trial_v2/test_collector.py docs/trial_v2/test_isolated_gateway.py docs/value_v2/test_evidence_tools.py docs/submission/test_build_review_package.py",
+    "passed": 31,
+    "subtests_passed": 9,
+    "elapsed_s": 7.19
+  },
+  "local_services_stopped": true
+}

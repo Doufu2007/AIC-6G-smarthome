@@ -1,0 +1,346 @@
+[
+  {
+    "seed": 20261105,
+    "trace_id": "797fbc2aefb29458c9038794b612699526bcd59fe83fffeff8f03cb5829f368a",
+    "arm": "joint",
+    "from_index": 198,
+    "to_index": 200,
+    "from_backend": "cloud-model",
+    "to_backend": "local-model",
+    "reason": "WAN_RTT_HIGH",
+    "policy_log": "[resources] task=complex-nlu -> local-model because WAN_RTT_HIGH mode=0 local(ready=1,q=0,mem=2048,n=0) cloud(ready=1,q=0,mem=16384,n=0) recovery=0/3",
+    "scenario": "wan_degraded",
+    "event": "wan_degraded",
+    "network": {
+      "wan": {
+        "reachable": true,
+        "rtt_ms": 420,
+        "jitter_ms": 60,
+        "loss_pct": 8,
+        "bandwidth_kbps": 20000
+      },
+      "lan": {
+        "reachable": true,
+        "rtt_ms": 3,
+        "jitter_ms": 1,
+        "loss_pct": 0,
+        "bandwidth_kbps": 100000
+      }
+    },
+    "compute": {
+      "local": {
+        "model_ready": true,
+        "queue_ms": 0,
+        "free_mem_mb": 2048,
+        "inflight": 0
+      },
+      "cloud": {
+        "model_ready": true,
+        "queue_ms": 0,
+        "free_mem_mb": 16384,
+        "inflight": 0
+      }
+    }
+  },
+  {
+    "seed": 20261105,
+    "trace_id": "797fbc2aefb29458c9038794b612699526bcd59fe83fffeff8f03cb5829f368a",
+    "arm": "joint",
+    "from_index": 2001,
+    "to_index": 2003,
+    "from_backend": "local-rules",
+    "to_backend": "local-model",
+    "reason": "WAN_UNREACHABLE",
+    "policy_log": "[resources] task=complex-nlu -> local-model because WAN_UNREACHABLE mode=0 local(ready=1,q=0,mem=2048,n=0) cloud(ready=1,q=0,mem=16384,n=0) recovery=0/3",
+    "scenario": "handover",
+    "event": "handover-edge-unreachable",
+    "network": {
+      "wan": {
+        "reachable": false,
+        "rtt_ms": 25,
+        "jitter_ms": 3,
+        "loss_pct": 100,
+        "bandwidth_kbps": 20000
+      },
+      "lan": {
+        "reachable": true,
+        "rtt_ms": 3,
+        "jitter_ms": 1,
+        "loss_pct": 0,
+        "bandwidth_kbps": 100000
+      }
+    },
+    "compute": {
+      "local": {
+        "model_ready": true,
+        "queue_ms": 0,
+        "free_mem_mb": 2048,
+        "inflight": 0
+      },
+      "cloud": {
+        "model_ready": true,
+        "queue_ms": 0,
+        "free_mem_mb": 16384,
+        "inflight": 0
+      }
+    }
+  },
+  {
+    "seed": 20261105,
+    "trace_id": "797fbc2aefb29458c9038794b612699526bcd59fe83fffeff8f03cb5829f368a",
+    "arm": "joint",
+    "from_index": 601,
+    "to_index": 603,
+    "from_backend": "local-rules",
+    "to_backend": "cloud-model",
+    "reason": "LOCAL_COMPUTE_OVERLOADED",
+    "policy_log": "[resources] task=complex-nlu -> cloud-model because LOCAL_COMPUTE_OVERLOADED mode=0 local(ready=1,q=650,mem=2048,n=12) cloud(ready=1,q=0,mem=16384,n=0) recovery=3/3",
+    "scenario": "local_queue",
+    "event": "local_queue",
+    "network": {
+      "wan": {
+        "reachable": true,
+        "rtt_ms": 25,
+        "jitter_ms": 3,
+        "loss_pct": 0,
+        "bandwidth_kbps": 20000
+      },
+      "lan": {
+        "reachable": true,
+        "rtt_ms": 3,
+        "jitter_ms": 1,
+        "loss_pct": 0,
+        "bandwidth_kbps": 100000
+      }
+    },
+    "compute": {
+      "local": {
+        "model_ready": true,
+        "queue_ms": 650,
+        "free_mem_mb": 2048,
+        "inflight": 12
+      },
+      "cloud": {
+        "model_ready": true,
+        "queue_ms": 0,
+        "free_mem_mb": 16384,
+        "inflight": 0
+      }
+    }
+  },
+  {
+    "seed": 20261105,
+    "trace_id": "797fbc2aefb29458c9038794b612699526bcd59fe83fffeff8f03cb5829f368a",
+    "arm": "joint",
+    "from_index": 1398,
+    "to_index": 1400,
+    "from_backend": "cloud-model",
+    "to_backend": "local-model",
+    "reason": "MODEL_UNAVAILABLE",
+    "policy_log": "[resources] task=complex-nlu -> local-model because MODEL_UNAVAILABLE mode=0 local(ready=1,q=0,mem=2048,n=0) cloud(ready=0,q=0,mem=16384,n=0) recovery=3/3",
+    "scenario": "cloud_down",
+    "event": "cloud_down",
+    "network": {
+      "wan": {
+        "reachable": true,
+        "rtt_ms": 25,
+        "jitter_ms": 3,
+        "loss_pct": 0,
+        "bandwidth_kbps": 20000
+      },
+      "lan": {
+        "reachable": true,
+        "rtt_ms": 3,
+        "jitter_ms": 1,
+        "loss_pct": 0,
+        "bandwidth_kbps": 100000
+      }
+    },
+    "compute": {
+      "local": {
+        "model_ready": true,
+        "queue_ms": 0,
+        "free_mem_mb": 2048,
+        "inflight": 0
+      },
+      "cloud": {
+        "model_ready": false,
+        "queue_ms": 0,
+        "free_mem_mb": 16384,
+        "inflight": 0
+      }
+    }
+  },
+  {
+    "seed": 20261105,
+    "trace_id": "797fbc2aefb29458c9038794b612699526bcd59fe83fffeff8f03cb5829f368a",
+    "arm": "joint",
+    "from_index": 598,
+    "to_index": 600,
+    "from_backend": "local-model",
+    "to_backend": "local-rules",
+    "reason": "NO_MODEL_CAPACITY",
+    "policy_log": "[resources] task=complex-nlu -> local-rules because NO_MODEL_CAPACITY mode=0 local(ready=1,q=650,mem=2048,n=12) cloud(ready=1,q=0,mem=16384,n=0) recovery=1/3",
+    "scenario": "local_queue",
+    "event": "local_queue",
+    "network": {
+      "wan": {
+        "reachable": true,
+        "rtt_ms": 25,
+        "jitter_ms": 3,
+        "loss_pct": 0,
+        "bandwidth_kbps": 20000
+      },
+      "lan": {
+        "reachable": true,
+        "rtt_ms": 3,
+        "jitter_ms": 1,
+        "loss_pct": 0,
+        "bandwidth_kbps": 100000
+      }
+    },
+    "compute": {
+      "local": {
+        "model_ready": true,
+        "queue_ms": 650,
+        "free_mem_mb": 2048,
+        "inflight": 12
+      },
+      "cloud": {
+        "model_ready": true,
+        "queue_ms": 0,
+        "free_mem_mb": 16384,
+        "inflight": 0
+      }
+    }
+  },
+  {
+    "seed": 20261105,
+    "trace_id": "797fbc2aefb29458c9038794b612699526bcd59fe83fffeff8f03cb5829f368a",
+    "arm": "joint",
+    "from_index": 2598,
+    "to_index": 2600,
+    "from_backend": "local-rules",
+    "to_backend": "local-model",
+    "reason": "RECOVERY_HOLD",
+    "policy_log": "[resources] task=complex-nlu -> local-model because RECOVERY_HOLD mode=0 local(ready=1,q=0,mem=2048,n=0) cloud(ready=1,q=0,mem=16384,n=0) recovery=1/3",
+    "scenario": "recovered",
+    "event": "recovered",
+    "network": {
+      "wan": {
+        "reachable": true,
+        "rtt_ms": 25,
+        "jitter_ms": 3,
+        "loss_pct": 0,
+        "bandwidth_kbps": 20000
+      },
+      "lan": {
+        "reachable": true,
+        "rtt_ms": 3,
+        "jitter_ms": 1,
+        "loss_pct": 0,
+        "bandwidth_kbps": 100000
+      }
+    },
+    "compute": {
+      "local": {
+        "model_ready": true,
+        "queue_ms": 0,
+        "free_mem_mb": 2048,
+        "inflight": 0
+      },
+      "cloud": {
+        "model_ready": true,
+        "queue_ms": 0,
+        "free_mem_mb": 16384,
+        "inflight": 0
+      }
+    }
+  },
+  {
+    "seed": 20261105,
+    "trace_id": "797fbc2aefb29458c9038794b612699526bcd59fe83fffeff8f03cb5829f368a",
+    "arm": "joint",
+    "from_index": 2601,
+    "to_index": 2603,
+    "from_backend": "local-model",
+    "to_backend": "cloud-model",
+    "reason": "COST_CLOUD",
+    "policy_log": "[resources] task=complex-nlu -> cloud-model because COST_CLOUD mode=0 local(ready=1,q=0,mem=2048,n=0) cloud(ready=1,q=0,mem=16384,n=0) recovery=3/3",
+    "scenario": "recovered",
+    "event": "recovered",
+    "network": {
+      "wan": {
+        "reachable": true,
+        "rtt_ms": 25,
+        "jitter_ms": 3,
+        "loss_pct": 0,
+        "bandwidth_kbps": 20000
+      },
+      "lan": {
+        "reachable": true,
+        "rtt_ms": 3,
+        "jitter_ms": 1,
+        "loss_pct": 0,
+        "bandwidth_kbps": 100000
+      }
+    },
+    "compute": {
+      "local": {
+        "model_ready": true,
+        "queue_ms": 0,
+        "free_mem_mb": 2048,
+        "inflight": 0
+      },
+      "cloud": {
+        "model_ready": true,
+        "queue_ms": 0,
+        "free_mem_mb": 16384,
+        "inflight": 0
+      }
+    }
+  },
+  {
+    "seed": 20261105,
+    "trace_id": "797fbc2aefb29458c9038794b612699526bcd59fe83fffeff8f03cb5829f368a",
+    "arm": "joint",
+    "from_index": 2398,
+    "to_index": 2400,
+    "from_backend": "local-model",
+    "to_backend": "local-rules",
+    "reason": "LAN_DOWN",
+    "policy_log": "[resources] task=complex-nlu -> local-rules because LAN_DOWN mode=0 local(ready=1,q=0,mem=2048,n=0) cloud(ready=1,q=0,mem=16384,n=0) recovery=0/3",
+    "scenario": "lan_blackout",
+    "event": "lan_blackout",
+    "network": {
+      "wan": {
+        "reachable": true,
+        "rtt_ms": 25,
+        "jitter_ms": 3,
+        "loss_pct": 0,
+        "bandwidth_kbps": 20000
+      },
+      "lan": {
+        "reachable": false,
+        "rtt_ms": 3,
+        "jitter_ms": 1,
+        "loss_pct": 100,
+        "bandwidth_kbps": 100000
+      }
+    },
+    "compute": {
+      "local": {
+        "model_ready": true,
+        "queue_ms": 0,
+        "free_mem_mb": 2048,
+        "inflight": 0
+      },
+      "cloud": {
+        "model_ready": true,
+        "queue_ms": 0,
+        "free_mem_mb": 16384,
+        "inflight": 0
+      }
+    }
+  }
+]

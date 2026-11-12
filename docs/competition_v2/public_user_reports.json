@@ -1,0 +1,63 @@
+{
+  "schema": "sensehome.public-user-evidence.v1",
+  "scope": "public secondary user reports; no contact or recruitment",
+  "n_distinct_public_documents": 2,
+  "n_technical_observations": 3,
+  "project_participant_feedback_count": 0,
+  "records": [
+    {
+      "id": "P1",
+      "url": "https://github.com/home-assistant/core/issues/123316",
+      "title": "Home Assistant core issue 123316",
+      "displayed_date": "August 2024; historical version core-2024.8.0",
+      "snapshot": ".firecrawl/v2-demand-ha-123316.md",
+      "quote": "Now the model just hallucinates entities that don't exist, and refuses to identify / describe / control them.",
+      "observation": "历史使用者报告实体幻觉与控制失败。",
+      "requirement": "将模型计划与实体/动作许可分开，拒绝不在能力合同内的执行。",
+      "limit": "历史版本公开问题报告；不是当前Home Assistant缺陷证明，也未在本项目环境复现。",
+      "raw_snapshot_sha256": "26264d17dad84f4ed944800381cbfc2895b0e34905a1f6e5f446849f199eb2fb",
+      "quote_start_line": 207,
+      "context": "> {\"name\": \"HassLightGet\", \"parameters\": {\"device\\_class\": \"\\[\"}\"} Please note that I've assumed a function named \"HassLightGet\" exists to get the state of light devices. If it's not present in your original list, please let me know and I can try again or we can create a new function call.\\\n\\\nThis is actually worse than the previous version. In the previous version, the model would at least recognize some of the entities in the listing sent within the preamble. Now the model just hallucinates entities that don't exist, and refuses to identify / describe / control them.\\\n\\\nI'm using llama3.1:8b and also mistral-nemo:latest. Same result with both models. I've verified with `tcpdump` that the calls are correct and the responses are flowing back to HA.\\",
+      "retrieved_local_date": "2026-11-11",
+      "timezone": "Asia/Shanghai",
+      "excerpt_path": "docs/competition_v2/public_excerpts/P1.md",
+      "excerpt_sha256": "10fb6dedadede2378698f41df8e57e8e2eb55843da7e16b1987537b3d8bf8bc9"
+    },
+    {
+      "id": "P2",
+      "url": "https://community.home-assistant.io/t/my-journey-to-a-reliable-and-enjoyable-locally-hosted-voice-assistant/944860/35",
+      "title": "Public local voice assistant experience, post 35",
+      "displayed_date": "Jan 8; rendered excerpt does not display the year",
+      "snapshot": ".firecrawl/v2-demand-journey.md",
+      "quote": "I faced some issues with covers, opening and closing them with llm was not possible (it said it can’t do it) but with local first enabled ha agent did it.",
+      "observation": "公开使用者报告同一窗帘操作在LLM与本地意图路径上能力不同。",
+      "requirement": "区分规则与模型能力，保留本地明确控制；记录能力损失，不把路径可达当作任务完成。",
+      "limit": "公开自述，未验证具体配置、因果或发生频率；不是本项目使用者，也不表示其愿意采用本项目。",
+      "raw_snapshot_sha256": "43cdbb2e3373ebb8948f8aa1be20aaf831fa8b973684672130a474b5ac1b7928",
+      "quote_start_line": 1677,
+      "context": "(I used onnx\\_asr since the nemo-parakeet-tdt-0.6b-v2 model performs better and has support for intel gpus that I will be using)\n\nit takes advantage of the new streaming feature for tts (I think) but I cannot test it yet since streaming only works on HAPVE and satellite1 and I have been testing on my phone so far. I faced some issues with covers, opening and closing them with llm was not possible (it said it can’t do it) but with local first enabled ha agent did it. I kept local first enabled for that reason and for faster simple actions.\n\nWhat I noticed is that when I ask for 1 single light to turn on/off, it process it locally but if I ask for more than one in the same requests it uses the llm.",
+      "retrieved_local_date": "2026-11-11",
+      "timezone": "Asia/Shanghai",
+      "excerpt_path": "docs/competition_v2/public_excerpts/P2.md",
+      "excerpt_sha256": "5f23f8791abcbeef336a9f31d46e105fcb3c15841a1eceb8aa44b8d0cedd1f5c"
+    },
+    {
+      "id": "P3",
+      "url": "https://community.home-assistant.io/t/my-journey-to-a-reliable-and-enjoyable-locally-hosted-voice-assistant/944860/35",
+      "title": "Same public post 35, latency observation",
+      "displayed_date": "Jan 8; rendered excerpt does not display the year",
+      "snapshot": ".firecrawl/v2-demand-journey.md",
+      "quote": "tts and stt take less than 0.1s but the llm response takes from 1 to 11 seconds based on the size and difficulty of the generation.",
+      "observation": "同一公开使用者自述生成长度和难度影响响应时间。",
+      "requirement": "分别测量端到端、模型与代理等待时间；在规定条件中比较路由，保留超时与失败。",
+      "limit": "时间数字是他人自述，不能当作本项目实测、统一基线、普遍需求阈值或性能优势。P2/P3为同一帖子，不算两名参与者。",
+      "raw_snapshot_sha256": "43cdbb2e3373ebb8948f8aa1be20aaf831fa8b973684672130a474b5ac1b7928",
+      "quote_start_line": 1713,
+      "context": "\n- Fix some issues with hallucinations and the llm saying it can’t do tasks that it actually can (closing assist and opening again fixes this)\n- Improve my pipeline speed even more, tts and stt take less than 0.1s but the llm response takes from 1 to 11 seconds based on the size and difficulty of the generation.\n- Buy satellites1 and HAPVE to replace the alexa dots in my rooms\n- Find a way to play spotify and music (maybe after I purchase the satellites1 and HAPVEs)",
+      "retrieved_local_date": "2026-11-11",
+      "timezone": "Asia/Shanghai",
+      "excerpt_path": "docs/competition_v2/public_excerpts/P3.md",
+      "excerpt_sha256": "226e54687146adc9ec760649659f80330086fe7b7d9a9f310216831934620c66"
+    }
+  ]
+}

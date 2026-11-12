@@ -1,0 +1,357 @@
+{
+  "schema": "sensehome.fair-recovery-post-analysis.v4",
+  "derived_after_single_registered_run": true,
+  "timing_summary_primary": {
+    "local-first": {
+      "c_decision_ipc": {
+        "n_measured": 24,
+        "n_nonzero": 24,
+        "median_all_ms": 0.1118,
+        "median_nonzero_ms": 0.1118,
+        "min_ms": 0.0751,
+        "max_ms": 0.3083
+      },
+      "policy_adapter": {
+        "n_measured": 24,
+        "n_nonzero": 24,
+        "median_all_ms": 0.966,
+        "median_nonzero_ms": 0.966,
+        "min_ms": 0.813,
+        "max_ms": 1.501
+      },
+      "observation_health": {
+        "n_measured": 24,
+        "n_nonzero": 24,
+        "median_all_ms": 22.7945,
+        "median_nonzero_ms": 22.7945,
+        "min_ms": 9.987,
+        "max_ms": 59.993
+      },
+      "first_model": {
+        "n_measured": 24,
+        "n_nonzero": 24,
+        "median_all_ms": 643.9404999999999,
+        "median_nonzero_ms": 643.9404999999999,
+        "min_ms": 1.744,
+        "max_ms": 1914.748
+      },
+      "recovery_health": {
+        "n_measured": 24,
+        "n_nonzero": 8,
+        "median_all_ms": 0.0,
+        "median_nonzero_ms": 5.6545000000000005,
+        "min_ms": 0.0,
+        "max_ms": 42.937
+      },
+      "backup_model": {
+        "n_measured": 24,
+        "n_nonzero": 8,
+        "median_all_ms": 0.0,
+        "median_nonzero_ms": 601.065,
+        "min_ms": 0.0,
+        "max_ms": 1822.573
+      },
+      "executor": {
+        "n_measured": 24,
+        "n_nonzero": 20,
+        "median_all_ms": 3.047,
+        "median_nonzero_ms": 3.0805,
+        "min_ms": 0,
+        "max_ms": 5.367
+      },
+      "gateway_wall": {
+        "n_measured": 24,
+        "n_nonzero": 24,
+        "median_all_ms": 930.532,
+        "median_nonzero_ms": 930.532,
+        "min_ms": 12.71,
+        "max_ms": 1919.643
+      },
+      "total_wall": {
+        "n_measured": 24,
+        "n_nonzero": 24,
+        "median_all_ms": 955.506,
+        "median_nonzero_ms": 955.506,
+        "min_ms": 56.992,
+        "max_ms": 1964.165
+      }
+    },
+    "second-first": {
+      "c_decision_ipc": {
+        "n_measured": 24,
+        "n_nonzero": 24,
+        "median_all_ms": 0.10865,
+        "median_nonzero_ms": 0.10865,
+        "min_ms": 0.0719,
+        "max_ms": 0.1667
+      },
+      "policy_adapter": {
+        "n_measured": 24,
+        "n_nonzero": 24,
+        "median_all_ms": 0.902,
+        "median_nonzero_ms": 0.902,
+        "min_ms": 0.679,
+        "max_ms": 1.26
+      },
+      "observation_health": {
+        "n_measured": 24,
+        "n_nonzero": 24,
+        "median_all_ms": 37.083,
+        "median_nonzero_ms": 37.083,
+        "min_ms": 11.007,
+        "max_ms": 62.212
+      },
+      "first_model": {
+        "n_measured": 24,
+        "n_nonzero": 24,
+        "median_all_ms": 1226.1039999999998,
+        "median_nonzero_ms": 1226.1039999999998,
+        "min_ms": 1.775,
+        "max_ms": 2564.261
+      },
+      "recovery_health": {
+        "n_measured": 24,
+        "n_nonzero": 8,
+        "median_all_ms": 0.0,
+        "median_nonzero_ms": 4.7885,
+        "min_ms": 0.0,
+        "max_ms": 30.758
+      },
+      "backup_model": {
+        "n_measured": 24,
+        "n_nonzero": 8,
+        "median_all_ms": 0.0,
+        "median_nonzero_ms": 169.1315,
+        "min_ms": 0.0,
+        "max_ms": 1094.409
+      },
+      "executor": {
+        "n_measured": 24,
+        "n_nonzero": 20,
+        "median_all_ms": 2.6535,
+        "median_nonzero_ms": 3.043,
+        "min_ms": 0,
+        "max_ms": 5.081
+      },
+      "gateway_wall": {
+        "n_measured": 24,
+        "n_nonzero": 24,
+        "median_all_ms": 1230.226,
+        "median_nonzero_ms": 1230.226,
+        "min_ms": 10.622,
+        "max_ms": 2568.825
+      },
+      "total_wall": {
+        "n_measured": 24,
+        "n_nonzero": 24,
+        "median_all_ms": 1265.0945000000002,
+        "median_nonzero_ms": 1265.0945000000002,
+        "min_ms": 39.849,
+        "max_ms": 2628.663
+      }
+    },
+    "joint": {
+      "c_decision_ipc": {
+        "n_measured": 24,
+        "n_nonzero": 24,
+        "median_all_ms": 0.1073,
+        "median_nonzero_ms": 0.1073,
+        "min_ms": 0.0767,
+        "max_ms": 0.1347
+      },
+      "policy_adapter": {
+        "n_measured": 24,
+        "n_nonzero": 24,
+        "median_all_ms": 0.9365,
+        "median_nonzero_ms": 0.9365,
+        "min_ms": 0.737,
+        "max_ms": 1.242
+      },
+      "observation_health": {
+        "n_measured": 24,
+        "n_nonzero": 24,
+        "median_all_ms": 28.7365,
+        "median_nonzero_ms": 28.7365,
+        "min_ms": 9.45,
+        "max_ms": 60.266
+      },
+      "first_model": {
+        "n_measured": 24,
+        "n_nonzero": 24,
+        "median_all_ms": 613.813,
+        "median_nonzero_ms": 613.813,
+        "min_ms": 1.679,
+        "max_ms": 1870.197
+      },
+      "recovery_health": {
+        "n_measured": 24,
+        "n_nonzero": 8,
+        "median_all_ms": 0.0,
+        "median_nonzero_ms": 13.096,
+        "min_ms": 0.0,
+        "max_ms": 24.31
+      },
+      "backup_model": {
+        "n_measured": 24,
+        "n_nonzero": 8,
+        "median_all_ms": 0.0,
+        "median_nonzero_ms": 525.7355,
+        "min_ms": 0.0,
+        "max_ms": 1806.363
+      },
+      "executor": {
+        "n_measured": 24,
+        "n_nonzero": 20,
+        "median_all_ms": 3.0855,
+        "median_nonzero_ms": 3.2405,
+        "min_ms": 0,
+        "max_ms": 4.929
+      },
+      "gateway_wall": {
+        "n_measured": 24,
+        "n_nonzero": 24,
+        "median_all_ms": 954.3779999999999,
+        "median_nonzero_ms": 954.3779999999999,
+        "min_ms": 10.833,
+        "max_ms": 1876.647
+      },
+      "total_wall": {
+        "n_measured": 24,
+        "n_nonzero": 24,
+        "median_all_ms": 976.297,
+        "median_nonzero_ms": 976.297,
+        "min_ms": 36.419,
+        "max_ms": 1889.927
+      }
+    }
+  },
+  "pareto": {
+    "metrics": [
+      "maximize completed primary rows",
+      "minimize actual upstream model POST primary rows",
+      "minimize healthy-condition median total_wall"
+    ],
+    "point_estimate_front": [
+      "joint"
+    ],
+    "scope": "descriptive point estimates only; four healthy tasks per arm, no statistical superiority or real-load weighting"
+  },
+  "success_sla": {
+    "primary_success_n": 60,
+    "success_le_250ms": 0,
+    "minimum_success_total_wall_ms": 341.576
+  },
+  "primary_selected_backend": {
+    "local-first": {
+      "local-model": 24
+    },
+    "second-first": {
+      "cloud-model": 24
+    },
+    "joint": {
+      "local-model": 20,
+      "cloud-model": 4
+    }
+  },
+  "primary_actual_backend": {
+    "local-first": {
+      "local-model": 16,
+      "cloud-model": 8
+    },
+    "second-first": {
+      "cloud-model": 16,
+      "local-model": 8
+    },
+    "joint": {
+      "local-model": 12,
+      "cloud-model": 12
+    }
+  },
+  "paired_primary_differences": {
+    "healthy": {
+      "joint": [
+        -61.917,
+        11.246,
+        111.136,
+        2.889
+      ],
+      "second-first": [
+        745.348,
+        1055.12,
+        794.062,
+        378.307
+      ]
+    },
+    "local_wait700": {
+      "joint": [
+        -80.539,
+        200.03,
+        -74.238,
+        -495.449
+      ],
+      "second-first": [
+        -157.214,
+        130.501,
+        -0.815,
+        -467.368
+      ]
+    },
+    "second_wait700": {
+      "joint": [
+        53.688,
+        -31.907,
+        15.108,
+        38.693
+      ],
+      "second-first": [
+        1373.943,
+        1593.217,
+        1471.9,
+        1055.356
+      ]
+    },
+    "local_post503": {
+      "joint": [
+        -137.56,
+        52.931,
+        23.055,
+        -130.789
+      ],
+      "second-first": [
+        -264.223,
+        11.811,
+        -38.78,
+        -65.671
+      ]
+    },
+    "second_post503": {
+      "joint": [
+        -3.503,
+        77.974,
+        -40.787,
+        -0.377
+      ],
+      "second-first": [
+        56.572,
+        -11.031,
+        -41.655,
+        82.417
+      ]
+    },
+    "both_post503": {
+      "joint": [
+        -19.198,
+        -25.163,
+        -1.263,
+        25.837
+      ],
+      "second-first": [
+        7.496,
+        -21.733,
+        -13.57,
+        17.623
+      ]
+    }
+  },
+  "limits": "all-request medians include quick failures; successful latency must be read by condition. Six equal-sized fault conditions are design strata, not actual user traffic prevalence."
+}

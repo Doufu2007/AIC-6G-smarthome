@@ -1,0 +1,71 @@
+{
+  "cloud-model": [],
+  "local-model": [
+    {
+      "attempted": false,
+      "from": "local-model",
+      "to": "cloud-model",
+      "actual_backend": "local-model",
+      "primary_error": null,
+      "primary_status": {
+        "ok": true,
+        "semantic_complete": false,
+        "action_count": 2,
+        "error": null,
+        "failure_kind": null,
+        "source": "real-model",
+        "model_ms": 3358.018
+      },
+      "secondary_status": null,
+      "primary_response": {
+        "source": "real-model",
+        "configured_model": "Qwen2.5-1.5B-Instruct-Q4_K_M",
+        "gpu_info": "unknown",
+        "gpu_info_source": "environment_declared",
+        "model_revision": "6a1a2eb6d15622bf3c96857206351ba97e1af16c30d7a74ee38970e434e9407e",
+        "model_revision_source": "environment_declared",
+        "tier": "local",
+        "answer": "动作计划已生成，等待网关执行确认。",
+        "actions": [
+          {
+            "name": "light_control",
+            "params": {
+              "location": "书房",
+              "action": "off"
+            }
+          },
+          {
+            "name": "curtain_control",
+            "params": {
+              "location": "书房",
+              "action": "open"
+            }
+          }
+        ],
+        "plan_valid": true,
+        "semantic_complete": false,
+        "model_ms": 3358.018,
+        "model_ms_kind": "upstream_http_wall_clock",
+        "model_ms_source": "measured",
+        "upstream_model": "Qwen2.5-1.5B-Instruct-Q4_K_M",
+        "upstream_usage": {
+          "completion_tokens": 49,
+          "prompt_tokens": 678,
+          "total_tokens": 727,
+          "prompt_tokens_details": {
+            "cached_tokens": 0
+          }
+        }
+      },
+      "secondary_response": null,
+      "secondary_health": null,
+      "primary_ms": 3361.4,
+      "health_ms": 0.0,
+      "secondary_ms": 0.0,
+      "elapsed_ms": 3361.503,
+      "budget_ms": 10000.0,
+      "budget_scope": "secondary_launch_only",
+      "reason": "primary_success"
+    }
+  ]
+}

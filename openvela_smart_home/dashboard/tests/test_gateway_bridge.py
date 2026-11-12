@@ -41,7 +41,7 @@ class DashboardGatewayTests(unittest.TestCase):
                 }}}
 
         bridge_server.backend_monitor = Monitor()
-        bridge_server.process_command("客厅有点暗")
+        bridge_server.process_command('把客厅灯光设为60%，再打开卧室窗帘')
         context = bridge_server.gateway.commands[-1][1]
         self.assertIn("compute", context)
         self.assertFalse(context["compute"]["model_ready"])
@@ -58,7 +58,7 @@ class DashboardGatewayTests(unittest.TestCase):
                 }}}
 
         bridge_server.backend_monitor = Monitor()
-        bridge_server.process_command("客厅有点暗")
+        bridge_server.process_command('把客厅灯光设为60%，再打开卧室窗帘')
         context = bridge_server.gateway.commands[-1][1]
         self.assertEqual(context["compute"]["free_mem_mb"], 1024)
         self.assertEqual(context["compute"]["queue_ms"], 100)
@@ -112,7 +112,7 @@ class DashboardGatewayTests(unittest.TestCase):
             "link": {"wan_ok": True, "lan_ok": True},
         }
 
-        result = bridge_server.process_command("客厅有点暗")
+        result = bridge_server.process_command('把客厅灯光设为60%，再打开卧室窗帘')
 
         self.assertEqual(result["source"], "real-model")
         self.assertEqual(result["upstream_model"], "sensehome-large")
@@ -136,7 +136,7 @@ class DashboardGatewayTests(unittest.TestCase):
             "refusal_reason": "MODEL_ACTION_TARGET_UNMENTIONED",
             "link": {"wan_ok": True, "lan_ok": True},
         }
-        result = bridge_server.process_command("把灯调亮一点")
+        result = bridge_server.process_command('打开灯')
         self.assertFalse(result["fallback_attempted"])
         self.assertEqual(result["refusal_reason"], "MODEL_ACTION_TARGET_UNMENTIONED")
 

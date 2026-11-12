@@ -1,0 +1,167 @@
+{
+  "round": 2,
+  "date": "2026-11-06",
+  "reviewer": {
+    "model": "gpt-6.1-sol",
+    "reasoning_effort": "xhigh",
+    "review_independence": "same-family",
+    "acceptance_status": "provisional",
+    "route_note": "The skill's default gpt-6-astra is unavailable in the supplied complete host model list; the documented capability fallback selected gpt-6.1-sol/xhigh.",
+    "scope": "Bounded second silent-assumption sweep, current-source inspection and independent deterministic reproductions. This is not cross-family acceptance, a complete correctness proof, a physical-system audit, or a competition-readiness assessment."
+  },
+  "snapshot_note": "The executor added A-029/A-030 and the declared A-031 local-rule boundary while this bounded second pass was open. Two additional ordinary parser defects were reproduced, reported, corrected by the executor, and independently rechecked before this artifact was saved. No implementation files were edited by the reviewer. Review-artifact writes only.",
+  "inputs_read": [
+    "implement-stage/SPEC.md",
+    "implement-stage/ASSUMPTIONS.md",
+    "implement-stage/BUILD_NOTE.md",
+    "SenseHome-6G/net_offload/offload_policy.c",
+    "SenseHome-6G/net_offload/offload_policy.h",
+    "SenseHome-6G/net_offload/policy_cli.c",
+    "SenseHome-6G/net_offload/resource_policy.py",
+    "SenseHome-6G/net_offload/offload_gateway.py",
+    "SenseHome-6G/net_offload/experiment_inputs.py",
+    "SenseHome-6G/net_offload/experiment_http_gateway.py",
+    "SenseHome-6G/net_offload/experiment_stats.py",
+    "SenseHome-6G/net_offload/audit_experiments.py",
+    "SenseHome-6G/net_offload/experiment_concurrency.py",
+    "SenseHome-6G/net_offload/experiment_replay.py",
+    "SenseHome-6G/net_offload/experiments/service_profiles.json",
+    "SenseHome-6G/net_offload/experiments/policy_config.json",
+    "SenseHome-6G/net_offload/tests/test_experiment_pipeline.py",
+    "openvela_smart_home/dashboard/backend_monitor.py",
+    "openvela_smart_home/dashboard/bridge_server.py",
+    "openvela_smart_home/dashboard/device_actions.py",
+    "openvela_smart_home/dashboard/web_panel.html",
+    "openvela_smart_home/dashboard/tests/test_default_resource_gateway.py",
+    "openvela_smart_home/dashboard/tests/test_remote_execution.py",
+    "openvela_smart_home/dashboard/tests/test_web_panel_gateway.py"
+  ],
+  "undeclared": [],
+  "stale_rows": [],
+  "concrete_bugs": [],
+  "semantic_undeclared": 0,
+  "verdict": "clean",
+  "resolved_findings": [
+    {
+      "id": "R1-objective",
+      "status": "resolved",
+      "ledger": "A-023",
+      "site": "SenseHome-6G/net_offload/offload_policy.c:311-316,359-418; implement-stage/ASSUMPTIONS.md:29",
+      "resolution": "The ledger now declares estimated-cost minimization, gates and hysteresis, and explicitly distinguishes evaluation targets from deadline or reliability reservations."
+    },
+    {
+      "id": "R1-ablation-meaning",
+      "status": "resolved",
+      "ledger": "A-025,A-029",
+      "site": "SenseHome-6G/net_offload/offload_policy.c:359-381,397-416; resource_policy.py:40-41; implement-stage/ASSUMPTIONS.md:31,35",
+      "resolution": "Network-only now shares the estimated-cost objective and switching logic while omitting compute eligibility and queue costs. Compute-only omission of reachability, transport and network recovery, and no-hysteresis removal of both hold and margin, are explicitly declared.",
+      "independent_check": "With local/cloud estimates 12/35 ms, network-only selected local-model/COST_LOCAL. After local readiness=false and queue_ms=1000, it still selected local-model/COST_LOCAL, independently confirming both the matched objective and deliberate omission of compute signals against the actual C executable."
+    },
+    {
+      "id": "R1-workload-calibration-timeouts-statistics-fallback",
+      "status": "resolved",
+      "ledger": "A-022,A-024,A-026,A-027,A-028",
+      "site": "SenseHome-6G/net_offload/experiment_http_gateway.py:234,275-276,281-295,309,361-371; experiment_inputs.py:94-97,148-160; experiment_stats.py:11-29,32-55,59-93; implement-stage/ASSUMPTIONS.md:28,30,32-34",
+      "resolution": "The ledger declares direct-to-rules request fallback, synthetic service mix and unpaced HTTP matrix ordering, fixture-specific configuration, different modeled/socket timeout scopes, and the statistical estimands. HTTP runtime timeout metadata and scenario-qualified request correlation keys are present. Generator version 3 records the added cloud-queue and local-model-down phases."
+    },
+    {
+      "id": "R1-A015-initialization",
+      "status": "resolved",
+      "ledger": "A-015",
+      "site": "openvela_smart_home/dashboard/bridge_server.py:621-672,757-760; dashboard/tests/test_default_resource_gateway.py:133-141",
+      "resolution": "Missing or failed policy startup now leaves the gateway unavailable rather than installing an executable permissive fallback.",
+      "independent_check": "The missing-policy initializer regression passed. The earlier direct reproduction also returned GATEWAY_UNAVAILABLE, interface_ok=false, semantic_complete=false and no light change."
+    },
+    {
+      "id": "R1-A007-recovery",
+      "status": "resolved",
+      "ledger": "A-007",
+      "site": "SenseHome-6G/net_offload/resource_policy.py:46-55,64-69; offload_policy.c:366-379; tests/test_experiment_pipeline.py:137-148",
+      "original_reproduction": "Blocked-id1, healthy-id2, healthy-id3, repeated-id2 previously advanced recovery to 3/3 and selected cloud.",
+      "resolution": "A monotonic integer sequence high-water mark prevents repeated or regressed IDs from advancing the resource tick. Regressed observations are conservatively unavailable in the joint path.",
+      "independent_check": "The actual C executable now returned local-model/WAN_UNREACHABLE, local-model/RECOVERY_HOLD, local-model/RECOVERY_HOLD, local-rules/LAN_DOWN, then recovery 1/3,2/3,3/3 for IDs 1,2,3,2,4,5,6. Cloud was selected only at ID6."
+    },
+    {
+      "id": "R1-model-HTML",
+      "status": "resolved",
+      "site": "openvela_smart_home/dashboard/web_panel.html:323-336; dashboard/tests/test_web_panel_gateway.py:17-39",
+      "original_finding": "Remote answer, thought and observation text flowed through appendLog innerHTML, allowing model text to become executable same-origin markup outside the structured action channel.",
+      "resolution": "appendLog now constructs elements and assigns both label and message through textContent.",
+      "independent_check": "The Node DOM fixture was executed, not skipped. A literal img/onerror payload remained text; an innerHTML setter configured to fail was never invoked."
+    },
+    {
+      "id": "R1-negation-and-bulk",
+      "status": "resolved",
+      "ledger": "A-030",
+      "site": "SenseHome-6G/net_offload/offload_gateway.py:411-419; openvela_smart_home/dashboard/bridge_server.py:538-540; implement-stage/ASSUMPTIONS.md:36",
+      "original_reproduction": "The local parser executed '别打开客厅灯' affirmatively. The visible '打开所有灯' quick action changed only the living-room light and claimed completion.",
+      "resolution": "Negative and bulk phrases are routed for planning, and the local rule handler refuses partial execution. The ledger explicitly discloses that all-room quick actions need not complete without a model.",
+      "independent_check": "Direct calls for '别打开客厅灯', '不准打开客厅灯', '打开所有灯' and '关闭所有灯' produced complex classification, semantic_complete=false and unchanged device state."
+    },
+    {
+      "id": "R2-local-rule-boundary",
+      "status": "resolved",
+      "ledger": "A-031",
+      "site": "openvela_smart_home/dashboard/bridge_server.py:527-581; dashboard/tests/test_remote_execution.py:66-81; implement-stage/ASSUMPTIONS.md:37",
+      "resolution": "The current default local-rule entry no longer invokes the legacy fuzzy or leave-home mutation paths. Supported explicit-room light operations and temperature reads use the same allowlisted executor as model actions; read-only security remains local. The narrowed behavior is declared.",
+      "independent_check": "The unknown-room and legacy-scene no-mutation regression passed; its supported explicit living-room light positive control also passed."
+    },
+    {
+      "id": "R2-unused-negative",
+      "status": "resolved",
+      "site": "SenseHome-6G/net_offload/offload_gateway.py:413; openvela_smart_home/dashboard/tests/test_remote_execution.py:42-49",
+      "original_reproduction": "'不用打开卧室灯' initially passed the affirmative keyword path and switched the bedroom light on while reporting semantic_complete=true.",
+      "resolution": "The planning guard now includes 不用, 无需 and 不必.",
+      "independent_check": "After the correction, direct execution of the exact '不用打开卧室灯' case returned complex classification, semantic_complete=false and unchanged device state."
+    },
+    {
+      "id": "R2-absolute-brightness",
+      "status": "resolved",
+      "site": "openvela_smart_home/dashboard/bridge_server.py:549-563; dashboard/tests/test_remote_execution.py:84",
+      "original_reproduction": "Starting at brightness80, '把客厅灯光亮度设置为75' initially took an implicit relative-decrement branch, set60, and reported semantic_complete=true.",
+      "resolution": "The rule parser now recognizes an integer absolute brightness with optional percent, refuses invalid absolute values, and applies relative increments only when 调亮 or 调暗 is explicit.",
+      "independent_check": "The exact original command independently set75. The new absolute-brightness regression and the final complete Dashboard suite passed."
+    }
+  ],
+  "verification": [
+    {
+      "command": "ARIS Python -B -m unittest discover -s openvela_smart_home/dashboard/tests -v",
+      "exit_code": 0,
+      "tests": 31,
+      "timing": "After the final bounded parser fixes."
+    },
+    {
+      "command": "ARIS Python -B -m unittest discover -s SenseHome-6G/net_offload/tests -v",
+      "exit_code": 0,
+      "tests": 112,
+      "timing": "During round2, before the final addition of the 不用/无需/不必 guard; the latest gateway routing tests were rerun afterward."
+    },
+    {
+      "command": "ARIS Python -B -m unittest discover -s SenseHome-6G/net_offload/tests -p test_offload_gateway.py -v",
+      "exit_code": 0,
+      "tests": 5,
+      "timing": "After the final guard change."
+    },
+    {
+      "command": "ARIS Python -B -m unittest discover -s SenseHome-6G/net_offload/tests -p test_experiment_pipeline.py -v",
+      "exit_code": 0,
+      "tests": 28,
+      "timing": "Independent focused C-resource, replay and statistics checks."
+    },
+    {
+      "command": "ARIS Python -B -m unittest discover -s openvela_smart_home/dashboard/tests -p test_web_panel_gateway.py -v",
+      "exit_code": 0,
+      "tests": 2,
+      "skipped": 0,
+      "timing": "Independent Node DOM log-rendering verification."
+    }
+  ],
+  "limitations": [
+    "The clean verdict means no unresolved consequential undeclared choice, stale ledger row or reproduced concrete defect remained within this bounded sweep. It is not an independent acquittal of the implementation.",
+    "The reviewer is same-family; acceptance remains provisional regardless of green deterministic checks.",
+    "F3/F4 were still pending in BUILD_NOTE.md when read. This sweep did not run or accept a new full HTTP matrix, complete experiment suite, result-to-claim mapping, or all artifact audits.",
+    "A conservative keyword guard is not a complete Chinese-language parser. Passing the listed reproductions does not establish universal language-understanding correctness.",
+    "Physical 6G, actual GPU/model inference quality, real household actuation, demand validation, final media and official submission remain outside this review.",
+    "The first-pass record is preserved unchanged in implement-stage/SILENT_ASSUMPTION_SWEEP.round1.json; current clean status does not rewrite its historical gaps."
+  ]
+}

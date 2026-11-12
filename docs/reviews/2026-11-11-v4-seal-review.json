@@ -1,0 +1,2596 @@
+{
+  "schema": "sensehome.independent-seal-review.v4",
+  "status": "PASS_LOCAL_FINAL_SEAL",
+  "checked_at_utc": "2026-11-11T08:02:32.967948+00:00",
+  "competition_submission_status": "PENDING_HUMAN_REVIEW_SHARE_LINK_AND_UPLOAD",
+  "prior_review": "docs/reviews/2026-11-11-v4-independent-review.json",
+  "prior_review_findings": {
+    "p1_resolved": 3,
+    "p2_resolved": 2,
+    "open_p1_p2": 0
+  },
+  "scope_note": "本报告补齐前次独立审查尚待完成的最终PDF/PPT、视频与封包核验；原始审查、运行证据及已封存ZIP均未改写。",
+  "reviewer_started_models": false,
+  "reviewer_started_mqtt": false,
+  "reviewer_modified_implementation": false,
+  "seal_report_intentionally_external_to_archives": true,
+  "material_source_manifest_sha256": "e3589b34e4b7220a0994aef8a8e1ca9ab479ca852ebefb61ee215c219b875282",
+  "materials": {
+    "status": "PASS",
+    "source_files_verified": 37,
+    "output_files_verified": 7,
+    "plan_pages": 14,
+    "defense_pages": 13,
+    "evidence_pages": 14,
+    "pdf_pages_visually_inspected": 41,
+    "clipping_or_overlap_observed": false,
+    "pptx_slides_compared_to_pdf": 13,
+    "missing_text_or_out_of_bounds_shapes": 0,
+    "claim_page_references_verified": 36,
+    "abstract_nonspace_chars": 392,
+    "work_name_chars": 15,
+    "anonymous_finite_pattern_scan_and_metadata_review": "PASS"
+  },
+  "video": {
+    "status": "PASS",
+    "path": "dist/final/20261111_v4/SenseHome_当前软件证据回放_20261111_v4.mp4",
+    "duration_seconds": 250.376,
+    "bytes": 4994364,
+    "sha256": "d4d507268a614a4b77e665cfcd6e6a7f98594ff20114842d08069bc922410b6f",
+    "video_codec": "h264",
+    "width": 1920,
+    "height": 1080,
+    "audio_codec": "aac",
+    "full_decode_exit_code": 0,
+    "non_silent_audio_mean_db": -24.2,
+    "audio_max_db": -0.5,
+    "encoded_frames_visually_inspected": 9,
+    "narration_kind": "Windows synthetic voice; narration text reviewed",
+    "source_hashes_verified": 11,
+    "builder_sha256_verified": true,
+    "method": "本轮真实HTTP/模型/MQTT软件实体记录与注册原始行的编辑回放，非连续现场录屏；镜头驻留不充当运行时延。"
+  },
+  "recommended_packages": [
+    {
+      "path": "dist/final/20261111_v4/SenseHome_匿名材料审阅包_20261111_v4.zip",
+      "role": "anonymous_materials",
+      "bytes": 5881786,
+      "sha256": "b2821a08cc4a3ae9216c135f11d9830cba2cea9b4723b85e52e1cc4b99bd7698",
+      "archive_file_count": 13,
+      "crc_and_file_hashes": "PASS",
+      "relative_paths_only": true,
+      "current_source_hashes_unchanged": true
+    },
+    {
+      "path": "dist/final/20261111_v4/SenseHome_内部复现审阅包_20261111_v4r1.zip",
+      "role": "internal_reproducibility",
+      "bytes": 42958233,
+      "sha256": "bbb3696865fbd016dd74a494d4a4bb85e6ab1da820944ee6303db85d267b999f",
+      "archive_file_count": 1613,
+      "crc_and_file_hashes": "PASS",
+      "relative_paths_only": true,
+      "current_source_hashes_unchanged": true
+    }
+  ],
+  "internal_package_coverage": {
+    "material_sources_present_and_hash_matched": 37,
+    "registered_experiment_files": 26,
+    "registered_operations_snapshot_files": 57,
+    "registered_final_runtime_snapshot_files": 12,
+    "video_build_references_present": 20,
+    "sqlite_files": 50,
+    "self_built_policy_cli_files": 19,
+    "private_trial_data_weights_and_dlls_excluded": true,
+    "contains_original_local_paths": "仅供内部审阅，不可直接公开上传"
+  },
+  "superseded_internal_package": {
+    "path": "dist/final/20261111_v4/SenseHome_内部复现审阅包_20261111_v4.zip",
+    "role": "superseded",
+    "bytes": 42621916,
+    "sha256": "0fdbc9469436cbe25a115da31a138bae538595f7231cfbeaeda405048632b3c4",
+    "archive_file_count": 1611,
+    "crc_and_file_hashes": "PASS",
+    "relative_paths_only": true,
+    "current_source_hashes_unchanged": false,
+    "reason": "初版未纳入材料来源清单中的两份官方附件；r1已补齐37项来源。初版保持原样。",
+    "later_builder_revision_expected": [
+      "docs/submission/build_review_package_v4.py"
+    ]
+  },
+  "preseal_adjustments_verified": [
+    "冻结实验policy_cli.exe按精确路径入包并匹配注册SHA。",
+    "视频manifest的9场景图、9编码抽帧、旁白JSON和完整解码日志按原相对路径入包。",
+    "r1收齐材料source_manifest的37项来源，包括两份官方附件。"
+  ],
+  "remaining_external_items": {
+    "permanent_share_url": null,
+    "extraction_code": null,
+    "final_human_review_and_upload": "pending",
+    "external_feedback_count": 0,
+    "actual_total_cost": null,
+    "human_independent_deployment_verified": false,
+    "physical_actuator_wan_independent_cloud_or_6g_air_interface_verified": false
+  },
+  "retained_evidence_boundaries": {
+    "experiment_unique_primary_command_strings": 4,
+    "experiment_primary_rows": 72,
+    "experiment_ancillary_rows": 24,
+    "general_language_or_significant_superiority_claim_supported": false,
+    "actual_final_runtime_strategy": "local-first",
+    "actual_final_event_policy_arm": "static-local",
+    "runtime_metadata_correction": "docs/video/v4/metadata_correction.json",
+    "model_runtime_status": "stopped",
+    "recorded_model_exit_codes": [
+      1,
+      1
+    ],
+    "rules_only_operations_is_model_soak": false
+  },
+  "checks": {
+    "schema": "sensehome.independent-seal-review.v4",
+    "checked_at_utc": "2026-11-11T07:59:50.784750+00:00",
+    "material_sources": [
+      {
+        "path": "docs/competition_v3/criteria.json",
+        "bytes": 6550,
+        "size_matches": true,
+        "sha_matches": true
+      },
+      {
+        "path": "附件1-作品提交要求.pdf",
+        "bytes": 161303,
+        "size_matches": true,
+        "sha_matches": true
+      },
+      {
+        "path": "附件2-作品方案大纲与评分标准.pdf",
+        "bytes": 183701,
+        "size_matches": true,
+        "sha_matches": true
+      },
+      {
+        "path": "docs/execution/2026-11-11-evidence-v3.md",
+        "bytes": 3823,
+        "size_matches": true,
+        "sha_matches": true
+      },
+      {
+        "path": "docs/experiments/20261111_fused_real/sealed_evidence_index.json",
+        "bytes": 16227,
+        "size_matches": true,
+        "sha_matches": true
+      },
+      {
+        "path": "docs/experiments/20261111_real_fault_v2/summary.json",
+        "bytes": 13344,
+        "size_matches": true,
+        "sha_matches": true
+      },
+      {
+        "path": "docs/experiments/20261111_race_v3_portfix/summary.json",
+        "bytes": 1527,
+        "size_matches": true,
+        "sha_matches": true
+      },
+      {
+        "path": "docs/experiments/20261111_race_v3_portfix/rows.jsonl",
+        "bytes": 997194,
+        "size_matches": true,
+        "sha_matches": true
+      },
+      {
+        "path": "docs/value/public_sources.json",
+        "bytes": 7792,
+        "size_matches": true,
+        "sha_matches": true
+      },
+      {
+        "path": "docs/value_v2/results/ledger_current_result.json",
+        "bytes": 2907,
+        "size_matches": true,
+        "sha_matches": true
+      },
+      {
+        "path": "docs/competition_v4/results_inputs.json",
+        "bytes": 966,
+        "size_matches": true,
+        "sha_matches": true
+      },
+      {
+        "path": "docs/submission/build_submission_v4.py",
+        "bytes": 70900,
+        "size_matches": true,
+        "sha_matches": true
+      },
+      {
+        "path": "docs/experiments_v4/post_analysis.json",
+        "bytes": 8703,
+        "size_matches": true,
+        "sha_matches": true
+      },
+      {
+        "path": "docs/experiments_v4/recommendation.json",
+        "bytes": 1654,
+        "size_matches": true,
+        "sha_matches": true
+      },
+      {
+        "path": "docs/experiments_v4/final_manifest.json",
+        "bytes": 2786,
+        "size_matches": true,
+        "sha_matches": true
+      },
+      {
+        "path": "docs/operations_v4/registration.json",
+        "bytes": 7399,
+        "size_matches": true,
+        "sha_matches": true
+      },
+      {
+        "path": "docs/operations_v4/rows.jsonl",
+        "bytes": 1520618,
+        "size_matches": true,
+        "sha_matches": true
+      },
+      {
+        "path": "docs/operations_v4/resource_samples.json",
+        "bytes": 217004,
+        "size_matches": true,
+        "sha_matches": true
+      },
+      {
+        "path": "docs/integration_v4/LATEST.json",
+        "bytes": 789,
+        "size_matches": true,
+        "sha_matches": true
+      },
+      {
+        "path": "docs/integration_v4/verification/final_verification.json",
+        "bytes": 878,
+        "size_matches": true,
+        "sha_matches": true
+      },
+      {
+        "path": "docs/reviews/2026-11-11-v4-independent-review.md",
+        "bytes": 9188,
+        "size_matches": true,
+        "sha_matches": true
+      },
+      {
+        "path": "docs/reviews/2026-11-11-v4-independent-review.json",
+        "bytes": 7441,
+        "size_matches": true,
+        "sha_matches": true
+      },
+      {
+        "path": "docs/video/v4/metadata_correction.json",
+        "bytes": 1357,
+        "size_matches": true,
+        "sha_matches": true
+      },
+      {
+        "path": "docs/video/v4/visual_review.json",
+        "bytes": 2103,
+        "size_matches": true,
+        "sha_matches": true
+      },
+      {
+        "path": "docs/experiments_v4/registration.json",
+        "bytes": 17517,
+        "size_matches": true,
+        "sha_matches": true
+      },
+      {
+        "path": "docs/experiments_v4/results.json",
+        "bytes": 6027,
+        "size_matches": true,
+        "sha_matches": true
+      },
+      {
+        "path": "docs/experiments_v4/verification.json",
+        "bytes": 1180,
+        "size_matches": true,
+        "sha_matches": true
+      },
+      {
+        "path": "docs/experiments_v4/rows.jsonl",
+        "bytes": 4087616,
+        "size_matches": true,
+        "sha_matches": true
+      },
+      {
+        "path": "docs/integration_v4/runs/20261111T070837Z_7cfbfcf3/summary.json",
+        "bytes": 582,
+        "size_matches": true,
+        "sha_matches": true
+      },
+      {
+        "path": "docs/integration_v4/runs/20261111T070837Z_7cfbfcf3/offline_audit.json",
+        "bytes": 1392,
+        "size_matches": true,
+        "sha_matches": true
+      },
+      {
+        "path": "docs/integration_v4/runs/20261111T070837Z_7cfbfcf3/normal/offload_events.jsonl",
+        "bytes": 22591,
+        "size_matches": true,
+        "sha_matches": true
+      },
+      {
+        "path": "docs/operations_v4/results.json",
+        "bytes": 5860,
+        "size_matches": true,
+        "sha_matches": true
+      },
+      {
+        "path": "docs/video/v4/manifest.json",
+        "bytes": 9041,
+        "size_matches": true,
+        "sha_matches": true
+      },
+      {
+        "path": "docs/video/v4/final_runtime_records.json",
+        "bytes": 164253,
+        "size_matches": true,
+        "sha_matches": true
+      },
+      {
+        "path": "docs/video/v4/final_runtime_manifest.json",
+        "bytes": 16983,
+        "size_matches": true,
+        "sha_matches": true
+      },
+      {
+        "path": "docs/integration_v4/runs/20261111T070837Z_7cfbfcf3/normal/http_results.json",
+        "bytes": 85227,
+        "size_matches": true,
+        "sha_matches": true
+      },
+      {
+        "path": "docs/integration_v4/runs/20261111T070837Z_7cfbfcf3/ack_loss/http_results.json",
+        "bytes": 50267,
+        "size_matches": true,
+        "sha_matches": true
+      }
+    ],
+    "material_outputs": [
+      {
+        "path": "dist/final/20261111_v4/SenseHome_场景设计方案_20261111_v4.docx",
+        "bytes": 158163,
+        "size_matches": true,
+        "sha_matches": true
+      },
+      {
+        "path": "dist/final/20261111_v4/SenseHome_场景设计答辩_20261111_v4.pptx",
+        "bytes": 67116,
+        "size_matches": true,
+        "sha_matches": true
+      },
+      {
+        "path": "dist/final/20261111_v4/SenseHome_场景设计方案_20261111_v4.pdf",
+        "bytes": 786526,
+        "size_matches": true,
+        "sha_matches": true
+      },
+      {
+        "path": "dist/final/20261111_v4/SenseHome_场景设计答辩_20261111_v4.pdf",
+        "bytes": 271475,
+        "size_matches": true,
+        "sha_matches": true
+      },
+      {
+        "path": "dist/final/20261111_v4/SenseHome_合并佐证材料_20261111_v4.pdf",
+        "bytes": 121172,
+        "size_matches": true,
+        "sha_matches": true
+      },
+      {
+        "path": "dist/final/20261111_v4/作品简介.txt",
+        "bytes": 1110,
+        "size_matches": true,
+        "sha_matches": true
+      },
+      {
+        "path": "dist/final/20261111_v4/SenseHome_当前软件证据回放_20261111_v4.mp4",
+        "bytes": 4994364,
+        "size_matches": true,
+        "sha_matches": true
+      }
+    ],
+    "material_video_input": "docs/video/v4/manifest.json",
+    "material_visual_review": "passed",
+    "video": {
+      "path": "dist/final/20261111_v4/SenseHome_当前软件证据回放_20261111_v4.mp4",
+      "bytes": 4994364,
+      "size_matches": true,
+      "sha_matches": true
+    },
+    "video_sources": [
+      {
+        "path": "docs/video/v4/final_runtime_records.json",
+        "sha_matches": true
+      },
+      {
+        "path": "docs/video/v4/final_runtime_manifest.json",
+        "sha_matches": true
+      },
+      {
+        "path": "docs/experiments_v4/registration.json",
+        "sha_matches": true
+      },
+      {
+        "path": "docs/experiments_v4/results.json",
+        "sha_matches": true
+      },
+      {
+        "path": "docs/experiments_v4/rows.jsonl",
+        "sha_matches": true
+      },
+      {
+        "path": "docs/operations_v4/results.json",
+        "sha_matches": true
+      },
+      {
+        "path": "docs/integration_v4/LATEST.json",
+        "sha_matches": true
+      },
+      {
+        "path": "docs/integration_v4/runs/20261111T070837Z_7cfbfcf3/summary.json",
+        "sha_matches": true
+      },
+      {
+        "path": "docs/integration_v4/runs/20261111T070837Z_7cfbfcf3/offline_audit.json",
+        "sha_matches": true
+      },
+      {
+        "path": "docs/integration_v4/runs/20261111T070837Z_7cfbfcf3/normal/http_results.json",
+        "sha_matches": true
+      },
+      {
+        "path": "docs/integration_v4/runs/20261111T070837Z_7cfbfcf3/ack_loss/http_results.json",
+        "sha_matches": true
+      }
+    ],
+    "video_duration_seconds": 250.376,
+    "video_size_bytes": 4994364,
+    "pdfs": [
+      {
+        "path": "dist/final/20261111_v4/SenseHome_合并佐证材料_20261111_v4.pdf",
+        "pages": 14,
+        "bytes": 121172,
+        "private_matches": [],
+        "metadata": {
+          "format": "PDF 1.4",
+          "title": "6G链路自适应家庭AI推理系统 佐证材料",
+          "author": "",
+          "subject": "(unspecified)",
+          "keywords": "",
+          "creator": "(unspecified)",
+          "producer": "ReportLab PDF Library - (opensource)",
+          "creationDate": "D:20261111154108+08'00'",
+          "modDate": "D:20261111154108+08'00'",
+          "trapped": "",
+          "encryption": null
+        }
+      },
+      {
+        "path": "dist/final/20261111_v4/SenseHome_场景设计方案_20261111_v4.pdf",
+        "pages": 14,
+        "bytes": 786526,
+        "private_matches": [],
+        "metadata": {
+          "format": "PDF 1.7",
+          "title": "6G链路自适应家庭AI推理系统",
+          "author": "",
+          "subject": "",
+          "keywords": "",
+          "creator": "Writer",
+          "producer": "LibreOffice 26.2.6.3 (X86_64)",
+          "creationDate": "D:20261111154102+08'00'",
+          "modDate": "",
+          "trapped": "",
+          "encryption": null
+        }
+      },
+      {
+        "path": "dist/final/20261111_v4/SenseHome_场景设计答辩_20261111_v4.pdf",
+        "pages": 13,
+        "bytes": 271475,
+        "private_matches": [],
+        "metadata": {
+          "format": "PDF 1.7",
+          "title": "6G链路自适应家庭AI推理系统",
+          "author": "",
+          "subject": "",
+          "keywords": "",
+          "creator": "Impress",
+          "producer": "LibreOffice 26.2.6.3 (X86_64)",
+          "creationDate": "D:20261111154107+08'00'",
+          "modDate": "",
+          "trapped": "",
+          "encryption": null
+        }
+      }
+    ],
+    "claims": [
+      {
+        "id": "C01",
+        "raw_exists": true,
+        "pages": {
+          "plan_pdf_page": {
+            "page": 7,
+            "in_range": true
+          },
+          "defense_pdf_page": {
+            "page": 6,
+            "in_range": true
+          },
+          "evidence_pdf_page": {
+            "page": 3,
+            "in_range": true
+          }
+        }
+      },
+      {
+        "id": "C02",
+        "raw_exists": true,
+        "pages": {
+          "plan_pdf_page": {
+            "page": 7,
+            "in_range": true
+          },
+          "defense_pdf_page": {
+            "page": 6,
+            "in_range": true
+          },
+          "evidence_pdf_page": {
+            "page": 2,
+            "in_range": true
+          }
+        }
+      },
+      {
+        "id": "C03",
+        "raw_exists": true,
+        "pages": {
+          "plan_pdf_page": {
+            "page": 8,
+            "in_range": true
+          },
+          "defense_pdf_page": {
+            "page": 7,
+            "in_range": true
+          },
+          "evidence_pdf_page": {
+            "page": 5,
+            "in_range": true
+          }
+        }
+      },
+      {
+        "id": "C04",
+        "raw_exists": true,
+        "pages": {
+          "plan_pdf_page": {
+            "page": 9,
+            "in_range": true
+          },
+          "defense_pdf_page": {
+            "page": 8,
+            "in_range": true
+          },
+          "evidence_pdf_page": {
+            "page": 6,
+            "in_range": true
+          }
+        }
+      },
+      {
+        "id": "C05",
+        "raw_exists": true,
+        "pages": {
+          "plan_pdf_page": {
+            "page": 9,
+            "in_range": true
+          },
+          "defense_pdf_page": {
+            "page": 8,
+            "in_range": true
+          },
+          "evidence_pdf_page": {
+            "page": 7,
+            "in_range": true
+          }
+        }
+      },
+      {
+        "id": "C06",
+        "raw_exists": true,
+        "pages": {
+          "plan_pdf_page": {
+            "page": 3,
+            "in_range": true
+          },
+          "defense_pdf_page": {
+            "page": 7,
+            "in_range": true
+          },
+          "evidence_pdf_page": {
+            "page": 11,
+            "in_range": true
+          }
+        }
+      },
+      {
+        "id": "C07",
+        "raw_exists": true,
+        "pages": {
+          "plan_pdf_page": {
+            "page": 10,
+            "in_range": true
+          },
+          "defense_pdf_page": {
+            "page": 9,
+            "in_range": true
+          },
+          "evidence_pdf_page": {
+            "page": 10,
+            "in_range": true
+          }
+        }
+      },
+      {
+        "id": "C08",
+        "raw_exists": true,
+        "pages": {
+          "plan_pdf_page": {
+            "page": 11,
+            "in_range": true
+          },
+          "defense_pdf_page": {
+            "page": 10,
+            "in_range": true
+          },
+          "evidence_pdf_page": {
+            "page": 8,
+            "in_range": true
+          }
+        }
+      },
+      {
+        "id": "C09",
+        "raw_exists": true,
+        "pages": {
+          "plan_pdf_page": {
+            "page": 2,
+            "in_range": true
+          },
+          "defense_pdf_page": {
+            "page": 2,
+            "in_range": true
+          },
+          "evidence_pdf_page": {
+            "page": 9,
+            "in_range": true
+          }
+        }
+      },
+      {
+        "id": "C10",
+        "raw_exists": true,
+        "pages": {
+          "plan_pdf_page": {
+            "page": 12,
+            "in_range": true
+          },
+          "defense_pdf_page": {
+            "page": 11,
+            "in_range": true
+          },
+          "evidence_pdf_page": {
+            "page": 9,
+            "in_range": true
+          }
+        }
+      },
+      {
+        "id": "C11",
+        "raw_exists": true,
+        "pages": {
+          "plan_pdf_page": {
+            "page": 6,
+            "in_range": true
+          },
+          "defense_pdf_page": {
+            "page": 5,
+            "in_range": true
+          },
+          "evidence_pdf_page": {
+            "page": 12,
+            "in_range": true
+          }
+        }
+      },
+      {
+        "id": "C12",
+        "raw_exists": true,
+        "pages": {
+          "plan_pdf_page": {
+            "page": 14,
+            "in_range": true
+          },
+          "defense_pdf_page": {
+            "page": 13,
+            "in_range": true
+          },
+          "evidence_pdf_page": {
+            "page": 13,
+            "in_range": true
+          }
+        }
+      }
+    ],
+    "archives": [
+      {
+        "path": "dist/final/20261111_v4/SenseHome_内部复现审阅包_20261111_v4.zip",
+        "bytes": 42621916,
+        "size_matches": true,
+        "sha_matches": true,
+        "crc_failure": null,
+        "duplicate_names": false,
+        "unsafe_names": [],
+        "top_level_roots": [
+          "SenseHome-review-v4"
+        ],
+        "archive_file_count": 1611,
+        "sidecar_count_matches": true,
+        "manifest_matches_sidecar": true,
+        "unexpected_entries": [],
+        "archived_hash_failures": [],
+        "current_source_changes_after_seal": [
+          "docs/submission/build_review_package_v4.py"
+        ],
+        "forbidden_entries": [],
+        "readme": "# v4 内部复现审阅包\n\n仅供团队内部审阅，不可直接公开上传。原始自动化证据为保留哈希与可追溯性，含本机绝对路径和历史版本；对外使用匿名材料包。不含真人试用私有记录、模型权重、推理DLL或账号凭据。已保留历史失败与修复证据。先读docs/execution/2026-11-11-evidence-v4.md及dist/final/20261111_v4/交付说明.md。两模型同机共享GPU，MQTT为软件实体，无实物或6G空口测量。\n",
+        "missing_required_evidence": [],
+        "sqlite_files": [
+          "docs/integration_v4/runs/20261111T063352Z_099fc803/ack_loss/mqtt/entity.sqlite3",
+          "docs/integration_v4/runs/20261111T063352Z_099fc803/ack_loss/mqtt/gateway.sqlite3",
+          "docs/integration_v4/runs/20261111T063352Z_099fc803/normal/mqtt/entity.sqlite3",
+          "docs/integration_v4/runs/20261111T063352Z_099fc803/normal/mqtt/gateway.sqlite3",
+          "docs/integration_v4/runs/20261111T063352Z_099fc803/partial/mqtt/entity.sqlite3",
+          "docs/integration_v4/runs/20261111T063352Z_099fc803/partial/mqtt/gateway.sqlite3",
+          "docs/integration_v4/runs/20261111T064202Z_1a7a5ad7/ack_loss/mqtt/entity.sqlite3",
+          "docs/integration_v4/runs/20261111T064202Z_1a7a5ad7/ack_loss/mqtt/gateway.sqlite3",
+          "docs/integration_v4/runs/20261111T064202Z_1a7a5ad7/contradictory/gateway.sqlite3",
+          "docs/integration_v4/runs/20261111T064202Z_1a7a5ad7/contradictory/mqtt/entity.sqlite3",
+          "docs/integration_v4/runs/20261111T064202Z_1a7a5ad7/normal/mqtt/entity.sqlite3",
+          "docs/integration_v4/runs/20261111T064202Z_1a7a5ad7/normal/mqtt/gateway.sqlite3",
+          "docs/integration_v4/runs/20261111T064202Z_1a7a5ad7/partial/mqtt/entity.sqlite3",
+          "docs/integration_v4/runs/20261111T064202Z_1a7a5ad7/partial/mqtt/gateway.sqlite3",
+          "docs/integration_v4/runs/20261111T064518Z_4de8fe37/ack_loss/mqtt/entity.sqlite3",
+          "docs/integration_v4/runs/20261111T064518Z_4de8fe37/ack_loss/mqtt/gateway.sqlite3",
+          "docs/integration_v4/runs/20261111T064518Z_4de8fe37/contradictory/gateway.sqlite3",
+          "docs/integration_v4/runs/20261111T064518Z_4de8fe37/contradictory/mqtt/entity.sqlite3",
+          "docs/integration_v4/runs/20261111T064518Z_4de8fe37/normal/mqtt/entity.sqlite3",
+          "docs/integration_v4/runs/20261111T064518Z_4de8fe37/normal/mqtt/gateway.sqlite3",
+          "docs/integration_v4/runs/20261111T064518Z_4de8fe37/partial/mqtt/entity.sqlite3",
+          "docs/integration_v4/runs/20261111T064518Z_4de8fe37/partial/mqtt/gateway.sqlite3",
+          "docs/integration_v4/runs/20261111T065224Z_2c90f41d/ack_loss/mqtt/entity.sqlite3",
+          "docs/integration_v4/runs/20261111T065224Z_2c90f41d/ack_loss/mqtt/gateway.sqlite3",
+          "docs/integration_v4/runs/20261111T065224Z_2c90f41d/contradictory/gateway.sqlite3",
+          "docs/integration_v4/runs/20261111T065224Z_2c90f41d/contradictory/mqtt/entity.sqlite3",
+          "docs/integration_v4/runs/20261111T065224Z_2c90f41d/normal/mqtt/entity.sqlite3",
+          "docs/integration_v4/runs/20261111T065224Z_2c90f41d/normal/mqtt/gateway.sqlite3",
+          "docs/integration_v4/runs/20261111T065224Z_2c90f41d/partial/mqtt/entity.sqlite3",
+          "docs/integration_v4/runs/20261111T065224Z_2c90f41d/partial/mqtt/gateway.sqlite3",
+          "docs/integration_v4/runs/20261111T065847Z_3e755ece/ack_loss/mqtt/entity.sqlite3",
+          "docs/integration_v4/runs/20261111T065847Z_3e755ece/ack_loss/mqtt/gateway.sqlite3",
+          "docs/integration_v4/runs/20261111T065847Z_3e755ece/contradictory/gateway.sqlite3",
+          "docs/integration_v4/runs/20261111T065847Z_3e755ece/contradictory/mqtt/entity.sqlite3",
+          "docs/integration_v4/runs/20261111T065847Z_3e755ece/normal/mqtt/entity.sqlite3",
+          "docs/integration_v4/runs/20261111T065847Z_3e755ece/normal/mqtt/gateway.sqlite3",
+          "docs/integration_v4/runs/20261111T065847Z_3e755ece/partial/mqtt/entity.sqlite3",
+          "docs/integration_v4/runs/20261111T065847Z_3e755ece/partial/mqtt/gateway.sqlite3",
+          "docs/integration_v4/runs/20261111T070837Z_7cfbfcf3/ack_loss/mqtt/entity.sqlite3",
+          "docs/integration_v4/runs/20261111T070837Z_7cfbfcf3/ack_loss/mqtt/gateway.sqlite3",
+          "docs/integration_v4/runs/20261111T070837Z_7cfbfcf3/contradictory/gateway.sqlite3",
+          "docs/integration_v4/runs/20261111T070837Z_7cfbfcf3/contradictory/mqtt/entity.sqlite3",
+          "docs/integration_v4/runs/20261111T070837Z_7cfbfcf3/normal/mqtt/entity.sqlite3",
+          "docs/integration_v4/runs/20261111T070837Z_7cfbfcf3/normal/mqtt/gateway.sqlite3",
+          "docs/integration_v4/runs/20261111T070837Z_7cfbfcf3/partial/mqtt/entity.sqlite3",
+          "docs/integration_v4/runs/20261111T070837Z_7cfbfcf3/partial/mqtt/gateway.sqlite3",
+          "docs/operations_v4/mqtt_entity.sqlite3",
+          "docs/operations_v4/mqtt_gateway.sqlite3",
+          "docs/video/v4/final_capture/mqtt_entity.sqlite3",
+          "docs/video/v4/final_capture/mqtt_gateway.sqlite3"
+        ],
+        "policy_cli_files": [
+          "SenseHome-6G/net_offload/policy_cli.exe",
+          "docs/experiments/20261111_fused_real/challenge_12_final_repeat3/source_snapshot/policy_cli.exe",
+          "docs/experiments/20261111_fused_real/challenge_12_sealed_development_repeat3/source_snapshot/policy_cli.exe",
+          "docs/experiments/20261111_fused_real/controlled_faults_2x3_repeat3/source_snapshot/policy_cli.exe",
+          "docs/experiments/20261111_fused_real/controlled_faults_sealed/source_snapshot/policy_cli.exe",
+          "docs/experiments/20261111_fused_real/holdout_12_programmatic_repeat3/source_snapshot/policy_cli.exe",
+          "docs/experiments/20261111_fused_real/reviewed_20_final_repeat3/source_snapshot/policy_cli.exe",
+          "docs/experiments/20261111_fused_real/reviewed_20_postfix_repeat3/source_snapshot/policy_cli.exe",
+          "docs/experiments/20261111_fused_real/reviewed_20_sealed_repeat3/source_snapshot/policy_cli.exe",
+          "docs/experiments/20261111_race_v3/source_snapshot/SenseHome-6G/net_offload/policy_cli.exe",
+          "docs/experiments/20261111_race_v3_portfix/source_snapshot/SenseHome-6G/net_offload/policy_cli.exe",
+          "docs/experiments/20261111_real_fault_v2/conditions/cloud_admission700/source_snapshot/policy_cli.exe",
+          "docs/experiments/20261111_real_fault_v2/conditions/cloud_http503/source_snapshot/policy_cli.exe",
+          "docs/experiments/20261111_real_fault_v2/conditions/healthy/source_snapshot/policy_cli.exe",
+          "docs/experiments/20261111_real_fault_v2/conditions/local_admission700/source_snapshot/policy_cli.exe",
+          "docs/experiments/20261111_real_fault_v2/conditions/local_http503/source_snapshot/policy_cli.exe",
+          "docs/experiments/20261111_real_fault_v2/source_snapshot/policy_cli.exe",
+          "docs/experiments_v4/frozen_source/SenseHome-6G/net_offload/policy_cli.exe",
+          "docs/operations_v4/source_snapshot/SenseHome-6G/net_offload/policy_cli.exe"
+        ],
+        "registered_snapshot_checks": [
+          {
+            "path": "docs/experiments_v4/frozen_source/SenseHome-6G/net_offload/eval_model.py",
+            "present": true,
+            "sha_matches": true
+          },
+          {
+            "path": "docs/experiments_v4/frozen_source/SenseHome-6G/net_offload/experiment_inputs.py",
+            "present": true,
+            "sha_matches": true
+          },
+          {
+            "path": "docs/experiments_v4/frozen_source/SenseHome-6G/net_offload/offload_gateway.py",
+            "present": true,
+            "sha_matches": true
+          },
+          {
+            "path": "docs/experiments_v4/frozen_source/SenseHome-6G/net_offload/offload_policy.c",
+            "present": true,
+            "sha_matches": true
+          },
+          {
+            "path": "docs/experiments_v4/frozen_source/SenseHome-6G/net_offload/offload_policy.h",
+            "present": true,
+            "sha_matches": true
+          },
+          {
+            "path": "docs/experiments_v4/frozen_source/SenseHome-6G/net_offload/policy_cli.c",
+            "present": true,
+            "sha_matches": true
+          },
+          {
+            "path": "docs/experiments_v4/frozen_source/SenseHome-6G/net_offload/policy_cli.exe",
+            "present": true,
+            "sha_matches": true
+          },
+          {
+            "path": "docs/experiments_v4/frozen_source/SenseHome-6G/net_offload/resource_policy.py",
+            "present": true,
+            "sha_matches": true
+          },
+          {
+            "path": "docs/experiments_v4/frozen_source/SenseHome-6G/net_offload/backends/eval_commands.reviewed.jsonl",
+            "present": true,
+            "sha_matches": true
+          },
+          {
+            "path": "docs/experiments_v4/frozen_source/SenseHome-6G/net_offload/backends/openai_backend.py",
+            "present": true,
+            "sha_matches": true
+          },
+          {
+            "path": "docs/experiments_v4/frozen_source/SenseHome-6G/net_offload/experiments/policy_config.json",
+            "present": true,
+            "sha_matches": true
+          },
+          {
+            "path": "docs/experiments_v4/frozen_source/SenseHome-6G/net_offload/experiments/service_profiles.json",
+            "present": true,
+            "sha_matches": true
+          },
+          {
+            "path": "docs/experiments_v4/frozen_source/openvela_smart_home/dashboard/backend_monitor.py",
+            "present": true,
+            "sha_matches": true
+          },
+          {
+            "path": "docs/experiments_v4/frozen_source/openvela_smart_home/dashboard/bridge_server.py",
+            "present": true,
+            "sha_matches": true
+          },
+          {
+            "path": "docs/experiments_v4/frozen_source/openvela_smart_home/dashboard/device_actions.py",
+            "present": true,
+            "sha_matches": true
+          },
+          {
+            "path": "docs/experiments_v4/frozen_source/docs/demo_v3/local_models.json",
+            "present": true,
+            "sha_matches": true
+          },
+          {
+            "path": "docs/experiments_v4/frozen_source/docs/demo_v3/planning_recovery.py",
+            "present": true,
+            "sha_matches": true
+          },
+          {
+            "path": "docs/experiments_v4/frozen_source/docs/demo_v3/runtime.py",
+            "present": true,
+            "sha_matches": true
+          },
+          {
+            "path": "docs/experiments_v4/frozen_source/docs/deployment/fused_eval.py",
+            "present": true,
+            "sha_matches": true
+          },
+          {
+            "path": "docs/experiments_v4/frozen_source/docs/deployment/real_fault_eval_v2.py",
+            "present": true,
+            "sha_matches": true
+          },
+          {
+            "path": "docs/experiments_v4/frozen_source/docs/experiments/20261111_fused_real/reviewed_20_sealed_repeat3/calibration.json",
+            "present": true,
+            "sha_matches": true
+          },
+          {
+            "path": "docs/experiments_v4/run_comparison.py",
+            "present": true,
+            "sha_matches": true
+          },
+          {
+            "path": "docs/experiments_v4/verify_run.py",
+            "present": true,
+            "sha_matches": true
+          },
+          {
+            "path": "docs/experiments_v4/test_comparison.py",
+            "present": true,
+            "sha_matches": true
+          },
+          {
+            "path": "docs/experiments_v4/initial_state.json",
+            "present": true,
+            "sha_matches": true
+          },
+          {
+            "path": "docs/experiments_v4/runtime_resolved.json",
+            "present": true,
+            "sha_matches": true
+          },
+          {
+            "path": "docs/operations_v4/source_snapshot/docs/demo_v3/doctor_current.json",
+            "present": true,
+            "sha_matches": true
+          },
+          {
+            "path": "docs/operations_v4/source_snapshot/docs/demo_v3/local_models.json",
+            "present": true,
+            "sha_matches": true
+          },
+          {
+            "path": "docs/operations_v4/source_snapshot/docs/demo_v3/planning_recovery.py",
+            "present": true,
+            "sha_matches": true
+          },
+          {
+            "path": "docs/operations_v4/source_snapshot/docs/demo_v3/race_matrix.py",
+            "present": true,
+            "sha_matches": true
+          },
+          {
+            "path": "docs/operations_v4/source_snapshot/docs/demo_v3/run_live.py",
+            "present": true,
+            "sha_matches": true
+          },
+          {
+            "path": "docs/operations_v4/source_snapshot/docs/demo_v3/runtime.py",
+            "present": true,
+            "sha_matches": true
+          },
+          {
+            "path": "docs/operations_v4/source_snapshot/docs/demo_v3/test_planning_recovery.py",
+            "present": true,
+            "sha_matches": true
+          },
+          {
+            "path": "docs/operations_v4/source_snapshot/docs/demo_v3/test_race_matrix.py",
+            "present": true,
+            "sha_matches": true
+          },
+          {
+            "path": "docs/operations_v4/source_snapshot/docs/demo_v3/test_run_live.py",
+            "present": true,
+            "sha_matches": true
+          },
+          {
+            "path": "docs/operations_v4/source_snapshot/docs/demo_v3/test_runtime.py",
+            "present": true,
+            "sha_matches": true
+          },
+          {
+            "path": "docs/operations_v4/source_snapshot/docs/demo_v3/verify_race.py",
+            "present": true,
+            "sha_matches": true
+          },
+          {
+            "path": "docs/operations_v4/source_snapshot/docs/demo_v4/live_v4.py",
+            "present": true,
+            "sha_matches": true
+          },
+          {
+            "path": "docs/operations_v4/source_snapshot/docs/demo_v4/test_live_v4.py",
+            "present": true,
+            "sha_matches": true
+          },
+          {
+            "path": "docs/operations_v4/source_snapshot/docs/experiments/20261111_fused_real/reviewed_20_sealed_repeat3/calibration.json",
+            "present": true,
+            "sha_matches": true
+          },
+          {
+            "path": "docs/operations_v4/source_snapshot/docs/experiments/20261111_race_v3_portfix/initial_state.json",
+            "present": true,
+            "sha_matches": true
+          },
+          {
+            "path": "docs/operations_v4/source_snapshot/docs/trial_v2/collector.py",
+            "present": true,
+            "sha_matches": true
+          },
+          {
+            "path": "docs/operations_v4/source_snapshot/docs/trial_v2/index.html",
+            "present": true,
+            "sha_matches": true
+          },
+          {
+            "path": "docs/operations_v4/source_snapshot/docs/trial_v2/run_isolated_gateway.py",
+            "present": true,
+            "sha_matches": true
+          },
+          {
+            "path": "docs/operations_v4/source_snapshot/docs/trial_v2/smoke_http.py",
+            "present": true,
+            "sha_matches": true
+          },
+          {
+            "path": "docs/operations_v4/source_snapshot/docs/trial_v2/test_collector.py",
+            "present": true,
+            "sha_matches": true
+          },
+          {
+            "path": "docs/operations_v4/source_snapshot/docs/trial_v2/test_isolated_gateway.py",
+            "present": true,
+            "sha_matches": true
+          },
+          {
+            "path": "docs/operations_v4/source_snapshot/docs/trial_v4/index.html",
+            "present": true,
+            "sha_matches": true
+          },
+          {
+            "path": "docs/operations_v4/source_snapshot/docs/trial_v4/run_trial.py",
+            "present": true,
+            "sha_matches": true
+          },
+          {
+            "path": "docs/operations_v4/source_snapshot/docs/trial_v4/test_http.py",
+            "present": true,
+            "sha_matches": true
+          },
+          {
+            "path": "docs/operations_v4/source_snapshot/docs/trial_v4/test_trial.py",
+            "present": true,
+            "sha_matches": true
+          },
+          {
+            "path": "docs/operations_v4/source_snapshot/openvela_smart_home/dashboard/backend_monitor.py",
+            "present": true,
+            "sha_matches": true
+          },
+          {
+            "path": "docs/operations_v4/source_snapshot/openvela_smart_home/dashboard/bridge_server.py",
+            "present": true,
+            "sha_matches": true
+          },
+          {
+            "path": "docs/operations_v4/source_snapshot/openvela_smart_home/dashboard/device_actions.py",
+            "present": true,
+            "sha_matches": true
+          },
+          {
+            "path": "docs/operations_v4/source_snapshot/openvela_smart_home/dashboard/web_panel.html",
+            "present": true,
+            "sha_matches": true
+          },
+          {
+            "path": "docs/operations_v4/source_snapshot/SenseHome-6G/net_offload/audit_experiments.py",
+            "present": true,
+            "sha_matches": true
+          },
+          {
+            "path": "docs/operations_v4/source_snapshot/SenseHome-6G/net_offload/build_manifest.json",
+            "present": true,
+            "sha_matches": true
+          },
+          {
+            "path": "docs/operations_v4/source_snapshot/SenseHome-6G/net_offload/durable_receipts.py",
+            "present": true,
+            "sha_matches": true
+          },
+          {
+            "path": "docs/operations_v4/source_snapshot/SenseHome-6G/net_offload/eval_model.py",
+            "present": true,
+            "sha_matches": true
+          },
+          {
+            "path": "docs/operations_v4/source_snapshot/SenseHome-6G/net_offload/evidence.py",
+            "present": true,
+            "sha_matches": true
+          },
+          {
+            "path": "docs/operations_v4/source_snapshot/SenseHome-6G/net_offload/experiment_concurrency.py",
+            "present": true,
+            "sha_matches": true
+          },
+          {
+            "path": "docs/operations_v4/source_snapshot/SenseHome-6G/net_offload/experiment_http_gateway.py",
+            "present": true,
+            "sha_matches": true
+          },
+          {
+            "path": "docs/operations_v4/source_snapshot/SenseHome-6G/net_offload/experiment_inputs.py",
+            "present": true,
+            "sha_matches": true
+          },
+          {
+            "path": "docs/operations_v4/source_snapshot/SenseHome-6G/net_offload/experiment_replay.py",
+            "present": true,
+            "sha_matches": true
+          },
+          {
+            "path": "docs/operations_v4/source_snapshot/SenseHome-6G/net_offload/experiment_safety.py",
+            "present": true,
+            "sha_matches": true
+          },
+          {
+            "path": "docs/operations_v4/source_snapshot/SenseHome-6G/net_offload/experiment_sensitivity.py",
+            "present": true,
+            "sha_matches": true
+          },
+          {
+            "path": "docs/operations_v4/source_snapshot/SenseHome-6G/net_offload/experiment_stats.py",
+            "present": true,
+            "sha_matches": true
+          },
+          {
+            "path": "docs/operations_v4/source_snapshot/SenseHome-6G/net_offload/experiments/policy_config.json",
+            "present": true,
+            "sha_matches": true
+          },
+          {
+            "path": "docs/operations_v4/source_snapshot/SenseHome-6G/net_offload/experiments/service_profiles.json",
+            "present": true,
+            "sha_matches": true
+          },
+          {
+            "path": "docs/operations_v4/source_snapshot/SenseHome-6G/net_offload/link_emulator.py",
+            "present": true,
+            "sha_matches": true
+          },
+          {
+            "path": "docs/operations_v4/source_snapshot/SenseHome-6G/net_offload/mqtt_receipts.py",
+            "present": true,
+            "sha_matches": true
+          },
+          {
+            "path": "docs/operations_v4/source_snapshot/SenseHome-6G/net_offload/network_trace.py",
+            "present": true,
+            "sha_matches": true
+          },
+          {
+            "path": "docs/operations_v4/source_snapshot/SenseHome-6G/net_offload/offload_bench.py",
+            "present": true,
+            "sha_matches": true
+          },
+          {
+            "path": "docs/operations_v4/source_snapshot/SenseHome-6G/net_offload/offload_gateway.py",
+            "present": true,
+            "sha_matches": true
+          },
+          {
+            "path": "docs/operations_v4/source_snapshot/SenseHome-6G/net_offload/offload_policy.c",
+            "present": true,
+            "sha_matches": true
+          },
+          {
+            "path": "docs/operations_v4/source_snapshot/SenseHome-6G/net_offload/offload_policy.h",
+            "present": true,
+            "sha_matches": true
+          },
+          {
+            "path": "docs/operations_v4/source_snapshot/SenseHome-6G/net_offload/policy_cli.c",
+            "present": true,
+            "sha_matches": true
+          },
+          {
+            "path": "docs/operations_v4/source_snapshot/SenseHome-6G/net_offload/policy_cli.exe",
+            "present": true,
+            "sha_matches": true
+          },
+          {
+            "path": "docs/operations_v4/source_snapshot/SenseHome-6G/net_offload/render_evidence_report.py",
+            "present": true,
+            "sha_matches": true
+          },
+          {
+            "path": "docs/operations_v4/source_snapshot/SenseHome-6G/net_offload/resource_policy.py",
+            "present": true,
+            "sha_matches": true
+          },
+          {
+            "path": "docs/operations_v4/source_snapshot/SenseHome-6G/net_offload/run_experiment_suite.py",
+            "present": true,
+            "sha_matches": true
+          },
+          {
+            "path": "docs/operations_v4/source_snapshot/SenseHome-6G/net_offload/test_compute_policy.c",
+            "present": true,
+            "sha_matches": true
+          },
+          {
+            "path": "docs/operations_v4/source_snapshot/SenseHome-6G/net_offload/test_offload_policy.c",
+            "present": true,
+            "sha_matches": true
+          },
+          {
+            "path": "docs/video/v4/final_capture/source_snapshot/openvela_smart_home/dashboard/bridge_server.py",
+            "present": true,
+            "sha_matches": true
+          },
+          {
+            "path": "docs/video/v4/final_capture/source_snapshot/openvela_smart_home/dashboard/device_actions.py",
+            "present": true,
+            "sha_matches": true
+          },
+          {
+            "path": "docs/video/v4/final_capture/source_snapshot/SenseHome-6G/net_offload/offload_gateway.py",
+            "present": true,
+            "sha_matches": true
+          },
+          {
+            "path": "docs/video/v4/final_capture/source_snapshot/SenseHome-6G/net_offload/durable_receipts.py",
+            "present": true,
+            "sha_matches": true
+          },
+          {
+            "path": "docs/video/v4/final_capture/source_snapshot/SenseHome-6G/net_offload/mqtt_receipts.py",
+            "present": true,
+            "sha_matches": true
+          },
+          {
+            "path": "docs/video/v4/final_capture/source_snapshot/docs/demo_v4/live_v4.py",
+            "present": true,
+            "sha_matches": true
+          },
+          {
+            "path": "docs/video/v4/final_capture/source_snapshot/docs/demo_v3/run_live.py",
+            "present": true,
+            "sha_matches": true
+          },
+          {
+            "path": "docs/video/v4/final_capture/source_snapshot/docs/demo_v3/planning_recovery.py",
+            "present": true,
+            "sha_matches": true
+          },
+          {
+            "path": "docs/video/v4/final_capture/source_snapshot/docs/trial_v4/run_trial.py",
+            "present": true,
+            "sha_matches": true
+          },
+          {
+            "path": "docs/video/v4/final_capture/source_snapshot/docs/trial_v2/collector.py",
+            "present": true,
+            "sha_matches": true
+          },
+          {
+            "path": "docs/video/v4/final_capture/source_snapshot/docs/video/v4/capture_runtime.py",
+            "present": true,
+            "sha_matches": true
+          },
+          {
+            "path": "docs/video/v4/final_capture/source_snapshot/docs/video/v4/run_final_capture.py",
+            "present": true,
+            "sha_matches": true
+          }
+        ],
+        "video_build_references": [
+          {
+            "path": "docs/video/v4/builds/20261111T071753_609704Z/scene_01_overview.png",
+            "present": true
+          },
+          {
+            "path": "docs/video/v4/builds/20261111T071753_609704Z/scene_02_rule.png",
+            "present": true
+          },
+          {
+            "path": "docs/video/v4/builds/20261111T071753_609704Z/scene_02_model.png",
+            "present": true
+          },
+          {
+            "path": "docs/video/v4/builds/20261111T071753_609704Z/scene_03_empty.png",
+            "present": true
+          },
+          {
+            "path": "docs/video/v4/builds/20261111T071753_609704Z/scene_04_comparison.png",
+            "present": true
+          },
+          {
+            "path": "docs/video/v4/builds/20261111T071753_609704Z/scene_05_recovery.png",
+            "present": true
+          },
+          {
+            "path": "docs/video/v4/builds/20261111T071753_609704Z/scene_06_receipt.png",
+            "present": true
+          },
+          {
+            "path": "docs/video/v4/builds/20261111T071753_609704Z/scene_07_operations.png",
+            "present": true
+          },
+          {
+            "path": "docs/video/v4/builds/20261111T071753_609704Z/scene_08_delivery.png",
+            "present": true
+          },
+          {
+            "path": "docs/video/v4/builds/20261111T071753_609704Z/check_01_0.png",
+            "present": true
+          },
+          {
+            "path": "docs/video/v4/builds/20261111T071753_609704Z/check_02_0.png",
+            "present": true
+          },
+          {
+            "path": "docs/video/v4/builds/20261111T071753_609704Z/check_02_1.png",
+            "present": true
+          },
+          {
+            "path": "docs/video/v4/builds/20261111T071753_609704Z/check_03_0.png",
+            "present": true
+          },
+          {
+            "path": "docs/video/v4/builds/20261111T071753_609704Z/check_04_0.png",
+            "present": true
+          },
+          {
+            "path": "docs/video/v4/builds/20261111T071753_609704Z/check_05_0.png",
+            "present": true
+          },
+          {
+            "path": "docs/video/v4/builds/20261111T071753_609704Z/check_06_0.png",
+            "present": true
+          },
+          {
+            "path": "docs/video/v4/builds/20261111T071753_609704Z/check_07_0.png",
+            "present": true
+          },
+          {
+            "path": "docs/video/v4/builds/20261111T071753_609704Z/check_08_0.png",
+            "present": true
+          },
+          {
+            "path": "docs/video/v4/builds/20261111T071753_609704Z/narration.json",
+            "present": true
+          },
+          {
+            "path": "docs/video/v4/builds/20261111T071753_609704Z/full_decode_check.txt",
+            "present": true
+          }
+        ],
+        "material_source_coverage": [
+          {
+            "path": "docs/competition_v3/criteria.json",
+            "present": true,
+            "sha_matches": true
+          },
+          {
+            "path": "附件1-作品提交要求.pdf",
+            "present": false,
+            "sha_matches": false
+          },
+          {
+            "path": "附件2-作品方案大纲与评分标准.pdf",
+            "present": false,
+            "sha_matches": false
+          },
+          {
+            "path": "docs/execution/2026-11-11-evidence-v3.md",
+            "present": true,
+            "sha_matches": true
+          },
+          {
+            "path": "docs/experiments/20261111_fused_real/sealed_evidence_index.json",
+            "present": true,
+            "sha_matches": true
+          },
+          {
+            "path": "docs/experiments/20261111_real_fault_v2/summary.json",
+            "present": true,
+            "sha_matches": true
+          },
+          {
+            "path": "docs/experiments/20261111_race_v3_portfix/summary.json",
+            "present": true,
+            "sha_matches": true
+          },
+          {
+            "path": "docs/experiments/20261111_race_v3_portfix/rows.jsonl",
+            "present": true,
+            "sha_matches": true
+          },
+          {
+            "path": "docs/value/public_sources.json",
+            "present": true,
+            "sha_matches": true
+          },
+          {
+            "path": "docs/value_v2/results/ledger_current_result.json",
+            "present": true,
+            "sha_matches": true
+          },
+          {
+            "path": "docs/competition_v4/results_inputs.json",
+            "present": true,
+            "sha_matches": true
+          },
+          {
+            "path": "docs/submission/build_submission_v4.py",
+            "present": true,
+            "sha_matches": true
+          },
+          {
+            "path": "docs/experiments_v4/post_analysis.json",
+            "present": true,
+            "sha_matches": true
+          },
+          {
+            "path": "docs/experiments_v4/recommendation.json",
+            "present": true,
+            "sha_matches": true
+          },
+          {
+            "path": "docs/experiments_v4/final_manifest.json",
+            "present": true,
+            "sha_matches": true
+          },
+          {
+            "path": "docs/operations_v4/registration.json",
+            "present": true,
+            "sha_matches": true
+          },
+          {
+            "path": "docs/operations_v4/rows.jsonl",
+            "present": true,
+            "sha_matches": true
+          },
+          {
+            "path": "docs/operations_v4/resource_samples.json",
+            "present": true,
+            "sha_matches": true
+          },
+          {
+            "path": "docs/integration_v4/LATEST.json",
+            "present": true,
+            "sha_matches": true
+          },
+          {
+            "path": "docs/integration_v4/verification/final_verification.json",
+            "present": true,
+            "sha_matches": true
+          },
+          {
+            "path": "docs/reviews/2026-11-11-v4-independent-review.md",
+            "present": true,
+            "sha_matches": true
+          },
+          {
+            "path": "docs/reviews/2026-11-11-v4-independent-review.json",
+            "present": true,
+            "sha_matches": true
+          },
+          {
+            "path": "docs/video/v4/metadata_correction.json",
+            "present": true,
+            "sha_matches": true
+          },
+          {
+            "path": "docs/video/v4/visual_review.json",
+            "present": true,
+            "sha_matches": true
+          },
+          {
+            "path": "docs/experiments_v4/registration.json",
+            "present": true,
+            "sha_matches": true
+          },
+          {
+            "path": "docs/experiments_v4/results.json",
+            "present": true,
+            "sha_matches": true
+          },
+          {
+            "path": "docs/experiments_v4/verification.json",
+            "present": true,
+            "sha_matches": true
+          },
+          {
+            "path": "docs/experiments_v4/rows.jsonl",
+            "present": true,
+            "sha_matches": true
+          },
+          {
+            "path": "docs/integration_v4/runs/20261111T070837Z_7cfbfcf3/summary.json",
+            "present": true,
+            "sha_matches": true
+          },
+          {
+            "path": "docs/integration_v4/runs/20261111T070837Z_7cfbfcf3/offline_audit.json",
+            "present": true,
+            "sha_matches": true
+          },
+          {
+            "path": "docs/integration_v4/runs/20261111T070837Z_7cfbfcf3/normal/offload_events.jsonl",
+            "present": true,
+            "sha_matches": true
+          },
+          {
+            "path": "docs/operations_v4/results.json",
+            "present": true,
+            "sha_matches": true
+          },
+          {
+            "path": "docs/video/v4/manifest.json",
+            "present": true,
+            "sha_matches": true
+          },
+          {
+            "path": "docs/video/v4/final_runtime_records.json",
+            "present": true,
+            "sha_matches": true
+          },
+          {
+            "path": "docs/video/v4/final_runtime_manifest.json",
+            "present": true,
+            "sha_matches": true
+          },
+          {
+            "path": "docs/integration_v4/runs/20261111T070837Z_7cfbfcf3/normal/http_results.json",
+            "present": true,
+            "sha_matches": true
+          },
+          {
+            "path": "docs/integration_v4/runs/20261111T070837Z_7cfbfcf3/ack_loss/http_results.json",
+            "present": true,
+            "sha_matches": true
+          }
+        ]
+      },
+      {
+        "path": "dist/final/20261111_v4/SenseHome_内部复现审阅包_20261111_v4r1.zip",
+        "bytes": 42958233,
+        "size_matches": true,
+        "sha_matches": true,
+        "crc_failure": null,
+        "duplicate_names": false,
+        "unsafe_names": [],
+        "top_level_roots": [
+          "SenseHome-review-v4"
+        ],
+        "archive_file_count": 1613,
+        "sidecar_count_matches": true,
+        "manifest_matches_sidecar": true,
+        "unexpected_entries": [],
+        "archived_hash_failures": [],
+        "current_source_changes_after_seal": [],
+        "forbidden_entries": [],
+        "readme": "# v4 内部复现审阅包\n\n仅供团队内部审阅，不可直接公开上传。原始自动化证据为保留哈希与可追溯性，含本机绝对路径和历史版本；对外使用匿名材料包。不含真人试用私有记录、模型权重、推理DLL或账号凭据。已保留历史失败与修复证据。先读docs/execution/2026-11-11-evidence-v4.md及dist/final/20261111_v4/交付说明.md。两模型同机共享GPU，MQTT为软件实体，无实物或6G空口测量。\n",
+        "missing_required_evidence": [],
+        "sqlite_files": [
+          "docs/integration_v4/runs/20261111T063352Z_099fc803/ack_loss/mqtt/entity.sqlite3",
+          "docs/integration_v4/runs/20261111T063352Z_099fc803/ack_loss/mqtt/gateway.sqlite3",
+          "docs/integration_v4/runs/20261111T063352Z_099fc803/normal/mqtt/entity.sqlite3",
+          "docs/integration_v4/runs/20261111T063352Z_099fc803/normal/mqtt/gateway.sqlite3",
+          "docs/integration_v4/runs/20261111T063352Z_099fc803/partial/mqtt/entity.sqlite3",
+          "docs/integration_v4/runs/20261111T063352Z_099fc803/partial/mqtt/gateway.sqlite3",
+          "docs/integration_v4/runs/20261111T064202Z_1a7a5ad7/ack_loss/mqtt/entity.sqlite3",
+          "docs/integration_v4/runs/20261111T064202Z_1a7a5ad7/ack_loss/mqtt/gateway.sqlite3",
+          "docs/integration_v4/runs/20261111T064202Z_1a7a5ad7/contradictory/gateway.sqlite3",
+          "docs/integration_v4/runs/20261111T064202Z_1a7a5ad7/contradictory/mqtt/entity.sqlite3",
+          "docs/integration_v4/runs/20261111T064202Z_1a7a5ad7/normal/mqtt/entity.sqlite3",
+          "docs/integration_v4/runs/20261111T064202Z_1a7a5ad7/normal/mqtt/gateway.sqlite3",
+          "docs/integration_v4/runs/20261111T064202Z_1a7a5ad7/partial/mqtt/entity.sqlite3",
+          "docs/integration_v4/runs/20261111T064202Z_1a7a5ad7/partial/mqtt/gateway.sqlite3",
+          "docs/integration_v4/runs/20261111T064518Z_4de8fe37/ack_loss/mqtt/entity.sqlite3",
+          "docs/integration_v4/runs/20261111T064518Z_4de8fe37/ack_loss/mqtt/gateway.sqlite3",
+          "docs/integration_v4/runs/20261111T064518Z_4de8fe37/contradictory/gateway.sqlite3",
+          "docs/integration_v4/runs/20261111T064518Z_4de8fe37/contradictory/mqtt/entity.sqlite3",
+          "docs/integration_v4/runs/20261111T064518Z_4de8fe37/normal/mqtt/entity.sqlite3",
+          "docs/integration_v4/runs/20261111T064518Z_4de8fe37/normal/mqtt/gateway.sqlite3",
+          "docs/integration_v4/runs/20261111T064518Z_4de8fe37/partial/mqtt/entity.sqlite3",
+          "docs/integration_v4/runs/20261111T064518Z_4de8fe37/partial/mqtt/gateway.sqlite3",
+          "docs/integration_v4/runs/20261111T065224Z_2c90f41d/ack_loss/mqtt/entity.sqlite3",
+          "docs/integration_v4/runs/20261111T065224Z_2c90f41d/ack_loss/mqtt/gateway.sqlite3",
+          "docs/integration_v4/runs/20261111T065224Z_2c90f41d/contradictory/gateway.sqlite3",
+          "docs/integration_v4/runs/20261111T065224Z_2c90f41d/contradictory/mqtt/entity.sqlite3",
+          "docs/integration_v4/runs/20261111T065224Z_2c90f41d/normal/mqtt/entity.sqlite3",
+          "docs/integration_v4/runs/20261111T065224Z_2c90f41d/normal/mqtt/gateway.sqlite3",
+          "docs/integration_v4/runs/20261111T065224Z_2c90f41d/partial/mqtt/entity.sqlite3",
+          "docs/integration_v4/runs/20261111T065224Z_2c90f41d/partial/mqtt/gateway.sqlite3",
+          "docs/integration_v4/runs/20261111T065847Z_3e755ece/ack_loss/mqtt/entity.sqlite3",
+          "docs/integration_v4/runs/20261111T065847Z_3e755ece/ack_loss/mqtt/gateway.sqlite3",
+          "docs/integration_v4/runs/20261111T065847Z_3e755ece/contradictory/gateway.sqlite3",
+          "docs/integration_v4/runs/20261111T065847Z_3e755ece/contradictory/mqtt/entity.sqlite3",
+          "docs/integration_v4/runs/20261111T065847Z_3e755ece/normal/mqtt/entity.sqlite3",
+          "docs/integration_v4/runs/20261111T065847Z_3e755ece/normal/mqtt/gateway.sqlite3",
+          "docs/integration_v4/runs/20261111T065847Z_3e755ece/partial/mqtt/entity.sqlite3",
+          "docs/integration_v4/runs/20261111T065847Z_3e755ece/partial/mqtt/gateway.sqlite3",
+          "docs/integration_v4/runs/20261111T070837Z_7cfbfcf3/ack_loss/mqtt/entity.sqlite3",
+          "docs/integration_v4/runs/20261111T070837Z_7cfbfcf3/ack_loss/mqtt/gateway.sqlite3",
+          "docs/integration_v4/runs/20261111T070837Z_7cfbfcf3/contradictory/gateway.sqlite3",
+          "docs/integration_v4/runs/20261111T070837Z_7cfbfcf3/contradictory/mqtt/entity.sqlite3",
+          "docs/integration_v4/runs/20261111T070837Z_7cfbfcf3/normal/mqtt/entity.sqlite3",
+          "docs/integration_v4/runs/20261111T070837Z_7cfbfcf3/normal/mqtt/gateway.sqlite3",
+          "docs/integration_v4/runs/20261111T070837Z_7cfbfcf3/partial/mqtt/entity.sqlite3",
+          "docs/integration_v4/runs/20261111T070837Z_7cfbfcf3/partial/mqtt/gateway.sqlite3",
+          "docs/operations_v4/mqtt_entity.sqlite3",
+          "docs/operations_v4/mqtt_gateway.sqlite3",
+          "docs/video/v4/final_capture/mqtt_entity.sqlite3",
+          "docs/video/v4/final_capture/mqtt_gateway.sqlite3"
+        ],
+        "policy_cli_files": [
+          "SenseHome-6G/net_offload/policy_cli.exe",
+          "docs/experiments/20261111_fused_real/challenge_12_final_repeat3/source_snapshot/policy_cli.exe",
+          "docs/experiments/20261111_fused_real/challenge_12_sealed_development_repeat3/source_snapshot/policy_cli.exe",
+          "docs/experiments/20261111_fused_real/controlled_faults_2x3_repeat3/source_snapshot/policy_cli.exe",
+          "docs/experiments/20261111_fused_real/controlled_faults_sealed/source_snapshot/policy_cli.exe",
+          "docs/experiments/20261111_fused_real/holdout_12_programmatic_repeat3/source_snapshot/policy_cli.exe",
+          "docs/experiments/20261111_fused_real/reviewed_20_final_repeat3/source_snapshot/policy_cli.exe",
+          "docs/experiments/20261111_fused_real/reviewed_20_postfix_repeat3/source_snapshot/policy_cli.exe",
+          "docs/experiments/20261111_fused_real/reviewed_20_sealed_repeat3/source_snapshot/policy_cli.exe",
+          "docs/experiments/20261111_race_v3/source_snapshot/SenseHome-6G/net_offload/policy_cli.exe",
+          "docs/experiments/20261111_race_v3_portfix/source_snapshot/SenseHome-6G/net_offload/policy_cli.exe",
+          "docs/experiments/20261111_real_fault_v2/conditions/cloud_admission700/source_snapshot/policy_cli.exe",
+          "docs/experiments/20261111_real_fault_v2/conditions/cloud_http503/source_snapshot/policy_cli.exe",
+          "docs/experiments/20261111_real_fault_v2/conditions/healthy/source_snapshot/policy_cli.exe",
+          "docs/experiments/20261111_real_fault_v2/conditions/local_admission700/source_snapshot/policy_cli.exe",
+          "docs/experiments/20261111_real_fault_v2/conditions/local_http503/source_snapshot/policy_cli.exe",
+          "docs/experiments/20261111_real_fault_v2/source_snapshot/policy_cli.exe",
+          "docs/experiments_v4/frozen_source/SenseHome-6G/net_offload/policy_cli.exe",
+          "docs/operations_v4/source_snapshot/SenseHome-6G/net_offload/policy_cli.exe"
+        ],
+        "registered_snapshot_checks": [
+          {
+            "path": "docs/experiments_v4/frozen_source/SenseHome-6G/net_offload/eval_model.py",
+            "present": true,
+            "sha_matches": true
+          },
+          {
+            "path": "docs/experiments_v4/frozen_source/SenseHome-6G/net_offload/experiment_inputs.py",
+            "present": true,
+            "sha_matches": true
+          },
+          {
+            "path": "docs/experiments_v4/frozen_source/SenseHome-6G/net_offload/offload_gateway.py",
+            "present": true,
+            "sha_matches": true
+          },
+          {
+            "path": "docs/experiments_v4/frozen_source/SenseHome-6G/net_offload/offload_policy.c",
+            "present": true,
+            "sha_matches": true
+          },
+          {
+            "path": "docs/experiments_v4/frozen_source/SenseHome-6G/net_offload/offload_policy.h",
+            "present": true,
+            "sha_matches": true
+          },
+          {
+            "path": "docs/experiments_v4/frozen_source/SenseHome-6G/net_offload/policy_cli.c",
+            "present": true,
+            "sha_matches": true
+          },
+          {
+            "path": "docs/experiments_v4/frozen_source/SenseHome-6G/net_offload/policy_cli.exe",
+            "present": true,
+            "sha_matches": true
+          },
+          {
+            "path": "docs/experiments_v4/frozen_source/SenseHome-6G/net_offload/resource_policy.py",
+            "present": true,
+            "sha_matches": true
+          },
+          {
+            "path": "docs/experiments_v4/frozen_source/SenseHome-6G/net_offload/backends/eval_commands.reviewed.jsonl",
+            "present": true,
+            "sha_matches": true
+          },
+          {
+            "path": "docs/experiments_v4/frozen_source/SenseHome-6G/net_offload/backends/openai_backend.py",
+            "present": true,
+            "sha_matches": true
+          },
+          {
+            "path": "docs/experiments_v4/frozen_source/SenseHome-6G/net_offload/experiments/policy_config.json",
+            "present": true,
+            "sha_matches": true
+          },
+          {
+            "path": "docs/experiments_v4/frozen_source/SenseHome-6G/net_offload/experiments/service_profiles.json",
+            "present": true,
+            "sha_matches": true
+          },
+          {
+            "path": "docs/experiments_v4/frozen_source/openvela_smart_home/dashboard/backend_monitor.py",
+            "present": true,
+            "sha_matches": true
+          },
+          {
+            "path": "docs/experiments_v4/frozen_source/openvela_smart_home/dashboard/bridge_server.py",
+            "present": true,
+            "sha_matches": true
+          },
+          {
+            "path": "docs/experiments_v4/frozen_source/openvela_smart_home/dashboard/device_actions.py",
+            "present": true,
+            "sha_matches": true
+          },
+          {
+            "path": "docs/experiments_v4/frozen_source/docs/demo_v3/local_models.json",
+            "present": true,
+            "sha_matches": true
+          },
+          {
+            "path": "docs/experiments_v4/frozen_source/docs/demo_v3/planning_recovery.py",
+            "present": true,
+            "sha_matches": true
+          },
+          {
+            "path": "docs/experiments_v4/frozen_source/docs/demo_v3/runtime.py",
+            "present": true,
+            "sha_matches": true
+          },
+          {
+            "path": "docs/experiments_v4/frozen_source/docs/deployment/fused_eval.py",
+            "present": true,
+            "sha_matches": true
+          },
+          {
+            "path": "docs/experiments_v4/frozen_source/docs/deployment/real_fault_eval_v2.py",
+            "present": true,
+            "sha_matches": true
+          },
+          {
+            "path": "docs/experiments_v4/frozen_source/docs/experiments/20261111_fused_real/reviewed_20_sealed_repeat3/calibration.json",
+            "present": true,
+            "sha_matches": true
+          },
+          {
+            "path": "docs/experiments_v4/run_comparison.py",
+            "present": true,
+            "sha_matches": true
+          },
+          {
+            "path": "docs/experiments_v4/verify_run.py",
+            "present": true,
+            "sha_matches": true
+          },
+          {
+            "path": "docs/experiments_v4/test_comparison.py",
+            "present": true,
+            "sha_matches": true
+          },
+          {
+            "path": "docs/experiments_v4/initial_state.json",
+            "present": true,
+            "sha_matches": true
+          },
+          {
+            "path": "docs/experiments_v4/runtime_resolved.json",
+            "present": true,
+            "sha_matches": true
+          },
+          {
+            "path": "docs/operations_v4/source_snapshot/docs/demo_v3/doctor_current.json",
+            "present": true,
+            "sha_matches": true
+          },
+          {
+            "path": "docs/operations_v4/source_snapshot/docs/demo_v3/local_models.json",
+            "present": true,
+            "sha_matches": true
+          },
+          {
+            "path": "docs/operations_v4/source_snapshot/docs/demo_v3/planning_recovery.py",
+            "present": true,
+            "sha_matches": true
+          },
+          {
+            "path": "docs/operations_v4/source_snapshot/docs/demo_v3/race_matrix.py",
+            "present": true,
+            "sha_matches": true
+          },
+          {
+            "path": "docs/operations_v4/source_snapshot/docs/demo_v3/run_live.py",
+            "present": true,
+            "sha_matches": true
+          },
+          {
+            "path": "docs/operations_v4/source_snapshot/docs/demo_v3/runtime.py",
+            "present": true,
+            "sha_matches": true
+          },
+          {
+            "path": "docs/operations_v4/source_snapshot/docs/demo_v3/test_planning_recovery.py",
+            "present": true,
+            "sha_matches": true
+          },
+          {
+            "path": "docs/operations_v4/source_snapshot/docs/demo_v3/test_race_matrix.py",
+            "present": true,
+            "sha_matches": true
+          },
+          {
+            "path": "docs/operations_v4/source_snapshot/docs/demo_v3/test_run_live.py",
+            "present": true,
+            "sha_matches": true
+          },
+          {
+            "path": "docs/operations_v4/source_snapshot/docs/demo_v3/test_runtime.py",
+            "present": true,
+            "sha_matches": true
+          },
+          {
+            "path": "docs/operations_v4/source_snapshot/docs/demo_v3/verify_race.py",
+            "present": true,
+            "sha_matches": true
+          },
+          {
+            "path": "docs/operations_v4/source_snapshot/docs/demo_v4/live_v4.py",
+            "present": true,
+            "sha_matches": true
+          },
+          {
+            "path": "docs/operations_v4/source_snapshot/docs/demo_v4/test_live_v4.py",
+            "present": true,
+            "sha_matches": true
+          },
+          {
+            "path": "docs/operations_v4/source_snapshot/docs/experiments/20261111_fused_real/reviewed_20_sealed_repeat3/calibration.json",
+            "present": true,
+            "sha_matches": true
+          },
+          {
+            "path": "docs/operations_v4/source_snapshot/docs/experiments/20261111_race_v3_portfix/initial_state.json",
+            "present": true,
+            "sha_matches": true
+          },
+          {
+            "path": "docs/operations_v4/source_snapshot/docs/trial_v2/collector.py",
+            "present": true,
+            "sha_matches": true
+          },
+          {
+            "path": "docs/operations_v4/source_snapshot/docs/trial_v2/index.html",
+            "present": true,
+            "sha_matches": true
+          },
+          {
+            "path": "docs/operations_v4/source_snapshot/docs/trial_v2/run_isolated_gateway.py",
+            "present": true,
+            "sha_matches": true
+          },
+          {
+            "path": "docs/operations_v4/source_snapshot/docs/trial_v2/smoke_http.py",
+            "present": true,
+            "sha_matches": true
+          },
+          {
+            "path": "docs/operations_v4/source_snapshot/docs/trial_v2/test_collector.py",
+            "present": true,
+            "sha_matches": true
+          },
+          {
+            "path": "docs/operations_v4/source_snapshot/docs/trial_v2/test_isolated_gateway.py",
+            "present": true,
+            "sha_matches": true
+          },
+          {
+            "path": "docs/operations_v4/source_snapshot/docs/trial_v4/index.html",
+            "present": true,
+            "sha_matches": true
+          },
+          {
+            "path": "docs/operations_v4/source_snapshot/docs/trial_v4/run_trial.py",
+            "present": true,
+            "sha_matches": true
+          },
+          {
+            "path": "docs/operations_v4/source_snapshot/docs/trial_v4/test_http.py",
+            "present": true,
+            "sha_matches": true
+          },
+          {
+            "path": "docs/operations_v4/source_snapshot/docs/trial_v4/test_trial.py",
+            "present": true,
+            "sha_matches": true
+          },
+          {
+            "path": "docs/operations_v4/source_snapshot/openvela_smart_home/dashboard/backend_monitor.py",
+            "present": true,
+            "sha_matches": true
+          },
+          {
+            "path": "docs/operations_v4/source_snapshot/openvela_smart_home/dashboard/bridge_server.py",
+            "present": true,
+            "sha_matches": true
+          },
+          {
+            "path": "docs/operations_v4/source_snapshot/openvela_smart_home/dashboard/device_actions.py",
+            "present": true,
+            "sha_matches": true
+          },
+          {
+            "path": "docs/operations_v4/source_snapshot/openvela_smart_home/dashboard/web_panel.html",
+            "present": true,
+            "sha_matches": true
+          },
+          {
+            "path": "docs/operations_v4/source_snapshot/SenseHome-6G/net_offload/audit_experiments.py",
+            "present": true,
+            "sha_matches": true
+          },
+          {
+            "path": "docs/operations_v4/source_snapshot/SenseHome-6G/net_offload/build_manifest.json",
+            "present": true,
+            "sha_matches": true
+          },
+          {
+            "path": "docs/operations_v4/source_snapshot/SenseHome-6G/net_offload/durable_receipts.py",
+            "present": true,
+            "sha_matches": true
+          },
+          {
+            "path": "docs/operations_v4/source_snapshot/SenseHome-6G/net_offload/eval_model.py",
+            "present": true,
+            "sha_matches": true
+          },
+          {
+            "path": "docs/operations_v4/source_snapshot/SenseHome-6G/net_offload/evidence.py",
+            "present": true,
+            "sha_matches": true
+          },
+          {
+            "path": "docs/operations_v4/source_snapshot/SenseHome-6G/net_offload/experiment_concurrency.py",
+            "present": true,
+            "sha_matches": true
+          },
+          {
+            "path": "docs/operations_v4/source_snapshot/SenseHome-6G/net_offload/experiment_http_gateway.py",
+            "present": true,
+            "sha_matches": true
+          },
+          {
+            "path": "docs/operations_v4/source_snapshot/SenseHome-6G/net_offload/experiment_inputs.py",
+            "present": true,
+            "sha_matches": true
+          },
+          {
+            "path": "docs/operations_v4/source_snapshot/SenseHome-6G/net_offload/experiment_replay.py",
+            "present": true,
+            "sha_matches": true
+          },
+          {
+            "path": "docs/operations_v4/source_snapshot/SenseHome-6G/net_offload/experiment_safety.py",
+            "present": true,
+            "sha_matches": true
+          },
+          {
+            "path": "docs/operations_v4/source_snapshot/SenseHome-6G/net_offload/experiment_sensitivity.py",
+            "present": true,
+            "sha_matches": true
+          },
+          {
+            "path": "docs/operations_v4/source_snapshot/SenseHome-6G/net_offload/experiment_stats.py",
+            "present": true,
+            "sha_matches": true
+          },
+          {
+            "path": "docs/operations_v4/source_snapshot/SenseHome-6G/net_offload/experiments/policy_config.json",
+            "present": true,
+            "sha_matches": true
+          },
+          {
+            "path": "docs/operations_v4/source_snapshot/SenseHome-6G/net_offload/experiments/service_profiles.json",
+            "present": true,
+            "sha_matches": true
+          },
+          {
+            "path": "docs/operations_v4/source_snapshot/SenseHome-6G/net_offload/link_emulator.py",
+            "present": true,
+            "sha_matches": true
+          },
+          {
+            "path": "docs/operations_v4/source_snapshot/SenseHome-6G/net_offload/mqtt_receipts.py",
+            "present": true,
+            "sha_matches": true
+          },
+          {
+            "path": "docs/operations_v4/source_snapshot/SenseHome-6G/net_offload/network_trace.py",
+            "present": true,
+            "sha_matches": true
+          },
+          {
+            "path": "docs/operations_v4/source_snapshot/SenseHome-6G/net_offload/offload_bench.py",
+            "present": true,
+            "sha_matches": true
+          },
+          {
+            "path": "docs/operations_v4/source_snapshot/SenseHome-6G/net_offload/offload_gateway.py",
+            "present": true,
+            "sha_matches": true
+          },
+          {
+            "path": "docs/operations_v4/source_snapshot/SenseHome-6G/net_offload/offload_policy.c",
+            "present": true,
+            "sha_matches": true
+          },
+          {
+            "path": "docs/operations_v4/source_snapshot/SenseHome-6G/net_offload/offload_policy.h",
+            "present": true,
+            "sha_matches": true
+          },
+          {
+            "path": "docs/operations_v4/source_snapshot/SenseHome-6G/net_offload/policy_cli.c",
+            "present": true,
+            "sha_matches": true
+          },
+          {
+            "path": "docs/operations_v4/source_snapshot/SenseHome-6G/net_offload/policy_cli.exe",
+            "present": true,
+            "sha_matches": true
+          },
+          {
+            "path": "docs/operations_v4/source_snapshot/SenseHome-6G/net_offload/render_evidence_report.py",
+            "present": true,
+            "sha_matches": true
+          },
+          {
+            "path": "docs/operations_v4/source_snapshot/SenseHome-6G/net_offload/resource_policy.py",
+            "present": true,
+            "sha_matches": true
+          },
+          {
+            "path": "docs/operations_v4/source_snapshot/SenseHome-6G/net_offload/run_experiment_suite.py",
+            "present": true,
+            "sha_matches": true
+          },
+          {
+            "path": "docs/operations_v4/source_snapshot/SenseHome-6G/net_offload/test_compute_policy.c",
+            "present": true,
+            "sha_matches": true
+          },
+          {
+            "path": "docs/operations_v4/source_snapshot/SenseHome-6G/net_offload/test_offload_policy.c",
+            "present": true,
+            "sha_matches": true
+          },
+          {
+            "path": "docs/video/v4/final_capture/source_snapshot/openvela_smart_home/dashboard/bridge_server.py",
+            "present": true,
+            "sha_matches": true
+          },
+          {
+            "path": "docs/video/v4/final_capture/source_snapshot/openvela_smart_home/dashboard/device_actions.py",
+            "present": true,
+            "sha_matches": true
+          },
+          {
+            "path": "docs/video/v4/final_capture/source_snapshot/SenseHome-6G/net_offload/offload_gateway.py",
+            "present": true,
+            "sha_matches": true
+          },
+          {
+            "path": "docs/video/v4/final_capture/source_snapshot/SenseHome-6G/net_offload/durable_receipts.py",
+            "present": true,
+            "sha_matches": true
+          },
+          {
+            "path": "docs/video/v4/final_capture/source_snapshot/SenseHome-6G/net_offload/mqtt_receipts.py",
+            "present": true,
+            "sha_matches": true
+          },
+          {
+            "path": "docs/video/v4/final_capture/source_snapshot/docs/demo_v4/live_v4.py",
+            "present": true,
+            "sha_matches": true
+          },
+          {
+            "path": "docs/video/v4/final_capture/source_snapshot/docs/demo_v3/run_live.py",
+            "present": true,
+            "sha_matches": true
+          },
+          {
+            "path": "docs/video/v4/final_capture/source_snapshot/docs/demo_v3/planning_recovery.py",
+            "present": true,
+            "sha_matches": true
+          },
+          {
+            "path": "docs/video/v4/final_capture/source_snapshot/docs/trial_v4/run_trial.py",
+            "present": true,
+            "sha_matches": true
+          },
+          {
+            "path": "docs/video/v4/final_capture/source_snapshot/docs/trial_v2/collector.py",
+            "present": true,
+            "sha_matches": true
+          },
+          {
+            "path": "docs/video/v4/final_capture/source_snapshot/docs/video/v4/capture_runtime.py",
+            "present": true,
+            "sha_matches": true
+          },
+          {
+            "path": "docs/video/v4/final_capture/source_snapshot/docs/video/v4/run_final_capture.py",
+            "present": true,
+            "sha_matches": true
+          }
+        ],
+        "video_build_references": [
+          {
+            "path": "docs/video/v4/builds/20261111T071753_609704Z/scene_01_overview.png",
+            "present": true
+          },
+          {
+            "path": "docs/video/v4/builds/20261111T071753_609704Z/scene_02_rule.png",
+            "present": true
+          },
+          {
+            "path": "docs/video/v4/builds/20261111T071753_609704Z/scene_02_model.png",
+            "present": true
+          },
+          {
+            "path": "docs/video/v4/builds/20261111T071753_609704Z/scene_03_empty.png",
+            "present": true
+          },
+          {
+            "path": "docs/video/v4/builds/20261111T071753_609704Z/scene_04_comparison.png",
+            "present": true
+          },
+          {
+            "path": "docs/video/v4/builds/20261111T071753_609704Z/scene_05_recovery.png",
+            "present": true
+          },
+          {
+            "path": "docs/video/v4/builds/20261111T071753_609704Z/scene_06_receipt.png",
+            "present": true
+          },
+          {
+            "path": "docs/video/v4/builds/20261111T071753_609704Z/scene_07_operations.png",
+            "present": true
+          },
+          {
+            "path": "docs/video/v4/builds/20261111T071753_609704Z/scene_08_delivery.png",
+            "present": true
+          },
+          {
+            "path": "docs/video/v4/builds/20261111T071753_609704Z/check_01_0.png",
+            "present": true
+          },
+          {
+            "path": "docs/video/v4/builds/20261111T071753_609704Z/check_02_0.png",
+            "present": true
+          },
+          {
+            "path": "docs/video/v4/builds/20261111T071753_609704Z/check_02_1.png",
+            "present": true
+          },
+          {
+            "path": "docs/video/v4/builds/20261111T071753_609704Z/check_03_0.png",
+            "present": true
+          },
+          {
+            "path": "docs/video/v4/builds/20261111T071753_609704Z/check_04_0.png",
+            "present": true
+          },
+          {
+            "path": "docs/video/v4/builds/20261111T071753_609704Z/check_05_0.png",
+            "present": true
+          },
+          {
+            "path": "docs/video/v4/builds/20261111T071753_609704Z/check_06_0.png",
+            "present": true
+          },
+          {
+            "path": "docs/video/v4/builds/20261111T071753_609704Z/check_07_0.png",
+            "present": true
+          },
+          {
+            "path": "docs/video/v4/builds/20261111T071753_609704Z/check_08_0.png",
+            "present": true
+          },
+          {
+            "path": "docs/video/v4/builds/20261111T071753_609704Z/narration.json",
+            "present": true
+          },
+          {
+            "path": "docs/video/v4/builds/20261111T071753_609704Z/full_decode_check.txt",
+            "present": true
+          }
+        ],
+        "material_source_coverage": [
+          {
+            "path": "docs/competition_v3/criteria.json",
+            "present": true,
+            "sha_matches": true
+          },
+          {
+            "path": "附件1-作品提交要求.pdf",
+            "present": true,
+            "sha_matches": true
+          },
+          {
+            "path": "附件2-作品方案大纲与评分标准.pdf",
+            "present": true,
+            "sha_matches": true
+          },
+          {
+            "path": "docs/execution/2026-11-11-evidence-v3.md",
+            "present": true,
+            "sha_matches": true
+          },
+          {
+            "path": "docs/experiments/20261111_fused_real/sealed_evidence_index.json",
+            "present": true,
+            "sha_matches": true
+          },
+          {
+            "path": "docs/experiments/20261111_real_fault_v2/summary.json",
+            "present": true,
+            "sha_matches": true
+          },
+          {
+            "path": "docs/experiments/20261111_race_v3_portfix/summary.json",
+            "present": true,
+            "sha_matches": true
+          },
+          {
+            "path": "docs/experiments/20261111_race_v3_portfix/rows.jsonl",
+            "present": true,
+            "sha_matches": true
+          },
+          {
+            "path": "docs/value/public_sources.json",
+            "present": true,
+            "sha_matches": true
+          },
+          {
+            "path": "docs/value_v2/results/ledger_current_result.json",
+            "present": true,
+            "sha_matches": true
+          },
+          {
+            "path": "docs/competition_v4/results_inputs.json",
+            "present": true,
+            "sha_matches": true
+          },
+          {
+            "path": "docs/submission/build_submission_v4.py",
+            "present": true,
+            "sha_matches": true
+          },
+          {
+            "path": "docs/experiments_v4/post_analysis.json",
+            "present": true,
+            "sha_matches": true
+          },
+          {
+            "path": "docs/experiments_v4/recommendation.json",
+            "present": true,
+            "sha_matches": true
+          },
+          {
+            "path": "docs/experiments_v4/final_manifest.json",
+            "present": true,
+            "sha_matches": true
+          },
+          {
+            "path": "docs/operations_v4/registration.json",
+            "present": true,
+            "sha_matches": true
+          },
+          {
+            "path": "docs/operations_v4/rows.jsonl",
+            "present": true,
+            "sha_matches": true
+          },
+          {
+            "path": "docs/operations_v4/resource_samples.json",
+            "present": true,
+            "sha_matches": true
+          },
+          {
+            "path": "docs/integration_v4/LATEST.json",
+            "present": true,
+            "sha_matches": true
+          },
+          {
+            "path": "docs/integration_v4/verification/final_verification.json",
+            "present": true,
+            "sha_matches": true
+          },
+          {
+            "path": "docs/reviews/2026-11-11-v4-independent-review.md",
+            "present": true,
+            "sha_matches": true
+          },
+          {
+            "path": "docs/reviews/2026-11-11-v4-independent-review.json",
+            "present": true,
+            "sha_matches": true
+          },
+          {
+            "path": "docs/video/v4/metadata_correction.json",
+            "present": true,
+            "sha_matches": true
+          },
+          {
+            "path": "docs/video/v4/visual_review.json",
+            "present": true,
+            "sha_matches": true
+          },
+          {
+            "path": "docs/experiments_v4/registration.json",
+            "present": true,
+            "sha_matches": true
+          },
+          {
+            "path": "docs/experiments_v4/results.json",
+            "present": true,
+            "sha_matches": true
+          },
+          {
+            "path": "docs/experiments_v4/verification.json",
+            "present": true,
+            "sha_matches": true
+          },
+          {
+            "path": "docs/experiments_v4/rows.jsonl",
+            "present": true,
+            "sha_matches": true
+          },
+          {
+            "path": "docs/integration_v4/runs/20261111T070837Z_7cfbfcf3/summary.json",
+            "present": true,
+            "sha_matches": true
+          },
+          {
+            "path": "docs/integration_v4/runs/20261111T070837Z_7cfbfcf3/offline_audit.json",
+            "present": true,
+            "sha_matches": true
+          },
+          {
+            "path": "docs/integration_v4/runs/20261111T070837Z_7cfbfcf3/normal/offload_events.jsonl",
+            "present": true,
+            "sha_matches": true
+          },
+          {
+            "path": "docs/operations_v4/results.json",
+            "present": true,
+            "sha_matches": true
+          },
+          {
+            "path": "docs/video/v4/manifest.json",
+            "present": true,
+            "sha_matches": true
+          },
+          {
+            "path": "docs/video/v4/final_runtime_records.json",
+            "present": true,
+            "sha_matches": true
+          },
+          {
+            "path": "docs/video/v4/final_runtime_manifest.json",
+            "present": true,
+            "sha_matches": true
+          },
+          {
+            "path": "docs/integration_v4/runs/20261111T070837Z_7cfbfcf3/normal/http_results.json",
+            "present": true,
+            "sha_matches": true
+          },
+          {
+            "path": "docs/integration_v4/runs/20261111T070837Z_7cfbfcf3/ack_loss/http_results.json",
+            "present": true,
+            "sha_matches": true
+          }
+        ]
+      },
+      {
+        "path": "dist/final/20261111_v4/SenseHome_匿名材料审阅包_20261111_v4.zip",
+        "bytes": 5881786,
+        "size_matches": true,
+        "sha_matches": true,
+        "crc_failure": null,
+        "duplicate_names": false,
+        "unsafe_names": [],
+        "top_level_roots": [
+          "SenseHome-materials-v4"
+        ],
+        "archive_file_count": 13,
+        "sidecar_count_matches": true,
+        "manifest_matches_sidecar": true,
+        "unexpected_entries": [],
+        "archived_hash_failures": [],
+        "current_source_changes_after_seal": [],
+        "forbidden_entries": [],
+        "readme": "# v4 匿名材料审阅包\n\n方案、答辩、佐证、简介、视频与检查表。尚未上传赛事。视频为真实运行记录的编辑回放，非连续现场录屏。真实需求、人工独立部署、成本凭据、永久分享链接及最终人工核对仍待补；不保证获奖。\n",
+        "anonymous_file_count": 11,
+        "anonymous_scan": {
+          "dist/final/20261111_v4/SenseHome_合并佐证材料_20261111_v4.pdf": {
+            "private_matches": [],
+            "metadata": {
+              "format": "PDF 1.4",
+              "title": "6G链路自适应家庭AI推理系统 佐证材料",
+              "author": "",
+              "subject": "(unspecified)",
+              "keywords": "",
+              "creator": "(unspecified)",
+              "producer": "ReportLab PDF Library - (opensource)",
+              "creationDate": "D:20261111154108+08'00'",
+              "modDate": "D:20261111154108+08'00'",
+              "trapped": "",
+              "encryption": null
+            }
+          },
+          "dist/final/20261111_v4/SenseHome_场景设计方案_20261111_v4.docx": {
+            "private_matches": [],
+            "metadata": null
+          },
+          "dist/final/20261111_v4/SenseHome_场景设计方案_20261111_v4.pdf": {
+            "private_matches": [],
+            "metadata": {
+              "format": "PDF 1.7",
+              "title": "6G链路自适应家庭AI推理系统",
+              "author": "",
+              "subject": "",
+              "keywords": "",
+              "creator": "Writer",
+              "producer": "LibreOffice 26.2.6.3 (X86_64)",
+              "creationDate": "D:20261111154102+08'00'",
+              "modDate": "",
+              "trapped": "",
+              "encryption": null
+            }
+          },
+          "dist/final/20261111_v4/SenseHome_场景设计答辩_20261111_v4.pdf": {
+            "private_matches": [],
+            "metadata": {
+              "format": "PDF 1.7",
+              "title": "6G链路自适应家庭AI推理系统",
+              "author": "",
+              "subject": "",
+              "keywords": "",
+              "creator": "Impress",
+              "producer": "LibreOffice 26.2.6.3 (X86_64)",
+              "creationDate": "D:20261111154107+08'00'",
+              "modDate": "",
+              "trapped": "",
+              "encryption": null
+            }
+          },
+          "dist/final/20261111_v4/SenseHome_场景设计答辩_20261111_v4.pptx": {
+            "private_matches": [],
+            "metadata": null
+          },
+          "dist/final/20261111_v4/SenseHome_当前软件证据回放_20261111_v4.mp4": {
+            "private_matches": [],
+            "metadata": null
+          },
+          "dist/final/20261111_v4/主张指标证据页码索引.md": {
+            "private_matches": [],
+            "metadata": null
+          },
+          "dist/final/20261111_v4/交付说明.md": {
+            "private_matches": [],
+            "metadata": null
+          },
+          "dist/final/20261111_v4/作品简介.txt": {
+            "private_matches": [],
+            "metadata": null
+          },
+          "dist/final/20261111_v4/提交检查表.json": {
+            "private_matches": [],
+            "metadata": null
+          },
+          "dist/final/20261111_v4/提交检查表.md": {
+            "private_matches": [],
+            "metadata": null
+          }
+        }
+      }
+    ],
+    "pptx_pdf": {
+      "slides": 13,
+      "pdf_pages": 13,
+      "checks": [
+        {
+          "slide": 1,
+          "missing_text_in_pdf": [],
+          "out_of_bounds_shapes": []
+        },
+        {
+          "slide": 2,
+          "missing_text_in_pdf": [],
+          "out_of_bounds_shapes": []
+        },
+        {
+          "slide": 3,
+          "missing_text_in_pdf": [],
+          "out_of_bounds_shapes": []
+        },
+        {
+          "slide": 4,
+          "missing_text_in_pdf": [],
+          "out_of_bounds_shapes": []
+        },
+        {
+          "slide": 5,
+          "missing_text_in_pdf": [],
+          "out_of_bounds_shapes": []
+        },
+        {
+          "slide": 6,
+          "missing_text_in_pdf": [],
+          "out_of_bounds_shapes": []
+        },
+        {
+          "slide": 7,
+          "missing_text_in_pdf": [],
+          "out_of_bounds_shapes": []
+        },
+        {
+          "slide": 8,
+          "missing_text_in_pdf": [],
+          "out_of_bounds_shapes": []
+        },
+        {
+          "slide": 9,
+          "missing_text_in_pdf": [],
+          "out_of_bounds_shapes": []
+        },
+        {
+          "slide": 10,
+          "missing_text_in_pdf": [],
+          "out_of_bounds_shapes": []
+        },
+        {
+          "slide": 11,
+          "missing_text_in_pdf": [],
+          "out_of_bounds_shapes": []
+        },
+        {
+          "slide": 12,
+          "missing_text_in_pdf": [],
+          "out_of_bounds_shapes": []
+        },
+        {
+          "slide": 13,
+          "missing_text_in_pdf": [],
+          "out_of_bounds_shapes": []
+        }
+      ]
+    },
+    "abstract_nonspace_chars": 392,
+    "work_name": "6G链路自适应家庭AI推理系统",
+    "work_name_chars": 15
+  },
+  "checker_source_sha256": "947d1d2ec088f1d5320eb7e7ca5904b540717efc5a83df9004d4108e245fd101"
+}

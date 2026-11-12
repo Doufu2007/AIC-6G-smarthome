@@ -1,0 +1,288 @@
+{
+  "qa": {
+    "SenseHome_场景设计方案_20261111_v4.pdf": {
+      "pages": 14,
+      "size_bytes": 786526,
+      "sha256": "20fa2514810e76bc9585d355fe48900f3423d8c317112ea12220512e18844edb",
+      "png_dir": "_work/submission_20261111_v4/plan",
+      "page_text_chars": [
+        564,
+        443,
+        463,
+        362,
+        459,
+        428,
+        512,
+        521,
+        475,
+        467,
+        482,
+        426,
+        542,
+        452
+      ]
+    },
+    "SenseHome_场景设计答辩_20261111_v4.pdf": {
+      "pages": 13,
+      "size_bytes": 271475,
+      "sha256": "1dbfcca5e3910c6f0aa453cc275a286a27104f238e3a02742e99f186a17adf19",
+      "png_dir": "_work/submission_20261111_v4/slides",
+      "page_text_chars": [
+        111,
+        93,
+        139,
+        135,
+        112,
+        187,
+        157,
+        103,
+        176,
+        87,
+        120,
+        109,
+        90
+      ]
+    },
+    "SenseHome_合并佐证材料_20261111_v4.pdf": {
+      "pages": 14,
+      "size_bytes": 121172,
+      "sha256": "e6f36b727027ab1448b28988a704a1f576cdec17755299f0ee4d962fba668ae3",
+      "png_dir": "_work/submission_20261111_v4/evidence",
+      "page_text_chars": [
+        376,
+        432,
+        443,
+        279,
+        506,
+        560,
+        479,
+        380,
+        374,
+        365,
+        403,
+        758,
+        612,
+        541
+      ]
+    }
+  },
+  "anonymous_scan": {
+    "passed": true,
+    "files": [
+      "SenseHome_场景设计方案_20261111_v4.docx",
+      "SenseHome_场景设计答辩_20261111_v4.pptx",
+      "SenseHome_场景设计方案_20261111_v4.pdf",
+      "SenseHome_场景设计答辩_20261111_v4.pdf",
+      "SenseHome_合并佐证材料_20261111_v4.pdf",
+      "作品简介.txt"
+    ],
+    "patterns_checked": 9
+  },
+  "visual_review": "passed",
+  "schema": "sensehome.material-qa.v4",
+  "checked_at_utc": "2026-11-11T07:51:55.321065+00:00",
+  "visual_review_record": {
+    "plan_pages": [
+      1,
+      2,
+      3,
+      4,
+      5,
+      6,
+      7,
+      8,
+      9,
+      10,
+      11,
+      12,
+      13,
+      14
+    ],
+    "slides_pages": [
+      1,
+      2,
+      3,
+      4,
+      5,
+      6,
+      7,
+      8,
+      9,
+      10,
+      11,
+      12,
+      13
+    ],
+    "evidence_pages": [
+      1,
+      2,
+      3,
+      4,
+      5,
+      6,
+      7,
+      8,
+      9,
+      10,
+      11,
+      12,
+      13,
+      14
+    ],
+    "final_incremental_pages": {
+      "plan": [
+        13
+      ],
+      "evidence": [
+        6,
+        7,
+        8,
+        13,
+        14
+      ]
+    },
+    "findings": [],
+    "docx_skill_render": {
+      "pages": 14,
+      "all_pages_visually_checked": true,
+      "final_text_matches_formal_pdf_all_pages": true,
+      "final_incremental_visual_page": 13,
+      "directory": "_work/submission_20261111_v4/docx_skill_final_render",
+      "warning": "Non-fatal Windows stdout UTF-8 reader warning; exit 0 and complete 14-page PDF/PNG outputs verified."
+    }
+  },
+  "structural_checks": {
+    "package_integrity": {
+      "exit_code": 0,
+      "result": {
+        "chart_count": 0,
+        "claim_boundary": "Structural package checks only; no slide text, notes, formulas, chart values, or native PowerPoint execution were inspected.",
+        "finding_count": 0,
+        "findings": [],
+        "notes_parts_skipped": 13,
+        "relationship_part_count": 41,
+        "slide_count": 13,
+        "status": "pass"
+      },
+      "stderr": ""
+    },
+    "layout_geometry": {
+      "exit_code": 0,
+      "result": {
+        "finding_count": 0,
+        "findings": [],
+        "font_policy": {
+          "checked_text_script_count": 195,
+          "native_font_rendering_verified": false,
+          "observed_font_families": [
+            "Microsoft YaHei"
+          ],
+          "observed_font_use_counts": {
+            "Microsoft YaHei": 195
+          },
+          "passed": true,
+          "performed": true
+        },
+        "slide_count": 13,
+        "slide_size_in": [
+          13.333,
+          7.5
+        ],
+        "warning_count": 0,
+        "warnings": []
+      },
+      "stderr": ""
+    }
+  },
+  "source_and_output_hash_validation": {
+    "passed": true,
+    "sources": 37,
+    "outputs": 7
+  },
+  "video_check": {
+    "item": "视频3—5分钟≤300MB",
+    "passed": true,
+    "evidence": "docs/video/v4/manifest.json",
+    "video_path": "dist/final/20261111_v4/SenseHome_当前软件证据回放_20261111_v4.mp4",
+    "duration_seconds": 250.376,
+    "size_bytes": 4994364,
+    "sha256": "d4d507268a614a4b77e665cfcd6e6a7f98594ff20114842d08069bc922410b6f",
+    "metadata_matches_actual_file": true,
+    "recording_kind": "current_real_software_records_replay_with_evidence_explanation",
+    "editing_boundaries": [
+      "all visual cards drawn from current source fields; no screenshot reconstruction",
+      "scene ordering and dwell times are editorial; displayed runtime milliseconds are unmodified recorded values",
+      "recovery scenes replay registered raw rows without new model inference",
+      "no historical v1 video, desktop screenshot or CUA capture used",
+      "no physical actuator, WAN, independent cloud or 6G air-interface claim"
+    ],
+    "synthetic_voice": {
+      "engine": "Windows System.Speech",
+      "voice": "Microsoft Huihui Desktop",
+      "human_voice_recording": false,
+      "speech_alignment": [
+        {
+          "scene": 1,
+          "raw_seconds": 33.112925170068024,
+          "aligned_seconds": 24,
+          "atempo_ratio": 1.4030900495791534
+        },
+        {
+          "scene": 2,
+          "raw_seconds": 48.782267573696146,
+          "aligned_seconds": 44,
+          "atempo_ratio": 1.1188593480205538
+        },
+        {
+          "scene": 3,
+          "raw_seconds": 33.91160997732426,
+          "aligned_seconds": 28,
+          "atempo_ratio": 1.2286815209175457
+        },
+        {
+          "scene": 4,
+          "raw_seconds": 38.42081632653061,
+          "aligned_seconds": 32,
+          "atempo_ratio": 1.215848617928184
+        },
+        {
+          "scene": 5,
+          "raw_seconds": 36.900226757369616,
+          "aligned_seconds": 34,
+          "atempo_ratio": 1.0982210344455243
+        },
+        {
+          "scene": 6,
+          "raw_seconds": 42.98952380952381,
+          "aligned_seconds": 34,
+          "atempo_ratio": 1.2794501133786849
+        },
+        {
+          "scene": 7,
+          "raw_seconds": 39.220589569161,
+          "aligned_seconds": 32,
+          "atempo_ratio": 1.2411578977582594
+        },
+        {
+          "scene": 8,
+          "raw_seconds": 31.463673469387754,
+          "aligned_seconds": 22,
+          "atempo_ratio": 1.4566515495086922
+        }
+      ],
+      "narration": "docs/video/v4/builds/20261111T071753_609704Z/narration.json"
+    },
+    "runtime_metadata_correction": "docs/video/v4/metadata_correction.json",
+    "claim_boundary": "时长与格式核验；实际操作和剪辑来源另按视频清单核查"
+  },
+  "video_visual_report": "docs/video/v4/visual_review.json",
+  "video_visual_scope": "Video agent inspected nine encoded frames; this material QA verifies the declared file metadata and records the video review separately.",
+  "report": "docs/competition_v4/material_qa.md",
+  "remaining_external_items": [
+    "permanent_share_url_and_extraction_code",
+    "saved_authorized_external_feedback",
+    "actual_cost_records",
+    "physical_device_and_independent_host_validation",
+    "final_human_upload"
+  ]
+}

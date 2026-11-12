@@ -1,0 +1,20 @@
+✔ fetch rejection does not fabricate an action (96.6054ms)
+✔ HTTP 503 with success-looking body does not fabricate an action (2.7209ms)
+✔ malformed JSON does not fabricate an action (2.4908ms)
+✔ business failure remains unconfirmed and does not label its answer success (4.2965ms)
+✔ only structured successful gateway result can report completion; output is escaped (2.8754ms)
+✔ HTTP200 invalid result is not trusted (2.7577ms)
+✔ state HTTP failure and invalid schema clear confirmation rather than invent defaults (3.7543ms)
+✔ missing sensors do not display fake zero or absence (2.1756ms)
+✔ health shows both endpoints and unknown telemetry, including failed transport (2.0043ms)
+✔ completed model plan text is attributed separately from gateway completion (2.3333ms)
+✔ planning recovery shows C first choice, actual alternate and primary upstream error (2.1914ms)
+✔ actual planning provenance falls back to real source when explicit actual_backend is absent (2.5058ms)
+ℹ tests 12
+ℹ suites 0
+ℹ pass 12
+ℹ fail 0
+ℹ cancelled 0
+ℹ skipped 0
+ℹ todo 0
+ℹ duration_ms 269.2613

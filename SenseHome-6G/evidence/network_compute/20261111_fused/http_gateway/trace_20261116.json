@@ -1,0 +1,8130 @@
+{
+  "schema_version": "sensehome.trace.v1",
+  "generator_version": 3,
+  "origin": "synthetic_design_proxy",
+  "seed": 20261116,
+  "time_basis": "ordered open-loop application requests, 100ms spacing; no packet scheduler",
+  "samples": [
+    {
+      "index": 0,
+      "at_ms": 0,
+      "phase_index": 0,
+      "scenario": "healthy",
+      "event": "healthy",
+      "service": "interactive_inference",
+      "network": {
+        "wan": {
+          "reachable": true,
+          "rtt_ms": 25,
+          "jitter_ms": 3,
+          "loss_pct": 0,
+          "bandwidth_kbps": 20000
+        },
+        "lan": {
+          "reachable": true,
+          "rtt_ms": 3,
+          "jitter_ms": 1,
+          "loss_pct": 0,
+          "bandwidth_kbps": 100000
+        }
+      },
+      "compute": {
+        "local": {
+          "model_ready": true,
+          "queue_ms": 0,
+          "free_mem_mb": 2048,
+          "inflight": 0
+        },
+        "cloud": {
+          "model_ready": true,
+          "queue_ms": 0,
+          "free_mem_mb": 16384,
+          "inflight": 0
+        }
+      },
+      "compute_source": "injected_synthetic_endpoint_state",
+      "observed_age_ms": 0,
+      "outcomes": {
+        "wan-probe": {
+          "refused": false,
+          "rtt_ms": 22.434655
+        },
+        "wan-infer": {
+          "refused": false,
+          "rtt_ms": 22.397608
+        },
+        "lan-probe": {
+          "refused": false,
+          "rtt_ms": 2.077563
+        },
+        "lan-infer": {
+          "refused": false,
+          "rtt_ms": 2.495724
+        }
+      }
+    },
+    {
+      "index": 1,
+      "at_ms": 100,
+      "phase_index": 1,
+      "scenario": "healthy",
+      "event": "healthy",
+      "service": "interactive_inference",
+      "network": {
+        "wan": {
+          "reachable": true,
+          "rtt_ms": 25,
+          "jitter_ms": 3,
+          "loss_pct": 0,
+          "bandwidth_kbps": 20000
+        },
+        "lan": {
+          "reachable": true,
+          "rtt_ms": 3,
+          "jitter_ms": 1,
+          "loss_pct": 0,
+          "bandwidth_kbps": 100000
+        }
+      },
+      "compute": {
+        "local": {
+          "model_ready": true,
+          "queue_ms": 0,
+          "free_mem_mb": 2048,
+          "inflight": 0
+        },
+        "cloud": {
+          "model_ready": true,
+          "queue_ms": 0,
+          "free_mem_mb": 16384,
+          "inflight": 0
+        }
+      },
+      "compute_source": "injected_synthetic_endpoint_state",
+      "observed_age_ms": 0,
+      "outcomes": {
+        "wan-probe": {
+          "refused": false,
+          "rtt_ms": 24.563488
+        },
+        "wan-infer": {
+          "refused": false,
+          "rtt_ms": 27.101547
+        },
+        "lan-probe": {
+          "refused": false,
+          "rtt_ms": 3.789468
+        },
+        "lan-infer": {
+          "refused": false,
+          "rtt_ms": 2.588663
+        }
+      }
+    },
+    {
+      "index": 2,
+      "at_ms": 200,
+      "phase_index": 2,
+      "scenario": "healthy",
+      "event": "healthy",
+      "service": "sensor_batch",
+      "network": {
+        "wan": {
+          "reachable": true,
+          "rtt_ms": 25,
+          "jitter_ms": 3,
+          "loss_pct": 0,
+          "bandwidth_kbps": 20000
+        },
+        "lan": {
+          "reachable": true,
+          "rtt_ms": 3,
+          "jitter_ms": 1,
+          "loss_pct": 0,
+          "bandwidth_kbps": 100000
+        }
+      },
+      "compute": {
+        "local": {
+          "model_ready": true,
+          "queue_ms": 0,
+          "free_mem_mb": 2048,
+          "inflight": 0
+        },
+        "cloud": {
+          "model_ready": true,
+          "queue_ms": 0,
+          "free_mem_mb": 16384,
+          "inflight": 0
+        }
+      },
+      "compute_source": "injected_synthetic_endpoint_state",
+      "observed_age_ms": 0,
+      "outcomes": {
+        "wan-probe": {
+          "refused": false,
+          "rtt_ms": 25.808174
+        },
+        "wan-infer": {
+          "refused": false,
+          "rtt_ms": 26.16638
+        },
+        "lan-probe": {
+          "refused": false,
+          "rtt_ms": 2.213713
+        },
+        "lan-infer": {
+          "refused": false,
+          "rtt_ms": 3.543336
+        }
+      }
+    },
+    {
+      "index": 3,
+      "at_ms": 300,
+      "phase_index": 3,
+      "scenario": "healthy",
+      "event": "healthy",
+      "service": "interactive_inference",
+      "network": {
+        "wan": {
+          "reachable": true,
+          "rtt_ms": 25,
+          "jitter_ms": 3,
+          "loss_pct": 0,
+          "bandwidth_kbps": 20000
+        },
+        "lan": {
+          "reachable": true,
+          "rtt_ms": 3,
+          "jitter_ms": 1,
+          "loss_pct": 0,
+          "bandwidth_kbps": 100000
+        }
+      },
+      "compute": {
+        "local": {
+          "model_ready": true,
+          "queue_ms": 0,
+          "free_mem_mb": 2048,
+          "inflight": 0
+        },
+        "cloud": {
+          "model_ready": true,
+          "queue_ms": 0,
+          "free_mem_mb": 16384,
+          "inflight": 0
+        }
+      },
+      "compute_source": "injected_synthetic_endpoint_state",
+      "observed_age_ms": 0,
+      "outcomes": {
+        "wan-probe": {
+          "refused": false,
+          "rtt_ms": 26.065965
+        },
+        "wan-infer": {
+          "refused": false,
+          "rtt_ms": 25.352323
+        },
+        "lan-probe": {
+          "refused": false,
+          "rtt_ms": 2.102504
+        },
+        "lan-infer": {
+          "refused": false,
+          "rtt_ms": 2.563084
+        }
+      }
+    },
+    {
+      "index": 4,
+      "at_ms": 400,
+      "phase_index": 4,
+      "scenario": "healthy",
+      "event": "healthy",
+      "service": "safety_control",
+      "network": {
+        "wan": {
+          "reachable": true,
+          "rtt_ms": 25,
+          "jitter_ms": 3,
+          "loss_pct": 0,
+          "bandwidth_kbps": 20000
+        },
+        "lan": {
+          "reachable": true,
+          "rtt_ms": 3,
+          "jitter_ms": 1,
+          "loss_pct": 0,
+          "bandwidth_kbps": 100000
+        }
+      },
+      "compute": {
+        "local": {
+          "model_ready": true,
+          "queue_ms": 0,
+          "free_mem_mb": 2048,
+          "inflight": 0
+        },
+        "cloud": {
+          "model_ready": true,
+          "queue_ms": 0,
+          "free_mem_mb": 16384,
+          "inflight": 0
+        }
+      },
+      "compute_source": "injected_synthetic_endpoint_state",
+      "observed_age_ms": 0,
+      "outcomes": {
+        "wan-probe": {
+          "refused": false,
+          "rtt_ms": 26.895506
+        },
+        "wan-infer": {
+          "refused": false,
+          "rtt_ms": 23.733672
+        },
+        "lan-probe": {
+          "refused": false,
+          "rtt_ms": 2.788303
+        },
+        "lan-infer": {
+          "refused": false,
+          "rtt_ms": 3.870271
+        }
+      }
+    },
+    {
+      "index": 5,
+      "at_ms": 500,
+      "phase_index": 5,
+      "scenario": "healthy",
+      "event": "healthy",
+      "service": "interactive_inference",
+      "network": {
+        "wan": {
+          "reachable": true,
+          "rtt_ms": 25,
+          "jitter_ms": 3,
+          "loss_pct": 0,
+          "bandwidth_kbps": 20000
+        },
+        "lan": {
+          "reachable": true,
+          "rtt_ms": 3,
+          "jitter_ms": 1,
+          "loss_pct": 0,
+          "bandwidth_kbps": 100000
+        }
+      },
+      "compute": {
+        "local": {
+          "model_ready": true,
+          "queue_ms": 0,
+          "free_mem_mb": 2048,
+          "inflight": 0
+        },
+        "cloud": {
+          "model_ready": true,
+          "queue_ms": 0,
+          "free_mem_mb": 16384,
+          "inflight": 0
+        }
+      },
+      "compute_source": "injected_synthetic_endpoint_state",
+      "observed_age_ms": 0,
+      "outcomes": {
+        "wan-probe": {
+          "refused": false,
+          "rtt_ms": 23.05219
+        },
+        "wan-infer": {
+          "refused": false,
+          "rtt_ms": 24.122758
+        },
+        "lan-probe": {
+          "refused": false,
+          "rtt_ms": 3.450444
+        },
+        "lan-infer": {
+          "refused": false,
+          "rtt_ms": 2.709018
+        }
+      }
+    },
+    {
+      "index": 6,
+      "at_ms": 600,
+      "phase_index": 6,
+      "scenario": "healthy",
+      "event": "healthy",
+      "service": "interactive_inference",
+      "network": {
+        "wan": {
+          "reachable": true,
+          "rtt_ms": 25,
+          "jitter_ms": 3,
+          "loss_pct": 0,
+          "bandwidth_kbps": 20000
+        },
+        "lan": {
+          "reachable": true,
+          "rtt_ms": 3,
+          "jitter_ms": 1,
+          "loss_pct": 0,
+          "bandwidth_kbps": 100000
+        }
+      },
+      "compute": {
+        "local": {
+          "model_ready": true,
+          "queue_ms": 0,
+          "free_mem_mb": 2048,
+          "inflight": 0
+        },
+        "cloud": {
+          "model_ready": true,
+          "queue_ms": 0,
+          "free_mem_mb": 16384,
+          "inflight": 0
+        }
+      },
+      "compute_source": "injected_synthetic_endpoint_state",
+      "observed_age_ms": 0,
+      "outcomes": {
+        "wan-probe": {
+          "refused": false,
+          "rtt_ms": 24.719777
+        },
+        "wan-infer": {
+          "refused": false,
+          "rtt_ms": 22.098559
+        },
+        "lan-probe": {
+          "refused": false,
+          "rtt_ms": 2.043869
+        },
+        "lan-infer": {
+          "refused": false,
+          "rtt_ms": 3.641716
+        }
+      }
+    },
+    {
+      "index": 7,
+      "at_ms": 700,
+      "phase_index": 7,
+      "scenario": "healthy",
+      "event": "healthy",
+      "service": "sensor_batch",
+      "network": {
+        "wan": {
+          "reachable": true,
+          "rtt_ms": 25,
+          "jitter_ms": 3,
+          "loss_pct": 0,
+          "bandwidth_kbps": 20000
+        },
+        "lan": {
+          "reachable": true,
+          "rtt_ms": 3,
+          "jitter_ms": 1,
+          "loss_pct": 0,
+          "bandwidth_kbps": 100000
+        }
+      },
+      "compute": {
+        "local": {
+          "model_ready": true,
+          "queue_ms": 0,
+          "free_mem_mb": 2048,
+          "inflight": 0
+        },
+        "cloud": {
+          "model_ready": true,
+          "queue_ms": 0,
+          "free_mem_mb": 16384,
+          "inflight": 0
+        }
+      },
+      "compute_source": "injected_synthetic_endpoint_state",
+      "observed_age_ms": 0,
+      "outcomes": {
+        "wan-probe": {
+          "refused": false,
+          "rtt_ms": 24.814032
+        },
+        "wan-infer": {
+          "refused": false,
+          "rtt_ms": 22.603507
+        },
+        "lan-probe": {
+          "refused": false,
+          "rtt_ms": 2.733029
+        },
+        "lan-infer": {
+          "refused": false,
+          "rtt_ms": 2.322965
+        }
+      }
+    },
+    {
+      "index": 8,
+      "at_ms": 800,
+      "phase_index": 8,
+      "scenario": "healthy",
+      "event": "healthy",
+      "service": "interactive_inference",
+      "network": {
+        "wan": {
+          "reachable": true,
+          "rtt_ms": 25,
+          "jitter_ms": 3,
+          "loss_pct": 0,
+          "bandwidth_kbps": 20000
+        },
+        "lan": {
+          "reachable": true,
+          "rtt_ms": 3,
+          "jitter_ms": 1,
+          "loss_pct": 0,
+          "bandwidth_kbps": 100000
+        }
+      },
+      "compute": {
+        "local": {
+          "model_ready": true,
+          "queue_ms": 0,
+          "free_mem_mb": 2048,
+          "inflight": 0
+        },
+        "cloud": {
+          "model_ready": true,
+          "queue_ms": 0,
+          "free_mem_mb": 16384,
+          "inflight": 0
+        }
+      },
+      "compute_source": "injected_synthetic_endpoint_state",
+      "observed_age_ms": 0,
+      "outcomes": {
+        "wan-probe": {
+          "refused": false,
+          "rtt_ms": 25.145449
+        },
+        "wan-infer": {
+          "refused": false,
+          "rtt_ms": 24.997375
+        },
+        "lan-probe": {
+          "refused": false,
+          "rtt_ms": 2.956591
+        },
+        "lan-infer": {
+          "refused": false,
+          "rtt_ms": 2.400288
+        }
+      }
+    },
+    {
+      "index": 9,
+      "at_ms": 900,
+      "phase_index": 9,
+      "scenario": "healthy",
+      "event": "healthy",
+      "service": "safety_control",
+      "network": {
+        "wan": {
+          "reachable": true,
+          "rtt_ms": 25,
+          "jitter_ms": 3,
+          "loss_pct": 0,
+          "bandwidth_kbps": 20000
+        },
+        "lan": {
+          "reachable": true,
+          "rtt_ms": 3,
+          "jitter_ms": 1,
+          "loss_pct": 0,
+          "bandwidth_kbps": 100000
+        }
+      },
+      "compute": {
+        "local": {
+          "model_ready": true,
+          "queue_ms": 0,
+          "free_mem_mb": 2048,
+          "inflight": 0
+        },
+        "cloud": {
+          "model_ready": true,
+          "queue_ms": 0,
+          "free_mem_mb": 16384,
+          "inflight": 0
+        }
+      },
+      "compute_source": "injected_synthetic_endpoint_state",
+      "observed_age_ms": 0,
+      "outcomes": {
+        "wan-probe": {
+          "refused": false,
+          "rtt_ms": 24.023954
+        },
+        "wan-infer": {
+          "refused": false,
+          "rtt_ms": 22.347811
+        },
+        "lan-probe": {
+          "refused": false,
+          "rtt_ms": 2.889257
+        },
+        "lan-infer": {
+          "refused": false,
+          "rtt_ms": 2.992024
+        }
+      }
+    },
+    {
+      "index": 10,
+      "at_ms": 1000,
+      "phase_index": 0,
+      "scenario": "wan_degraded",
+      "event": "wan_degraded",
+      "service": "interactive_inference",
+      "network": {
+        "wan": {
+          "reachable": true,
+          "rtt_ms": 420,
+          "jitter_ms": 60,
+          "loss_pct": 8,
+          "bandwidth_kbps": 20000
+        },
+        "lan": {
+          "reachable": true,
+          "rtt_ms": 3,
+          "jitter_ms": 1,
+          "loss_pct": 0,
+          "bandwidth_kbps": 100000
+        }
+      },
+      "compute": {
+        "local": {
+          "model_ready": true,
+          "queue_ms": 0,
+          "free_mem_mb": 2048,
+          "inflight": 0
+        },
+        "cloud": {
+          "model_ready": true,
+          "queue_ms": 0,
+          "free_mem_mb": 16384,
+          "inflight": 0
+        }
+      },
+      "compute_source": "injected_synthetic_endpoint_state",
+      "observed_age_ms": 0,
+      "outcomes": {
+        "wan-probe": {
+          "refused": false,
+          "rtt_ms": 455.672664
+        },
+        "wan-infer": {
+          "refused": false,
+          "rtt_ms": 391.243914
+        },
+        "lan-probe": {
+          "refused": false,
+          "rtt_ms": 2.812437
+        },
+        "lan-infer": {
+          "refused": false,
+          "rtt_ms": 3.404407
+        }
+      }
+    },
+    {
+      "index": 11,
+      "at_ms": 1100,
+      "phase_index": 1,
+      "scenario": "wan_degraded",
+      "event": "wan_degraded",
+      "service": "interactive_inference",
+      "network": {
+        "wan": {
+          "reachable": true,
+          "rtt_ms": 420,
+          "jitter_ms": 60,
+          "loss_pct": 8,
+          "bandwidth_kbps": 20000
+        },
+        "lan": {
+          "reachable": true,
+          "rtt_ms": 3,
+          "jitter_ms": 1,
+          "loss_pct": 0,
+          "bandwidth_kbps": 100000
+        }
+      },
+      "compute": {
+        "local": {
+          "model_ready": true,
+          "queue_ms": 0,
+          "free_mem_mb": 2048,
+          "inflight": 0
+        },
+        "cloud": {
+          "model_ready": true,
+          "queue_ms": 0,
+          "free_mem_mb": 16384,
+          "inflight": 0
+        }
+      },
+      "compute_source": "injected_synthetic_endpoint_state",
+      "observed_age_ms": 0,
+      "outcomes": {
+        "wan-probe": {
+          "refused": false,
+          "rtt_ms": 404.292062
+        },
+        "wan-infer": {
+          "refused": false,
+          "rtt_ms": 403.820886
+        },
+        "lan-probe": {
+          "refused": false,
+          "rtt_ms": 3.110386
+        },
+        "lan-infer": {
+          "refused": false,
+          "rtt_ms": 2.479191
+        }
+      }
+    },
+    {
+      "index": 12,
+      "at_ms": 1200,
+      "phase_index": 2,
+      "scenario": "wan_degraded",
+      "event": "wan_degraded",
+      "service": "sensor_batch",
+      "network": {
+        "wan": {
+          "reachable": true,
+          "rtt_ms": 420,
+          "jitter_ms": 60,
+          "loss_pct": 8,
+          "bandwidth_kbps": 20000
+        },
+        "lan": {
+          "reachable": true,
+          "rtt_ms": 3,
+          "jitter_ms": 1,
+          "loss_pct": 0,
+          "bandwidth_kbps": 100000
+        }
+      },
+      "compute": {
+        "local": {
+          "model_ready": true,
+          "queue_ms": 0,
+          "free_mem_mb": 2048,
+          "inflight": 0
+        },
+        "cloud": {
+          "model_ready": true,
+          "queue_ms": 0,
+          "free_mem_mb": 16384,
+          "inflight": 0
+        }
+      },
+      "compute_source": "injected_synthetic_endpoint_state",
+      "observed_age_ms": 0,
+      "outcomes": {
+        "wan-probe": {
+          "refused": false,
+          "rtt_ms": 459.036782
+        },
+        "wan-infer": {
+          "refused": false,
+          "rtt_ms": 370.765512
+        },
+        "lan-probe": {
+          "refused": false,
+          "rtt_ms": 2.245008
+        },
+        "lan-infer": {
+          "refused": false,
+          "rtt_ms": 2.91949
+        }
+      }
+    },
+    {
+      "index": 13,
+      "at_ms": 1300,
+      "phase_index": 3,
+      "scenario": "wan_degraded",
+      "event": "wan_degraded",
+      "service": "interactive_inference",
+      "network": {
+        "wan": {
+          "reachable": true,
+          "rtt_ms": 420,
+          "jitter_ms": 60,
+          "loss_pct": 8,
+          "bandwidth_kbps": 20000
+        },
+        "lan": {
+          "reachable": true,
+          "rtt_ms": 3,
+          "jitter_ms": 1,
+          "loss_pct": 0,
+          "bandwidth_kbps": 100000
+        }
+      },
+      "compute": {
+        "local": {
+          "model_ready": true,
+          "queue_ms": 0,
+          "free_mem_mb": 2048,
+          "inflight": 0
+        },
+        "cloud": {
+          "model_ready": true,
+          "queue_ms": 0,
+          "free_mem_mb": 16384,
+          "inflight": 0
+        }
+      },
+      "compute_source": "injected_synthetic_endpoint_state",
+      "observed_age_ms": 0,
+      "outcomes": {
+        "wan-probe": {
+          "refused": false,
+          "rtt_ms": 420.560411
+        },
+        "wan-infer": {
+          "refused": false,
+          "rtt_ms": 394.327773
+        },
+        "lan-probe": {
+          "refused": false,
+          "rtt_ms": 2.282872
+        },
+        "lan-infer": {
+          "refused": false,
+          "rtt_ms": 2.83469
+        }
+      }
+    },
+    {
+      "index": 14,
+      "at_ms": 1400,
+      "phase_index": 4,
+      "scenario": "wan_degraded",
+      "event": "wan_degraded",
+      "service": "safety_control",
+      "network": {
+        "wan": {
+          "reachable": true,
+          "rtt_ms": 420,
+          "jitter_ms": 60,
+          "loss_pct": 8,
+          "bandwidth_kbps": 20000
+        },
+        "lan": {
+          "reachable": true,
+          "rtt_ms": 3,
+          "jitter_ms": 1,
+          "loss_pct": 0,
+          "bandwidth_kbps": 100000
+        }
+      },
+      "compute": {
+        "local": {
+          "model_ready": true,
+          "queue_ms": 0,
+          "free_mem_mb": 2048,
+          "inflight": 0
+        },
+        "cloud": {
+          "model_ready": true,
+          "queue_ms": 0,
+          "free_mem_mb": 16384,
+          "inflight": 0
+        }
+      },
+      "compute_source": "injected_synthetic_endpoint_state",
+      "observed_age_ms": 0,
+      "outcomes": {
+        "wan-probe": {
+          "refused": false,
+          "rtt_ms": 395.712048
+        },
+        "wan-infer": {
+          "refused": true,
+          "rtt_ms": 428.205361
+        },
+        "lan-probe": {
+          "refused": false,
+          "rtt_ms": 2.621962
+        },
+        "lan-infer": {
+          "refused": false,
+          "rtt_ms": 2.224535
+        }
+      }
+    },
+    {
+      "index": 15,
+      "at_ms": 1500,
+      "phase_index": 5,
+      "scenario": "wan_degraded",
+      "event": "wan_degraded",
+      "service": "interactive_inference",
+      "network": {
+        "wan": {
+          "reachable": true,
+          "rtt_ms": 420,
+          "jitter_ms": 60,
+          "loss_pct": 8,
+          "bandwidth_kbps": 20000
+        },
+        "lan": {
+          "reachable": true,
+          "rtt_ms": 3,
+          "jitter_ms": 1,
+          "loss_pct": 0,
+          "bandwidth_kbps": 100000
+        }
+      },
+      "compute": {
+        "local": {
+          "model_ready": true,
+          "queue_ms": 0,
+          "free_mem_mb": 2048,
+          "inflight": 0
+        },
+        "cloud": {
+          "model_ready": true,
+          "queue_ms": 0,
+          "free_mem_mb": 16384,
+          "inflight": 0
+        }
+      },
+      "compute_source": "injected_synthetic_endpoint_state",
+      "observed_age_ms": 0,
+      "outcomes": {
+        "wan-probe": {
+          "refused": true,
+          "rtt_ms": 413.585201
+        },
+        "wan-infer": {
+          "refused": false,
+          "rtt_ms": 420.021039
+        },
+        "lan-probe": {
+          "refused": false,
+          "rtt_ms": 3.305136
+        },
+        "lan-infer": {
+          "refused": false,
+          "rtt_ms": 2.561277
+        }
+      }
+    },
+    {
+      "index": 16,
+      "at_ms": 1600,
+      "phase_index": 6,
+      "scenario": "wan_degraded",
+      "event": "wan_degraded",
+      "service": "interactive_inference",
+      "network": {
+        "wan": {
+          "reachable": true,
+          "rtt_ms": 420,
+          "jitter_ms": 60,
+          "loss_pct": 8,
+          "bandwidth_kbps": 20000
+        },
+        "lan": {
+          "reachable": true,
+          "rtt_ms": 3,
+          "jitter_ms": 1,
+          "loss_pct": 0,
+          "bandwidth_kbps": 100000
+        }
+      },
+      "compute": {
+        "local": {
+          "model_ready": true,
+          "queue_ms": 0,
+          "free_mem_mb": 2048,
+          "inflight": 0
+        },
+        "cloud": {
+          "model_ready": true,
+          "queue_ms": 0,
+          "free_mem_mb": 16384,
+          "inflight": 0
+        }
+      },
+      "compute_source": "injected_synthetic_endpoint_state",
+      "observed_age_ms": 0,
+      "outcomes": {
+        "wan-probe": {
+          "refused": false,
+          "rtt_ms": 400.792132
+        },
+        "wan-infer": {
+          "refused": false,
+          "rtt_ms": 388.803042
+        },
+        "lan-probe": {
+          "refused": false,
+          "rtt_ms": 2.407556
+        },
+        "lan-infer": {
+          "refused": false,
+          "rtt_ms": 3.012328
+        }
+      }
+    },
+    {
+      "index": 17,
+      "at_ms": 1700,
+      "phase_index": 7,
+      "scenario": "wan_degraded",
+      "event": "wan_degraded",
+      "service": "sensor_batch",
+      "network": {
+        "wan": {
+          "reachable": true,
+          "rtt_ms": 420,
+          "jitter_ms": 60,
+          "loss_pct": 8,
+          "bandwidth_kbps": 20000
+        },
+        "lan": {
+          "reachable": true,
+          "rtt_ms": 3,
+          "jitter_ms": 1,
+          "loss_pct": 0,
+          "bandwidth_kbps": 100000
+        }
+      },
+      "compute": {
+        "local": {
+          "model_ready": true,
+          "queue_ms": 0,
+          "free_mem_mb": 2048,
+          "inflight": 0
+        },
+        "cloud": {
+          "model_ready": true,
+          "queue_ms": 0,
+          "free_mem_mb": 16384,
+          "inflight": 0
+        }
+      },
+      "compute_source": "injected_synthetic_endpoint_state",
+      "observed_age_ms": 0,
+      "outcomes": {
+        "wan-probe": {
+          "refused": false,
+          "rtt_ms": 457.698959
+        },
+        "wan-infer": {
+          "refused": false,
+          "rtt_ms": 405.983007
+        },
+        "lan-probe": {
+          "refused": false,
+          "rtt_ms": 2.84287
+        },
+        "lan-infer": {
+          "refused": false,
+          "rtt_ms": 2.746029
+        }
+      }
+    },
+    {
+      "index": 18,
+      "at_ms": 1800,
+      "phase_index": 8,
+      "scenario": "wan_degraded",
+      "event": "wan_degraded",
+      "service": "interactive_inference",
+      "network": {
+        "wan": {
+          "reachable": true,
+          "rtt_ms": 420,
+          "jitter_ms": 60,
+          "loss_pct": 8,
+          "bandwidth_kbps": 20000
+        },
+        "lan": {
+          "reachable": true,
+          "rtt_ms": 3,
+          "jitter_ms": 1,
+          "loss_pct": 0,
+          "bandwidth_kbps": 100000
+        }
+      },
+      "compute": {
+        "local": {
+          "model_ready": true,
+          "queue_ms": 0,
+          "free_mem_mb": 2048,
+          "inflight": 0
+        },
+        "cloud": {
+          "model_ready": true,
+          "queue_ms": 0,
+          "free_mem_mb": 16384,
+          "inflight": 0
+        }
+      },
+      "compute_source": "injected_synthetic_endpoint_state",
+      "observed_age_ms": 0,
+      "outcomes": {
+        "wan-probe": {
+          "refused": false,
+          "rtt_ms": 372.92937
+        },
+        "wan-infer": {
+          "refused": false,
+          "rtt_ms": 455.003981
+        },
+        "lan-probe": {
+          "refused": false,
+          "rtt_ms": 2.452211
+        },
+        "lan-infer": {
+          "refused": false,
+          "rtt_ms": 3.988676
+        }
+      }
+    },
+    {
+      "index": 19,
+      "at_ms": 1900,
+      "phase_index": 9,
+      "scenario": "wan_degraded",
+      "event": "wan_degraded",
+      "service": "safety_control",
+      "network": {
+        "wan": {
+          "reachable": true,
+          "rtt_ms": 420,
+          "jitter_ms": 60,
+          "loss_pct": 8,
+          "bandwidth_kbps": 20000
+        },
+        "lan": {
+          "reachable": true,
+          "rtt_ms": 3,
+          "jitter_ms": 1,
+          "loss_pct": 0,
+          "bandwidth_kbps": 100000
+        }
+      },
+      "compute": {
+        "local": {
+          "model_ready": true,
+          "queue_ms": 0,
+          "free_mem_mb": 2048,
+          "inflight": 0
+        },
+        "cloud": {
+          "model_ready": true,
+          "queue_ms": 0,
+          "free_mem_mb": 16384,
+          "inflight": 0
+        }
+      },
+      "compute_source": "injected_synthetic_endpoint_state",
+      "observed_age_ms": 0,
+      "outcomes": {
+        "wan-probe": {
+          "refused": false,
+          "rtt_ms": 388.419523
+        },
+        "wan-infer": {
+          "refused": false,
+          "rtt_ms": 479.647063
+        },
+        "lan-probe": {
+          "refused": false,
+          "rtt_ms": 2.22902
+        },
+        "lan-infer": {
+          "refused": false,
+          "rtt_ms": 3.223872
+        }
+      }
+    },
+    {
+      "index": 20,
+      "at_ms": 2000,
+      "phase_index": 0,
+      "scenario": "wan_blackout",
+      "event": "wan_blackout",
+      "service": "interactive_inference",
+      "network": {
+        "wan": {
+          "reachable": false,
+          "rtt_ms": 25,
+          "jitter_ms": 3,
+          "loss_pct": 100,
+          "bandwidth_kbps": 20000
+        },
+        "lan": {
+          "reachable": true,
+          "rtt_ms": 3,
+          "jitter_ms": 1,
+          "loss_pct": 0,
+          "bandwidth_kbps": 100000
+        }
+      },
+      "compute": {
+        "local": {
+          "model_ready": true,
+          "queue_ms": 0,
+          "free_mem_mb": 2048,
+          "inflight": 0
+        },
+        "cloud": {
+          "model_ready": true,
+          "queue_ms": 0,
+          "free_mem_mb": 16384,
+          "inflight": 0
+        }
+      },
+      "compute_source": "injected_synthetic_endpoint_state",
+      "observed_age_ms": 0,
+      "outcomes": {
+        "wan-probe": {
+          "refused": true,
+          "rtt_ms": 22.513388
+        },
+        "wan-infer": {
+          "refused": true,
+          "rtt_ms": 27.829907
+        },
+        "lan-probe": {
+          "refused": false,
+          "rtt_ms": 2.504928
+        },
+        "lan-infer": {
+          "refused": false,
+          "rtt_ms": 3.24398
+        }
+      }
+    },
+    {
+      "index": 21,
+      "at_ms": 2100,
+      "phase_index": 1,
+      "scenario": "wan_blackout",
+      "event": "wan_blackout",
+      "service": "interactive_inference",
+      "network": {
+        "wan": {
+          "reachable": false,
+          "rtt_ms": 25,
+          "jitter_ms": 3,
+          "loss_pct": 100,
+          "bandwidth_kbps": 20000
+        },
+        "lan": {
+          "reachable": true,
+          "rtt_ms": 3,
+          "jitter_ms": 1,
+          "loss_pct": 0,
+          "bandwidth_kbps": 100000
+        }
+      },
+      "compute": {
+        "local": {
+          "model_ready": true,
+          "queue_ms": 0,
+          "free_mem_mb": 2048,
+          "inflight": 0
+        },
+        "cloud": {
+          "model_ready": true,
+          "queue_ms": 0,
+          "free_mem_mb": 16384,
+          "inflight": 0
+        }
+      },
+      "compute_source": "injected_synthetic_endpoint_state",
+      "observed_age_ms": 0,
+      "outcomes": {
+        "wan-probe": {
+          "refused": true,
+          "rtt_ms": 27.141404
+        },
+        "wan-infer": {
+          "refused": true,
+          "rtt_ms": 27.118947
+        },
+        "lan-probe": {
+          "refused": false,
+          "rtt_ms": 3.491082
+        },
+        "lan-infer": {
+          "refused": false,
+          "rtt_ms": 3.306451
+        }
+      }
+    },
+    {
+      "index": 22,
+      "at_ms": 2200,
+      "phase_index": 2,
+      "scenario": "wan_blackout",
+      "event": "wan_blackout",
+      "service": "sensor_batch",
+      "network": {
+        "wan": {
+          "reachable": false,
+          "rtt_ms": 25,
+          "jitter_ms": 3,
+          "loss_pct": 100,
+          "bandwidth_kbps": 20000
+        },
+        "lan": {
+          "reachable": true,
+          "rtt_ms": 3,
+          "jitter_ms": 1,
+          "loss_pct": 0,
+          "bandwidth_kbps": 100000
+        }
+      },
+      "compute": {
+        "local": {
+          "model_ready": true,
+          "queue_ms": 0,
+          "free_mem_mb": 2048,
+          "inflight": 0
+        },
+        "cloud": {
+          "model_ready": true,
+          "queue_ms": 0,
+          "free_mem_mb": 16384,
+          "inflight": 0
+        }
+      },
+      "compute_source": "injected_synthetic_endpoint_state",
+      "observed_age_ms": 0,
+      "outcomes": {
+        "wan-probe": {
+          "refused": true,
+          "rtt_ms": 25.039094
+        },
+        "wan-infer": {
+          "refused": true,
+          "rtt_ms": 27.458335
+        },
+        "lan-probe": {
+          "refused": false,
+          "rtt_ms": 3.060621
+        },
+        "lan-infer": {
+          "refused": false,
+          "rtt_ms": 2.404987
+        }
+      }
+    },
+    {
+      "index": 23,
+      "at_ms": 2300,
+      "phase_index": 3,
+      "scenario": "wan_blackout",
+      "event": "wan_blackout",
+      "service": "interactive_inference",
+      "network": {
+        "wan": {
+          "reachable": false,
+          "rtt_ms": 25,
+          "jitter_ms": 3,
+          "loss_pct": 100,
+          "bandwidth_kbps": 20000
+        },
+        "lan": {
+          "reachable": true,
+          "rtt_ms": 3,
+          "jitter_ms": 1,
+          "loss_pct": 0,
+          "bandwidth_kbps": 100000
+        }
+      },
+      "compute": {
+        "local": {
+          "model_ready": true,
+          "queue_ms": 0,
+          "free_mem_mb": 2048,
+          "inflight": 0
+        },
+        "cloud": {
+          "model_ready": true,
+          "queue_ms": 0,
+          "free_mem_mb": 16384,
+          "inflight": 0
+        }
+      },
+      "compute_source": "injected_synthetic_endpoint_state",
+      "observed_age_ms": 0,
+      "outcomes": {
+        "wan-probe": {
+          "refused": true,
+          "rtt_ms": 26.971258
+        },
+        "wan-infer": {
+          "refused": true,
+          "rtt_ms": 26.005873
+        },
+        "lan-probe": {
+          "refused": false,
+          "rtt_ms": 3.911297
+        },
+        "lan-infer": {
+          "refused": false,
+          "rtt_ms": 2.587301
+        }
+      }
+    },
+    {
+      "index": 24,
+      "at_ms": 2400,
+      "phase_index": 4,
+      "scenario": "wan_blackout",
+      "event": "wan_blackout",
+      "service": "safety_control",
+      "network": {
+        "wan": {
+          "reachable": false,
+          "rtt_ms": 25,
+          "jitter_ms": 3,
+          "loss_pct": 100,
+          "bandwidth_kbps": 20000
+        },
+        "lan": {
+          "reachable": true,
+          "rtt_ms": 3,
+          "jitter_ms": 1,
+          "loss_pct": 0,
+          "bandwidth_kbps": 100000
+        }
+      },
+      "compute": {
+        "local": {
+          "model_ready": true,
+          "queue_ms": 0,
+          "free_mem_mb": 2048,
+          "inflight": 0
+        },
+        "cloud": {
+          "model_ready": true,
+          "queue_ms": 0,
+          "free_mem_mb": 16384,
+          "inflight": 0
+        }
+      },
+      "compute_source": "injected_synthetic_endpoint_state",
+      "observed_age_ms": 0,
+      "outcomes": {
+        "wan-probe": {
+          "refused": true,
+          "rtt_ms": 25.421868
+        },
+        "wan-infer": {
+          "refused": true,
+          "rtt_ms": 24.113829
+        },
+        "lan-probe": {
+          "refused": false,
+          "rtt_ms": 2.356145
+        },
+        "lan-infer": {
+          "refused": false,
+          "rtt_ms": 3.875716
+        }
+      }
+    },
+    {
+      "index": 25,
+      "at_ms": 2500,
+      "phase_index": 5,
+      "scenario": "wan_blackout",
+      "event": "wan_blackout",
+      "service": "interactive_inference",
+      "network": {
+        "wan": {
+          "reachable": false,
+          "rtt_ms": 25,
+          "jitter_ms": 3,
+          "loss_pct": 100,
+          "bandwidth_kbps": 20000
+        },
+        "lan": {
+          "reachable": true,
+          "rtt_ms": 3,
+          "jitter_ms": 1,
+          "loss_pct": 0,
+          "bandwidth_kbps": 100000
+        }
+      },
+      "compute": {
+        "local": {
+          "model_ready": true,
+          "queue_ms": 0,
+          "free_mem_mb": 2048,
+          "inflight": 0
+        },
+        "cloud": {
+          "model_ready": true,
+          "queue_ms": 0,
+          "free_mem_mb": 16384,
+          "inflight": 0
+        }
+      },
+      "compute_source": "injected_synthetic_endpoint_state",
+      "observed_age_ms": 0,
+      "outcomes": {
+        "wan-probe": {
+          "refused": true,
+          "rtt_ms": 25.33032
+        },
+        "wan-infer": {
+          "refused": true,
+          "rtt_ms": 26.341638
+        },
+        "lan-probe": {
+          "refused": false,
+          "rtt_ms": 3.559203
+        },
+        "lan-infer": {
+          "refused": false,
+          "rtt_ms": 2.296362
+        }
+      }
+    },
+    {
+      "index": 26,
+      "at_ms": 2600,
+      "phase_index": 6,
+      "scenario": "wan_blackout",
+      "event": "wan_blackout",
+      "service": "interactive_inference",
+      "network": {
+        "wan": {
+          "reachable": false,
+          "rtt_ms": 25,
+          "jitter_ms": 3,
+          "loss_pct": 100,
+          "bandwidth_kbps": 20000
+        },
+        "lan": {
+          "reachable": true,
+          "rtt_ms": 3,
+          "jitter_ms": 1,
+          "loss_pct": 0,
+          "bandwidth_kbps": 100000
+        }
+      },
+      "compute": {
+        "local": {
+          "model_ready": true,
+          "queue_ms": 0,
+          "free_mem_mb": 2048,
+          "inflight": 0
+        },
+        "cloud": {
+          "model_ready": true,
+          "queue_ms": 0,
+          "free_mem_mb": 16384,
+          "inflight": 0
+        }
+      },
+      "compute_source": "injected_synthetic_endpoint_state",
+      "observed_age_ms": 0,
+      "outcomes": {
+        "wan-probe": {
+          "refused": true,
+          "rtt_ms": 22.880735
+        },
+        "wan-infer": {
+          "refused": true,
+          "rtt_ms": 25.369927
+        },
+        "lan-probe": {
+          "refused": false,
+          "rtt_ms": 3.842969
+        },
+        "lan-infer": {
+          "refused": false,
+          "rtt_ms": 3.508477
+        }
+      }
+    },
+    {
+      "index": 27,
+      "at_ms": 2700,
+      "phase_index": 7,
+      "scenario": "wan_blackout",
+      "event": "wan_blackout",
+      "service": "sensor_batch",
+      "network": {
+        "wan": {
+          "reachable": false,
+          "rtt_ms": 25,
+          "jitter_ms": 3,
+          "loss_pct": 100,
+          "bandwidth_kbps": 20000
+        },
+        "lan": {
+          "reachable": true,
+          "rtt_ms": 3,
+          "jitter_ms": 1,
+          "loss_pct": 0,
+          "bandwidth_kbps": 100000
+        }
+      },
+      "compute": {
+        "local": {
+          "model_ready": true,
+          "queue_ms": 0,
+          "free_mem_mb": 2048,
+          "inflight": 0
+        },
+        "cloud": {
+          "model_ready": true,
+          "queue_ms": 0,
+          "free_mem_mb": 16384,
+          "inflight": 0
+        }
+      },
+      "compute_source": "injected_synthetic_endpoint_state",
+      "observed_age_ms": 0,
+      "outcomes": {
+        "wan-probe": {
+          "refused": true,
+          "rtt_ms": 27.103525
+        },
+        "wan-infer": {
+          "refused": true,
+          "rtt_ms": 24.423434
+        },
+        "lan-probe": {
+          "refused": false,
+          "rtt_ms": 3.100842
+        },
+        "lan-infer": {
+          "refused": false,
+          "rtt_ms": 3.404857
+        }
+      }
+    },
+    {
+      "index": 28,
+      "at_ms": 2800,
+      "phase_index": 8,
+      "scenario": "wan_blackout",
+      "event": "wan_blackout",
+      "service": "interactive_inference",
+      "network": {
+        "wan": {
+          "reachable": false,
+          "rtt_ms": 25,
+          "jitter_ms": 3,
+          "loss_pct": 100,
+          "bandwidth_kbps": 20000
+        },
+        "lan": {
+          "reachable": true,
+          "rtt_ms": 3,
+          "jitter_ms": 1,
+          "loss_pct": 0,
+          "bandwidth_kbps": 100000
+        }
+      },
+      "compute": {
+        "local": {
+          "model_ready": true,
+          "queue_ms": 0,
+          "free_mem_mb": 2048,
+          "inflight": 0
+        },
+        "cloud": {
+          "model_ready": true,
+          "queue_ms": 0,
+          "free_mem_mb": 16384,
+          "inflight": 0
+        }
+      },
+      "compute_source": "injected_synthetic_endpoint_state",
+      "observed_age_ms": 0,
+      "outcomes": {
+        "wan-probe": {
+          "refused": true,
+          "rtt_ms": 23.838474
+        },
+        "wan-infer": {
+          "refused": true,
+          "rtt_ms": 26.868205
+        },
+        "lan-probe": {
+          "refused": false,
+          "rtt_ms": 2.552188
+        },
+        "lan-infer": {
+          "refused": false,
+          "rtt_ms": 2.495245
+        }
+      }
+    },
+    {
+      "index": 29,
+      "at_ms": 2900,
+      "phase_index": 9,
+      "scenario": "wan_blackout",
+      "event": "wan_blackout",
+      "service": "safety_control",
+      "network": {
+        "wan": {
+          "reachable": false,
+          "rtt_ms": 25,
+          "jitter_ms": 3,
+          "loss_pct": 100,
+          "bandwidth_kbps": 20000
+        },
+        "lan": {
+          "reachable": true,
+          "rtt_ms": 3,
+          "jitter_ms": 1,
+          "loss_pct": 0,
+          "bandwidth_kbps": 100000
+        }
+      },
+      "compute": {
+        "local": {
+          "model_ready": true,
+          "queue_ms": 0,
+          "free_mem_mb": 2048,
+          "inflight": 0
+        },
+        "cloud": {
+          "model_ready": true,
+          "queue_ms": 0,
+          "free_mem_mb": 16384,
+          "inflight": 0
+        }
+      },
+      "compute_source": "injected_synthetic_endpoint_state",
+      "observed_age_ms": 0,
+      "outcomes": {
+        "wan-probe": {
+          "refused": true,
+          "rtt_ms": 25.988452
+        },
+        "wan-infer": {
+          "refused": true,
+          "rtt_ms": 26.049738
+        },
+        "lan-probe": {
+          "refused": false,
+          "rtt_ms": 3.522437
+        },
+        "lan-infer": {
+          "refused": false,
+          "rtt_ms": 2.583555
+        }
+      }
+    },
+    {
+      "index": 30,
+      "at_ms": 3000,
+      "phase_index": 0,
+      "scenario": "local_queue",
+      "event": "local_queue",
+      "service": "interactive_inference",
+      "network": {
+        "wan": {
+          "reachable": true,
+          "rtt_ms": 25,
+          "jitter_ms": 3,
+          "loss_pct": 0,
+          "bandwidth_kbps": 20000
+        },
+        "lan": {
+          "reachable": true,
+          "rtt_ms": 3,
+          "jitter_ms": 1,
+          "loss_pct": 0,
+          "bandwidth_kbps": 100000
+        }
+      },
+      "compute": {
+        "local": {
+          "model_ready": true,
+          "queue_ms": 650,
+          "free_mem_mb": 2048,
+          "inflight": 12
+        },
+        "cloud": {
+          "model_ready": true,
+          "queue_ms": 0,
+          "free_mem_mb": 16384,
+          "inflight": 0
+        }
+      },
+      "compute_source": "injected_synthetic_endpoint_state",
+      "observed_age_ms": 0,
+      "outcomes": {
+        "wan-probe": {
+          "refused": false,
+          "rtt_ms": 23.667137
+        },
+        "wan-infer": {
+          "refused": false,
+          "rtt_ms": 23.553449
+        },
+        "lan-probe": {
+          "refused": false,
+          "rtt_ms": 3.281426
+        },
+        "lan-infer": {
+          "refused": false,
+          "rtt_ms": 3.058999
+        }
+      }
+    },
+    {
+      "index": 31,
+      "at_ms": 3100,
+      "phase_index": 1,
+      "scenario": "local_queue",
+      "event": "local_queue",
+      "service": "interactive_inference",
+      "network": {
+        "wan": {
+          "reachable": true,
+          "rtt_ms": 25,
+          "jitter_ms": 3,
+          "loss_pct": 0,
+          "bandwidth_kbps": 20000
+        },
+        "lan": {
+          "reachable": true,
+          "rtt_ms": 3,
+          "jitter_ms": 1,
+          "loss_pct": 0,
+          "bandwidth_kbps": 100000
+        }
+      },
+      "compute": {
+        "local": {
+          "model_ready": true,
+          "queue_ms": 650,
+          "free_mem_mb": 2048,
+          "inflight": 12
+        },
+        "cloud": {
+          "model_ready": true,
+          "queue_ms": 0,
+          "free_mem_mb": 16384,
+          "inflight": 0
+        }
+      },
+      "compute_source": "injected_synthetic_endpoint_state",
+      "observed_age_ms": 0,
+      "outcomes": {
+        "wan-probe": {
+          "refused": false,
+          "rtt_ms": 23.875061
+        },
+        "wan-infer": {
+          "refused": false,
+          "rtt_ms": 25.237587
+        },
+        "lan-probe": {
+          "refused": false,
+          "rtt_ms": 2.393805
+        },
+        "lan-infer": {
+          "refused": false,
+          "rtt_ms": 3.014224
+        }
+      }
+    },
+    {
+      "index": 32,
+      "at_ms": 3200,
+      "phase_index": 2,
+      "scenario": "local_queue",
+      "event": "local_queue",
+      "service": "sensor_batch",
+      "network": {
+        "wan": {
+          "reachable": true,
+          "rtt_ms": 25,
+          "jitter_ms": 3,
+          "loss_pct": 0,
+          "bandwidth_kbps": 20000
+        },
+        "lan": {
+          "reachable": true,
+          "rtt_ms": 3,
+          "jitter_ms": 1,
+          "loss_pct": 0,
+          "bandwidth_kbps": 100000
+        }
+      },
+      "compute": {
+        "local": {
+          "model_ready": true,
+          "queue_ms": 650,
+          "free_mem_mb": 2048,
+          "inflight": 12
+        },
+        "cloud": {
+          "model_ready": true,
+          "queue_ms": 0,
+          "free_mem_mb": 16384,
+          "inflight": 0
+        }
+      },
+      "compute_source": "injected_synthetic_endpoint_state",
+      "observed_age_ms": 0,
+      "outcomes": {
+        "wan-probe": {
+          "refused": false,
+          "rtt_ms": 27.81301
+        },
+        "wan-infer": {
+          "refused": false,
+          "rtt_ms": 22.414162
+        },
+        "lan-probe": {
+          "refused": false,
+          "rtt_ms": 2.350222
+        },
+        "lan-infer": {
+          "refused": false,
+          "rtt_ms": 2.082686
+        }
+      }
+    },
+    {
+      "index": 33,
+      "at_ms": 3300,
+      "phase_index": 3,
+      "scenario": "local_queue",
+      "event": "local_queue",
+      "service": "interactive_inference",
+      "network": {
+        "wan": {
+          "reachable": true,
+          "rtt_ms": 25,
+          "jitter_ms": 3,
+          "loss_pct": 0,
+          "bandwidth_kbps": 20000
+        },
+        "lan": {
+          "reachable": true,
+          "rtt_ms": 3,
+          "jitter_ms": 1,
+          "loss_pct": 0,
+          "bandwidth_kbps": 100000
+        }
+      },
+      "compute": {
+        "local": {
+          "model_ready": true,
+          "queue_ms": 650,
+          "free_mem_mb": 2048,
+          "inflight": 12
+        },
+        "cloud": {
+          "model_ready": true,
+          "queue_ms": 0,
+          "free_mem_mb": 16384,
+          "inflight": 0
+        }
+      },
+      "compute_source": "injected_synthetic_endpoint_state",
+      "observed_age_ms": 0,
+      "outcomes": {
+        "wan-probe": {
+          "refused": false,
+          "rtt_ms": 22.62513
+        },
+        "wan-infer": {
+          "refused": false,
+          "rtt_ms": 25.05344
+        },
+        "lan-probe": {
+          "refused": false,
+          "rtt_ms": 2.001113
+        },
+        "lan-infer": {
+          "refused": false,
+          "rtt_ms": 2.269621
+        }
+      }
+    },
+    {
+      "index": 34,
+      "at_ms": 3400,
+      "phase_index": 4,
+      "scenario": "local_queue",
+      "event": "local_queue",
+      "service": "safety_control",
+      "network": {
+        "wan": {
+          "reachable": true,
+          "rtt_ms": 25,
+          "jitter_ms": 3,
+          "loss_pct": 0,
+          "bandwidth_kbps": 20000
+        },
+        "lan": {
+          "reachable": true,
+          "rtt_ms": 3,
+          "jitter_ms": 1,
+          "loss_pct": 0,
+          "bandwidth_kbps": 100000
+        }
+      },
+      "compute": {
+        "local": {
+          "model_ready": true,
+          "queue_ms": 650,
+          "free_mem_mb": 2048,
+          "inflight": 12
+        },
+        "cloud": {
+          "model_ready": true,
+          "queue_ms": 0,
+          "free_mem_mb": 16384,
+          "inflight": 0
+        }
+      },
+      "compute_source": "injected_synthetic_endpoint_state",
+      "observed_age_ms": 0,
+      "outcomes": {
+        "wan-probe": {
+          "refused": false,
+          "rtt_ms": 24.475255
+        },
+        "wan-infer": {
+          "refused": false,
+          "rtt_ms": 26.09203
+        },
+        "lan-probe": {
+          "refused": false,
+          "rtt_ms": 3.76869
+        },
+        "lan-infer": {
+          "refused": false,
+          "rtt_ms": 2.072631
+        }
+      }
+    },
+    {
+      "index": 35,
+      "at_ms": 3500,
+      "phase_index": 5,
+      "scenario": "local_queue",
+      "event": "local_queue",
+      "service": "interactive_inference",
+      "network": {
+        "wan": {
+          "reachable": true,
+          "rtt_ms": 25,
+          "jitter_ms": 3,
+          "loss_pct": 0,
+          "bandwidth_kbps": 20000
+        },
+        "lan": {
+          "reachable": true,
+          "rtt_ms": 3,
+          "jitter_ms": 1,
+          "loss_pct": 0,
+          "bandwidth_kbps": 100000
+        }
+      },
+      "compute": {
+        "local": {
+          "model_ready": true,
+          "queue_ms": 650,
+          "free_mem_mb": 2048,
+          "inflight": 12
+        },
+        "cloud": {
+          "model_ready": true,
+          "queue_ms": 0,
+          "free_mem_mb": 16384,
+          "inflight": 0
+        }
+      },
+      "compute_source": "injected_synthetic_endpoint_state",
+      "observed_age_ms": 0,
+      "outcomes": {
+        "wan-probe": {
+          "refused": false,
+          "rtt_ms": 22.47009
+        },
+        "wan-infer": {
+          "refused": false,
+          "rtt_ms": 24.886845
+        },
+        "lan-probe": {
+          "refused": false,
+          "rtt_ms": 3.121255
+        },
+        "lan-infer": {
+          "refused": false,
+          "rtt_ms": 2.268854
+        }
+      }
+    },
+    {
+      "index": 36,
+      "at_ms": 3600,
+      "phase_index": 6,
+      "scenario": "local_queue",
+      "event": "local_queue",
+      "service": "interactive_inference",
+      "network": {
+        "wan": {
+          "reachable": true,
+          "rtt_ms": 25,
+          "jitter_ms": 3,
+          "loss_pct": 0,
+          "bandwidth_kbps": 20000
+        },
+        "lan": {
+          "reachable": true,
+          "rtt_ms": 3,
+          "jitter_ms": 1,
+          "loss_pct": 0,
+          "bandwidth_kbps": 100000
+        }
+      },
+      "compute": {
+        "local": {
+          "model_ready": true,
+          "queue_ms": 650,
+          "free_mem_mb": 2048,
+          "inflight": 12
+        },
+        "cloud": {
+          "model_ready": true,
+          "queue_ms": 0,
+          "free_mem_mb": 16384,
+          "inflight": 0
+        }
+      },
+      "compute_source": "injected_synthetic_endpoint_state",
+      "observed_age_ms": 0,
+      "outcomes": {
+        "wan-probe": {
+          "refused": false,
+          "rtt_ms": 25.384704
+        },
+        "wan-infer": {
+          "refused": false,
+          "rtt_ms": 26.526446
+        },
+        "lan-probe": {
+          "refused": false,
+          "rtt_ms": 3.382021
+        },
+        "lan-infer": {
+          "refused": false,
+          "rtt_ms": 3.346881
+        }
+      }
+    },
+    {
+      "index": 37,
+      "at_ms": 3700,
+      "phase_index": 7,
+      "scenario": "local_queue",
+      "event": "local_queue",
+      "service": "sensor_batch",
+      "network": {
+        "wan": {
+          "reachable": true,
+          "rtt_ms": 25,
+          "jitter_ms": 3,
+          "loss_pct": 0,
+          "bandwidth_kbps": 20000
+        },
+        "lan": {
+          "reachable": true,
+          "rtt_ms": 3,
+          "jitter_ms": 1,
+          "loss_pct": 0,
+          "bandwidth_kbps": 100000
+        }
+      },
+      "compute": {
+        "local": {
+          "model_ready": true,
+          "queue_ms": 650,
+          "free_mem_mb": 2048,
+          "inflight": 12
+        },
+        "cloud": {
+          "model_ready": true,
+          "queue_ms": 0,
+          "free_mem_mb": 16384,
+          "inflight": 0
+        }
+      },
+      "compute_source": "injected_synthetic_endpoint_state",
+      "observed_age_ms": 0,
+      "outcomes": {
+        "wan-probe": {
+          "refused": false,
+          "rtt_ms": 22.49309
+        },
+        "wan-infer": {
+          "refused": false,
+          "rtt_ms": 22.311829
+        },
+        "lan-probe": {
+          "refused": false,
+          "rtt_ms": 3.763565
+        },
+        "lan-infer": {
+          "refused": false,
+          "rtt_ms": 2.627132
+        }
+      }
+    },
+    {
+      "index": 38,
+      "at_ms": 3800,
+      "phase_index": 8,
+      "scenario": "local_queue",
+      "event": "local_queue",
+      "service": "interactive_inference",
+      "network": {
+        "wan": {
+          "reachable": true,
+          "rtt_ms": 25,
+          "jitter_ms": 3,
+          "loss_pct": 0,
+          "bandwidth_kbps": 20000
+        },
+        "lan": {
+          "reachable": true,
+          "rtt_ms": 3,
+          "jitter_ms": 1,
+          "loss_pct": 0,
+          "bandwidth_kbps": 100000
+        }
+      },
+      "compute": {
+        "local": {
+          "model_ready": true,
+          "queue_ms": 650,
+          "free_mem_mb": 2048,
+          "inflight": 12
+        },
+        "cloud": {
+          "model_ready": true,
+          "queue_ms": 0,
+          "free_mem_mb": 16384,
+          "inflight": 0
+        }
+      },
+      "compute_source": "injected_synthetic_endpoint_state",
+      "observed_age_ms": 0,
+      "outcomes": {
+        "wan-probe": {
+          "refused": false,
+          "rtt_ms": 25.411047
+        },
+        "wan-infer": {
+          "refused": false,
+          "rtt_ms": 23.687913
+        },
+        "lan-probe": {
+          "refused": false,
+          "rtt_ms": 2.337424
+        },
+        "lan-infer": {
+          "refused": false,
+          "rtt_ms": 3.211865
+        }
+      }
+    },
+    {
+      "index": 39,
+      "at_ms": 3900,
+      "phase_index": 9,
+      "scenario": "local_queue",
+      "event": "local_queue",
+      "service": "safety_control",
+      "network": {
+        "wan": {
+          "reachable": true,
+          "rtt_ms": 25,
+          "jitter_ms": 3,
+          "loss_pct": 0,
+          "bandwidth_kbps": 20000
+        },
+        "lan": {
+          "reachable": true,
+          "rtt_ms": 3,
+          "jitter_ms": 1,
+          "loss_pct": 0,
+          "bandwidth_kbps": 100000
+        }
+      },
+      "compute": {
+        "local": {
+          "model_ready": true,
+          "queue_ms": 650,
+          "free_mem_mb": 2048,
+          "inflight": 12
+        },
+        "cloud": {
+          "model_ready": true,
+          "queue_ms": 0,
+          "free_mem_mb": 16384,
+          "inflight": 0
+        }
+      },
+      "compute_source": "injected_synthetic_endpoint_state",
+      "observed_age_ms": 0,
+      "outcomes": {
+        "wan-probe": {
+          "refused": false,
+          "rtt_ms": 25.062073
+        },
+        "wan-infer": {
+          "refused": false,
+          "rtt_ms": 26.34428
+        },
+        "lan-probe": {
+          "refused": false,
+          "rtt_ms": 2.958481
+        },
+        "lan-infer": {
+          "refused": false,
+          "rtt_ms": 3.398965
+        }
+      }
+    },
+    {
+      "index": 40,
+      "at_ms": 4000,
+      "phase_index": 0,
+      "scenario": "cloud_queue",
+      "event": "cloud_queue",
+      "service": "interactive_inference",
+      "network": {
+        "wan": {
+          "reachable": true,
+          "rtt_ms": 25,
+          "jitter_ms": 3,
+          "loss_pct": 0,
+          "bandwidth_kbps": 20000
+        },
+        "lan": {
+          "reachable": true,
+          "rtt_ms": 3,
+          "jitter_ms": 1,
+          "loss_pct": 0,
+          "bandwidth_kbps": 100000
+        }
+      },
+      "compute": {
+        "local": {
+          "model_ready": true,
+          "queue_ms": 0,
+          "free_mem_mb": 2048,
+          "inflight": 0
+        },
+        "cloud": {
+          "model_ready": true,
+          "queue_ms": 650,
+          "free_mem_mb": 16384,
+          "inflight": 12
+        }
+      },
+      "compute_source": "injected_synthetic_endpoint_state",
+      "observed_age_ms": 0,
+      "outcomes": {
+        "wan-probe": {
+          "refused": false,
+          "rtt_ms": 23.072555
+        },
+        "wan-infer": {
+          "refused": false,
+          "rtt_ms": 27.19334
+        },
+        "lan-probe": {
+          "refused": false,
+          "rtt_ms": 3.76178
+        },
+        "lan-infer": {
+          "refused": false,
+          "rtt_ms": 3.646883
+        }
+      }
+    },
+    {
+      "index": 41,
+      "at_ms": 4100,
+      "phase_index": 1,
+      "scenario": "cloud_queue",
+      "event": "cloud_queue",
+      "service": "interactive_inference",
+      "network": {
+        "wan": {
+          "reachable": true,
+          "rtt_ms": 25,
+          "jitter_ms": 3,
+          "loss_pct": 0,
+          "bandwidth_kbps": 20000
+        },
+        "lan": {
+          "reachable": true,
+          "rtt_ms": 3,
+          "jitter_ms": 1,
+          "loss_pct": 0,
+          "bandwidth_kbps": 100000
+        }
+      },
+      "compute": {
+        "local": {
+          "model_ready": true,
+          "queue_ms": 0,
+          "free_mem_mb": 2048,
+          "inflight": 0
+        },
+        "cloud": {
+          "model_ready": true,
+          "queue_ms": 650,
+          "free_mem_mb": 16384,
+          "inflight": 12
+        }
+      },
+      "compute_source": "injected_synthetic_endpoint_state",
+      "observed_age_ms": 0,
+      "outcomes": {
+        "wan-probe": {
+          "refused": false,
+          "rtt_ms": 23.14594
+        },
+        "wan-infer": {
+          "refused": false,
+          "rtt_ms": 25.505609
+        },
+        "lan-probe": {
+          "refused": false,
+          "rtt_ms": 3.191161
+        },
+        "lan-infer": {
+          "refused": false,
+          "rtt_ms": 2.867259
+        }
+      }
+    },
+    {
+      "index": 42,
+      "at_ms": 4200,
+      "phase_index": 2,
+      "scenario": "cloud_queue",
+      "event": "cloud_queue",
+      "service": "sensor_batch",
+      "network": {
+        "wan": {
+          "reachable": true,
+          "rtt_ms": 25,
+          "jitter_ms": 3,
+          "loss_pct": 0,
+          "bandwidth_kbps": 20000
+        },
+        "lan": {
+          "reachable": true,
+          "rtt_ms": 3,
+          "jitter_ms": 1,
+          "loss_pct": 0,
+          "bandwidth_kbps": 100000
+        }
+      },
+      "compute": {
+        "local": {
+          "model_ready": true,
+          "queue_ms": 0,
+          "free_mem_mb": 2048,
+          "inflight": 0
+        },
+        "cloud": {
+          "model_ready": true,
+          "queue_ms": 650,
+          "free_mem_mb": 16384,
+          "inflight": 12
+        }
+      },
+      "compute_source": "injected_synthetic_endpoint_state",
+      "observed_age_ms": 0,
+      "outcomes": {
+        "wan-probe": {
+          "refused": false,
+          "rtt_ms": 25.252778
+        },
+        "wan-infer": {
+          "refused": false,
+          "rtt_ms": 22.422367
+        },
+        "lan-probe": {
+          "refused": false,
+          "rtt_ms": 2.082426
+        },
+        "lan-infer": {
+          "refused": false,
+          "rtt_ms": 2.838333
+        }
+      }
+    },
+    {
+      "index": 43,
+      "at_ms": 4300,
+      "phase_index": 3,
+      "scenario": "cloud_queue",
+      "event": "cloud_queue",
+      "service": "interactive_inference",
+      "network": {
+        "wan": {
+          "reachable": true,
+          "rtt_ms": 25,
+          "jitter_ms": 3,
+          "loss_pct": 0,
+          "bandwidth_kbps": 20000
+        },
+        "lan": {
+          "reachable": true,
+          "rtt_ms": 3,
+          "jitter_ms": 1,
+          "loss_pct": 0,
+          "bandwidth_kbps": 100000
+        }
+      },
+      "compute": {
+        "local": {
+          "model_ready": true,
+          "queue_ms": 0,
+          "free_mem_mb": 2048,
+          "inflight": 0
+        },
+        "cloud": {
+          "model_ready": true,
+          "queue_ms": 650,
+          "free_mem_mb": 16384,
+          "inflight": 12
+        }
+      },
+      "compute_source": "injected_synthetic_endpoint_state",
+      "observed_age_ms": 0,
+      "outcomes": {
+        "wan-probe": {
+          "refused": false,
+          "rtt_ms": 22.658976
+        },
+        "wan-infer": {
+          "refused": false,
+          "rtt_ms": 24.046988
+        },
+        "lan-probe": {
+          "refused": false,
+          "rtt_ms": 3.931567
+        },
+        "lan-infer": {
+          "refused": false,
+          "rtt_ms": 3.844128
+        }
+      }
+    },
+    {
+      "index": 44,
+      "at_ms": 4400,
+      "phase_index": 4,
+      "scenario": "cloud_queue",
+      "event": "cloud_queue",
+      "service": "safety_control",
+      "network": {
+        "wan": {
+          "reachable": true,
+          "rtt_ms": 25,
+          "jitter_ms": 3,
+          "loss_pct": 0,
+          "bandwidth_kbps": 20000
+        },
+        "lan": {
+          "reachable": true,
+          "rtt_ms": 3,
+          "jitter_ms": 1,
+          "loss_pct": 0,
+          "bandwidth_kbps": 100000
+        }
+      },
+      "compute": {
+        "local": {
+          "model_ready": true,
+          "queue_ms": 0,
+          "free_mem_mb": 2048,
+          "inflight": 0
+        },
+        "cloud": {
+          "model_ready": true,
+          "queue_ms": 650,
+          "free_mem_mb": 16384,
+          "inflight": 12
+        }
+      },
+      "compute_source": "injected_synthetic_endpoint_state",
+      "observed_age_ms": 0,
+      "outcomes": {
+        "wan-probe": {
+          "refused": false,
+          "rtt_ms": 27.235388
+        },
+        "wan-infer": {
+          "refused": false,
+          "rtt_ms": 23.440693
+        },
+        "lan-probe": {
+          "refused": false,
+          "rtt_ms": 3.62235
+        },
+        "lan-infer": {
+          "refused": false,
+          "rtt_ms": 3.406355
+        }
+      }
+    },
+    {
+      "index": 45,
+      "at_ms": 4500,
+      "phase_index": 5,
+      "scenario": "cloud_queue",
+      "event": "cloud_queue",
+      "service": "interactive_inference",
+      "network": {
+        "wan": {
+          "reachable": true,
+          "rtt_ms": 25,
+          "jitter_ms": 3,
+          "loss_pct": 0,
+          "bandwidth_kbps": 20000
+        },
+        "lan": {
+          "reachable": true,
+          "rtt_ms": 3,
+          "jitter_ms": 1,
+          "loss_pct": 0,
+          "bandwidth_kbps": 100000
+        }
+      },
+      "compute": {
+        "local": {
+          "model_ready": true,
+          "queue_ms": 0,
+          "free_mem_mb": 2048,
+          "inflight": 0
+        },
+        "cloud": {
+          "model_ready": true,
+          "queue_ms": 650,
+          "free_mem_mb": 16384,
+          "inflight": 12
+        }
+      },
+      "compute_source": "injected_synthetic_endpoint_state",
+      "observed_age_ms": 0,
+      "outcomes": {
+        "wan-probe": {
+          "refused": false,
+          "rtt_ms": 26.128712
+        },
+        "wan-infer": {
+          "refused": false,
+          "rtt_ms": 22.774114
+        },
+        "lan-probe": {
+          "refused": false,
+          "rtt_ms": 2.33897
+        },
+        "lan-infer": {
+          "refused": false,
+          "rtt_ms": 2.654128
+        }
+      }
+    },
+    {
+      "index": 46,
+      "at_ms": 4600,
+      "phase_index": 6,
+      "scenario": "cloud_queue",
+      "event": "cloud_queue",
+      "service": "interactive_inference",
+      "network": {
+        "wan": {
+          "reachable": true,
+          "rtt_ms": 25,
+          "jitter_ms": 3,
+          "loss_pct": 0,
+          "bandwidth_kbps": 20000
+        },
+        "lan": {
+          "reachable": true,
+          "rtt_ms": 3,
+          "jitter_ms": 1,
+          "loss_pct": 0,
+          "bandwidth_kbps": 100000
+        }
+      },
+      "compute": {
+        "local": {
+          "model_ready": true,
+          "queue_ms": 0,
+          "free_mem_mb": 2048,
+          "inflight": 0
+        },
+        "cloud": {
+          "model_ready": true,
+          "queue_ms": 650,
+          "free_mem_mb": 16384,
+          "inflight": 12
+        }
+      },
+      "compute_source": "injected_synthetic_endpoint_state",
+      "observed_age_ms": 0,
+      "outcomes": {
+        "wan-probe": {
+          "refused": false,
+          "rtt_ms": 26.693991
+        },
+        "wan-infer": {
+          "refused": false,
+          "rtt_ms": 23.441932
+        },
+        "lan-probe": {
+          "refused": false,
+          "rtt_ms": 2.903797
+        },
+        "lan-infer": {
+          "refused": false,
+          "rtt_ms": 2.249036
+        }
+      }
+    },
+    {
+      "index": 47,
+      "at_ms": 4700,
+      "phase_index": 7,
+      "scenario": "cloud_queue",
+      "event": "cloud_queue",
+      "service": "sensor_batch",
+      "network": {
+        "wan": {
+          "reachable": true,
+          "rtt_ms": 25,
+          "jitter_ms": 3,
+          "loss_pct": 0,
+          "bandwidth_kbps": 20000
+        },
+        "lan": {
+          "reachable": true,
+          "rtt_ms": 3,
+          "jitter_ms": 1,
+          "loss_pct": 0,
+          "bandwidth_kbps": 100000
+        }
+      },
+      "compute": {
+        "local": {
+          "model_ready": true,
+          "queue_ms": 0,
+          "free_mem_mb": 2048,
+          "inflight": 0
+        },
+        "cloud": {
+          "model_ready": true,
+          "queue_ms": 650,
+          "free_mem_mb": 16384,
+          "inflight": 12
+        }
+      },
+      "compute_source": "injected_synthetic_endpoint_state",
+      "observed_age_ms": 0,
+      "outcomes": {
+        "wan-probe": {
+          "refused": false,
+          "rtt_ms": 23.91453
+        },
+        "wan-infer": {
+          "refused": false,
+          "rtt_ms": 27.497945
+        },
+        "lan-probe": {
+          "refused": false,
+          "rtt_ms": 3.132401
+        },
+        "lan-infer": {
+          "refused": false,
+          "rtt_ms": 3.477425
+        }
+      }
+    },
+    {
+      "index": 48,
+      "at_ms": 4800,
+      "phase_index": 8,
+      "scenario": "cloud_queue",
+      "event": "cloud_queue",
+      "service": "interactive_inference",
+      "network": {
+        "wan": {
+          "reachable": true,
+          "rtt_ms": 25,
+          "jitter_ms": 3,
+          "loss_pct": 0,
+          "bandwidth_kbps": 20000
+        },
+        "lan": {
+          "reachable": true,
+          "rtt_ms": 3,
+          "jitter_ms": 1,
+          "loss_pct": 0,
+          "bandwidth_kbps": 100000
+        }
+      },
+      "compute": {
+        "local": {
+          "model_ready": true,
+          "queue_ms": 0,
+          "free_mem_mb": 2048,
+          "inflight": 0
+        },
+        "cloud": {
+          "model_ready": true,
+          "queue_ms": 650,
+          "free_mem_mb": 16384,
+          "inflight": 12
+        }
+      },
+      "compute_source": "injected_synthetic_endpoint_state",
+      "observed_age_ms": 0,
+      "outcomes": {
+        "wan-probe": {
+          "refused": false,
+          "rtt_ms": 26.561416
+        },
+        "wan-infer": {
+          "refused": false,
+          "rtt_ms": 22.525605
+        },
+        "lan-probe": {
+          "refused": false,
+          "rtt_ms": 3.771189
+        },
+        "lan-infer": {
+          "refused": false,
+          "rtt_ms": 2.80272
+        }
+      }
+    },
+    {
+      "index": 49,
+      "at_ms": 4900,
+      "phase_index": 9,
+      "scenario": "cloud_queue",
+      "event": "cloud_queue",
+      "service": "safety_control",
+      "network": {
+        "wan": {
+          "reachable": true,
+          "rtt_ms": 25,
+          "jitter_ms": 3,
+          "loss_pct": 0,
+          "bandwidth_kbps": 20000
+        },
+        "lan": {
+          "reachable": true,
+          "rtt_ms": 3,
+          "jitter_ms": 1,
+          "loss_pct": 0,
+          "bandwidth_kbps": 100000
+        }
+      },
+      "compute": {
+        "local": {
+          "model_ready": true,
+          "queue_ms": 0,
+          "free_mem_mb": 2048,
+          "inflight": 0
+        },
+        "cloud": {
+          "model_ready": true,
+          "queue_ms": 650,
+          "free_mem_mb": 16384,
+          "inflight": 12
+        }
+      },
+      "compute_source": "injected_synthetic_endpoint_state",
+      "observed_age_ms": 0,
+      "outcomes": {
+        "wan-probe": {
+          "refused": false,
+          "rtt_ms": 22.051537
+        },
+        "wan-infer": {
+          "refused": false,
+          "rtt_ms": 27.677282
+        },
+        "lan-probe": {
+          "refused": false,
+          "rtt_ms": 2.703279
+        },
+        "lan-infer": {
+          "refused": false,
+          "rtt_ms": 3.062763
+        }
+      }
+    },
+    {
+      "index": 50,
+      "at_ms": 5000,
+      "phase_index": 0,
+      "scenario": "local_model_down",
+      "event": "local_model_down",
+      "service": "interactive_inference",
+      "network": {
+        "wan": {
+          "reachable": true,
+          "rtt_ms": 25,
+          "jitter_ms": 3,
+          "loss_pct": 0,
+          "bandwidth_kbps": 20000
+        },
+        "lan": {
+          "reachable": true,
+          "rtt_ms": 3,
+          "jitter_ms": 1,
+          "loss_pct": 0,
+          "bandwidth_kbps": 100000
+        }
+      },
+      "compute": {
+        "local": {
+          "model_ready": false,
+          "queue_ms": 0,
+          "free_mem_mb": 2048,
+          "inflight": 0
+        },
+        "cloud": {
+          "model_ready": true,
+          "queue_ms": 0,
+          "free_mem_mb": 16384,
+          "inflight": 0
+        }
+      },
+      "compute_source": "injected_synthetic_endpoint_state",
+      "observed_age_ms": 0,
+      "outcomes": {
+        "wan-probe": {
+          "refused": false,
+          "rtt_ms": 26.274965
+        },
+        "wan-infer": {
+          "refused": false,
+          "rtt_ms": 23.927731
+        },
+        "lan-probe": {
+          "refused": false,
+          "rtt_ms": 2.238034
+        },
+        "lan-infer": {
+          "refused": false,
+          "rtt_ms": 2.197496
+        }
+      }
+    },
+    {
+      "index": 51,
+      "at_ms": 5100,
+      "phase_index": 1,
+      "scenario": "local_model_down",
+      "event": "local_model_down",
+      "service": "interactive_inference",
+      "network": {
+        "wan": {
+          "reachable": true,
+          "rtt_ms": 25,
+          "jitter_ms": 3,
+          "loss_pct": 0,
+          "bandwidth_kbps": 20000
+        },
+        "lan": {
+          "reachable": true,
+          "rtt_ms": 3,
+          "jitter_ms": 1,
+          "loss_pct": 0,
+          "bandwidth_kbps": 100000
+        }
+      },
+      "compute": {
+        "local": {
+          "model_ready": false,
+          "queue_ms": 0,
+          "free_mem_mb": 2048,
+          "inflight": 0
+        },
+        "cloud": {
+          "model_ready": true,
+          "queue_ms": 0,
+          "free_mem_mb": 16384,
+          "inflight": 0
+        }
+      },
+      "compute_source": "injected_synthetic_endpoint_state",
+      "observed_age_ms": 0,
+      "outcomes": {
+        "wan-probe": {
+          "refused": false,
+          "rtt_ms": 24.964302
+        },
+        "wan-infer": {
+          "refused": false,
+          "rtt_ms": 24.028987
+        },
+        "lan-probe": {
+          "refused": false,
+          "rtt_ms": 2.97795
+        },
+        "lan-infer": {
+          "refused": false,
+          "rtt_ms": 3.16834
+        }
+      }
+    },
+    {
+      "index": 52,
+      "at_ms": 5200,
+      "phase_index": 2,
+      "scenario": "local_model_down",
+      "event": "local_model_down",
+      "service": "sensor_batch",
+      "network": {
+        "wan": {
+          "reachable": true,
+          "rtt_ms": 25,
+          "jitter_ms": 3,
+          "loss_pct": 0,
+          "bandwidth_kbps": 20000
+        },
+        "lan": {
+          "reachable": true,
+          "rtt_ms": 3,
+          "jitter_ms": 1,
+          "loss_pct": 0,
+          "bandwidth_kbps": 100000
+        }
+      },
+      "compute": {
+        "local": {
+          "model_ready": false,
+          "queue_ms": 0,
+          "free_mem_mb": 2048,
+          "inflight": 0
+        },
+        "cloud": {
+          "model_ready": true,
+          "queue_ms": 0,
+          "free_mem_mb": 16384,
+          "inflight": 0
+        }
+      },
+      "compute_source": "injected_synthetic_endpoint_state",
+      "observed_age_ms": 0,
+      "outcomes": {
+        "wan-probe": {
+          "refused": false,
+          "rtt_ms": 24.735183
+        },
+        "wan-infer": {
+          "refused": false,
+          "rtt_ms": 22.554901
+        },
+        "lan-probe": {
+          "refused": false,
+          "rtt_ms": 2.146253
+        },
+        "lan-infer": {
+          "refused": false,
+          "rtt_ms": 2.967931
+        }
+      }
+    },
+    {
+      "index": 53,
+      "at_ms": 5300,
+      "phase_index": 3,
+      "scenario": "local_model_down",
+      "event": "local_model_down",
+      "service": "interactive_inference",
+      "network": {
+        "wan": {
+          "reachable": true,
+          "rtt_ms": 25,
+          "jitter_ms": 3,
+          "loss_pct": 0,
+          "bandwidth_kbps": 20000
+        },
+        "lan": {
+          "reachable": true,
+          "rtt_ms": 3,
+          "jitter_ms": 1,
+          "loss_pct": 0,
+          "bandwidth_kbps": 100000
+        }
+      },
+      "compute": {
+        "local": {
+          "model_ready": false,
+          "queue_ms": 0,
+          "free_mem_mb": 2048,
+          "inflight": 0
+        },
+        "cloud": {
+          "model_ready": true,
+          "queue_ms": 0,
+          "free_mem_mb": 16384,
+          "inflight": 0
+        }
+      },
+      "compute_source": "injected_synthetic_endpoint_state",
+      "observed_age_ms": 0,
+      "outcomes": {
+        "wan-probe": {
+          "refused": false,
+          "rtt_ms": 27.38675
+        },
+        "wan-infer": {
+          "refused": false,
+          "rtt_ms": 23.142587
+        },
+        "lan-probe": {
+          "refused": false,
+          "rtt_ms": 3.716364
+        },
+        "lan-infer": {
+          "refused": false,
+          "rtt_ms": 2.02691
+        }
+      }
+    },
+    {
+      "index": 54,
+      "at_ms": 5400,
+      "phase_index": 4,
+      "scenario": "local_model_down",
+      "event": "local_model_down",
+      "service": "safety_control",
+      "network": {
+        "wan": {
+          "reachable": true,
+          "rtt_ms": 25,
+          "jitter_ms": 3,
+          "loss_pct": 0,
+          "bandwidth_kbps": 20000
+        },
+        "lan": {
+          "reachable": true,
+          "rtt_ms": 3,
+          "jitter_ms": 1,
+          "loss_pct": 0,
+          "bandwidth_kbps": 100000
+        }
+      },
+      "compute": {
+        "local": {
+          "model_ready": false,
+          "queue_ms": 0,
+          "free_mem_mb": 2048,
+          "inflight": 0
+        },
+        "cloud": {
+          "model_ready": true,
+          "queue_ms": 0,
+          "free_mem_mb": 16384,
+          "inflight": 0
+        }
+      },
+      "compute_source": "injected_synthetic_endpoint_state",
+      "observed_age_ms": 0,
+      "outcomes": {
+        "wan-probe": {
+          "refused": false,
+          "rtt_ms": 26.34557
+        },
+        "wan-infer": {
+          "refused": false,
+          "rtt_ms": 25.983623
+        },
+        "lan-probe": {
+          "refused": false,
+          "rtt_ms": 2.945901
+        },
+        "lan-infer": {
+          "refused": false,
+          "rtt_ms": 3.139162
+        }
+      }
+    },
+    {
+      "index": 55,
+      "at_ms": 5500,
+      "phase_index": 5,
+      "scenario": "local_model_down",
+      "event": "local_model_down",
+      "service": "interactive_inference",
+      "network": {
+        "wan": {
+          "reachable": true,
+          "rtt_ms": 25,
+          "jitter_ms": 3,
+          "loss_pct": 0,
+          "bandwidth_kbps": 20000
+        },
+        "lan": {
+          "reachable": true,
+          "rtt_ms": 3,
+          "jitter_ms": 1,
+          "loss_pct": 0,
+          "bandwidth_kbps": 100000
+        }
+      },
+      "compute": {
+        "local": {
+          "model_ready": false,
+          "queue_ms": 0,
+          "free_mem_mb": 2048,
+          "inflight": 0
+        },
+        "cloud": {
+          "model_ready": true,
+          "queue_ms": 0,
+          "free_mem_mb": 16384,
+          "inflight": 0
+        }
+      },
+      "compute_source": "injected_synthetic_endpoint_state",
+      "observed_age_ms": 0,
+      "outcomes": {
+        "wan-probe": {
+          "refused": false,
+          "rtt_ms": 24.121508
+        },
+        "wan-infer": {
+          "refused": false,
+          "rtt_ms": 23.832712
+        },
+        "lan-probe": {
+          "refused": false,
+          "rtt_ms": 3.984069
+        },
+        "lan-infer": {
+          "refused": false,
+          "rtt_ms": 3.618978
+        }
+      }
+    },
+    {
+      "index": 56,
+      "at_ms": 5600,
+      "phase_index": 6,
+      "scenario": "local_model_down",
+      "event": "local_model_down",
+      "service": "interactive_inference",
+      "network": {
+        "wan": {
+          "reachable": true,
+          "rtt_ms": 25,
+          "jitter_ms": 3,
+          "loss_pct": 0,
+          "bandwidth_kbps": 20000
+        },
+        "lan": {
+          "reachable": true,
+          "rtt_ms": 3,
+          "jitter_ms": 1,
+          "loss_pct": 0,
+          "bandwidth_kbps": 100000
+        }
+      },
+      "compute": {
+        "local": {
+          "model_ready": false,
+          "queue_ms": 0,
+          "free_mem_mb": 2048,
+          "inflight": 0
+        },
+        "cloud": {
+          "model_ready": true,
+          "queue_ms": 0,
+          "free_mem_mb": 16384,
+          "inflight": 0
+        }
+      },
+      "compute_source": "injected_synthetic_endpoint_state",
+      "observed_age_ms": 0,
+      "outcomes": {
+        "wan-probe": {
+          "refused": false,
+          "rtt_ms": 27.271591
+        },
+        "wan-infer": {
+          "refused": false,
+          "rtt_ms": 25.160741
+        },
+        "lan-probe": {
+          "refused": false,
+          "rtt_ms": 3.40611
+        },
+        "lan-infer": {
+          "refused": false,
+          "rtt_ms": 2.8246
+        }
+      }
+    },
+    {
+      "index": 57,
+      "at_ms": 5700,
+      "phase_index": 7,
+      "scenario": "local_model_down",
+      "event": "local_model_down",
+      "service": "sensor_batch",
+      "network": {
+        "wan": {
+          "reachable": true,
+          "rtt_ms": 25,
+          "jitter_ms": 3,
+          "loss_pct": 0,
+          "bandwidth_kbps": 20000
+        },
+        "lan": {
+          "reachable": true,
+          "rtt_ms": 3,
+          "jitter_ms": 1,
+          "loss_pct": 0,
+          "bandwidth_kbps": 100000
+        }
+      },
+      "compute": {
+        "local": {
+          "model_ready": false,
+          "queue_ms": 0,
+          "free_mem_mb": 2048,
+          "inflight": 0
+        },
+        "cloud": {
+          "model_ready": true,
+          "queue_ms": 0,
+          "free_mem_mb": 16384,
+          "inflight": 0
+        }
+      },
+      "compute_source": "injected_synthetic_endpoint_state",
+      "observed_age_ms": 0,
+      "outcomes": {
+        "wan-probe": {
+          "refused": false,
+          "rtt_ms": 23.550318
+        },
+        "wan-infer": {
+          "refused": false,
+          "rtt_ms": 23.788433
+        },
+        "lan-probe": {
+          "refused": false,
+          "rtt_ms": 2.232445
+        },
+        "lan-infer": {
+          "refused": false,
+          "rtt_ms": 2.015004
+        }
+      }
+    },
+    {
+      "index": 58,
+      "at_ms": 5800,
+      "phase_index": 8,
+      "scenario": "local_model_down",
+      "event": "local_model_down",
+      "service": "interactive_inference",
+      "network": {
+        "wan": {
+          "reachable": true,
+          "rtt_ms": 25,
+          "jitter_ms": 3,
+          "loss_pct": 0,
+          "bandwidth_kbps": 20000
+        },
+        "lan": {
+          "reachable": true,
+          "rtt_ms": 3,
+          "jitter_ms": 1,
+          "loss_pct": 0,
+          "bandwidth_kbps": 100000
+        }
+      },
+      "compute": {
+        "local": {
+          "model_ready": false,
+          "queue_ms": 0,
+          "free_mem_mb": 2048,
+          "inflight": 0
+        },
+        "cloud": {
+          "model_ready": true,
+          "queue_ms": 0,
+          "free_mem_mb": 16384,
+          "inflight": 0
+        }
+      },
+      "compute_source": "injected_synthetic_endpoint_state",
+      "observed_age_ms": 0,
+      "outcomes": {
+        "wan-probe": {
+          "refused": false,
+          "rtt_ms": 26.945076
+        },
+        "wan-infer": {
+          "refused": false,
+          "rtt_ms": 26.392368
+        },
+        "lan-probe": {
+          "refused": false,
+          "rtt_ms": 2.790038
+        },
+        "lan-infer": {
+          "refused": false,
+          "rtt_ms": 3.236976
+        }
+      }
+    },
+    {
+      "index": 59,
+      "at_ms": 5900,
+      "phase_index": 9,
+      "scenario": "local_model_down",
+      "event": "local_model_down",
+      "service": "safety_control",
+      "network": {
+        "wan": {
+          "reachable": true,
+          "rtt_ms": 25,
+          "jitter_ms": 3,
+          "loss_pct": 0,
+          "bandwidth_kbps": 20000
+        },
+        "lan": {
+          "reachable": true,
+          "rtt_ms": 3,
+          "jitter_ms": 1,
+          "loss_pct": 0,
+          "bandwidth_kbps": 100000
+        }
+      },
+      "compute": {
+        "local": {
+          "model_ready": false,
+          "queue_ms": 0,
+          "free_mem_mb": 2048,
+          "inflight": 0
+        },
+        "cloud": {
+          "model_ready": true,
+          "queue_ms": 0,
+          "free_mem_mb": 16384,
+          "inflight": 0
+        }
+      },
+      "compute_source": "injected_synthetic_endpoint_state",
+      "observed_age_ms": 0,
+      "outcomes": {
+        "wan-probe": {
+          "refused": false,
+          "rtt_ms": 22.205459
+        },
+        "wan-infer": {
+          "refused": false,
+          "rtt_ms": 26.143862
+        },
+        "lan-probe": {
+          "refused": false,
+          "rtt_ms": 3.959417
+        },
+        "lan-infer": {
+          "refused": false,
+          "rtt_ms": 2.900261
+        }
+      }
+    },
+    {
+      "index": 60,
+      "at_ms": 6000,
+      "phase_index": 0,
+      "scenario": "local_memory",
+      "event": "local_memory",
+      "service": "interactive_inference",
+      "network": {
+        "wan": {
+          "reachable": true,
+          "rtt_ms": 25,
+          "jitter_ms": 3,
+          "loss_pct": 0,
+          "bandwidth_kbps": 20000
+        },
+        "lan": {
+          "reachable": true,
+          "rtt_ms": 3,
+          "jitter_ms": 1,
+          "loss_pct": 0,
+          "bandwidth_kbps": 100000
+        }
+      },
+      "compute": {
+        "local": {
+          "model_ready": true,
+          "queue_ms": 0,
+          "free_mem_mb": 96,
+          "inflight": 0
+        },
+        "cloud": {
+          "model_ready": true,
+          "queue_ms": 0,
+          "free_mem_mb": 16384,
+          "inflight": 0
+        }
+      },
+      "compute_source": "injected_synthetic_endpoint_state",
+      "observed_age_ms": 0,
+      "outcomes": {
+        "wan-probe": {
+          "refused": false,
+          "rtt_ms": 23.223732
+        },
+        "wan-infer": {
+          "refused": false,
+          "rtt_ms": 26.515213
+        },
+        "lan-probe": {
+          "refused": false,
+          "rtt_ms": 2.502484
+        },
+        "lan-infer": {
+          "refused": false,
+          "rtt_ms": 3.626536
+        }
+      }
+    },
+    {
+      "index": 61,
+      "at_ms": 6100,
+      "phase_index": 1,
+      "scenario": "local_memory",
+      "event": "local_memory",
+      "service": "interactive_inference",
+      "network": {
+        "wan": {
+          "reachable": true,
+          "rtt_ms": 25,
+          "jitter_ms": 3,
+          "loss_pct": 0,
+          "bandwidth_kbps": 20000
+        },
+        "lan": {
+          "reachable": true,
+          "rtt_ms": 3,
+          "jitter_ms": 1,
+          "loss_pct": 0,
+          "bandwidth_kbps": 100000
+        }
+      },
+      "compute": {
+        "local": {
+          "model_ready": true,
+          "queue_ms": 0,
+          "free_mem_mb": 96,
+          "inflight": 0
+        },
+        "cloud": {
+          "model_ready": true,
+          "queue_ms": 0,
+          "free_mem_mb": 16384,
+          "inflight": 0
+        }
+      },
+      "compute_source": "injected_synthetic_endpoint_state",
+      "observed_age_ms": 0,
+      "outcomes": {
+        "wan-probe": {
+          "refused": false,
+          "rtt_ms": 22.103895
+        },
+        "wan-infer": {
+          "refused": false,
+          "rtt_ms": 22.491025
+        },
+        "lan-probe": {
+          "refused": false,
+          "rtt_ms": 2.227154
+        },
+        "lan-infer": {
+          "refused": false,
+          "rtt_ms": 3.964784
+        }
+      }
+    },
+    {
+      "index": 62,
+      "at_ms": 6200,
+      "phase_index": 2,
+      "scenario": "local_memory",
+      "event": "local_memory",
+      "service": "sensor_batch",
+      "network": {
+        "wan": {
+          "reachable": true,
+          "rtt_ms": 25,
+          "jitter_ms": 3,
+          "loss_pct": 0,
+          "bandwidth_kbps": 20000
+        },
+        "lan": {
+          "reachable": true,
+          "rtt_ms": 3,
+          "jitter_ms": 1,
+          "loss_pct": 0,
+          "bandwidth_kbps": 100000
+        }
+      },
+      "compute": {
+        "local": {
+          "model_ready": true,
+          "queue_ms": 0,
+          "free_mem_mb": 96,
+          "inflight": 0
+        },
+        "cloud": {
+          "model_ready": true,
+          "queue_ms": 0,
+          "free_mem_mb": 16384,
+          "inflight": 0
+        }
+      },
+      "compute_source": "injected_synthetic_endpoint_state",
+      "observed_age_ms": 0,
+      "outcomes": {
+        "wan-probe": {
+          "refused": false,
+          "rtt_ms": 27.838276
+        },
+        "wan-infer": {
+          "refused": false,
+          "rtt_ms": 24.247276
+        },
+        "lan-probe": {
+          "refused": false,
+          "rtt_ms": 2.886975
+        },
+        "lan-infer": {
+          "refused": false,
+          "rtt_ms": 3.902038
+        }
+      }
+    },
+    {
+      "index": 63,
+      "at_ms": 6300,
+      "phase_index": 3,
+      "scenario": "local_memory",
+      "event": "local_memory",
+      "service": "interactive_inference",
+      "network": {
+        "wan": {
+          "reachable": true,
+          "rtt_ms": 25,
+          "jitter_ms": 3,
+          "loss_pct": 0,
+          "bandwidth_kbps": 20000
+        },
+        "lan": {
+          "reachable": true,
+          "rtt_ms": 3,
+          "jitter_ms": 1,
+          "loss_pct": 0,
+          "bandwidth_kbps": 100000
+        }
+      },
+      "compute": {
+        "local": {
+          "model_ready": true,
+          "queue_ms": 0,
+          "free_mem_mb": 96,
+          "inflight": 0
+        },
+        "cloud": {
+          "model_ready": true,
+          "queue_ms": 0,
+          "free_mem_mb": 16384,
+          "inflight": 0
+        }
+      },
+      "compute_source": "injected_synthetic_endpoint_state",
+      "observed_age_ms": 0,
+      "outcomes": {
+        "wan-probe": {
+          "refused": false,
+          "rtt_ms": 23.119571
+        },
+        "wan-infer": {
+          "refused": false,
+          "rtt_ms": 23.43558
+        },
+        "lan-probe": {
+          "refused": false,
+          "rtt_ms": 2.281026
+        },
+        "lan-infer": {
+          "refused": false,
+          "rtt_ms": 2.453785
+        }
+      }
+    },
+    {
+      "index": 64,
+      "at_ms": 6400,
+      "phase_index": 4,
+      "scenario": "local_memory",
+      "event": "local_memory",
+      "service": "safety_control",
+      "network": {
+        "wan": {
+          "reachable": true,
+          "rtt_ms": 25,
+          "jitter_ms": 3,
+          "loss_pct": 0,
+          "bandwidth_kbps": 20000
+        },
+        "lan": {
+          "reachable": true,
+          "rtt_ms": 3,
+          "jitter_ms": 1,
+          "loss_pct": 0,
+          "bandwidth_kbps": 100000
+        }
+      },
+      "compute": {
+        "local": {
+          "model_ready": true,
+          "queue_ms": 0,
+          "free_mem_mb": 96,
+          "inflight": 0
+        },
+        "cloud": {
+          "model_ready": true,
+          "queue_ms": 0,
+          "free_mem_mb": 16384,
+          "inflight": 0
+        }
+      },
+      "compute_source": "injected_synthetic_endpoint_state",
+      "observed_age_ms": 0,
+      "outcomes": {
+        "wan-probe": {
+          "refused": false,
+          "rtt_ms": 22.200033
+        },
+        "wan-infer": {
+          "refused": false,
+          "rtt_ms": 24.510573
+        },
+        "lan-probe": {
+          "refused": false,
+          "rtt_ms": 2.958047
+        },
+        "lan-infer": {
+          "refused": false,
+          "rtt_ms": 3.579295
+        }
+      }
+    },
+    {
+      "index": 65,
+      "at_ms": 6500,
+      "phase_index": 5,
+      "scenario": "local_memory",
+      "event": "local_memory",
+      "service": "interactive_inference",
+      "network": {
+        "wan": {
+          "reachable": true,
+          "rtt_ms": 25,
+          "jitter_ms": 3,
+          "loss_pct": 0,
+          "bandwidth_kbps": 20000
+        },
+        "lan": {
+          "reachable": true,
+          "rtt_ms": 3,
+          "jitter_ms": 1,
+          "loss_pct": 0,
+          "bandwidth_kbps": 100000
+        }
+      },
+      "compute": {
+        "local": {
+          "model_ready": true,
+          "queue_ms": 0,
+          "free_mem_mb": 96,
+          "inflight": 0
+        },
+        "cloud": {
+          "model_ready": true,
+          "queue_ms": 0,
+          "free_mem_mb": 16384,
+          "inflight": 0
+        }
+      },
+      "compute_source": "injected_synthetic_endpoint_state",
+      "observed_age_ms": 0,
+      "outcomes": {
+        "wan-probe": {
+          "refused": false,
+          "rtt_ms": 22.908041
+        },
+        "wan-infer": {
+          "refused": false,
+          "rtt_ms": 26.811293
+        },
+        "lan-probe": {
+          "refused": false,
+          "rtt_ms": 2.935171
+        },
+        "lan-infer": {
+          "refused": false,
+          "rtt_ms": 2.555188
+        }
+      }
+    },
+    {
+      "index": 66,
+      "at_ms": 6600,
+      "phase_index": 6,
+      "scenario": "local_memory",
+      "event": "local_memory",
+      "service": "interactive_inference",
+      "network": {
+        "wan": {
+          "reachable": true,
+          "rtt_ms": 25,
+          "jitter_ms": 3,
+          "loss_pct": 0,
+          "bandwidth_kbps": 20000
+        },
+        "lan": {
+          "reachable": true,
+          "rtt_ms": 3,
+          "jitter_ms": 1,
+          "loss_pct": 0,
+          "bandwidth_kbps": 100000
+        }
+      },
+      "compute": {
+        "local": {
+          "model_ready": true,
+          "queue_ms": 0,
+          "free_mem_mb": 96,
+          "inflight": 0
+        },
+        "cloud": {
+          "model_ready": true,
+          "queue_ms": 0,
+          "free_mem_mb": 16384,
+          "inflight": 0
+        }
+      },
+      "compute_source": "injected_synthetic_endpoint_state",
+      "observed_age_ms": 0,
+      "outcomes": {
+        "wan-probe": {
+          "refused": false,
+          "rtt_ms": 22.653362
+        },
+        "wan-infer": {
+          "refused": false,
+          "rtt_ms": 22.342338
+        },
+        "lan-probe": {
+          "refused": false,
+          "rtt_ms": 2.519273
+        },
+        "lan-infer": {
+          "refused": false,
+          "rtt_ms": 2.466923
+        }
+      }
+    },
+    {
+      "index": 67,
+      "at_ms": 6700,
+      "phase_index": 7,
+      "scenario": "local_memory",
+      "event": "local_memory",
+      "service": "sensor_batch",
+      "network": {
+        "wan": {
+          "reachable": true,
+          "rtt_ms": 25,
+          "jitter_ms": 3,
+          "loss_pct": 0,
+          "bandwidth_kbps": 20000
+        },
+        "lan": {
+          "reachable": true,
+          "rtt_ms": 3,
+          "jitter_ms": 1,
+          "loss_pct": 0,
+          "bandwidth_kbps": 100000
+        }
+      },
+      "compute": {
+        "local": {
+          "model_ready": true,
+          "queue_ms": 0,
+          "free_mem_mb": 96,
+          "inflight": 0
+        },
+        "cloud": {
+          "model_ready": true,
+          "queue_ms": 0,
+          "free_mem_mb": 16384,
+          "inflight": 0
+        }
+      },
+      "compute_source": "injected_synthetic_endpoint_state",
+      "observed_age_ms": 0,
+      "outcomes": {
+        "wan-probe": {
+          "refused": false,
+          "rtt_ms": 23.912543
+        },
+        "wan-infer": {
+          "refused": false,
+          "rtt_ms": 27.819243
+        },
+        "lan-probe": {
+          "refused": false,
+          "rtt_ms": 3.436604
+        },
+        "lan-infer": {
+          "refused": false,
+          "rtt_ms": 3.114875
+        }
+      }
+    },
+    {
+      "index": 68,
+      "at_ms": 6800,
+      "phase_index": 8,
+      "scenario": "local_memory",
+      "event": "local_memory",
+      "service": "interactive_inference",
+      "network": {
+        "wan": {
+          "reachable": true,
+          "rtt_ms": 25,
+          "jitter_ms": 3,
+          "loss_pct": 0,
+          "bandwidth_kbps": 20000
+        },
+        "lan": {
+          "reachable": true,
+          "rtt_ms": 3,
+          "jitter_ms": 1,
+          "loss_pct": 0,
+          "bandwidth_kbps": 100000
+        }
+      },
+      "compute": {
+        "local": {
+          "model_ready": true,
+          "queue_ms": 0,
+          "free_mem_mb": 96,
+          "inflight": 0
+        },
+        "cloud": {
+          "model_ready": true,
+          "queue_ms": 0,
+          "free_mem_mb": 16384,
+          "inflight": 0
+        }
+      },
+      "compute_source": "injected_synthetic_endpoint_state",
+      "observed_age_ms": 0,
+      "outcomes": {
+        "wan-probe": {
+          "refused": false,
+          "rtt_ms": 26.629969
+        },
+        "wan-infer": {
+          "refused": false,
+          "rtt_ms": 25.244002
+        },
+        "lan-probe": {
+          "refused": false,
+          "rtt_ms": 2.564358
+        },
+        "lan-infer": {
+          "refused": false,
+          "rtt_ms": 3.160521
+        }
+      }
+    },
+    {
+      "index": 69,
+      "at_ms": 6900,
+      "phase_index": 9,
+      "scenario": "local_memory",
+      "event": "local_memory",
+      "service": "safety_control",
+      "network": {
+        "wan": {
+          "reachable": true,
+          "rtt_ms": 25,
+          "jitter_ms": 3,
+          "loss_pct": 0,
+          "bandwidth_kbps": 20000
+        },
+        "lan": {
+          "reachable": true,
+          "rtt_ms": 3,
+          "jitter_ms": 1,
+          "loss_pct": 0,
+          "bandwidth_kbps": 100000
+        }
+      },
+      "compute": {
+        "local": {
+          "model_ready": true,
+          "queue_ms": 0,
+          "free_mem_mb": 96,
+          "inflight": 0
+        },
+        "cloud": {
+          "model_ready": true,
+          "queue_ms": 0,
+          "free_mem_mb": 16384,
+          "inflight": 0
+        }
+      },
+      "compute_source": "injected_synthetic_endpoint_state",
+      "observed_age_ms": 0,
+      "outcomes": {
+        "wan-probe": {
+          "refused": false,
+          "rtt_ms": 27.618918
+        },
+        "wan-infer": {
+          "refused": false,
+          "rtt_ms": 25.618597
+        },
+        "lan-probe": {
+          "refused": false,
+          "rtt_ms": 2.430487
+        },
+        "lan-infer": {
+          "refused": false,
+          "rtt_ms": 2.295787
+        }
+      }
+    },
+    {
+      "index": 70,
+      "at_ms": 7000,
+      "phase_index": 0,
+      "scenario": "cloud_down",
+      "event": "cloud_down",
+      "service": "interactive_inference",
+      "network": {
+        "wan": {
+          "reachable": true,
+          "rtt_ms": 25,
+          "jitter_ms": 3,
+          "loss_pct": 0,
+          "bandwidth_kbps": 20000
+        },
+        "lan": {
+          "reachable": true,
+          "rtt_ms": 3,
+          "jitter_ms": 1,
+          "loss_pct": 0,
+          "bandwidth_kbps": 100000
+        }
+      },
+      "compute": {
+        "local": {
+          "model_ready": true,
+          "queue_ms": 0,
+          "free_mem_mb": 2048,
+          "inflight": 0
+        },
+        "cloud": {
+          "model_ready": false,
+          "queue_ms": 0,
+          "free_mem_mb": 16384,
+          "inflight": 0
+        }
+      },
+      "compute_source": "injected_synthetic_endpoint_state",
+      "observed_age_ms": 0,
+      "outcomes": {
+        "wan-probe": {
+          "refused": false,
+          "rtt_ms": 26.044296
+        },
+        "wan-infer": {
+          "refused": false,
+          "rtt_ms": 27.778759
+        },
+        "lan-probe": {
+          "refused": false,
+          "rtt_ms": 3.104537
+        },
+        "lan-infer": {
+          "refused": false,
+          "rtt_ms": 2.641882
+        }
+      }
+    },
+    {
+      "index": 71,
+      "at_ms": 7100,
+      "phase_index": 1,
+      "scenario": "cloud_down",
+      "event": "cloud_down",
+      "service": "interactive_inference",
+      "network": {
+        "wan": {
+          "reachable": true,
+          "rtt_ms": 25,
+          "jitter_ms": 3,
+          "loss_pct": 0,
+          "bandwidth_kbps": 20000
+        },
+        "lan": {
+          "reachable": true,
+          "rtt_ms": 3,
+          "jitter_ms": 1,
+          "loss_pct": 0,
+          "bandwidth_kbps": 100000
+        }
+      },
+      "compute": {
+        "local": {
+          "model_ready": true,
+          "queue_ms": 0,
+          "free_mem_mb": 2048,
+          "inflight": 0
+        },
+        "cloud": {
+          "model_ready": false,
+          "queue_ms": 0,
+          "free_mem_mb": 16384,
+          "inflight": 0
+        }
+      },
+      "compute_source": "injected_synthetic_endpoint_state",
+      "observed_age_ms": 0,
+      "outcomes": {
+        "wan-probe": {
+          "refused": false,
+          "rtt_ms": 27.004602
+        },
+        "wan-infer": {
+          "refused": false,
+          "rtt_ms": 22.461655
+        },
+        "lan-probe": {
+          "refused": false,
+          "rtt_ms": 3.918649
+        },
+        "lan-infer": {
+          "refused": false,
+          "rtt_ms": 3.385607
+        }
+      }
+    },
+    {
+      "index": 72,
+      "at_ms": 7200,
+      "phase_index": 2,
+      "scenario": "cloud_down",
+      "event": "cloud_down",
+      "service": "sensor_batch",
+      "network": {
+        "wan": {
+          "reachable": true,
+          "rtt_ms": 25,
+          "jitter_ms": 3,
+          "loss_pct": 0,
+          "bandwidth_kbps": 20000
+        },
+        "lan": {
+          "reachable": true,
+          "rtt_ms": 3,
+          "jitter_ms": 1,
+          "loss_pct": 0,
+          "bandwidth_kbps": 100000
+        }
+      },
+      "compute": {
+        "local": {
+          "model_ready": true,
+          "queue_ms": 0,
+          "free_mem_mb": 2048,
+          "inflight": 0
+        },
+        "cloud": {
+          "model_ready": false,
+          "queue_ms": 0,
+          "free_mem_mb": 16384,
+          "inflight": 0
+        }
+      },
+      "compute_source": "injected_synthetic_endpoint_state",
+      "observed_age_ms": 0,
+      "outcomes": {
+        "wan-probe": {
+          "refused": false,
+          "rtt_ms": 23.446701
+        },
+        "wan-infer": {
+          "refused": false,
+          "rtt_ms": 23.281979
+        },
+        "lan-probe": {
+          "refused": false,
+          "rtt_ms": 2.538187
+        },
+        "lan-infer": {
+          "refused": false,
+          "rtt_ms": 3.406071
+        }
+      }
+    },
+    {
+      "index": 73,
+      "at_ms": 7300,
+      "phase_index": 3,
+      "scenario": "cloud_down",
+      "event": "cloud_down",
+      "service": "interactive_inference",
+      "network": {
+        "wan": {
+          "reachable": true,
+          "rtt_ms": 25,
+          "jitter_ms": 3,
+          "loss_pct": 0,
+          "bandwidth_kbps": 20000
+        },
+        "lan": {
+          "reachable": true,
+          "rtt_ms": 3,
+          "jitter_ms": 1,
+          "loss_pct": 0,
+          "bandwidth_kbps": 100000
+        }
+      },
+      "compute": {
+        "local": {
+          "model_ready": true,
+          "queue_ms": 0,
+          "free_mem_mb": 2048,
+          "inflight": 0
+        },
+        "cloud": {
+          "model_ready": false,
+          "queue_ms": 0,
+          "free_mem_mb": 16384,
+          "inflight": 0
+        }
+      },
+      "compute_source": "injected_synthetic_endpoint_state",
+      "observed_age_ms": 0,
+      "outcomes": {
+        "wan-probe": {
+          "refused": false,
+          "rtt_ms": 26.248385
+        },
+        "wan-infer": {
+          "refused": false,
+          "rtt_ms": 27.414528
+        },
+        "lan-probe": {
+          "refused": false,
+          "rtt_ms": 2.578138
+        },
+        "lan-infer": {
+          "refused": false,
+          "rtt_ms": 3.08361
+        }
+      }
+    },
+    {
+      "index": 74,
+      "at_ms": 7400,
+      "phase_index": 4,
+      "scenario": "cloud_down",
+      "event": "cloud_down",
+      "service": "safety_control",
+      "network": {
+        "wan": {
+          "reachable": true,
+          "rtt_ms": 25,
+          "jitter_ms": 3,
+          "loss_pct": 0,
+          "bandwidth_kbps": 20000
+        },
+        "lan": {
+          "reachable": true,
+          "rtt_ms": 3,
+          "jitter_ms": 1,
+          "loss_pct": 0,
+          "bandwidth_kbps": 100000
+        }
+      },
+      "compute": {
+        "local": {
+          "model_ready": true,
+          "queue_ms": 0,
+          "free_mem_mb": 2048,
+          "inflight": 0
+        },
+        "cloud": {
+          "model_ready": false,
+          "queue_ms": 0,
+          "free_mem_mb": 16384,
+          "inflight": 0
+        }
+      },
+      "compute_source": "injected_synthetic_endpoint_state",
+      "observed_age_ms": 0,
+      "outcomes": {
+        "wan-probe": {
+          "refused": false,
+          "rtt_ms": 25.803054
+        },
+        "wan-infer": {
+          "refused": false,
+          "rtt_ms": 23.043805
+        },
+        "lan-probe": {
+          "refused": false,
+          "rtt_ms": 2.443036
+        },
+        "lan-infer": {
+          "refused": false,
+          "rtt_ms": 3.333478
+        }
+      }
+    },
+    {
+      "index": 75,
+      "at_ms": 7500,
+      "phase_index": 5,
+      "scenario": "cloud_down",
+      "event": "cloud_down",
+      "service": "interactive_inference",
+      "network": {
+        "wan": {
+          "reachable": true,
+          "rtt_ms": 25,
+          "jitter_ms": 3,
+          "loss_pct": 0,
+          "bandwidth_kbps": 20000
+        },
+        "lan": {
+          "reachable": true,
+          "rtt_ms": 3,
+          "jitter_ms": 1,
+          "loss_pct": 0,
+          "bandwidth_kbps": 100000
+        }
+      },
+      "compute": {
+        "local": {
+          "model_ready": true,
+          "queue_ms": 0,
+          "free_mem_mb": 2048,
+          "inflight": 0
+        },
+        "cloud": {
+          "model_ready": false,
+          "queue_ms": 0,
+          "free_mem_mb": 16384,
+          "inflight": 0
+        }
+      },
+      "compute_source": "injected_synthetic_endpoint_state",
+      "observed_age_ms": 0,
+      "outcomes": {
+        "wan-probe": {
+          "refused": false,
+          "rtt_ms": 23.990901
+        },
+        "wan-infer": {
+          "refused": false,
+          "rtt_ms": 22.272744
+        },
+        "lan-probe": {
+          "refused": false,
+          "rtt_ms": 2.617029
+        },
+        "lan-infer": {
+          "refused": false,
+          "rtt_ms": 2.270456
+        }
+      }
+    },
+    {
+      "index": 76,
+      "at_ms": 7600,
+      "phase_index": 6,
+      "scenario": "cloud_down",
+      "event": "cloud_down",
+      "service": "interactive_inference",
+      "network": {
+        "wan": {
+          "reachable": true,
+          "rtt_ms": 25,
+          "jitter_ms": 3,
+          "loss_pct": 0,
+          "bandwidth_kbps": 20000
+        },
+        "lan": {
+          "reachable": true,
+          "rtt_ms": 3,
+          "jitter_ms": 1,
+          "loss_pct": 0,
+          "bandwidth_kbps": 100000
+        }
+      },
+      "compute": {
+        "local": {
+          "model_ready": true,
+          "queue_ms": 0,
+          "free_mem_mb": 2048,
+          "inflight": 0
+        },
+        "cloud": {
+          "model_ready": false,
+          "queue_ms": 0,
+          "free_mem_mb": 16384,
+          "inflight": 0
+        }
+      },
+      "compute_source": "injected_synthetic_endpoint_state",
+      "observed_age_ms": 0,
+      "outcomes": {
+        "wan-probe": {
+          "refused": false,
+          "rtt_ms": 22.918812
+        },
+        "wan-infer": {
+          "refused": false,
+          "rtt_ms": 24.605628
+        },
+        "lan-probe": {
+          "refused": false,
+          "rtt_ms": 3.106336
+        },
+        "lan-infer": {
+          "refused": false,
+          "rtt_ms": 2.28515
+        }
+      }
+    },
+    {
+      "index": 77,
+      "at_ms": 7700,
+      "phase_index": 7,
+      "scenario": "cloud_down",
+      "event": "cloud_down",
+      "service": "sensor_batch",
+      "network": {
+        "wan": {
+          "reachable": true,
+          "rtt_ms": 25,
+          "jitter_ms": 3,
+          "loss_pct": 0,
+          "bandwidth_kbps": 20000
+        },
+        "lan": {
+          "reachable": true,
+          "rtt_ms": 3,
+          "jitter_ms": 1,
+          "loss_pct": 0,
+          "bandwidth_kbps": 100000
+        }
+      },
+      "compute": {
+        "local": {
+          "model_ready": true,
+          "queue_ms": 0,
+          "free_mem_mb": 2048,
+          "inflight": 0
+        },
+        "cloud": {
+          "model_ready": false,
+          "queue_ms": 0,
+          "free_mem_mb": 16384,
+          "inflight": 0
+        }
+      },
+      "compute_source": "injected_synthetic_endpoint_state",
+      "observed_age_ms": 0,
+      "outcomes": {
+        "wan-probe": {
+          "refused": false,
+          "rtt_ms": 22.558735
+        },
+        "wan-infer": {
+          "refused": false,
+          "rtt_ms": 24.772579
+        },
+        "lan-probe": {
+          "refused": false,
+          "rtt_ms": 2.743596
+        },
+        "lan-infer": {
+          "refused": false,
+          "rtt_ms": 2.519993
+        }
+      }
+    },
+    {
+      "index": 78,
+      "at_ms": 7800,
+      "phase_index": 8,
+      "scenario": "cloud_down",
+      "event": "cloud_down",
+      "service": "interactive_inference",
+      "network": {
+        "wan": {
+          "reachable": true,
+          "rtt_ms": 25,
+          "jitter_ms": 3,
+          "loss_pct": 0,
+          "bandwidth_kbps": 20000
+        },
+        "lan": {
+          "reachable": true,
+          "rtt_ms": 3,
+          "jitter_ms": 1,
+          "loss_pct": 0,
+          "bandwidth_kbps": 100000
+        }
+      },
+      "compute": {
+        "local": {
+          "model_ready": true,
+          "queue_ms": 0,
+          "free_mem_mb": 2048,
+          "inflight": 0
+        },
+        "cloud": {
+          "model_ready": false,
+          "queue_ms": 0,
+          "free_mem_mb": 16384,
+          "inflight": 0
+        }
+      },
+      "compute_source": "injected_synthetic_endpoint_state",
+      "observed_age_ms": 0,
+      "outcomes": {
+        "wan-probe": {
+          "refused": false,
+          "rtt_ms": 27.235342
+        },
+        "wan-infer": {
+          "refused": false,
+          "rtt_ms": 22.041088
+        },
+        "lan-probe": {
+          "refused": false,
+          "rtt_ms": 2.224128
+        },
+        "lan-infer": {
+          "refused": false,
+          "rtt_ms": 3.267191
+        }
+      }
+    },
+    {
+      "index": 79,
+      "at_ms": 7900,
+      "phase_index": 9,
+      "scenario": "cloud_down",
+      "event": "cloud_down",
+      "service": "safety_control",
+      "network": {
+        "wan": {
+          "reachable": true,
+          "rtt_ms": 25,
+          "jitter_ms": 3,
+          "loss_pct": 0,
+          "bandwidth_kbps": 20000
+        },
+        "lan": {
+          "reachable": true,
+          "rtt_ms": 3,
+          "jitter_ms": 1,
+          "loss_pct": 0,
+          "bandwidth_kbps": 100000
+        }
+      },
+      "compute": {
+        "local": {
+          "model_ready": true,
+          "queue_ms": 0,
+          "free_mem_mb": 2048,
+          "inflight": 0
+        },
+        "cloud": {
+          "model_ready": false,
+          "queue_ms": 0,
+          "free_mem_mb": 16384,
+          "inflight": 0
+        }
+      },
+      "compute_source": "injected_synthetic_endpoint_state",
+      "observed_age_ms": 0,
+      "outcomes": {
+        "wan-probe": {
+          "refused": false,
+          "rtt_ms": 22.564829
+        },
+        "wan-infer": {
+          "refused": false,
+          "rtt_ms": 22.588236
+        },
+        "lan-probe": {
+          "refused": false,
+          "rtt_ms": 3.619455
+        },
+        "lan-infer": {
+          "refused": false,
+          "rtt_ms": 2.392397
+        }
+      }
+    },
+    {
+      "index": 80,
+      "at_ms": 8000,
+      "phase_index": 0,
+      "scenario": "both_models_down",
+      "event": "both_models_down",
+      "service": "interactive_inference",
+      "network": {
+        "wan": {
+          "reachable": true,
+          "rtt_ms": 25,
+          "jitter_ms": 3,
+          "loss_pct": 0,
+          "bandwidth_kbps": 20000
+        },
+        "lan": {
+          "reachable": true,
+          "rtt_ms": 3,
+          "jitter_ms": 1,
+          "loss_pct": 0,
+          "bandwidth_kbps": 100000
+        }
+      },
+      "compute": {
+        "local": {
+          "model_ready": false,
+          "queue_ms": 0,
+          "free_mem_mb": 2048,
+          "inflight": 0
+        },
+        "cloud": {
+          "model_ready": false,
+          "queue_ms": 0,
+          "free_mem_mb": 16384,
+          "inflight": 0
+        }
+      },
+      "compute_source": "injected_synthetic_endpoint_state",
+      "observed_age_ms": 0,
+      "outcomes": {
+        "wan-probe": {
+          "refused": false,
+          "rtt_ms": 26.012645
+        },
+        "wan-infer": {
+          "refused": false,
+          "rtt_ms": 25.651515
+        },
+        "lan-probe": {
+          "refused": false,
+          "rtt_ms": 3.0326
+        },
+        "lan-infer": {
+          "refused": false,
+          "rtt_ms": 3.283873
+        }
+      }
+    },
+    {
+      "index": 81,
+      "at_ms": 8100,
+      "phase_index": 1,
+      "scenario": "both_models_down",
+      "event": "both_models_down",
+      "service": "interactive_inference",
+      "network": {
+        "wan": {
+          "reachable": true,
+          "rtt_ms": 25,
+          "jitter_ms": 3,
+          "loss_pct": 0,
+          "bandwidth_kbps": 20000
+        },
+        "lan": {
+          "reachable": true,
+          "rtt_ms": 3,
+          "jitter_ms": 1,
+          "loss_pct": 0,
+          "bandwidth_kbps": 100000
+        }
+      },
+      "compute": {
+        "local": {
+          "model_ready": false,
+          "queue_ms": 0,
+          "free_mem_mb": 2048,
+          "inflight": 0
+        },
+        "cloud": {
+          "model_ready": false,
+          "queue_ms": 0,
+          "free_mem_mb": 16384,
+          "inflight": 0
+        }
+      },
+      "compute_source": "injected_synthetic_endpoint_state",
+      "observed_age_ms": 0,
+      "outcomes": {
+        "wan-probe": {
+          "refused": false,
+          "rtt_ms": 26.305446
+        },
+        "wan-infer": {
+          "refused": false,
+          "rtt_ms": 22.968217
+        },
+        "lan-probe": {
+          "refused": false,
+          "rtt_ms": 3.342229
+        },
+        "lan-infer": {
+          "refused": false,
+          "rtt_ms": 3.010508
+        }
+      }
+    },
+    {
+      "index": 82,
+      "at_ms": 8200,
+      "phase_index": 2,
+      "scenario": "both_models_down",
+      "event": "both_models_down",
+      "service": "sensor_batch",
+      "network": {
+        "wan": {
+          "reachable": true,
+          "rtt_ms": 25,
+          "jitter_ms": 3,
+          "loss_pct": 0,
+          "bandwidth_kbps": 20000
+        },
+        "lan": {
+          "reachable": true,
+          "rtt_ms": 3,
+          "jitter_ms": 1,
+          "loss_pct": 0,
+          "bandwidth_kbps": 100000
+        }
+      },
+      "compute": {
+        "local": {
+          "model_ready": false,
+          "queue_ms": 0,
+          "free_mem_mb": 2048,
+          "inflight": 0
+        },
+        "cloud": {
+          "model_ready": false,
+          "queue_ms": 0,
+          "free_mem_mb": 16384,
+          "inflight": 0
+        }
+      },
+      "compute_source": "injected_synthetic_endpoint_state",
+      "observed_age_ms": 0,
+      "outcomes": {
+        "wan-probe": {
+          "refused": false,
+          "rtt_ms": 26.70343
+        },
+        "wan-infer": {
+          "refused": false,
+          "rtt_ms": 26.162523
+        },
+        "lan-probe": {
+          "refused": false,
+          "rtt_ms": 3.966311
+        },
+        "lan-infer": {
+          "refused": false,
+          "rtt_ms": 3.922407
+        }
+      }
+    },
+    {
+      "index": 83,
+      "at_ms": 8300,
+      "phase_index": 3,
+      "scenario": "both_models_down",
+      "event": "both_models_down",
+      "service": "interactive_inference",
+      "network": {
+        "wan": {
+          "reachable": true,
+          "rtt_ms": 25,
+          "jitter_ms": 3,
+          "loss_pct": 0,
+          "bandwidth_kbps": 20000
+        },
+        "lan": {
+          "reachable": true,
+          "rtt_ms": 3,
+          "jitter_ms": 1,
+          "loss_pct": 0,
+          "bandwidth_kbps": 100000
+        }
+      },
+      "compute": {
+        "local": {
+          "model_ready": false,
+          "queue_ms": 0,
+          "free_mem_mb": 2048,
+          "inflight": 0
+        },
+        "cloud": {
+          "model_ready": false,
+          "queue_ms": 0,
+          "free_mem_mb": 16384,
+          "inflight": 0
+        }
+      },
+      "compute_source": "injected_synthetic_endpoint_state",
+      "observed_age_ms": 0,
+      "outcomes": {
+        "wan-probe": {
+          "refused": false,
+          "rtt_ms": 25.981212
+        },
+        "wan-infer": {
+          "refused": false,
+          "rtt_ms": 27.703612
+        },
+        "lan-probe": {
+          "refused": false,
+          "rtt_ms": 3.053122
+        },
+        "lan-infer": {
+          "refused": false,
+          "rtt_ms": 3.819949
+        }
+      }
+    },
+    {
+      "index": 84,
+      "at_ms": 8400,
+      "phase_index": 4,
+      "scenario": "both_models_down",
+      "event": "both_models_down",
+      "service": "safety_control",
+      "network": {
+        "wan": {
+          "reachable": true,
+          "rtt_ms": 25,
+          "jitter_ms": 3,
+          "loss_pct": 0,
+          "bandwidth_kbps": 20000
+        },
+        "lan": {
+          "reachable": true,
+          "rtt_ms": 3,
+          "jitter_ms": 1,
+          "loss_pct": 0,
+          "bandwidth_kbps": 100000
+        }
+      },
+      "compute": {
+        "local": {
+          "model_ready": false,
+          "queue_ms": 0,
+          "free_mem_mb": 2048,
+          "inflight": 0
+        },
+        "cloud": {
+          "model_ready": false,
+          "queue_ms": 0,
+          "free_mem_mb": 16384,
+          "inflight": 0
+        }
+      },
+      "compute_source": "injected_synthetic_endpoint_state",
+      "observed_age_ms": 0,
+      "outcomes": {
+        "wan-probe": {
+          "refused": false,
+          "rtt_ms": 24.455043
+        },
+        "wan-infer": {
+          "refused": false,
+          "rtt_ms": 27.440188
+        },
+        "lan-probe": {
+          "refused": false,
+          "rtt_ms": 2.446003
+        },
+        "lan-infer": {
+          "refused": false,
+          "rtt_ms": 3.159164
+        }
+      }
+    },
+    {
+      "index": 85,
+      "at_ms": 8500,
+      "phase_index": 5,
+      "scenario": "both_models_down",
+      "event": "both_models_down",
+      "service": "interactive_inference",
+      "network": {
+        "wan": {
+          "reachable": true,
+          "rtt_ms": 25,
+          "jitter_ms": 3,
+          "loss_pct": 0,
+          "bandwidth_kbps": 20000
+        },
+        "lan": {
+          "reachable": true,
+          "rtt_ms": 3,
+          "jitter_ms": 1,
+          "loss_pct": 0,
+          "bandwidth_kbps": 100000
+        }
+      },
+      "compute": {
+        "local": {
+          "model_ready": false,
+          "queue_ms": 0,
+          "free_mem_mb": 2048,
+          "inflight": 0
+        },
+        "cloud": {
+          "model_ready": false,
+          "queue_ms": 0,
+          "free_mem_mb": 16384,
+          "inflight": 0
+        }
+      },
+      "compute_source": "injected_synthetic_endpoint_state",
+      "observed_age_ms": 0,
+      "outcomes": {
+        "wan-probe": {
+          "refused": false,
+          "rtt_ms": 27.791449
+        },
+        "wan-infer": {
+          "refused": false,
+          "rtt_ms": 26.100621
+        },
+        "lan-probe": {
+          "refused": false,
+          "rtt_ms": 3.052386
+        },
+        "lan-infer": {
+          "refused": false,
+          "rtt_ms": 3.252453
+        }
+      }
+    },
+    {
+      "index": 86,
+      "at_ms": 8600,
+      "phase_index": 6,
+      "scenario": "both_models_down",
+      "event": "both_models_down",
+      "service": "interactive_inference",
+      "network": {
+        "wan": {
+          "reachable": true,
+          "rtt_ms": 25,
+          "jitter_ms": 3,
+          "loss_pct": 0,
+          "bandwidth_kbps": 20000
+        },
+        "lan": {
+          "reachable": true,
+          "rtt_ms": 3,
+          "jitter_ms": 1,
+          "loss_pct": 0,
+          "bandwidth_kbps": 100000
+        }
+      },
+      "compute": {
+        "local": {
+          "model_ready": false,
+          "queue_ms": 0,
+          "free_mem_mb": 2048,
+          "inflight": 0
+        },
+        "cloud": {
+          "model_ready": false,
+          "queue_ms": 0,
+          "free_mem_mb": 16384,
+          "inflight": 0
+        }
+      },
+      "compute_source": "injected_synthetic_endpoint_state",
+      "observed_age_ms": 0,
+      "outcomes": {
+        "wan-probe": {
+          "refused": false,
+          "rtt_ms": 26.831941
+        },
+        "wan-infer": {
+          "refused": false,
+          "rtt_ms": 23.482723
+        },
+        "lan-probe": {
+          "refused": false,
+          "rtt_ms": 3.655065
+        },
+        "lan-infer": {
+          "refused": false,
+          "rtt_ms": 2.297313
+        }
+      }
+    },
+    {
+      "index": 87,
+      "at_ms": 8700,
+      "phase_index": 7,
+      "scenario": "both_models_down",
+      "event": "both_models_down",
+      "service": "sensor_batch",
+      "network": {
+        "wan": {
+          "reachable": true,
+          "rtt_ms": 25,
+          "jitter_ms": 3,
+          "loss_pct": 0,
+          "bandwidth_kbps": 20000
+        },
+        "lan": {
+          "reachable": true,
+          "rtt_ms": 3,
+          "jitter_ms": 1,
+          "loss_pct": 0,
+          "bandwidth_kbps": 100000
+        }
+      },
+      "compute": {
+        "local": {
+          "model_ready": false,
+          "queue_ms": 0,
+          "free_mem_mb": 2048,
+          "inflight": 0
+        },
+        "cloud": {
+          "model_ready": false,
+          "queue_ms": 0,
+          "free_mem_mb": 16384,
+          "inflight": 0
+        }
+      },
+      "compute_source": "injected_synthetic_endpoint_state",
+      "observed_age_ms": 0,
+      "outcomes": {
+        "wan-probe": {
+          "refused": false,
+          "rtt_ms": 26.846113
+        },
+        "wan-infer": {
+          "refused": false,
+          "rtt_ms": 27.810305
+        },
+        "lan-probe": {
+          "refused": false,
+          "rtt_ms": 2.360536
+        },
+        "lan-infer": {
+          "refused": false,
+          "rtt_ms": 3.83957
+        }
+      }
+    },
+    {
+      "index": 88,
+      "at_ms": 8800,
+      "phase_index": 8,
+      "scenario": "both_models_down",
+      "event": "both_models_down",
+      "service": "interactive_inference",
+      "network": {
+        "wan": {
+          "reachable": true,
+          "rtt_ms": 25,
+          "jitter_ms": 3,
+          "loss_pct": 0,
+          "bandwidth_kbps": 20000
+        },
+        "lan": {
+          "reachable": true,
+          "rtt_ms": 3,
+          "jitter_ms": 1,
+          "loss_pct": 0,
+          "bandwidth_kbps": 100000
+        }
+      },
+      "compute": {
+        "local": {
+          "model_ready": false,
+          "queue_ms": 0,
+          "free_mem_mb": 2048,
+          "inflight": 0
+        },
+        "cloud": {
+          "model_ready": false,
+          "queue_ms": 0,
+          "free_mem_mb": 16384,
+          "inflight": 0
+        }
+      },
+      "compute_source": "injected_synthetic_endpoint_state",
+      "observed_age_ms": 0,
+      "outcomes": {
+        "wan-probe": {
+          "refused": false,
+          "rtt_ms": 25.041054
+        },
+        "wan-infer": {
+          "refused": false,
+          "rtt_ms": 27.272455
+        },
+        "lan-probe": {
+          "refused": false,
+          "rtt_ms": 3.98492
+        },
+        "lan-infer": {
+          "refused": false,
+          "rtt_ms": 3.622218
+        }
+      }
+    },
+    {
+      "index": 89,
+      "at_ms": 8900,
+      "phase_index": 9,
+      "scenario": "both_models_down",
+      "event": "both_models_down",
+      "service": "safety_control",
+      "network": {
+        "wan": {
+          "reachable": true,
+          "rtt_ms": 25,
+          "jitter_ms": 3,
+          "loss_pct": 0,
+          "bandwidth_kbps": 20000
+        },
+        "lan": {
+          "reachable": true,
+          "rtt_ms": 3,
+          "jitter_ms": 1,
+          "loss_pct": 0,
+          "bandwidth_kbps": 100000
+        }
+      },
+      "compute": {
+        "local": {
+          "model_ready": false,
+          "queue_ms": 0,
+          "free_mem_mb": 2048,
+          "inflight": 0
+        },
+        "cloud": {
+          "model_ready": false,
+          "queue_ms": 0,
+          "free_mem_mb": 16384,
+          "inflight": 0
+        }
+      },
+      "compute_source": "injected_synthetic_endpoint_state",
+      "observed_age_ms": 0,
+      "outcomes": {
+        "wan-probe": {
+          "refused": false,
+          "rtt_ms": 23.318079
+        },
+        "wan-infer": {
+          "refused": false,
+          "rtt_ms": 26.747396
+        },
+        "lan-probe": {
+          "refused": false,
+          "rtt_ms": 3.569674
+        },
+        "lan-infer": {
+          "refused": false,
+          "rtt_ms": 2.609023
+        }
+      }
+    },
+    {
+      "index": 90,
+      "at_ms": 9000,
+      "phase_index": 0,
+      "scenario": "bandwidth_collapse",
+      "event": "bandwidth_collapse",
+      "service": "interactive_inference",
+      "network": {
+        "wan": {
+          "reachable": true,
+          "rtt_ms": 25,
+          "jitter_ms": 3,
+          "loss_pct": 0,
+          "bandwidth_kbps": 64
+        },
+        "lan": {
+          "reachable": true,
+          "rtt_ms": 3,
+          "jitter_ms": 1,
+          "loss_pct": 0,
+          "bandwidth_kbps": 100000
+        }
+      },
+      "compute": {
+        "local": {
+          "model_ready": true,
+          "queue_ms": 0,
+          "free_mem_mb": 2048,
+          "inflight": 0
+        },
+        "cloud": {
+          "model_ready": true,
+          "queue_ms": 0,
+          "free_mem_mb": 16384,
+          "inflight": 0
+        }
+      },
+      "compute_source": "injected_synthetic_endpoint_state",
+      "observed_age_ms": 0,
+      "outcomes": {
+        "wan-probe": {
+          "refused": false,
+          "rtt_ms": 24.974128
+        },
+        "wan-infer": {
+          "refused": false,
+          "rtt_ms": 27.789364
+        },
+        "lan-probe": {
+          "refused": false,
+          "rtt_ms": 3.863701
+        },
+        "lan-infer": {
+          "refused": false,
+          "rtt_ms": 2.992745
+        }
+      }
+    },
+    {
+      "index": 91,
+      "at_ms": 9100,
+      "phase_index": 1,
+      "scenario": "bandwidth_collapse",
+      "event": "bandwidth_collapse",
+      "service": "interactive_inference",
+      "network": {
+        "wan": {
+          "reachable": true,
+          "rtt_ms": 25,
+          "jitter_ms": 3,
+          "loss_pct": 0,
+          "bandwidth_kbps": 64
+        },
+        "lan": {
+          "reachable": true,
+          "rtt_ms": 3,
+          "jitter_ms": 1,
+          "loss_pct": 0,
+          "bandwidth_kbps": 100000
+        }
+      },
+      "compute": {
+        "local": {
+          "model_ready": true,
+          "queue_ms": 0,
+          "free_mem_mb": 2048,
+          "inflight": 0
+        },
+        "cloud": {
+          "model_ready": true,
+          "queue_ms": 0,
+          "free_mem_mb": 16384,
+          "inflight": 0
+        }
+      },
+      "compute_source": "injected_synthetic_endpoint_state",
+      "observed_age_ms": 0,
+      "outcomes": {
+        "wan-probe": {
+          "refused": false,
+          "rtt_ms": 24.875879
+        },
+        "wan-infer": {
+          "refused": false,
+          "rtt_ms": 24.588856
+        },
+        "lan-probe": {
+          "refused": false,
+          "rtt_ms": 3.699332
+        },
+        "lan-infer": {
+          "refused": false,
+          "rtt_ms": 2.006219
+        }
+      }
+    },
+    {
+      "index": 92,
+      "at_ms": 9200,
+      "phase_index": 2,
+      "scenario": "bandwidth_collapse",
+      "event": "bandwidth_collapse",
+      "service": "sensor_batch",
+      "network": {
+        "wan": {
+          "reachable": true,
+          "rtt_ms": 25,
+          "jitter_ms": 3,
+          "loss_pct": 0,
+          "bandwidth_kbps": 64
+        },
+        "lan": {
+          "reachable": true,
+          "rtt_ms": 3,
+          "jitter_ms": 1,
+          "loss_pct": 0,
+          "bandwidth_kbps": 100000
+        }
+      },
+      "compute": {
+        "local": {
+          "model_ready": true,
+          "queue_ms": 0,
+          "free_mem_mb": 2048,
+          "inflight": 0
+        },
+        "cloud": {
+          "model_ready": true,
+          "queue_ms": 0,
+          "free_mem_mb": 16384,
+          "inflight": 0
+        }
+      },
+      "compute_source": "injected_synthetic_endpoint_state",
+      "observed_age_ms": 0,
+      "outcomes": {
+        "wan-probe": {
+          "refused": false,
+          "rtt_ms": 25.529235
+        },
+        "wan-infer": {
+          "refused": false,
+          "rtt_ms": 26.713427
+        },
+        "lan-probe": {
+          "refused": false,
+          "rtt_ms": 3.857762
+        },
+        "lan-infer": {
+          "refused": false,
+          "rtt_ms": 3.958836
+        }
+      }
+    },
+    {
+      "index": 93,
+      "at_ms": 9300,
+      "phase_index": 3,
+      "scenario": "bandwidth_collapse",
+      "event": "bandwidth_collapse",
+      "service": "interactive_inference",
+      "network": {
+        "wan": {
+          "reachable": true,
+          "rtt_ms": 25,
+          "jitter_ms": 3,
+          "loss_pct": 0,
+          "bandwidth_kbps": 64
+        },
+        "lan": {
+          "reachable": true,
+          "rtt_ms": 3,
+          "jitter_ms": 1,
+          "loss_pct": 0,
+          "bandwidth_kbps": 100000
+        }
+      },
+      "compute": {
+        "local": {
+          "model_ready": true,
+          "queue_ms": 0,
+          "free_mem_mb": 2048,
+          "inflight": 0
+        },
+        "cloud": {
+          "model_ready": true,
+          "queue_ms": 0,
+          "free_mem_mb": 16384,
+          "inflight": 0
+        }
+      },
+      "compute_source": "injected_synthetic_endpoint_state",
+      "observed_age_ms": 0,
+      "outcomes": {
+        "wan-probe": {
+          "refused": false,
+          "rtt_ms": 24.447658
+        },
+        "wan-infer": {
+          "refused": false,
+          "rtt_ms": 27.051152
+        },
+        "lan-probe": {
+          "refused": false,
+          "rtt_ms": 3.631735
+        },
+        "lan-infer": {
+          "refused": false,
+          "rtt_ms": 3.2673
+        }
+      }
+    },
+    {
+      "index": 94,
+      "at_ms": 9400,
+      "phase_index": 4,
+      "scenario": "bandwidth_collapse",
+      "event": "bandwidth_collapse",
+      "service": "safety_control",
+      "network": {
+        "wan": {
+          "reachable": true,
+          "rtt_ms": 25,
+          "jitter_ms": 3,
+          "loss_pct": 0,
+          "bandwidth_kbps": 64
+        },
+        "lan": {
+          "reachable": true,
+          "rtt_ms": 3,
+          "jitter_ms": 1,
+          "loss_pct": 0,
+          "bandwidth_kbps": 100000
+        }
+      },
+      "compute": {
+        "local": {
+          "model_ready": true,
+          "queue_ms": 0,
+          "free_mem_mb": 2048,
+          "inflight": 0
+        },
+        "cloud": {
+          "model_ready": true,
+          "queue_ms": 0,
+          "free_mem_mb": 16384,
+          "inflight": 0
+        }
+      },
+      "compute_source": "injected_synthetic_endpoint_state",
+      "observed_age_ms": 0,
+      "outcomes": {
+        "wan-probe": {
+          "refused": false,
+          "rtt_ms": 23.364588
+        },
+        "wan-infer": {
+          "refused": false,
+          "rtt_ms": 22.043763
+        },
+        "lan-probe": {
+          "refused": false,
+          "rtt_ms": 2.803921
+        },
+        "lan-infer": {
+          "refused": false,
+          "rtt_ms": 3.924752
+        }
+      }
+    },
+    {
+      "index": 95,
+      "at_ms": 9500,
+      "phase_index": 5,
+      "scenario": "bandwidth_collapse",
+      "event": "bandwidth_collapse",
+      "service": "interactive_inference",
+      "network": {
+        "wan": {
+          "reachable": true,
+          "rtt_ms": 25,
+          "jitter_ms": 3,
+          "loss_pct": 0,
+          "bandwidth_kbps": 64
+        },
+        "lan": {
+          "reachable": true,
+          "rtt_ms": 3,
+          "jitter_ms": 1,
+          "loss_pct": 0,
+          "bandwidth_kbps": 100000
+        }
+      },
+      "compute": {
+        "local": {
+          "model_ready": true,
+          "queue_ms": 0,
+          "free_mem_mb": 2048,
+          "inflight": 0
+        },
+        "cloud": {
+          "model_ready": true,
+          "queue_ms": 0,
+          "free_mem_mb": 16384,
+          "inflight": 0
+        }
+      },
+      "compute_source": "injected_synthetic_endpoint_state",
+      "observed_age_ms": 0,
+      "outcomes": {
+        "wan-probe": {
+          "refused": false,
+          "rtt_ms": 22.37901
+        },
+        "wan-infer": {
+          "refused": false,
+          "rtt_ms": 23.303271
+        },
+        "lan-probe": {
+          "refused": false,
+          "rtt_ms": 2.364932
+        },
+        "lan-infer": {
+          "refused": false,
+          "rtt_ms": 2.35681
+        }
+      }
+    },
+    {
+      "index": 96,
+      "at_ms": 9600,
+      "phase_index": 6,
+      "scenario": "bandwidth_collapse",
+      "event": "bandwidth_collapse",
+      "service": "interactive_inference",
+      "network": {
+        "wan": {
+          "reachable": true,
+          "rtt_ms": 25,
+          "jitter_ms": 3,
+          "loss_pct": 0,
+          "bandwidth_kbps": 64
+        },
+        "lan": {
+          "reachable": true,
+          "rtt_ms": 3,
+          "jitter_ms": 1,
+          "loss_pct": 0,
+          "bandwidth_kbps": 100000
+        }
+      },
+      "compute": {
+        "local": {
+          "model_ready": true,
+          "queue_ms": 0,
+          "free_mem_mb": 2048,
+          "inflight": 0
+        },
+        "cloud": {
+          "model_ready": true,
+          "queue_ms": 0,
+          "free_mem_mb": 16384,
+          "inflight": 0
+        }
+      },
+      "compute_source": "injected_synthetic_endpoint_state",
+      "observed_age_ms": 0,
+      "outcomes": {
+        "wan-probe": {
+          "refused": false,
+          "rtt_ms": 22.757481
+        },
+        "wan-infer": {
+          "refused": false,
+          "rtt_ms": 26.876011
+        },
+        "lan-probe": {
+          "refused": false,
+          "rtt_ms": 3.894773
+        },
+        "lan-infer": {
+          "refused": false,
+          "rtt_ms": 3.828302
+        }
+      }
+    },
+    {
+      "index": 97,
+      "at_ms": 9700,
+      "phase_index": 7,
+      "scenario": "bandwidth_collapse",
+      "event": "bandwidth_collapse",
+      "service": "sensor_batch",
+      "network": {
+        "wan": {
+          "reachable": true,
+          "rtt_ms": 25,
+          "jitter_ms": 3,
+          "loss_pct": 0,
+          "bandwidth_kbps": 64
+        },
+        "lan": {
+          "reachable": true,
+          "rtt_ms": 3,
+          "jitter_ms": 1,
+          "loss_pct": 0,
+          "bandwidth_kbps": 100000
+        }
+      },
+      "compute": {
+        "local": {
+          "model_ready": true,
+          "queue_ms": 0,
+          "free_mem_mb": 2048,
+          "inflight": 0
+        },
+        "cloud": {
+          "model_ready": true,
+          "queue_ms": 0,
+          "free_mem_mb": 16384,
+          "inflight": 0
+        }
+      },
+      "compute_source": "injected_synthetic_endpoint_state",
+      "observed_age_ms": 0,
+      "outcomes": {
+        "wan-probe": {
+          "refused": false,
+          "rtt_ms": 26.293872
+        },
+        "wan-infer": {
+          "refused": false,
+          "rtt_ms": 24.381938
+        },
+        "lan-probe": {
+          "refused": false,
+          "rtt_ms": 3.019483
+        },
+        "lan-infer": {
+          "refused": false,
+          "rtt_ms": 2.908371
+        }
+      }
+    },
+    {
+      "index": 98,
+      "at_ms": 9800,
+      "phase_index": 8,
+      "scenario": "bandwidth_collapse",
+      "event": "bandwidth_collapse",
+      "service": "interactive_inference",
+      "network": {
+        "wan": {
+          "reachable": true,
+          "rtt_ms": 25,
+          "jitter_ms": 3,
+          "loss_pct": 0,
+          "bandwidth_kbps": 64
+        },
+        "lan": {
+          "reachable": true,
+          "rtt_ms": 3,
+          "jitter_ms": 1,
+          "loss_pct": 0,
+          "bandwidth_kbps": 100000
+        }
+      },
+      "compute": {
+        "local": {
+          "model_ready": true,
+          "queue_ms": 0,
+          "free_mem_mb": 2048,
+          "inflight": 0
+        },
+        "cloud": {
+          "model_ready": true,
+          "queue_ms": 0,
+          "free_mem_mb": 16384,
+          "inflight": 0
+        }
+      },
+      "compute_source": "injected_synthetic_endpoint_state",
+      "observed_age_ms": 0,
+      "outcomes": {
+        "wan-probe": {
+          "refused": false,
+          "rtt_ms": 27.526348
+        },
+        "wan-infer": {
+          "refused": false,
+          "rtt_ms": 26.032645
+        },
+        "lan-probe": {
+          "refused": false,
+          "rtt_ms": 3.154114
+        },
+        "lan-infer": {
+          "refused": false,
+          "rtt_ms": 3.494294
+        }
+      }
+    },
+    {
+      "index": 99,
+      "at_ms": 9900,
+      "phase_index": 9,
+      "scenario": "bandwidth_collapse",
+      "event": "bandwidth_collapse",
+      "service": "safety_control",
+      "network": {
+        "wan": {
+          "reachable": true,
+          "rtt_ms": 25,
+          "jitter_ms": 3,
+          "loss_pct": 0,
+          "bandwidth_kbps": 64
+        },
+        "lan": {
+          "reachable": true,
+          "rtt_ms": 3,
+          "jitter_ms": 1,
+          "loss_pct": 0,
+          "bandwidth_kbps": 100000
+        }
+      },
+      "compute": {
+        "local": {
+          "model_ready": true,
+          "queue_ms": 0,
+          "free_mem_mb": 2048,
+          "inflight": 0
+        },
+        "cloud": {
+          "model_ready": true,
+          "queue_ms": 0,
+          "free_mem_mb": 16384,
+          "inflight": 0
+        }
+      },
+      "compute_source": "injected_synthetic_endpoint_state",
+      "observed_age_ms": 0,
+      "outcomes": {
+        "wan-probe": {
+          "refused": false,
+          "rtt_ms": 24.43196
+        },
+        "wan-infer": {
+          "refused": false,
+          "rtt_ms": 26.258567
+        },
+        "lan-probe": {
+          "refused": false,
+          "rtt_ms": 3.974724
+        },
+        "lan-infer": {
+          "refused": false,
+          "rtt_ms": 2.349278
+        }
+      }
+    },
+    {
+      "index": 100,
+      "at_ms": 10000,
+      "phase_index": 0,
+      "scenario": "handover",
+      "event": "handover-edge-unreachable",
+      "service": "interactive_inference",
+      "network": {
+        "wan": {
+          "reachable": false,
+          "rtt_ms": 25,
+          "jitter_ms": 3,
+          "loss_pct": 100,
+          "bandwidth_kbps": 20000
+        },
+        "lan": {
+          "reachable": true,
+          "rtt_ms": 3,
+          "jitter_ms": 1,
+          "loss_pct": 0,
+          "bandwidth_kbps": 100000
+        }
+      },
+      "compute": {
+        "local": {
+          "model_ready": false,
+          "queue_ms": 0,
+          "free_mem_mb": 2048,
+          "inflight": 0
+        },
+        "cloud": {
+          "model_ready": true,
+          "queue_ms": 0,
+          "free_mem_mb": 16384,
+          "inflight": 0
+        }
+      },
+      "compute_source": "injected_synthetic_endpoint_state",
+      "observed_age_ms": 0,
+      "outcomes": {
+        "wan-probe": {
+          "refused": true,
+          "rtt_ms": 27.716433
+        },
+        "wan-infer": {
+          "refused": true,
+          "rtt_ms": 23.234892
+        },
+        "lan-probe": {
+          "refused": false,
+          "rtt_ms": 3.985106
+        },
+        "lan-infer": {
+          "refused": false,
+          "rtt_ms": 2.312753
+        }
+      }
+    },
+    {
+      "index": 101,
+      "at_ms": 10100,
+      "phase_index": 1,
+      "scenario": "handover",
+      "event": "handover-edge-unreachable",
+      "service": "interactive_inference",
+      "network": {
+        "wan": {
+          "reachable": false,
+          "rtt_ms": 25,
+          "jitter_ms": 3,
+          "loss_pct": 100,
+          "bandwidth_kbps": 20000
+        },
+        "lan": {
+          "reachable": true,
+          "rtt_ms": 3,
+          "jitter_ms": 1,
+          "loss_pct": 0,
+          "bandwidth_kbps": 100000
+        }
+      },
+      "compute": {
+        "local": {
+          "model_ready": false,
+          "queue_ms": 0,
+          "free_mem_mb": 2048,
+          "inflight": 0
+        },
+        "cloud": {
+          "model_ready": true,
+          "queue_ms": 0,
+          "free_mem_mb": 16384,
+          "inflight": 0
+        }
+      },
+      "compute_source": "injected_synthetic_endpoint_state",
+      "observed_age_ms": 0,
+      "outcomes": {
+        "wan-probe": {
+          "refused": true,
+          "rtt_ms": 23.324846
+        },
+        "wan-infer": {
+          "refused": true,
+          "rtt_ms": 23.604549
+        },
+        "lan-probe": {
+          "refused": false,
+          "rtt_ms": 3.339799
+        },
+        "lan-infer": {
+          "refused": false,
+          "rtt_ms": 2.68776
+        }
+      }
+    },
+    {
+      "index": 102,
+      "at_ms": 10200,
+      "phase_index": 2,
+      "scenario": "handover",
+      "event": "handover-edge-unreachable",
+      "service": "sensor_batch",
+      "network": {
+        "wan": {
+          "reachable": false,
+          "rtt_ms": 25,
+          "jitter_ms": 3,
+          "loss_pct": 100,
+          "bandwidth_kbps": 20000
+        },
+        "lan": {
+          "reachable": true,
+          "rtt_ms": 3,
+          "jitter_ms": 1,
+          "loss_pct": 0,
+          "bandwidth_kbps": 100000
+        }
+      },
+      "compute": {
+        "local": {
+          "model_ready": false,
+          "queue_ms": 0,
+          "free_mem_mb": 2048,
+          "inflight": 0
+        },
+        "cloud": {
+          "model_ready": true,
+          "queue_ms": 0,
+          "free_mem_mb": 16384,
+          "inflight": 0
+        }
+      },
+      "compute_source": "injected_synthetic_endpoint_state",
+      "observed_age_ms": 0,
+      "outcomes": {
+        "wan-probe": {
+          "refused": true,
+          "rtt_ms": 22.94605
+        },
+        "wan-infer": {
+          "refused": true,
+          "rtt_ms": 26.247475
+        },
+        "lan-probe": {
+          "refused": false,
+          "rtt_ms": 3.514449
+        },
+        "lan-infer": {
+          "refused": false,
+          "rtt_ms": 2.595507
+        }
+      }
+    },
+    {
+      "index": 103,
+      "at_ms": 10300,
+      "phase_index": 3,
+      "scenario": "handover",
+      "event": "handover-edge-unreachable",
+      "service": "interactive_inference",
+      "network": {
+        "wan": {
+          "reachable": false,
+          "rtt_ms": 25,
+          "jitter_ms": 3,
+          "loss_pct": 100,
+          "bandwidth_kbps": 20000
+        },
+        "lan": {
+          "reachable": true,
+          "rtt_ms": 3,
+          "jitter_ms": 1,
+          "loss_pct": 0,
+          "bandwidth_kbps": 100000
+        }
+      },
+      "compute": {
+        "local": {
+          "model_ready": true,
+          "queue_ms": 0,
+          "free_mem_mb": 2048,
+          "inflight": 0
+        },
+        "cloud": {
+          "model_ready": true,
+          "queue_ms": 0,
+          "free_mem_mb": 16384,
+          "inflight": 0
+        }
+      },
+      "compute_source": "injected_synthetic_endpoint_state",
+      "observed_age_ms": 0,
+      "outcomes": {
+        "wan-probe": {
+          "refused": true,
+          "rtt_ms": 23.0026
+        },
+        "wan-infer": {
+          "refused": true,
+          "rtt_ms": 26.413506
+        },
+        "lan-probe": {
+          "refused": false,
+          "rtt_ms": 2.866775
+        },
+        "lan-infer": {
+          "refused": false,
+          "rtt_ms": 3.521252
+        }
+      }
+    },
+    {
+      "index": 104,
+      "at_ms": 10400,
+      "phase_index": 4,
+      "scenario": "handover",
+      "event": "handover-edge-unreachable",
+      "service": "safety_control",
+      "network": {
+        "wan": {
+          "reachable": false,
+          "rtt_ms": 25,
+          "jitter_ms": 3,
+          "loss_pct": 100,
+          "bandwidth_kbps": 20000
+        },
+        "lan": {
+          "reachable": true,
+          "rtt_ms": 3,
+          "jitter_ms": 1,
+          "loss_pct": 0,
+          "bandwidth_kbps": 100000
+        }
+      },
+      "compute": {
+        "local": {
+          "model_ready": true,
+          "queue_ms": 0,
+          "free_mem_mb": 2048,
+          "inflight": 0
+        },
+        "cloud": {
+          "model_ready": true,
+          "queue_ms": 0,
+          "free_mem_mb": 16384,
+          "inflight": 0
+        }
+      },
+      "compute_source": "injected_synthetic_endpoint_state",
+      "observed_age_ms": 0,
+      "outcomes": {
+        "wan-probe": {
+          "refused": true,
+          "rtt_ms": 26.14726
+        },
+        "wan-infer": {
+          "refused": true,
+          "rtt_ms": 27.322584
+        },
+        "lan-probe": {
+          "refused": false,
+          "rtt_ms": 3.036905
+        },
+        "lan-infer": {
+          "refused": false,
+          "rtt_ms": 3.278308
+        }
+      }
+    },
+    {
+      "index": 105,
+      "at_ms": 10500,
+      "phase_index": 5,
+      "scenario": "handover",
+      "event": "handover-edge-unreachable",
+      "service": "interactive_inference",
+      "network": {
+        "wan": {
+          "reachable": false,
+          "rtt_ms": 25,
+          "jitter_ms": 3,
+          "loss_pct": 100,
+          "bandwidth_kbps": 20000
+        },
+        "lan": {
+          "reachable": true,
+          "rtt_ms": 3,
+          "jitter_ms": 1,
+          "loss_pct": 0,
+          "bandwidth_kbps": 100000
+        }
+      },
+      "compute": {
+        "local": {
+          "model_ready": true,
+          "queue_ms": 0,
+          "free_mem_mb": 2048,
+          "inflight": 0
+        },
+        "cloud": {
+          "model_ready": true,
+          "queue_ms": 0,
+          "free_mem_mb": 16384,
+          "inflight": 0
+        }
+      },
+      "compute_source": "injected_synthetic_endpoint_state",
+      "observed_age_ms": 0,
+      "outcomes": {
+        "wan-probe": {
+          "refused": true,
+          "rtt_ms": 26.28232
+        },
+        "wan-infer": {
+          "refused": true,
+          "rtt_ms": 26.982977
+        },
+        "lan-probe": {
+          "refused": false,
+          "rtt_ms": 3.441122
+        },
+        "lan-infer": {
+          "refused": false,
+          "rtt_ms": 3.955261
+        }
+      }
+    },
+    {
+      "index": 106,
+      "at_ms": 10600,
+      "phase_index": 6,
+      "scenario": "handover",
+      "event": "handover-reattach",
+      "service": "interactive_inference",
+      "network": {
+        "wan": {
+          "reachable": true,
+          "rtt_ms": 90,
+          "jitter_ms": 3,
+          "loss_pct": 0,
+          "bandwidth_kbps": 20000
+        },
+        "lan": {
+          "reachable": true,
+          "rtt_ms": 3,
+          "jitter_ms": 1,
+          "loss_pct": 0,
+          "bandwidth_kbps": 100000
+        }
+      },
+      "compute": {
+        "local": {
+          "model_ready": true,
+          "queue_ms": 0,
+          "free_mem_mb": 2048,
+          "inflight": 0
+        },
+        "cloud": {
+          "model_ready": true,
+          "queue_ms": 0,
+          "free_mem_mb": 16384,
+          "inflight": 0
+        }
+      },
+      "compute_source": "injected_synthetic_endpoint_state",
+      "observed_age_ms": 0,
+      "outcomes": {
+        "wan-probe": {
+          "refused": false,
+          "rtt_ms": 88.834973
+        },
+        "wan-infer": {
+          "refused": false,
+          "rtt_ms": 88.15102
+        },
+        "lan-probe": {
+          "refused": false,
+          "rtt_ms": 3.252139
+        },
+        "lan-infer": {
+          "refused": false,
+          "rtt_ms": 2.538161
+        }
+      }
+    },
+    {
+      "index": 107,
+      "at_ms": 10700,
+      "phase_index": 7,
+      "scenario": "handover",
+      "event": "handover-reattach",
+      "service": "sensor_batch",
+      "network": {
+        "wan": {
+          "reachable": true,
+          "rtt_ms": 90,
+          "jitter_ms": 3,
+          "loss_pct": 0,
+          "bandwidth_kbps": 20000
+        },
+        "lan": {
+          "reachable": true,
+          "rtt_ms": 3,
+          "jitter_ms": 1,
+          "loss_pct": 0,
+          "bandwidth_kbps": 100000
+        }
+      },
+      "compute": {
+        "local": {
+          "model_ready": true,
+          "queue_ms": 0,
+          "free_mem_mb": 2048,
+          "inflight": 0
+        },
+        "cloud": {
+          "model_ready": true,
+          "queue_ms": 0,
+          "free_mem_mb": 16384,
+          "inflight": 0
+        }
+      },
+      "compute_source": "injected_synthetic_endpoint_state",
+      "observed_age_ms": 0,
+      "outcomes": {
+        "wan-probe": {
+          "refused": false,
+          "rtt_ms": 88.783772
+        },
+        "wan-infer": {
+          "refused": false,
+          "rtt_ms": 92.937852
+        },
+        "lan-probe": {
+          "refused": false,
+          "rtt_ms": 2.656988
+        },
+        "lan-infer": {
+          "refused": false,
+          "rtt_ms": 3.905292
+        }
+      }
+    },
+    {
+      "index": 108,
+      "at_ms": 10800,
+      "phase_index": 8,
+      "scenario": "handover",
+      "event": "handover-reattach",
+      "service": "interactive_inference",
+      "network": {
+        "wan": {
+          "reachable": true,
+          "rtt_ms": 90,
+          "jitter_ms": 3,
+          "loss_pct": 0,
+          "bandwidth_kbps": 20000
+        },
+        "lan": {
+          "reachable": true,
+          "rtt_ms": 3,
+          "jitter_ms": 1,
+          "loss_pct": 0,
+          "bandwidth_kbps": 100000
+        }
+      },
+      "compute": {
+        "local": {
+          "model_ready": true,
+          "queue_ms": 0,
+          "free_mem_mb": 2048,
+          "inflight": 0
+        },
+        "cloud": {
+          "model_ready": true,
+          "queue_ms": 0,
+          "free_mem_mb": 16384,
+          "inflight": 0
+        }
+      },
+      "compute_source": "injected_synthetic_endpoint_state",
+      "observed_age_ms": 0,
+      "outcomes": {
+        "wan-probe": {
+          "refused": false,
+          "rtt_ms": 91.79408
+        },
+        "wan-infer": {
+          "refused": false,
+          "rtt_ms": 89.814152
+        },
+        "lan-probe": {
+          "refused": false,
+          "rtt_ms": 2.898757
+        },
+        "lan-infer": {
+          "refused": false,
+          "rtt_ms": 2.043552
+        }
+      }
+    },
+    {
+      "index": 109,
+      "at_ms": 10900,
+      "phase_index": 9,
+      "scenario": "handover",
+      "event": "handover-reattach",
+      "service": "safety_control",
+      "network": {
+        "wan": {
+          "reachable": true,
+          "rtt_ms": 90,
+          "jitter_ms": 3,
+          "loss_pct": 0,
+          "bandwidth_kbps": 20000
+        },
+        "lan": {
+          "reachable": true,
+          "rtt_ms": 3,
+          "jitter_ms": 1,
+          "loss_pct": 0,
+          "bandwidth_kbps": 100000
+        }
+      },
+      "compute": {
+        "local": {
+          "model_ready": true,
+          "queue_ms": 0,
+          "free_mem_mb": 2048,
+          "inflight": 0
+        },
+        "cloud": {
+          "model_ready": true,
+          "queue_ms": 0,
+          "free_mem_mb": 16384,
+          "inflight": 0
+        }
+      },
+      "compute_source": "injected_synthetic_endpoint_state",
+      "observed_age_ms": 0,
+      "outcomes": {
+        "wan-probe": {
+          "refused": false,
+          "rtt_ms": 91.19855
+        },
+        "wan-infer": {
+          "refused": false,
+          "rtt_ms": 87.432523
+        },
+        "lan-probe": {
+          "refused": false,
+          "rtt_ms": 2.546628
+        },
+        "lan-infer": {
+          "refused": false,
+          "rtt_ms": 2.117179
+        }
+      }
+    },
+    {
+      "index": 110,
+      "at_ms": 11000,
+      "phase_index": 0,
+      "scenario": "jitter_burst",
+      "event": "jitter_burst",
+      "service": "interactive_inference",
+      "network": {
+        "wan": {
+          "reachable": true,
+          "rtt_ms": 80,
+          "jitter_ms": 10,
+          "loss_pct": 0,
+          "bandwidth_kbps": 20000
+        },
+        "lan": {
+          "reachable": true,
+          "rtt_ms": 3,
+          "jitter_ms": 1,
+          "loss_pct": 0,
+          "bandwidth_kbps": 100000
+        }
+      },
+      "compute": {
+        "local": {
+          "model_ready": true,
+          "queue_ms": 0,
+          "free_mem_mb": 2048,
+          "inflight": 0
+        },
+        "cloud": {
+          "model_ready": true,
+          "queue_ms": 0,
+          "free_mem_mb": 16384,
+          "inflight": 0
+        }
+      },
+      "compute_source": "injected_synthetic_endpoint_state",
+      "observed_age_ms": 0,
+      "outcomes": {
+        "wan-probe": {
+          "refused": false,
+          "rtt_ms": 79.437459
+        },
+        "wan-infer": {
+          "refused": false,
+          "rtt_ms": 74.26308
+        },
+        "lan-probe": {
+          "refused": false,
+          "rtt_ms": 2.334933
+        },
+        "lan-infer": {
+          "refused": false,
+          "rtt_ms": 3.413957
+        }
+      }
+    },
+    {
+      "index": 111,
+      "at_ms": 11100,
+      "phase_index": 1,
+      "scenario": "jitter_burst",
+      "event": "jitter_burst",
+      "service": "interactive_inference",
+      "network": {
+        "wan": {
+          "reachable": true,
+          "rtt_ms": 60,
+          "jitter_ms": 10,
+          "loss_pct": 0,
+          "bandwidth_kbps": 20000
+        },
+        "lan": {
+          "reachable": true,
+          "rtt_ms": 3,
+          "jitter_ms": 1,
+          "loss_pct": 0,
+          "bandwidth_kbps": 100000
+        }
+      },
+      "compute": {
+        "local": {
+          "model_ready": true,
+          "queue_ms": 0,
+          "free_mem_mb": 2048,
+          "inflight": 0
+        },
+        "cloud": {
+          "model_ready": true,
+          "queue_ms": 0,
+          "free_mem_mb": 16384,
+          "inflight": 0
+        }
+      },
+      "compute_source": "injected_synthetic_endpoint_state",
+      "observed_age_ms": 0,
+      "outcomes": {
+        "wan-probe": {
+          "refused": false,
+          "rtt_ms": 59.6337
+        },
+        "wan-infer": {
+          "refused": false,
+          "rtt_ms": 60.387734
+        },
+        "lan-probe": {
+          "refused": false,
+          "rtt_ms": 3.32263
+        },
+        "lan-infer": {
+          "refused": false,
+          "rtt_ms": 3.920292
+        }
+      }
+    },
+    {
+      "index": 112,
+      "at_ms": 11200,
+      "phase_index": 2,
+      "scenario": "jitter_burst",
+      "event": "jitter_burst",
+      "service": "sensor_batch",
+      "network": {
+        "wan": {
+          "reachable": true,
+          "rtt_ms": 80,
+          "jitter_ms": 10,
+          "loss_pct": 0,
+          "bandwidth_kbps": 20000
+        },
+        "lan": {
+          "reachable": true,
+          "rtt_ms": 3,
+          "jitter_ms": 1,
+          "loss_pct": 0,
+          "bandwidth_kbps": 100000
+        }
+      },
+      "compute": {
+        "local": {
+          "model_ready": true,
+          "queue_ms": 0,
+          "free_mem_mb": 2048,
+          "inflight": 0
+        },
+        "cloud": {
+          "model_ready": true,
+          "queue_ms": 0,
+          "free_mem_mb": 16384,
+          "inflight": 0
+        }
+      },
+      "compute_source": "injected_synthetic_endpoint_state",
+      "observed_age_ms": 0,
+      "outcomes": {
+        "wan-probe": {
+          "refused": false,
+          "rtt_ms": 84.823885
+        },
+        "wan-infer": {
+          "refused": false,
+          "rtt_ms": 84.012771
+        },
+        "lan-probe": {
+          "refused": false,
+          "rtt_ms": 3.32517
+        },
+        "lan-infer": {
+          "refused": false,
+          "rtt_ms": 3.945586
+        }
+      }
+    },
+    {
+      "index": 113,
+      "at_ms": 11300,
+      "phase_index": 3,
+      "scenario": "jitter_burst",
+      "event": "jitter_burst",
+      "service": "interactive_inference",
+      "network": {
+        "wan": {
+          "reachable": true,
+          "rtt_ms": 60,
+          "jitter_ms": 10,
+          "loss_pct": 0,
+          "bandwidth_kbps": 20000
+        },
+        "lan": {
+          "reachable": true,
+          "rtt_ms": 3,
+          "jitter_ms": 1,
+          "loss_pct": 0,
+          "bandwidth_kbps": 100000
+        }
+      },
+      "compute": {
+        "local": {
+          "model_ready": true,
+          "queue_ms": 0,
+          "free_mem_mb": 2048,
+          "inflight": 0
+        },
+        "cloud": {
+          "model_ready": true,
+          "queue_ms": 0,
+          "free_mem_mb": 16384,
+          "inflight": 0
+        }
+      },
+      "compute_source": "injected_synthetic_endpoint_state",
+      "observed_age_ms": 0,
+      "outcomes": {
+        "wan-probe": {
+          "refused": false,
+          "rtt_ms": 63.854737
+        },
+        "wan-infer": {
+          "refused": false,
+          "rtt_ms": 54.5876
+        },
+        "lan-probe": {
+          "refused": false,
+          "rtt_ms": 2.782861
+        },
+        "lan-infer": {
+          "refused": false,
+          "rtt_ms": 2.63583
+        }
+      }
+    },
+    {
+      "index": 114,
+      "at_ms": 11400,
+      "phase_index": 4,
+      "scenario": "jitter_burst",
+      "event": "jitter_burst",
+      "service": "safety_control",
+      "network": {
+        "wan": {
+          "reachable": true,
+          "rtt_ms": 80,
+          "jitter_ms": 10,
+          "loss_pct": 0,
+          "bandwidth_kbps": 20000
+        },
+        "lan": {
+          "reachable": true,
+          "rtt_ms": 3,
+          "jitter_ms": 1,
+          "loss_pct": 0,
+          "bandwidth_kbps": 100000
+        }
+      },
+      "compute": {
+        "local": {
+          "model_ready": true,
+          "queue_ms": 0,
+          "free_mem_mb": 2048,
+          "inflight": 0
+        },
+        "cloud": {
+          "model_ready": true,
+          "queue_ms": 0,
+          "free_mem_mb": 16384,
+          "inflight": 0
+        }
+      },
+      "compute_source": "injected_synthetic_endpoint_state",
+      "observed_age_ms": 0,
+      "outcomes": {
+        "wan-probe": {
+          "refused": false,
+          "rtt_ms": 88.948557
+        },
+        "wan-infer": {
+          "refused": false,
+          "rtt_ms": 83.618028
+        },
+        "lan-probe": {
+          "refused": false,
+          "rtt_ms": 3.280291
+        },
+        "lan-infer": {
+          "refused": false,
+          "rtt_ms": 2.189331
+        }
+      }
+    },
+    {
+      "index": 115,
+      "at_ms": 11500,
+      "phase_index": 5,
+      "scenario": "jitter_burst",
+      "event": "jitter_burst",
+      "service": "interactive_inference",
+      "network": {
+        "wan": {
+          "reachable": true,
+          "rtt_ms": 60,
+          "jitter_ms": 10,
+          "loss_pct": 0,
+          "bandwidth_kbps": 20000
+        },
+        "lan": {
+          "reachable": true,
+          "rtt_ms": 3,
+          "jitter_ms": 1,
+          "loss_pct": 0,
+          "bandwidth_kbps": 100000
+        }
+      },
+      "compute": {
+        "local": {
+          "model_ready": true,
+          "queue_ms": 0,
+          "free_mem_mb": 2048,
+          "inflight": 0
+        },
+        "cloud": {
+          "model_ready": true,
+          "queue_ms": 0,
+          "free_mem_mb": 16384,
+          "inflight": 0
+        }
+      },
+      "compute_source": "injected_synthetic_endpoint_state",
+      "observed_age_ms": 0,
+      "outcomes": {
+        "wan-probe": {
+          "refused": false,
+          "rtt_ms": 66.048096
+        },
+        "wan-infer": {
+          "refused": false,
+          "rtt_ms": 68.308507
+        },
+        "lan-probe": {
+          "refused": false,
+          "rtt_ms": 2.15574
+        },
+        "lan-infer": {
+          "refused": false,
+          "rtt_ms": 3.515041
+        }
+      }
+    },
+    {
+      "index": 116,
+      "at_ms": 11600,
+      "phase_index": 6,
+      "scenario": "jitter_burst",
+      "event": "jitter_burst",
+      "service": "interactive_inference",
+      "network": {
+        "wan": {
+          "reachable": true,
+          "rtt_ms": 80,
+          "jitter_ms": 10,
+          "loss_pct": 0,
+          "bandwidth_kbps": 20000
+        },
+        "lan": {
+          "reachable": true,
+          "rtt_ms": 3,
+          "jitter_ms": 1,
+          "loss_pct": 0,
+          "bandwidth_kbps": 100000
+        }
+      },
+      "compute": {
+        "local": {
+          "model_ready": true,
+          "queue_ms": 0,
+          "free_mem_mb": 2048,
+          "inflight": 0
+        },
+        "cloud": {
+          "model_ready": true,
+          "queue_ms": 0,
+          "free_mem_mb": 16384,
+          "inflight": 0
+        }
+      },
+      "compute_source": "injected_synthetic_endpoint_state",
+      "observed_age_ms": 0,
+      "outcomes": {
+        "wan-probe": {
+          "refused": false,
+          "rtt_ms": 89.86882
+        },
+        "wan-infer": {
+          "refused": false,
+          "rtt_ms": 72.87782
+        },
+        "lan-probe": {
+          "refused": false,
+          "rtt_ms": 3.910053
+        },
+        "lan-infer": {
+          "refused": false,
+          "rtt_ms": 2.961553
+        }
+      }
+    },
+    {
+      "index": 117,
+      "at_ms": 11700,
+      "phase_index": 7,
+      "scenario": "jitter_burst",
+      "event": "jitter_burst",
+      "service": "sensor_batch",
+      "network": {
+        "wan": {
+          "reachable": true,
+          "rtt_ms": 60,
+          "jitter_ms": 10,
+          "loss_pct": 0,
+          "bandwidth_kbps": 20000
+        },
+        "lan": {
+          "reachable": true,
+          "rtt_ms": 3,
+          "jitter_ms": 1,
+          "loss_pct": 0,
+          "bandwidth_kbps": 100000
+        }
+      },
+      "compute": {
+        "local": {
+          "model_ready": true,
+          "queue_ms": 0,
+          "free_mem_mb": 2048,
+          "inflight": 0
+        },
+        "cloud": {
+          "model_ready": true,
+          "queue_ms": 0,
+          "free_mem_mb": 16384,
+          "inflight": 0
+        }
+      },
+      "compute_source": "injected_synthetic_endpoint_state",
+      "observed_age_ms": 0,
+      "outcomes": {
+        "wan-probe": {
+          "refused": false,
+          "rtt_ms": 67.078513
+        },
+        "wan-infer": {
+          "refused": false,
+          "rtt_ms": 66.307158
+        },
+        "lan-probe": {
+          "refused": false,
+          "rtt_ms": 3.693013
+        },
+        "lan-infer": {
+          "refused": false,
+          "rtt_ms": 3.870329
+        }
+      }
+    },
+    {
+      "index": 118,
+      "at_ms": 11800,
+      "phase_index": 8,
+      "scenario": "jitter_burst",
+      "event": "jitter_burst",
+      "service": "interactive_inference",
+      "network": {
+        "wan": {
+          "reachable": true,
+          "rtt_ms": 80,
+          "jitter_ms": 10,
+          "loss_pct": 0,
+          "bandwidth_kbps": 20000
+        },
+        "lan": {
+          "reachable": true,
+          "rtt_ms": 3,
+          "jitter_ms": 1,
+          "loss_pct": 0,
+          "bandwidth_kbps": 100000
+        }
+      },
+      "compute": {
+        "local": {
+          "model_ready": true,
+          "queue_ms": 0,
+          "free_mem_mb": 2048,
+          "inflight": 0
+        },
+        "cloud": {
+          "model_ready": true,
+          "queue_ms": 0,
+          "free_mem_mb": 16384,
+          "inflight": 0
+        }
+      },
+      "compute_source": "injected_synthetic_endpoint_state",
+      "observed_age_ms": 0,
+      "outcomes": {
+        "wan-probe": {
+          "refused": false,
+          "rtt_ms": 89.206276
+        },
+        "wan-infer": {
+          "refused": false,
+          "rtt_ms": 83.572754
+        },
+        "lan-probe": {
+          "refused": false,
+          "rtt_ms": 3.535643
+        },
+        "lan-infer": {
+          "refused": false,
+          "rtt_ms": 3.132573
+        }
+      }
+    },
+    {
+      "index": 119,
+      "at_ms": 11900,
+      "phase_index": 9,
+      "scenario": "jitter_burst",
+      "event": "jitter_burst",
+      "service": "safety_control",
+      "network": {
+        "wan": {
+          "reachable": true,
+          "rtt_ms": 60,
+          "jitter_ms": 10,
+          "loss_pct": 0,
+          "bandwidth_kbps": 20000
+        },
+        "lan": {
+          "reachable": true,
+          "rtt_ms": 3,
+          "jitter_ms": 1,
+          "loss_pct": 0,
+          "bandwidth_kbps": 100000
+        }
+      },
+      "compute": {
+        "local": {
+          "model_ready": true,
+          "queue_ms": 0,
+          "free_mem_mb": 2048,
+          "inflight": 0
+        },
+        "cloud": {
+          "model_ready": true,
+          "queue_ms": 0,
+          "free_mem_mb": 16384,
+          "inflight": 0
+        }
+      },
+      "compute_source": "injected_synthetic_endpoint_state",
+      "observed_age_ms": 0,
+      "outcomes": {
+        "wan-probe": {
+          "refused": false,
+          "rtt_ms": 65.963426
+        },
+        "wan-infer": {
+          "refused": false,
+          "rtt_ms": 58.032464
+        },
+        "lan-probe": {
+          "refused": false,
+          "rtt_ms": 3.918633
+        },
+        "lan-infer": {
+          "refused": false,
+          "rtt_ms": 2.385232
+        }
+      }
+    },
+    {
+      "index": 120,
+      "at_ms": 12000,
+      "phase_index": 0,
+      "scenario": "lan_blackout",
+      "event": "lan_blackout",
+      "service": "interactive_inference",
+      "network": {
+        "wan": {
+          "reachable": true,
+          "rtt_ms": 25,
+          "jitter_ms": 3,
+          "loss_pct": 0,
+          "bandwidth_kbps": 20000
+        },
+        "lan": {
+          "reachable": false,
+          "rtt_ms": 3,
+          "jitter_ms": 1,
+          "loss_pct": 100,
+          "bandwidth_kbps": 100000
+        }
+      },
+      "compute": {
+        "local": {
+          "model_ready": true,
+          "queue_ms": 0,
+          "free_mem_mb": 2048,
+          "inflight": 0
+        },
+        "cloud": {
+          "model_ready": true,
+          "queue_ms": 0,
+          "free_mem_mb": 16384,
+          "inflight": 0
+        }
+      },
+      "compute_source": "injected_synthetic_endpoint_state",
+      "observed_age_ms": 0,
+      "outcomes": {
+        "wan-probe": {
+          "refused": false,
+          "rtt_ms": 25.069302
+        },
+        "wan-infer": {
+          "refused": false,
+          "rtt_ms": 25.134628
+        },
+        "lan-probe": {
+          "refused": true,
+          "rtt_ms": 3.211095
+        },
+        "lan-infer": {
+          "refused": true,
+          "rtt_ms": 3.144377
+        }
+      }
+    },
+    {
+      "index": 121,
+      "at_ms": 12100,
+      "phase_index": 1,
+      "scenario": "lan_blackout",
+      "event": "lan_blackout",
+      "service": "interactive_inference",
+      "network": {
+        "wan": {
+          "reachable": true,
+          "rtt_ms": 25,
+          "jitter_ms": 3,
+          "loss_pct": 0,
+          "bandwidth_kbps": 20000
+        },
+        "lan": {
+          "reachable": false,
+          "rtt_ms": 3,
+          "jitter_ms": 1,
+          "loss_pct": 100,
+          "bandwidth_kbps": 100000
+        }
+      },
+      "compute": {
+        "local": {
+          "model_ready": true,
+          "queue_ms": 0,
+          "free_mem_mb": 2048,
+          "inflight": 0
+        },
+        "cloud": {
+          "model_ready": true,
+          "queue_ms": 0,
+          "free_mem_mb": 16384,
+          "inflight": 0
+        }
+      },
+      "compute_source": "injected_synthetic_endpoint_state",
+      "observed_age_ms": 0,
+      "outcomes": {
+        "wan-probe": {
+          "refused": false,
+          "rtt_ms": 22.443968
+        },
+        "wan-infer": {
+          "refused": false,
+          "rtt_ms": 23.820801
+        },
+        "lan-probe": {
+          "refused": true,
+          "rtt_ms": 2.038741
+        },
+        "lan-infer": {
+          "refused": true,
+          "rtt_ms": 2.490743
+        }
+      }
+    },
+    {
+      "index": 122,
+      "at_ms": 12200,
+      "phase_index": 2,
+      "scenario": "lan_blackout",
+      "event": "lan_blackout",
+      "service": "sensor_batch",
+      "network": {
+        "wan": {
+          "reachable": true,
+          "rtt_ms": 25,
+          "jitter_ms": 3,
+          "loss_pct": 0,
+          "bandwidth_kbps": 20000
+        },
+        "lan": {
+          "reachable": false,
+          "rtt_ms": 3,
+          "jitter_ms": 1,
+          "loss_pct": 100,
+          "bandwidth_kbps": 100000
+        }
+      },
+      "compute": {
+        "local": {
+          "model_ready": true,
+          "queue_ms": 0,
+          "free_mem_mb": 2048,
+          "inflight": 0
+        },
+        "cloud": {
+          "model_ready": true,
+          "queue_ms": 0,
+          "free_mem_mb": 16384,
+          "inflight": 0
+        }
+      },
+      "compute_source": "injected_synthetic_endpoint_state",
+      "observed_age_ms": 0,
+      "outcomes": {
+        "wan-probe": {
+          "refused": false,
+          "rtt_ms": 26.164995
+        },
+        "wan-infer": {
+          "refused": false,
+          "rtt_ms": 26.329531
+        },
+        "lan-probe": {
+          "refused": true,
+          "rtt_ms": 3.430426
+        },
+        "lan-infer": {
+          "refused": true,
+          "rtt_ms": 2.602013
+        }
+      }
+    },
+    {
+      "index": 123,
+      "at_ms": 12300,
+      "phase_index": 3,
+      "scenario": "lan_blackout",
+      "event": "lan_blackout",
+      "service": "interactive_inference",
+      "network": {
+        "wan": {
+          "reachable": true,
+          "rtt_ms": 25,
+          "jitter_ms": 3,
+          "loss_pct": 0,
+          "bandwidth_kbps": 20000
+        },
+        "lan": {
+          "reachable": false,
+          "rtt_ms": 3,
+          "jitter_ms": 1,
+          "loss_pct": 100,
+          "bandwidth_kbps": 100000
+        }
+      },
+      "compute": {
+        "local": {
+          "model_ready": true,
+          "queue_ms": 0,
+          "free_mem_mb": 2048,
+          "inflight": 0
+        },
+        "cloud": {
+          "model_ready": true,
+          "queue_ms": 0,
+          "free_mem_mb": 16384,
+          "inflight": 0
+        }
+      },
+      "compute_source": "injected_synthetic_endpoint_state",
+      "observed_age_ms": 0,
+      "outcomes": {
+        "wan-probe": {
+          "refused": false,
+          "rtt_ms": 27.241111
+        },
+        "wan-infer": {
+          "refused": false,
+          "rtt_ms": 22.888131
+        },
+        "lan-probe": {
+          "refused": true,
+          "rtt_ms": 2.121669
+        },
+        "lan-infer": {
+          "refused": true,
+          "rtt_ms": 2.159893
+        }
+      }
+    },
+    {
+      "index": 124,
+      "at_ms": 12400,
+      "phase_index": 4,
+      "scenario": "lan_blackout",
+      "event": "lan_blackout",
+      "service": "safety_control",
+      "network": {
+        "wan": {
+          "reachable": true,
+          "rtt_ms": 25,
+          "jitter_ms": 3,
+          "loss_pct": 0,
+          "bandwidth_kbps": 20000
+        },
+        "lan": {
+          "reachable": false,
+          "rtt_ms": 3,
+          "jitter_ms": 1,
+          "loss_pct": 100,
+          "bandwidth_kbps": 100000
+        }
+      },
+      "compute": {
+        "local": {
+          "model_ready": true,
+          "queue_ms": 0,
+          "free_mem_mb": 2048,
+          "inflight": 0
+        },
+        "cloud": {
+          "model_ready": true,
+          "queue_ms": 0,
+          "free_mem_mb": 16384,
+          "inflight": 0
+        }
+      },
+      "compute_source": "injected_synthetic_endpoint_state",
+      "observed_age_ms": 0,
+      "outcomes": {
+        "wan-probe": {
+          "refused": false,
+          "rtt_ms": 26.144286
+        },
+        "wan-infer": {
+          "refused": false,
+          "rtt_ms": 26.205205
+        },
+        "lan-probe": {
+          "refused": true,
+          "rtt_ms": 3.011023
+        },
+        "lan-infer": {
+          "refused": true,
+          "rtt_ms": 2.410184
+        }
+      }
+    },
+    {
+      "index": 125,
+      "at_ms": 12500,
+      "phase_index": 5,
+      "scenario": "lan_blackout",
+      "event": "lan_blackout",
+      "service": "interactive_inference",
+      "network": {
+        "wan": {
+          "reachable": true,
+          "rtt_ms": 25,
+          "jitter_ms": 3,
+          "loss_pct": 0,
+          "bandwidth_kbps": 20000
+        },
+        "lan": {
+          "reachable": false,
+          "rtt_ms": 3,
+          "jitter_ms": 1,
+          "loss_pct": 100,
+          "bandwidth_kbps": 100000
+        }
+      },
+      "compute": {
+        "local": {
+          "model_ready": true,
+          "queue_ms": 0,
+          "free_mem_mb": 2048,
+          "inflight": 0
+        },
+        "cloud": {
+          "model_ready": true,
+          "queue_ms": 0,
+          "free_mem_mb": 16384,
+          "inflight": 0
+        }
+      },
+      "compute_source": "injected_synthetic_endpoint_state",
+      "observed_age_ms": 0,
+      "outcomes": {
+        "wan-probe": {
+          "refused": false,
+          "rtt_ms": 27.18946
+        },
+        "wan-infer": {
+          "refused": false,
+          "rtt_ms": 23.720011
+        },
+        "lan-probe": {
+          "refused": true,
+          "rtt_ms": 2.389452
+        },
+        "lan-infer": {
+          "refused": true,
+          "rtt_ms": 2.808325
+        }
+      }
+    },
+    {
+      "index": 126,
+      "at_ms": 12600,
+      "phase_index": 6,
+      "scenario": "lan_blackout",
+      "event": "lan_blackout",
+      "service": "interactive_inference",
+      "network": {
+        "wan": {
+          "reachable": true,
+          "rtt_ms": 25,
+          "jitter_ms": 3,
+          "loss_pct": 0,
+          "bandwidth_kbps": 20000
+        },
+        "lan": {
+          "reachable": false,
+          "rtt_ms": 3,
+          "jitter_ms": 1,
+          "loss_pct": 100,
+          "bandwidth_kbps": 100000
+        }
+      },
+      "compute": {
+        "local": {
+          "model_ready": true,
+          "queue_ms": 0,
+          "free_mem_mb": 2048,
+          "inflight": 0
+        },
+        "cloud": {
+          "model_ready": true,
+          "queue_ms": 0,
+          "free_mem_mb": 16384,
+          "inflight": 0
+        }
+      },
+      "compute_source": "injected_synthetic_endpoint_state",
+      "observed_age_ms": 0,
+      "outcomes": {
+        "wan-probe": {
+          "refused": false,
+          "rtt_ms": 25.234008
+        },
+        "wan-infer": {
+          "refused": false,
+          "rtt_ms": 27.356523
+        },
+        "lan-probe": {
+          "refused": true,
+          "rtt_ms": 2.112618
+        },
+        "lan-infer": {
+          "refused": true,
+          "rtt_ms": 3.467033
+        }
+      }
+    },
+    {
+      "index": 127,
+      "at_ms": 12700,
+      "phase_index": 7,
+      "scenario": "lan_blackout",
+      "event": "lan_blackout",
+      "service": "sensor_batch",
+      "network": {
+        "wan": {
+          "reachable": true,
+          "rtt_ms": 25,
+          "jitter_ms": 3,
+          "loss_pct": 0,
+          "bandwidth_kbps": 20000
+        },
+        "lan": {
+          "reachable": false,
+          "rtt_ms": 3,
+          "jitter_ms": 1,
+          "loss_pct": 100,
+          "bandwidth_kbps": 100000
+        }
+      },
+      "compute": {
+        "local": {
+          "model_ready": true,
+          "queue_ms": 0,
+          "free_mem_mb": 2048,
+          "inflight": 0
+        },
+        "cloud": {
+          "model_ready": true,
+          "queue_ms": 0,
+          "free_mem_mb": 16384,
+          "inflight": 0
+        }
+      },
+      "compute_source": "injected_synthetic_endpoint_state",
+      "observed_age_ms": 0,
+      "outcomes": {
+        "wan-probe": {
+          "refused": false,
+          "rtt_ms": 26.074356
+        },
+        "wan-infer": {
+          "refused": false,
+          "rtt_ms": 23.902709
+        },
+        "lan-probe": {
+          "refused": true,
+          "rtt_ms": 3.025096
+        },
+        "lan-infer": {
+          "refused": true,
+          "rtt_ms": 2.665039
+        }
+      }
+    },
+    {
+      "index": 128,
+      "at_ms": 12800,
+      "phase_index": 8,
+      "scenario": "lan_blackout",
+      "event": "lan_blackout",
+      "service": "interactive_inference",
+      "network": {
+        "wan": {
+          "reachable": true,
+          "rtt_ms": 25,
+          "jitter_ms": 3,
+          "loss_pct": 0,
+          "bandwidth_kbps": 20000
+        },
+        "lan": {
+          "reachable": false,
+          "rtt_ms": 3,
+          "jitter_ms": 1,
+          "loss_pct": 100,
+          "bandwidth_kbps": 100000
+        }
+      },
+      "compute": {
+        "local": {
+          "model_ready": true,
+          "queue_ms": 0,
+          "free_mem_mb": 2048,
+          "inflight": 0
+        },
+        "cloud": {
+          "model_ready": true,
+          "queue_ms": 0,
+          "free_mem_mb": 16384,
+          "inflight": 0
+        }
+      },
+      "compute_source": "injected_synthetic_endpoint_state",
+      "observed_age_ms": 0,
+      "outcomes": {
+        "wan-probe": {
+          "refused": false,
+          "rtt_ms": 23.108272
+        },
+        "wan-infer": {
+          "refused": false,
+          "rtt_ms": 27.528046
+        },
+        "lan-probe": {
+          "refused": true,
+          "rtt_ms": 3.482711
+        },
+        "lan-infer": {
+          "refused": true,
+          "rtt_ms": 2.245858
+        }
+      }
+    },
+    {
+      "index": 129,
+      "at_ms": 12900,
+      "phase_index": 9,
+      "scenario": "lan_blackout",
+      "event": "lan_blackout",
+      "service": "safety_control",
+      "network": {
+        "wan": {
+          "reachable": true,
+          "rtt_ms": 25,
+          "jitter_ms": 3,
+          "loss_pct": 0,
+          "bandwidth_kbps": 20000
+        },
+        "lan": {
+          "reachable": false,
+          "rtt_ms": 3,
+          "jitter_ms": 1,
+          "loss_pct": 100,
+          "bandwidth_kbps": 100000
+        }
+      },
+      "compute": {
+        "local": {
+          "model_ready": true,
+          "queue_ms": 0,
+          "free_mem_mb": 2048,
+          "inflight": 0
+        },
+        "cloud": {
+          "model_ready": true,
+          "queue_ms": 0,
+          "free_mem_mb": 16384,
+          "inflight": 0
+        }
+      },
+      "compute_source": "injected_synthetic_endpoint_state",
+      "observed_age_ms": 0,
+      "outcomes": {
+        "wan-probe": {
+          "refused": false,
+          "rtt_ms": 22.444195
+        },
+        "wan-infer": {
+          "refused": false,
+          "rtt_ms": 26.692218
+        },
+        "lan-probe": {
+          "refused": true,
+          "rtt_ms": 3.38971
+        },
+        "lan-infer": {
+          "refused": true,
+          "rtt_ms": 3.034456
+        }
+      }
+    },
+    {
+      "index": 130,
+      "at_ms": 13000,
+      "phase_index": 0,
+      "scenario": "recovered",
+      "event": "recovered",
+      "service": "interactive_inference",
+      "network": {
+        "wan": {
+          "reachable": true,
+          "rtt_ms": 25,
+          "jitter_ms": 3,
+          "loss_pct": 0,
+          "bandwidth_kbps": 20000
+        },
+        "lan": {
+          "reachable": true,
+          "rtt_ms": 3,
+          "jitter_ms": 1,
+          "loss_pct": 0,
+          "bandwidth_kbps": 100000
+        }
+      },
+      "compute": {
+        "local": {
+          "model_ready": true,
+          "queue_ms": 0,
+          "free_mem_mb": 2048,
+          "inflight": 0
+        },
+        "cloud": {
+          "model_ready": true,
+          "queue_ms": 0,
+          "free_mem_mb": 16384,
+          "inflight": 0
+        }
+      },
+      "compute_source": "injected_synthetic_endpoint_state",
+      "observed_age_ms": 0,
+      "outcomes": {
+        "wan-probe": {
+          "refused": false,
+          "rtt_ms": 26.972175
+        },
+        "wan-infer": {
+          "refused": false,
+          "rtt_ms": 26.425221
+        },
+        "lan-probe": {
+          "refused": false,
+          "rtt_ms": 3.853316
+        },
+        "lan-infer": {
+          "refused": false,
+          "rtt_ms": 2.264474
+        }
+      }
+    },
+    {
+      "index": 131,
+      "at_ms": 13100,
+      "phase_index": 1,
+      "scenario": "recovered",
+      "event": "recovered",
+      "service": "interactive_inference",
+      "network": {
+        "wan": {
+          "reachable": true,
+          "rtt_ms": 25,
+          "jitter_ms": 3,
+          "loss_pct": 0,
+          "bandwidth_kbps": 20000
+        },
+        "lan": {
+          "reachable": true,
+          "rtt_ms": 3,
+          "jitter_ms": 1,
+          "loss_pct": 0,
+          "bandwidth_kbps": 100000
+        }
+      },
+      "compute": {
+        "local": {
+          "model_ready": true,
+          "queue_ms": 0,
+          "free_mem_mb": 2048,
+          "inflight": 0
+        },
+        "cloud": {
+          "model_ready": true,
+          "queue_ms": 0,
+          "free_mem_mb": 16384,
+          "inflight": 0
+        }
+      },
+      "compute_source": "injected_synthetic_endpoint_state",
+      "observed_age_ms": 0,
+      "outcomes": {
+        "wan-probe": {
+          "refused": false,
+          "rtt_ms": 23.400754
+        },
+        "wan-infer": {
+          "refused": false,
+          "rtt_ms": 26.946236
+        },
+        "lan-probe": {
+          "refused": false,
+          "rtt_ms": 3.925275
+        },
+        "lan-infer": {
+          "refused": false,
+          "rtt_ms": 3.662444
+        }
+      }
+    },
+    {
+      "index": 132,
+      "at_ms": 13200,
+      "phase_index": 2,
+      "scenario": "recovered",
+      "event": "recovered",
+      "service": "sensor_batch",
+      "network": {
+        "wan": {
+          "reachable": true,
+          "rtt_ms": 25,
+          "jitter_ms": 3,
+          "loss_pct": 0,
+          "bandwidth_kbps": 20000
+        },
+        "lan": {
+          "reachable": true,
+          "rtt_ms": 3,
+          "jitter_ms": 1,
+          "loss_pct": 0,
+          "bandwidth_kbps": 100000
+        }
+      },
+      "compute": {
+        "local": {
+          "model_ready": true,
+          "queue_ms": 0,
+          "free_mem_mb": 2048,
+          "inflight": 0
+        },
+        "cloud": {
+          "model_ready": true,
+          "queue_ms": 0,
+          "free_mem_mb": 16384,
+          "inflight": 0
+        }
+      },
+      "compute_source": "injected_synthetic_endpoint_state",
+      "observed_age_ms": 0,
+      "outcomes": {
+        "wan-probe": {
+          "refused": false,
+          "rtt_ms": 22.918005
+        },
+        "wan-infer": {
+          "refused": false,
+          "rtt_ms": 24.142812
+        },
+        "lan-probe": {
+          "refused": false,
+          "rtt_ms": 2.473097
+        },
+        "lan-infer": {
+          "refused": false,
+          "rtt_ms": 3.508285
+        }
+      }
+    },
+    {
+      "index": 133,
+      "at_ms": 13300,
+      "phase_index": 3,
+      "scenario": "recovered",
+      "event": "recovered",
+      "service": "interactive_inference",
+      "network": {
+        "wan": {
+          "reachable": true,
+          "rtt_ms": 25,
+          "jitter_ms": 3,
+          "loss_pct": 0,
+          "bandwidth_kbps": 20000
+        },
+        "lan": {
+          "reachable": true,
+          "rtt_ms": 3,
+          "jitter_ms": 1,
+          "loss_pct": 0,
+          "bandwidth_kbps": 100000
+        }
+      },
+      "compute": {
+        "local": {
+          "model_ready": true,
+          "queue_ms": 0,
+          "free_mem_mb": 2048,
+          "inflight": 0
+        },
+        "cloud": {
+          "model_ready": true,
+          "queue_ms": 0,
+          "free_mem_mb": 16384,
+          "inflight": 0
+        }
+      },
+      "compute_source": "injected_synthetic_endpoint_state",
+      "observed_age_ms": 0,
+      "outcomes": {
+        "wan-probe": {
+          "refused": false,
+          "rtt_ms": 23.78315
+        },
+        "wan-infer": {
+          "refused": false,
+          "rtt_ms": 22.922331
+        },
+        "lan-probe": {
+          "refused": false,
+          "rtt_ms": 3.629745
+        },
+        "lan-infer": {
+          "refused": false,
+          "rtt_ms": 3.870516
+        }
+      }
+    },
+    {
+      "index": 134,
+      "at_ms": 13400,
+      "phase_index": 4,
+      "scenario": "recovered",
+      "event": "recovered",
+      "service": "safety_control",
+      "network": {
+        "wan": {
+          "reachable": true,
+          "rtt_ms": 25,
+          "jitter_ms": 3,
+          "loss_pct": 0,
+          "bandwidth_kbps": 20000
+        },
+        "lan": {
+          "reachable": true,
+          "rtt_ms": 3,
+          "jitter_ms": 1,
+          "loss_pct": 0,
+          "bandwidth_kbps": 100000
+        }
+      },
+      "compute": {
+        "local": {
+          "model_ready": true,
+          "queue_ms": 0,
+          "free_mem_mb": 2048,
+          "inflight": 0
+        },
+        "cloud": {
+          "model_ready": true,
+          "queue_ms": 0,
+          "free_mem_mb": 16384,
+          "inflight": 0
+        }
+      },
+      "compute_source": "injected_synthetic_endpoint_state",
+      "observed_age_ms": 0,
+      "outcomes": {
+        "wan-probe": {
+          "refused": false,
+          "rtt_ms": 26.019541
+        },
+        "wan-infer": {
+          "refused": false,
+          "rtt_ms": 22.241452
+        },
+        "lan-probe": {
+          "refused": false,
+          "rtt_ms": 2.546188
+        },
+        "lan-infer": {
+          "refused": false,
+          "rtt_ms": 3.730337
+        }
+      }
+    },
+    {
+      "index": 135,
+      "at_ms": 13500,
+      "phase_index": 5,
+      "scenario": "recovered",
+      "event": "recovered",
+      "service": "interactive_inference",
+      "network": {
+        "wan": {
+          "reachable": true,
+          "rtt_ms": 25,
+          "jitter_ms": 3,
+          "loss_pct": 0,
+          "bandwidth_kbps": 20000
+        },
+        "lan": {
+          "reachable": true,
+          "rtt_ms": 3,
+          "jitter_ms": 1,
+          "loss_pct": 0,
+          "bandwidth_kbps": 100000
+        }
+      },
+      "compute": {
+        "local": {
+          "model_ready": true,
+          "queue_ms": 0,
+          "free_mem_mb": 2048,
+          "inflight": 0
+        },
+        "cloud": {
+          "model_ready": true,
+          "queue_ms": 0,
+          "free_mem_mb": 16384,
+          "inflight": 0
+        }
+      },
+      "compute_source": "injected_synthetic_endpoint_state",
+      "observed_age_ms": 0,
+      "outcomes": {
+        "wan-probe": {
+          "refused": false,
+          "rtt_ms": 27.808813
+        },
+        "wan-infer": {
+          "refused": false,
+          "rtt_ms": 27.276164
+        },
+        "lan-probe": {
+          "refused": false,
+          "rtt_ms": 3.665383
+        },
+        "lan-infer": {
+          "refused": false,
+          "rtt_ms": 3.896125
+        }
+      }
+    },
+    {
+      "index": 136,
+      "at_ms": 13600,
+      "phase_index": 6,
+      "scenario": "recovered",
+      "event": "recovered",
+      "service": "interactive_inference",
+      "network": {
+        "wan": {
+          "reachable": true,
+          "rtt_ms": 25,
+          "jitter_ms": 3,
+          "loss_pct": 0,
+          "bandwidth_kbps": 20000
+        },
+        "lan": {
+          "reachable": true,
+          "rtt_ms": 3,
+          "jitter_ms": 1,
+          "loss_pct": 0,
+          "bandwidth_kbps": 100000
+        }
+      },
+      "compute": {
+        "local": {
+          "model_ready": true,
+          "queue_ms": 0,
+          "free_mem_mb": 2048,
+          "inflight": 0
+        },
+        "cloud": {
+          "model_ready": true,
+          "queue_ms": 0,
+          "free_mem_mb": 16384,
+          "inflight": 0
+        }
+      },
+      "compute_source": "injected_synthetic_endpoint_state",
+      "observed_age_ms": 0,
+      "outcomes": {
+        "wan-probe": {
+          "refused": false,
+          "rtt_ms": 27.040179
+        },
+        "wan-infer": {
+          "refused": false,
+          "rtt_ms": 23.472628
+        },
+        "lan-probe": {
+          "refused": false,
+          "rtt_ms": 2.880851
+        },
+        "lan-infer": {
+          "refused": false,
+          "rtt_ms": 2.76789
+        }
+      }
+    },
+    {
+      "index": 137,
+      "at_ms": 13700,
+      "phase_index": 7,
+      "scenario": "recovered",
+      "event": "recovered",
+      "service": "sensor_batch",
+      "network": {
+        "wan": {
+          "reachable": true,
+          "rtt_ms": 25,
+          "jitter_ms": 3,
+          "loss_pct": 0,
+          "bandwidth_kbps": 20000
+        },
+        "lan": {
+          "reachable": true,
+          "rtt_ms": 3,
+          "jitter_ms": 1,
+          "loss_pct": 0,
+          "bandwidth_kbps": 100000
+        }
+      },
+      "compute": {
+        "local": {
+          "model_ready": true,
+          "queue_ms": 0,
+          "free_mem_mb": 2048,
+          "inflight": 0
+        },
+        "cloud": {
+          "model_ready": true,
+          "queue_ms": 0,
+          "free_mem_mb": 16384,
+          "inflight": 0
+        }
+      },
+      "compute_source": "injected_synthetic_endpoint_state",
+      "observed_age_ms": 0,
+      "outcomes": {
+        "wan-probe": {
+          "refused": false,
+          "rtt_ms": 22.639031
+        },
+        "wan-infer": {
+          "refused": false,
+          "rtt_ms": 25.304337
+        },
+        "lan-probe": {
+          "refused": false,
+          "rtt_ms": 3.454824
+        },
+        "lan-infer": {
+          "refused": false,
+          "rtt_ms": 2.516384
+        }
+      }
+    },
+    {
+      "index": 138,
+      "at_ms": 13800,
+      "phase_index": 8,
+      "scenario": "recovered",
+      "event": "recovered",
+      "service": "interactive_inference",
+      "network": {
+        "wan": {
+          "reachable": true,
+          "rtt_ms": 25,
+          "jitter_ms": 3,
+          "loss_pct": 0,
+          "bandwidth_kbps": 20000
+        },
+        "lan": {
+          "reachable": true,
+          "rtt_ms": 3,
+          "jitter_ms": 1,
+          "loss_pct": 0,
+          "bandwidth_kbps": 100000
+        }
+      },
+      "compute": {
+        "local": {
+          "model_ready": true,
+          "queue_ms": 0,
+          "free_mem_mb": 2048,
+          "inflight": 0
+        },
+        "cloud": {
+          "model_ready": true,
+          "queue_ms": 0,
+          "free_mem_mb": 16384,
+          "inflight": 0
+        }
+      },
+      "compute_source": "injected_synthetic_endpoint_state",
+      "observed_age_ms": 0,
+      "outcomes": {
+        "wan-probe": {
+          "refused": false,
+          "rtt_ms": 27.388275
+        },
+        "wan-infer": {
+          "refused": false,
+          "rtt_ms": 23.733607
+        },
+        "lan-probe": {
+          "refused": false,
+          "rtt_ms": 3.079552
+        },
+        "lan-infer": {
+          "refused": false,
+          "rtt_ms": 2.641457
+        }
+      }
+    },
+    {
+      "index": 139,
+      "at_ms": 13900,
+      "phase_index": 9,
+      "scenario": "recovered",
+      "event": "recovered",
+      "service": "safety_control",
+      "network": {
+        "wan": {
+          "reachable": true,
+          "rtt_ms": 25,
+          "jitter_ms": 3,
+          "loss_pct": 0,
+          "bandwidth_kbps": 20000
+        },
+        "lan": {
+          "reachable": true,
+          "rtt_ms": 3,
+          "jitter_ms": 1,
+          "loss_pct": 0,
+          "bandwidth_kbps": 100000
+        }
+      },
+      "compute": {
+        "local": {
+          "model_ready": true,
+          "queue_ms": 0,
+          "free_mem_mb": 2048,
+          "inflight": 0
+        },
+        "cloud": {
+          "model_ready": true,
+          "queue_ms": 0,
+          "free_mem_mb": 16384,
+          "inflight": 0
+        }
+      },
+      "compute_source": "injected_synthetic_endpoint_state",
+      "observed_age_ms": 0,
+      "outcomes": {
+        "wan-probe": {
+          "refused": false,
+          "rtt_ms": 27.869201
+        },
+        "wan-infer": {
+          "refused": false,
+          "rtt_ms": 25.119601
+        },
+        "lan-probe": {
+          "refused": false,
+          "rtt_ms": 3.430871
+        },
+        "lan-infer": {
+          "refused": false,
+          "rtt_ms": 2.703099
+        }
+      }
+    }
+  ],
+  "trace_id": "a753351a94ee2bc822e2d688a5d259b642de0fa880188f3c9ca3e761b283904e"
+}

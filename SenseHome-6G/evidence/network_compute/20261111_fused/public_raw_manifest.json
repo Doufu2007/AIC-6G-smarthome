@@ -1,0 +1,24 @@
+{
+  "schema": "sensehome.public-evidence-compression.v1",
+  "note": "Original local files are preserved byte for byte. Public gzip artifacts expand to the original evidence expected by historical checksum manifests.",
+  "files": [
+    {
+      "original_path": "SenseHome-6G/evidence/network_compute/20261111_fused/replay/raw_requests.jsonl",
+      "original_bytes": 113291800,
+      "original_sha256": "2369bfb5ea4232ed555b3b3734d94abc811a9ca10c892e36160e63d3b8fa0f05",
+      "compressed_path": "SenseHome-6G/evidence/network_compute/20261111_fused/replay/raw_requests.jsonl.gz",
+      "compressed_bytes": 5651775,
+      "compressed_sha256": "bf1c41c13efacc5c255c300a99893c2d9e95151d3296d555eb75d3351d76fbc2",
+      "roundtrip_verified": true
+    },
+    {
+      "original_path": "SenseHome-6G/evidence/network_compute/20261111_fused/http_gateway/raw_requests.jsonl",
+      "original_bytes": 74425372,
+      "original_sha256": "0d96b9e1ab652a78191808ae7d07f4ba6b872de033695a0e226256f5e2bd94b4",
+      "compressed_path": "SenseHome-6G/evidence/network_compute/20261111_fused/http_gateway/raw_requests.jsonl.gz",
+      "compressed_bytes": 2991117,
+      "compressed_sha256": "313e217bb42c75016d1cec66c2370ebcfc1616e15ad126b7f4853af6b9cfd77a",
+      "roundtrip_verified": true
+    }
+  ]
+}

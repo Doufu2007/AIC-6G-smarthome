@@ -1,0 +1,80 @@
+✔ fetch rejection does not fabricate an action (33.4931ms)
+✔ HTTP 503 with success-looking body does not fabricate an action (2.0652ms)
+✔ malformed JSON does not fabricate an action (1.7735ms)
+✔ business failure remains unconfirmed and does not label its answer success (2.9945ms)
+✔ only structured successful gateway result can report completion; output is escaped (2.8905ms)
+✔ HTTP200 invalid result is not trusted (1.7486ms)
+✔ state HTTP failure and invalid schema clear confirmation rather than invent defaults (3.1095ms)
+✔ missing sensors do not display fake zero or absence (2.1897ms)
+✔ health shows both endpoints and unknown telemetry, including failed transport (1.737ms)
+✖ completed model plan text is attributed separately from gateway completion (4.0903ms)
+✖ planning recovery shows C first choice, actual alternate and primary upstream error (1.9584ms)
+✖ actual planning provenance falls back to real source when explicit actual_backend is absent (1.7812ms)
+ℹ tests 12
+ℹ suites 0
+ℹ pass 9
+ℹ fail 3
+ℹ cancelled 0
+ℹ skipped 0
+ℹ todo 0
+ℹ duration_ms 213.7741
+
+✖ failing tests:
+
+test at docs\demo_v3\dashboard\test_dashboard.cjs:87:1
+✖ completed model plan text is attributed separately from gateway completion (4.0903ms)
+  AssertionError [ERR_ASSERTION]: The input did not match the regular expression /网关.*确认.*完成/. Input:
+  
+  '<div class="log-step">网关报告完成（PC仿真）</div><div class="log-content">动作计划已生成，等待网关执行确认。</div>'
+  
+      at TestContext.<anonymous> (C:\Users\郑傅韬\Desktop\大学生活\AIC\AIC6G专项赛_2026\场景赛道\docs\demo_v3\dashboard\test_dashboard.cjs:96:10)
+      at async Test.run (node:internal/test_runner/test:1113:7)
+      at async Test.processPendingSubtests (node:internal/test_runner/test:788:7) {
+    generatedMessage: true,
+    code: 'ERR_ASSERTION',
+    actual: '<div class="log-step">网关报告完成（PC仿真）</div><div class="log-content">动作计划已生成，等待网关执行确认。</div>',
+    expected: /网关.*确认.*完成/,
+    operator: 'match',
+    diff: 'simple'
+  }
+
+test at docs\demo_v3\dashboard\test_dashboard.cjs:101:1
+✖ planning recovery shows C first choice, actual alternate and primary upstream error (1.9584ms)
+  AssertionError [ERR_ASSERTION]: The input did not match the regular expression /C初选backend=local-model/. Input:
+  
+  '<div class="log-step">用户请求</div><div class="log-content">关闭书房的灯并打开书房窗帘</div>\n' +
+    '<div class="log-step">网关路由报告</div><div class="log-content">backend=local-model | reason=COST_LOCAL | total=未知</div>\n' +
+    '<div class="log-step">网关动作报告（PC仿真）</div><div class="log-content">书房灯光亮度=0%</div>\n' +
+    '<div class="log-step">网关动作报告（PC仿真）</div><div class="log-content">书房窗帘位置=100%</div>\n' +
+    '<div class="log-step">网关报告完成（PC仿真）</div><div class="log-content">动作计划已生成，等待网关执行确认。</div>'
+  
+      at TestContext.<anonymous> (C:\Users\郑傅韬\Desktop\大学生活\AIC\AIC6G专项赛_2026\场景赛道\docs\demo_v3\dashboard\test_dashboard.cjs:113:10)
+      at async Test.run (node:internal/test_runner/test:1113:7)
+      at async Test.processPendingSubtests (node:internal/test_runner/test:788:7) {
+    generatedMessage: true,
+    code: 'ERR_ASSERTION',
+    actual: '<div class="log-step">用户请求</div><div class="log-content">关闭书房的灯并打开书房窗帘</div>\n<div class="log-step">网关路由报告</div><div class="log-content">backend=local-model | reason=COST_LOCAL | total=未知</div>\n<div class="log-step">网关动作报告（PC仿真）</div><div class="log-content">书房灯光亮度=0%</div>\n<div class="log-step">网关动作报告（PC仿真）</div><div class="log-content">书房窗帘位置=100%</div>\n<div class="log-step">网关报告完成（PC仿真）</div><div class="log-content">动作计划已生成，等待网关执行确认。</div>',
+    expected: /C初选backend=local-model/,
+    operator: 'match',
+    diff: 'simple'
+  }
+
+test at docs\demo_v3\dashboard\test_dashboard.cjs:121:1
+✖ actual planning provenance falls back to real source when explicit actual_backend is absent (1.7812ms)
+  AssertionError [ERR_ASSERTION]: The input did not match the regular expression /实际规划来源=cloud-model:real-model/. Input:
+  
+  '<div class="log-step">用户请求</div><div class="log-content">关闭书房的灯并打开书房窗帘</div>\n' +
+    '<div class="log-step">网关路由报告</div><div class="log-content">backend=local-model | reason=未知 | total=未知</div>\n' +
+    '<div class="log-step">网关动作报告（PC仿真）</div><div class="log-content">书房窗帘位置=100%</div>\n' +
+    '<div class="log-step">网关报告完成（PC仿真）</div><div class="log-content">已生成计划</div>'
+  
+      at TestContext.<anonymous> (C:\Users\郑傅韬\Desktop\大学生活\AIC\AIC6G专项赛_2026\场景赛道\docs\demo_v3\dashboard\test_dashboard.cjs:127:10)
+      at async Test.run (node:internal/test_runner/test:1113:7)
+      at async Test.processPendingSubtests (node:internal/test_runner/test:788:7) {
+    generatedMessage: true,
+    code: 'ERR_ASSERTION',
+    actual: '<div class="log-step">用户请求</div><div class="log-content">关闭书房的灯并打开书房窗帘</div>\n<div class="log-step">网关路由报告</div><div class="log-content">backend=local-model | reason=未知 | total=未知</div>\n<div class="log-step">网关动作报告（PC仿真）</div><div class="log-content">书房窗帘位置=100%</div>\n<div class="log-step">网关报告完成（PC仿真）</div><div class="log-content">已生成计划</div>',
+    expected: /实际规划来源=cloud-model:real-model/,
+    operator: 'match',
+    diff: 'simple'
+  }

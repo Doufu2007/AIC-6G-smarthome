@@ -1,0 +1,57 @@
+{
+  "schema": "sensehome.integration-v4.offline-audit.v1",
+  "pass": true,
+  "checks": [
+    {
+      "scenario": "normal",
+      "submit_counts": {
+        "integration-1": 1,
+        "integration-2": 1
+      },
+      "lookup_messages": 0,
+      "entity_commits": 2,
+      "gateway_status": {
+        "integration-1": "applied",
+        "integration-2": "applied"
+      },
+      "owned_processes_stopped": true
+    },
+    {
+      "scenario": "ack_loss",
+      "submit_counts": {
+        "integration-1": 1
+      },
+      "lookup_messages": 1,
+      "entity_commits": 1,
+      "gateway_status": {
+        "integration-1": "applied"
+      },
+      "owned_processes_stopped": true
+    },
+    {
+      "scenario": "partial",
+      "submit_counts": {
+        "integration-1": 1
+      },
+      "lookup_messages": 0,
+      "entity_commits": 1,
+      "gateway_status": {
+        "integration-1": "partial"
+      },
+      "owned_processes_stopped": true
+    },
+    {
+      "scenario": "contradictory",
+      "submit_counts": {
+        "contradiction-1": 1
+      },
+      "lookup_messages": 1,
+      "entity_commits": 1,
+      "gateway_status": {
+        "contradiction-1": "unknown"
+      },
+      "owned_processes_stopped": true
+    }
+  ],
+  "scope": "independent raw log/database recount; software entities only, no physical-device assertion"
+}

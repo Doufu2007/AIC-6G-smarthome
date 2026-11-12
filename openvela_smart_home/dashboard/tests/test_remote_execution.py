@@ -5,7 +5,9 @@ import sys
 import tempfile
 import threading
 import unittest
+from concurrent.futures import ThreadPoolExecutor
 from http.server import BaseHTTPRequestHandler, ThreadingHTTPServer
+from unittest import mock
 
 HERE = Path(__file__).resolve().parents[1]
 sys.path.insert(0, str(HERE))
@@ -18,6 +20,7 @@ class ModelHandler(BaseHTTPRequestHandler):
         self.rfile.read(int(self.headers.get('Content-Length', '0')))
         body = json.dumps({'answer': '已调到阅读灯光', 'actions': [
             {'name': 'light_control', 'params': {'location': '客厅', 'brightness': 75}},
+            {'name': 'light_control', 'params': {'location': '卧室', 'brightness': 20}},
         ], 'semantic_complete': True, 'source': 'real-model',
             'upstream_model': 'fake-vllm-model', 'model_ms': 12.5,
             'model_ms_kind': 'upstream_http_wall_clock',
@@ -32,6 +35,48 @@ class ModelHandler(BaseHTTPRequestHandler):
 
 
 class RemoteExecutionTests(unittest.TestCase):
+    def test_state_persistence_retries_transient_replace_permission_denial(self):
+        original_file = bridge_server.STATE_FILE
+        original_replace = bridge_server.os.replace
+        try:
+            with tempfile.TemporaryDirectory() as folder:
+                bridge_server.STATE_FILE = str(Path(folder) / 'device_state.json')
+                attempts = []
+
+                def replace_once(source, target):
+                    attempts.append((source, target))
+                    if len(attempts) == 1:
+                        raise PermissionError('temporary destination lock')
+                    return original_replace(source, target)
+
+                expected = bridge_server.default_state()
+                expected['lights']['客厅'] = {'is_on': True, 'brightness': 100}
+                with mock.patch.object(bridge_server.os, 'replace', side_effect=replace_once):
+                    bridge_server.save_state(expected)
+
+                self.assertEqual(len(attempts), 2)
+                self.assertEqual(bridge_server.load_state(), expected)
+        finally:
+            bridge_server.STATE_FILE = original_file
+
+    def test_concurrent_local_commands_persist_without_writer_races(self):
+        original_file = bridge_server.STATE_FILE
+        try:
+            with tempfile.TemporaryDirectory() as folder:
+                bridge_server.STATE_FILE = str(Path(folder) / 'device_state.json')
+                bridge_server.save_state(bridge_server.default_state())
+                with ThreadPoolExecutor(max_workers=32) as pool:
+                    results = list(pool.map(
+                        bridge_server._gateway_local_handler,
+                        ['打开客厅的灯'] * 128,
+                    ))
+
+                self.assertEqual(len(results), 128)
+                self.assertTrue(all(result['semantic_complete'] for result in results))
+                self.assertEqual(bridge_server.load_state()['lights']['客厅']['brightness'], 100)
+        finally:
+            bridge_server.STATE_FILE = original_file
+
     def test_local_fallback_never_executes_only_part_of_a_compound_command(self):
         original_file = bridge_server.STATE_FILE
         try:
@@ -39,7 +84,7 @@ class RemoteExecutionTests(unittest.TestCase):
                 bridge_server.STATE_FILE = str(Path(folder) / 'device_state.json')
                 bridge_server.save_state(bridge_server.default_state())
                 before = bridge_server.load_state()
-                for command in ('打开客厅灯然后关闭卧室灯', '打开客厅和卧室的灯',
+                for command in ('打开客厅灯然后把卧室灯调亮一点', '打开客厅和卧室的灯',
                                 '如果卧室温度超过28度就打开窗帘', '不要关闭客厅的灯'):
                     with self.subTest(command=command):
                         result = bridge_server._gateway_local_handler(command)
@@ -70,7 +115,7 @@ class RemoteExecutionTests(unittest.TestCase):
                 with self.assertRaises(OSError):
                     bridge_server._gateway_action_executor([
                         {'name': 'light_control', 'params': {'location': '客厅', 'action': 'on'}},
-                    ])
+                    ], {'_receipt_command': '打开客厅灯'})
         finally:
             bridge_server.STATE_FILE = original_file
 
@@ -96,7 +141,10 @@ class RemoteExecutionTests(unittest.TestCase):
                     link_snapshot=LinkSnapshot(wan_ok=True, wan_rtt_ms=30, lan_ok=True, lan_rtt_ms=0),
                     action_executor=bridge_server._gateway_action_executor,
                 )
-                response = bridge_server.process_command('请把客厅调整为阅读模式')
+                # Exercise the lower planner/executor boundary deliberately;
+                # production process_command compiles this explicit plan.
+                event = bridge_server.gateway.handle('把客厅灯光设为75%，再把卧室灯光设为20%')
+                response = {**event, **event['response']}
                 state = bridge_server.load_state()
                 self.assertEqual(response['backend'], 'cloud-model')
                 self.assertTrue(response['semantic_complete'])

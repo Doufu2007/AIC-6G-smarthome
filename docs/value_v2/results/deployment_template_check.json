@@ -1,0 +1,12 @@
+{
+  "schema": "sensehome.deployment-check.v2",
+  "declared_status": "template_not_deployed",
+  "hosts": {
+    "local": "192.0.2.10",
+    "cloud": "192.0.2.20"
+  },
+  "both_slots_loopback": false,
+  "syntactically_distinct_hosts": true,
+  "two_host_deployment_verified": false,
+  "scope": "URL shape and optional read-only model inventory only. Host identity, independent hardware, WAN path, queue telemetry, actuator delivery and task success require separate deployment evidence."
+}

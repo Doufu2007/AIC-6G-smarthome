@@ -1,0 +1,74 @@
+=== offload_policy 单元测试 ===
+
+PASS  默认阈值全为正数
+PASS  默认丢包阈值不超过 100%
+PASS  默认强制安全关键任务走本机
+PASS  链路初始化为未知态
+PASS  未知链路不可用
+PASS  网络全景初始化的两条链路都不可用
+PASS  首次探测后 samples==1
+PASS  冷启动直接采信首个 RTT 样本
+PASS  冷启动抖动为 0
+PASS  探测失败后链路标记为不可达
+PASS  失败也计入采样次数
+PASS  一次失败即抬升平滑丢包率
+PASS  不可达链路不可用
+PASS  RTT 平滑向 200ms 收敛（整数除法下界 193）
+PASS  五次连续失败后丢包率显著抬升
+PASS  链路恢复后平滑丢包率能回落到 0（下降沿取整回归测试）
+PASS  断链恢复后直接采信新样本，不残留旧 RTT
+PASS  负 RTT 被夹紧为 0
+PASS  超大 RTT 被夹紧为 60000ms
+PASS  link_update(NULL) 安全返回
+PASS  恒定 RTT 下抖动恒为 0
+PASS  单次台阶跳变被如实记为抖动
+PASS  台阶后链路稳住，抖动在 15 个样本内回落到阈值以下
+PASS  相邻样本持续大幅跳动时抖动仍被识别
+PASS  断链恢复后抖动清零
+PASS  断链恢复后 RTT 立刻采信新样本
+PASS  恢复后历史样本被更新
+PASS  断链恢复后链路在 40 个样本内重回上云预算
+PASS  恢复后复杂任务重新判定为上云（降级不是不可逆的）
+PASS  理想链路满足上云预算
+PASS  RTT 恰好等于阈值仍视为达标（含等号）
+PASS  RTT 超阈值 1ms 即不达标
+PASS  抖动超阈不达标
+PASS  丢包超阈不达标
+PASS  不可达链路不满足预算
+PASS  link_meets_budget(NULL cfg) 安全返回
+PASS  安全关键 + 理想链路 → 仍走本机规则
+PASS  安全关键 + LAN 断开 → 仍走本机规则
+PASS  结构化指令 + 理想链路 → 仍走本机规则（不浪费算力）
+PASS  复杂 NLU + WAN 达标 → 云端大模型
+PASS  复杂 NLU + WAN 未采样 → 保守降到网关本地模型
+PASS  复杂 NLU + WAN 断链 → 网关本地模型（LAN 仍可用）
+PASS  复杂 NLU + WAN 时延超阈 → 网关本地模型
+PASS  复杂 NLU + WAN 抖动超阈 → 网关本地模型
+PASS  复杂 NLU + WAN 丢包超阈 → 网关本地模型
+PASS  多项超阈时按 时延→抖动→丢包 的顺序报告首要原因
+PASS  复杂 NLU + WAN 良好但 LAN 断开 → 设备内规则（能力降级）
+PASS  safety_local_always=0 时安全任务随链路判据（消融用）
+PASS  消融下安全任务同样会降到网关模型（量化专用切片缺失的代价）
+PASS  RTT 单调上升时档位单调不回升（无迟滞振荡）
+PASS  cfg=NULL 时使用默认阈值
+PASS  net=NULL 时不崩溃并给出最保守结果
+PASS  reason=NULL 时不做原因回填
+PASS  未知任务类别退化为本机规则（fail-safe）
+PASS  后端名表非空
+PASS  三个后端名互不相同
+PASS  原因名表可用
+PASS  任务类名表可用
+PASS  policy_explain 返回准确长度
+PASS  日志含所选后端名
+PASS  日志含决策原因
+PASS  日志含任务类别
+PASS  policy_explain 截断时仍在 buflen-1 处补 NUL
+PASS  policy_explain 截断时返回所需长度而非缓冲区长度
+PASS  policy_explain 未越界写入 buflen 之外
+PASS  policy_explain(NULL) 返回 -1
+PASS  policy_explain(buflen=0) 返回 -1
+PASS  四级降级链完整：云 → 网关 → 网关 → 设备内
+PASS  任一链路状态下都有非 NONE 的后端可用（可用性无断点）
+PASS  安全关键任务档位对链路状态完全不敏感（专用切片论点）
+
+=== 汇总: 70 passed, 0 failed ===

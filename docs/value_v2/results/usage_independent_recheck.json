@@ -1,0 +1,33 @@
+{
+  "schema": "sensehome.usage-independent-recheck.v1",
+  "checked_at_utc": "2026-11-10T20:23:54.578179+00:00",
+  "matrix_totals": {
+    "reviewed_20_sealed_repeat3": {
+      "posts": 84,
+      "prompt_tokens": 49572,
+      "completion_tokens": 4860
+    },
+    "challenge_12_sealed_development_repeat3": {
+      "posts": 144,
+      "prompt_tokens": 85644,
+      "completion_tokens": 10086
+    },
+    "controlled_faults_sealed": {
+      "posts": 55,
+      "prompt_tokens": 32386,
+      "completion_tokens": 3483
+    },
+    "holdout_12_programmatic_repeat3": {
+      "posts": 132,
+      "prompt_tokens": 78900,
+      "completion_tokens": 10848
+    }
+  },
+  "posts": 415,
+  "unique_response_ids": 415,
+  "prompt_tokens": 246502,
+  "completion_tokens": 29277,
+  "source_hashes_match_sealed_index": true,
+  "per_call_records_match_raw": true,
+  "new_inference_requests": 0
+}

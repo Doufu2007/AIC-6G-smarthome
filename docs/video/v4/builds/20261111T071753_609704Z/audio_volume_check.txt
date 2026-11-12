@@ -1,0 +1,37 @@
+Input #0, mov,mp4,m4a,3gp,3g2,mj2, from 'dist\final\20261111_v4\SenseHome_当前软件证据回放_20261111_v4.mp4':
+  Metadata:
+    major_brand     : isom
+    minor_version   : 512
+    compatible_brands: isomiso2avc1mp41
+    encoder         : Lavf58.33.100
+  Duration: 00:04:10.38, start: 0.000000, bitrate: 159 kb/s
+    Stream #0:0(und): Video: h264 (High) (avc1 / 0x31637661), yuv420p, 1920x1080, 66 kb/s, 9.99 fps, 10 tbr, 10240 tbn, 20 tbc (default)
+    Metadata:
+      handler_name    : VideoHandler
+    Stream #0:1(und): Audio: aac (LC) (mp4a / 0x6134706D), 22050 Hz, mono, fltp, 90 kb/s (default)
+    Metadata:
+      handler_name    : SoundHandler
+Stream mapping:
+  Stream #0:1 -> #0:0 (aac (native) -> pcm_s16le (native))
+Press [q] to stop, [?] for help
+Output #0, null, to 'pipe:':
+  Metadata:
+    major_brand     : isom
+    minor_version   : 512
+    compatible_brands: isomiso2avc1mp41
+    encoder         : Lavf58.33.100
+    Stream #0:0(und): Audio: pcm_s16le, 22050 Hz, mono, s16, 352 kb/s (default)
+    Metadata:
+      handler_name    : SoundHandler
+      encoder         : Lavc58.59.102 pcm_s16le
+size=N/A time=00:04:10.38 bitrate=N/A speed=2.42e+03x    
+video:0kB audio:10792kB subtitle:0kB other streams:0kB global headers:0kB muxing overhead: unknown
+[Parsed_volumedetect_0 @ 000001b97441a1c0] n_samples: 5525504
+[Parsed_volumedetect_0 @ 000001b97441a1c0] mean_volume: -24.2 dB
+[Parsed_volumedetect_0 @ 000001b97441a1c0] max_volume: -0.5 dB
+[Parsed_volumedetect_0 @ 000001b97441a1c0] histogram_0db: 14
+[Parsed_volumedetect_0 @ 000001b97441a1c0] histogram_1db: 133
+[Parsed_volumedetect_0 @ 000001b97441a1c0] histogram_2db: 433
+[Parsed_volumedetect_0 @ 000001b97441a1c0] histogram_3db: 1012
+[Parsed_volumedetect_0 @ 000001b97441a1c0] histogram_4db: 1971
+[Parsed_volumedetect_0 @ 000001b97441a1c0] histogram_5db: 3449

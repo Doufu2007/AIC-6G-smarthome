@@ -1,0 +1,199 @@
+{
+  "status": "passed",
+  "mode": "fresh independent read-only offline review",
+  "conditions": {
+    "healthy": {
+      "n_rows": 24,
+      "n_pairs": 6,
+      "completed_by_arm": {
+        "fixed-local": 6,
+        "fixed-cloud": 6,
+        "network-only": 6,
+        "joint": 6
+      },
+      "paired_forwarded_posts": 24,
+      "paired_proxy_503": 0,
+      "wait_ranges": {
+        "local": {
+          "n_forwarded_posts_including_warmup": 19,
+          "min_wait_ms": 0.009,
+          "max_wait_ms": 0.035
+        },
+        "cloud": {
+          "n_forwarded_posts_including_warmup": 7,
+          "min_wait_ms": 0.009,
+          "max_wait_ms": 0.035
+        }
+      },
+      "first_policy_sequences_by_arm": {
+        "fixed-local": 1,
+        "fixed-cloud": 1,
+        "network-only": 1,
+        "joint": 1
+      }
+    },
+    "cloud_http503": {
+      "n_rows": 24,
+      "n_pairs": 6,
+      "completed_by_arm": {
+        "fixed-local": 6,
+        "fixed-cloud": 0,
+        "network-only": 6,
+        "joint": 6
+      },
+      "paired_forwarded_posts": 18,
+      "paired_proxy_503": 6,
+      "wait_ranges": {
+        "local": {
+          "n_forwarded_posts_including_warmup": 19,
+          "min_wait_ms": 0.009,
+          "max_wait_ms": 0.024
+        },
+        "cloud": {
+          "n_forwarded_posts_including_warmup": 0,
+          "min_wait_ms": null,
+          "max_wait_ms": null
+        }
+      },
+      "first_policy_sequences_by_arm": {
+        "fixed-local": 1,
+        "fixed-cloud": 1,
+        "network-only": 1,
+        "joint": 1
+      }
+    },
+    "local_http503": {
+      "n_rows": 24,
+      "n_pairs": 6,
+      "completed_by_arm": {
+        "fixed-local": 0,
+        "fixed-cloud": 6,
+        "network-only": 0,
+        "joint": 6
+      },
+      "paired_forwarded_posts": 12,
+      "paired_proxy_503": 12,
+      "wait_ranges": {
+        "local": {
+          "n_forwarded_posts_including_warmup": 0,
+          "min_wait_ms": null,
+          "max_wait_ms": null
+        },
+        "cloud": {
+          "n_forwarded_posts_including_warmup": 13,
+          "min_wait_ms": 0.009,
+          "max_wait_ms": 0.032
+        }
+      },
+      "first_policy_sequences_by_arm": {
+        "fixed-local": 1,
+        "fixed-cloud": 1,
+        "network-only": 1,
+        "joint": 1
+      }
+    },
+    "cloud_admission700": {
+      "n_rows": 24,
+      "n_pairs": 6,
+      "completed_by_arm": {
+        "fixed-local": 6,
+        "fixed-cloud": 6,
+        "network-only": 6,
+        "joint": 6
+      },
+      "paired_forwarded_posts": 24,
+      "paired_proxy_503": 0,
+      "wait_ranges": {
+        "local": {
+          "n_forwarded_posts_including_warmup": 19,
+          "min_wait_ms": 0.009,
+          "max_wait_ms": 0.098
+        },
+        "cloud": {
+          "n_forwarded_posts_including_warmup": 7,
+          "min_wait_ms": 701.068,
+          "max_wait_ms": 714.228
+        }
+      },
+      "first_policy_sequences_by_arm": {
+        "fixed-local": 1,
+        "fixed-cloud": 1,
+        "network-only": 1,
+        "joint": 1
+      }
+    },
+    "local_admission700": {
+      "n_rows": 24,
+      "n_pairs": 6,
+      "completed_by_arm": {
+        "fixed-local": 6,
+        "fixed-cloud": 6,
+        "network-only": 6,
+        "joint": 6
+      },
+      "paired_forwarded_posts": 24,
+      "paired_proxy_503": 0,
+      "wait_ranges": {
+        "local": {
+          "n_forwarded_posts_including_warmup": 13,
+          "min_wait_ms": 700.899,
+          "max_wait_ms": 714.735
+        },
+        "cloud": {
+          "n_forwarded_posts_including_warmup": 13,
+          "min_wait_ms": 0.009,
+          "max_wait_ms": 0.032
+        }
+      },
+      "first_policy_sequences_by_arm": {
+        "fixed-local": 1,
+        "fixed-cloud": 1,
+        "network-only": 1,
+        "joint": 1
+      }
+    }
+  },
+  "paired_rows": 120,
+  "paired_forwarded_model_posts": 102,
+  "paired_proxy_503": 18,
+  "warmup_forwarded_model_posts": 8,
+  "warmup_proxy_503": 2,
+  "sample_failures": [
+    {
+      "condition": "cloud_http503",
+      "id": "C01",
+      "arm": "fixed-cloud",
+      "proxy_status": 503,
+      "gateway_interface_ok": true,
+      "fallback": true,
+      "completed": false,
+      "raw_error": "HTTP_502"
+    },
+    {
+      "condition": "cloud_http503",
+      "id": "C04",
+      "arm": "fixed-cloud",
+      "proxy_status": 503,
+      "gateway_interface_ok": true,
+      "fallback": true,
+      "completed": false,
+      "raw_error": "HTTP_502"
+    },
+    {
+      "condition": "cloud_http503",
+      "id": "C01",
+      "arm": "fixed-cloud",
+      "proxy_status": 503,
+      "gateway_interface_ok": true,
+      "fallback": true,
+      "completed": false,
+      "raw_error": "HTTP_502"
+    }
+  ],
+  "artifacts": {
+    "registration.json": "926b4e18b0aa1428f31d8f7a90886c65e928f8ce7191abd4a2a4cdff4decf630",
+    "summary.json": "9b64bb49ffcba595133d791dd0adc1290a64101f66172e30f351256cd3e7f767",
+    "audit.json": "a7e78de19c8b7bfcdacb2ae206b8ff904b487f311e853e18619591ed76b2616e",
+    "verify_run.py": "6b65df3ce7a06f1b0fc79c40ef79930d2c3ea15dcdf1f3b8c7eb9b28fda2adfd"
+  }
+}

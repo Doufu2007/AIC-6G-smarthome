@@ -20,6 +20,7 @@ import threading
 import time
 import uuid
 from typing import Any, Callable, Mapping, Optional
+from target_contract import request_goals, validate_goal_plan
 
 
 @dataclasses.dataclass(frozen=True)
@@ -140,10 +141,11 @@ class RuleBackend:
         if self._handler is not None:
             raw = dict(self._handler(command, context))
             return BackendResult(
-                ok=True,
-                semantic_complete=bool(raw.get("semantic_complete", True)),
+                ok=bool(raw.get("interface_ok", True)),
+                semantic_complete=bool(raw.get("semantic_complete", False)),
                 response=raw,
                 actions=list(raw.get("actions", [])),
+                error=raw.get("error"),
                 source="local-rules",
             )
         simple = bool(re.search(r"(打开|关闭|开|关|灯|窗帘|温度|湿度)", command))
@@ -386,6 +388,7 @@ class OffloadGateway:
         compute_snapshot: Optional[ComputeSnapshot] = None,
         event_sink: Optional[Callable[[Mapping[str, Any]], None]] = None,
         action_executor: Optional[Callable[[list[Mapping[str, Any]], Optional[Mapping[str, Any]]], Mapping[str, Any]]] = None,
+        receipt_executor: Optional[Callable[[list[Mapping[str, Any]], Optional[Mapping[str, Any]]], Mapping[str, Any]]] = None,
     ):
         self.policy = policy
         self.backends = dict(backends)
@@ -395,9 +398,13 @@ class OffloadGateway:
         self.compute_snapshot = compute_snapshot
         self.event_sink = event_sink
         self.action_executor = action_executor
+        self.receipt_executor = receipt_executor
         # A stateful policy client (the C CLI) must receive link/compute
         # updates and its decision as one transaction per request.
         self._policy_lock = threading.Lock()
+        self._request_order_lock = threading.Lock()
+        self._policy_metadata = threading.local()
+        self._decision_sequence = 0
 
     @staticmethod
     def needs_plan(command: str) -> bool:
@@ -420,6 +427,8 @@ class OffloadGateway:
             return "safety"
         if OffloadGateway.needs_plan(command):
             return "complex"
+        if request_goals(command) is not None or command.strip() in {'我出门了', '拜拜', '再见', '离家模式'}:
+            return 'simple'
         if re.search(r"(打开|关闭|开灯|关灯|窗帘|温度|湿度|调亮|调暗)", command):
             return "simple"
         return "complex"
@@ -435,23 +444,58 @@ class OffloadGateway:
         self.link_snapshot = snapshot
         return snapshot, (time.perf_counter() - start) * 1000.0, None
 
-    def _decide(self, task_class: str, link: LinkSnapshot, compute: Optional[ComputeSnapshot] = None) -> tuple[str, str, str, float]:
+    def _describe_policy(self) -> dict[str, Any]:
+        metadata = {"implementation": type(self.policy).__name__}
+        describe = getattr(self.policy, "describe", None)
+        if callable(describe):
+            try:
+                description = describe()
+            except Exception as exc:  # noqa: BLE001
+                metadata["description_error"] = type(exc).__name__
+            else:
+                if isinstance(description, Mapping):
+                    metadata.update(description)
+        return metadata
+
+    def _decide(
+        self,
+        task_class: str,
+        link: LinkSnapshot,
+        compute: Optional[ComputeSnapshot] = None,
+        observation: Optional[Mapping[str, Any]] = None,
+    ) -> tuple[str, str, str, float]:
         start = time.perf_counter()
         with self._policy_lock:
             try:
-                if task_class == "complex" and hasattr(self.policy, "update_links"):
+                if task_class == "complex" and observation is not None and hasattr(self.policy, "decide_observation"):
+                    selected = self.policy.decide_observation(task_class, observation)
+                else:
+                    selected = None
+                if (selected is None and task_class == "complex" and observation is None and
+                        callable(getattr(self.policy, "clear_observation_state", None))):
+                    self.policy.clear_observation_state()
+                if selected is None and task_class == "complex" and hasattr(self.policy, "update_links"):
                     self.policy.update_links(link)
-                if task_class == "complex" and compute is not None and hasattr(self.policy, "update_compute"):
+                if selected is None and task_class == "complex" and compute is not None and hasattr(self.policy, "update_compute"):
                     self.policy.update_compute(compute)
-                selected = self.policy.decide(task_class, link)
+                if selected is None:
+                    selected = self.policy.decide(task_class, link)
             except Exception as exc:  # noqa: BLE001
+                self._decision_sequence += 1
+                metadata = self._describe_policy()
+                metadata["decision_sequence"] = self._decision_sequence
+                self._policy_metadata.value = metadata
                 return "local-rules", "POLICY_ERROR", type(exc).__name__, (time.perf_counter() - start) * 1000.0
-        if len(selected) != 3:
-            selected = ("local-rules", "POLICY_ERROR", "invalid policy result")
-        if task_class == "safety":
-            selected = ("local-rules", "TASK_IS_SAFETY", "safety task forced to local rules")
-        elif task_class == "simple":
-            selected = ("local-rules", "TASK_IS_SIMPLE", "simple task constrained to local rules")
+            if len(selected) != 3:
+                selected = ("local-rules", "POLICY_ERROR", "invalid policy result")
+            if task_class == "safety":
+                selected = ("local-rules", "TASK_IS_SAFETY", "safety task forced to local rules")
+            elif task_class == "simple":
+                selected = ("local-rules", "TASK_IS_SIMPLE", "simple task constrained to local rules")
+            self._decision_sequence += 1
+            metadata = self._describe_policy()
+            metadata["decision_sequence"] = self._decision_sequence
+            self._policy_metadata.value = metadata
         return (*selected, (time.perf_counter() - start) * 1000.0)
 
     @staticmethod
@@ -497,23 +541,57 @@ class OffloadGateway:
             return True
         return isinstance(result.error, str) and bool(re.fullmatch(r"HTTP_4\d{2}", result.error))
 
-    def handle(self, command: str, context: Optional[Mapping[str, Any]] = None) -> dict[str, Any]:
+    def handle(
+        self,
+        command: str,
+        context: Optional[Mapping[str, Any]] = None,
+        observation: Optional[Mapping[str, Any]] = None,
+        *,
+        prefer_explicit_rules: bool = False,
+    ) -> dict[str, Any]:
         event_id = uuid.uuid4().hex
-        task_class = self.classify(command)
-        # Local tasks do not depend on link/compute observations. Keep the C
-        # policy decision in their path, but never delay device control on a
-        # synchronous WAN probe. Complex tasks still obtain fresh samples.
-        if task_class in {"simple", "safety"}:
-            link, probe_ms, probe_error = self.link_snapshot, 0.0, None
-        else:
-            link, probe_ms, probe_error = self._snapshot()
-        raw_compute = (context or {}).get("compute") if isinstance(context, Mapping) else None
-        compute = self._coerce_compute(raw_compute) if raw_compute is not None else self.compute_snapshot
-        backend_name, reason, policy_log, policy_ms = self._decide(task_class, link, compute)
+        # Only the server opts into compilation. The grammar is re-evaluated
+        # here; client context or a planner never grants partial device goals.
+        explicit = bool(prefer_explicit_rules and request_goals(command))
+        task_class = 'simple' if explicit else self.classify(command)
+        # Keep each complex link sample adjacent to the stateful policy update
+        # and decision so concurrent probes cannot publish out of order.
+        with self._request_order_lock:
+            # Local tasks do not depend on link/compute observations. Keep the
+            # C policy decision in their path, but never delay device control on
+            # a synchronous WAN probe. Complex tasks still obtain fresh samples.
+            if task_class in {"simple", "safety"}:
+                link, probe_ms, probe_error = self.link_snapshot, 0.0, None
+            else:
+                link, probe_ms, probe_error = self._snapshot()
+            raw_compute = (context or {}).get("compute") if isinstance(context, Mapping) else None
+            compute = self._coerce_compute(raw_compute) if raw_compute is not None else self.compute_snapshot
+            decision_observation = observation if task_class == "complex" else None
+            self._policy_metadata.value = None
+            if decision_observation is None:
+                backend_name, reason, policy_log, policy_ms = self._decide(task_class, link, compute)
+            else:
+                backend_name, reason, policy_log, policy_ms = self._decide(
+                    task_class, link, compute, decision_observation
+                )
+        decision_backend = backend_name
+        decision_reason = reason
+        if explicit:
+            # Keep captured C decisions replayable; the grammar route is the
+            # subsequent effective reason, separate from the C reason code.
+            reason = 'SERVER_EXPLICIT_GOALS'
+            policy_log = 'Complete bounded server grammar; execute through local goal and receipt rails'
         if probe_error:
             backend_name = "local-rules"
             reason = "LINK_PROBE_ERROR"
             policy_log = probe_error
+        policy_metadata = self._policy_metadata.value
+        if policy_metadata is None:
+            with self._policy_lock:
+                self._decision_sequence += 1
+                policy_metadata = self._describe_policy()
+                policy_metadata["decision_sequence"] = self._decision_sequence
+        raw_key = context.get("experiment_request_key") if isinstance(context, Mapping) else None
         fallback_from = None
         fallback_attempted = False
         refusal_reason = None
@@ -543,6 +621,28 @@ class OffloadGateway:
         backend_ms = (time.perf_counter() - start) * 1000.0
         error = result.error or configuration_error
 
+        # Keyword routing is only a hint. If rules could not parse the complete
+        # request, let the policy evaluate it as NLU rather than trapping it in
+        # TASK_IS_SIMPLE. Rules still own all safety requests.
+        if backend_name == 'local-rules' and task_class != 'safety' and result.error == 'UNRESOLVED_NO_NLU':
+            model_name, model_reason, model_log, extra_policy_ms = self._decide('complex', link, compute, observation)
+            policy_ms += extra_policy_ms
+            model = self.backends.get(model_name) if model_name != 'local-rules' else None
+            if model is not None:
+                backend_name, reason, policy_log = model_name, 'RULE_UNRESOLVED_' + model_reason, model_log
+                upgrade_start = time.perf_counter()
+                try:
+                    result = model.infer(command, context)
+                except Exception as exc:
+                    result = BackendResult(False, False, {}, [], error=type(exc).__name__, source=model_name)
+                backend_ms += (time.perf_counter() - upgrade_start) * 1000.0
+                error = result.error
+        # A planner response has not executed or accepted a user goal, even if
+        # a static/misbehaving backend asserts otherwise.
+        if backend_name != 'local-rules':
+            result = dataclasses.replace(result, semantic_complete=False,
+                response={**result.response, 'execution_complete': False, 'task_complete': False})
+
         if backend_name != "local-rules" and result.ok and not self._actions_safe(result.actions):
             result = BackendResult(
                 ok=False,
@@ -565,10 +665,24 @@ class OffloadGateway:
             candidate = result.response.get("error") if isinstance(result.response, Mapping) else None
             refusal_reason = candidate if isinstance(candidate, str) and candidate else result.error
 
-        if backend_name != "local-rules" and result.ok and result.actions and self.action_executor is not None:
+        if backend_name != 'local-rules' and result.ok and result.actions:
+            goal_error = validate_goal_plan(command, result.actions)
+            if goal_error:
+                result = dataclasses.replace(result, ok=False, semantic_complete=False, actions=[], error=goal_error,
+                    response={**result.response, 'actions': [], 'plan_valid': False, 'execution_complete': False,
+                              'task_complete': False, 'clarification_required': goal_error == 'REQUEST_GOAL_UNRESOLVED',
+                              'answer': '请提供完整、明确的房间、设备和目标值。'})
+                error = refusal_reason = goal_error
+                model_refusal = True
+            else:
+                result = dataclasses.replace(result, response={**result.response, 'plan_valid': True})
+
+        executor = self.receipt_executor or self.action_executor
+        if backend_name != "local-rules" and result.ok and result.actions and executor is not None:
             execute_start = time.perf_counter()
             try:
-                executed = self.action_executor(result.actions, context)
+                execution_context = {**dict(context or {}), "_receipt_command": command}
+                executed = executor(result.actions, execution_context)
                 if not isinstance(executed, Mapping):
                     raise TypeError("action_executor_must_return_mapping")
                 actions = executed.get("actions", result.actions)
@@ -576,10 +690,19 @@ class OffloadGateway:
                     raise TypeError("action_executor_actions_must_be_list")
                 result = dataclasses.replace(
                     result,
+                    ok=bool(executed.get("interface_ok", result.ok)),
                     response={**result.response, **executed},
-                    semantic_complete=bool(executed.get("semantic_complete", result.semantic_complete)),
+                    semantic_complete=bool(executed.get("task_complete", False)),
                     actions=actions,
                 )
+                error = executed.get('error') or error
+                if executed.get('error') in {'DEADLINE_EXCEEDED', 'REQUEST_GOAL_UNRESOLVED', 'REQUEST_GOAL_PLAN_MISMATCH'}:
+                    model_refusal = True
+                if self.receipt_executor is not None:
+                    # An uncertain/partial software execution is terminal. A
+                    # fallback could repeat a side effect after a lost ACK.
+                    model_refusal = True
+                    error = executed.get("error") or error
             except Exception as exc:  # noqa: BLE001
                 result = dataclasses.replace(
                     result,
@@ -589,6 +712,8 @@ class OffloadGateway:
                     error="ACTION_EXECUTION_%s" % type(exc).__name__,
                 )
                 error = result.error
+                if self.receipt_executor is not None:
+                    model_refusal = True
             backend_ms += (time.perf_counter() - execute_start) * 1000.0
 
         if not result.ok and backend_name != "local-rules" and not model_refusal:
@@ -616,15 +741,24 @@ class OffloadGateway:
 
         event = {
             "event_id": event_id,
+            **({"request_key": raw_key} if isinstance(raw_key, str) and 0 < len(raw_key) <= 256 else {}),
+            "decision_sequence": policy_metadata["decision_sequence"],
+            "selected_backend": decision_backend,
+            "decision_reason": decision_reason,
             "command": command,
             "task_class": task_class,
             "backend": backend_name,
             "reason": reason,
             "policy_log": policy_log,
+            "policy": policy_metadata,
             "link": link.as_dict(),
             "compute": compute.as_dict() if compute is not None else None,
+            "observation": dict(observation) if observation is not None and task_class == "complex" else None,
             "latency": LatencyBreakdown(probe_ms, policy_ms, backend_ms).as_dict(),
-            "semantic_complete": bool(result.semantic_complete),
+            "semantic_complete": bool(result.response.get('task_complete', False)),
+            "plan_valid": bool(result.response.get('plan_valid', False)),
+            "execution_complete": bool(result.response.get('execution_complete', False)),
+            "task_complete": bool(result.response.get('task_complete', False)),
             "interface_ok": bool(result.ok),
             "response": dict(result.response),
             "actions": list(result.actions),
@@ -635,8 +769,13 @@ class OffloadGateway:
             "error": ("POLICY_ERROR" if reason == "POLICY_ERROR" else (probe_error or error)),
             "source": result.source,
         }
+        event["event_persisted"] = self.event_sink is not None
         if self.event_sink:
-            self.event_sink(event)
+            try:
+                self.event_sink(event)
+            except Exception as exc:  # noqa: BLE001
+                event["event_persisted"] = False
+                event["event_persistence_error"] = type(exc).__name__
         return event
 
     @staticmethod

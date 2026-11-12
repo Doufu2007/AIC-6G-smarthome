@@ -1,0 +1,45 @@
+{
+  "version": "20261111",
+  "duration_s": 283.658,
+  "size_bytes": 5004120,
+  "sha256": "a1873d09c7fc3b70c1a5b9a76875cf181cb977ddcdbb221aea75027ddf627dba",
+  "probe": {
+    "programs": [],
+    "streams": [
+      {
+        "codec_name": "h264",
+        "width": 1920,
+        "height": 1080,
+        "r_frame_rate": "10/1"
+      },
+      {
+        "codec_name": "aac",
+        "r_frame_rate": "0/0"
+      }
+    ],
+    "format": {
+      "duration": "283.658000",
+      "size": "5004120"
+    }
+  },
+  "method": "evidence explanation slides, synthetic voice, 2026-11-03 actual software JSON state replay; no physical actuator or 6G air interface",
+  "scene_durations": [
+    14,
+    16,
+    17,
+    20,
+    16,
+    22,
+    22,
+    22,
+    24,
+    36,
+    21,
+    18,
+    17,
+    18
+  ],
+  "narration": "docs\\submission\\20261111\\narration.json",
+  "replay_source": "docs/video/v2/software_replay.json",
+  "replay_sha256": "8eada8a5fb603b9def2a29c5f64f11e8517402f21af0330a3ef797d9989033e8"
+}

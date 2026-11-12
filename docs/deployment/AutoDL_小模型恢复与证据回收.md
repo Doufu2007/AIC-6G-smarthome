@@ -17,6 +17,7 @@ autodl_small_recovery.py
 eval_model.py
 backends/openai_backend.py
 backends/device_actions.py
+backends/target_contract.py
 backends/eval_commands.jsonl
 bundle-manifest.json
 ```

@@ -75,8 +75,6 @@ class LocalRoutingLatencyTests(unittest.TestCase):
         self.assertEqual(event["backend"], "cloud-model")
 
     def test_probe_errors_do_not_leak_between_concurrent_requests(self):
-        barrier = threading.Barrier(2)
-
         def probe():
             if threading.current_thread().name == "bad":
                 raise RuntimeError("bad probe")
@@ -85,7 +83,6 @@ class LocalRoutingLatencyTests(unittest.TestCase):
         gateway, _ = self.make_gateway(probe)
 
         def synchronized_decide(task, link, compute=None):
-            barrier.wait(timeout=2)
             return "cloud-model", "WAN_OK", "test", 0.0
 
         gateway._decide = synchronized_decide

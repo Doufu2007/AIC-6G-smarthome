@@ -1,0 +1,65 @@
+{
+  "schema": "sensehome.video-visual-review.v4",
+  "checked_at_utc": "2026-11-11T07:24:52.502340+00:00",
+  "method": "agent vision inspected all nine frames extracted from encoded MP4; no UI tools",
+  "frames": [
+    {
+      "scene": 1,
+      "at_seconds": 12.0,
+      "frame": "docs/video/v4/builds/20261111T071753_609704Z/check_01_0.png"
+    },
+    {
+      "scene": 2,
+      "at_seconds": 33,
+      "frame": "docs/video/v4/builds/20261111T071753_609704Z/check_02_0.png"
+    },
+    {
+      "scene": 2,
+      "at_seconds": 55,
+      "frame": "docs/video/v4/builds/20261111T071753_609704Z/check_02_1.png"
+    },
+    {
+      "scene": 3,
+      "at_seconds": 82.0,
+      "frame": "docs/video/v4/builds/20261111T071753_609704Z/check_03_0.png"
+    },
+    {
+      "scene": 4,
+      "at_seconds": 112.0,
+      "frame": "docs/video/v4/builds/20261111T071753_609704Z/check_04_0.png"
+    },
+    {
+      "scene": 5,
+      "at_seconds": 145.0,
+      "frame": "docs/video/v4/builds/20261111T071753_609704Z/check_05_0.png"
+    },
+    {
+      "scene": 6,
+      "at_seconds": 179.0,
+      "frame": "docs/video/v4/builds/20261111T071753_609704Z/check_06_0.png"
+    },
+    {
+      "scene": 7,
+      "at_seconds": 212.0,
+      "frame": "docs/video/v4/builds/20261111T071753_609704Z/check_07_0.png"
+    },
+    {
+      "scene": 8,
+      "at_seconds": 239.0,
+      "frame": "docs/video/v4/builds/20261111T071753_609704Z/check_08_0.png"
+    }
+  ],
+  "all_nine_frames_inspected": true,
+  "findings": {
+    "persistent_boundary_header_readable": true,
+    "Chinese_text_readable": true,
+    "no_clipped_or_overlapping_text_observed": true,
+    "runtime_values_match_final_UTF8_capture": true,
+    "old_video_or_synthetic_UI_screenshots_used": false,
+    "software_and_physical_execution_distinguished": true,
+    "empty_plans_and_both_failures_visible": true,
+    "scene_dwell_is_editorial_explicit": true
+  },
+  "decode_exit_code": 0,
+  "audio_validation": "AAC stream present; full decode and non-silent sample volume check passed; no claim of human narration"
+}

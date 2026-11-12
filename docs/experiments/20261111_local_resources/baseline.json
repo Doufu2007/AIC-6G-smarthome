@@ -1,0 +1,958 @@
+{
+  "schema": "sensehome.host-resources.v1",
+  "started_utc": "2026-11-10T18:17:52.770523+00:00",
+  "finished_utc": "2026-11-10T18:18:21.885623+00:00",
+  "platform": "Windows 11",
+  "cpu": "AMD64 Family 25 Model 116 Stepping 1, AuthenticAMD",
+  "logical_cpus": 16,
+  "psutil_version": "7.2.2",
+  "models": [
+    {
+      "label": "small",
+      "file_name": "qwen2.5-1.5b-instruct-q4_k_m.gguf",
+      "bytes": 1117320736,
+      "sha256": "6a1a2eb6d15622bf3c96857206351ba97e1af16c30d7a74ee38970e434e9407e"
+    },
+    {
+      "label": "large",
+      "file_name": "Qwen3-4B-Q4_K_M.gguf",
+      "bytes": 2497280256,
+      "sha256": "7485fe6f11af29433bc51cab58009521f205840f5b4ae3a32fa7f92e8534fdf5"
+    }
+  ],
+  "samples": [
+    {
+      "index": 0,
+      "at_utc": "2026-11-10T18:17:52.793481+00:00",
+      "host_cpu_pct": 8.0,
+      "ram_total_bytes": 16344801280,
+      "ram_available_bytes": 933142528,
+      "processes": {
+        "small": {
+          "rss_bytes": 1170493440,
+          "cpu_time_s": 57.71875,
+          "threads": 28
+        },
+        "large": {
+          "rss_bytes": 2724839424,
+          "cpu_time_s": 78.765625,
+          "threads": 28
+        }
+      },
+      "gpu": {
+        "available": true,
+        "devices": [
+          {
+            "name": "NVIDIA GeForce RTX 4050 Laptop GPU",
+            "memory_total_mib": 6141.0,
+            "memory_used_mib": 3735.0,
+            "utilization_pct": 0.0,
+            "board_power_w": 2.53
+          }
+        ]
+      }
+    },
+    {
+      "index": 1,
+      "at_utc": "2026-11-10T18:17:53.797297+00:00",
+      "host_cpu_pct": 13.7,
+      "ram_total_bytes": 16344801280,
+      "ram_available_bytes": 942194688,
+      "processes": {
+        "small": {
+          "rss_bytes": 1170493440,
+          "cpu_time_s": 57.71875,
+          "threads": 28
+        },
+        "large": {
+          "rss_bytes": 2724839424,
+          "cpu_time_s": 78.765625,
+          "threads": 28
+        }
+      },
+      "gpu": {
+        "available": true,
+        "devices": [
+          {
+            "name": "NVIDIA GeForce RTX 4050 Laptop GPU",
+            "memory_total_mib": 6141.0,
+            "memory_used_mib": 3735.0,
+            "utilization_pct": 0.0,
+            "board_power_w": 2.52
+          }
+        ]
+      }
+    },
+    {
+      "index": 2,
+      "at_utc": "2026-11-10T18:17:54.795657+00:00",
+      "host_cpu_pct": 17.5,
+      "ram_total_bytes": 16344801280,
+      "ram_available_bytes": 939712512,
+      "processes": {
+        "small": {
+          "rss_bytes": 1170493440,
+          "cpu_time_s": 57.71875,
+          "threads": 28
+        },
+        "large": {
+          "rss_bytes": 2724839424,
+          "cpu_time_s": 78.765625,
+          "threads": 28
+        }
+      },
+      "gpu": {
+        "available": true,
+        "devices": [
+          {
+            "name": "NVIDIA GeForce RTX 4050 Laptop GPU",
+            "memory_total_mib": 6141.0,
+            "memory_used_mib": 3735.0,
+            "utilization_pct": 0.0,
+            "board_power_w": 2.51
+          }
+        ]
+      }
+    },
+    {
+      "index": 3,
+      "at_utc": "2026-11-10T18:17:55.799745+00:00",
+      "host_cpu_pct": 11.1,
+      "ram_total_bytes": 16344801280,
+      "ram_available_bytes": 945815552,
+      "processes": {
+        "small": {
+          "rss_bytes": 1170493440,
+          "cpu_time_s": 57.71875,
+          "threads": 28
+        },
+        "large": {
+          "rss_bytes": 2724839424,
+          "cpu_time_s": 78.765625,
+          "threads": 28
+        }
+      },
+      "gpu": {
+        "available": true,
+        "devices": [
+          {
+            "name": "NVIDIA GeForce RTX 4050 Laptop GPU",
+            "memory_total_mib": 6141.0,
+            "memory_used_mib": 3735.0,
+            "utilization_pct": 0.0,
+            "board_power_w": 2.52
+          }
+        ]
+      }
+    },
+    {
+      "index": 4,
+      "at_utc": "2026-11-10T18:17:56.799357+00:00",
+      "host_cpu_pct": 20.3,
+      "ram_total_bytes": 16344801280,
+      "ram_available_bytes": 906969088,
+      "processes": {
+        "small": {
+          "rss_bytes": 1170493440,
+          "cpu_time_s": 57.71875,
+          "threads": 28
+        },
+        "large": {
+          "rss_bytes": 2724839424,
+          "cpu_time_s": 78.765625,
+          "threads": 28
+        }
+      },
+      "gpu": {
+        "available": true,
+        "devices": [
+          {
+            "name": "NVIDIA GeForce RTX 4050 Laptop GPU",
+            "memory_total_mib": 6141.0,
+            "memory_used_mib": 3735.0,
+            "utilization_pct": 0.0,
+            "board_power_w": 2.54
+          }
+        ]
+      }
+    },
+    {
+      "index": 5,
+      "at_utc": "2026-11-10T18:17:57.794743+00:00",
+      "host_cpu_pct": 18.2,
+      "ram_total_bytes": 16344801280,
+      "ram_available_bytes": 944521216,
+      "processes": {
+        "small": {
+          "rss_bytes": 1170493440,
+          "cpu_time_s": 57.734375,
+          "threads": 28
+        },
+        "large": {
+          "rss_bytes": 2724839424,
+          "cpu_time_s": 78.765625,
+          "threads": 28
+        }
+      },
+      "gpu": {
+        "available": true,
+        "devices": [
+          {
+            "name": "NVIDIA GeForce RTX 4050 Laptop GPU",
+            "memory_total_mib": 6141.0,
+            "memory_used_mib": 3735.0,
+            "utilization_pct": 0.0,
+            "board_power_w": 2.51
+          }
+        ]
+      }
+    },
+    {
+      "index": 6,
+      "at_utc": "2026-11-10T18:17:58.796046+00:00",
+      "host_cpu_pct": 16.4,
+      "ram_total_bytes": 16344801280,
+      "ram_available_bytes": 931635200,
+      "processes": {
+        "small": {
+          "rss_bytes": 1170493440,
+          "cpu_time_s": 57.8125,
+          "threads": 28
+        },
+        "large": {
+          "rss_bytes": 2724839424,
+          "cpu_time_s": 78.765625,
+          "threads": 28
+        }
+      },
+      "gpu": {
+        "available": true,
+        "devices": [
+          {
+            "name": "NVIDIA GeForce RTX 4050 Laptop GPU",
+            "memory_total_mib": 6141.0,
+            "memory_used_mib": 3735.0,
+            "utilization_pct": 0.0,
+            "board_power_w": 2.51
+          }
+        ]
+      }
+    },
+    {
+      "index": 7,
+      "at_utc": "2026-11-10T18:17:59.802797+00:00",
+      "host_cpu_pct": 15.2,
+      "ram_total_bytes": 16344801280,
+      "ram_available_bytes": 937091072,
+      "processes": {
+        "small": {
+          "rss_bytes": 1170493440,
+          "cpu_time_s": 57.8125,
+          "threads": 28
+        },
+        "large": {
+          "rss_bytes": 2724839424,
+          "cpu_time_s": 78.765625,
+          "threads": 28
+        }
+      },
+      "gpu": {
+        "available": true,
+        "devices": [
+          {
+            "name": "NVIDIA GeForce RTX 4050 Laptop GPU",
+            "memory_total_mib": 6141.0,
+            "memory_used_mib": 3735.0,
+            "utilization_pct": 0.0,
+            "board_power_w": 2.52
+          }
+        ]
+      }
+    },
+    {
+      "index": 8,
+      "at_utc": "2026-11-10T18:18:00.796362+00:00",
+      "host_cpu_pct": 6.7,
+      "ram_total_bytes": 16344801280,
+      "ram_available_bytes": 950845440,
+      "processes": {
+        "small": {
+          "rss_bytes": 1170493440,
+          "cpu_time_s": 57.8125,
+          "threads": 28
+        },
+        "large": {
+          "rss_bytes": 2724839424,
+          "cpu_time_s": 78.765625,
+          "threads": 28
+        }
+      },
+      "gpu": {
+        "available": true,
+        "devices": [
+          {
+            "name": "NVIDIA GeForce RTX 4050 Laptop GPU",
+            "memory_total_mib": 6141.0,
+            "memory_used_mib": 3735.0,
+            "utilization_pct": 0.0,
+            "board_power_w": 2.53
+          }
+        ]
+      }
+    },
+    {
+      "index": 9,
+      "at_utc": "2026-11-10T18:18:01.797892+00:00",
+      "host_cpu_pct": 6.7,
+      "ram_total_bytes": 16344801280,
+      "ram_available_bytes": 941109248,
+      "processes": {
+        "small": {
+          "rss_bytes": 1170493440,
+          "cpu_time_s": 57.8125,
+          "threads": 28
+        },
+        "large": {
+          "rss_bytes": 2724839424,
+          "cpu_time_s": 78.765625,
+          "threads": 28
+        }
+      },
+      "gpu": {
+        "available": true,
+        "devices": [
+          {
+            "name": "NVIDIA GeForce RTX 4050 Laptop GPU",
+            "memory_total_mib": 6141.0,
+            "memory_used_mib": 3735.0,
+            "utilization_pct": 0.0,
+            "board_power_w": 2.53
+          }
+        ]
+      }
+    },
+    {
+      "index": 10,
+      "at_utc": "2026-11-10T18:18:02.797217+00:00",
+      "host_cpu_pct": 10.1,
+      "ram_total_bytes": 16344801280,
+      "ram_available_bytes": 944824320,
+      "processes": {
+        "small": {
+          "rss_bytes": 1170493440,
+          "cpu_time_s": 57.8125,
+          "threads": 28
+        },
+        "large": {
+          "rss_bytes": 2724839424,
+          "cpu_time_s": 78.765625,
+          "threads": 28
+        }
+      },
+      "gpu": {
+        "available": true,
+        "devices": [
+          {
+            "name": "NVIDIA GeForce RTX 4050 Laptop GPU",
+            "memory_total_mib": 6141.0,
+            "memory_used_mib": 3735.0,
+            "utilization_pct": 0.0,
+            "board_power_w": 2.53
+          }
+        ]
+      }
+    },
+    {
+      "index": 11,
+      "at_utc": "2026-11-10T18:18:03.805643+00:00",
+      "host_cpu_pct": 20.9,
+      "ram_total_bytes": 16344801280,
+      "ram_available_bytes": 1061326848,
+      "processes": {
+        "small": {
+          "rss_bytes": 1170309120,
+          "cpu_time_s": 57.8125,
+          "threads": 28
+        },
+        "large": {
+          "rss_bytes": 2724466688,
+          "cpu_time_s": 78.765625,
+          "threads": 28
+        }
+      },
+      "gpu": {
+        "available": true,
+        "devices": [
+          {
+            "name": "NVIDIA GeForce RTX 4050 Laptop GPU",
+            "memory_total_mib": 6141.0,
+            "memory_used_mib": 3735.0,
+            "utilization_pct": 0.0,
+            "board_power_w": 2.51
+          }
+        ]
+      }
+    },
+    {
+      "index": 12,
+      "at_utc": "2026-11-10T18:18:04.800036+00:00",
+      "host_cpu_pct": 10.8,
+      "ram_total_bytes": 16344801280,
+      "ram_available_bytes": 1052262400,
+      "processes": {
+        "small": {
+          "rss_bytes": 1170309120,
+          "cpu_time_s": 57.828125,
+          "threads": 28
+        },
+        "large": {
+          "rss_bytes": 2724466688,
+          "cpu_time_s": 78.765625,
+          "threads": 28
+        }
+      },
+      "gpu": {
+        "available": true,
+        "devices": [
+          {
+            "name": "NVIDIA GeForce RTX 4050 Laptop GPU",
+            "memory_total_mib": 6141.0,
+            "memory_used_mib": 3735.0,
+            "utilization_pct": 0.0,
+            "board_power_w": 2.52
+          }
+        ]
+      }
+    },
+    {
+      "index": 13,
+      "at_utc": "2026-11-10T18:18:05.809996+00:00",
+      "host_cpu_pct": 10.2,
+      "ram_total_bytes": 16344801280,
+      "ram_available_bytes": 1059237888,
+      "processes": {
+        "small": {
+          "rss_bytes": 1170309120,
+          "cpu_time_s": 57.828125,
+          "threads": 28
+        },
+        "large": {
+          "rss_bytes": 2724466688,
+          "cpu_time_s": 78.765625,
+          "threads": 28
+        }
+      },
+      "gpu": {
+        "available": true,
+        "devices": [
+          {
+            "name": "NVIDIA GeForce RTX 4050 Laptop GPU",
+            "memory_total_mib": 6141.0,
+            "memory_used_mib": 3735.0,
+            "utilization_pct": 0.0,
+            "board_power_w": 2.54
+          }
+        ]
+      }
+    },
+    {
+      "index": 14,
+      "at_utc": "2026-11-10T18:18:06.807887+00:00",
+      "host_cpu_pct": 10.4,
+      "ram_total_bytes": 16344801280,
+      "ram_available_bytes": 1062068224,
+      "processes": {
+        "small": {
+          "rss_bytes": 1170309120,
+          "cpu_time_s": 57.828125,
+          "threads": 28
+        },
+        "large": {
+          "rss_bytes": 2724466688,
+          "cpu_time_s": 78.765625,
+          "threads": 28
+        }
+      },
+      "gpu": {
+        "available": true,
+        "devices": [
+          {
+            "name": "NVIDIA GeForce RTX 4050 Laptop GPU",
+            "memory_total_mib": 6141.0,
+            "memory_used_mib": 3735.0,
+            "utilization_pct": 0.0,
+            "board_power_w": 2.54
+          }
+        ]
+      }
+    },
+    {
+      "index": 15,
+      "at_utc": "2026-11-10T18:18:07.818041+00:00",
+      "host_cpu_pct": 11.9,
+      "ram_total_bytes": 16344801280,
+      "ram_available_bytes": 1056378880,
+      "processes": {
+        "small": {
+          "rss_bytes": 1170309120,
+          "cpu_time_s": 57.828125,
+          "threads": 28
+        },
+        "large": {
+          "rss_bytes": 2724466688,
+          "cpu_time_s": 78.765625,
+          "threads": 28
+        }
+      },
+      "gpu": {
+        "available": true,
+        "devices": [
+          {
+            "name": "NVIDIA GeForce RTX 4050 Laptop GPU",
+            "memory_total_mib": 6141.0,
+            "memory_used_mib": 3735.0,
+            "utilization_pct": 0.0,
+            "board_power_w": 2.51
+          }
+        ]
+      }
+    },
+    {
+      "index": 16,
+      "at_utc": "2026-11-10T18:18:08.817039+00:00",
+      "host_cpu_pct": 25.3,
+      "ram_total_bytes": 16344801280,
+      "ram_available_bytes": 1063727104,
+      "processes": {
+        "small": {
+          "rss_bytes": 1170309120,
+          "cpu_time_s": 57.84375,
+          "threads": 28
+        },
+        "large": {
+          "rss_bytes": 2724466688,
+          "cpu_time_s": 78.796875,
+          "threads": 28
+        }
+      },
+      "gpu": {
+        "available": true,
+        "devices": [
+          {
+            "name": "NVIDIA GeForce RTX 4050 Laptop GPU",
+            "memory_total_mib": 6141.0,
+            "memory_used_mib": 3735.0,
+            "utilization_pct": 0.0,
+            "board_power_w": 2.53
+          }
+        ]
+      }
+    },
+    {
+      "index": 17,
+      "at_utc": "2026-11-10T18:18:09.808586+00:00",
+      "host_cpu_pct": 23.3,
+      "ram_total_bytes": 16344801280,
+      "ram_available_bytes": 1058885632,
+      "processes": {
+        "small": {
+          "rss_bytes": 1170309120,
+          "cpu_time_s": 57.875,
+          "threads": 28
+        },
+        "large": {
+          "rss_bytes": 2724466688,
+          "cpu_time_s": 78.84375,
+          "threads": 28
+        }
+      },
+      "gpu": {
+        "available": true,
+        "devices": [
+          {
+            "name": "NVIDIA GeForce RTX 4050 Laptop GPU",
+            "memory_total_mib": 6141.0,
+            "memory_used_mib": 3735.0,
+            "utilization_pct": 0.0,
+            "board_power_w": 2.53
+          }
+        ]
+      }
+    },
+    {
+      "index": 18,
+      "at_utc": "2026-11-10T18:18:10.803015+00:00",
+      "host_cpu_pct": 16.6,
+      "ram_total_bytes": 16344801280,
+      "ram_available_bytes": 1069117440,
+      "processes": {
+        "small": {
+          "rss_bytes": 1170309120,
+          "cpu_time_s": 57.9375,
+          "threads": 28
+        },
+        "large": {
+          "rss_bytes": 2724466688,
+          "cpu_time_s": 78.875,
+          "threads": 28
+        }
+      },
+      "gpu": {
+        "available": true,
+        "devices": [
+          {
+            "name": "NVIDIA GeForce RTX 4050 Laptop GPU",
+            "memory_total_mib": 6141.0,
+            "memory_used_mib": 3735.0,
+            "utilization_pct": 0.0,
+            "board_power_w": 2.53
+          }
+        ]
+      }
+    },
+    {
+      "index": 19,
+      "at_utc": "2026-11-10T18:18:11.811178+00:00",
+      "host_cpu_pct": 24.9,
+      "ram_total_bytes": 16344801280,
+      "ram_available_bytes": 1050832896,
+      "processes": {
+        "small": {
+          "rss_bytes": 1170309120,
+          "cpu_time_s": 57.9375,
+          "threads": 28
+        },
+        "large": {
+          "rss_bytes": 2724466688,
+          "cpu_time_s": 78.875,
+          "threads": 28
+        }
+      },
+      "gpu": {
+        "available": true,
+        "devices": [
+          {
+            "name": "NVIDIA GeForce RTX 4050 Laptop GPU",
+            "memory_total_mib": 6141.0,
+            "memory_used_mib": 3735.0,
+            "utilization_pct": 0.0,
+            "board_power_w": 2.57
+          }
+        ]
+      }
+    },
+    {
+      "index": 20,
+      "at_utc": "2026-11-10T18:18:12.804188+00:00",
+      "host_cpu_pct": 23.2,
+      "ram_total_bytes": 16344801280,
+      "ram_available_bytes": 1056235520,
+      "processes": {
+        "small": {
+          "rss_bytes": 1170309120,
+          "cpu_time_s": 57.9375,
+          "threads": 28
+        },
+        "large": {
+          "rss_bytes": 2724466688,
+          "cpu_time_s": 78.875,
+          "threads": 28
+        }
+      },
+      "gpu": {
+        "available": true,
+        "devices": [
+          {
+            "name": "NVIDIA GeForce RTX 4050 Laptop GPU",
+            "memory_total_mib": 6141.0,
+            "memory_used_mib": 3735.0,
+            "utilization_pct": 0.0,
+            "board_power_w": 2.56
+          }
+        ]
+      }
+    },
+    {
+      "index": 21,
+      "at_utc": "2026-11-10T18:18:13.812979+00:00",
+      "host_cpu_pct": 11.7,
+      "ram_total_bytes": 16344801280,
+      "ram_available_bytes": 1049485312,
+      "processes": {
+        "small": {
+          "rss_bytes": 1170309120,
+          "cpu_time_s": 57.9375,
+          "threads": 28
+        },
+        "large": {
+          "rss_bytes": 2724466688,
+          "cpu_time_s": 78.875,
+          "threads": 28
+        }
+      },
+      "gpu": {
+        "available": true,
+        "devices": [
+          {
+            "name": "NVIDIA GeForce RTX 4050 Laptop GPU",
+            "memory_total_mib": 6141.0,
+            "memory_used_mib": 3735.0,
+            "utilization_pct": 0.0,
+            "board_power_w": 2.55
+          }
+        ]
+      }
+    },
+    {
+      "index": 22,
+      "at_utc": "2026-11-10T18:18:14.808441+00:00",
+      "host_cpu_pct": 9.7,
+      "ram_total_bytes": 16344801280,
+      "ram_available_bytes": 1057112064,
+      "processes": {
+        "small": {
+          "rss_bytes": 1170309120,
+          "cpu_time_s": 57.9375,
+          "threads": 28
+        },
+        "large": {
+          "rss_bytes": 2724466688,
+          "cpu_time_s": 78.875,
+          "threads": 28
+        }
+      },
+      "gpu": {
+        "available": true,
+        "devices": [
+          {
+            "name": "NVIDIA GeForce RTX 4050 Laptop GPU",
+            "memory_total_mib": 6141.0,
+            "memory_used_mib": 3735.0,
+            "utilization_pct": 0.0,
+            "board_power_w": 2.56
+          }
+        ]
+      }
+    },
+    {
+      "index": 23,
+      "at_utc": "2026-11-10T18:18:15.805727+00:00",
+      "host_cpu_pct": 18.9,
+      "ram_total_bytes": 16344801280,
+      "ram_available_bytes": 1053683712,
+      "processes": {
+        "small": {
+          "rss_bytes": 1170309120,
+          "cpu_time_s": 57.9375,
+          "threads": 28
+        },
+        "large": {
+          "rss_bytes": 2724466688,
+          "cpu_time_s": 78.875,
+          "threads": 28
+        }
+      },
+      "gpu": {
+        "available": true,
+        "devices": [
+          {
+            "name": "NVIDIA GeForce RTX 4050 Laptop GPU",
+            "memory_total_mib": 6141.0,
+            "memory_used_mib": 3735.0,
+            "utilization_pct": 0.0,
+            "board_power_w": 2.56
+          }
+        ]
+      }
+    },
+    {
+      "index": 24,
+      "at_utc": "2026-11-10T18:18:16.806823+00:00",
+      "host_cpu_pct": 14.7,
+      "ram_total_bytes": 16344801280,
+      "ram_available_bytes": 1077059584,
+      "processes": {
+        "small": {
+          "rss_bytes": 1170309120,
+          "cpu_time_s": 57.9375,
+          "threads": 28
+        },
+        "large": {
+          "rss_bytes": 2724466688,
+          "cpu_time_s": 78.875,
+          "threads": 28
+        }
+      },
+      "gpu": {
+        "available": true,
+        "devices": [
+          {
+            "name": "NVIDIA GeForce RTX 4050 Laptop GPU",
+            "memory_total_mib": 6141.0,
+            "memory_used_mib": 3735.0,
+            "utilization_pct": 0.0,
+            "board_power_w": 2.56
+          }
+        ]
+      }
+    },
+    {
+      "index": 25,
+      "at_utc": "2026-11-10T18:18:17.812262+00:00",
+      "host_cpu_pct": 13.4,
+      "ram_total_bytes": 16344801280,
+      "ram_available_bytes": 1075859456,
+      "processes": {
+        "small": {
+          "rss_bytes": 1170309120,
+          "cpu_time_s": 57.9375,
+          "threads": 28
+        },
+        "large": {
+          "rss_bytes": 2724466688,
+          "cpu_time_s": 78.875,
+          "threads": 28
+        }
+      },
+      "gpu": {
+        "available": true,
+        "devices": [
+          {
+            "name": "NVIDIA GeForce RTX 4050 Laptop GPU",
+            "memory_total_mib": 6141.0,
+            "memory_used_mib": 3735.0,
+            "utilization_pct": 0.0,
+            "board_power_w": 2.56
+          }
+        ]
+      }
+    },
+    {
+      "index": 26,
+      "at_utc": "2026-11-10T18:18:18.805394+00:00",
+      "host_cpu_pct": 10.8,
+      "ram_total_bytes": 16344801280,
+      "ram_available_bytes": 1093459968,
+      "processes": {
+        "small": {
+          "rss_bytes": 1170309120,
+          "cpu_time_s": 57.9375,
+          "threads": 28
+        },
+        "large": {
+          "rss_bytes": 2724466688,
+          "cpu_time_s": 78.875,
+          "threads": 28
+        }
+      },
+      "gpu": {
+        "available": true,
+        "devices": [
+          {
+            "name": "NVIDIA GeForce RTX 4050 Laptop GPU",
+            "memory_total_mib": 6141.0,
+            "memory_used_mib": 3735.0,
+            "utilization_pct": 0.0,
+            "board_power_w": 2.58
+          }
+        ]
+      }
+    },
+    {
+      "index": 27,
+      "at_utc": "2026-11-10T18:18:19.817786+00:00",
+      "host_cpu_pct": 12.6,
+      "ram_total_bytes": 16344801280,
+      "ram_available_bytes": 1104297984,
+      "processes": {
+        "small": {
+          "rss_bytes": 1170309120,
+          "cpu_time_s": 57.9375,
+          "threads": 28
+        },
+        "large": {
+          "rss_bytes": 2724466688,
+          "cpu_time_s": 78.875,
+          "threads": 28
+        }
+      },
+      "gpu": {
+        "available": true,
+        "devices": [
+          {
+            "name": "NVIDIA GeForce RTX 4050 Laptop GPU",
+            "memory_total_mib": 6141.0,
+            "memory_used_mib": 3735.0,
+            "utilization_pct": 0.0,
+            "board_power_w": 2.57
+          }
+        ]
+      }
+    },
+    {
+      "index": 28,
+      "at_utc": "2026-11-10T18:18:20.810098+00:00",
+      "host_cpu_pct": 22.5,
+      "ram_total_bytes": 16344801280,
+      "ram_available_bytes": 1087455232,
+      "processes": {
+        "small": {
+          "rss_bytes": 1170309120,
+          "cpu_time_s": 57.9375,
+          "threads": 28
+        },
+        "large": {
+          "rss_bytes": 2724466688,
+          "cpu_time_s": 78.875,
+          "threads": 28
+        }
+      },
+      "gpu": {
+        "available": true,
+        "devices": [
+          {
+            "name": "NVIDIA GeForce RTX 4050 Laptop GPU",
+            "memory_total_mib": 6141.0,
+            "memory_used_mib": 3735.0,
+            "utilization_pct": 0.0,
+            "board_power_w": 2.57
+          }
+        ]
+      }
+    },
+    {
+      "index": 29,
+      "at_utc": "2026-11-10T18:18:21.806848+00:00",
+      "host_cpu_pct": 14.1,
+      "ram_total_bytes": 16344801280,
+      "ram_available_bytes": 1082519552,
+      "processes": {
+        "small": {
+          "rss_bytes": 1170309120,
+          "cpu_time_s": 57.9375,
+          "threads": 28
+        },
+        "large": {
+          "rss_bytes": 2724466688,
+          "cpu_time_s": 78.875,
+          "threads": 28
+        }
+      },
+      "gpu": {
+        "available": true,
+        "devices": [
+          {
+            "name": "NVIDIA GeForce RTX 4050 Laptop GPU",
+            "memory_total_mib": 6141.0,
+            "memory_used_mib": 3735.0,
+            "utilization_pct": 0.0,
+            "board_power_w": 2.56
+          }
+        ]
+      }
+    }
+  ],
+  "scope": "Existing shared local model services; no devices or 6G air interface.",
+  "power_scope": "nvidia-smi board power is shared GPU telemetry, not wall power or attributable per-request energy.",
+  "cost_scope": "No cloud billed in this run; laptop purchase, electricity tariff, and wall energy are unknown."
+}

@@ -15,6 +15,7 @@ def build(output, include_large=False):
     sources = {
         "eval_model.py": net / "eval_model.py",
         "backends/openai_backend.py": net / "backends/openai_backend.py",
+        "backends/target_contract.py": net / 'target_contract.py',
         "backends/device_actions.py": repo / "openvela_smart_home/dashboard/device_actions.py",
         "backends/eval_commands.jsonl": net / "backends/eval_commands.jsonl",
         "autodl_small_recovery.py": Path(__file__).with_name("autodl_small_recovery.py"),

@@ -1,0 +1,68 @@
+{
+  "schema": "sensehome.package-seal.v4",
+  "created_at_utc": "2026-11-11T07:53:42.638555+00:00",
+  "package": "SenseHome_匿名材料审阅包_20261111_v4.zip",
+  "bytes": 5881786,
+  "sha256": "b2821a08cc4a3ae9216c135f11d9830cba2cea9b4723b85e52e1cc4b99bd7698",
+  "n_files": 13,
+  "zip_crc_and_hashes_passed": true,
+  "private_trial_data_excluded": true,
+  "scan": {
+    "status": "PASS",
+    "credential_patterns": [
+      "private_key",
+      "openai_key",
+      "github_token",
+      "aws_access_key"
+    ],
+    "private_identity_or_path_file_count": 0,
+    "anonymous": true,
+    "scope": "finite pattern scan; not a guarantee of exhaustive privacy review"
+  },
+  "files": {
+    "dist/final/20261111_v4/SenseHome_合并佐证材料_20261111_v4.pdf": {
+      "bytes": 121172,
+      "sha256": "e6f36b727027ab1448b28988a704a1f576cdec17755299f0ee4d962fba668ae3"
+    },
+    "dist/final/20261111_v4/SenseHome_场景设计方案_20261111_v4.docx": {
+      "bytes": 158163,
+      "sha256": "ee300246b6f25a46fd1222e84b38a0ef3a97cfdaa772b394a3b28c20669db927"
+    },
+    "dist/final/20261111_v4/SenseHome_场景设计方案_20261111_v4.pdf": {
+      "bytes": 786526,
+      "sha256": "20fa2514810e76bc9585d355fe48900f3423d8c317112ea12220512e18844edb"
+    },
+    "dist/final/20261111_v4/SenseHome_场景设计答辩_20261111_v4.pdf": {
+      "bytes": 271475,
+      "sha256": "1dbfcca5e3910c6f0aa453cc275a286a27104f238e3a02742e99f186a17adf19"
+    },
+    "dist/final/20261111_v4/SenseHome_场景设计答辩_20261111_v4.pptx": {
+      "bytes": 67116,
+      "sha256": "8a4fdd2656e0b4e6c7c76e8fb25290f671bc3bba067e3b785013d242b04b57d9"
+    },
+    "dist/final/20261111_v4/SenseHome_当前软件证据回放_20261111_v4.mp4": {
+      "bytes": 4994364,
+      "sha256": "d4d507268a614a4b77e665cfcd6e6a7f98594ff20114842d08069bc922410b6f"
+    },
+    "dist/final/20261111_v4/主张指标证据页码索引.md": {
+      "bytes": 2414,
+      "sha256": "71dbb96975f979b061144f0e3252a1415004e1f1f61e4809c984921e967bb52a"
+    },
+    "dist/final/20261111_v4/交付说明.md": {
+      "bytes": 2765,
+      "sha256": "3529fe69f788df269d3b4abe9e3c8c809d80c0016b16741ffa891e747400364d"
+    },
+    "dist/final/20261111_v4/作品简介.txt": {
+      "bytes": 1110,
+      "sha256": "cfa4b174f54a51db07add6f23095958b1c9372d0b2972686abe75380e1d37a86"
+    },
+    "dist/final/20261111_v4/提交检查表.json": {
+      "bytes": 4314,
+      "sha256": "8433cd8efebdff83b28876b05ad27634f1824cbd93616527ad421f50d77b9aa9"
+    },
+    "dist/final/20261111_v4/提交检查表.md": {
+      "bytes": 722,
+      "sha256": "45e85e248c27da712a6b6fe399ed3f1fd6c6f87f114f7edc3a86b4a7cce87c12"
+    }
+  }
+}

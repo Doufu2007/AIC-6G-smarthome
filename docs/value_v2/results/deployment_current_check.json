@@ -1,0 +1,24 @@
+{
+  "schema": "sensehome.deployment-check.v2",
+  "declared_status": "current_local_only",
+  "hosts": {
+    "local": "127.0.0.1",
+    "cloud": "127.0.0.1"
+  },
+  "both_slots_loopback": true,
+  "syntactically_distinct_hosts": false,
+  "two_host_deployment_verified": false,
+  "scope": "URL shape and optional read-only model inventory only. Host identity, independent hardware, WAN path, queue telemetry, actuator delivery and task success require separate deployment evidence.",
+  "read_only_loopback_probes": {
+    "local": {
+      "error": "URLError",
+      "method": "GET",
+      "inference_requests": 0
+    },
+    "cloud": {
+      "error": "URLError",
+      "method": "GET",
+      "inference_requests": 0
+    }
+  }
+}

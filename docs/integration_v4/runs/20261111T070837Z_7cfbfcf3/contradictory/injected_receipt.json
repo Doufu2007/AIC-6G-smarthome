@@ -1,0 +1,118 @@
+{
+  "command_id": "contradiction-1",
+  "completed_indices": [
+    0
+  ],
+  "error": null,
+  "evidence_kind": "mqtt-software-entity",
+  "physical_execution_confirmed": false,
+  "platform_id": "contradictory-platform",
+  "request_sha256": "8c2af4d29b0a91cb0ca6e4c1c16d45ac5cc2d262df941f1cf511b57feced58ab",
+  "requested_actions": [
+    {
+      "name": "light_control",
+      "params": {
+        "brightness": 60,
+        "location": "客厅"
+      }
+    }
+  ],
+  "result": {
+    "actions": [
+      {
+        "description": "客厅灯光亮度=60%",
+        "name": "light_control",
+        "params": {
+          "brightness": 60,
+          "location": "客厅"
+        }
+      }
+    ],
+    "observation": "客厅灯光亮度=60%",
+    "semantic_complete": true
+  },
+  "schema": "sensehome.execution-receipt.v1",
+  "software_state": {
+    "curtains": {
+      "书房": {
+        "is_open": false,
+        "position": 0
+      },
+      "卧室": {
+        "is_open": false,
+        "position": 0
+      },
+      "厨房": {
+        "is_open": false,
+        "position": 0
+      },
+      "客厅": {
+        "is_open": false,
+        "position": 0
+      },
+      "室外": {
+        "is_open": false,
+        "position": 0
+      },
+      "浴室": {
+        "is_open": false,
+        "position": 0
+      }
+    },
+    "lights": {
+      "书房": {
+        "brightness": 0,
+        "is_on": false
+      },
+      "卧室": {
+        "brightness": 0,
+        "is_on": false
+      },
+      "厨房": {
+        "brightness": 0,
+        "is_on": false
+      },
+      "客厅": {
+        "brightness": 60,
+        "is_on": true
+      },
+      "室外": {
+        "brightness": 0,
+        "is_on": false
+      },
+      "浴室": {
+        "brightness": 0,
+        "is_on": false
+      }
+    },
+    "temperature": {
+      "书房": {
+        "humidity": 60,
+        "temp": 25
+      },
+      "卧室": {
+        "humidity": 60,
+        "temp": 25
+      },
+      "厨房": {
+        "humidity": 60,
+        "temp": 25
+      },
+      "客厅": {
+        "humidity": 60,
+        "temp": 25
+      },
+      "室外": {
+        "humidity": 60,
+        "temp": 25
+      },
+      "浴室": {
+        "humidity": 60,
+        "temp": 25
+      }
+    }
+  },
+  "state_version_after": 1,
+  "state_version_before": 0,
+  "status": "applied"
+}

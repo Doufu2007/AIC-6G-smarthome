@@ -1,0 +1,44 @@
+{
+  "captured_utc": "2026-11-10T18:20:18.177278+00:00",
+  "source": "Existing local assets from sibling project; copied metadata only, no model weights or executables.",
+  "runtime": "llama.cpp b11010",
+  "runtime_exe_sha256": "f156c6fcfb61c7dd259e2c577ccbab214185083650f18a9cdfdfb9c38d6cf3b3",
+  "files": [
+    {
+      "file": "Qwen2.5-1.5B-LICENSE",
+      "sha256": "832dd9e00a68dd83b3c3fb9f5588dad7dcf337a0db50f7d9483f310cd292e92e",
+      "bytes": 11343
+    },
+    {
+      "file": "Qwen3-4B-LICENSE",
+      "sha256": "5de36594c10839788a8c589443a8ef9d8b8d17c65a1b5807206ae037fc36c6bd",
+      "bytes": 11544
+    },
+    {
+      "file": "llama.cpp-LICENSE",
+      "sha256": "94f29bbed6a22c35b992c5c6ebf0e7c92f13b836b90f36f461c9cf2f0f1d010d",
+      "bytes": 1078
+    },
+    {
+      "file": "qwen3_4b_hf_metadata.json",
+      "sha256": "3df2aef59887d9610754adaf03921c09e57a3557b40bcc946b19577ef6fae566",
+      "bytes": 7390
+    },
+    {
+      "file": "qwen3_4b_hf_tree.json",
+      "sha256": "d2688a1608f8e3d8328f4ac70e05102c36fb477bd01693f108d18b7f8326d819",
+      "bytes": 1914
+    },
+    {
+      "file": "qwen3_4b_modelscope_files.json",
+      "sha256": "df0c934208d10616ada4faa529ad1cdbc2ff075098f100f49e6f77a1ce57eff1",
+      "bytes": 4093
+    },
+    {
+      "file": "model_identity.json",
+      "sha256": "94183a9b157721aa147219e4d43d96d95ef7fab3b04ba011c3f2c3b6aa298e06",
+      "bytes": 1228
+    }
+  ],
+  "note": "Historical download metadata retains original inference_started=false; current service availability is independently checked in this scenario project."
+}

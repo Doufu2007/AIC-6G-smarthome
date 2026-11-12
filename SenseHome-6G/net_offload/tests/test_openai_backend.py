@@ -90,7 +90,7 @@ class OpenAIBackendTests(unittest.TestCase):
             conn.close()
 
     def test_wrapper_calls_openai_and_returns_validated_actions_with_provenance(self):
-        status, result = self.request("POST", "/infer", {"command": "客厅有点暗"})
+        status, result = self.request("POST", "/infer", {"command": "把客厅灯光设为60%"})
 
         self.assertEqual(status, 200)
         self.assertEqual(result["actions"][0]["name"], "light_control")
@@ -113,7 +113,7 @@ class OpenAIBackendTests(unittest.TestCase):
         system = payload["messages"][0]["content"]
         self.assertIn('"action":"close"', system)
         self.assertIn('"name":"read_temperature"', system)
-        self.assertIn('"brightness":30', system)
+        self.assertIn('不得猜测调整幅度', system)
         self.assertIn("打开书房窗帘", system)
 
     def test_bad_model_json_and_forbidden_or_invalid_actions_are_rejected(self):
@@ -192,7 +192,6 @@ class OpenAIBackendTests(unittest.TestCase):
         self.upstream.mode = "custom-actions"
         self.upstream.actions = []
         cases = (
-            ("卧室有点亮", [{"name": "light_control", "params": {"location": "卧室", "action": "set", "brightness": 30}}]),
             ("浴室现在温度是多少", [{"name": "read_temperature", "params": {"location": "浴室"}}]),
         )
         for command, expected in cases:
@@ -202,6 +201,15 @@ class OpenAIBackendTests(unittest.TestCase):
                 self.assertEqual(result["actions"], expected)
                 self.assertEqual(result["raw_model_actions"], [])
                 self.assertEqual(result["action_normalization"]["source"], "high_confidence_command_semantics")
+
+    def test_relative_brightness_does_not_invent_target_from_empty_plan(self):
+        self.upstream.mode = 'custom-actions'
+        self.upstream.actions = []
+        for command in ('卧室有点亮', '客厅有点暗'):
+            status, result = self.request('POST', '/infer', {'command': command})
+            self.assertEqual(status, 200)
+            self.assertEqual(result['actions'], [])
+            self.assertNotIn('action_normalization', result)
 
     def test_ambiguous_command_is_not_normalized(self):
         self.upstream.mode = "custom-actions"
@@ -222,7 +230,7 @@ class OpenAIBackendTests(unittest.TestCase):
 
     def test_model_cannot_announce_execution_before_gateway_confirmation(self):
         self.upstream.mode = "premature-success"
-        status, result = self.request("POST", "/infer", {"command": "打开客厅的灯"})
+        status, result = self.request("POST", "/infer", {"command": "把客厅灯光设为60%"})
         self.assertEqual(status, 200)
         self.assertEqual(result["answer"], "动作计划已生成，等待网关执行确认。")
         self.assertNotIn("我已经打开", json.dumps(result, ensure_ascii=False))

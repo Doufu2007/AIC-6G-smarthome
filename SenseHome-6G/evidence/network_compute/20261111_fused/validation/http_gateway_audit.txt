@@ -1,0 +1,20 @@
+{
+  "passed": true,
+  "mode": "default_HTTP_gateway_measured_contract",
+  "raw_rows": 9084,
+  "matrix_rows": 2940,
+  "stress_rows": 6144,
+  "persisted_events": 9084,
+  "captured_observation_C_replay": true,
+  "checks": [
+    "default initializer policy",
+    "configured trace identity",
+    "full workload coverage",
+    "persistent event equality",
+    "contract effects",
+    "latency scope",
+    "statistics recomputation",
+    "FIFO/capacity/drain",
+    "switch evidence"
+  ]
+}

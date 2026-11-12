@@ -1,0 +1,79 @@
+<!doctype html>
+<html lang="zh-CN">
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>SenseHome · 匿名试用记录</title>
+<style>
+:root{font-family:"Microsoft YaHei",system-ui,sans-serif;color:#1e302c;background:#f5f5f0;font-size:16px}*{box-sizing:border-box}body{margin:0}main{max-width:960px;margin:auto;padding:40px 24px 80px}header{border-bottom:1px solid #cbd4cc;margin-bottom:28px;padding-bottom:22px}.eyebrow{font-size:12px;letter-spacing:.12em;color:#587068}h1{font-size:32px;line-height:1.35;margin:12px 0}h2{font-size:22px;margin-top:0}p{line-height:1.8}.muted{font-size:14px;color:#54655e}.status{padding:14px 18px;background:#e4ece4;border-left:4px solid #3c6954;margin:18px 0;line-height:1.6}.warning{background:#f4ecd9;border-color:#a28237}section{background:white;border:1px solid #d5dcd5;padding:26px;margin:20px 0}label{display:block;line-height:1.6;margin:15px 0 8px}input,textarea,select{font:inherit;width:100%;padding:11px;border:1px solid #a9b7ac;background:#fff;color:inherit;border-radius:0}textarea{resize:vertical;min-height:84px}input[type=checkbox]{width:auto;margin-right:8px}button{font:inherit;padding:11px 18px;border:1px solid #356047;background:#356047;color:white;cursor:pointer;margin:10px 8px 0 0}button.secondary{background:transparent;color:#294735}button.danger{background:white;color:#93433b;border-color:#93433b}button:disabled{opacity:.5;cursor:default}button:focus-visible,input:focus-visible,textarea:focus-visible,select:focus-visible{outline:3px solid #d6b970;outline-offset:3px}.grid{display:grid;grid-template-columns:1fr 1fr;gap:0 24px}.task-result{border-top:1px solid #d4ddd5;margin-top:20px;padding-top:15px}.task-result pre{background:#f2f5f1;padding:14px;font-size:12px;white-space:pre-wrap;overflow-wrap:anywhere;max-height:340px;overflow:auto}.hidden{display:none!important}.row{display:flex;align-items:center;flex-wrap:wrap;gap:4px}.counter{font-size:13px;color:#586b60}.error{color:#9b3c33;white-space:pre-wrap}small{line-height:1.6;display:block}.task-result h3{font-size:16px}.steps{font-size:14px;color:#65766d;letter-spacing:.04em}footer{margin-top:30px;font-size:13px;color:#607368;line-height:1.8}@media(max-width:660px){main{padding:24px 14px 50px}.grid{grid-template-columns:1fr}section{padding:20px}h1{font-size:27px}}
+</style>
+<main>
+  <header><div class="eyebrow">SENSEHOME / LOCAL TRIAL</div><h1>用一次，留下你的真实感受</h1><p>这里仅操作电脑中的模拟灯和窗帘。你可以遇到失败，也可以不知道怎么评价；这些回答同样有价值。</p><div class="steps">了解范围 → 自愿开始 → 尝试任务 → 自己决定是否保存</div></header>
+  <div id="mode" class="status" role="status">正在读取本机采集器状态…</div>
+  <p id="counts" class="counter"></p><p id="error" class="error" role="alert"></p>
+  <section id="consent-step">
+    <h2>开始前，先了解会保存什么</h2>
+    <p>运行任务时，命令、模型响应、软件状态和耗时会立即写入本次私有运行目录；需求回答和反馈只有最后确认保存才写入记录文件。不录音、不录像，不记录IP、姓名、联系方式或住址。请勿填写个人身份信息。</p>
+    <p>每次启动只接待一人。取消、撤回或未保存就关闭服务，会先停止本次网关、模型和软件设备，再删除本次私有运行目录及反馈。删除是普通文件删除，不能保证覆盖磁盘历史数据。已保存后仍可在本会话撤回。</p>
+    <label for="role">你以什么身份参与本次体验？</label><select id="role"><option value="user">普通使用者</option><option value="integrator">集成或部署人员</option><option value="developer_self_test">项目开发者自测</option></select>
+    <label><input type="checkbox" id="consent">我自愿参与，同意任务运行时暂存命令及运行证据，并按上述方式决定保存或删除。</label>
+    <label><input type="checkbox" id="allow-quote">允许在项目材料中引用我的匿名原话。（可不选；原话默认不公开引用。）</label>
+    <button id="start">自愿开始</button><p class="muted">未勾选同意时不会创建记录。采集模式由操作者启动服务时设置，不能在此页改成“真实用户”。</p>
+  </section>
+  <section id="baseline-step" class="hidden">
+    <h2>先说说你原来的使用经历</h2>
+    <p>请按使用原型前的真实经历回答。没有遇到问题、不需要此功能或想不起来，都可以；无需提供好评。</p>
+    <label for="base-prior_usage">平时怎样控制家里的灯、窗帘或其他设备？</label><textarea id="base-prior_usage" maxlength="1200"></textarea>
+    <label for="base-recent_incident_or_none">最近一次不顺利的具体经过是什么？没有也可以。</label><textarea id="base-recent_incident_or_none" maxlength="1200"></textarea>
+    <label for="base-impact">那次经历造成了什么影响？</label><textarea id="base-impact" maxlength="1200"></textarea>
+    <label for="base-desired_improvement">你最希望改善什么？也可以不需要改变。</label><textarea id="base-desired_improvement" maxlength="1200"></textarea>
+    <label for="base-acceptable_wait">对你想做的任务，能接受等多久？为什么？不知道可以不填。</label><textarea id="base-acceptable_wait" maxlength="1200"></textarea>
+    <label><input type="checkbox" id="baseline-skip">我选择跳过这些问题。</label>
+    <button id="baseline-next">暂存回答，开始尝试</button><button id="cancel-baseline" class="danger">取消并删除本次数据</button>
+    <p class="muted">这些回答与操作后反馈分开记录。开始任务后不可改写操作前的回答；最后确认保存才写入反馈文件。</p>
+  </section>
+  <section id="task-step" class="hidden">
+    <h2>尝试一条命令</h2><p class="muted">模拟设备房间：客厅、卧室、厨房、浴室、书房、室外。支持灯、窗帘和温湿度读取；阳台设备、插座、燃气控制没有接入。</p>
+    <label for="preset">选择任务来源</label><select id="preset"><option value="self_authored">我自己输入想尝试的任务</option><option value="T1">预设练习 T1：开客厅灯</option><option value="T2">预设练习 T2：两个房间调光</option><option value="T4">预设练习 T4：未接入的阳台灯</option></select>
+    <label for="command">你会怎么说？</label><textarea id="command" maxlength="500" placeholder="请用自己的话输入；也可以从上方选择预设练习。"></textarea>
+    <div class="row"><button id="execute">运行这一条</button><button id="finish" class="secondary">进入反馈</button><button id="cancel" class="danger">取消，不保存</button></div>
+    <div id="tasks" aria-live="polite"></div>
+  </section>
+  <section id="feedback-step" class="hidden">
+    <h2>留下原话，不需要给出好评</h2><p class="muted">可以写“想不起来”“不清楚”或“不愿回答”；至少填写一处你愿意保存的原话。所有问题均可跳过其余项，每项最多1200字。</p>
+    <div class="grid">
+      <div><label for="prior_usage">平时用过哪些家庭控制方式？</label><textarea id="prior_usage" maxlength="1200"></textarea></div>
+      <div><label for="recent_incident_or_none">最近有没有不顺利的真实经历？没有也可以。</label><textarea id="recent_incident_or_none" maxlength="1200"></textarea></div>
+      <div><label for="clear_or_confusing">刚才最清楚或最困惑的一处是什么？</label><textarea id="clear_or_confusing" maxlength="1200"></textarea></div>
+      <div><label for="expected_failure_message">如果发生故障，你希望看到什么说明？</label><textarea id="expected_failure_message" maxlength="1200"></textarea></div>
+      <div><label for="local_cloud_preference">哪些命令愿意交给外部模型，哪些希望只在本地？为什么？</label><textarea id="local_cloud_preference" maxlength="1200"></textarea></div>
+      <div><label for="degradation_restatement_verbatim">根据你刚看到的结果，现在能做什么、不能做什么？</label><textarea id="degradation_restatement_verbatim" maxlength="1200"></textarea></div>
+      <div><label for="willing_to_retry">你是否愿意再试？愿意、不愿意或不确定都可以。</label><textarea id="willing_to_retry" maxlength="1200"></textarea></div>
+      <div><label for="reason">其他原因或意见</label><textarea id="reason" maxlength="1200"></textarea></div>
+    </div>
+    <p>点击保存将保留上述文字和本次实际操作记录；失败不会被删除。没有连接网关的练习不计为有效技术试用。</p>
+    <button id="submit">确认保存匿名记录</button><button id="back" class="secondary">返回任务</button><button id="cancel-feedback" class="danger">取消，不保存</button>
+  </section>
+  <section id="done-step" class="hidden"><h2 id="done-title">已保存</h2><p id="done-message"></p><button id="withdraw" class="danger">撤回并删除本次记录</button><button id="again" class="secondary">结束并回到开始页</button><small>结束后页面将忘记本次匿名编号；若还需要撤回，请先操作撤回按钮。操作者也可以根据匿名编号删除本机记录。</small></section>
+  <footer>这是原型的采集工具。界面练习、自动化检查、开发者自测和外部使用者提交分别存储；匿名提交本身不能自动证明操作者身份。动作状态仅对应PC模拟设备，满意或再次试用意愿不等于购买承诺。</footer>
+</main>
+<script>
+const token='__COLLECTOR_TOKEN__', fields=['prior_usage','recent_incident_or_none','clear_or_confusing','expected_failure_message','local_cloud_preference','willing_to_retry','reason','degradation_restatement_verbatim'];
+const baselineFields=['prior_usage','recent_incident_or_none','impact','desired_improvement','acceptable_wait'];
+let config=null,session=null,taskNumber=0;
+const el=id=>document.getElementById(id),show=(id,visible)=>el(id).classList.toggle('hidden',!visible);
+async function api(path,payload){let response=await fetch(path,{method:payload?'POST':'GET',headers:{'X-Collector-Token':token,'Content-Type':'application/json'},body:payload?JSON.stringify(payload):undefined});let result=await response.json();if(!response.ok)throw new Error(result.error||'本机请求失败');return result;}
+function error(value){el('error').textContent=value||'';}
+function step(name){for(const id of ['consent','baseline','task','feedback','done'])show(id+'-step',id===name);if(name==='consent'){el('consent').checked=false;el('allow-quote').checked=false;}error('');}
+async function refresh(){config=await api('/api/config');let label={participant:'外部使用者采集',developer_self_test:'开发者自测',automation_test:'自动化检查'}[config.record_kind];el('mode').textContent=label+' / '+(config.gateway_connected?'已配置本机网关，只操作PC模拟设备。':'未连接网关，仅练习输入；没有设备执行，不计有效技术试用。');el('mode').classList.toggle('warning',!config.gateway_connected||config.record_kind!=='participant');el('counts').textContent='当前明确提交的外部匿名反馈 '+config.summary.participant_feedback_count+' 条；其中接入网关的会话 '+config.summary.valid_connected_trial_count+' 条。自测与自动化记录另列。';}
+el('start').onclick=async()=>{try{session=await api('/api/start',{consent:el('consent').checked,allow_quote:el('allow-quote').checked,role:el('role').value});taskNumber=0;el('tasks').replaceChildren();fields.forEach(id=>el(id).value='');el('command').value='';el('preset').value='self_authored';baselineFields.forEach(id=>el('base-'+id).value='');el('baseline-skip').checked=false;step('baseline');}catch(e){error(e.message);}};
+el('baseline-next').onclick=async()=>{try{await api('/api/baseline',{session_id:session.session_id,skipped:el('baseline-skip').checked,...Object.fromEntries(baselineFields.map(id=>[id,el('base-'+id).value]))});step('task');}catch(e){error(e.message);}};
+el('preset').onchange=()=>{const id=el('preset').value;el('command').value=config.presets[id]||'';};
+el('command').oninput=()=>{const id=el('preset').value;if(id!=='self_authored'&&el('command').value!==config.presets[id])el('preset').value='self_authored';};
+el('execute').onclick=async()=>{const button=el('execute');button.disabled=true;error('');try{const preset=el('preset').value;const result=await api('/api/task',{session_id:session.session_id,command:el('command').value,origin:preset==='self_authored'?'self_authored':'preset',preset_id:preset==='self_authored'?null:preset});const block=document.createElement('div');block.className='task-result';const title=document.createElement('h3');title.textContent='第 '+(++taskNumber)+' 条 · '+(result.transport==='practice_no_gateway'?'仅输入练习':'实际本机网关请求');const text=document.createElement('p');let detail=result.transport==='practice_no_gateway'?result.warning:(result.task_completed===true?'预设动作与模拟状态均确认。':result.task_completed===false?'预设任务未获完整确认，失败记录保留。':'本次不自动判定任务正确；请根据实际看到的结果评价。');text.textContent=detail;const pre=document.createElement('pre');pre.textContent=JSON.stringify(result,null,2);const details=document.createElement('details');const summary=document.createElement('summary');summary.textContent='查看原始结果与模拟状态';details.append(summary,pre);block.append(title,text,details);el('tasks').prepend(block);}catch(e){error(e.message);}finally{button.disabled=false;}};
+el('finish').onclick=()=>step('feedback');el('back').onclick=()=>step('task');
+async function cancel(){if(!session)return;try{await api('/api/cancel',{session_id:session.session_id});session=null;step('done');el('done-title').textContent='已收到取消，正在清理';el('done-message').textContent='服务将停止本次模型、网关与软件设备，然后删除本次运行目录。请让操作者核对终端 private_run_cleanup.all_absent=true。若关闭失败，应按本次运行目录处理，不能视为已删除。';el('withdraw').disabled=true;el('again').disabled=true;}catch(e){error(e.message);}}
+el('cancel-baseline').onclick=cancel;el('cancel').onclick=cancel;el('cancel-feedback').onclick=cancel;el('withdraw').onclick=cancel;
+el('submit').onclick=async()=>{el('submit').disabled=true;try{const feedback=Object.fromEntries(fields.map(id=>[id,el(id).value]));const result=await api('/api/submit',{session_id:session.session_id,confirm_submit:true,...feedback});step('done');el('done-message').textContent='匿名编号 '+result.session_id+'。'+(result.valid_connected_trial?'已保存接入网关的会话，操作成功与失败均保留。':'已保存文字反馈；本次不计为有效接入网关试用。')+' 原话公开引用：'+(result.allow_anonymous_quote?'允许':'未授权')+'。';await refresh();}catch(e){error(e.message);}finally{el('submit').disabled=false;}};
+el('again').textContent='已保存；下一位需重启服务';el('again').disabled=true;refresh().catch(e=>error(e.message));
+</script>
+</html>

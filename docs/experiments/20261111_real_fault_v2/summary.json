@@ -1,0 +1,387 @@
+{
+  "registered_at": "2026-11-10T19:58:08.649303+00:00",
+  "finished_at": "2026-11-10T20:00:36.701785+00:00",
+  "status": "finished",
+  "n_rows": 120,
+  "source_unchanged": true,
+  "conditions": {
+    "healthy": {
+      "n_rows": 24,
+      "status": "finished",
+      "by_arm": {
+        "fixed-local": {
+          "n_rows": 6,
+          "n_completed": 6,
+          "n_protection_refusal": 0,
+          "n_fallback": 0,
+          "n_interface_ok": 6,
+          "proxy_post_attempts": 6,
+          "actual_upstream_model_post_attempts": 6,
+          "actual_upstream_model_post_http200": 6,
+          "gateway_median_ms_all_requests": 729.9135,
+          "gateway_max_ms_all_requests": 838.332,
+          "selected_backend_counts": {
+            "local-model": 6,
+            "cloud-model": 0,
+            "local-rules": 0
+          }
+        },
+        "fixed-cloud": {
+          "n_rows": 6,
+          "n_completed": 6,
+          "n_protection_refusal": 0,
+          "n_fallback": 0,
+          "n_interface_ok": 6,
+          "proxy_post_attempts": 6,
+          "actual_upstream_model_post_attempts": 6,
+          "actual_upstream_model_post_http200": 6,
+          "gateway_median_ms_all_requests": 1113.954,
+          "gateway_max_ms_all_requests": 1146.109,
+          "selected_backend_counts": {
+            "local-model": 0,
+            "cloud-model": 6,
+            "local-rules": 0
+          }
+        },
+        "network-only": {
+          "n_rows": 6,
+          "n_completed": 6,
+          "n_protection_refusal": 0,
+          "n_fallback": 0,
+          "n_interface_ok": 6,
+          "proxy_post_attempts": 6,
+          "actual_upstream_model_post_attempts": 6,
+          "actual_upstream_model_post_http200": 6,
+          "gateway_median_ms_all_requests": 721.0035,
+          "gateway_max_ms_all_requests": 903.081,
+          "selected_backend_counts": {
+            "local-model": 6,
+            "cloud-model": 0,
+            "local-rules": 0
+          }
+        },
+        "joint": {
+          "n_rows": 6,
+          "n_completed": 6,
+          "n_protection_refusal": 0,
+          "n_fallback": 0,
+          "n_interface_ok": 6,
+          "proxy_post_attempts": 6,
+          "actual_upstream_model_post_attempts": 6,
+          "actual_upstream_model_post_http200": 6,
+          "gateway_median_ms_all_requests": 708.981,
+          "gateway_max_ms_all_requests": 847.369,
+          "selected_backend_counts": {
+            "local-model": 6,
+            "cloud-model": 0,
+            "local-rules": 0
+          }
+        }
+      },
+      "statistics": "descriptive; 2 commands repeated on one shared host, no independent-user significance inference"
+    },
+    "cloud_http503": {
+      "n_rows": 24,
+      "status": "finished",
+      "by_arm": {
+        "fixed-local": {
+          "n_rows": 6,
+          "n_completed": 6,
+          "n_protection_refusal": 0,
+          "n_fallback": 0,
+          "n_interface_ok": 6,
+          "proxy_post_attempts": 6,
+          "actual_upstream_model_post_attempts": 6,
+          "actual_upstream_model_post_http200": 6,
+          "gateway_median_ms_all_requests": 712.7155,
+          "gateway_max_ms_all_requests": 836.067,
+          "selected_backend_counts": {
+            "local-model": 6,
+            "cloud-model": 0,
+            "local-rules": 0
+          }
+        },
+        "fixed-cloud": {
+          "n_rows": 6,
+          "n_completed": 0,
+          "n_protection_refusal": 0,
+          "n_fallback": 6,
+          "n_interface_ok": 6,
+          "proxy_post_attempts": 6,
+          "actual_upstream_model_post_attempts": 0,
+          "actual_upstream_model_post_http200": 0,
+          "gateway_median_ms_all_requests": 5.5165,
+          "gateway_max_ms_all_requests": 23.397,
+          "selected_backend_counts": {
+            "local-model": 0,
+            "cloud-model": 6,
+            "local-rules": 0
+          }
+        },
+        "network-only": {
+          "n_rows": 6,
+          "n_completed": 6,
+          "n_protection_refusal": 0,
+          "n_fallback": 0,
+          "n_interface_ok": 6,
+          "proxy_post_attempts": 6,
+          "actual_upstream_model_post_attempts": 6,
+          "actual_upstream_model_post_http200": 6,
+          "gateway_median_ms_all_requests": 714.764,
+          "gateway_max_ms_all_requests": 846.951,
+          "selected_backend_counts": {
+            "local-model": 6,
+            "cloud-model": 0,
+            "local-rules": 0
+          }
+        },
+        "joint": {
+          "n_rows": 6,
+          "n_completed": 6,
+          "n_protection_refusal": 0,
+          "n_fallback": 0,
+          "n_interface_ok": 6,
+          "proxy_post_attempts": 6,
+          "actual_upstream_model_post_attempts": 6,
+          "actual_upstream_model_post_http200": 6,
+          "gateway_median_ms_all_requests": 696.539,
+          "gateway_max_ms_all_requests": 892.883,
+          "selected_backend_counts": {
+            "local-model": 6,
+            "cloud-model": 0,
+            "local-rules": 0
+          }
+        }
+      },
+      "statistics": "descriptive; 2 commands repeated on one shared host, no independent-user significance inference"
+    },
+    "local_http503": {
+      "n_rows": 24,
+      "status": "finished",
+      "by_arm": {
+        "fixed-local": {
+          "n_rows": 6,
+          "n_completed": 0,
+          "n_protection_refusal": 0,
+          "n_fallback": 6,
+          "n_interface_ok": 6,
+          "proxy_post_attempts": 6,
+          "actual_upstream_model_post_attempts": 0,
+          "actual_upstream_model_post_http200": 0,
+          "gateway_median_ms_all_requests": 4.984999999999999,
+          "gateway_max_ms_all_requests": 19.66,
+          "selected_backend_counts": {
+            "local-model": 6,
+            "cloud-model": 0,
+            "local-rules": 0
+          }
+        },
+        "fixed-cloud": {
+          "n_rows": 6,
+          "n_completed": 6,
+          "n_protection_refusal": 0,
+          "n_fallback": 0,
+          "n_interface_ok": 6,
+          "proxy_post_attempts": 6,
+          "actual_upstream_model_post_attempts": 6,
+          "actual_upstream_model_post_http200": 6,
+          "gateway_median_ms_all_requests": 1054.51,
+          "gateway_max_ms_all_requests": 1132.648,
+          "selected_backend_counts": {
+            "local-model": 0,
+            "cloud-model": 6,
+            "local-rules": 0
+          }
+        },
+        "network-only": {
+          "n_rows": 6,
+          "n_completed": 0,
+          "n_protection_refusal": 0,
+          "n_fallback": 6,
+          "n_interface_ok": 6,
+          "proxy_post_attempts": 6,
+          "actual_upstream_model_post_attempts": 0,
+          "actual_upstream_model_post_http200": 0,
+          "gateway_median_ms_all_requests": 5.185499999999999,
+          "gateway_max_ms_all_requests": 6.621,
+          "selected_backend_counts": {
+            "local-model": 6,
+            "cloud-model": 0,
+            "local-rules": 0
+          }
+        },
+        "joint": {
+          "n_rows": 6,
+          "n_completed": 6,
+          "n_protection_refusal": 0,
+          "n_fallback": 0,
+          "n_interface_ok": 6,
+          "proxy_post_attempts": 6,
+          "actual_upstream_model_post_attempts": 6,
+          "actual_upstream_model_post_http200": 6,
+          "gateway_median_ms_all_requests": 1108.4335,
+          "gateway_max_ms_all_requests": 1130.896,
+          "selected_backend_counts": {
+            "local-model": 0,
+            "cloud-model": 6,
+            "local-rules": 0
+          }
+        }
+      },
+      "statistics": "descriptive; 2 commands repeated on one shared host, no independent-user significance inference"
+    },
+    "cloud_admission700": {
+      "n_rows": 24,
+      "status": "finished",
+      "by_arm": {
+        "fixed-local": {
+          "n_rows": 6,
+          "n_completed": 6,
+          "n_protection_refusal": 0,
+          "n_fallback": 0,
+          "n_interface_ok": 6,
+          "proxy_post_attempts": 6,
+          "actual_upstream_model_post_attempts": 6,
+          "actual_upstream_model_post_http200": 6,
+          "gateway_median_ms_all_requests": 714.99,
+          "gateway_max_ms_all_requests": 882.251,
+          "selected_backend_counts": {
+            "local-model": 6,
+            "cloud-model": 0,
+            "local-rules": 0
+          }
+        },
+        "fixed-cloud": {
+          "n_rows": 6,
+          "n_completed": 6,
+          "n_protection_refusal": 0,
+          "n_fallback": 0,
+          "n_interface_ok": 6,
+          "proxy_post_attempts": 6,
+          "actual_upstream_model_post_attempts": 6,
+          "actual_upstream_model_post_http200": 6,
+          "gateway_median_ms_all_requests": 1790.3895,
+          "gateway_max_ms_all_requests": 1837.184,
+          "selected_backend_counts": {
+            "local-model": 0,
+            "cloud-model": 6,
+            "local-rules": 0
+          }
+        },
+        "network-only": {
+          "n_rows": 6,
+          "n_completed": 6,
+          "n_protection_refusal": 0,
+          "n_fallback": 0,
+          "n_interface_ok": 6,
+          "proxy_post_attempts": 6,
+          "actual_upstream_model_post_attempts": 6,
+          "actual_upstream_model_post_http200": 6,
+          "gateway_median_ms_all_requests": 719.141,
+          "gateway_max_ms_all_requests": 864.39,
+          "selected_backend_counts": {
+            "local-model": 6,
+            "cloud-model": 0,
+            "local-rules": 0
+          }
+        },
+        "joint": {
+          "n_rows": 6,
+          "n_completed": 6,
+          "n_protection_refusal": 0,
+          "n_fallback": 0,
+          "n_interface_ok": 6,
+          "proxy_post_attempts": 6,
+          "actual_upstream_model_post_attempts": 6,
+          "actual_upstream_model_post_http200": 6,
+          "gateway_median_ms_all_requests": 712.1625,
+          "gateway_max_ms_all_requests": 856.79,
+          "selected_backend_counts": {
+            "local-model": 6,
+            "cloud-model": 0,
+            "local-rules": 0
+          }
+        }
+      },
+      "statistics": "descriptive; 2 commands repeated on one shared host, no independent-user significance inference"
+    },
+    "local_admission700": {
+      "n_rows": 24,
+      "status": "finished",
+      "by_arm": {
+        "fixed-local": {
+          "n_rows": 6,
+          "n_completed": 6,
+          "n_protection_refusal": 0,
+          "n_fallback": 0,
+          "n_interface_ok": 6,
+          "proxy_post_attempts": 6,
+          "actual_upstream_model_post_attempts": 6,
+          "actual_upstream_model_post_http200": 6,
+          "gateway_median_ms_all_requests": 1420.246,
+          "gateway_max_ms_all_requests": 1596.722,
+          "selected_backend_counts": {
+            "local-model": 6,
+            "cloud-model": 0,
+            "local-rules": 0
+          }
+        },
+        "fixed-cloud": {
+          "n_rows": 6,
+          "n_completed": 6,
+          "n_protection_refusal": 0,
+          "n_fallback": 0,
+          "n_interface_ok": 6,
+          "proxy_post_attempts": 6,
+          "actual_upstream_model_post_attempts": 6,
+          "actual_upstream_model_post_http200": 6,
+          "gateway_median_ms_all_requests": 1046.806,
+          "gateway_max_ms_all_requests": 1093.315,
+          "selected_backend_counts": {
+            "local-model": 0,
+            "cloud-model": 6,
+            "local-rules": 0
+          }
+        },
+        "network-only": {
+          "n_rows": 6,
+          "n_completed": 6,
+          "n_protection_refusal": 0,
+          "n_fallback": 0,
+          "n_interface_ok": 6,
+          "proxy_post_attempts": 6,
+          "actual_upstream_model_post_attempts": 6,
+          "actual_upstream_model_post_http200": 6,
+          "gateway_median_ms_all_requests": 1431.163,
+          "gateway_max_ms_all_requests": 1614.869,
+          "selected_backend_counts": {
+            "local-model": 6,
+            "cloud-model": 0,
+            "local-rules": 0
+          }
+        },
+        "joint": {
+          "n_rows": 6,
+          "n_completed": 6,
+          "n_protection_refusal": 0,
+          "n_fallback": 0,
+          "n_interface_ok": 6,
+          "proxy_post_attempts": 6,
+          "actual_upstream_model_post_attempts": 6,
+          "actual_upstream_model_post_http200": 6,
+          "gateway_median_ms_all_requests": 1042.0059999999999,
+          "gateway_max_ms_all_requests": 1093.591,
+          "selected_backend_counts": {
+            "local-model": 0,
+            "cloud-model": 6,
+            "local-rules": 0
+          }
+        }
+      },
+      "statistics": "descriptive; 2 commands repeated on one shared host, no independent-user significance inference"
+    }
+  },
+  "scope": "conditional local controlled-fault behavior; no independent cloud, physical actuator, real-user, WAN or 6G claims",
+  "registration_sha256": "926b4e18b0aa1428f31d8f7a90886c65e928f8ce7191abd4a2a4cdff4decf630",
+  "primary_aggregation": "per-condition only; do not pool equal-weight artificial conditions into real-world reliability"
+}

@@ -1,0 +1,17 @@
+{
+  "schema": "sensehome.integration-v4.summary.v1",
+  "run_dir": "docs\\integration_v4\\runs\\20261111T065224Z_2c90f41d",
+  "formal_gateway_wiring": true,
+  "real_mqtt_broker": true,
+  "mqtt_software_entity": true,
+  "physical_execution_claim": false,
+  "model_probe": "fixed contract probe only for partial two-action test",
+  "cases": {
+    "duplicate": "PASS",
+    "payload_conflict": "PASS",
+    "ack_loss_query_only": "PASS",
+    "gateway_and_entity_restart": "PASS",
+    "partial_no_remaining_retry": "PASS",
+    "contradictory_binding_rejected": "PASS"
+  }
+}

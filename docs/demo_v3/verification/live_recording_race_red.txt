@@ -1,0 +1,42 @@
+F                                                                        [100%]
+================================== FAILURES ===================================
+_____ test_concurrent_health_and_planning_keep_raw_HTTP_records_separate ______
+
+private_run = WindowsPath('C:/Users/郑傅韬/Desktop/大学生活/AIC/AIC6G专项赛_2026/场景赛道/_work/demo_v3/automated_live_test_xva81tha/new_run')
+monkeypatch = <_pytest.monkeypatch.MonkeyPatch object at 0x0000019630E7BA80>
+
+    def test_concurrent_health_and_planning_keep_raw_HTTP_records_separate(private_run, monkeypatch):
+        import run_live
+        monkeypatch.setattr(run_live, 'LocalRuntime', ControlledRuntime)
+        session = run_live.make_live_server(port=0, models=True, run_dir=private_run)
+        runtime = ControlledRuntime.instances[-1]
+        session.monitor.close()
+        session.monitor._thread.join(timeout=3)
+        runtime.block_posts = True
+        raw = session.raw_backends['local']
+        inference = threading.Thread(target=raw.infer, args=('把客厅灯光设为60%，再把卧室灯光设为30%',))
+        health_done = threading.Event()
+        def check_health():
+            raw.health()
+            health_done.set()
+        health = threading.Thread(target=check_health)
+        try:
+            inference.start()
+            assert runtime.post_started.wait(timeout=3)
+            health.start()
+            health_done.wait(timeout=.1)
+            runtime.release_post.set()
+            inference.join(timeout=5)
+            health.join(timeout=5)
+            assert not inference.is_alive() and not health.is_alive()
+>           assert [row['method'] for row in raw.attempts[-1]['upstream_exchanges']] == ['POST']
+E           AssertionError: assert ['GET', 'POST'] == ['POST']
+E             
+E             At index 0 diff: 'GET' != 'POST'
+E             Left contains one more item: 'POST'
+E             Use -v to get more diff
+
+docs\demo_v3\test_run_live.py:293: AssertionError
+=========================== short test summary info ===========================
+FAILED docs/demo_v3/test_run_live.py::test_concurrent_health_and_planning_keep_raw_HTTP_records_separate
+1 failed, 6 deselected in 1.79s

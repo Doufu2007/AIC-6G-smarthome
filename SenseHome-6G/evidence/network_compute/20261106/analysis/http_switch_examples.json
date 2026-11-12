@@ -1,0 +1,2432 @@
+[
+  {
+    "seed": 20261116,
+    "arm": "joint",
+    "from_index": 28,
+    "to_index": 30,
+    "from_backend": "local-model",
+    "to_backend": "local-rules",
+    "reason": "NO_MODEL_CAPACITY",
+    "request_key": "matrix:20261116:local_queue:30:1:0:joint",
+    "observation": {
+      "schema_version": "sensehome.observation.v1",
+      "observation_id": 31,
+      "observed_age_ms": 62.0,
+      "endpoint_age_ms": {
+        "local": 15.0,
+        "cloud": 62.0
+      },
+      "network": {
+        "wan": {
+          "reachable": true,
+          "rtt_ms": 39.684,
+          "jitter_ms": 0,
+          "loss_pct": 68.75,
+          "bandwidth_kbps": null
+        },
+        "lan": {
+          "reachable": true,
+          "rtt_ms": 0.0,
+          "jitter_ms": null,
+          "loss_pct": null,
+          "bandwidth_kbps": null
+        }
+      },
+      "network_source": "HTTP endpoint RTT; devices simulated in gateway process",
+      "compute": {
+        "local": {
+          "queue_ms": 650,
+          "free_mem_mb": 2048,
+          "inflight": 12,
+          "model_ready": true,
+          "source": "backend_health_cache",
+          "field_sources": {
+            "queue_ms": "backend_health_cache",
+            "free_mem_mb": "backend_health_cache",
+            "inflight": "backend_health_cache",
+            "model_ready": "backend_health_cache"
+          }
+        },
+        "cloud": {
+          "queue_ms": 0,
+          "free_mem_mb": 16384,
+          "inflight": 0,
+          "model_ready": true,
+          "source": "backend_health_cache",
+          "field_sources": {
+            "queue_ms": "backend_health_cache",
+            "free_mem_mb": "backend_health_cache",
+            "inflight": "backend_health_cache",
+            "model_ready": "backend_health_cache"
+          }
+        }
+      },
+      "compute_source": "server_owned_health_cache",
+      "service": "interactive_inference",
+      "profile": {
+        "legacy_family": "eMBB",
+        "imt2030_mapping": "AI and Communication; Ubiquitous Connectivity",
+        "task_class": "complex",
+        "deadline_ms": 250,
+        "reliability_target": 0.99,
+        "request_bytes": 4096,
+        "response_bytes": 2048,
+        "wan_rtt_max_ms": 180,
+        "wan_jitter_max_ms": 30,
+        "wan_loss_max_pct": 5,
+        "command": "客厅有点暗",
+        "purpose": "Fixed planner contract, not a model accuracy benchmark"
+      },
+      "estimate_scope": "configured inference budgets; unmeasured bandwidth/queue omitted, not observed zero"
+    }
+  },
+  {
+    "seed": 20261116,
+    "arm": "joint",
+    "from_index": 38,
+    "to_index": 40,
+    "from_backend": "local-rules",
+    "to_backend": "local-model",
+    "reason": "WAN_LOSS_HIGH",
+    "request_key": "matrix:20261116:cloud_queue:40:1:0:joint",
+    "observation": {
+      "schema_version": "sensehome.observation.v1",
+      "observation_id": 41,
+      "observed_age_ms": 78.0,
+      "endpoint_age_ms": {
+        "local": 31.0,
+        "cloud": 78.0
+      },
+      "network": {
+        "wan": {
+          "reachable": true,
+          "rtt_ms": 34.879,
+          "jitter_ms": 10.228026052295231,
+          "loss_pct": 31.25,
+          "bandwidth_kbps": null
+        },
+        "lan": {
+          "reachable": true,
+          "rtt_ms": 0.0,
+          "jitter_ms": null,
+          "loss_pct": null,
+          "bandwidth_kbps": null
+        }
+      },
+      "network_source": "HTTP endpoint RTT; devices simulated in gateway process",
+      "compute": {
+        "local": {
+          "queue_ms": 0,
+          "free_mem_mb": 2048,
+          "inflight": 0,
+          "model_ready": true,
+          "source": "backend_health_cache",
+          "field_sources": {
+            "queue_ms": "backend_health_cache",
+            "free_mem_mb": "backend_health_cache",
+            "inflight": "backend_health_cache",
+            "model_ready": "backend_health_cache"
+          }
+        },
+        "cloud": {
+          "queue_ms": 650,
+          "free_mem_mb": 16384,
+          "inflight": 12,
+          "model_ready": true,
+          "source": "backend_health_cache",
+          "field_sources": {
+            "queue_ms": "backend_health_cache",
+            "free_mem_mb": "backend_health_cache",
+            "inflight": "backend_health_cache",
+            "model_ready": "backend_health_cache"
+          }
+        }
+      },
+      "compute_source": "server_owned_health_cache",
+      "service": "interactive_inference",
+      "profile": {
+        "legacy_family": "eMBB",
+        "imt2030_mapping": "AI and Communication; Ubiquitous Connectivity",
+        "task_class": "complex",
+        "deadline_ms": 250,
+        "reliability_target": 0.99,
+        "request_bytes": 4096,
+        "response_bytes": 2048,
+        "wan_rtt_max_ms": 180,
+        "wan_jitter_max_ms": 30,
+        "wan_loss_max_pct": 5,
+        "command": "客厅有点暗",
+        "purpose": "Fixed planner contract, not a model accuracy benchmark"
+      },
+      "estimate_scope": "configured inference budgets; unmeasured bandwidth/queue omitted, not observed zero"
+    }
+  },
+  {
+    "seed": 20261116,
+    "arm": "joint",
+    "from_index": 48,
+    "to_index": 50,
+    "from_backend": "local-model",
+    "to_backend": "cloud-model",
+    "reason": "LOCAL_MODEL_UNAVAILABLE",
+    "request_key": "matrix:20261116:local_model_down:50:1:0:joint",
+    "observation": {
+      "schema_version": "sensehome.observation.v1",
+      "observation_id": 51,
+      "observed_age_ms": 79.0,
+      "endpoint_age_ms": {
+        "local": 32.0,
+        "cloud": 79.0
+      },
+      "network": {
+        "wan": {
+          "reachable": true,
+          "rtt_ms": 53.438,
+          "jitter_ms": 9.496406820229797,
+          "loss_pct": 0.0,
+          "bandwidth_kbps": null
+        },
+        "lan": {
+          "reachable": true,
+          "rtt_ms": 0.0,
+          "jitter_ms": null,
+          "loss_pct": null,
+          "bandwidth_kbps": null
+        }
+      },
+      "network_source": "HTTP endpoint RTT; devices simulated in gateway process",
+      "compute": {
+        "local": {
+          "queue_ms": 0,
+          "free_mem_mb": 2048,
+          "inflight": 0,
+          "model_ready": false,
+          "source": "backend_health_cache",
+          "field_sources": {
+            "queue_ms": "backend_health_cache",
+            "free_mem_mb": "backend_health_cache",
+            "inflight": "backend_health_cache",
+            "model_ready": "backend_health_cache"
+          }
+        },
+        "cloud": {
+          "queue_ms": 0,
+          "free_mem_mb": 16384,
+          "inflight": 0,
+          "model_ready": true,
+          "source": "backend_health_cache",
+          "field_sources": {
+            "queue_ms": "backend_health_cache",
+            "free_mem_mb": "backend_health_cache",
+            "inflight": "backend_health_cache",
+            "model_ready": "backend_health_cache"
+          }
+        }
+      },
+      "compute_source": "server_owned_health_cache",
+      "service": "interactive_inference",
+      "profile": {
+        "legacy_family": "eMBB",
+        "imt2030_mapping": "AI and Communication; Ubiquitous Connectivity",
+        "task_class": "complex",
+        "deadline_ms": 250,
+        "reliability_target": 0.99,
+        "request_bytes": 4096,
+        "response_bytes": 2048,
+        "wan_rtt_max_ms": 180,
+        "wan_jitter_max_ms": 30,
+        "wan_loss_max_pct": 5,
+        "command": "客厅有点暗",
+        "purpose": "Fixed planner contract, not a model accuracy benchmark"
+      },
+      "estimate_scope": "configured inference budgets; unmeasured bandwidth/queue omitted, not observed zero"
+    }
+  },
+  {
+    "seed": 20261116,
+    "arm": "joint",
+    "from_index": 68,
+    "to_index": 70,
+    "from_backend": "cloud-model",
+    "to_backend": "local-model",
+    "reason": "MODEL_UNAVAILABLE",
+    "request_key": "matrix:20261116:cloud_down:70:1:0:joint",
+    "observation": {
+      "schema_version": "sensehome.observation.v1",
+      "observation_id": 71,
+      "observed_age_ms": 47.0,
+      "endpoint_age_ms": {
+        "local": 15.0,
+        "cloud": 47.0
+      },
+      "network": {
+        "wan": {
+          "reachable": true,
+          "rtt_ms": 40.97,
+          "jitter_ms": 10.838828688782502,
+          "loss_pct": 0.0,
+          "bandwidth_kbps": null
+        },
+        "lan": {
+          "reachable": true,
+          "rtt_ms": 0.0,
+          "jitter_ms": null,
+          "loss_pct": null,
+          "bandwidth_kbps": null
+        }
+      },
+      "network_source": "HTTP endpoint RTT; devices simulated in gateway process",
+      "compute": {
+        "local": {
+          "queue_ms": 0,
+          "free_mem_mb": 2048,
+          "inflight": 0,
+          "model_ready": true,
+          "source": "backend_health_cache",
+          "field_sources": {
+            "queue_ms": "backend_health_cache",
+            "free_mem_mb": "backend_health_cache",
+            "inflight": "backend_health_cache",
+            "model_ready": "backend_health_cache"
+          }
+        },
+        "cloud": {
+          "queue_ms": 0,
+          "free_mem_mb": 16384,
+          "inflight": 0,
+          "model_ready": false,
+          "source": "backend_health_cache",
+          "field_sources": {
+            "queue_ms": "backend_health_cache",
+            "free_mem_mb": "backend_health_cache",
+            "inflight": "backend_health_cache",
+            "model_ready": "backend_health_cache"
+          }
+        }
+      },
+      "compute_source": "server_owned_health_cache",
+      "service": "interactive_inference",
+      "profile": {
+        "legacy_family": "eMBB",
+        "imt2030_mapping": "AI and Communication; Ubiquitous Connectivity",
+        "task_class": "complex",
+        "deadline_ms": 250,
+        "reliability_target": 0.99,
+        "request_bytes": 4096,
+        "response_bytes": 2048,
+        "wan_rtt_max_ms": 180,
+        "wan_jitter_max_ms": 30,
+        "wan_loss_max_pct": 5,
+        "command": "客厅有点暗",
+        "purpose": "Fixed planner contract, not a model accuracy benchmark"
+      },
+      "estimate_scope": "configured inference budgets; unmeasured bandwidth/queue omitted, not observed zero"
+    }
+  },
+  {
+    "seed": 20261116,
+    "arm": "joint",
+    "from_index": 78,
+    "to_index": 80,
+    "from_backend": "local-model",
+    "to_backend": "local-rules",
+    "reason": "NO_MODEL_CAPACITY",
+    "request_key": "matrix:20261116:both_models_down:80:1:0:joint",
+    "observation": {
+      "schema_version": "sensehome.observation.v1",
+      "observation_id": 81,
+      "observed_age_ms": 63.0,
+      "endpoint_age_ms": {
+        "local": 32.0,
+        "cloud": 63.0
+      },
+      "network": {
+        "wan": {
+          "reachable": true,
+          "rtt_ms": 36.096,
+          "jitter_ms": 9.577270386305809,
+          "loss_pct": 0.0,
+          "bandwidth_kbps": null
+        },
+        "lan": {
+          "reachable": true,
+          "rtt_ms": 0.0,
+          "jitter_ms": null,
+          "loss_pct": null,
+          "bandwidth_kbps": null
+        }
+      },
+      "network_source": "HTTP endpoint RTT; devices simulated in gateway process",
+      "compute": {
+        "local": {
+          "queue_ms": 0,
+          "free_mem_mb": 2048,
+          "inflight": 0,
+          "model_ready": false,
+          "source": "backend_health_cache",
+          "field_sources": {
+            "queue_ms": "backend_health_cache",
+            "free_mem_mb": "backend_health_cache",
+            "inflight": "backend_health_cache",
+            "model_ready": "backend_health_cache"
+          }
+        },
+        "cloud": {
+          "queue_ms": 0,
+          "free_mem_mb": 16384,
+          "inflight": 0,
+          "model_ready": false,
+          "source": "backend_health_cache",
+          "field_sources": {
+            "queue_ms": "backend_health_cache",
+            "free_mem_mb": "backend_health_cache",
+            "inflight": "backend_health_cache",
+            "model_ready": "backend_health_cache"
+          }
+        }
+      },
+      "compute_source": "server_owned_health_cache",
+      "service": "interactive_inference",
+      "profile": {
+        "legacy_family": "eMBB",
+        "imt2030_mapping": "AI and Communication; Ubiquitous Connectivity",
+        "task_class": "complex",
+        "deadline_ms": 250,
+        "reliability_target": 0.99,
+        "request_bytes": 4096,
+        "response_bytes": 2048,
+        "wan_rtt_max_ms": 180,
+        "wan_jitter_max_ms": 30,
+        "wan_loss_max_pct": 5,
+        "command": "客厅有点暗",
+        "purpose": "Fixed planner contract, not a model accuracy benchmark"
+      },
+      "estimate_scope": "configured inference budgets; unmeasured bandwidth/queue omitted, not observed zero"
+    }
+  },
+  {
+    "seed": 20261116,
+    "arm": "joint",
+    "from_index": 88,
+    "to_index": 90,
+    "from_backend": "local-rules",
+    "to_backend": "local-model",
+    "reason": "COST_LOCAL",
+    "request_key": "matrix:20261116:bandwidth_collapse:90:1:0:joint",
+    "observation": {
+      "schema_version": "sensehome.observation.v1",
+      "observation_id": 91,
+      "observed_age_ms": 63.0,
+      "endpoint_age_ms": {
+        "local": 31.0,
+        "cloud": 63.0
+      },
+      "network": {
+        "wan": {
+          "reachable": true,
+          "rtt_ms": 33.371,
+          "jitter_ms": 14.942529602832217,
+          "loss_pct": 0.0,
+          "bandwidth_kbps": null
+        },
+        "lan": {
+          "reachable": true,
+          "rtt_ms": 0.0,
+          "jitter_ms": null,
+          "loss_pct": null,
+          "bandwidth_kbps": null
+        }
+      },
+      "network_source": "HTTP endpoint RTT; devices simulated in gateway process",
+      "compute": {
+        "local": {
+          "queue_ms": 0,
+          "free_mem_mb": 2048,
+          "inflight": 0,
+          "model_ready": true,
+          "source": "backend_health_cache",
+          "field_sources": {
+            "queue_ms": "backend_health_cache",
+            "free_mem_mb": "backend_health_cache",
+            "inflight": "backend_health_cache",
+            "model_ready": "backend_health_cache"
+          }
+        },
+        "cloud": {
+          "queue_ms": 0,
+          "free_mem_mb": 16384,
+          "inflight": 0,
+          "model_ready": true,
+          "source": "backend_health_cache",
+          "field_sources": {
+            "queue_ms": "backend_health_cache",
+            "free_mem_mb": "backend_health_cache",
+            "inflight": "backend_health_cache",
+            "model_ready": "backend_health_cache"
+          }
+        }
+      },
+      "compute_source": "server_owned_health_cache",
+      "service": "interactive_inference",
+      "profile": {
+        "legacy_family": "eMBB",
+        "imt2030_mapping": "AI and Communication; Ubiquitous Connectivity",
+        "task_class": "complex",
+        "deadline_ms": 250,
+        "reliability_target": 0.99,
+        "request_bytes": 4096,
+        "response_bytes": 2048,
+        "wan_rtt_max_ms": 180,
+        "wan_jitter_max_ms": 30,
+        "wan_loss_max_pct": 5,
+        "command": "客厅有点暗",
+        "purpose": "Fixed planner contract, not a model accuracy benchmark"
+      },
+      "estimate_scope": "configured inference budgets; unmeasured bandwidth/queue omitted, not observed zero"
+    }
+  },
+  {
+    "seed": 20261116,
+    "arm": "joint",
+    "from_index": 98,
+    "to_index": 100,
+    "from_backend": "local-model",
+    "to_backend": "local-rules",
+    "reason": "NO_MODEL_CAPACITY",
+    "request_key": "matrix:20261116:handover:100:1:0:joint",
+    "observation": {
+      "schema_version": "sensehome.observation.v1",
+      "observation_id": 101,
+      "observed_age_ms": 31.0,
+      "endpoint_age_ms": {
+        "local": 15.0,
+        "cloud": 31.0
+      },
+      "network": {
+        "wan": {
+          "reachable": false,
+          "rtt_ms": 14.444,
+          "jitter_ms": 0,
+          "loss_pct": 6.25,
+          "bandwidth_kbps": null
+        },
+        "lan": {
+          "reachable": true,
+          "rtt_ms": 0.0,
+          "jitter_ms": null,
+          "loss_pct": null,
+          "bandwidth_kbps": null
+        }
+      },
+      "network_source": "HTTP endpoint RTT; devices simulated in gateway process",
+      "compute": {
+        "local": {
+          "queue_ms": 0,
+          "free_mem_mb": 2048,
+          "inflight": 0,
+          "model_ready": false,
+          "source": "backend_health_cache",
+          "field_sources": {
+            "queue_ms": "backend_health_cache",
+            "free_mem_mb": "backend_health_cache",
+            "inflight": "backend_health_cache",
+            "model_ready": "backend_health_cache"
+          }
+        },
+        "cloud": {
+          "queue_ms": null,
+          "free_mem_mb": null,
+          "inflight": null,
+          "model_ready": false,
+          "source": "backend_health_cache",
+          "field_sources": {
+            "queue_ms": "backend_health_cache",
+            "free_mem_mb": "backend_health_cache",
+            "inflight": "backend_health_cache",
+            "model_ready": "backend_health_cache"
+          }
+        }
+      },
+      "compute_source": "server_owned_health_cache",
+      "service": "interactive_inference",
+      "profile": {
+        "legacy_family": "eMBB",
+        "imt2030_mapping": "AI and Communication; Ubiquitous Connectivity",
+        "task_class": "complex",
+        "deadline_ms": 250,
+        "reliability_target": 0.99,
+        "request_bytes": 4096,
+        "response_bytes": 2048,
+        "wan_rtt_max_ms": 180,
+        "wan_jitter_max_ms": 30,
+        "wan_loss_max_pct": 5,
+        "command": "客厅有点暗",
+        "purpose": "Fixed planner contract, not a model accuracy benchmark"
+      },
+      "estimate_scope": "configured inference budgets; unmeasured bandwidth/queue omitted, not observed zero"
+    }
+  },
+  {
+    "seed": 20261116,
+    "arm": "joint",
+    "from_index": 101,
+    "to_index": 103,
+    "from_backend": "local-rules",
+    "to_backend": "local-model",
+    "reason": "WAN_UNREACHABLE",
+    "request_key": "matrix:20261116:handover:103:1:0:joint",
+    "observation": {
+      "schema_version": "sensehome.observation.v1",
+      "observation_id": 104,
+      "observed_age_ms": 31.0,
+      "endpoint_age_ms": {
+        "local": 15.0,
+        "cloud": 31.0
+      },
+      "network": {
+        "wan": {
+          "reachable": false,
+          "rtt_ms": 14.123,
+          "jitter_ms": 0,
+          "loss_pct": 25.0,
+          "bandwidth_kbps": null
+        },
+        "lan": {
+          "reachable": true,
+          "rtt_ms": 0.0,
+          "jitter_ms": null,
+          "loss_pct": null,
+          "bandwidth_kbps": null
+        }
+      },
+      "network_source": "HTTP endpoint RTT; devices simulated in gateway process",
+      "compute": {
+        "local": {
+          "queue_ms": 0,
+          "free_mem_mb": 2048,
+          "inflight": 0,
+          "model_ready": true,
+          "source": "backend_health_cache",
+          "field_sources": {
+            "queue_ms": "backend_health_cache",
+            "free_mem_mb": "backend_health_cache",
+            "inflight": "backend_health_cache",
+            "model_ready": "backend_health_cache"
+          }
+        },
+        "cloud": {
+          "queue_ms": null,
+          "free_mem_mb": null,
+          "inflight": null,
+          "model_ready": false,
+          "source": "backend_health_cache",
+          "field_sources": {
+            "queue_ms": "backend_health_cache",
+            "free_mem_mb": "backend_health_cache",
+            "inflight": "backend_health_cache",
+            "model_ready": "backend_health_cache"
+          }
+        }
+      },
+      "compute_source": "server_owned_health_cache",
+      "service": "interactive_inference",
+      "profile": {
+        "legacy_family": "eMBB",
+        "imt2030_mapping": "AI and Communication; Ubiquitous Connectivity",
+        "task_class": "complex",
+        "deadline_ms": 250,
+        "reliability_target": 0.99,
+        "request_bytes": 4096,
+        "response_bytes": 2048,
+        "wan_rtt_max_ms": 180,
+        "wan_jitter_max_ms": 30,
+        "wan_loss_max_pct": 5,
+        "command": "客厅有点暗",
+        "purpose": "Fixed planner contract, not a model accuracy benchmark"
+      },
+      "estimate_scope": "configured inference budgets; unmeasured bandwidth/queue omitted, not observed zero"
+    }
+  },
+  {
+    "seed": 20261116,
+    "arm": "joint",
+    "from_index": 118,
+    "to_index": 120,
+    "from_backend": "local-model",
+    "to_backend": "local-rules",
+    "reason": "NO_MODEL_CAPACITY",
+    "request_key": "matrix:20261116:lan_blackout:120:1:0:joint",
+    "observation": {
+      "schema_version": "sensehome.observation.v1",
+      "observation_id": 121,
+      "observed_age_ms": 63.0,
+      "endpoint_age_ms": {
+        "local": 16.0,
+        "cloud": 63.0
+      },
+      "network": {
+        "wan": {
+          "reachable": true,
+          "rtt_ms": 40.214,
+          "jitter_ms": 15.409638986438516,
+          "loss_pct": 6.25,
+          "bandwidth_kbps": null
+        },
+        "lan": {
+          "reachable": true,
+          "rtt_ms": 0.0,
+          "jitter_ms": null,
+          "loss_pct": null,
+          "bandwidth_kbps": null
+        }
+      },
+      "network_source": "HTTP endpoint RTT; devices simulated in gateway process",
+      "compute": {
+        "local": {
+          "queue_ms": null,
+          "free_mem_mb": null,
+          "inflight": null,
+          "model_ready": false,
+          "source": "backend_health_cache",
+          "field_sources": {
+            "queue_ms": "backend_health_cache",
+            "free_mem_mb": "backend_health_cache",
+            "inflight": "backend_health_cache",
+            "model_ready": "backend_health_cache"
+          }
+        },
+        "cloud": {
+          "queue_ms": 0,
+          "free_mem_mb": 16384,
+          "inflight": 0,
+          "model_ready": true,
+          "source": "backend_health_cache",
+          "field_sources": {
+            "queue_ms": "backend_health_cache",
+            "free_mem_mb": "backend_health_cache",
+            "inflight": "backend_health_cache",
+            "model_ready": "backend_health_cache"
+          }
+        }
+      },
+      "compute_source": "server_owned_health_cache",
+      "service": "interactive_inference",
+      "profile": {
+        "legacy_family": "eMBB",
+        "imt2030_mapping": "AI and Communication; Ubiquitous Connectivity",
+        "task_class": "complex",
+        "deadline_ms": 250,
+        "reliability_target": 0.99,
+        "request_bytes": 4096,
+        "response_bytes": 2048,
+        "wan_rtt_max_ms": 180,
+        "wan_jitter_max_ms": 30,
+        "wan_loss_max_pct": 5,
+        "command": "客厅有点暗",
+        "purpose": "Fixed planner contract, not a model accuracy benchmark"
+      },
+      "estimate_scope": "configured inference budgets; unmeasured bandwidth/queue omitted, not observed zero"
+    }
+  },
+  {
+    "seed": 20261116,
+    "arm": "joint",
+    "from_index": 123,
+    "to_index": 125,
+    "from_backend": "local-rules",
+    "to_backend": "cloud-model",
+    "reason": "LOCAL_MODEL_UNAVAILABLE",
+    "request_key": "matrix:20261116:lan_blackout:125:1:0:joint",
+    "observation": {
+      "schema_version": "sensehome.observation.v1",
+      "observation_id": 126,
+      "observed_age_ms": 78.0,
+      "endpoint_age_ms": {
+        "local": 47.0,
+        "cloud": 78.0
+      },
+      "network": {
+        "wan": {
+          "reachable": true,
+          "rtt_ms": 29.754,
+          "jitter_ms": 16.485889051668458,
+          "loss_pct": 0.0,
+          "bandwidth_kbps": null
+        },
+        "lan": {
+          "reachable": true,
+          "rtt_ms": 0.0,
+          "jitter_ms": null,
+          "loss_pct": null,
+          "bandwidth_kbps": null
+        }
+      },
+      "network_source": "HTTP endpoint RTT; devices simulated in gateway process",
+      "compute": {
+        "local": {
+          "queue_ms": null,
+          "free_mem_mb": null,
+          "inflight": null,
+          "model_ready": false,
+          "source": "backend_health_cache",
+          "field_sources": {
+            "queue_ms": "backend_health_cache",
+            "free_mem_mb": "backend_health_cache",
+            "inflight": "backend_health_cache",
+            "model_ready": "backend_health_cache"
+          }
+        },
+        "cloud": {
+          "queue_ms": 0,
+          "free_mem_mb": 16384,
+          "inflight": 0,
+          "model_ready": true,
+          "source": "backend_health_cache",
+          "field_sources": {
+            "queue_ms": "backend_health_cache",
+            "free_mem_mb": "backend_health_cache",
+            "inflight": "backend_health_cache",
+            "model_ready": "backend_health_cache"
+          }
+        }
+      },
+      "compute_source": "server_owned_health_cache",
+      "service": "interactive_inference",
+      "profile": {
+        "legacy_family": "eMBB",
+        "imt2030_mapping": "AI and Communication; Ubiquitous Connectivity",
+        "task_class": "complex",
+        "deadline_ms": 250,
+        "reliability_target": 0.99,
+        "request_bytes": 4096,
+        "response_bytes": 2048,
+        "wan_rtt_max_ms": 180,
+        "wan_jitter_max_ms": 30,
+        "wan_loss_max_pct": 5,
+        "command": "客厅有点暗",
+        "purpose": "Fixed planner contract, not a model accuracy benchmark"
+      },
+      "estimate_scope": "configured inference budgets; unmeasured bandwidth/queue omitted, not observed zero"
+    }
+  },
+  {
+    "seed": 20261116,
+    "arm": "joint",
+    "from_index": 128,
+    "to_index": 130,
+    "from_backend": "cloud-model",
+    "to_backend": "local-model",
+    "reason": "COST_LOCAL",
+    "request_key": "matrix:20261116:recovered:130:1:0:joint",
+    "observation": {
+      "schema_version": "sensehome.observation.v1",
+      "observation_id": 131,
+      "observed_age_ms": 47.0,
+      "endpoint_age_ms": {
+        "local": 15.0,
+        "cloud": 47.0
+      },
+      "network": {
+        "wan": {
+          "reachable": true,
+          "rtt_ms": 28.706,
+          "jitter_ms": 10.50413364536718,
+          "loss_pct": 0.0,
+          "bandwidth_kbps": null
+        },
+        "lan": {
+          "reachable": true,
+          "rtt_ms": 0.0,
+          "jitter_ms": null,
+          "loss_pct": null,
+          "bandwidth_kbps": null
+        }
+      },
+      "network_source": "HTTP endpoint RTT; devices simulated in gateway process",
+      "compute": {
+        "local": {
+          "queue_ms": 0,
+          "free_mem_mb": 2048,
+          "inflight": 0,
+          "model_ready": true,
+          "source": "backend_health_cache",
+          "field_sources": {
+            "queue_ms": "backend_health_cache",
+            "free_mem_mb": "backend_health_cache",
+            "inflight": "backend_health_cache",
+            "model_ready": "backend_health_cache"
+          }
+        },
+        "cloud": {
+          "queue_ms": 0,
+          "free_mem_mb": 16384,
+          "inflight": 0,
+          "model_ready": true,
+          "source": "backend_health_cache",
+          "field_sources": {
+            "queue_ms": "backend_health_cache",
+            "free_mem_mb": "backend_health_cache",
+            "inflight": "backend_health_cache",
+            "model_ready": "backend_health_cache"
+          }
+        }
+      },
+      "compute_source": "server_owned_health_cache",
+      "service": "interactive_inference",
+      "profile": {
+        "legacy_family": "eMBB",
+        "imt2030_mapping": "AI and Communication; Ubiquitous Connectivity",
+        "task_class": "complex",
+        "deadline_ms": 250,
+        "reliability_target": 0.99,
+        "request_bytes": 4096,
+        "response_bytes": 2048,
+        "wan_rtt_max_ms": 180,
+        "wan_jitter_max_ms": 30,
+        "wan_loss_max_pct": 5,
+        "command": "客厅有点暗",
+        "purpose": "Fixed planner contract, not a model accuracy benchmark"
+      },
+      "estimate_scope": "configured inference budgets; unmeasured bandwidth/queue omitted, not observed zero"
+    }
+  },
+  {
+    "seed": 20261116,
+    "arm": "compute-only",
+    "from_index": 28,
+    "to_index": 30,
+    "from_backend": "local-model",
+    "to_backend": "cloud-model",
+    "reason": "LOCAL_COMPUTE_OVERLOADED",
+    "request_key": "matrix:20261116:local_queue:30:1:0:compute-only",
+    "observation": {
+      "schema_version": "sensehome.observation.v1",
+      "observation_id": 31,
+      "observed_age_ms": 78.0,
+      "endpoint_age_ms": {
+        "local": 31.0,
+        "cloud": 78.0
+      },
+      "network": {
+        "wan": {
+          "reachable": true,
+          "rtt_ms": 34.854,
+          "jitter_ms": 0,
+          "loss_pct": 68.75,
+          "bandwidth_kbps": null
+        },
+        "lan": {
+          "reachable": true,
+          "rtt_ms": 0.0,
+          "jitter_ms": null,
+          "loss_pct": null,
+          "bandwidth_kbps": null
+        }
+      },
+      "network_source": "HTTP endpoint RTT; devices simulated in gateway process",
+      "compute": {
+        "local": {
+          "queue_ms": 650,
+          "free_mem_mb": 2048,
+          "inflight": 12,
+          "model_ready": true,
+          "source": "backend_health_cache",
+          "field_sources": {
+            "queue_ms": "backend_health_cache",
+            "free_mem_mb": "backend_health_cache",
+            "inflight": "backend_health_cache",
+            "model_ready": "backend_health_cache"
+          }
+        },
+        "cloud": {
+          "queue_ms": 0,
+          "free_mem_mb": 16384,
+          "inflight": 0,
+          "model_ready": true,
+          "source": "backend_health_cache",
+          "field_sources": {
+            "queue_ms": "backend_health_cache",
+            "free_mem_mb": "backend_health_cache",
+            "inflight": "backend_health_cache",
+            "model_ready": "backend_health_cache"
+          }
+        }
+      },
+      "compute_source": "server_owned_health_cache",
+      "service": "interactive_inference",
+      "profile": {
+        "legacy_family": "eMBB",
+        "imt2030_mapping": "AI and Communication; Ubiquitous Connectivity",
+        "task_class": "complex",
+        "deadline_ms": 250,
+        "reliability_target": 0.99,
+        "request_bytes": 4096,
+        "response_bytes": 2048,
+        "wan_rtt_max_ms": 180,
+        "wan_jitter_max_ms": 30,
+        "wan_loss_max_pct": 5,
+        "command": "客厅有点暗",
+        "purpose": "Fixed planner contract, not a model accuracy benchmark"
+      },
+      "estimate_scope": "configured inference budgets; unmeasured bandwidth/queue omitted, not observed zero"
+    }
+  },
+  {
+    "seed": 20261116,
+    "arm": "compute-only",
+    "from_index": 38,
+    "to_index": 40,
+    "from_backend": "cloud-model",
+    "to_backend": "local-model",
+    "reason": "COMPUTE_OVERLOADED",
+    "request_key": "matrix:20261116:cloud_queue:40:1:0:compute-only",
+    "observation": {
+      "schema_version": "sensehome.observation.v1",
+      "observation_id": 41,
+      "observed_age_ms": 78.0,
+      "endpoint_age_ms": {
+        "local": 47.0,
+        "cloud": 78.0
+      },
+      "network": {
+        "wan": {
+          "reachable": true,
+          "rtt_ms": 35.037,
+          "jitter_ms": 7.768948512057774,
+          "loss_pct": 31.25,
+          "bandwidth_kbps": null
+        },
+        "lan": {
+          "reachable": true,
+          "rtt_ms": 0.0,
+          "jitter_ms": null,
+          "loss_pct": null,
+          "bandwidth_kbps": null
+        }
+      },
+      "network_source": "HTTP endpoint RTT; devices simulated in gateway process",
+      "compute": {
+        "local": {
+          "queue_ms": 0,
+          "free_mem_mb": 2048,
+          "inflight": 0,
+          "model_ready": true,
+          "source": "backend_health_cache",
+          "field_sources": {
+            "queue_ms": "backend_health_cache",
+            "free_mem_mb": "backend_health_cache",
+            "inflight": "backend_health_cache",
+            "model_ready": "backend_health_cache"
+          }
+        },
+        "cloud": {
+          "queue_ms": 650,
+          "free_mem_mb": 16384,
+          "inflight": 12,
+          "model_ready": true,
+          "source": "backend_health_cache",
+          "field_sources": {
+            "queue_ms": "backend_health_cache",
+            "free_mem_mb": "backend_health_cache",
+            "inflight": "backend_health_cache",
+            "model_ready": "backend_health_cache"
+          }
+        }
+      },
+      "compute_source": "server_owned_health_cache",
+      "service": "interactive_inference",
+      "profile": {
+        "legacy_family": "eMBB",
+        "imt2030_mapping": "AI and Communication; Ubiquitous Connectivity",
+        "task_class": "complex",
+        "deadline_ms": 250,
+        "reliability_target": 0.99,
+        "request_bytes": 4096,
+        "response_bytes": 2048,
+        "wan_rtt_max_ms": 180,
+        "wan_jitter_max_ms": 30,
+        "wan_loss_max_pct": 5,
+        "command": "客厅有点暗",
+        "purpose": "Fixed planner contract, not a model accuracy benchmark"
+      },
+      "estimate_scope": "configured inference budgets; unmeasured bandwidth/queue omitted, not observed zero"
+    }
+  },
+  {
+    "seed": 20261116,
+    "arm": "compute-only",
+    "from_index": 48,
+    "to_index": 50,
+    "from_backend": "local-model",
+    "to_backend": "cloud-model",
+    "reason": "LOCAL_MODEL_UNAVAILABLE",
+    "request_key": "matrix:20261116:local_model_down:50:1:0:compute-only",
+    "observation": {
+      "schema_version": "sensehome.observation.v1",
+      "observation_id": 51,
+      "observed_age_ms": 78.0,
+      "endpoint_age_ms": {
+        "local": 46.0,
+        "cloud": 78.0
+      },
+      "network": {
+        "wan": {
+          "reachable": true,
+          "rtt_ms": 28.311,
+          "jitter_ms": 4.491914099461118,
+          "loss_pct": 0.0,
+          "bandwidth_kbps": null
+        },
+        "lan": {
+          "reachable": true,
+          "rtt_ms": 0.0,
+          "jitter_ms": null,
+          "loss_pct": null,
+          "bandwidth_kbps": null
+        }
+      },
+      "network_source": "HTTP endpoint RTT; devices simulated in gateway process",
+      "compute": {
+        "local": {
+          "queue_ms": 0,
+          "free_mem_mb": 2048,
+          "inflight": 0,
+          "model_ready": false,
+          "source": "backend_health_cache",
+          "field_sources": {
+            "queue_ms": "backend_health_cache",
+            "free_mem_mb": "backend_health_cache",
+            "inflight": "backend_health_cache",
+            "model_ready": "backend_health_cache"
+          }
+        },
+        "cloud": {
+          "queue_ms": 0,
+          "free_mem_mb": 16384,
+          "inflight": 0,
+          "model_ready": true,
+          "source": "backend_health_cache",
+          "field_sources": {
+            "queue_ms": "backend_health_cache",
+            "free_mem_mb": "backend_health_cache",
+            "inflight": "backend_health_cache",
+            "model_ready": "backend_health_cache"
+          }
+        }
+      },
+      "compute_source": "server_owned_health_cache",
+      "service": "interactive_inference",
+      "profile": {
+        "legacy_family": "eMBB",
+        "imt2030_mapping": "AI and Communication; Ubiquitous Connectivity",
+        "task_class": "complex",
+        "deadline_ms": 250,
+        "reliability_target": 0.99,
+        "request_bytes": 4096,
+        "response_bytes": 2048,
+        "wan_rtt_max_ms": 180,
+        "wan_jitter_max_ms": 30,
+        "wan_loss_max_pct": 5,
+        "command": "客厅有点暗",
+        "purpose": "Fixed planner contract, not a model accuracy benchmark"
+      },
+      "estimate_scope": "configured inference budgets; unmeasured bandwidth/queue omitted, not observed zero"
+    }
+  },
+  {
+    "seed": 20261116,
+    "arm": "compute-only",
+    "from_index": 68,
+    "to_index": 70,
+    "from_backend": "cloud-model",
+    "to_backend": "local-model",
+    "reason": "MODEL_UNAVAILABLE",
+    "request_key": "matrix:20261116:cloud_down:70:1:0:compute-only",
+    "observation": {
+      "schema_version": "sensehome.observation.v1",
+      "observation_id": 71,
+      "observed_age_ms": 47.0,
+      "endpoint_age_ms": {
+        "local": 0,
+        "cloud": 47.0
+      },
+      "network": {
+        "wan": {
+          "reachable": true,
+          "rtt_ms": 41.274,
+          "jitter_ms": 9.849816703325043,
+          "loss_pct": 0.0,
+          "bandwidth_kbps": null
+        },
+        "lan": {
+          "reachable": true,
+          "rtt_ms": 0.0,
+          "jitter_ms": null,
+          "loss_pct": null,
+          "bandwidth_kbps": null
+        }
+      },
+      "network_source": "HTTP endpoint RTT; devices simulated in gateway process",
+      "compute": {
+        "local": {
+          "queue_ms": 0,
+          "free_mem_mb": 2048,
+          "inflight": 0,
+          "model_ready": true,
+          "source": "backend_health_cache",
+          "field_sources": {
+            "queue_ms": "backend_health_cache",
+            "free_mem_mb": "backend_health_cache",
+            "inflight": "backend_health_cache",
+            "model_ready": "backend_health_cache"
+          }
+        },
+        "cloud": {
+          "queue_ms": 0,
+          "free_mem_mb": 16384,
+          "inflight": 0,
+          "model_ready": false,
+          "source": "backend_health_cache",
+          "field_sources": {
+            "queue_ms": "backend_health_cache",
+            "free_mem_mb": "backend_health_cache",
+            "inflight": "backend_health_cache",
+            "model_ready": "backend_health_cache"
+          }
+        }
+      },
+      "compute_source": "server_owned_health_cache",
+      "service": "interactive_inference",
+      "profile": {
+        "legacy_family": "eMBB",
+        "imt2030_mapping": "AI and Communication; Ubiquitous Connectivity",
+        "task_class": "complex",
+        "deadline_ms": 250,
+        "reliability_target": 0.99,
+        "request_bytes": 4096,
+        "response_bytes": 2048,
+        "wan_rtt_max_ms": 180,
+        "wan_jitter_max_ms": 30,
+        "wan_loss_max_pct": 5,
+        "command": "客厅有点暗",
+        "purpose": "Fixed planner contract, not a model accuracy benchmark"
+      },
+      "estimate_scope": "configured inference budgets; unmeasured bandwidth/queue omitted, not observed zero"
+    }
+  },
+  {
+    "seed": 20261116,
+    "arm": "compute-only",
+    "from_index": 78,
+    "to_index": 80,
+    "from_backend": "local-model",
+    "to_backend": "local-rules",
+    "reason": "NO_MODEL_CAPACITY",
+    "request_key": "matrix:20261116:both_models_down:80:1:0:compute-only",
+    "observation": {
+      "schema_version": "sensehome.observation.v1",
+      "observation_id": 81,
+      "observed_age_ms": 62.0,
+      "endpoint_age_ms": {
+        "local": 31.0,
+        "cloud": 62.0
+      },
+      "network": {
+        "wan": {
+          "reachable": true,
+          "rtt_ms": 29.288,
+          "jitter_ms": 11.789701960342096,
+          "loss_pct": 0.0,
+          "bandwidth_kbps": null
+        },
+        "lan": {
+          "reachable": true,
+          "rtt_ms": 0.0,
+          "jitter_ms": null,
+          "loss_pct": null,
+          "bandwidth_kbps": null
+        }
+      },
+      "network_source": "HTTP endpoint RTT; devices simulated in gateway process",
+      "compute": {
+        "local": {
+          "queue_ms": 0,
+          "free_mem_mb": 2048,
+          "inflight": 0,
+          "model_ready": false,
+          "source": "backend_health_cache",
+          "field_sources": {
+            "queue_ms": "backend_health_cache",
+            "free_mem_mb": "backend_health_cache",
+            "inflight": "backend_health_cache",
+            "model_ready": "backend_health_cache"
+          }
+        },
+        "cloud": {
+          "queue_ms": 0,
+          "free_mem_mb": 16384,
+          "inflight": 0,
+          "model_ready": false,
+          "source": "backend_health_cache",
+          "field_sources": {
+            "queue_ms": "backend_health_cache",
+            "free_mem_mb": "backend_health_cache",
+            "inflight": "backend_health_cache",
+            "model_ready": "backend_health_cache"
+          }
+        }
+      },
+      "compute_source": "server_owned_health_cache",
+      "service": "interactive_inference",
+      "profile": {
+        "legacy_family": "eMBB",
+        "imt2030_mapping": "AI and Communication; Ubiquitous Connectivity",
+        "task_class": "complex",
+        "deadline_ms": 250,
+        "reliability_target": 0.99,
+        "request_bytes": 4096,
+        "response_bytes": 2048,
+        "wan_rtt_max_ms": 180,
+        "wan_jitter_max_ms": 30,
+        "wan_loss_max_pct": 5,
+        "command": "客厅有点暗",
+        "purpose": "Fixed planner contract, not a model accuracy benchmark"
+      },
+      "estimate_scope": "configured inference budgets; unmeasured bandwidth/queue omitted, not observed zero"
+    }
+  },
+  {
+    "seed": 20261116,
+    "arm": "compute-only",
+    "from_index": 88,
+    "to_index": 90,
+    "from_backend": "local-rules",
+    "to_backend": "local-model",
+    "reason": "COST_LOCAL",
+    "request_key": "matrix:20261116:bandwidth_collapse:90:1:0:compute-only",
+    "observation": {
+      "schema_version": "sensehome.observation.v1",
+      "observation_id": 91,
+      "observed_age_ms": 79.0,
+      "endpoint_age_ms": {
+        "local": 32.0,
+        "cloud": 79.0
+      },
+      "network": {
+        "wan": {
+          "reachable": true,
+          "rtt_ms": 34.546,
+          "jitter_ms": 9.861481784262155,
+          "loss_pct": 0.0,
+          "bandwidth_kbps": null
+        },
+        "lan": {
+          "reachable": true,
+          "rtt_ms": 0.0,
+          "jitter_ms": null,
+          "loss_pct": null,
+          "bandwidth_kbps": null
+        }
+      },
+      "network_source": "HTTP endpoint RTT; devices simulated in gateway process",
+      "compute": {
+        "local": {
+          "queue_ms": 0,
+          "free_mem_mb": 2048,
+          "inflight": 0,
+          "model_ready": true,
+          "source": "backend_health_cache",
+          "field_sources": {
+            "queue_ms": "backend_health_cache",
+            "free_mem_mb": "backend_health_cache",
+            "inflight": "backend_health_cache",
+            "model_ready": "backend_health_cache"
+          }
+        },
+        "cloud": {
+          "queue_ms": 0,
+          "free_mem_mb": 16384,
+          "inflight": 0,
+          "model_ready": true,
+          "source": "backend_health_cache",
+          "field_sources": {
+            "queue_ms": "backend_health_cache",
+            "free_mem_mb": "backend_health_cache",
+            "inflight": "backend_health_cache",
+            "model_ready": "backend_health_cache"
+          }
+        }
+      },
+      "compute_source": "server_owned_health_cache",
+      "service": "interactive_inference",
+      "profile": {
+        "legacy_family": "eMBB",
+        "imt2030_mapping": "AI and Communication; Ubiquitous Connectivity",
+        "task_class": "complex",
+        "deadline_ms": 250,
+        "reliability_target": 0.99,
+        "request_bytes": 4096,
+        "response_bytes": 2048,
+        "wan_rtt_max_ms": 180,
+        "wan_jitter_max_ms": 30,
+        "wan_loss_max_pct": 5,
+        "command": "客厅有点暗",
+        "purpose": "Fixed planner contract, not a model accuracy benchmark"
+      },
+      "estimate_scope": "configured inference budgets; unmeasured bandwidth/queue omitted, not observed zero"
+    }
+  },
+  {
+    "seed": 20261116,
+    "arm": "compute-only",
+    "from_index": 98,
+    "to_index": 100,
+    "from_backend": "local-model",
+    "to_backend": "local-rules",
+    "reason": "NO_MODEL_CAPACITY",
+    "request_key": "matrix:20261116:handover:100:1:0:compute-only",
+    "observation": {
+      "schema_version": "sensehome.observation.v1",
+      "observation_id": 101,
+      "observed_age_ms": 63.0,
+      "endpoint_age_ms": {
+        "local": 47.0,
+        "cloud": 63.0
+      },
+      "network": {
+        "wan": {
+          "reachable": false,
+          "rtt_ms": 18.226,
+          "jitter_ms": 0,
+          "loss_pct": 6.25,
+          "bandwidth_kbps": null
+        },
+        "lan": {
+          "reachable": true,
+          "rtt_ms": 0.0,
+          "jitter_ms": null,
+          "loss_pct": null,
+          "bandwidth_kbps": null
+        }
+      },
+      "network_source": "HTTP endpoint RTT; devices simulated in gateway process",
+      "compute": {
+        "local": {
+          "queue_ms": 0,
+          "free_mem_mb": 2048,
+          "inflight": 0,
+          "model_ready": false,
+          "source": "backend_health_cache",
+          "field_sources": {
+            "queue_ms": "backend_health_cache",
+            "free_mem_mb": "backend_health_cache",
+            "inflight": "backend_health_cache",
+            "model_ready": "backend_health_cache"
+          }
+        },
+        "cloud": {
+          "queue_ms": null,
+          "free_mem_mb": null,
+          "inflight": null,
+          "model_ready": false,
+          "source": "backend_health_cache",
+          "field_sources": {
+            "queue_ms": "backend_health_cache",
+            "free_mem_mb": "backend_health_cache",
+            "inflight": "backend_health_cache",
+            "model_ready": "backend_health_cache"
+          }
+        }
+      },
+      "compute_source": "server_owned_health_cache",
+      "service": "interactive_inference",
+      "profile": {
+        "legacy_family": "eMBB",
+        "imt2030_mapping": "AI and Communication; Ubiquitous Connectivity",
+        "task_class": "complex",
+        "deadline_ms": 250,
+        "reliability_target": 0.99,
+        "request_bytes": 4096,
+        "response_bytes": 2048,
+        "wan_rtt_max_ms": 180,
+        "wan_jitter_max_ms": 30,
+        "wan_loss_max_pct": 5,
+        "command": "客厅有点暗",
+        "purpose": "Fixed planner contract, not a model accuracy benchmark"
+      },
+      "estimate_scope": "configured inference budgets; unmeasured bandwidth/queue omitted, not observed zero"
+    }
+  },
+  {
+    "seed": 20261116,
+    "arm": "compute-only",
+    "from_index": 101,
+    "to_index": 103,
+    "from_backend": "local-rules",
+    "to_backend": "local-model",
+    "reason": "MODEL_UNAVAILABLE",
+    "request_key": "matrix:20261116:handover:103:1:0:compute-only",
+    "observation": {
+      "schema_version": "sensehome.observation.v1",
+      "observation_id": 104,
+      "observed_age_ms": 32.0,
+      "endpoint_age_ms": {
+        "local": 16.0,
+        "cloud": 32.0
+      },
+      "network": {
+        "wan": {
+          "reachable": false,
+          "rtt_ms": 10.749,
+          "jitter_ms": 0,
+          "loss_pct": 25.0,
+          "bandwidth_kbps": null
+        },
+        "lan": {
+          "reachable": true,
+          "rtt_ms": 0.0,
+          "jitter_ms": null,
+          "loss_pct": null,
+          "bandwidth_kbps": null
+        }
+      },
+      "network_source": "HTTP endpoint RTT; devices simulated in gateway process",
+      "compute": {
+        "local": {
+          "queue_ms": 0,
+          "free_mem_mb": 2048,
+          "inflight": 0,
+          "model_ready": true,
+          "source": "backend_health_cache",
+          "field_sources": {
+            "queue_ms": "backend_health_cache",
+            "free_mem_mb": "backend_health_cache",
+            "inflight": "backend_health_cache",
+            "model_ready": "backend_health_cache"
+          }
+        },
+        "cloud": {
+          "queue_ms": null,
+          "free_mem_mb": null,
+          "inflight": null,
+          "model_ready": false,
+          "source": "backend_health_cache",
+          "field_sources": {
+            "queue_ms": "backend_health_cache",
+            "free_mem_mb": "backend_health_cache",
+            "inflight": "backend_health_cache",
+            "model_ready": "backend_health_cache"
+          }
+        }
+      },
+      "compute_source": "server_owned_health_cache",
+      "service": "interactive_inference",
+      "profile": {
+        "legacy_family": "eMBB",
+        "imt2030_mapping": "AI and Communication; Ubiquitous Connectivity",
+        "task_class": "complex",
+        "deadline_ms": 250,
+        "reliability_target": 0.99,
+        "request_bytes": 4096,
+        "response_bytes": 2048,
+        "wan_rtt_max_ms": 180,
+        "wan_jitter_max_ms": 30,
+        "wan_loss_max_pct": 5,
+        "command": "客厅有点暗",
+        "purpose": "Fixed planner contract, not a model accuracy benchmark"
+      },
+      "estimate_scope": "configured inference budgets; unmeasured bandwidth/queue omitted, not observed zero"
+    }
+  },
+  {
+    "seed": 20261116,
+    "arm": "compute-only",
+    "from_index": 118,
+    "to_index": 120,
+    "from_backend": "local-model",
+    "to_backend": "cloud-model",
+    "reason": "LOCAL_MODEL_UNAVAILABLE",
+    "request_key": "matrix:20261116:lan_blackout:120:1:0:compute-only",
+    "observation": {
+      "schema_version": "sensehome.observation.v1",
+      "observation_id": 121,
+      "observed_age_ms": 78.0,
+      "endpoint_age_ms": {
+        "local": 31.0,
+        "cloud": 78.0
+      },
+      "network": {
+        "wan": {
+          "reachable": true,
+          "rtt_ms": 46.256,
+          "jitter_ms": 20.25778049714103,
+          "loss_pct": 6.25,
+          "bandwidth_kbps": null
+        },
+        "lan": {
+          "reachable": true,
+          "rtt_ms": 0.0,
+          "jitter_ms": null,
+          "loss_pct": null,
+          "bandwidth_kbps": null
+        }
+      },
+      "network_source": "HTTP endpoint RTT; devices simulated in gateway process",
+      "compute": {
+        "local": {
+          "queue_ms": null,
+          "free_mem_mb": null,
+          "inflight": null,
+          "model_ready": false,
+          "source": "backend_health_cache",
+          "field_sources": {
+            "queue_ms": "backend_health_cache",
+            "free_mem_mb": "backend_health_cache",
+            "inflight": "backend_health_cache",
+            "model_ready": "backend_health_cache"
+          }
+        },
+        "cloud": {
+          "queue_ms": 0,
+          "free_mem_mb": 16384,
+          "inflight": 0,
+          "model_ready": true,
+          "source": "backend_health_cache",
+          "field_sources": {
+            "queue_ms": "backend_health_cache",
+            "free_mem_mb": "backend_health_cache",
+            "inflight": "backend_health_cache",
+            "model_ready": "backend_health_cache"
+          }
+        }
+      },
+      "compute_source": "server_owned_health_cache",
+      "service": "interactive_inference",
+      "profile": {
+        "legacy_family": "eMBB",
+        "imt2030_mapping": "AI and Communication; Ubiquitous Connectivity",
+        "task_class": "complex",
+        "deadline_ms": 250,
+        "reliability_target": 0.99,
+        "request_bytes": 4096,
+        "response_bytes": 2048,
+        "wan_rtt_max_ms": 180,
+        "wan_jitter_max_ms": 30,
+        "wan_loss_max_pct": 5,
+        "command": "客厅有点暗",
+        "purpose": "Fixed planner contract, not a model accuracy benchmark"
+      },
+      "estimate_scope": "configured inference budgets; unmeasured bandwidth/queue omitted, not observed zero"
+    }
+  },
+  {
+    "seed": 20261116,
+    "arm": "compute-only",
+    "from_index": 128,
+    "to_index": 130,
+    "from_backend": "cloud-model",
+    "to_backend": "local-model",
+    "reason": "COST_LOCAL",
+    "request_key": "matrix:20261116:recovered:130:1:0:compute-only",
+    "observation": {
+      "schema_version": "sensehome.observation.v1",
+      "observation_id": 131,
+      "observed_age_ms": 94.0,
+      "endpoint_age_ms": {
+        "local": 32.0,
+        "cloud": 94.0
+      },
+      "network": {
+        "wan": {
+          "reachable": true,
+          "rtt_ms": 52.8,
+          "jitter_ms": 15.410697159133157,
+          "loss_pct": 0.0,
+          "bandwidth_kbps": null
+        },
+        "lan": {
+          "reachable": true,
+          "rtt_ms": 0.0,
+          "jitter_ms": null,
+          "loss_pct": null,
+          "bandwidth_kbps": null
+        }
+      },
+      "network_source": "HTTP endpoint RTT; devices simulated in gateway process",
+      "compute": {
+        "local": {
+          "queue_ms": 0,
+          "free_mem_mb": 2048,
+          "inflight": 0,
+          "model_ready": true,
+          "source": "backend_health_cache",
+          "field_sources": {
+            "queue_ms": "backend_health_cache",
+            "free_mem_mb": "backend_health_cache",
+            "inflight": "backend_health_cache",
+            "model_ready": "backend_health_cache"
+          }
+        },
+        "cloud": {
+          "queue_ms": 0,
+          "free_mem_mb": 16384,
+          "inflight": 0,
+          "model_ready": true,
+          "source": "backend_health_cache",
+          "field_sources": {
+            "queue_ms": "backend_health_cache",
+            "free_mem_mb": "backend_health_cache",
+            "inflight": "backend_health_cache",
+            "model_ready": "backend_health_cache"
+          }
+        }
+      },
+      "compute_source": "server_owned_health_cache",
+      "service": "interactive_inference",
+      "profile": {
+        "legacy_family": "eMBB",
+        "imt2030_mapping": "AI and Communication; Ubiquitous Connectivity",
+        "task_class": "complex",
+        "deadline_ms": 250,
+        "reliability_target": 0.99,
+        "request_bytes": 4096,
+        "response_bytes": 2048,
+        "wan_rtt_max_ms": 180,
+        "wan_jitter_max_ms": 30,
+        "wan_loss_max_pct": 5,
+        "command": "客厅有点暗",
+        "purpose": "Fixed planner contract, not a model accuracy benchmark"
+      },
+      "estimate_scope": "configured inference budgets; unmeasured bandwidth/queue omitted, not observed zero"
+    }
+  },
+  {
+    "seed": 20261116,
+    "arm": "no-hysteresis",
+    "from_index": 28,
+    "to_index": 30,
+    "from_backend": "local-model",
+    "to_backend": "local-rules",
+    "reason": "NO_MODEL_CAPACITY",
+    "request_key": "matrix:20261116:local_queue:30:1:0:no-hysteresis",
+    "observation": {
+      "schema_version": "sensehome.observation.v1",
+      "observation_id": 31,
+      "observed_age_ms": 94.0,
+      "endpoint_age_ms": {
+        "local": 47.0,
+        "cloud": 94.0
+      },
+      "network": {
+        "wan": {
+          "reachable": true,
+          "rtt_ms": 46.957,
+          "jitter_ms": 0,
+          "loss_pct": 68.75,
+          "bandwidth_kbps": null
+        },
+        "lan": {
+          "reachable": true,
+          "rtt_ms": 0.0,
+          "jitter_ms": null,
+          "loss_pct": null,
+          "bandwidth_kbps": null
+        }
+      },
+      "network_source": "HTTP endpoint RTT; devices simulated in gateway process",
+      "compute": {
+        "local": {
+          "queue_ms": 650,
+          "free_mem_mb": 2048,
+          "inflight": 12,
+          "model_ready": true,
+          "source": "backend_health_cache",
+          "field_sources": {
+            "queue_ms": "backend_health_cache",
+            "free_mem_mb": "backend_health_cache",
+            "inflight": "backend_health_cache",
+            "model_ready": "backend_health_cache"
+          }
+        },
+        "cloud": {
+          "queue_ms": 0,
+          "free_mem_mb": 16384,
+          "inflight": 0,
+          "model_ready": true,
+          "source": "backend_health_cache",
+          "field_sources": {
+            "queue_ms": "backend_health_cache",
+            "free_mem_mb": "backend_health_cache",
+            "inflight": "backend_health_cache",
+            "model_ready": "backend_health_cache"
+          }
+        }
+      },
+      "compute_source": "server_owned_health_cache",
+      "service": "interactive_inference",
+      "profile": {
+        "legacy_family": "eMBB",
+        "imt2030_mapping": "AI and Communication; Ubiquitous Connectivity",
+        "task_class": "complex",
+        "deadline_ms": 250,
+        "reliability_target": 0.99,
+        "request_bytes": 4096,
+        "response_bytes": 2048,
+        "wan_rtt_max_ms": 180,
+        "wan_jitter_max_ms": 30,
+        "wan_loss_max_pct": 5,
+        "command": "客厅有点暗",
+        "purpose": "Fixed planner contract, not a model accuracy benchmark"
+      },
+      "estimate_scope": "configured inference budgets; unmeasured bandwidth/queue omitted, not observed zero"
+    }
+  },
+  {
+    "seed": 20261116,
+    "arm": "no-hysteresis",
+    "from_index": 38,
+    "to_index": 40,
+    "from_backend": "local-rules",
+    "to_backend": "local-model",
+    "reason": "WAN_LOSS_HIGH",
+    "request_key": "matrix:20261116:cloud_queue:40:1:0:no-hysteresis",
+    "observation": {
+      "schema_version": "sensehome.observation.v1",
+      "observation_id": 41,
+      "observed_age_ms": 93.0,
+      "endpoint_age_ms": {
+        "local": 47.0,
+        "cloud": 93.0
+      },
+      "network": {
+        "wan": {
+          "reachable": true,
+          "rtt_ms": 42.386,
+          "jitter_ms": 8.674970265707003,
+          "loss_pct": 31.25,
+          "bandwidth_kbps": null
+        },
+        "lan": {
+          "reachable": true,
+          "rtt_ms": 0.0,
+          "jitter_ms": null,
+          "loss_pct": null,
+          "bandwidth_kbps": null
+        }
+      },
+      "network_source": "HTTP endpoint RTT; devices simulated in gateway process",
+      "compute": {
+        "local": {
+          "queue_ms": 0,
+          "free_mem_mb": 2048,
+          "inflight": 0,
+          "model_ready": true,
+          "source": "backend_health_cache",
+          "field_sources": {
+            "queue_ms": "backend_health_cache",
+            "free_mem_mb": "backend_health_cache",
+            "inflight": "backend_health_cache",
+            "model_ready": "backend_health_cache"
+          }
+        },
+        "cloud": {
+          "queue_ms": 650,
+          "free_mem_mb": 16384,
+          "inflight": 12,
+          "model_ready": true,
+          "source": "backend_health_cache",
+          "field_sources": {
+            "queue_ms": "backend_health_cache",
+            "free_mem_mb": "backend_health_cache",
+            "inflight": "backend_health_cache",
+            "model_ready": "backend_health_cache"
+          }
+        }
+      },
+      "compute_source": "server_owned_health_cache",
+      "service": "interactive_inference",
+      "profile": {
+        "legacy_family": "eMBB",
+        "imt2030_mapping": "AI and Communication; Ubiquitous Connectivity",
+        "task_class": "complex",
+        "deadline_ms": 250,
+        "reliability_target": 0.99,
+        "request_bytes": 4096,
+        "response_bytes": 2048,
+        "wan_rtt_max_ms": 180,
+        "wan_jitter_max_ms": 30,
+        "wan_loss_max_pct": 5,
+        "command": "客厅有点暗",
+        "purpose": "Fixed planner contract, not a model accuracy benchmark"
+      },
+      "estimate_scope": "configured inference budgets; unmeasured bandwidth/queue omitted, not observed zero"
+    }
+  },
+  {
+    "seed": 20261116,
+    "arm": "no-hysteresis",
+    "from_index": 48,
+    "to_index": 50,
+    "from_backend": "local-model",
+    "to_backend": "cloud-model",
+    "reason": "LOCAL_MODEL_UNAVAILABLE",
+    "request_key": "matrix:20261116:local_model_down:50:1:0:no-hysteresis",
+    "observation": {
+      "schema_version": "sensehome.observation.v1",
+      "observation_id": 51,
+      "observed_age_ms": 78.0,
+      "endpoint_age_ms": {
+        "local": 31.0,
+        "cloud": 78.0
+      },
+      "network": {
+        "wan": {
+          "reachable": true,
+          "rtt_ms": 38.464,
+          "jitter_ms": 8.52008580397552,
+          "loss_pct": 0.0,
+          "bandwidth_kbps": null
+        },
+        "lan": {
+          "reachable": true,
+          "rtt_ms": 0.0,
+          "jitter_ms": null,
+          "loss_pct": null,
+          "bandwidth_kbps": null
+        }
+      },
+      "network_source": "HTTP endpoint RTT; devices simulated in gateway process",
+      "compute": {
+        "local": {
+          "queue_ms": 0,
+          "free_mem_mb": 2048,
+          "inflight": 0,
+          "model_ready": false,
+          "source": "backend_health_cache",
+          "field_sources": {
+            "queue_ms": "backend_health_cache",
+            "free_mem_mb": "backend_health_cache",
+            "inflight": "backend_health_cache",
+            "model_ready": "backend_health_cache"
+          }
+        },
+        "cloud": {
+          "queue_ms": 0,
+          "free_mem_mb": 16384,
+          "inflight": 0,
+          "model_ready": true,
+          "source": "backend_health_cache",
+          "field_sources": {
+            "queue_ms": "backend_health_cache",
+            "free_mem_mb": "backend_health_cache",
+            "inflight": "backend_health_cache",
+            "model_ready": "backend_health_cache"
+          }
+        }
+      },
+      "compute_source": "server_owned_health_cache",
+      "service": "interactive_inference",
+      "profile": {
+        "legacy_family": "eMBB",
+        "imt2030_mapping": "AI and Communication; Ubiquitous Connectivity",
+        "task_class": "complex",
+        "deadline_ms": 250,
+        "reliability_target": 0.99,
+        "request_bytes": 4096,
+        "response_bytes": 2048,
+        "wan_rtt_max_ms": 180,
+        "wan_jitter_max_ms": 30,
+        "wan_loss_max_pct": 5,
+        "command": "客厅有点暗",
+        "purpose": "Fixed planner contract, not a model accuracy benchmark"
+      },
+      "estimate_scope": "configured inference budgets; unmeasured bandwidth/queue omitted, not observed zero"
+    }
+  },
+  {
+    "seed": 20261116,
+    "arm": "no-hysteresis",
+    "from_index": 68,
+    "to_index": 70,
+    "from_backend": "cloud-model",
+    "to_backend": "local-model",
+    "reason": "MODEL_UNAVAILABLE",
+    "request_key": "matrix:20261116:cloud_down:70:1:0:no-hysteresis",
+    "observation": {
+      "schema_version": "sensehome.observation.v1",
+      "observation_id": 71,
+      "observed_age_ms": 78.0,
+      "endpoint_age_ms": {
+        "local": 47.0,
+        "cloud": 78.0
+      },
+      "network": {
+        "wan": {
+          "reachable": true,
+          "rtt_ms": 35.911,
+          "jitter_ms": 8.295012377957548,
+          "loss_pct": 0.0,
+          "bandwidth_kbps": null
+        },
+        "lan": {
+          "reachable": true,
+          "rtt_ms": 0.0,
+          "jitter_ms": null,
+          "loss_pct": null,
+          "bandwidth_kbps": null
+        }
+      },
+      "network_source": "HTTP endpoint RTT; devices simulated in gateway process",
+      "compute": {
+        "local": {
+          "queue_ms": 0,
+          "free_mem_mb": 2048,
+          "inflight": 0,
+          "model_ready": true,
+          "source": "backend_health_cache",
+          "field_sources": {
+            "queue_ms": "backend_health_cache",
+            "free_mem_mb": "backend_health_cache",
+            "inflight": "backend_health_cache",
+            "model_ready": "backend_health_cache"
+          }
+        },
+        "cloud": {
+          "queue_ms": 0,
+          "free_mem_mb": 16384,
+          "inflight": 0,
+          "model_ready": false,
+          "source": "backend_health_cache",
+          "field_sources": {
+            "queue_ms": "backend_health_cache",
+            "free_mem_mb": "backend_health_cache",
+            "inflight": "backend_health_cache",
+            "model_ready": "backend_health_cache"
+          }
+        }
+      },
+      "compute_source": "server_owned_health_cache",
+      "service": "interactive_inference",
+      "profile": {
+        "legacy_family": "eMBB",
+        "imt2030_mapping": "AI and Communication; Ubiquitous Connectivity",
+        "task_class": "complex",
+        "deadline_ms": 250,
+        "reliability_target": 0.99,
+        "request_bytes": 4096,
+        "response_bytes": 2048,
+        "wan_rtt_max_ms": 180,
+        "wan_jitter_max_ms": 30,
+        "wan_loss_max_pct": 5,
+        "command": "客厅有点暗",
+        "purpose": "Fixed planner contract, not a model accuracy benchmark"
+      },
+      "estimate_scope": "configured inference budgets; unmeasured bandwidth/queue omitted, not observed zero"
+    }
+  },
+  {
+    "seed": 20261116,
+    "arm": "no-hysteresis",
+    "from_index": 78,
+    "to_index": 80,
+    "from_backend": "local-model",
+    "to_backend": "local-rules",
+    "reason": "NO_MODEL_CAPACITY",
+    "request_key": "matrix:20261116:both_models_down:80:1:0:no-hysteresis",
+    "observation": {
+      "schema_version": "sensehome.observation.v1",
+      "observation_id": 81,
+      "observed_age_ms": 79.0,
+      "endpoint_age_ms": {
+        "local": 32.0,
+        "cloud": 79.0
+      },
+      "network": {
+        "wan": {
+          "reachable": true,
+          "rtt_ms": 41.563,
+          "jitter_ms": 9.178095011096111,
+          "loss_pct": 0.0,
+          "bandwidth_kbps": null
+        },
+        "lan": {
+          "reachable": true,
+          "rtt_ms": 0.0,
+          "jitter_ms": null,
+          "loss_pct": null,
+          "bandwidth_kbps": null
+        }
+      },
+      "network_source": "HTTP endpoint RTT; devices simulated in gateway process",
+      "compute": {
+        "local": {
+          "queue_ms": 0,
+          "free_mem_mb": 2048,
+          "inflight": 0,
+          "model_ready": false,
+          "source": "backend_health_cache",
+          "field_sources": {
+            "queue_ms": "backend_health_cache",
+            "free_mem_mb": "backend_health_cache",
+            "inflight": "backend_health_cache",
+            "model_ready": "backend_health_cache"
+          }
+        },
+        "cloud": {
+          "queue_ms": 0,
+          "free_mem_mb": 16384,
+          "inflight": 0,
+          "model_ready": false,
+          "source": "backend_health_cache",
+          "field_sources": {
+            "queue_ms": "backend_health_cache",
+            "free_mem_mb": "backend_health_cache",
+            "inflight": "backend_health_cache",
+            "model_ready": "backend_health_cache"
+          }
+        }
+      },
+      "compute_source": "server_owned_health_cache",
+      "service": "interactive_inference",
+      "profile": {
+        "legacy_family": "eMBB",
+        "imt2030_mapping": "AI and Communication; Ubiquitous Connectivity",
+        "task_class": "complex",
+        "deadline_ms": 250,
+        "reliability_target": 0.99,
+        "request_bytes": 4096,
+        "response_bytes": 2048,
+        "wan_rtt_max_ms": 180,
+        "wan_jitter_max_ms": 30,
+        "wan_loss_max_pct": 5,
+        "command": "客厅有点暗",
+        "purpose": "Fixed planner contract, not a model accuracy benchmark"
+      },
+      "estimate_scope": "configured inference budgets; unmeasured bandwidth/queue omitted, not observed zero"
+    }
+  },
+  {
+    "seed": 20261116,
+    "arm": "no-hysteresis",
+    "from_index": 88,
+    "to_index": 90,
+    "from_backend": "local-rules",
+    "to_backend": "local-model",
+    "reason": "COST_LOCAL",
+    "request_key": "matrix:20261116:bandwidth_collapse:90:1:0:no-hysteresis",
+    "observation": {
+      "schema_version": "sensehome.observation.v1",
+      "observation_id": 91,
+      "observed_age_ms": 78.0,
+      "endpoint_age_ms": {
+        "local": 47.0,
+        "cloud": 78.0
+      },
+      "network": {
+        "wan": {
+          "reachable": true,
+          "rtt_ms": 34.764,
+          "jitter_ms": 10.786073579991267,
+          "loss_pct": 0.0,
+          "bandwidth_kbps": null
+        },
+        "lan": {
+          "reachable": true,
+          "rtt_ms": 0.0,
+          "jitter_ms": null,
+          "loss_pct": null,
+          "bandwidth_kbps": null
+        }
+      },
+      "network_source": "HTTP endpoint RTT; devices simulated in gateway process",
+      "compute": {
+        "local": {
+          "queue_ms": 0,
+          "free_mem_mb": 2048,
+          "inflight": 0,
+          "model_ready": true,
+          "source": "backend_health_cache",
+          "field_sources": {
+            "queue_ms": "backend_health_cache",
+            "free_mem_mb": "backend_health_cache",
+            "inflight": "backend_health_cache",
+            "model_ready": "backend_health_cache"
+          }
+        },
+        "cloud": {
+          "queue_ms": 0,
+          "free_mem_mb": 16384,
+          "inflight": 0,
+          "model_ready": true,
+          "source": "backend_health_cache",
+          "field_sources": {
+            "queue_ms": "backend_health_cache",
+            "free_mem_mb": "backend_health_cache",
+            "inflight": "backend_health_cache",
+            "model_ready": "backend_health_cache"
+          }
+        }
+      },
+      "compute_source": "server_owned_health_cache",
+      "service": "interactive_inference",
+      "profile": {
+        "legacy_family": "eMBB",
+        "imt2030_mapping": "AI and Communication; Ubiquitous Connectivity",
+        "task_class": "complex",
+        "deadline_ms": 250,
+        "reliability_target": 0.99,
+        "request_bytes": 4096,
+        "response_bytes": 2048,
+        "wan_rtt_max_ms": 180,
+        "wan_jitter_max_ms": 30,
+        "wan_loss_max_pct": 5,
+        "command": "客厅有点暗",
+        "purpose": "Fixed planner contract, not a model accuracy benchmark"
+      },
+      "estimate_scope": "configured inference budgets; unmeasured bandwidth/queue omitted, not observed zero"
+    }
+  },
+  {
+    "seed": 20261116,
+    "arm": "no-hysteresis",
+    "from_index": 98,
+    "to_index": 100,
+    "from_backend": "local-model",
+    "to_backend": "local-rules",
+    "reason": "NO_MODEL_CAPACITY",
+    "request_key": "matrix:20261116:handover:100:1:0:no-hysteresis",
+    "observation": {
+      "schema_version": "sensehome.observation.v1",
+      "observation_id": 101,
+      "observed_age_ms": 63.0,
+      "endpoint_age_ms": {
+        "local": 47.0,
+        "cloud": 63.0
+      },
+      "network": {
+        "wan": {
+          "reachable": false,
+          "rtt_ms": 11.907,
+          "jitter_ms": 0,
+          "loss_pct": 6.25,
+          "bandwidth_kbps": null
+        },
+        "lan": {
+          "reachable": true,
+          "rtt_ms": 0.0,
+          "jitter_ms": null,
+          "loss_pct": null,
+          "bandwidth_kbps": null
+        }
+      },
+      "network_source": "HTTP endpoint RTT; devices simulated in gateway process",
+      "compute": {
+        "local": {
+          "queue_ms": 0,
+          "free_mem_mb": 2048,
+          "inflight": 0,
+          "model_ready": false,
+          "source": "backend_health_cache",
+          "field_sources": {
+            "queue_ms": "backend_health_cache",
+            "free_mem_mb": "backend_health_cache",
+            "inflight": "backend_health_cache",
+            "model_ready": "backend_health_cache"
+          }
+        },
+        "cloud": {
+          "queue_ms": null,
+          "free_mem_mb": null,
+          "inflight": null,
+          "model_ready": false,
+          "source": "backend_health_cache",
+          "field_sources": {
+            "queue_ms": "backend_health_cache",
+            "free_mem_mb": "backend_health_cache",
+            "inflight": "backend_health_cache",
+            "model_ready": "backend_health_cache"
+          }
+        }
+      },
+      "compute_source": "server_owned_health_cache",
+      "service": "interactive_inference",
+      "profile": {
+        "legacy_family": "eMBB",
+        "imt2030_mapping": "AI and Communication; Ubiquitous Connectivity",
+        "task_class": "complex",
+        "deadline_ms": 250,
+        "reliability_target": 0.99,
+        "request_bytes": 4096,
+        "response_bytes": 2048,
+        "wan_rtt_max_ms": 180,
+        "wan_jitter_max_ms": 30,
+        "wan_loss_max_pct": 5,
+        "command": "客厅有点暗",
+        "purpose": "Fixed planner contract, not a model accuracy benchmark"
+      },
+      "estimate_scope": "configured inference budgets; unmeasured bandwidth/queue omitted, not observed zero"
+    }
+  },
+  {
+    "seed": 20261116,
+    "arm": "no-hysteresis",
+    "from_index": 101,
+    "to_index": 103,
+    "from_backend": "local-rules",
+    "to_backend": "local-model",
+    "reason": "WAN_UNREACHABLE",
+    "request_key": "matrix:20261116:handover:103:1:0:no-hysteresis",
+    "observation": {
+      "schema_version": "sensehome.observation.v1",
+      "observation_id": 104,
+      "observed_age_ms": 32.0,
+      "endpoint_age_ms": {
+        "local": 16.0,
+        "cloud": 32.0
+      },
+      "network": {
+        "wan": {
+          "reachable": false,
+          "rtt_ms": 17.576,
+          "jitter_ms": 0,
+          "loss_pct": 25.0,
+          "bandwidth_kbps": null
+        },
+        "lan": {
+          "reachable": true,
+          "rtt_ms": 0.0,
+          "jitter_ms": null,
+          "loss_pct": null,
+          "bandwidth_kbps": null
+        }
+      },
+      "network_source": "HTTP endpoint RTT; devices simulated in gateway process",
+      "compute": {
+        "local": {
+          "queue_ms": 0,
+          "free_mem_mb": 2048,
+          "inflight": 0,
+          "model_ready": true,
+          "source": "backend_health_cache",
+          "field_sources": {
+            "queue_ms": "backend_health_cache",
+            "free_mem_mb": "backend_health_cache",
+            "inflight": "backend_health_cache",
+            "model_ready": "backend_health_cache"
+          }
+        },
+        "cloud": {
+          "queue_ms": null,
+          "free_mem_mb": null,
+          "inflight": null,
+          "model_ready": false,
+          "source": "backend_health_cache",
+          "field_sources": {
+            "queue_ms": "backend_health_cache",
+            "free_mem_mb": "backend_health_cache",
+            "inflight": "backend_health_cache",
+            "model_ready": "backend_health_cache"
+          }
+        }
+      },
+      "compute_source": "server_owned_health_cache",
+      "service": "interactive_inference",
+      "profile": {
+        "legacy_family": "eMBB",
+        "imt2030_mapping": "AI and Communication; Ubiquitous Connectivity",
+        "task_class": "complex",
+        "deadline_ms": 250,
+        "reliability_target": 0.99,
+        "request_bytes": 4096,
+        "response_bytes": 2048,
+        "wan_rtt_max_ms": 180,
+        "wan_jitter_max_ms": 30,
+        "wan_loss_max_pct": 5,
+        "command": "客厅有点暗",
+        "purpose": "Fixed planner contract, not a model accuracy benchmark"
+      },
+      "estimate_scope": "configured inference budgets; unmeasured bandwidth/queue omitted, not observed zero"
+    }
+  },
+  {
+    "seed": 20261116,
+    "arm": "no-hysteresis",
+    "from_index": 118,
+    "to_index": 120,
+    "from_backend": "local-model",
+    "to_backend": "local-rules",
+    "reason": "NO_MODEL_CAPACITY",
+    "request_key": "matrix:20261116:lan_blackout:120:1:0:no-hysteresis",
+    "observation": {
+      "schema_version": "sensehome.observation.v1",
+      "observation_id": 121,
+      "observed_age_ms": 46.0,
+      "endpoint_age_ms": {
+        "local": 15.0,
+        "cloud": 46.0
+      },
+      "network": {
+        "wan": {
+          "reachable": true,
+          "rtt_ms": 26.81,
+          "jitter_ms": 19.366567163947444,
+          "loss_pct": 6.25,
+          "bandwidth_kbps": null
+        },
+        "lan": {
+          "reachable": true,
+          "rtt_ms": 0.0,
+          "jitter_ms": null,
+          "loss_pct": null,
+          "bandwidth_kbps": null
+        }
+      },
+      "network_source": "HTTP endpoint RTT; devices simulated in gateway process",
+      "compute": {
+        "local": {
+          "queue_ms": null,
+          "free_mem_mb": null,
+          "inflight": null,
+          "model_ready": false,
+          "source": "backend_health_cache",
+          "field_sources": {
+            "queue_ms": "backend_health_cache",
+            "free_mem_mb": "backend_health_cache",
+            "inflight": "backend_health_cache",
+            "model_ready": "backend_health_cache"
+          }
+        },
+        "cloud": {
+          "queue_ms": 0,
+          "free_mem_mb": 16384,
+          "inflight": 0,
+          "model_ready": true,
+          "source": "backend_health_cache",
+          "field_sources": {
+            "queue_ms": "backend_health_cache",
+            "free_mem_mb": "backend_health_cache",
+            "inflight": "backend_health_cache",
+            "model_ready": "backend_health_cache"
+          }
+        }
+      },
+      "compute_source": "server_owned_health_cache",
+      "service": "interactive_inference",
+      "profile": {
+        "legacy_family": "eMBB",
+        "imt2030_mapping": "AI and Communication; Ubiquitous Connectivity",
+        "task_class": "complex",
+        "deadline_ms": 250,
+        "reliability_target": 0.99,
+        "request_bytes": 4096,
+        "response_bytes": 2048,
+        "wan_rtt_max_ms": 180,
+        "wan_jitter_max_ms": 30,
+        "wan_loss_max_pct": 5,
+        "command": "客厅有点暗",
+        "purpose": "Fixed planner contract, not a model accuracy benchmark"
+      },
+      "estimate_scope": "configured inference budgets; unmeasured bandwidth/queue omitted, not observed zero"
+    }
+  }
+]

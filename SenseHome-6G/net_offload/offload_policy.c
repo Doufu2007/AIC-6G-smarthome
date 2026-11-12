@@ -61,6 +61,9 @@ void link_state_init(link_state_t *st)
     st->loss_pct  = 0;
     st->last_rtt  = 0;
     st->has_last  = 0;
+    st->rtt_known = 0;
+    st->jitter_known = 0;
+    st->loss_known = 0;
 }
 
 void net_state_init(net_state_t *net)
@@ -127,6 +130,9 @@ int link_update(link_state_t *st, int ok, int rtt_ms)
 
     st->reachable = ok ? 1 : 0;
     st->samples++;
+    st->rtt_known = 1;
+    st->jitter_known = 1;
+    st->loss_known = 1;
     return st->samples;
 }
 
@@ -277,8 +283,196 @@ const char *policy_reason_name(policy_reason_t r)
     case REASON_TASK_IS_SAFETY:  return "TASK_IS_SAFETY";
     case REASON_MODEL_UNAVAILABLE:return "MODEL_UNAVAILABLE";
     case REASON_COMPUTE_OVERLOADED:return "COMPUTE_OVERLOADED";
+    case REASON_LOCAL_MODEL_UNAVAILABLE: return "LOCAL_MODEL_UNAVAILABLE";
+    case REASON_LOCAL_COMPUTE_OVERLOADED: return "LOCAL_COMPUTE_OVERLOADED";
+    case REASON_NO_MODEL_CAPACITY: return "NO_MODEL_CAPACITY";
+    case REASON_COST_LOCAL: return "COST_LOCAL";
+    case REASON_COST_CLOUD: return "COST_CLOUD";
+    case REASON_RECOVERY_HOLD: return "RECOVERY_HOLD";
+    case REASON_STATIC_BASELINE: return "STATIC_BASELINE";
     default:                     return "UNKNOWN";
     }
+}
+
+void resource_cfg_default(resource_cfg_t *cfg)
+{
+    if (!cfg) return;
+    policy_cfg_default(&cfg->network);
+    cfg->queue_max_ms = 300;
+    cfg->inflight_max = 8;
+    cfg->free_mem_min_mb = 256;
+    cfg->local_infer_ms = 100;
+    cfg->cloud_infer_ms = 35;
+    cfg->local_transfer_ms = -1;
+    cfg->cloud_transfer_ms = -1;
+    cfg->switch_margin_ms = 15;
+    cfg->recovery_samples = 3;
+    cfg->mode = 0;
+}
+
+void resource_history_init(resource_history_t *history)
+{
+    if (!history) return;
+    history->last_model = BE_NONE;
+    history->cloud_blocked = 0;
+    history->cloud_good_samples = 0;
+    history->observation_generation = 0;
+    history->last_recovery_generation = -1;
+}
+
+static int resource_usable(const resource_cfg_t *cfg, const compute_state_t *state)
+{
+    return state && state->model_ready == 1 &&
+        (state->queue_ms < 0 || state->queue_ms <= cfg->queue_max_ms) &&
+        (state->inflight < 0 || state->inflight <= cfg->inflight_max) &&
+        (state->free_mem_mb < 0 || state->free_mem_mb >= cfg->free_mem_min_mb);
+}
+
+static policy_reason_t resource_wan_reason(const policy_cfg_t *cfg, const link_state_t *wan)
+{
+    if (!wan || wan->samples == 0) return REASON_WAN_UNKNOWN;
+    if (!wan->reachable) return REASON_WAN_UNREACHABLE;
+    if (!wan->rtt_known) return REASON_WAN_UNKNOWN;
+    if (wan->rtt_ms > cfg->cloud_rtt_max_ms) return REASON_WAN_RTT_HIGH;
+    if (wan->jitter_known && wan->jitter_ms > cfg->cloud_jitter_max_ms)
+        return REASON_WAN_JITTER_HIGH;
+    if (wan->loss_known && wan->loss_pct > cfg->cloud_loss_max_pct)
+        return REASON_WAN_LOSS_HIGH;
+    return REASON_WAN_OK;
+}
+
+static int add_estimate(int total, int value)
+{
+    if (value <= 0) return total;
+    if (total > 1000000000 - value) return 1000000000;
+    return total + value;
+}
+
+backend_t policy_select_resources(const resource_cfg_t *cfg,
+                                  const net_state_t *net,
+                                  const compute_state_t *local,
+                                  const compute_state_t *cloud,
+                                  resource_history_t *history,
+                                  task_class_t task,
+                                  policy_reason_t *reason)
+{
+    resource_cfg_t default_cfg;
+    resource_history_t temporary_history;
+    compute_state_t unknown;
+    net_state_t empty_net;
+    policy_reason_t wan_reason;
+    backend_t backend;
+    int local_ok, cloud_ok, net_ok, hold = 0;
+    int local_cost, cloud_cost, include_queue, include_transfer, include_rtt;
+
+    if (!cfg) {
+        resource_cfg_default(&default_cfg);
+        cfg = &default_cfg;
+    }
+    if (!history) {
+        resource_history_init(&temporary_history);
+        history = &temporary_history;
+    }
+    if (!net) {
+        net_state_init(&empty_net);
+        net = &empty_net;
+    }
+    compute_state_unknown(&unknown);
+    if (!local) local = &unknown;
+    if (!cloud) cloud = &unknown;
+
+    if (task == TASK_SAFETY_CRITICAL || task == TASK_SIMPLE_CONTROL) {
+        if (reason) *reason = task == TASK_SAFETY_CRITICAL
+            ? REASON_TASK_IS_SAFETY : REASON_TASK_IS_SIMPLE;
+        return BE_LOCAL_RULES;
+    }
+    if (task != TASK_COMPLEX_NLU) {
+        if (reason) *reason = REASON_TASK_IS_SIMPLE;
+        return BE_LOCAL_RULES;
+    }
+    if (cfg->mode >= 3) {
+        backend = cfg->mode == 3 ? BE_CLOUD_MODEL :
+            (cfg->mode == 4 ? BE_LOCAL_MODEL : BE_LOCAL_RULES);
+        if (reason) *reason = REASON_STATIC_BASELINE;
+        return backend;
+    }
+
+    wan_reason = resource_wan_reason(&cfg->network, &net->wan);
+    net_ok = wan_reason == REASON_WAN_OK && link_is_usable(&net->lan);
+    local_ok = cfg->mode == 1 || resource_usable(cfg, local);
+    cloud_ok = cfg->mode == 1 || resource_usable(cfg, cloud);
+    if (cfg->mode != 2) {
+        local_ok = local_ok && link_is_usable(&net->lan);
+        cloud_ok = cloud_ok && net_ok;
+        if (!net_ok) {
+            history->cloud_blocked = 1;
+            history->cloud_good_samples = 0;
+            history->last_recovery_generation = history->observation_generation;
+        } else if (history->cloud_blocked) {
+            if (history->last_recovery_generation != history->observation_generation &&
+                history->cloud_good_samples < cfg->recovery_samples)
+                history->cloud_good_samples++;
+            history->last_recovery_generation = history->observation_generation;
+            if (history->cloud_good_samples >= cfg->recovery_samples) {
+                history->cloud_blocked = 0;
+            } else {
+                cloud_ok = 0;
+                hold = 1;
+            }
+        }
+    }
+
+    if (!local_ok && !cloud_ok) {
+        backend = BE_LOCAL_RULES;
+        if (cfg->mode != 2 && !link_is_usable(&net->lan))
+            wan_reason = REASON_LAN_DOWN;
+        else
+            wan_reason = REASON_NO_MODEL_CAPACITY;
+    } else if (!local_ok) {
+        backend = BE_CLOUD_MODEL;
+        wan_reason = local->model_ready != 1 ? REASON_LOCAL_MODEL_UNAVAILABLE :
+            REASON_LOCAL_COMPUTE_OVERLOADED;
+    } else if (!cloud_ok) {
+        backend = BE_LOCAL_MODEL;
+        wan_reason = hold ? REASON_RECOVERY_HOLD :
+            (cfg->mode != 2 && wan_reason != REASON_WAN_OK ? wan_reason :
+             (cloud->model_ready != 1 ? REASON_MODEL_UNAVAILABLE : REASON_COMPUTE_OVERLOADED));
+    } else {
+        local_cost = cfg->local_infer_ms;
+        cloud_cost = cfg->cloud_infer_ms;
+        include_queue = cfg->mode != 1 && local->queue_ms >= 0 && cloud->queue_ms >= 0;
+        include_transfer = cfg->mode != 1 && cfg->mode != 2 &&
+            cfg->local_transfer_ms >= 0 && cfg->cloud_transfer_ms >= 0;
+        include_rtt = cfg->mode != 1 && cfg->mode != 2 &&
+            net->wan.rtt_known && net->lan.rtt_known;
+        if (include_queue) {
+            local_cost = add_estimate(local_cost, local->queue_ms);
+            cloud_cost = add_estimate(cloud_cost, cloud->queue_ms);
+        }
+        if (include_rtt) {
+            local_cost = add_estimate(local_cost, net->lan.rtt_ms);
+            cloud_cost = add_estimate(cloud_cost, net->wan.rtt_ms);
+        }
+        if (include_transfer) {
+            local_cost = add_estimate(local_cost, cfg->local_transfer_ms);
+            cloud_cost = add_estimate(cloud_cost, cfg->cloud_transfer_ms);
+        }
+
+        if (history->last_model == BE_LOCAL_MODEL &&
+            cloud_cost + cfg->switch_margin_ms >= local_cost) {
+            backend = BE_LOCAL_MODEL;
+        } else if (history->last_model == BE_CLOUD_MODEL &&
+                   local_cost + cfg->switch_margin_ms >= cloud_cost) {
+            backend = BE_CLOUD_MODEL;
+        } else {
+            backend = local_cost <= cloud_cost ? BE_LOCAL_MODEL : BE_CLOUD_MODEL;
+        }
+        wan_reason = backend == BE_LOCAL_MODEL ? REASON_COST_LOCAL : REASON_COST_CLOUD;
+    }
+
+    history->last_model = backend;
+    if (reason) *reason = wan_reason;
+    return backend;
 }
 
 /* ------------------------------------------------------------------ */

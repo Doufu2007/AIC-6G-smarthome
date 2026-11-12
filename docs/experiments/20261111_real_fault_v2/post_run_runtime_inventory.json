@@ -1,0 +1,48 @@
+{
+  "schema": "sensehome.post-run-runtime-file-inventory.v2",
+  "checked_at_utc": "2026-11-10T20:29:04.728184+00:00",
+  "scope": "post-run file hashes, not a launch-time process or argv snapshot",
+  "files": [
+    {
+      "label": "llama-server.exe",
+      "path_relative_to_project": "../创新赛道/_work/local_llm_v6/bin/llama-server.exe",
+      "bytes": 9216,
+      "post_run_sha256": "f156c6fcfb61c7dd259e2c577ccbab214185083650f18a9cdfdfb9c38d6cf3b3",
+      "matches_prior_tool_inspection_digest": true
+    },
+    {
+      "label": "small",
+      "path_relative_to_project": "../创新赛道/_work/local_llm_v5/qwen2.5-1.5b-instruct-q4_k_m.gguf",
+      "bytes": 1117320736,
+      "post_run_sha256": "6a1a2eb6d15622bf3c96857206351ba97e1af16c30d7a74ee38970e434e9407e",
+      "matches_prior_tool_inspection_digest": true
+    },
+    {
+      "label": "large",
+      "path_relative_to_project": "../创新赛道/_work/local_llm_v6/Qwen3-4B-Q4_K_M.gguf",
+      "bytes": 2497280256,
+      "post_run_sha256": "7485fe6f11af29433bc51cab58009521f205840f5b4ae3a32fa7f92e8534fdf5",
+      "matches_prior_tool_inspection_digest": true
+    }
+  ],
+  "current_llama_process_pids": [],
+  "launch_snapshot_available": false,
+  "prior_agent_tool_record": {
+    "runtime": "llama.cpp b11010 Vulkan",
+    "ports": [
+      63452,
+      63454
+    ],
+    "reported_options": [
+      "context 2048",
+      "parallel 1",
+      "gpu layers 99",
+      "flash-attn on",
+      "no web UI",
+      "metrics",
+      "large model reasoning-budget 0"
+    ],
+    "evidence_kind": "prior primary-agent tool execution record summarized in session handoff; not independently recovered argv"
+  },
+  "limit": "Current files match previously inspected digests; this does not reconstruct exact historical launch argv or prove process-to-file identity."
+}

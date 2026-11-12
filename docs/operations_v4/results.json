@@ -1,0 +1,211 @@
+{
+  "schema": "sensehome.operations-results.v4",
+  "finished_at_utc": "2026-11-11T06:45:53.619196+00:00",
+  "registration_sha256": "67de82fc769890fa94d6cc8597e9db892f65728472dca5cbad14a3e5bce4da87",
+  "record_kind": "automation_test",
+  "new_directory_copy_verified": true,
+  "copied_source_file_count": 57,
+  "automated_copy_ms": 122.98780000128318,
+  "automated_launch_to_ready_ms": 3013.351599991438,
+  "automated_first_task_wall_ms": 95.44019999157172,
+  "human_deployment_time_s": null,
+  "human_independent_deployment_completed": false,
+  "observed_duration_s": 120.00058719998924,
+  "dispatched_requests": 120,
+  "executable_requests": 116,
+  "invalid_requests": 4,
+  "expected_behavior_observed": 120,
+  "transport_errors": 0,
+  "gateway_event_count_including_first_task": 121,
+  "event_growth_bytes": 622894,
+  "event_bytes_at_end": 628168,
+  "max_process_tree_rss_sum_bytes": 147460096,
+  "sample_count": 230,
+  "original_state_and_events_unchanged": true,
+  "mqtt_enabled": true,
+  "execution_scope": "mqtt-software-entity",
+  "broker_entity_cleanup": {
+    "owned_processes": [
+      {
+        "role": "entity",
+        "pid": 42244,
+        "exit_code": 0,
+        "forced_termination": false
+      },
+      {
+        "role": "broker",
+        "pid": 8236,
+        "exit_code": 0,
+        "forced_termination": false
+      }
+    ],
+    "all_stopped": true
+  },
+  "owned_process_exit_code": 0,
+  "final_state": {
+    "status": 200,
+    "body": {
+      "lights": {
+        "书房": {
+          "brightness": 0,
+          "is_on": false
+        },
+        "卧室": {
+          "brightness": 0,
+          "is_on": false
+        },
+        "厨房": {
+          "brightness": 0,
+          "is_on": false
+        },
+        "客厅": {
+          "brightness": 100,
+          "is_on": true
+        },
+        "室外": {
+          "brightness": 0,
+          "is_on": false
+        },
+        "浴室": {
+          "brightness": 0,
+          "is_on": false
+        }
+      },
+      "temperature": {
+        "书房": {
+          "humidity": 60.0,
+          "temp": 25.0
+        },
+        "卧室": {
+          "humidity": 60.0,
+          "temp": 25.0
+        },
+        "厨房": {
+          "humidity": 60.0,
+          "temp": 25.0
+        },
+        "客厅": {
+          "humidity": 60.0,
+          "temp": 25.0
+        },
+        "室外": {
+          "humidity": 60.0,
+          "temp": 25.0
+        },
+        "浴室": {
+          "humidity": 60.0,
+          "temp": 25.0
+        }
+      },
+      "curtains": {
+        "书房": {
+          "is_open": true,
+          "position": 100
+        },
+        "卧室": {
+          "is_open": true,
+          "position": 100
+        },
+        "厨房": {
+          "is_open": true,
+          "position": 100
+        },
+        "客厅": {
+          "is_open": true,
+          "position": 100
+        },
+        "室外": {
+          "is_open": true,
+          "position": 100
+        },
+        "浴室": {
+          "is_open": false,
+          "position": 0
+        }
+      },
+      "sensors": {
+        "客厅": {
+          "illuminance": 15802.3,
+          "motion_detected": true,
+          "door_open": false,
+          "window_open": false,
+          "pm25": 22.8,
+          "co2": 559.0,
+          "noise": 41.1,
+          "update_time": "14:43:52"
+        },
+        "卧室": {
+          "illuminance": 9169.9,
+          "motion_detected": false,
+          "door_open": false,
+          "window_open": false,
+          "pm25": 18.6,
+          "co2": 519.0,
+          "noise": 23.0,
+          "update_time": "14:43:52"
+        },
+        "厨房": {
+          "illuminance": 23083.0,
+          "motion_detected": true,
+          "door_open": false,
+          "window_open": false,
+          "pm25": 37.6,
+          "co2": 704.0,
+          "noise": 61.3,
+          "update_time": "14:43:52"
+        },
+        "浴室": {
+          "illuminance": 4382.6,
+          "motion_detected": true,
+          "door_open": false,
+          "window_open": false,
+          "pm25": 15.4,
+          "co2": 569.0,
+          "noise": 54.3,
+          "update_time": "14:43:52"
+        },
+        "书房": {
+          "illuminance": 13895.0,
+          "motion_detected": false,
+          "door_open": false,
+          "window_open": false,
+          "pm25": 21.3,
+          "co2": 355.0,
+          "noise": 23.4,
+          "update_time": "14:43:52"
+        },
+        "室外": {
+          "illuminance": 51355.5,
+          "motion_detected": false,
+          "door_open": false,
+          "window_open": false,
+          "pm25": 51.2,
+          "co2": 364.0,
+          "noise": 70.2,
+          "update_time": "14:43:52"
+        }
+      },
+      "security": {
+        "mode": "off",
+        "armed": false,
+        "alarm_triggered": false
+      },
+      "_mqtt_observation": {
+        "platform_id": "software-home",
+        "state_version": 117,
+        "scope": "current-software-platform-observation",
+        "physical_execution_confirmed": false
+      }
+    },
+    "wall_ms": 35.066600001300685
+  },
+  "participant_feedback_count": 0,
+  "actual_total_cost_cny": null,
+  "scope": "automated new-directory deployment, rules-only production gateway with actual loopback MQTT broker and persistent software entity; no human time, physical device or model soak claim",
+  "limits": [
+    "2-minute rules path only; not production stability or model soak",
+    "automated timings are not human installation/maintenance times",
+    "no physical device, whole-machine energy, purchase or tariff evidence",
+    "software entity SQLite transactions and gateway events are not physical exactly-once"
+  ]
+}

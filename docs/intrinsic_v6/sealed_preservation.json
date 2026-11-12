@@ -1,0 +1,836 @@
+{
+  "schema": "sensehome.v6-sealed-preservation.v1",
+  "checked_at_utc": "2026-11-12T12:12:54.421980+00:00",
+  "scope": "Prior sealed packages and frozen experiment sources/artifacts only. Prior informational comparisons to active sources are excluded because current repair changes are expected.",
+  "all_preserved": true,
+  "checked_entries": 137,
+  "files": [
+    {
+      "path": "dist/final/20261111/SenseHome_本地审阅包_20261111.zip",
+      "expected": "90fb5b1d162400109526ad860f476b44282d0210597915ffb9a5fcc9ba98bd27",
+      "actual": "90fb5b1d162400109526ad860f476b44282d0210597915ffb9a5fcc9ba98bd27",
+      "match": true
+    },
+    {
+      "path": "dist/final/20261111_v2/SenseHome_本地审阅包_20261111_v2.zip",
+      "expected": "d99a185b6dfdebaed4953dc050126aca45b524b8dc9e15a8993cc19a653b2362",
+      "actual": "d99a185b6dfdebaed4953dc050126aca45b524b8dc9e15a8993cc19a653b2362",
+      "match": true
+    },
+    {
+      "path": "dist/final/20261111_v3/SenseHome_本地审阅包_20261111_v3.zip",
+      "expected": "2b83965afadfcc63fbaf7fcd94e1c6cfb111b0b65190141c6dc6169b3f789e4c",
+      "actual": "2b83965afadfcc63fbaf7fcd94e1c6cfb111b0b65190141c6dc6169b3f789e4c",
+      "match": true
+    },
+    {
+      "path": "dist/final/20261111_v4/SenseHome_内部复现审阅包_20261111_v4.zip",
+      "expected": "0fdbc9469436cbe25a115da31a138bae538595f7231cfbeaeda405048632b3c4",
+      "actual": "0fdbc9469436cbe25a115da31a138bae538595f7231cfbeaeda405048632b3c4",
+      "match": true
+    },
+    {
+      "path": "dist/final/20261111_v4/SenseHome_内部复现审阅包_20261111_v4r1.zip",
+      "expected": "bbb3696865fbd016dd74a494d4a4bb85e6ab1da820944ee6303db85d267b999f",
+      "actual": "bbb3696865fbd016dd74a494d4a4bb85e6ab1da820944ee6303db85d267b999f",
+      "match": true
+    },
+    {
+      "path": "dist/final/20261111_v4/SenseHome_匿名材料审阅包_20261111_v4.zip",
+      "expected": "b2821a08cc4a3ae9216c135f11d9830cba2cea9b4723b85e52e1cc4b99bd7698",
+      "actual": "b2821a08cc4a3ae9216c135f11d9830cba2cea9b4723b85e52e1cc4b99bd7698",
+      "match": true
+    },
+    {
+      "path": "docs/experiments/20261111_fused_real/reviewed_20_sealed_repeat3/report.json",
+      "expected": "d695368596da69fe400cea10991584932742cd43bd60bd85ab16290693725322",
+      "actual": "d695368596da69fe400cea10991584932742cd43bd60bd85ab16290693725322",
+      "match": true
+    },
+    {
+      "path": "docs/experiments/20261111_fused_real/reviewed_20_sealed_repeat3/rows.jsonl",
+      "expected": "9fa73ba1a74b1ddb66a64e2fac7dd9d8050ab09a45ed03a4fbab3f978143314b",
+      "actual": "9fa73ba1a74b1ddb66a64e2fac7dd9d8050ab09a45ed03a4fbab3f978143314b",
+      "match": true
+    },
+    {
+      "path": "docs/experiments/20261111_fused_real/reviewed_20_sealed_repeat3/blocks.jsonl",
+      "expected": "29ff0734959a5e21ad5a390f545295965ea1045f4f00abfdca1ef06d6881f49d",
+      "actual": "29ff0734959a5e21ad5a390f545295965ea1045f4f00abfdca1ef06d6881f49d",
+      "match": true
+    },
+    {
+      "path": "docs/experiments/20261111_fused_real/reviewed_20_sealed_repeat3/summary.json",
+      "expected": "b0ed9da27872aba21cad050485c0b7106c024774ff5b9d18da19afee605d4f7f",
+      "actual": "b0ed9da27872aba21cad050485c0b7106c024774ff5b9d18da19afee605d4f7f",
+      "match": true
+    },
+    {
+      "path": "docs/experiments/20261111_fused_real/reviewed_20_sealed_repeat3/summary.md",
+      "expected": "3b8e947cac8ed4f67071ca26ad4af56771d5ecd40dfa664c7f8a30182ac7b7a5",
+      "actual": "3b8e947cac8ed4f67071ca26ad4af56771d5ecd40dfa664c7f8a30182ac7b7a5",
+      "match": true
+    },
+    {
+      "path": "docs/experiments/20261111_fused_real/reviewed_20_sealed_repeat3/calibration.json",
+      "expected": "d30a6d3db818f044572cce3a4c0c49eebb8bcd9e37fbe0ec679ad1c8079c234f",
+      "actual": "d30a6d3db818f044572cce3a4c0c49eebb8bcd9e37fbe0ec679ad1c8079c234f",
+      "match": true
+    },
+    {
+      "path": "docs/experiments/20261111_fused_real/reviewed_20_sealed_repeat3/source_snapshot/fused_eval.py",
+      "expected": "37c8060aea5ee827a871a2b2624fc64f9134fbd125d8a15d0dc2ba7a046d14ca",
+      "actual": "37c8060aea5ee827a871a2b2624fc64f9134fbd125d8a15d0dc2ba7a046d14ca",
+      "match": true
+    },
+    {
+      "path": "docs/experiments/20261111_fused_real/reviewed_20_sealed_repeat3/source_snapshot/offload_gateway.py",
+      "expected": "d9f63dc5b6ffe73266777d8100e29842fce2d13005fd08baee8c997bf36793ef",
+      "actual": "d9f63dc5b6ffe73266777d8100e29842fce2d13005fd08baee8c997bf36793ef",
+      "match": true
+    },
+    {
+      "path": "docs/experiments/20261111_fused_real/reviewed_20_sealed_repeat3/source_snapshot/resource_policy.py",
+      "expected": "84a924664541b2e21458fa4e78130b1d31ee4e5f16ff6e859d11d951c23b3593",
+      "actual": "84a924664541b2e21458fa4e78130b1d31ee4e5f16ff6e859d11d951c23b3593",
+      "match": true
+    },
+    {
+      "path": "docs/experiments/20261111_fused_real/reviewed_20_sealed_repeat3/source_snapshot/offload_policy.c",
+      "expected": "58a772ddf879bb14480a3d715ac97b34fc64f811274a4a76a66c123f2c8f8135",
+      "actual": "58a772ddf879bb14480a3d715ac97b34fc64f811274a4a76a66c123f2c8f8135",
+      "match": true
+    },
+    {
+      "path": "docs/experiments/20261111_fused_real/reviewed_20_sealed_repeat3/source_snapshot/offload_policy.h",
+      "expected": "304ff38f9685bbd7bbf7fd2c2602dcf19e9c74a25d127b9f1070aa749c891702",
+      "actual": "304ff38f9685bbd7bbf7fd2c2602dcf19e9c74a25d127b9f1070aa749c891702",
+      "match": true
+    },
+    {
+      "path": "docs/experiments/20261111_fused_real/reviewed_20_sealed_repeat3/source_snapshot/policy_cli.c",
+      "expected": "c88b50574b5b29a9bca81fe46bab26d7f8e6710edf24e514ee0c632349af82b8",
+      "actual": "c88b50574b5b29a9bca81fe46bab26d7f8e6710edf24e514ee0c632349af82b8",
+      "match": true
+    },
+    {
+      "path": "docs/experiments/20261111_fused_real/reviewed_20_sealed_repeat3/source_snapshot/openai_backend.py",
+      "expected": "c8e82dc2f9693cede4417fc73df9e487266aea400b6aca7c0978155a58e3d7d5",
+      "actual": "c8e82dc2f9693cede4417fc73df9e487266aea400b6aca7c0978155a58e3d7d5",
+      "match": true
+    },
+    {
+      "path": "docs/experiments/20261111_fused_real/reviewed_20_sealed_repeat3/source_snapshot/eval_model.py",
+      "expected": "2e6bd2f615590d3639061c59bcb8d8012fba9916a5130a3148b03283544c1395",
+      "actual": "2e6bd2f615590d3639061c59bcb8d8012fba9916a5130a3148b03283544c1395",
+      "match": true
+    },
+    {
+      "path": "docs/experiments/20261111_fused_real/reviewed_20_sealed_repeat3/source_snapshot/bridge_server.py",
+      "expected": "16c0edf80492483464f9796a678cfce9f2f91a284db83fba6758720bd1785770",
+      "actual": "16c0edf80492483464f9796a678cfce9f2f91a284db83fba6758720bd1785770",
+      "match": true
+    },
+    {
+      "path": "docs/experiments/20261111_fused_real/reviewed_20_sealed_repeat3/source_snapshot/device_actions.py",
+      "expected": "b639e8e294e03a0171cea74ceaa2d9f2bae5c26166f019908e93af0265865698",
+      "actual": "b639e8e294e03a0171cea74ceaa2d9f2bae5c26166f019908e93af0265865698",
+      "match": true
+    },
+    {
+      "path": "docs/experiments/20261111_fused_real/reviewed_20_sealed_repeat3/source_snapshot/policy_cli.exe",
+      "expected": "04c8f57dd7c26a8168540c67410f9e5a63f4e818c3c5a97841c1510f6a2db72e",
+      "actual": "04c8f57dd7c26a8168540c67410f9e5a63f4e818c3c5a97841c1510f6a2db72e",
+      "match": true
+    },
+    {
+      "path": "docs/experiments/20261111_fused_real/challenge_12_sealed_development_repeat3/report.json",
+      "expected": "e2a16bd49e5a448e6bb1f32b2f58a124a20e76fc2946a586abe5f3d49b01ac43",
+      "actual": "e2a16bd49e5a448e6bb1f32b2f58a124a20e76fc2946a586abe5f3d49b01ac43",
+      "match": true
+    },
+    {
+      "path": "docs/experiments/20261111_fused_real/challenge_12_sealed_development_repeat3/rows.jsonl",
+      "expected": "ca57888e754976afde4524f4694bc557b95b369bb39bdce305209e396a6cfc1d",
+      "actual": "ca57888e754976afde4524f4694bc557b95b369bb39bdce305209e396a6cfc1d",
+      "match": true
+    },
+    {
+      "path": "docs/experiments/20261111_fused_real/challenge_12_sealed_development_repeat3/blocks.jsonl",
+      "expected": "fb3f938536174ec513d2d4ff02c6b1b57fb8587e8c8ed92383abf0967b2c0dec",
+      "actual": "fb3f938536174ec513d2d4ff02c6b1b57fb8587e8c8ed92383abf0967b2c0dec",
+      "match": true
+    },
+    {
+      "path": "docs/experiments/20261111_fused_real/challenge_12_sealed_development_repeat3/summary.json",
+      "expected": "fa1e2ceed83a89ff5e4637a0a6cd4246a7f9d714758579f2384793dc4f05a4ef",
+      "actual": "fa1e2ceed83a89ff5e4637a0a6cd4246a7f9d714758579f2384793dc4f05a4ef",
+      "match": true
+    },
+    {
+      "path": "docs/experiments/20261111_fused_real/challenge_12_sealed_development_repeat3/summary.md",
+      "expected": "d45e14270ea238a461aaba6538e416ac9d6159e850fccd9f255df56c4494c3c2",
+      "actual": "d45e14270ea238a461aaba6538e416ac9d6159e850fccd9f255df56c4494c3c2",
+      "match": true
+    },
+    {
+      "path": "docs/experiments/20261111_fused_real/challenge_12_sealed_development_repeat3/calibration.json",
+      "expected": "d30a6d3db818f044572cce3a4c0c49eebb8bcd9e37fbe0ec679ad1c8079c234f",
+      "actual": "d30a6d3db818f044572cce3a4c0c49eebb8bcd9e37fbe0ec679ad1c8079c234f",
+      "match": true
+    },
+    {
+      "path": "docs/experiments/20261111_fused_real/challenge_12_sealed_development_repeat3/source_snapshot/fused_eval.py",
+      "expected": "37c8060aea5ee827a871a2b2624fc64f9134fbd125d8a15d0dc2ba7a046d14ca",
+      "actual": "37c8060aea5ee827a871a2b2624fc64f9134fbd125d8a15d0dc2ba7a046d14ca",
+      "match": true
+    },
+    {
+      "path": "docs/experiments/20261111_fused_real/challenge_12_sealed_development_repeat3/source_snapshot/offload_gateway.py",
+      "expected": "d9f63dc5b6ffe73266777d8100e29842fce2d13005fd08baee8c997bf36793ef",
+      "actual": "d9f63dc5b6ffe73266777d8100e29842fce2d13005fd08baee8c997bf36793ef",
+      "match": true
+    },
+    {
+      "path": "docs/experiments/20261111_fused_real/challenge_12_sealed_development_repeat3/source_snapshot/resource_policy.py",
+      "expected": "84a924664541b2e21458fa4e78130b1d31ee4e5f16ff6e859d11d951c23b3593",
+      "actual": "84a924664541b2e21458fa4e78130b1d31ee4e5f16ff6e859d11d951c23b3593",
+      "match": true
+    },
+    {
+      "path": "docs/experiments/20261111_fused_real/challenge_12_sealed_development_repeat3/source_snapshot/offload_policy.c",
+      "expected": "58a772ddf879bb14480a3d715ac97b34fc64f811274a4a76a66c123f2c8f8135",
+      "actual": "58a772ddf879bb14480a3d715ac97b34fc64f811274a4a76a66c123f2c8f8135",
+      "match": true
+    },
+    {
+      "path": "docs/experiments/20261111_fused_real/challenge_12_sealed_development_repeat3/source_snapshot/offload_policy.h",
+      "expected": "304ff38f9685bbd7bbf7fd2c2602dcf19e9c74a25d127b9f1070aa749c891702",
+      "actual": "304ff38f9685bbd7bbf7fd2c2602dcf19e9c74a25d127b9f1070aa749c891702",
+      "match": true
+    },
+    {
+      "path": "docs/experiments/20261111_fused_real/challenge_12_sealed_development_repeat3/source_snapshot/policy_cli.c",
+      "expected": "c88b50574b5b29a9bca81fe46bab26d7f8e6710edf24e514ee0c632349af82b8",
+      "actual": "c88b50574b5b29a9bca81fe46bab26d7f8e6710edf24e514ee0c632349af82b8",
+      "match": true
+    },
+    {
+      "path": "docs/experiments/20261111_fused_real/challenge_12_sealed_development_repeat3/source_snapshot/openai_backend.py",
+      "expected": "c8e82dc2f9693cede4417fc73df9e487266aea400b6aca7c0978155a58e3d7d5",
+      "actual": "c8e82dc2f9693cede4417fc73df9e487266aea400b6aca7c0978155a58e3d7d5",
+      "match": true
+    },
+    {
+      "path": "docs/experiments/20261111_fused_real/challenge_12_sealed_development_repeat3/source_snapshot/eval_model.py",
+      "expected": "2e6bd2f615590d3639061c59bcb8d8012fba9916a5130a3148b03283544c1395",
+      "actual": "2e6bd2f615590d3639061c59bcb8d8012fba9916a5130a3148b03283544c1395",
+      "match": true
+    },
+    {
+      "path": "docs/experiments/20261111_fused_real/challenge_12_sealed_development_repeat3/source_snapshot/bridge_server.py",
+      "expected": "16c0edf80492483464f9796a678cfce9f2f91a284db83fba6758720bd1785770",
+      "actual": "16c0edf80492483464f9796a678cfce9f2f91a284db83fba6758720bd1785770",
+      "match": true
+    },
+    {
+      "path": "docs/experiments/20261111_fused_real/challenge_12_sealed_development_repeat3/source_snapshot/device_actions.py",
+      "expected": "b639e8e294e03a0171cea74ceaa2d9f2bae5c26166f019908e93af0265865698",
+      "actual": "b639e8e294e03a0171cea74ceaa2d9f2bae5c26166f019908e93af0265865698",
+      "match": true
+    },
+    {
+      "path": "docs/experiments/20261111_fused_real/challenge_12_sealed_development_repeat3/source_snapshot/policy_cli.exe",
+      "expected": "04c8f57dd7c26a8168540c67410f9e5a63f4e818c3c5a97841c1510f6a2db72e",
+      "actual": "04c8f57dd7c26a8168540c67410f9e5a63f4e818c3c5a97841c1510f6a2db72e",
+      "match": true
+    },
+    {
+      "path": "docs/experiments/20261111_fused_real/controlled_faults_sealed/report.json",
+      "expected": "806d89da396906c7f26f894c60beb3254eec108152d6591b3909d423553a8a90",
+      "actual": "806d89da396906c7f26f894c60beb3254eec108152d6591b3909d423553a8a90",
+      "match": true
+    },
+    {
+      "path": "docs/experiments/20261111_fused_real/controlled_faults_sealed/rows.jsonl",
+      "expected": "23ceaa52b8af160e85ea7aa5af07d707f170c12190427c554d115f868df8e9f3",
+      "actual": "23ceaa52b8af160e85ea7aa5af07d707f170c12190427c554d115f868df8e9f3",
+      "match": true
+    },
+    {
+      "path": "docs/experiments/20261111_fused_real/controlled_faults_sealed/blocks.jsonl",
+      "expected": "f0092a7e0e7c2d5d34490424925bf12df5ec961f3ed19763453a7c46613eb9aa",
+      "actual": "f0092a7e0e7c2d5d34490424925bf12df5ec961f3ed19763453a7c46613eb9aa",
+      "match": true
+    },
+    {
+      "path": "docs/experiments/20261111_fused_real/controlled_faults_sealed/summary.json",
+      "expected": "554fdd6063bb4bf76e78b1292c761ad21ee450a1be4be0582eb2f23786c041d1",
+      "actual": "554fdd6063bb4bf76e78b1292c761ad21ee450a1be4be0582eb2f23786c041d1",
+      "match": true
+    },
+    {
+      "path": "docs/experiments/20261111_fused_real/controlled_faults_sealed/summary.md",
+      "expected": "af08dab76dc205baadfedfa0b08bdcd06686ea48bb6552b10a923308989cd188",
+      "actual": "af08dab76dc205baadfedfa0b08bdcd06686ea48bb6552b10a923308989cd188",
+      "match": true
+    },
+    {
+      "path": "docs/experiments/20261111_fused_real/controlled_faults_sealed/calibration.json",
+      "expected": "d30a6d3db818f044572cce3a4c0c49eebb8bcd9e37fbe0ec679ad1c8079c234f",
+      "actual": "d30a6d3db818f044572cce3a4c0c49eebb8bcd9e37fbe0ec679ad1c8079c234f",
+      "match": true
+    },
+    {
+      "path": "docs/experiments/20261111_fused_real/controlled_faults_sealed/source_snapshot/fused_eval.py",
+      "expected": "37c8060aea5ee827a871a2b2624fc64f9134fbd125d8a15d0dc2ba7a046d14ca",
+      "actual": "37c8060aea5ee827a871a2b2624fc64f9134fbd125d8a15d0dc2ba7a046d14ca",
+      "match": true
+    },
+    {
+      "path": "docs/experiments/20261111_fused_real/controlled_faults_sealed/source_snapshot/offload_gateway.py",
+      "expected": "d9f63dc5b6ffe73266777d8100e29842fce2d13005fd08baee8c997bf36793ef",
+      "actual": "d9f63dc5b6ffe73266777d8100e29842fce2d13005fd08baee8c997bf36793ef",
+      "match": true
+    },
+    {
+      "path": "docs/experiments/20261111_fused_real/controlled_faults_sealed/source_snapshot/resource_policy.py",
+      "expected": "84a924664541b2e21458fa4e78130b1d31ee4e5f16ff6e859d11d951c23b3593",
+      "actual": "84a924664541b2e21458fa4e78130b1d31ee4e5f16ff6e859d11d951c23b3593",
+      "match": true
+    },
+    {
+      "path": "docs/experiments/20261111_fused_real/controlled_faults_sealed/source_snapshot/offload_policy.c",
+      "expected": "58a772ddf879bb14480a3d715ac97b34fc64f811274a4a76a66c123f2c8f8135",
+      "actual": "58a772ddf879bb14480a3d715ac97b34fc64f811274a4a76a66c123f2c8f8135",
+      "match": true
+    },
+    {
+      "path": "docs/experiments/20261111_fused_real/controlled_faults_sealed/source_snapshot/offload_policy.h",
+      "expected": "304ff38f9685bbd7bbf7fd2c2602dcf19e9c74a25d127b9f1070aa749c891702",
+      "actual": "304ff38f9685bbd7bbf7fd2c2602dcf19e9c74a25d127b9f1070aa749c891702",
+      "match": true
+    },
+    {
+      "path": "docs/experiments/20261111_fused_real/controlled_faults_sealed/source_snapshot/policy_cli.c",
+      "expected": "c88b50574b5b29a9bca81fe46bab26d7f8e6710edf24e514ee0c632349af82b8",
+      "actual": "c88b50574b5b29a9bca81fe46bab26d7f8e6710edf24e514ee0c632349af82b8",
+      "match": true
+    },
+    {
+      "path": "docs/experiments/20261111_fused_real/controlled_faults_sealed/source_snapshot/openai_backend.py",
+      "expected": "c8e82dc2f9693cede4417fc73df9e487266aea400b6aca7c0978155a58e3d7d5",
+      "actual": "c8e82dc2f9693cede4417fc73df9e487266aea400b6aca7c0978155a58e3d7d5",
+      "match": true
+    },
+    {
+      "path": "docs/experiments/20261111_fused_real/controlled_faults_sealed/source_snapshot/eval_model.py",
+      "expected": "2e6bd2f615590d3639061c59bcb8d8012fba9916a5130a3148b03283544c1395",
+      "actual": "2e6bd2f615590d3639061c59bcb8d8012fba9916a5130a3148b03283544c1395",
+      "match": true
+    },
+    {
+      "path": "docs/experiments/20261111_fused_real/controlled_faults_sealed/source_snapshot/bridge_server.py",
+      "expected": "16c0edf80492483464f9796a678cfce9f2f91a284db83fba6758720bd1785770",
+      "actual": "16c0edf80492483464f9796a678cfce9f2f91a284db83fba6758720bd1785770",
+      "match": true
+    },
+    {
+      "path": "docs/experiments/20261111_fused_real/controlled_faults_sealed/source_snapshot/device_actions.py",
+      "expected": "b639e8e294e03a0171cea74ceaa2d9f2bae5c26166f019908e93af0265865698",
+      "actual": "b639e8e294e03a0171cea74ceaa2d9f2bae5c26166f019908e93af0265865698",
+      "match": true
+    },
+    {
+      "path": "docs/experiments/20261111_fused_real/controlled_faults_sealed/source_snapshot/policy_cli.exe",
+      "expected": "04c8f57dd7c26a8168540c67410f9e5a63f4e818c3c5a97841c1510f6a2db72e",
+      "actual": "04c8f57dd7c26a8168540c67410f9e5a63f4e818c3c5a97841c1510f6a2db72e",
+      "match": true
+    },
+    {
+      "path": "docs/experiments/20261111_fused_real/holdout_12_programmatic_repeat3/report.json",
+      "expected": "1b4e1f8182cb62d1d42b0982cf713bd463b2cde49b3a2eace65b45e1ffcdd947",
+      "actual": "1b4e1f8182cb62d1d42b0982cf713bd463b2cde49b3a2eace65b45e1ffcdd947",
+      "match": true
+    },
+    {
+      "path": "docs/experiments/20261111_fused_real/holdout_12_programmatic_repeat3/rows.jsonl",
+      "expected": "aa1c7639d4f0d5ad0e7a9aa3a6351a84a7ec225fcd487640dd4d07f588812c1f",
+      "actual": "aa1c7639d4f0d5ad0e7a9aa3a6351a84a7ec225fcd487640dd4d07f588812c1f",
+      "match": true
+    },
+    {
+      "path": "docs/experiments/20261111_fused_real/holdout_12_programmatic_repeat3/blocks.jsonl",
+      "expected": "79a354d72ac0922f4bc1989b70b78ff03a99cadf9e7121ecc1d429bc1cea9346",
+      "actual": "79a354d72ac0922f4bc1989b70b78ff03a99cadf9e7121ecc1d429bc1cea9346",
+      "match": true
+    },
+    {
+      "path": "docs/experiments/20261111_fused_real/holdout_12_programmatic_repeat3/summary.json",
+      "expected": "ae044f658aa625281f9e20f0cc6b16a8e53f5d26059da74343558300b066f18a",
+      "actual": "ae044f658aa625281f9e20f0cc6b16a8e53f5d26059da74343558300b066f18a",
+      "match": true
+    },
+    {
+      "path": "docs/experiments/20261111_fused_real/holdout_12_programmatic_repeat3/summary.md",
+      "expected": "be48ec86e60c4887e90c5c9d6c558f166c700a4290dd24b6c6f2cbd631bdebe4",
+      "actual": "be48ec86e60c4887e90c5c9d6c558f166c700a4290dd24b6c6f2cbd631bdebe4",
+      "match": true
+    },
+    {
+      "path": "docs/experiments/20261111_fused_real/holdout_12_programmatic_repeat3/calibration.json",
+      "expected": "d30a6d3db818f044572cce3a4c0c49eebb8bcd9e37fbe0ec679ad1c8079c234f",
+      "actual": "d30a6d3db818f044572cce3a4c0c49eebb8bcd9e37fbe0ec679ad1c8079c234f",
+      "match": true
+    },
+    {
+      "path": "docs/experiments/20261111_fused_real/holdout_12_programmatic_repeat3/source_snapshot/fused_eval.py",
+      "expected": "37c8060aea5ee827a871a2b2624fc64f9134fbd125d8a15d0dc2ba7a046d14ca",
+      "actual": "37c8060aea5ee827a871a2b2624fc64f9134fbd125d8a15d0dc2ba7a046d14ca",
+      "match": true
+    },
+    {
+      "path": "docs/experiments/20261111_fused_real/holdout_12_programmatic_repeat3/source_snapshot/offload_gateway.py",
+      "expected": "d9f63dc5b6ffe73266777d8100e29842fce2d13005fd08baee8c997bf36793ef",
+      "actual": "d9f63dc5b6ffe73266777d8100e29842fce2d13005fd08baee8c997bf36793ef",
+      "match": true
+    },
+    {
+      "path": "docs/experiments/20261111_fused_real/holdout_12_programmatic_repeat3/source_snapshot/resource_policy.py",
+      "expected": "84a924664541b2e21458fa4e78130b1d31ee4e5f16ff6e859d11d951c23b3593",
+      "actual": "84a924664541b2e21458fa4e78130b1d31ee4e5f16ff6e859d11d951c23b3593",
+      "match": true
+    },
+    {
+      "path": "docs/experiments/20261111_fused_real/holdout_12_programmatic_repeat3/source_snapshot/offload_policy.c",
+      "expected": "58a772ddf879bb14480a3d715ac97b34fc64f811274a4a76a66c123f2c8f8135",
+      "actual": "58a772ddf879bb14480a3d715ac97b34fc64f811274a4a76a66c123f2c8f8135",
+      "match": true
+    },
+    {
+      "path": "docs/experiments/20261111_fused_real/holdout_12_programmatic_repeat3/source_snapshot/offload_policy.h",
+      "expected": "304ff38f9685bbd7bbf7fd2c2602dcf19e9c74a25d127b9f1070aa749c891702",
+      "actual": "304ff38f9685bbd7bbf7fd2c2602dcf19e9c74a25d127b9f1070aa749c891702",
+      "match": true
+    },
+    {
+      "path": "docs/experiments/20261111_fused_real/holdout_12_programmatic_repeat3/source_snapshot/policy_cli.c",
+      "expected": "c88b50574b5b29a9bca81fe46bab26d7f8e6710edf24e514ee0c632349af82b8",
+      "actual": "c88b50574b5b29a9bca81fe46bab26d7f8e6710edf24e514ee0c632349af82b8",
+      "match": true
+    },
+    {
+      "path": "docs/experiments/20261111_fused_real/holdout_12_programmatic_repeat3/source_snapshot/openai_backend.py",
+      "expected": "c8e82dc2f9693cede4417fc73df9e487266aea400b6aca7c0978155a58e3d7d5",
+      "actual": "c8e82dc2f9693cede4417fc73df9e487266aea400b6aca7c0978155a58e3d7d5",
+      "match": true
+    },
+    {
+      "path": "docs/experiments/20261111_fused_real/holdout_12_programmatic_repeat3/source_snapshot/eval_model.py",
+      "expected": "2e6bd2f615590d3639061c59bcb8d8012fba9916a5130a3148b03283544c1395",
+      "actual": "2e6bd2f615590d3639061c59bcb8d8012fba9916a5130a3148b03283544c1395",
+      "match": true
+    },
+    {
+      "path": "docs/experiments/20261111_fused_real/holdout_12_programmatic_repeat3/source_snapshot/bridge_server.py",
+      "expected": "16c0edf80492483464f9796a678cfce9f2f91a284db83fba6758720bd1785770",
+      "actual": "16c0edf80492483464f9796a678cfce9f2f91a284db83fba6758720bd1785770",
+      "match": true
+    },
+    {
+      "path": "docs/experiments/20261111_fused_real/holdout_12_programmatic_repeat3/source_snapshot/device_actions.py",
+      "expected": "b639e8e294e03a0171cea74ceaa2d9f2bae5c26166f019908e93af0265865698",
+      "actual": "b639e8e294e03a0171cea74ceaa2d9f2bae5c26166f019908e93af0265865698",
+      "match": true
+    },
+    {
+      "path": "docs/experiments/20261111_fused_real/holdout_12_programmatic_repeat3/source_snapshot/policy_cli.exe",
+      "expected": "04c8f57dd7c26a8168540c67410f9e5a63f4e818c3c5a97841c1510f6a2db72e",
+      "actual": "04c8f57dd7c26a8168540c67410f9e5a63f4e818c3c5a97841c1510f6a2db72e",
+      "match": true
+    },
+    {
+      "path": "docs/experiments_v4/frozen_source/docs/demo_v3/planning_recovery.py",
+      "expected": "5706f7514fec3ea4454d6d7fa4eebab769c64e2a60bd68bcca1de680e8c8f553",
+      "actual": "5706f7514fec3ea4454d6d7fa4eebab769c64e2a60bd68bcca1de680e8c8f553",
+      "match": true
+    },
+    {
+      "path": "docs/experiments_v4/frozen_source/docs/demo_v3/runtime.py",
+      "expected": "330a01159f79dda885c8acd137607d111b59ad959676689548039fb47c291ac5",
+      "actual": "330a01159f79dda885c8acd137607d111b59ad959676689548039fb47c291ac5",
+      "match": true
+    },
+    {
+      "path": "docs/experiments_v4/frozen_source/docs/demo_v3/local_models.json",
+      "expected": "45fa69de5595770100289bece32065f78d3c5783808192082c3d8d4b24af0b45",
+      "actual": "45fa69de5595770100289bece32065f78d3c5783808192082c3d8d4b24af0b45",
+      "match": true
+    },
+    {
+      "path": "docs/experiments_v4/frozen_source/docs/deployment/fused_eval.py",
+      "expected": "37c8060aea5ee827a871a2b2624fc64f9134fbd125d8a15d0dc2ba7a046d14ca",
+      "actual": "37c8060aea5ee827a871a2b2624fc64f9134fbd125d8a15d0dc2ba7a046d14ca",
+      "match": true
+    },
+    {
+      "path": "docs/experiments_v4/frozen_source/docs/deployment/real_fault_eval_v2.py",
+      "expected": "1af0fa45ae1710c842375ebae699a5ea552518be6bc3ff62f5f2a3fbbd5c90f5",
+      "actual": "1af0fa45ae1710c842375ebae699a5ea552518be6bc3ff62f5f2a3fbbd5c90f5",
+      "match": true
+    },
+    {
+      "path": "docs/experiments_v4/frozen_source/SenseHome-6G/net_offload/offload_gateway.py",
+      "expected": "d9f63dc5b6ffe73266777d8100e29842fce2d13005fd08baee8c997bf36793ef",
+      "actual": "d9f63dc5b6ffe73266777d8100e29842fce2d13005fd08baee8c997bf36793ef",
+      "match": true
+    },
+    {
+      "path": "docs/experiments_v4/frozen_source/SenseHome-6G/net_offload/resource_policy.py",
+      "expected": "84a924664541b2e21458fa4e78130b1d31ee4e5f16ff6e859d11d951c23b3593",
+      "actual": "84a924664541b2e21458fa4e78130b1d31ee4e5f16ff6e859d11d951c23b3593",
+      "match": true
+    },
+    {
+      "path": "docs/experiments_v4/frozen_source/SenseHome-6G/net_offload/experiment_inputs.py",
+      "expected": "43cd45bf47d03250e84fe7800afc276077ceeceb826693452696b44538de60a2",
+      "actual": "43cd45bf47d03250e84fe7800afc276077ceeceb826693452696b44538de60a2",
+      "match": true
+    },
+    {
+      "path": "docs/experiments_v4/frozen_source/SenseHome-6G/net_offload/eval_model.py",
+      "expected": "2e6bd2f615590d3639061c59bcb8d8012fba9916a5130a3148b03283544c1395",
+      "actual": "2e6bd2f615590d3639061c59bcb8d8012fba9916a5130a3148b03283544c1395",
+      "match": true
+    },
+    {
+      "path": "docs/experiments_v4/frozen_source/SenseHome-6G/net_offload/offload_policy.c",
+      "expected": "58a772ddf879bb14480a3d715ac97b34fc64f811274a4a76a66c123f2c8f8135",
+      "actual": "58a772ddf879bb14480a3d715ac97b34fc64f811274a4a76a66c123f2c8f8135",
+      "match": true
+    },
+    {
+      "path": "docs/experiments_v4/frozen_source/SenseHome-6G/net_offload/offload_policy.h",
+      "expected": "304ff38f9685bbd7bbf7fd2c2602dcf19e9c74a25d127b9f1070aa749c891702",
+      "actual": "304ff38f9685bbd7bbf7fd2c2602dcf19e9c74a25d127b9f1070aa749c891702",
+      "match": true
+    },
+    {
+      "path": "docs/experiments_v4/frozen_source/SenseHome-6G/net_offload/policy_cli.c",
+      "expected": "c88b50574b5b29a9bca81fe46bab26d7f8e6710edf24e514ee0c632349af82b8",
+      "actual": "c88b50574b5b29a9bca81fe46bab26d7f8e6710edf24e514ee0c632349af82b8",
+      "match": true
+    },
+    {
+      "path": "docs/experiments_v4/frozen_source/SenseHome-6G/net_offload/policy_cli.exe",
+      "expected": "04c8f57dd7c26a8168540c67410f9e5a63f4e818c3c5a97841c1510f6a2db72e",
+      "actual": "04c8f57dd7c26a8168540c67410f9e5a63f4e818c3c5a97841c1510f6a2db72e",
+      "match": true
+    },
+    {
+      "path": "docs/experiments_v4/frozen_source/SenseHome-6G/net_offload/backends/openai_backend.py",
+      "expected": "c8e82dc2f9693cede4417fc73df9e487266aea400b6aca7c0978155a58e3d7d5",
+      "actual": "c8e82dc2f9693cede4417fc73df9e487266aea400b6aca7c0978155a58e3d7d5",
+      "match": true
+    },
+    {
+      "path": "docs/experiments_v4/frozen_source/SenseHome-6G/net_offload/backends/eval_commands.reviewed.jsonl",
+      "expected": "3a2d50c6dca46712df5b1c26fdf6fbcfa0f76a79164b9c99f3cc07be9d7e0b06",
+      "actual": "3a2d50c6dca46712df5b1c26fdf6fbcfa0f76a79164b9c99f3cc07be9d7e0b06",
+      "match": true
+    },
+    {
+      "path": "docs/experiments_v4/frozen_source/SenseHome-6G/net_offload/experiments/policy_config.json",
+      "expected": "d76b772582fdf8d5b6417c77b55870a61b747fd797d290eb9b32b91cbd500449",
+      "actual": "d76b772582fdf8d5b6417c77b55870a61b747fd797d290eb9b32b91cbd500449",
+      "match": true
+    },
+    {
+      "path": "docs/experiments_v4/frozen_source/SenseHome-6G/net_offload/experiments/service_profiles.json",
+      "expected": "f258c15b35db282c5c7065857b842e3b3b65ed8f5a5d81cff692494b1dd99da7",
+      "actual": "f258c15b35db282c5c7065857b842e3b3b65ed8f5a5d81cff692494b1dd99da7",
+      "match": true
+    },
+    {
+      "path": "docs/experiments_v4/frozen_source/openvela_smart_home/dashboard/bridge_server.py",
+      "expected": "16c0edf80492483464f9796a678cfce9f2f91a284db83fba6758720bd1785770",
+      "actual": "16c0edf80492483464f9796a678cfce9f2f91a284db83fba6758720bd1785770",
+      "match": true
+    },
+    {
+      "path": "docs/experiments_v4/frozen_source/openvela_smart_home/dashboard/backend_monitor.py",
+      "expected": "f492423236e2b9c66bdb19499ed58097b0d93ec4273523674024fbc47eeb8507",
+      "actual": "f492423236e2b9c66bdb19499ed58097b0d93ec4273523674024fbc47eeb8507",
+      "match": true
+    },
+    {
+      "path": "docs/experiments_v4/frozen_source/openvela_smart_home/dashboard/device_actions.py",
+      "expected": "b639e8e294e03a0171cea74ceaa2d9f2bae5c26166f019908e93af0265865698",
+      "actual": "b639e8e294e03a0171cea74ceaa2d9f2bae5c26166f019908e93af0265865698",
+      "match": true
+    },
+    {
+      "path": "docs/experiments_v4/frozen_source/docs/experiments/20261111_fused_real/reviewed_20_sealed_repeat3/calibration.json",
+      "expected": "d30a6d3db818f044572cce3a4c0c49eebb8bcd9e37fbe0ec679ad1c8079c234f",
+      "actual": "d30a6d3db818f044572cce3a4c0c49eebb8bcd9e37fbe0ec679ad1c8079c234f",
+      "match": true
+    },
+    {
+      "path": "docs/experiments_v4/blocks.json",
+      "expected": "50a4d3f649a1b85cf634a6e75e81871ff4b54241f5279eee02378590168278c1",
+      "actual": "50a4d3f649a1b85cf634a6e75e81871ff4b54241f5279eee02378590168278c1",
+      "match": true
+    },
+    {
+      "path": "docs/experiments_v4/cloud_server.log",
+      "expected": "a904d1a61789c746f0e2378369baea46ae5a45279d081279dc7efa3d4b94d34e",
+      "actual": "a904d1a61789c746f0e2378369baea46ae5a45279d081279dc7efa3d4b94d34e",
+      "match": true
+    },
+    {
+      "path": "docs/experiments_v4/execution_status.json",
+      "expected": "6db98c24f445111ef5a5d50b0e02d80bc13c3010de8cd7df9f143fa94cf065f0",
+      "actual": "6db98c24f445111ef5a5d50b0e02d80bc13c3010de8cd7df9f143fa94cf065f0",
+      "match": true
+    },
+    {
+      "path": "docs/experiments_v4/execution_stdout.txt",
+      "expected": "5acfbe15599d7fc6d3156dcf44ad105cef9b67fd07497091d02b87c220858aaa",
+      "actual": "5acfbe15599d7fc6d3156dcf44ad105cef9b67fd07497091d02b87c220858aaa",
+      "match": true
+    },
+    {
+      "path": "docs/experiments_v4/final_verification_stdout.txt",
+      "expected": "03d25c9f0ff744a7b3238be78e601335c2740017ac7632b1d7543370d266c3f2",
+      "actual": "03d25c9f0ff744a7b3238be78e601335c2740017ac7632b1d7543370d266c3f2",
+      "match": true
+    },
+    {
+      "path": "docs/experiments_v4/initial_state.json",
+      "expected": "964cf9285a53f459c30be4047e0b9f878ac1ef13d5f61e913fd8cb3fe2677dbd",
+      "actual": "964cf9285a53f459c30be4047e0b9f878ac1ef13d5f61e913fd8cb3fe2677dbd",
+      "match": true
+    },
+    {
+      "path": "docs/experiments_v4/local_server.log",
+      "expected": "79600d74cce29f283e0798970404d212032482834c6a27b1fb0877860e6f3951",
+      "actual": "79600d74cce29f283e0798970404d212032482834c6a27b1fb0877860e6f3951",
+      "match": true
+    },
+    {
+      "path": "docs/experiments_v4/post_analysis.json",
+      "expected": "3e2aa7f0a78581acf32e7a6348d3697b4407af167beae563a945684d2451fa02",
+      "actual": "3e2aa7f0a78581acf32e7a6348d3697b4407af167beae563a945684d2451fa02",
+      "match": true
+    },
+    {
+      "path": "docs/experiments_v4/progress.md",
+      "expected": "9a998dc1619b46e92b393379aa882305f94dce0b7f197a7822a9e2551eb45e9f",
+      "actual": "9a998dc1619b46e92b393379aa882305f94dce0b7f197a7822a9e2551eb45e9f",
+      "match": true
+    },
+    {
+      "path": "docs/experiments_v4/README.md",
+      "expected": "63c1c7438979d14fe6171eca69239a7cb4fe8d0e0c409e415d9ca4fb7ece82f0",
+      "actual": "63c1c7438979d14fe6171eca69239a7cb4fe8d0e0c409e415d9ca4fb7ece82f0",
+      "match": true
+    },
+    {
+      "path": "docs/experiments_v4/recommendation.json",
+      "expected": "a488d4e1ea423f022f0396f9c98bb9b9787e374225cdfe4f9fe4722f9e77ccf6",
+      "actual": "a488d4e1ea423f022f0396f9c98bb9b9787e374225cdfe4f9fe4722f9e77ccf6",
+      "match": true
+    },
+    {
+      "path": "docs/experiments_v4/registration.json",
+      "expected": "4e4afc334c442d4b8ba7faacb7cf708b1576eb5bc873238b8697041062177840",
+      "actual": "4e4afc334c442d4b8ba7faacb7cf708b1576eb5bc873238b8697041062177840",
+      "match": true
+    },
+    {
+      "path": "docs/experiments_v4/registration_stdout.txt",
+      "expected": "f11e5839b843f0da1efb8d6b0bc9a1b9b441ca9bb8a64d0db7a993db497ed332",
+      "actual": "f11e5839b843f0da1efb8d6b0bc9a1b9b441ca9bb8a64d0db7a993db497ed332",
+      "match": true
+    },
+    {
+      "path": "docs/experiments_v4/report.md",
+      "expected": "cd6d482e3d335c668b9f0cdefac6a4655848abf61cda310be2600c5820b5680a",
+      "actual": "cd6d482e3d335c668b9f0cdefac6a4655848abf61cda310be2600c5820b5680a",
+      "match": true
+    },
+    {
+      "path": "docs/experiments_v4/results.json",
+      "expected": "ef2bb39991becdbdba0d2afc84cc95d373efe2e45ccd79711b116eb9fbf7bb12",
+      "actual": "ef2bb39991becdbdba0d2afc84cc95d373efe2e45ccd79711b116eb9fbf7bb12",
+      "match": true
+    },
+    {
+      "path": "docs/experiments_v4/rows.jsonl",
+      "expected": "dea460dcf6525270c9d997bfab7f7d1a2383ec950a9c35534337b7b17653d432",
+      "actual": "dea460dcf6525270c9d997bfab7f7d1a2383ec950a9c35534337b7b17653d432",
+      "match": true
+    },
+    {
+      "path": "docs/experiments_v4/runtime_manifest.json",
+      "expected": "483cb0a4a247d32a525f0b1ac29886b094cfac01b2088d6c926eec8c77cd0d69",
+      "actual": "483cb0a4a247d32a525f0b1ac29886b094cfac01b2088d6c926eec8c77cd0d69",
+      "match": true
+    },
+    {
+      "path": "docs/experiments_v4/runtime_resolved.json",
+      "expected": "a2de044c608cf7b7b8594e6769a328f43f56e256e364dc5c1777fa1b9c04a9e7",
+      "actual": "a2de044c608cf7b7b8594e6769a328f43f56e256e364dc5c1777fa1b9c04a9e7",
+      "match": true
+    },
+    {
+      "path": "docs/experiments_v4/run_comparison.py",
+      "expected": "1aaf8f46ebfc9127179646e163833460dbdbbc80dda049708593abe3efa40fed",
+      "actual": "1aaf8f46ebfc9127179646e163833460dbdbbc80dda049708593abe3efa40fed",
+      "match": true
+    },
+    {
+      "path": "docs/experiments_v4/source_capture.json",
+      "expected": "8b9e850bd9c4499eae1431b87433e30b2ad21086667c0dc844cf50b801819908",
+      "actual": "8b9e850bd9c4499eae1431b87433e30b2ad21086667c0dc844cf50b801819908",
+      "match": true
+    },
+    {
+      "path": "docs/experiments_v4/tdd_green.txt",
+      "expected": "4532afdf79f63b9ae60ad4a38e57f168d9190032172261b6636b3554ddb9f0a8",
+      "actual": "4532afdf79f63b9ae60ad4a38e57f168d9190032172261b6636b3554ddb9f0a8",
+      "match": true
+    },
+    {
+      "path": "docs/experiments_v4/tdd_green2.txt",
+      "expected": "c26af8a13fe1ae714ac56b0d1af449fb03f24f4730ceffa8fd5eb15878ae5a3b",
+      "actual": "c26af8a13fe1ae714ac56b0d1af449fb03f24f4730ceffa8fd5eb15878ae5a3b",
+      "match": true
+    },
+    {
+      "path": "docs/experiments_v4/tdd_red.txt",
+      "expected": "6d24c3d8dd1aeb1be924e9c5ff6f9a0569f177d053d4b9e1681b36141de430dc",
+      "actual": "6d24c3d8dd1aeb1be924e9c5ff6f9a0569f177d053d4b9e1681b36141de430dc",
+      "match": true
+    },
+    {
+      "path": "docs/experiments_v4/tdd_red2.txt",
+      "expected": "bdb8c9e7985ae8eb12e04e426a6369be9332d83b77649cdeec2cf957c20fbeed",
+      "actual": "bdb8c9e7985ae8eb12e04e426a6369be9332d83b77649cdeec2cf957c20fbeed",
+      "match": true
+    },
+    {
+      "path": "docs/experiments_v4/test_comparison.py",
+      "expected": "47dac11bf199d1e1a810fb20b9857b8b7bddb5ebe5ae2270efd2b0db501b0bf9",
+      "actual": "47dac11bf199d1e1a810fb20b9857b8b7bddb5ebe5ae2270efd2b0db501b0bf9",
+      "match": true
+    },
+    {
+      "path": "docs/experiments_v4/verification.json",
+      "expected": "de47c6e0cf5dde5b042b54858ea01aa0a2e97d11e78d703e45290f84c597b503",
+      "actual": "de47c6e0cf5dde5b042b54858ea01aa0a2e97d11e78d703e45290f84c597b503",
+      "match": true
+    },
+    {
+      "path": "docs/experiments_v4/verification_stdout.txt",
+      "expected": "03d25c9f0ff744a7b3238be78e601335c2740017ac7632b1d7543370d266c3f2",
+      "actual": "03d25c9f0ff744a7b3238be78e601335c2740017ac7632b1d7543370d266c3f2",
+      "match": true
+    },
+    {
+      "path": "docs/experiments_v4/verify_run.py",
+      "expected": "721575bf9ebd0c666f4303656f1acc28d87fe7dfe9530adb2d6058999b79ec87",
+      "actual": "721575bf9ebd0c666f4303656f1acc28d87fe7dfe9530adb2d6058999b79ec87",
+      "match": true
+    },
+    {
+      "path": "docs/experiments_v4/warmups.json",
+      "expected": "e69d7f457ee25f1da7cebd8b9e7f5c4257884392a83e786c6e045084d9b07606",
+      "actual": "e69d7f457ee25f1da7cebd8b9e7f5c4257884392a83e786c6e045084d9b07606",
+      "match": true
+    },
+    {
+      "path": "docs/operations_v4/source_snapshot/openvela_smart_home/dashboard/bridge_server.py",
+      "expected": "58e498e0a8827070c97591db9cadeec140337c687640f5b89a395b2c46eb7a63",
+      "actual": "58e498e0a8827070c97591db9cadeec140337c687640f5b89a395b2c46eb7a63",
+      "match": true
+    },
+    {
+      "path": "docs/operations_v4/source_snapshot/openvela_smart_home/dashboard/device_actions.py",
+      "expected": "b639e8e294e03a0171cea74ceaa2d9f2bae5c26166f019908e93af0265865698",
+      "actual": "b639e8e294e03a0171cea74ceaa2d9f2bae5c26166f019908e93af0265865698",
+      "match": true
+    },
+    {
+      "path": "docs/operations_v4/source_snapshot/openvela_smart_home/dashboard/backend_monitor.py",
+      "expected": "f492423236e2b9c66bdb19499ed58097b0d93ec4273523674024fbc47eeb8507",
+      "actual": "f492423236e2b9c66bdb19499ed58097b0d93ec4273523674024fbc47eeb8507",
+      "match": true
+    },
+    {
+      "path": "docs/operations_v4/source_snapshot/openvela_smart_home/dashboard/web_panel.html",
+      "expected": "2828245613d5b23dea4c0f875818929b05f34ccdba3b422b9f0d5a10b9fd6afd",
+      "actual": "2828245613d5b23dea4c0f875818929b05f34ccdba3b422b9f0d5a10b9fd6afd",
+      "match": true
+    },
+    {
+      "path": "docs/operations_v4/source_snapshot/SenseHome-6G/net_offload/offload_policy.c",
+      "expected": "58a772ddf879bb14480a3d715ac97b34fc64f811274a4a76a66c123f2c8f8135",
+      "actual": "58a772ddf879bb14480a3d715ac97b34fc64f811274a4a76a66c123f2c8f8135",
+      "match": true
+    },
+    {
+      "path": "docs/operations_v4/source_snapshot/SenseHome-6G/net_offload/policy_cli.exe",
+      "expected": "04c8f57dd7c26a8168540c67410f9e5a63f4e818c3c5a97841c1510f6a2db72e",
+      "actual": "04c8f57dd7c26a8168540c67410f9e5a63f4e818c3c5a97841c1510f6a2db72e",
+      "match": true
+    },
+    {
+      "path": "docs/operations_v4/source_snapshot/docs/demo_v3/runtime.py",
+      "expected": "330a01159f79dda885c8acd137607d111b59ad959676689548039fb47c291ac5",
+      "actual": "330a01159f79dda885c8acd137607d111b59ad959676689548039fb47c291ac5",
+      "match": true
+    },
+    {
+      "path": "docs/operations_v4/source_snapshot/docs/demo_v3/planning_recovery.py",
+      "expected": "5706f7514fec3ea4454d6d7fa4eebab769c64e2a60bd68bcca1de680e8c8f553",
+      "actual": "5706f7514fec3ea4454d6d7fa4eebab769c64e2a60bd68bcca1de680e8c8f553",
+      "match": true
+    },
+    {
+      "path": "docs/operations_v4/source_snapshot/docs/demo_v3/run_live.py",
+      "expected": "712d8db2d006c0f51d08451ac0d45d7252a6668587d024b6239dcc17178a9bcf",
+      "actual": "712d8db2d006c0f51d08451ac0d45d7252a6668587d024b6239dcc17178a9bcf",
+      "match": true
+    },
+    {
+      "path": "docs/operations_v4/source_snapshot/docs/deployment/fused_eval.py",
+      "expected": null,
+      "actual": null,
+      "match": true
+    },
+    {
+      "path": "docs/operations_v4/source_snapshot/docs/demo_v4/live_v4.py",
+      "expected": "330206034290fc295f8396e0e5613a495e897dc18ef79923c9612849f29d8b1a",
+      "actual": "330206034290fc295f8396e0e5613a495e897dc18ef79923c9612849f29d8b1a",
+      "match": true
+    },
+    {
+      "path": "docs/operations_v4/source_snapshot/SenseHome-6G/net_offload/durable_receipts.py",
+      "expected": "6af0c33864c0709e5a4752ae874e079fafffe0b6edf6e124db86f52529adbf11",
+      "actual": "6af0c33864c0709e5a4752ae874e079fafffe0b6edf6e124db86f52529adbf11",
+      "match": true
+    },
+    {
+      "path": "docs/operations_v4/source_snapshot/SenseHome-6G/net_offload/mqtt_receipts.py",
+      "expected": "136769908d4a9a4accaecfd05a0f6c9298a7219d7476475335571012d9a424eb",
+      "actual": "136769908d4a9a4accaecfd05a0f6c9298a7219d7476475335571012d9a424eb",
+      "match": true
+    }
+  ],
+  "historically_missing": [
+    "docs/operations_v4/source_snapshot/docs/deployment/fused_eval.py"
+  ],
+  "verified_existing_files": 136,
+  "note": "The prior manifest already recorded historically_missing paths as absent. They were not created or presented as preserved existing files. Local internal packages are checked here but excluded from new public upload."
+}

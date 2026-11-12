@@ -1,0 +1,398 @@
+{
+  "schema": "sensehome.device-contract-fixture-demo.v1",
+  "evidence_kind": "software-device-contract-fixture",
+  "created_at_utc": "2026-11-11T02:59:18.561009+00:00",
+  "physical_device_count": 0,
+  "matter_stack_present": false,
+  "normal_http": {
+    "endpoint": "http://127.0.0.1:58795",
+    "before": {
+      "schema": "sensehome.device-state.v1",
+      "evidence_kind": "software-device-contract-fixture",
+      "store_id": "5e9b5c5122ab4fdf9db19a0353bc28ac",
+      "store_persistence": "memory_until_server_stops",
+      "state_version": 0,
+      "applied_commands": 0,
+      "state": {
+        "lights": {
+          "客厅": {
+            "is_on": false,
+            "brightness": 0
+          }
+        },
+        "curtains": {
+          "客厅": {
+            "is_open": false,
+            "position": 0
+          }
+        },
+        "temperature": {
+          "客厅": {
+            "temp": 25,
+            "humidity": 50
+          }
+        }
+      },
+      "observed_at_utc": "2026-11-11T02:59:17.485659+00:00",
+      "state_age_ms": 32.323
+    },
+    "requests": {
+      "applied": {
+        "command_id": "receipt-demo-001",
+        "expected_state_version": 0,
+        "actions": [
+          {
+            "name": "light_control",
+            "params": {
+              "location": "客厅",
+              "brightness": 60
+            }
+          }
+        ]
+      },
+      "duplicate": {
+        "command_id": "receipt-demo-001",
+        "expected_state_version": 0,
+        "actions": [
+          {
+            "name": "light_control",
+            "params": {
+              "location": "客厅",
+              "brightness": 60
+            }
+          }
+        ]
+      },
+      "conflict": {
+        "command_id": "receipt-demo-001",
+        "expected_state_version": 0,
+        "actions": [
+          {
+            "name": "light_control",
+            "params": {
+              "location": "客厅",
+              "brightness": 20
+            }
+          }
+        ]
+      },
+      "invalid_batch": {
+        "command_id": "receipt-demo-invalid",
+        "expected_state_version": 1,
+        "actions": [
+          {
+            "name": "light_control",
+            "params": {
+              "location": "客厅",
+              "brightness": 20
+            }
+          },
+          {
+            "name": "disable_alarm",
+            "params": {}
+          }
+        ]
+      }
+    },
+    "results": {
+      "applied": {
+        "outcome": "applied",
+        "receipt": {
+          "schema": "sensehome.device-receipt.v1",
+          "evidence_kind": "software-device-contract-fixture",
+          "store_id": "5e9b5c5122ab4fdf9db19a0353bc28ac",
+          "store_persistence": "memory_until_server_stops",
+          "command_id": "receipt-demo-001",
+          "payload_sha256": "5efc30d4abd46f82a343487451c741575ba15c1931c5a169f7cbe608d911be21",
+          "status": "applied",
+          "http_status": 200,
+          "state_version_before": 0,
+          "state_version_after": 1,
+          "fixture_commit_count": 1,
+          "error": null,
+          "requested_action_count": 1,
+          "actions": [
+            {
+              "name": "light_control",
+              "params": {
+                "location": "客厅",
+                "brightness": 60
+              },
+              "description": "客厅灯光亮度=60%"
+            }
+          ],
+          "observation": "客厅灯光亮度=60%",
+          "created_at_utc": "2026-11-11T02:59:17.489549+00:00"
+        },
+        "http_status": 200,
+        "error": null,
+        "post_attempts": 1,
+        "query_attempts": 0,
+        "post_http_status": 200,
+        "post_error": null
+      },
+      "duplicate": {
+        "outcome": "applied",
+        "receipt": {
+          "schema": "sensehome.device-receipt.v1",
+          "evidence_kind": "software-device-contract-fixture",
+          "store_id": "5e9b5c5122ab4fdf9db19a0353bc28ac",
+          "store_persistence": "memory_until_server_stops",
+          "command_id": "receipt-demo-001",
+          "payload_sha256": "5efc30d4abd46f82a343487451c741575ba15c1931c5a169f7cbe608d911be21",
+          "status": "applied",
+          "http_status": 200,
+          "state_version_before": 0,
+          "state_version_after": 1,
+          "fixture_commit_count": 1,
+          "error": null,
+          "requested_action_count": 1,
+          "actions": [
+            {
+              "name": "light_control",
+              "params": {
+                "location": "客厅",
+                "brightness": 60
+              },
+              "description": "客厅灯光亮度=60%"
+            }
+          ],
+          "observation": "客厅灯光亮度=60%",
+          "created_at_utc": "2026-11-11T02:59:17.489549+00:00"
+        },
+        "http_status": 200,
+        "error": null,
+        "post_attempts": 1,
+        "query_attempts": 0,
+        "post_http_status": 200,
+        "post_error": null
+      },
+      "conflict": {
+        "outcome": "conflict",
+        "receipt": {
+          "schema": "sensehome.device-error.v1",
+          "evidence_kind": "software-device-contract-fixture",
+          "store_id": "5e9b5c5122ab4fdf9db19a0353bc28ac",
+          "store_persistence": "memory_until_server_stops",
+          "error": "COMMAND_ID_CONFLICT",
+          "command_id": "receipt-demo-001",
+          "stored_payload_sha256": "5efc30d4abd46f82a343487451c741575ba15c1931c5a169f7cbe608d911be21",
+          "payload_sha256": "42b9bf732aa18216a7003056adc314532c88c29cff28e321029f80a6b1f47eba"
+        },
+        "http_status": 409,
+        "error": "COMMAND_ID_CONFLICT",
+        "post_attempts": 1,
+        "query_attempts": 0,
+        "post_http_status": 409,
+        "post_error": null
+      },
+      "invalid_batch": {
+        "outcome": "rejected",
+        "receipt": {
+          "schema": "sensehome.device-receipt.v1",
+          "evidence_kind": "software-device-contract-fixture",
+          "store_id": "5e9b5c5122ab4fdf9db19a0353bc28ac",
+          "store_persistence": "memory_until_server_stops",
+          "command_id": "receipt-demo-invalid",
+          "payload_sha256": "fad87ce42c35da775274168c9969a4e8fa16d1b5e3f61ba02f506e5e7a26b958",
+          "status": "rejected",
+          "http_status": 422,
+          "state_version_before": 1,
+          "state_version_after": 1,
+          "fixture_commit_count": 0,
+          "error": "ACTION_NOT_ALLOWED",
+          "requested_action_count": 2,
+          "actions": [],
+          "observation": "",
+          "created_at_utc": "2026-11-11T02:59:17.496392+00:00"
+        },
+        "http_status": 422,
+        "error": "ACTION_NOT_ALLOWED",
+        "post_attempts": 1,
+        "query_attempts": 0,
+        "post_http_status": 422,
+        "post_error": null
+      },
+      "query": {
+        "outcome": "applied",
+        "receipt": {
+          "schema": "sensehome.device-receipt.v1",
+          "evidence_kind": "software-device-contract-fixture",
+          "store_id": "5e9b5c5122ab4fdf9db19a0353bc28ac",
+          "store_persistence": "memory_until_server_stops",
+          "command_id": "receipt-demo-001",
+          "payload_sha256": "5efc30d4abd46f82a343487451c741575ba15c1931c5a169f7cbe608d911be21",
+          "status": "applied",
+          "http_status": 200,
+          "state_version_before": 0,
+          "state_version_after": 1,
+          "fixture_commit_count": 1,
+          "error": null,
+          "requested_action_count": 1,
+          "actions": [
+            {
+              "name": "light_control",
+              "params": {
+                "location": "客厅",
+                "brightness": 60
+              },
+              "description": "客厅灯光亮度=60%"
+            }
+          ],
+          "observation": "客厅灯光亮度=60%",
+          "created_at_utc": "2026-11-11T02:59:17.489549+00:00"
+        },
+        "http_status": 200,
+        "error": null,
+        "post_attempts": 0,
+        "query_attempts": 1
+      }
+    },
+    "http_trace": [
+      [
+        "POST",
+        "/commands"
+      ],
+      [
+        "POST",
+        "/commands"
+      ],
+      [
+        "POST",
+        "/commands"
+      ],
+      [
+        "POST",
+        "/commands"
+      ],
+      [
+        "GET",
+        "/commands/receipt-demo-001"
+      ]
+    ],
+    "after": {
+      "schema": "sensehome.device-state.v1",
+      "evidence_kind": "software-device-contract-fixture",
+      "store_id": "5e9b5c5122ab4fdf9db19a0353bc28ac",
+      "store_persistence": "memory_until_server_stops",
+      "state_version": 1,
+      "applied_commands": 1,
+      "state": {
+        "lights": {
+          "客厅": {
+            "is_on": true,
+            "brightness": 60
+          }
+        },
+        "curtains": {
+          "客厅": {
+            "is_open": false,
+            "position": 0
+          }
+        },
+        "temperature": {
+          "客厅": {
+            "temp": 25,
+            "humidity": 50
+          }
+        }
+      },
+      "observed_at_utc": "2026-11-11T02:59:17.498505+00:00",
+      "state_age_ms": 8.99
+    }
+  },
+  "post_timeout_get_confirmation": {
+    "endpoint": "http://127.0.0.1:58802",
+    "request": {
+      "command_id": "receipt-demo-001",
+      "expected_state_version": 0,
+      "actions": [
+        {
+          "name": "light_control",
+          "params": {
+            "location": "客厅",
+            "brightness": 60
+          }
+        }
+      ]
+    },
+    "result": {
+      "outcome": "applied",
+      "receipt": {
+        "schema": "sensehome.device-receipt.v1",
+        "evidence_kind": "software-device-contract-fixture",
+        "store_id": "f33862c3e1a04abab4447bf457dd67a3",
+        "store_persistence": "memory_until_server_stops",
+        "command_id": "receipt-demo-001",
+        "payload_sha256": "5efc30d4abd46f82a343487451c741575ba15c1931c5a169f7cbe608d911be21",
+        "status": "applied",
+        "http_status": 200,
+        "state_version_before": 0,
+        "state_version_after": 1,
+        "fixture_commit_count": 1,
+        "error": null,
+        "requested_action_count": 1,
+        "actions": [
+          {
+            "name": "light_control",
+            "params": {
+              "location": "客厅",
+              "brightness": 60
+            },
+            "description": "客厅灯光亮度=60%"
+          }
+        ],
+        "observation": "客厅灯光亮度=60%",
+        "created_at_utc": "2026-11-11T02:59:18.012360+00:00"
+      },
+      "http_status": 200,
+      "error": null,
+      "post_attempts": 1,
+      "query_attempts": 1,
+      "post_http_status": 0,
+      "post_error": "TimeoutError"
+    },
+    "http_trace": [
+      [
+        "POST",
+        "/commands"
+      ],
+      [
+        "GET",
+        "/commands/receipt-demo-001"
+      ]
+    ],
+    "after": {
+      "schema": "sensehome.device-state.v1",
+      "evidence_kind": "software-device-contract-fixture",
+      "store_id": "f33862c3e1a04abab4447bf457dd67a3",
+      "store_persistence": "memory_until_server_stops",
+      "state_version": 1,
+      "applied_commands": 1,
+      "state": {
+        "lights": {
+          "客厅": {
+            "is_on": true,
+            "brightness": 60
+          }
+        },
+        "curtains": {
+          "客厅": {
+            "is_open": false,
+            "position": 0
+          }
+        },
+        "temperature": {
+          "客厅": {
+            "temp": 25,
+            "humidity": 50
+          }
+        }
+      },
+      "observed_at_utc": "2026-11-11T02:59:18.059626+00:00",
+      "state_age_ms": 47.293
+    },
+    "fault": "software_fixture_delays_post_ack_150ms_after_commit"
+  },
+  "invariants_passed": true
+}

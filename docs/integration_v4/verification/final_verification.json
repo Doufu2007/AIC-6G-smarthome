@@ -1,0 +1,27 @@
+{
+  "gateway_unittest": {
+    "passed": 155,
+    "log": "net_offload_suite_final.txt"
+  },
+  "dashboard_unittest": {
+    "passed": 49,
+    "log": "dashboard_suite_final.txt"
+  },
+  "project_pytest": {
+    "exit_code": 2,
+    "collection_errors": 36,
+    "log": "project_pytest.txt",
+    "reason": "historical extracted duplicate module names and docs test import conflicts"
+  },
+  "integration_scenarios": 6,
+  "offline_audit_pass": true,
+  "source_hashes_current": {
+    "SenseHome-6G\\net_offload\\durable_receipts.py": true,
+    "SenseHome-6G\\net_offload\\mqtt_receipts.py": true,
+    "SenseHome-6G\\net_offload\\offload_gateway.py": true,
+    "openvela_smart_home\\dashboard\\bridge_server.py": true,
+    "openvela_smart_home\\dashboard\\device_actions.py": true,
+    "docs\\integration_v4\\run_integration.py": true
+  },
+  "physical_devices": 0
+}

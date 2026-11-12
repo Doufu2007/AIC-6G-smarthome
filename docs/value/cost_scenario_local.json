@@ -1,0 +1,88 @@
+{
+  "schema": "sensehome.cost.v1",
+  "scenario_name": "演示A：全本地；全部本地时长/功耗是假设",
+  "currency": "USD",
+  "parameters": {
+    "monthly_requests": {
+      "value": 3000,
+      "status": "assumption",
+      "source": "演示情景假设；不是采购、运行或用户需求实测。见 cost_model.md"
+    },
+    "cloud_fraction": {
+      "value": 0,
+      "status": "assumption",
+      "source": "演示情景假设；不是采购、运行或用户需求实测。见 cost_model.md"
+    },
+    "input_tokens_per_cloud_attempt": {
+      "value": 1500,
+      "status": "assumption",
+      "source": "演示情景假设；不是采购、运行或用户需求实测。见 cost_model.md"
+    },
+    "output_tokens_per_cloud_attempt": {
+      "value": 200,
+      "status": "assumption",
+      "source": "演示情景假设；不是采购、运行或用户需求实测。见 cost_model.md"
+    },
+    "cloud_attempts_per_routed_request": {
+      "value": 1,
+      "status": "assumption",
+      "source": "演示情景假设；不是采购、运行或用户需求实测。见 cost_model.md"
+    },
+    "cloud_input_per_million": {
+      "value": 0.3,
+      "status": "quote",
+      "source": "public_sources.json S9，2026-11-11；DeepSeek deepseek-flash，高峰、输入缓存未命中，USD/1M tokens，未实际调用"
+    },
+    "cloud_output_per_million": {
+      "value": 1.2,
+      "status": "quote",
+      "source": "public_sources.json S9，2026-11-11；DeepSeek deepseek-flash，高峰、输入缓存未命中，USD/1M tokens，未实际调用"
+    },
+    "gateway_purchase": {
+      "value": 180,
+      "status": "assumption",
+      "source": "演示情景假设；不是采购、运行或用户需求实测。见 cost_model.md"
+    },
+    "amortization_months": {
+      "value": 36,
+      "status": "assumption",
+      "source": "演示情景假设；不是采购、运行或用户需求实测。见 cost_model.md"
+    },
+    "monthly_uptime_hours": {
+      "value": 720,
+      "status": "assumption",
+      "source": "演示情景假设；不是采购、运行或用户需求实测。见 cost_model.md"
+    },
+    "idle_watts": {
+      "value": 10,
+      "status": "assumption",
+      "source": "演示情景假设；不是采购、运行或用户需求实测。见 cost_model.md"
+    },
+    "active_watts": {
+      "value": 35,
+      "status": "assumption",
+      "source": "演示情景假设；不是采购、运行或用户需求实测。见 cost_model.md"
+    },
+    "local_seconds_per_request": {
+      "value": 3,
+      "status": "assumption",
+      "source": "演示情景假设；不是采购、运行或用户需求实测。见 cost_model.md"
+    },
+    "electricity_per_kwh": {
+      "value": 0.15,
+      "status": "assumption",
+      "source": "演示情景假设；不是采购、运行或用户需求实测。见 cost_model.md"
+    },
+    "monthly_operations": {
+      "value": 5,
+      "status": "assumption",
+      "source": "演示情景假设；不是采购、运行或用户需求实测。见 cost_model.md"
+    },
+    "monthly_network": {
+      "value": 0,
+      "status": "assumption",
+      "source": "演示情景假设；不是采购、运行或用户需求实测。见 cost_model.md"
+    }
+  },
+  "scope_note": "Only a sensitivity illustration with unchanged gateway hardware; no quality-equivalence or savings claim. No FX conversion."
+}

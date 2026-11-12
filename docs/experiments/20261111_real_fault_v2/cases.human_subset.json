@@ -1,0 +1,55 @@
+{
+  "cases": [
+    {
+      "id": "C01",
+      "category": "implicit",
+      "command": "客厅有点暗",
+      "expected_actions": [
+        {
+          "name": "light_control",
+          "params": {
+            "location": "客厅",
+            "brightness": 60
+          }
+        }
+      ],
+      "human_reviewed": true,
+      "label_source": "human_reviewed_freeze_20261103"
+    },
+    {
+      "id": "C04",
+      "category": "multi_intent",
+      "command": "关闭书房的灯并打开书房窗帘",
+      "expected_actions": [
+        {
+          "name": "light_control",
+          "params": {
+            "location": "书房",
+            "action": "off"
+          }
+        },
+        {
+          "name": "curtain_control",
+          "params": {
+            "location": "书房",
+            "action": "open"
+          }
+        }
+      ],
+      "human_reviewed": true,
+      "label_source": "human_reviewed_freeze_20261103"
+    }
+  ],
+  "metadata": {
+    "sha256": "3a2d50c6dca46712df5b1c26fdf6fbcfa0f76a79164b9c99f3cc07be9d7e0b06",
+    "label_status": "human_reviewed",
+    "label_sources": [
+      "human_reviewed_freeze_20261103"
+    ],
+    "selected_case_ids": [
+      "C01",
+      "C04"
+    ],
+    "use_scope": "existing_human_frozen_regression_fault_check_not_new_generalization"
+  }
+}

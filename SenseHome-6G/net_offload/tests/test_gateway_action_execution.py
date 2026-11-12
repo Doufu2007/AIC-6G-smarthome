@@ -35,14 +35,17 @@ class GatewayActionExecutionTests(unittest.TestCase):
         )
 
     def test_remote_actions_reach_executor_and_merge_execution_response(self):
-        actions = [{"name": "set_light", "params": {"room": "客厅", "brightness": 60}}]
-        applied = [{"name": "set_light", "applied": True}]
-        executor = mock.Mock(return_value={"answer": "applied", "actions": applied, "semantic_complete": True})
+        actions = [{'name': 'light_control', 'params': {'location': '客厅', 'brightness': 60}},
+                   {'name': 'curtain_control', 'params': {'location': '卧室', 'action': 'open'}}]
+        applied = [{**action, 'description': 'applied'} for action in actions]
+        executor = mock.Mock(return_value={"answer": "applied", "actions": applied, "semantic_complete": True,
+                                          'plan_valid': True, 'execution_complete': True, 'task_complete': True})
         gateway = self.gateway(executor, actions)
 
-        event = gateway.handle("有点暗", {"session": "test"})
+        command = '把客厅灯光设为60%，再打开卧室窗帘'
+        event = gateway.handle(command, {"session": "test"})
 
-        executor.assert_called_once_with(actions, {"session": "test"})
+        executor.assert_called_once_with(actions, {"session": "test", '_receipt_command': command})
         self.assertEqual(event["backend"], "cloud-model")
         self.assertEqual(event["actions"], applied)
         self.assertTrue(event["semantic_complete"])
@@ -61,9 +64,10 @@ class GatewayActionExecutionTests(unittest.TestCase):
 
     def test_executor_exception_falls_back_and_records_error(self):
         executor = mock.Mock(side_effect=ValueError("invalid device action"))
-        gateway = self.gateway(executor, [{"name": "set_light"}])
+        gateway = self.gateway(executor, [{'name': 'light_control', 'params': {'location': '客厅', 'brightness': 60}},
+                                         {'name': 'curtain_control', 'params': {'location': '卧室', 'action': 'open'}}])
 
-        event = gateway.handle("有点暗")
+        event = gateway.handle('把客厅灯光设为60%，再打开卧室窗帘')
 
         self.assertEqual(event["backend"], "local-rules")
         self.assertEqual(event["fallback_from"], "cloud-model")

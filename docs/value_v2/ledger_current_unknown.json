@@ -1,0 +1,53 @@
+{
+  "schema": "sensehome.actual-ledger.v2",
+  "currency": "CNY",
+  "period": "Four explicitly sealed 2026-11-11 model matrices only",
+  "scope": "Direct model inference API fee plus unknown allocated local operating cost for this bounded experiment; not monthly deployment or lifetime TCO.",
+  "entries": [
+    {
+      "category": "hardware_amortization",
+      "amount": null,
+      "currency": "CNY",
+      "status": "unknown",
+      "source": "No actual receipt or whole-computer integrated energy record collected.",
+      "allocation_fraction": 1
+    },
+    {
+      "category": "electricity",
+      "amount": null,
+      "currency": "CNY",
+      "status": "unknown",
+      "source": "No actual receipt or whole-computer integrated energy record collected.",
+      "allocation_fraction": 1
+    },
+    {
+      "category": "cloud_inference",
+      "amount": 0,
+      "currency": "CNY",
+      "status": "actual",
+      "source": "Bounded record only: all 415 model POST destinations are existing local llama.cpp loopback services; excludes historical rental, other sessions and computer operating costs.",
+      "allocation_fraction": 1,
+      "receipt": {
+        "path": "docs/value_v2/results/usage_summary.json",
+        "sha256": "8a36d463e3b8c8c4b01922e4246f7efdd80727bf1c48af896f25b0c2f728c466",
+        "kind": "execution_log_derivation_not_provider_invoice"
+      }
+    },
+    {
+      "category": "operations",
+      "amount": null,
+      "currency": "CNY",
+      "status": "unknown",
+      "source": "No actual receipt or whole-computer integrated energy record collected.",
+      "allocation_fraction": 1
+    },
+    {
+      "category": "network",
+      "amount": null,
+      "currency": "CNY",
+      "status": "unknown",
+      "source": "No actual receipt or whole-computer integrated energy record collected.",
+      "allocation_fraction": 1
+    }
+  ]
+}

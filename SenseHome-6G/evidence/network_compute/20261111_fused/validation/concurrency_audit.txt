@@ -1,0 +1,14 @@
+{
+  "passed": true,
+  "mode": "wall_clock_stub",
+  "raw_rows": 6144,
+  "checks": [
+    "artifact hashes",
+    "source hashes",
+    "percentile/statistical recomputation",
+    "queue capacity/drain",
+    "cell coverage",
+    "local safety isolation"
+  ],
+  "not_claimed": "Runtime timings are stochastic, not exact trace replay"
+}

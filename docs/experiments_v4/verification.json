@@ -1,0 +1,47 @@
+{
+  "schema": "sensehome.fair-recovery-verification.v4",
+  "status": "PASS",
+  "n_rows": 96,
+  "primary_rows": 72,
+  "ancillary_rows": 24,
+  "source_hashes_verified": 26,
+  "counts": {
+    "proxy_post": 102,
+    "model_post": 66,
+    "proxy_503": 36
+  },
+  "usage_evaluation_only": {
+    "prompt_tokens": 38898,
+    "completion_tokens": 4173,
+    "total_tokens": 43071
+  },
+  "selected_backend": {
+    "local-model": 48,
+    "cloud-model": 30,
+    "local-rules": 18
+  },
+  "recomputed_by_arm": {
+    "local-first": {
+      "n": 24,
+      "completed": 20,
+      "median_total_wall_ms_all_requests": 955.506
+    },
+    "second-first": {
+      "n": 24,
+      "completed": 20,
+      "median_total_wall_ms_all_requests": 1265.0945000000002
+    },
+    "joint": {
+      "n": 24,
+      "completed": 20,
+      "median_total_wall_ms_all_requests": 976.297
+    }
+  },
+  "recomputed_recommendation": "local-first",
+  "runtime_status": "stopped",
+  "runtime_pids": [
+    28052,
+    24624
+  ],
+  "limits": "offline independent action/state/POST/timing/accounting checks; same host and prior human-reviewed cases; no human answer-semantic scoring"
+}

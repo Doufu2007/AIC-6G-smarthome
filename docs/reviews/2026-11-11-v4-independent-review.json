@@ -1,0 +1,168 @@
+{
+  "schema": "sensehome.independent-review.v4",
+  "status": "PASS_REVIEWED_SCOPE",
+  "open_p1_p2": 0,
+  "review_language": "zh-CN",
+  "implementation_modified_by_reviewer": false,
+  "model_started_by_reviewer": false,
+  "mqtt_started_by_reviewer": false,
+  "historical_evidence_overwritten": false,
+  "findings": [
+    {
+      "id": "V4-R01",
+      "priority": 1,
+      "status": "resolved",
+      "file": "docs/trial_v4/index.html",
+      "original_lines": [23, 32],
+      "problem": "需求前测的标题、问题和按钮全部为字面问号，必经采集步骤不可理解。",
+      "verification": "中文已恢复；中性问题、明确跳过和页面断言已核对；试用单元和HTTP测试通过。"
+    },
+    {
+      "id": "V4-R02",
+      "priority": 1,
+      "status": "resolved_with_execution_evidence_reviewed",
+      "files": ["docs/trial_v4/index.html", "docs/trial_v4/run_trial.py", "docs/trial_v2/collector.py"],
+      "problem": "原取消仅删除collector记录，执行时已生成的网关JSONL与MQTT回执数据库残留原始命令，违背原保存与撤回承诺。",
+      "verification": "单会话隔离、即时日志授权、先停服务再清除两个私有run目录与未保存反馈已审；真实取消测试源码及12 passed保存输出已审，独立reviewer未重启MQTT。",
+      "execution_test": "docs/trial_v4/test_private_cleanup.py",
+      "execution_output": "docs/trial_v4/verification.txt"
+    },
+    {
+      "id": "V4-R03",
+      "priority": 2,
+      "status": "resolved",
+      "file": "docs/trial_v4/README.md",
+      "problem": "原README将rules-only operations误指为模型真实启动证据。",
+      "verification": "README现准确分别指向真实取消测试和full_model_smoke，operations未称模型浸泡。"
+    },
+    {
+      "id": "V4-R04",
+      "priority": 1,
+      "status": "resolved",
+      "file": "docs/integration_v4/run_integration.py",
+      "problem": "normal场景重启调用_init_gateway时原SENSEHOME_EVENT_LOG已恢复，导致integration事件追加到原项目event文件；并行demo保护如实报failed。",
+      "recovery": "主任务保留失败manifest与完整污染文件、追加suffix；按已知启动前SHA寻找唯一行边界前缀验证后恢复。",
+      "verification": "新run 20261111T070837Z_7cfbfcf3离线audit PASS；六项源码SHA匹配；原state/events的before、after及当前SHA一致。原始事件+保留的8行/32461B追加片段严格等于污染备份，旧failed manifest保留。"
+    },
+    {
+      "id": "V4-R05",
+      "priority": 2,
+      "status": "resolved_by_metadata_correction",
+      "file": "docs/video/v4/final_runtime_manifest.json",
+      "problem": "继承的policy_arm为joint，实际strategy是local-first且四条event均static-local，可能错报演示策略。",
+      "verification": "metadata_correction.json明确更正实际策略，原始manifest、运行响应和源码未改。",
+      "correction": "docs/video/v4/metadata_correction.json"
+    }
+  ],
+  "experiment": {
+    "status": "PASS",
+    "registered_source_hashes": 26,
+    "rows": 96,
+    "blocks": 32,
+    "primary_rows": 72,
+    "ancillary_rows": 24,
+    "unique_primary_command_strings": 4,
+    "proxy_post": 102,
+    "model_post": 66,
+    "proxy_503": 36,
+    "warmup_records_separate": 12,
+    "prompt_tokens": 38898,
+    "completion_tokens": 4173,
+    "total_tokens": 43071,
+    "completed_primary_per_arm": 20,
+    "primary_denominator_per_arm": 24,
+    "median_total_wall_ms_all_primary_requests": {
+      "local-first": 955.506,
+      "second-first": 1265.0945000000002,
+      "joint": 976.297
+    },
+    "registered_recommendation": "local-first",
+    "primary_success_n": 60,
+    "success_within_250ms": 0,
+    "minimum_success_total_wall_ms": 341.576,
+    "c_internal": null,
+    "post_analysis_statistics_recomputed": 162,
+    "recommendation_hashes_verified": 4
+  },
+  "integration": {
+    "status": "PASS",
+    "run": "docs/integration_v4/runs/20261111T070837Z_7cfbfcf3",
+    "current_source_hashes_matched": 6,
+    "scenarios": ["normal", "ack_loss", "partial", "contradictory"],
+    "normal_entity_commits": 2,
+    "ack_loss_entity_commits": 1,
+    "partial_entity_commits": 1,
+    "contradictory_gateway_status": "unknown",
+    "physical_device_claim": false,
+    "original_state_and_event_before_after_current_hashes_match": true,
+    "original_event_restored_sha256": "f8871ff4c70a5c03e5fbd7e6fc32ea224a61c6cae34279545c674ae3da3abc54",
+    "old_failed_manifest_preserved": true,
+    "contamination_suffix_rows_preserved": 8,
+    "contamination_suffix_bytes_preserved": 32461,
+    "raw_backup_equals_restored_original_plus_suffix": true
+  },
+  "operations": {
+    "status": "PASS",
+    "rows": 120,
+    "executable_requests": 116,
+    "invalid_requests": 4,
+    "expected_behavior_observed": 120,
+    "gateway_events_including_first": 121,
+    "unique_mqtt_submits": 117,
+    "entity_commands": 117,
+    "entity_version": 117,
+    "observed_duration_s": 120.00058719998924,
+    "max_dispatch_schedule_difference_s": 0.019994699992821552,
+    "copied_registered_source_hashes_verified": 57,
+    "copied_directory": "_work/operations_v4/20261111T064349",
+    "resource_samples": 230,
+    "max_rss_sum_bytes": 147460096,
+    "human_deployment_time_s": null,
+    "human_independent_deployment_completed": false,
+    "model_soak": false,
+    "participant_feedback_count": 0,
+    "actual_total_cost_cny": null
+  },
+  "tests_run_independently": [
+    {"scope": "receipt boundary, bridge receipt and comparison", "passed": 18, "subtests_passed": 12},
+    {"scope": "trial unit and collector HTTP; excludes actual MQTT cleanup", "passed": 11}
+  ],
+  "execution_evidence_read_without_rerun": [
+    "docs/trial_v4/test_private_cleanup.py",
+    "docs/trial_v4/verification.txt",
+    "docs/trial_v4/full_model_smoke.json"
+  ],
+  "materials": {
+    "status": "FINAL_SEAL_IN_PROGRESS",
+    "source": "docs/submission/build_submission_v4.py",
+    "final_pdf_ppt_pages_verified_by_this_reviewer": false,
+    "current_pdf_layout_contact_sheets_reviewed": true,
+    "claim_page_references_checked": 36,
+    "final_video_verified_by_this_reviewer": false,
+    "final_zip_verified_by_this_reviewer": false
+  },
+  "final_runtime_evidence": {
+    "status": "PASS_WITH_EXPLICIT_METADATA_CORRECTION",
+    "automation_video_records": 4,
+    "applied_demo_commands": 2,
+    "zero_action_ambiguous_and_rejected_commands": 2,
+    "mqtt_unique_submits_including_final_smoke": 3,
+    "entity_sqlite_version": 3,
+    "final_smoke_usage_total_tokens": 815,
+    "external_feedback_count": 0,
+    "frozen_current_manifest_source_sha_matches": 12,
+    "model_runtime_status": "stopped",
+    "model_exit_codes_recorded": [1, 1],
+    "mqtt_exit_codes_zero": true,
+    "actual_strategy": "local-first",
+    "actual_event_policy_arm": "static-local",
+    "capture_method": "real API operations; later edited replay, not continuous real-time UI recording"
+  },
+  "limits": [
+    "未运行根目录全量pytest，避免旧_work收集冲突。",
+    "未启动模型或MQTT；真实取消测试与完整模型冒烟仅审查主任务保存的源码及原始结果。",
+    "无实物、独立主机、真实WAN、6G空口或真实外部参与者验证。",
+    "四条复杂命令的一次回归不支持一般语言泛化或统计显著优势。",
+    "最终PDF/PPT逐页、视频、永久链接和最终ZIP尚待封版检查。"
+  ]
+}

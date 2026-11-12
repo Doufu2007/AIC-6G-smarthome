@@ -1,0 +1,386 @@
+{
+  "schema": "sensehome.v3.independent-audit.v1",
+  "audited_at_utc": "2026-11-11T03:08:10.678241+00:00",
+  "run_directory": "docs\\experiments\\20261111_race_v3_portfix",
+  "scope": "read-only independent recomputation; no model calls",
+  "startup_failure_preserved": {
+    "directory": "docs\\experiments\\20261111_race_v3",
+    "registration_sha256": "5c8abb6c0ce149af83db02cd551714a7b585596fc69d6be6ab05c9eae5b013c4",
+    "status": "stopped",
+    "children": [
+      {
+        "tier": "local",
+        "pid": 16924,
+        "argv": [
+          "C:\\Users\\郑傅韬\\Desktop\\大学生活\\AIC\\AIC6G专项赛_2026\\创新赛道\\_work\\local_llm_v6\\bin\\llama-server.exe",
+          "-m",
+          "C:\\Users\\郑傅韬\\Desktop\\大学生活\\AIC\\AIC6G专项赛_2026\\创新赛道\\_work\\local_llm_v5\\qwen2.5-1.5b-instruct-q4_k_m.gguf",
+          "--alias",
+          "Qwen2.5-1.5B-Instruct-Q4_K_M",
+          "--host",
+          "127.0.0.1",
+          "--port",
+          "64552",
+          "-c",
+          "2048",
+          "-np",
+          "1",
+          "-ngl",
+          "99",
+          "--flash-attn",
+          "on",
+          "--no-webui",
+          "--metrics"
+        ],
+        "launched_at_utc": "2026-11-11T02:49:49.047052+00:00",
+        "model_sha256": "6a1a2eb6d15622bf3c96857206351ba97e1af16c30d7a74ee38970e434e9407e",
+        "runtime_sha256": "f156c6fcfb61c7dd259e2c577ccbab214185083650f18a9cdfdfb9c38d6cf3b3",
+        "health": null,
+        "exit_code": 1
+      }
+    ],
+    "has_rows": false,
+    "reason": "local HTTP bind failed before models became ready; retain startup failure"
+  },
+  "checks": {
+    "runtime_stopped": {
+      "pass": true,
+      "detail": null
+    },
+    "two_model_children_started_ready_then_exited": {
+      "pass": true,
+      "detail": null
+    },
+    "all_12_old_source_sha256_unchanged": {
+      "pass": true,
+      "detail": {
+        "docs/deployment/fused_eval.py": true,
+        "SenseHome-6G/net_offload/offload_gateway.py": true,
+        "SenseHome-6G/net_offload/resource_policy.py": true,
+        "SenseHome-6G/net_offload/offload_policy.c": true,
+        "SenseHome-6G/net_offload/offload_policy.h": true,
+        "SenseHome-6G/net_offload/policy_cli.c": true,
+        "SenseHome-6G/net_offload/backends/openai_backend.py": true,
+        "SenseHome-6G/net_offload/eval_model.py": true,
+        "openvela_smart_home/dashboard/bridge_server.py": true,
+        "openvela_smart_home/dashboard/device_actions.py": true,
+        "SenseHome-6G/net_offload/policy_cli.exe": true,
+        "docs/deployment/real_fault_eval_v2.py": true
+      }
+    },
+    "all_registered_sources_and_snapshots_match": {
+      "pass": true,
+      "detail": {
+        "docs/demo_v3/planning_recovery.py": {
+          "current": true,
+          "snapshot": true
+        },
+        "docs/demo_v3/race_matrix.py": {
+          "current": true,
+          "snapshot": true
+        },
+        "docs/demo_v3/runtime.py": {
+          "current": true,
+          "snapshot": true
+        },
+        "docs/demo_v3/local_models.json": {
+          "current": true,
+          "snapshot": true
+        },
+        "docs/deployment/fused_eval.py": {
+          "current": true,
+          "snapshot": true
+        },
+        "SenseHome-6G/net_offload/offload_gateway.py": {
+          "current": true,
+          "snapshot": true
+        },
+        "SenseHome-6G/net_offload/resource_policy.py": {
+          "current": true,
+          "snapshot": true
+        },
+        "SenseHome-6G/net_offload/offload_policy.c": {
+          "current": true,
+          "snapshot": true
+        },
+        "SenseHome-6G/net_offload/offload_policy.h": {
+          "current": true,
+          "snapshot": true
+        },
+        "SenseHome-6G/net_offload/policy_cli.c": {
+          "current": true,
+          "snapshot": true
+        },
+        "SenseHome-6G/net_offload/backends/openai_backend.py": {
+          "current": true,
+          "snapshot": true
+        },
+        "SenseHome-6G/net_offload/eval_model.py": {
+          "current": true,
+          "snapshot": true
+        },
+        "openvela_smart_home/dashboard/bridge_server.py": {
+          "current": true,
+          "snapshot": true
+        },
+        "openvela_smart_home/dashboard/device_actions.py": {
+          "current": true,
+          "snapshot": true
+        },
+        "SenseHome-6G/net_offload/policy_cli.exe": {
+          "current": true,
+          "snapshot": true
+        },
+        "docs/deployment/real_fault_eval_v2.py": {
+          "current": true,
+          "snapshot": true
+        },
+        "SenseHome-6G/net_offload/backends/eval_commands.reviewed.jsonl": {
+          "current": true,
+          "snapshot": true
+        },
+        "SenseHome-6G/net_offload/experiments/policy_config.json": {
+          "current": true,
+          "snapshot": true
+        },
+        "SenseHome-6G/net_offload/experiments/service_profiles.json": {
+          "current": true,
+          "snapshot": true
+        },
+        "docs/experiments/20261111_fused_real/reviewed_20_sealed_repeat3/calibration.json": {
+          "current": true,
+          "snapshot": true
+        }
+      }
+    },
+    "runtime_config_hash_matches_registered_config": {
+      "pass": true,
+      "detail": null
+    },
+    "runtime_30_dll_hashes_current": {
+      "pass": true,
+      "detail": null
+    },
+    "runtime_executable_and_two_model_hashes_current": {
+      "pass": true,
+      "detail": null
+    },
+    "startup_amendment_links_preserved_failed_registration": {
+      "pass": true,
+      "detail": null
+    },
+    "all_result_files_exist": {
+      "pass": true,
+      "detail": []
+    },
+    "rows_jsonl_matches_report": {
+      "pass": true,
+      "detail": null
+    },
+    "36_rows_18_blocks": {
+      "pass": true,
+      "detail": null
+    },
+    "zero_runner_failures": {
+      "pass": true,
+      "detail": null
+    },
+    "pairs_have_two_arms_same_command_input_observation_initial": {
+      "pass": true,
+      "detail": null
+    },
+    "registered_order_matches_rows": {
+      "pass": true,
+      "detail": null
+    },
+    "schedule_matches_block_order": {
+      "pass": true,
+      "detail": null
+    },
+    "all_block_health_real_get_inventory_ready_reachable": {
+      "pass": true,
+      "detail": null
+    },
+    "paired_observation_hashes_recomputed": {
+      "pass": true,
+      "detail": null
+    },
+    "input_hashes_recomputed": {
+      "pass": true,
+      "detail": null
+    },
+    "fault_activated_after_health_gets": {
+      "pass": true,
+      "detail": "2ms tolerance for separate wall and monotonic clocks"
+    },
+    "registration_before_launch_before_evaluation": {
+      "pass": true,
+      "detail": null
+    },
+    "actual_child_argv_and_readiness_match_manifest": {
+      "pass": true,
+      "detail": null
+    },
+    "completion_independently_recomputed_matches": {
+      "pass": true,
+      "detail": null
+    },
+    "per_row_call_counts_match": {
+      "pass": true,
+      "detail": null
+    },
+    "no_missing_or_duplicate_post_records": {
+      "pass": true,
+      "detail": null
+    },
+    "all_forwarded_model_posts_returned_200": {
+      "pass": true,
+      "detail": null
+    },
+    "actual_post_fault_receipts_match_registered_condition": {
+      "pass": true,
+      "detail": null
+    },
+    "one_executor_call_on_completed_requests": {
+      "pass": true,
+      "detail": null
+    },
+    "executor_records_count_consistent": {
+      "pass": true,
+      "detail": null
+    },
+    "zero_executor_on_transport_terminal_failures": {
+      "pass": true,
+      "detail": null
+    },
+    "recovery_audit_actual_source_and_max_two_attempts": {
+      "pass": true,
+      "detail": null
+    },
+    "at_most_one_executor_every_request": {
+      "pass": true,
+      "detail": null
+    },
+    "warmup_is_two_separate_direct_posts": {
+      "pass": true,
+      "detail": null
+    },
+    "independent_condition_summary_matches_runner": {
+      "pass": true,
+      "detail": null
+    },
+    "runner_source_unchanged_flag_true": {
+      "pass": true,
+      "detail": null
+    }
+  },
+  "issues": [],
+  "verdict": "PASS",
+  "conditions": {
+    "healthy": {
+      "baseline": {
+        "n": 6,
+        "completed": 6,
+        "median_all_request_ms": 1101.3255,
+        "executor_calls": 6,
+        "proxy_post": 6,
+        "model_post": 6,
+        "proxy_503": 0
+      },
+      "recovery": {
+        "n": 6,
+        "completed": 6,
+        "median_all_request_ms": 1129.6995,
+        "executor_calls": 6,
+        "proxy_post": 6,
+        "model_post": 6,
+        "proxy_503": 0
+      }
+    },
+    "local_post503": {
+      "baseline": {
+        "n": 6,
+        "completed": 0,
+        "median_all_request_ms": 5.527,
+        "executor_calls": 0,
+        "proxy_post": 6,
+        "model_post": 0,
+        "proxy_503": 6
+      },
+      "recovery": {
+        "n": 6,
+        "completed": 6,
+        "median_all_request_ms": 2479.183,
+        "executor_calls": 6,
+        "proxy_post": 12,
+        "model_post": 6,
+        "proxy_503": 6
+      }
+    },
+    "both_post503": {
+      "baseline": {
+        "n": 6,
+        "completed": 0,
+        "median_all_request_ms": 5.532,
+        "executor_calls": 0,
+        "proxy_post": 6,
+        "model_post": 0,
+        "proxy_503": 6
+      },
+      "recovery": {
+        "n": 6,
+        "completed": 0,
+        "median_all_request_ms": 18.7195,
+        "executor_calls": 0,
+        "proxy_post": 12,
+        "model_post": 0,
+        "proxy_503": 12
+      }
+    }
+  },
+  "n_rows": 36,
+  "n_paired_blocks": 18,
+  "experimental_calls": {
+    "proxy_post": 48,
+    "model_post": 18,
+    "proxy_503": 30
+  },
+  "experimental_usage": {
+    "forwarded_model_post": 18,
+    "missing_usage": 0,
+    "prompt_tokens": 10575,
+    "completion_tokens": 1227,
+    "total_tokens": 11802
+  },
+  "warmup_model_posts": 2,
+  "recovered_pair_ids": [
+    "local_post503:C01:r0",
+    "local_post503:C04:r0",
+    "local_post503:C01:r1",
+    "local_post503:C04:r1",
+    "local_post503:C01:r2",
+    "local_post503:C04:r2"
+  ],
+  "completed_latency": {
+    "n": 18,
+    "within_profile_250_ms": 0,
+    "min_ms": 841.612,
+    "max_ms": 2793.848
+  },
+  "evidence_files_sha256": {
+    "rows.jsonl": "b7ce17f342d75633a911931b734879cd28d26cc086d41d3d46c8e4b25edcb288",
+    "report.json": "fe914d725245c77baebc22c8b462c53ed74541b2a7e9af2258d268dcfd32b6af",
+    "summary.json": "e27282dba66705e9255ada6a9316e252433d9611499708d24b0580c19a1243f7",
+    "warmups.json": "6aa21fe528a852649dc5962852248d7b247868094ed88671cd2c3654cfb29e7e",
+    "initial_state.json": "ab6d0356c1f6f29793c3046c38ce44baae7bb5ad907e49a778dd97cc3e5ff918",
+    "registration.json": "0e21789387ff7abdac68893b5003e83096af2fa67f20559b3386444989c7417b",
+    "runtime_manifest.json": "1241b0edbb4e4e49d4176c6dfc84603ff2662c3f94c121e0bebc6557b45e0537"
+  },
+  "limitations": [
+    "two previously reviewed commands repeated three times, not 36 independent tasks",
+    "same local PC/GPU, controlled proxy POST503, JSON simulation",
+    "once-only executor within one gateway request, not cross-request device idempotency",
+    "paired frozen health observation, not fresh measurement for every arm",
+    "no physical devices, WAN/6G, user trial or total cost claim"
+  ]
+}

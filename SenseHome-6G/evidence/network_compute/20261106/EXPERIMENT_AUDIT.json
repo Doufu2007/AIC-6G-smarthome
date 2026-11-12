@@ -1,0 +1,42 @@
+{
+  "audit_skill": "experiment-audit",
+  "date": "2026-11-06",
+  "verdict": "WARN",
+  "overall_verdict": "warn",
+  "integrity_status": "warn",
+  "reason_code": "bounded_software_evidence_with_statistical_and_source_coverage_limits",
+  "summary": "Completed five-bundle integrity audit supports bounded C1-C5 claims; no fabrication, self-normalization, phantom output or current value mismatch found. Retain scope, negative-tradeoff and enumerated-source freeze qualifications.",
+  "agent_id": "/root/experiment_integrity",
+  "verdict_id": "/root/experiment_integrity",
+  "reviewer_model": "gpt-6.1-sol",
+  "reviewer_reasoning": "xhigh",
+  "identity_source": "native_spawn_configuration",
+  "runtime_server_attested_model": null,
+  "actual_runtime_model": null,
+  "executor_family": "openai",
+  "reviewer_family": "openai",
+  "family_identity_basis": "configured and expected, not independently runtime-attested",
+  "review_independence": "same-family",
+  "acceptance_status": "provisional",
+  "completion": "completed",
+  "trace_path": ".aris/traces/experiment-audit/2026-11-06_run01/",
+  "raw_review": ".aris/traces/experiment-audit/2026-11-06_run01/reviewer_response.json",
+  "audited_input_manifest": ".aris/traces/experiment-audit/2026-11-06_run01/input_manifest.json",
+  "audited_input_manifest_sha256": "61d8d53e3bfd6d0873aa33bbc52881815f45b15d4736aeca04441f01ebc1a6ad",
+  "checks": {
+    "gt_provenance": {"status": "pass", "details": "Declared author-generated contracts and synthetic faults; no dataset/real-model/6G claim. Modeled safety success is not empirical reliability."},
+    "score_normalization": {"status": "pass", "details": "Raw type-7 quantiles and all-request completion/deadline denominators; failures retained; no prediction-statistic normalization."},
+    "result_existence": {"status": "pass", "details": "All five final bundles, 9084 HTTP events, full validation and 46 archived/current enumerated sources verified; independently recomputed selected statistics match."},
+    "dead_code": {"status": "pass", "details": "Primary metrics are invoked and persisted. Actual C resource/default HTTP/whitelist paths are reached; fresh exact C replays pass."},
+    "scope": {"status": "warn", "details": "Simulation-only; few synthetic seed clusters; measured stress/HTTP unpaired; negative joint outcomes retained. Broader test/backend snapshot is post-run, not full historical run-time source binding."},
+    "eval_type": {"status": "pass", "classification": "simulation_only", "details": "Five software-fixture evaluations; measured threads/HTTP timing do not establish real AI/6G/household performance."}
+  },
+  "claims": [
+    {"id": "C1", "impact": "supported", "scope": "Default software entry with recorded operator overrides and loopback fixtures."},
+    {"id": "C2", "impact": "supported", "scope": "Declared synthetic faults and endpoint-health observations with C reason codes."},
+    {"id": "C3", "impact": "supported", "scope": "Structured whitelist/atomicity on isolated PC state, not universal language/physical safety."},
+    {"id": "C4", "impact": "supported", "scope": "Information-sensitive attainment tradeoffs under declared loads; not uniform superiority or paired causal HTTP benefit."},
+    {"id": "C5", "impact": "supported", "scope": "Raw-statistic recomputability and enumerated-source freeze; not independent semantic acceptance or complete historical test-source binding."}
+  ],
+  "not_claimed": ["real AI accuracy", "physical household deployment", "real 6G/radio/GPU capacity", "five-nines reliability", "official submission readiness", "independent cross-family acceptance"]
+}

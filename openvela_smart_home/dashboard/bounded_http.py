@@ -102,7 +102,7 @@ class ReadDeadlineHandlerMixin:
 
     def handle_one_request(self):
         self.rfile.body_remaining = None
-        self._deadline_raw.begin(self.server.header_read_timeout)
+        self._deadline_raw.begin(getattr(self.server, 'header_read_timeout', 5.0))
         try:
             return super().handle_one_request()
         finally:
@@ -118,7 +118,7 @@ class ReadDeadlineHandlerMixin:
                 # The application retains responsibility for rejecting framing.
                 length = 0
             if length > 0:
-                self.rfile.begin_body(length, self.server.body_read_timeout)
+                self.rfile.begin_body(length, getattr(self.server, 'body_read_timeout', 5.0))
         return parsed
 
 

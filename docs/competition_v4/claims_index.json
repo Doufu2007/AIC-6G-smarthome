@@ -1,0 +1,149 @@
+{
+  "schema": "sensehome.claim-index.v4",
+  "claims": [
+    {
+      "id": "C01",
+      "claim": "复杂指令有受约束的一次规划恢复",
+      "metric_definition": "完整动作且软件目标状态满足 / 非空请求",
+      "value_and_denominator": "按六条件与三臂分列",
+      "environment": "同机共享GPU；受控软件代理；JSON/MQTT软件状态；无真实6G或实物",
+      "raw_path": "docs/experiments_v4/results.json",
+      "plan_pdf_page": 7,
+      "defense_pdf_page": 6,
+      "evidence_pdf_page": 3,
+      "evidence_status": "已锁定"
+    },
+    {
+      "id": "C02",
+      "claim": "三臂仅改变初选且共用恢复",
+      "metric_definition": "配置、源码、任务与顺序摘要一致",
+      "value_and_denominator": "注册与逐行复算",
+      "environment": "同机共享GPU；受控软件代理；JSON/MQTT软件状态；无真实6G或实物",
+      "raw_path": "docs/experiments_v4/registration.json",
+      "plan_pdf_page": 7,
+      "defense_pdf_page": 6,
+      "evidence_pdf_page": 2,
+      "evidence_status": "已锁定"
+    },
+    {
+      "id": "C03",
+      "claim": "调用与总时延同时报告",
+      "metric_definition": "全请求墙钟与代理/模型POST",
+      "value_and_denominator": "本轮分段与调用表",
+      "environment": "同机共享GPU；受控软件代理；JSON/MQTT软件状态；无真实6G或实物",
+      "raw_path": "docs/experiments_v4/rows.jsonl",
+      "plan_pdf_page": 8,
+      "defense_pdf_page": 7,
+      "evidence_pdf_page": 5,
+      "evidence_status": "已锁定"
+    },
+    {
+      "id": "C04",
+      "claim": "正式执行通道可持久对账",
+      "metric_definition": "ID/内容/身份绑定，逐动作状态",
+      "value_and_denominator": "以锁定MQTT结果为准",
+      "environment": "同机共享GPU；受控软件代理；JSON/MQTT软件状态；无真实6G或实物",
+      "raw_path": "docs/integration_v4/runs/20261111T070837Z_7cfbfcf3/summary.json",
+      "plan_pdf_page": 9,
+      "defense_pdf_page": 8,
+      "evidence_pdf_page": 6,
+      "evidence_status": "已锁定"
+    },
+    {
+      "id": "C05",
+      "claim": "MQTT为真实软件协议实体",
+      "metric_definition": "消息、ACK、状态与数据库事件",
+      "value_and_denominator": "无物理执行证据",
+      "environment": "同机共享GPU；受控软件代理；JSON/MQTT软件状态；无真实6G或实物",
+      "raw_path": "docs/integration_v4/runs/20261111T070837Z_7cfbfcf3/normal/offload_events.jsonl",
+      "plan_pdf_page": 9,
+      "defense_pdf_page": 8,
+      "evidence_pdf_page": 7,
+      "evidence_status": "已锁定"
+    },
+    {
+      "id": "C06",
+      "claim": "历史250ms目标未达",
+      "metric_definition": "成功且≤250ms / v3成功请求18",
+      "value_and_denominator": "0/18，最短841.612ms",
+      "environment": "同机共享GPU；受控软件代理；JSON/MQTT软件状态；无真实6G或实物",
+      "raw_path": "docs/experiments/20261111_race_v3_portfix/rows.jsonl",
+      "plan_pdf_page": 3,
+      "defense_pdf_page": 7,
+      "evidence_pdf_page": 11,
+      "evidence_status": "已锁定"
+    },
+    {
+      "id": "C07",
+      "claim": "旧留出和失败完整保留",
+      "metric_definition": "非空完成 / 各臂24",
+      "value_and_denominator": "joint21/24；第二端24/24；H05被拒",
+      "environment": "同机共享GPU；受控软件代理；JSON/MQTT软件状态；无真实6G或实物",
+      "raw_path": "docs/experiments/20261111_fused_real/sealed_evidence_index.json",
+      "plan_pdf_page": 10,
+      "defense_pdf_page": 9,
+      "evidence_pdf_page": 10,
+      "evidence_status": "已锁定"
+    },
+    {
+      "id": "C08",
+      "claim": "自动部署与工时分开",
+      "metric_definition": "自动化墙钟、请求、资源、清理",
+      "value_and_denominator": "非真人独立部署",
+      "environment": "同机共享GPU；受控软件代理；JSON/MQTT软件状态；无真实6G或实物",
+      "raw_path": "docs/operations_v4/results.json",
+      "plan_pdf_page": 11,
+      "defense_pdf_page": 10,
+      "evidence_pdf_page": 8,
+      "evidence_status": "已锁定"
+    },
+    {
+      "id": "C09",
+      "claim": "真实外部反馈仍为0",
+      "metric_definition": "有授权并保存实际任务和回答的人数",
+      "value_and_denominator": "0；待真实记录",
+      "environment": "同机共享GPU；受控软件代理；JSON/MQTT软件状态；无真实6G或实物",
+      "raw_path": "docs/competition_v4/results_inputs.json",
+      "plan_pdf_page": 2,
+      "defense_pdf_page": 2,
+      "evidence_pdf_page": 9,
+      "evidence_status": "已锁定"
+    },
+    {
+      "id": "C10",
+      "claim": "实际总成本未知",
+      "metric_definition": "硬件、电力、调用、维护与网络总额",
+      "value_and_denominator": "null",
+      "environment": "同机共享GPU；受控软件代理；JSON/MQTT软件状态；无真实6G或实物",
+      "raw_path": "docs/value_v2/results/ledger_current_result.json",
+      "plan_pdf_page": 12,
+      "defense_pdf_page": 11,
+      "evidence_pdf_page": 9,
+      "evidence_status": "已锁定"
+    },
+    {
+      "id": "C11",
+      "claim": "AI与6G为应用侧接口衔接",
+      "metric_definition": "来源、单位、时间、年龄、known",
+      "value_and_denominator": "无6G空口/独立端云实测",
+      "environment": "同机共享GPU；受控软件代理；JSON/MQTT软件状态；无真实6G或实物",
+      "raw_path": "docs/value/public_sources.json",
+      "plan_pdf_page": 6,
+      "defense_pdf_page": 5,
+      "evidence_pdf_page": 12,
+      "evidence_status": "已锁定"
+    },
+    {
+      "id": "C12",
+      "claim": "同版正式材料可追溯",
+      "metric_definition": "主张、指标、分母、环境、来源与页码",
+      "value_and_denominator": "当前索引",
+      "environment": "同机共享GPU；受控软件代理；JSON/MQTT软件状态；无真实6G或实物",
+      "raw_path": "docs/competition_v4/claims_index.json",
+      "plan_pdf_page": 14,
+      "defense_pdf_page": 13,
+      "evidence_pdf_page": 13,
+      "evidence_status": "已锁定"
+    }
+  ]
+}

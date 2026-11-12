@@ -1,0 +1,17 @@
+✔ fetch rejection does not fabricate an action (80.64ms)
+✔ HTTP 503 with success-looking body does not fabricate an action (1.9721ms)
+✔ malformed JSON does not fabricate an action (1.6215ms)
+✔ business failure remains unconfirmed and does not label its answer success (3.3857ms)
+✔ only structured successful gateway result can report completion; output is escaped (3.0888ms)
+✔ HTTP200 invalid result is not trusted (1.9679ms)
+✔ state HTTP failure and invalid schema clear confirmation rather than invent defaults (3.122ms)
+✔ missing sensors do not display fake zero or absence (1.9418ms)
+✔ health shows both endpoints and unknown telemetry, including failed transport (2.0189ms)
+ℹ tests 9
+ℹ suites 0
+ℹ pass 9
+ℹ fail 0
+ℹ cancelled 0
+ℹ skipped 0
+ℹ todo 0
+ℹ duration_ms 256.1475

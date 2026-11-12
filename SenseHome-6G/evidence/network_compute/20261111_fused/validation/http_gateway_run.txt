@@ -1,0 +1,69 @@
+HTTP matrix seed=20261116 arm=joint rows=140
+HTTP matrix seed=20261116 arm=network-only rows=140
+HTTP matrix seed=20261116 arm=compute-only rows=140
+HTTP matrix seed=20261116 arm=static-cloud rows=140
+HTTP matrix seed=20261116 arm=static-local rows=140
+HTTP matrix seed=20261116 arm=rules-only rows=140
+HTTP matrix seed=20261116 arm=no-hysteresis rows=140
+HTTP matrix seed=20261117 arm=network-only rows=140
+HTTP matrix seed=20261117 arm=compute-only rows=140
+HTTP matrix seed=20261117 arm=static-cloud rows=140
+HTTP matrix seed=20261117 arm=static-local rows=140
+HTTP matrix seed=20261117 arm=rules-only rows=140
+HTTP matrix seed=20261117 arm=no-hysteresis rows=140
+HTTP matrix seed=20261117 arm=joint rows=140
+HTTP matrix seed=20261118 arm=compute-only rows=140
+HTTP matrix seed=20261118 arm=static-cloud rows=140
+HTTP matrix seed=20261118 arm=static-local rows=140
+HTTP matrix seed=20261118 arm=rules-only rows=140
+HTTP matrix seed=20261118 arm=no-hysteresis rows=140
+HTTP matrix seed=20261118 arm=joint rows=140
+HTTP matrix seed=20261118 arm=network-only rows=140
+HTTP stress c=1 healthy rep=0 joint
+HTTP stress c=1 healthy rep=0 network-only
+HTTP stress c=1 cloud_down rep=0 joint
+HTTP stress c=1 cloud_down rep=0 network-only
+HTTP stress c=8 healthy rep=0 joint
+HTTP stress c=8 healthy rep=0 network-only
+HTTP stress c=8 cloud_down rep=0 joint
+HTTP stress c=8 cloud_down rep=0 network-only
+HTTP stress c=32 healthy rep=0 joint
+HTTP stress c=32 healthy rep=0 network-only
+HTTP stress c=32 cloud_down rep=0 joint
+HTTP stress c=32 cloud_down rep=0 network-only
+HTTP stress c=64 healthy rep=0 joint
+HTTP stress c=64 healthy rep=0 network-only
+HTTP stress c=64 cloud_down rep=0 joint
+HTTP stress c=64 cloud_down rep=0 network-only
+HTTP stress c=1 healthy rep=1 network-only
+HTTP stress c=1 healthy rep=1 joint
+HTTP stress c=1 cloud_down rep=1 network-only
+HTTP stress c=1 cloud_down rep=1 joint
+HTTP stress c=8 healthy rep=1 network-only
+HTTP stress c=8 healthy rep=1 joint
+HTTP stress c=8 cloud_down rep=1 network-only
+HTTP stress c=8 cloud_down rep=1 joint
+HTTP stress c=32 healthy rep=1 network-only
+HTTP stress c=32 healthy rep=1 joint
+HTTP stress c=32 cloud_down rep=1 network-only
+HTTP stress c=32 cloud_down rep=1 joint
+HTTP stress c=64 healthy rep=1 network-only
+HTTP stress c=64 healthy rep=1 joint
+HTTP stress c=64 cloud_down rep=1 network-only
+HTTP stress c=64 cloud_down rep=1 joint
+HTTP stress c=1 healthy rep=2 joint
+HTTP stress c=1 healthy rep=2 network-only
+HTTP stress c=1 cloud_down rep=2 joint
+HTTP stress c=1 cloud_down rep=2 network-only
+HTTP stress c=8 healthy rep=2 joint
+HTTP stress c=8 healthy rep=2 network-only
+HTTP stress c=8 cloud_down rep=2 joint
+HTTP stress c=8 cloud_down rep=2 network-only
+HTTP stress c=32 healthy rep=2 joint
+HTTP stress c=32 healthy rep=2 network-only
+HTTP stress c=32 cloud_down rep=2 joint
+HTTP stress c=32 cloud_down rep=2 network-only
+HTTP stress c=64 healthy rep=2 joint
+HTTP stress c=64 healthy rep=2 network-only
+HTTP stress c=64 cloud_down rep=2 joint
+HTTP stress c=64 cloud_down rep=2 network-only

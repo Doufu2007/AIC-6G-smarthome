@@ -1,0 +1,26 @@
+{
+  "passed": true,
+  "completed_utc": "2026-11-10T16:53:16.666562+00:00",
+  "python": "3.13.7 (tags/v3.13.7:bcee1c3, Aug 14 2025, 14:15:11) [MSC v.1944 64 bit (AMD64)]",
+  "platform": "Windows-11-10.0.26200-SP0",
+  "command": [
+    "run_experiment_suite.py",
+    "--out",
+    "_work/validation_fused_20261111_r3",
+    "--compiler",
+    "..\\..\\_work\\toolchain\\zig-0.17.1-tar-extracted-20261110\\zig-x86_64-windows-0.17.1\\zig.exe"
+  ],
+  "compiler": "C:\\Users\\\u90d1\u5085\u97ec\\Desktop\\\u5927\u5b66\u751f\u6d3b\\AIC\\AIC6G\u4e13\u9879\u8d5b_2026\\\u573a\u666f\u8d5b\u9053\\_work\\toolchain\\zig-0.17.1-tar-extracted-20261110\\zig-x86_64-windows-0.17.1\\zig.exe",
+  "compiler_sha256": "8d6f248cdb0fc2ecd5e17c5282ef3f8a4b614beac12e6d27d12462cde59fe56b",
+  "quick_mode": false,
+  "sources_unchanged_during_run": true,
+  "checks": [
+    "C build and both C suites",
+    "gateway, dashboard and deployment unittests",
+    "full matrix and exact C rerun",
+    "bounded wall-clock concurrency",
+    "OFAT sensitivity and exact C rerun",
+    "whitelist red-team atomicity",
+    "artifact/source/statistical audit"
+  ]
+}

@@ -1,0 +1,26 @@
+{
+  "reason": "Windows excluded TCP port range 64462-64561 includes both configured ports; no experimental model POST or rows. Preserve failed registered attempt.",
+  "bind_checks": [
+    {
+      "port": 64552,
+      "bind": false,
+      "errno": 13,
+      "winerror": 10013
+    },
+    {
+      "port": 64554,
+      "bind": false,
+      "errno": 13,
+      "winerror": 10013
+    },
+    {
+      "port": 18552,
+      "bind": true
+    },
+    {
+      "port": 18554,
+      "bind": true
+    }
+  ],
+  "netsh": "\nProtocol tcp Port Exclusion Ranges\n\nStart Port    End Port      \n----------    --------      \n     50000       50059     *\n     55917       56016      \n     64462       64561      \n     64640       64739      \n     64840       64939      \n     64940       65039      \n     65040       65139      \n     65181       65280      \n\n* - Administered port exclusions.\n\n"
+}

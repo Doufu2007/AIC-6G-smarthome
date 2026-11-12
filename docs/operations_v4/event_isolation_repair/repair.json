@@ -1,0 +1,15 @@
+{
+  "schema": "sensehome.confirmed-test-log-repair.v4",
+  "before_sha256": "c606fe468d0bd2b78b54d5fc57a8698f8af51e3295f82ddeb2f858fb763e7494",
+  "original_sha256": "f8871ff4c70a5c03e5fbd7e6fc32ea224a61c6cae34279545c674ae3da3abc54",
+  "original_prefix_bytes": 32468,
+  "appended_test_bytes": 32461,
+  "appended_test_rows": 8,
+  "restored_prefix_exactly": true,
+  "evidence_preserved": [
+    "full_before_restore.jsonl",
+    "isolated_test_appends.jsonl"
+  ],
+  "cause": "new dashboard integration tests used original default event sink; fixed test fixture separately",
+  "not_a_successful_isolated_run": "_work/demo_v3/live_20261111T064929_d0e32a33/run_manifest.json records failure; not overwritten"
+}

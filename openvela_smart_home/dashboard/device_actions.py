@@ -55,4 +55,7 @@ def execute_device_actions(state, actions):
         descriptions.append({'name': name, 'params': dict(params), 'description': observations[-1]})
     state.clear()
     state.update(updated)
-    return {'semantic_complete': True, 'actions': descriptions, 'observation': '\n'.join(observations)}
+    # This legacy semantic flag is also part of the software receipt protocol:
+    # it confirms this batch only. Request-goal acceptance belongs to the bridge.
+    return {'semantic_complete': True, 'plan_valid': True, 'execution_complete': True,
+            'task_complete': False, 'actions': descriptions, 'observation': '\n'.join(observations)}

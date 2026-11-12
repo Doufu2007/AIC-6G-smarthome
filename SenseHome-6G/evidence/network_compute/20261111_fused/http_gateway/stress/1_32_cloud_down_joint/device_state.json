@@ -1,0 +1,147 @@
+{
+  "lights": {
+    "客厅": {
+      "is_on": true,
+      "brightness": 75
+    },
+    "卧室": {
+      "is_on": false,
+      "brightness": 0
+    },
+    "厨房": {
+      "is_on": false,
+      "brightness": 0
+    },
+    "浴室": {
+      "is_on": false,
+      "brightness": 0
+    },
+    "书房": {
+      "is_on": false,
+      "brightness": 0
+    },
+    "室外": {
+      "is_on": false,
+      "brightness": 0
+    }
+  },
+  "temperature": {
+    "客厅": {
+      "temp": 25.1,
+      "humidity": 51.0
+    },
+    "卧室": {
+      "temp": 25.0,
+      "humidity": 60.0
+    },
+    "厨房": {
+      "temp": 25.0,
+      "humidity": 60.0
+    },
+    "浴室": {
+      "temp": 25.0,
+      "humidity": 60.0
+    },
+    "书房": {
+      "temp": 25.0,
+      "humidity": 60.0
+    },
+    "室外": {
+      "temp": 25.0,
+      "humidity": 60.0
+    }
+  },
+  "curtains": {
+    "客厅": {
+      "is_open": true,
+      "position": 100
+    },
+    "卧室": {
+      "is_open": true,
+      "position": 100
+    },
+    "厨房": {
+      "is_open": true,
+      "position": 100
+    },
+    "浴室": {
+      "is_open": false,
+      "position": 0
+    },
+    "书房": {
+      "is_open": true,
+      "position": 100
+    },
+    "室外": {
+      "is_open": true,
+      "position": 100
+    }
+  },
+  "sensors": {
+    "客厅": {
+      "illuminance": 13866.1,
+      "motion_detected": true,
+      "door_open": false,
+      "window_open": false,
+      "pm25": 25.8,
+      "co2": 512.0,
+      "noise": 31.8,
+      "update_time": "00:51:59"
+    },
+    "卧室": {
+      "illuminance": 6881.9,
+      "motion_detected": false,
+      "door_open": false,
+      "window_open": false,
+      "pm25": 19.1,
+      "co2": 417.0,
+      "noise": 22.4,
+      "update_time": "00:51:59"
+    },
+    "厨房": {
+      "illuminance": 22052.3,
+      "motion_detected": true,
+      "door_open": false,
+      "window_open": false,
+      "pm25": 48.0,
+      "co2": 701.0,
+      "noise": 53.9,
+      "update_time": "00:51:59"
+    },
+    "浴室": {
+      "illuminance": 4680.6,
+      "motion_detected": true,
+      "door_open": false,
+      "window_open": true,
+      "pm25": 16.8,
+      "co2": 533.0,
+      "noise": 48.6,
+      "update_time": "00:51:59"
+    },
+    "书房": {
+      "illuminance": 13921.5,
+      "motion_detected": true,
+      "door_open": false,
+      "window_open": false,
+      "pm25": 16.5,
+      "co2": 348.0,
+      "noise": 16.8,
+      "update_time": "00:51:59"
+    },
+    "室外": {
+      "illuminance": 59284.7,
+      "motion_detected": false,
+      "door_open": false,
+      "window_open": false,
+      "pm25": 52.6,
+      "co2": 440.0,
+      "noise": 68.4,
+      "update_time": "00:51:59"
+    }
+  },
+  "security": {
+    "mode": "off",
+    "armed": false,
+    "alarm_triggered": false
+  }
+}

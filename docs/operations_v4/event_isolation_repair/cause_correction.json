@@ -1,0 +1,10 @@
+{
+  "schema": "sensehome.test-log-repair-cause-correction.v4",
+  "corrects_field": "repair.json:cause",
+  "original_repair_and_raw_files_preserved": true,
+  "cause": "docs/integration_v4/run_integration.py restored SENSEHOME_EVENT_LOG before reinitializing the normal-case gateway after restart. The harness then appended eight integration test events to the original project event sink.",
+  "fix": "The integration harness keeps its isolated event-log environment active during gateway reinitialization and records protected original file hashes before and after the entire run.",
+  "verified_replacement_run": "docs/integration_v4/runs/20261111T070837Z_7cfbfcf3",
+  "independent_review": "docs/reviews/2026-11-11-v4-independent-review.json:V4-R04",
+  "scope": "Correction to causal attribution only; original repair record, failed run and all raw event bytes remain unchanged."
+}

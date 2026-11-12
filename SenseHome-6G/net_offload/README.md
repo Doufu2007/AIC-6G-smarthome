@@ -1,8 +1,8 @@
-# SenseHome：链路感知的家庭 AI 推理卸载
+# SenseHome：网络—算力感知的家庭 AI 推理卸载
 
-本目录是“6G 链路自适应的家庭 AI 推理卸载系统”场景方案的可复核代码。它把家庭网关到云端的 WAN、网关到设备/本地模型的 LAN 分开观测，由唯一的 C 策略进程按任务类别和链路状态选择 `local-rules`、`local-model` 或 `cloud-model`，再由 Python 网关完成后端适配、动作白名单、回退和事件记录。
+本目录是“6G 链路自适应的家庭 AI 推理卸载系统”场景方案的可复核代码。融合后的 C 策略同时考虑 WAN/LAN 链路观测、本地与云端模型就绪状态、队列/并发/内存约束和可估算的传输成本，再由 Python 网关传递服务端观测、调用后端、执行动作白名单、回退并记录策略元数据。
 
-它当前证明的是一条可运行、可回放的软件闭环：网络轨迹、策略决策、后端响应和错误原因可以逐请求复核。模型后端仍是注入耗时的桩，设备状态是 PC 进程内模拟，尚未接入真实 6G 空口、真实物理设备或家庭试点；README 和作品方案均不把这些内容写成已完成部署。
+双端策略的 C 源码、网关适配和实验流水线已完成融合版 r3 构建、全量测试与完整实验审计。验证记录及运行产物见 `../evidence/network_compute/20261111_fused/`；归档副本与验证目录的 328 个运行文件逐项 SHA256 一致。已有 n=20 性能表仍属于旧网络策略历史基线。新实验使用合成轨迹、固定规划合同、本机桩服务和 PC 模拟设备，未接入真实 6G 空口、物理设备或家庭试点。
 
 ## 可复核边界
 
@@ -13,8 +13,9 @@
 | 模型后端 | `backends/stub_backend.py` 注入 `300/150 ms` | 不能推出模型准确率、GPU 推理时间或模型优劣 |
 | Dashboard 控制 | 真实 Python 网关、动作白名单、PC JSON 状态 | 不能替代 MCU、继电器、燃气阀或门禁联锁 |
 | 真实模型包 | `backends/openai_backend.py` 与 AutoDL 验证说明 | 未配置实例和模型前不计入准确率 |
+| 双端策略新实现 | C 端同时读入 WAN/LAN 观测与 local/cloud 健康度；过期观测闭锁；带宽未知时传输成本保持未知；成本比较带切换迟滞 | r3 构建、回归和新矩阵审计通过；其性能数字仅对应合成轨迹和固定合同 |
 
-## 策略边界
+## 旧网络策略基线的决策边界
 
 | 任务 | WAN/LAN 状态 | 选择 | 原因 |
 |---|---|---|---|
@@ -25,13 +26,21 @@
 | `complex` | WAN 不可达、LAN 可用 | `local-model` | `WAN_UNREACHABLE` |
 | `complex` | LAN 不可用 | `local-rules` | `LAN_DOWN` |
 
-`offload_policy.c` 是策略唯一实现；Python 不复制决策表。对于 `simple`/`safety`，网关不做同步链路探测，避免把本地支持路径的探测时间误算为云端成本。复杂请求才按台架轨迹探测并执行模型后端。
+`offload_policy.c` 是策略唯一实现；Python 只做输入校验和行协议适配。新资源策略只有在 `resource_cfg` 被配置时启用；现存 `results/results.json` 仍来自旧策略路径。对于 `simple`/`safety`，网关固定留在 `local-rules`；复杂请求使用带来源和年龄的服务端观测。
 
-## 当前权威证据
+## 双端资源策略与新验证流程
 
-权威完整台架结果在 `results/results.json`，原始运行副本在 `_work/evidence_final/`。每个档位包含三类任务，每类 20 次，adaptive/static-cloud 两臂共 480 条业务记录；`raw_runs` 保存逐请求行，`paired_traces` 保存实际 WAN/LAN probe/infer 结果。`results/results.md` 由 JSON 渲染，不手工维护数字。
+新策略先拒绝安全/结构化任务的远端路由，再检查 local/cloud 两端模型就绪、队列、并发和可用内存。只有两侧网络或传输估算都有观测时，才把相应项纳入代价比较；未知值不会被当成零。切换裕量与连续恢复样本用于减少边界抖动。观测过期、乱序或两端都无模型容量时，复杂任务退回规则路径并留下明确原因码。
 
-复杂任务四档的当前结果如下。用户总时延为 `probe_ms + policy_ms + backend_ms` 的全部请求中位数；桩语义标志只代表合同路径，不代表真实语言理解。
+`experiments/` 中的服务画像、策略配置和合成 trace 驱动 replay、并发、敏感性、安全与 HTTP 网关桩实验。完整 r3 运行及审计通过，结果归档于 `../evidence/network_compute/20261111_fused/`。这些实验验证策略在声明输入下的行为，不构成真实 GPU、家庭设备或 6G 无线性能测量。ZIP 提供的原始补充资料保存在 `../evidence/network_compute/20261106/`，用于追溯，不替代本仓库的重跑结果。
+
+融合版 replay 共 58,800 条记录。`interactive_inference` 中，joint 完成固定规划合同且满足时限的比例为 84.40%（4,254/5,040），network-only 为 62.98%，compute-only 为 61.90%，no-hysteresis 为 84.52%；joint 有 786 条 `UNRESOLVED_NO_NLU`。由于 no-hysteresis 略高，不能声称迟滞提高了时限达标率。HTTP 网关桩共 9,084 个请求和持久化事件，679 条合同未完成（383 条 `CONTRACT_NOT_COMPLETED`、296 条注入下游 `HTTP_503`），外层响应均为 HTTP 200。注入 503 不代表真实网络丢包。
+
+## 旧网络策略历史基线
+
+旧网络策略的权威完整台架结果在 `results/results.json`，原始运行副本在 `_work/evidence_final/`。每个档位包含三类任务，每类 20 次，adaptive/static-cloud 两臂共 480 条业务记录；`raw_runs` 保存逐请求行，`paired_traces` 保存实际 WAN/LAN probe/infer 结果。该表仅是历史基线。双端资源策略必须另行构建、运行并归档，不得覆盖或冒认这组旧结果。
+
+复杂任务四档的旧基线结果如下。用户总时延为 `probe_ms + policy_ms + backend_ms` 的全部请求中位数；桩语义标志只代表合同路径，不代表真实语言理解。
 
 | 档位 | 臂 | 接口 | 语义合同 | 用户总时延 ms | 探测 ms | 后端 ms |
 |---|---|---:|---:|---:|---:|---:|
@@ -72,7 +81,9 @@ cd SenseHome-6G/net_offload
 python ../../_work/verify_numbers.py
 ```
 
-`build.ps1` 会编译三个 C 程序并运行 net_offload 与 Dashboard Python 测试，随后写入 `build_manifest.json`。`run_evidence.ps1` 生成新的台架结果并做 schema 检查；正式材料使用已锁定的完整运行目录，不应在没有保存新 raw runs 的情况下手改数字。
+`build.ps1` 会编译三个 C 程序并运行 net_offload 与 Dashboard Python 测试，随后写入 `build_manifest.json`。本次完整 r3 验证使用 Zig 0.17.1 的 `cc` 前端，构建、测试、完整矩阵和审计日志均已归档；精确命令与编译器哈希见归档中的 `validation/verification.json`。`run_evidence.ps1` 生成旧链路台架；双端策略使用 `run_experiment_suite.py --out <新空目录> --compiler <compiler>`，必须保存完整原始输出和审计结果。
+
+若使用便携 Zig，可通过 `--compiler <zig.exe>` 指定；运行器会调用其 `cc` 前端。先用 `--quick` 做接线烟测，完整矩阵另选空目录运行并保留原始证据。
 
 快速查看 JSON：
 
@@ -90,7 +101,7 @@ python ../../_work/check_draft.py
 - 目标 MCU、网关内存/能耗/成本、真实设备并发仍未测量。
 - 当前网络是 TCP 链路注入，不含无线协议栈、分组重传、切换、切片或确定性承载。
 - Dashboard 只验证开关灯和只读安防查询，未授权燃气、门禁等动作必须拒绝。
-- 复杂任务的同步探测成本在当前四档中仍可能超过原始 KPI 目标；下一步是引入有有效期的观测缓存，并用真实模型重新测 p50/p95。
+- 旧网络策略复杂任务的同步探测成本仍可能超过原始 KPI 目标；本次融合版已完成合成 trace 的时延/策略矩阵、并发、敏感性和恢复相关测试，但不能据此推出真实模型服务或真实网络下的端到端收益。固定规划合同、合成观测和本机 HTTP 桩限定了当前结果的外推范围。
 - 真实模型、真实网络、集成商需求访谈和授权家庭试点均需单独补证。
 
 提交前请同时检查作品方案中的脱敏字段、许可证/NOTICE、模型与第三方资源披露，以及 Word/PDF/视频/PPT 是否与当前 JSON 事实源一致。

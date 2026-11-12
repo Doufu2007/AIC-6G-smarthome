@@ -1,0 +1,1908 @@
+{
+  "schema": "sensehome.sealed-preservation-readonly.v1",
+  "checked_at_utc": "2026-11-12T04:11:21.721443+00:00",
+  "scope": "Bytes only: preserved package hashes and frozen source snapshots. No old audit script, model inference, result recomputation, or sealed writes. Current source differences do not invalidate old snapshots.",
+  "packages": [
+    {
+      "seal": "dist/final/20261111/SenseHome_本地审阅包_20261111.sha256.json",
+      "seal_sha256": "464ccc420226a5f02074a2ff80cad5a1b8bf2ffe9e678814e7647584a973e0b0",
+      "path": "dist/final/20261111/SenseHome_本地审阅包_20261111.zip",
+      "expected": "90fb5b1d162400109526ad860f476b44282d0210597915ffb9a5fcc9ba98bd27",
+      "actual": "90fb5b1d162400109526ad860f476b44282d0210597915ffb9a5fcc9ba98bd27",
+      "match": true
+    },
+    {
+      "seal": "dist/final/20261111_v2/SenseHome_本地审阅包_20261111_v2.sha256.json",
+      "seal_sha256": "3fb568c4d36736418f8682ea2cd9d490d154f484936defb7c8ef346023ece035",
+      "path": "dist/final/20261111_v2/SenseHome_本地审阅包_20261111_v2.zip",
+      "expected": "d99a185b6dfdebaed4953dc050126aca45b524b8dc9e15a8993cc19a653b2362",
+      "actual": "d99a185b6dfdebaed4953dc050126aca45b524b8dc9e15a8993cc19a653b2362",
+      "match": true
+    },
+    {
+      "seal": "dist/final/20261111_v3/SenseHome_本地审阅包_20261111_v3.sha256.json",
+      "seal_sha256": "e9009a6d5d47df0109602a6439709204ae01d570e4d5ec74069a43a53b045a33",
+      "path": "dist/final/20261111_v3/SenseHome_本地审阅包_20261111_v3.zip",
+      "expected": "2b83965afadfcc63fbaf7fcd94e1c6cfb111b0b65190141c6dc6169b3f789e4c",
+      "actual": "2b83965afadfcc63fbaf7fcd94e1c6cfb111b0b65190141c6dc6169b3f789e4c",
+      "match": true
+    },
+    {
+      "seal": "dist/final/20261111_v4/SenseHome_内部复现审阅包_20261111_v4.sha256.json",
+      "seal_sha256": "cc30569b79f8cf0b9c42c3f581b88a9506a2a61fb8aa327d66214691b713db85",
+      "path": "dist/final/20261111_v4/SenseHome_内部复现审阅包_20261111_v4.zip",
+      "expected": "0fdbc9469436cbe25a115da31a138bae538595f7231cfbeaeda405048632b3c4",
+      "actual": "0fdbc9469436cbe25a115da31a138bae538595f7231cfbeaeda405048632b3c4",
+      "match": true
+    },
+    {
+      "seal": "dist/final/20261111_v4/SenseHome_内部复现审阅包_20261111_v4r1.sha256.json",
+      "seal_sha256": "8210d79ac2b80388d8705f7b16f7e079dad839cbafc302ef1cbd68fdf36d50bf",
+      "path": "dist/final/20261111_v4/SenseHome_内部复现审阅包_20261111_v4r1.zip",
+      "expected": "bbb3696865fbd016dd74a494d4a4bb85e6ab1da820944ee6303db85d267b999f",
+      "actual": "bbb3696865fbd016dd74a494d4a4bb85e6ab1da820944ee6303db85d267b999f",
+      "match": true
+    },
+    {
+      "seal": "dist/final/20261111_v4/SenseHome_匿名材料审阅包_20261111_v4.sha256.json",
+      "seal_sha256": "9a8c4f25ff39e695e24ca0b50189d5dea08d70b0c54c7f23366cdfebf6ce3e66",
+      "path": "dist/final/20261111_v4/SenseHome_匿名材料审阅包_20261111_v4.zip",
+      "expected": "b2821a08cc4a3ae9216c135f11d9830cba2cea9b4723b85e52e1cc4b99bd7698",
+      "actual": "b2821a08cc4a3ae9216c135f11d9830cba2cea9b4723b85e52e1cc4b99bd7698",
+      "match": true
+    }
+  ],
+  "fused_sealed_runs": {
+    "reviewed_20_sealed_repeat3": {
+      "sealed_artifacts": [
+        {
+          "path": "docs/experiments/20261111_fused_real/reviewed_20_sealed_repeat3/report.json",
+          "expected": "d695368596da69fe400cea10991584932742cd43bd60bd85ab16290693725322",
+          "actual": "d695368596da69fe400cea10991584932742cd43bd60bd85ab16290693725322",
+          "match": true
+        },
+        {
+          "path": "docs/experiments/20261111_fused_real/reviewed_20_sealed_repeat3/rows.jsonl",
+          "expected": "9fa73ba1a74b1ddb66a64e2fac7dd9d8050ab09a45ed03a4fbab3f978143314b",
+          "actual": "9fa73ba1a74b1ddb66a64e2fac7dd9d8050ab09a45ed03a4fbab3f978143314b",
+          "match": true
+        },
+        {
+          "path": "docs/experiments/20261111_fused_real/reviewed_20_sealed_repeat3/blocks.jsonl",
+          "expected": "29ff0734959a5e21ad5a390f545295965ea1045f4f00abfdca1ef06d6881f49d",
+          "actual": "29ff0734959a5e21ad5a390f545295965ea1045f4f00abfdca1ef06d6881f49d",
+          "match": true
+        },
+        {
+          "path": "docs/experiments/20261111_fused_real/reviewed_20_sealed_repeat3/summary.json",
+          "expected": "b0ed9da27872aba21cad050485c0b7106c024774ff5b9d18da19afee605d4f7f",
+          "actual": "b0ed9da27872aba21cad050485c0b7106c024774ff5b9d18da19afee605d4f7f",
+          "match": true
+        },
+        {
+          "path": "docs/experiments/20261111_fused_real/reviewed_20_sealed_repeat3/summary.md",
+          "expected": "3b8e947cac8ed4f67071ca26ad4af56771d5ecd40dfa664c7f8a30182ac7b7a5",
+          "actual": "3b8e947cac8ed4f67071ca26ad4af56771d5ecd40dfa664c7f8a30182ac7b7a5",
+          "match": true
+        },
+        {
+          "path": "docs/experiments/20261111_fused_real/reviewed_20_sealed_repeat3/calibration.json",
+          "expected": "d30a6d3db818f044572cce3a4c0c49eebb8bcd9e37fbe0ec679ad1c8079c234f",
+          "actual": "d30a6d3db818f044572cce3a4c0c49eebb8bcd9e37fbe0ec679ad1c8079c234f",
+          "match": true
+        }
+      ],
+      "source_snapshots": [
+        {
+          "path": "docs/experiments/20261111_fused_real/reviewed_20_sealed_repeat3/source_snapshot/fused_eval.py",
+          "expected": "37c8060aea5ee827a871a2b2624fc64f9134fbd125d8a15d0dc2ba7a046d14ca",
+          "actual": "37c8060aea5ee827a871a2b2624fc64f9134fbd125d8a15d0dc2ba7a046d14ca",
+          "match": true
+        },
+        {
+          "path": "docs/experiments/20261111_fused_real/reviewed_20_sealed_repeat3/source_snapshot/offload_gateway.py",
+          "expected": "d9f63dc5b6ffe73266777d8100e29842fce2d13005fd08baee8c997bf36793ef",
+          "actual": "d9f63dc5b6ffe73266777d8100e29842fce2d13005fd08baee8c997bf36793ef",
+          "match": true
+        },
+        {
+          "path": "docs/experiments/20261111_fused_real/reviewed_20_sealed_repeat3/source_snapshot/resource_policy.py",
+          "expected": "84a924664541b2e21458fa4e78130b1d31ee4e5f16ff6e859d11d951c23b3593",
+          "actual": "84a924664541b2e21458fa4e78130b1d31ee4e5f16ff6e859d11d951c23b3593",
+          "match": true
+        },
+        {
+          "path": "docs/experiments/20261111_fused_real/reviewed_20_sealed_repeat3/source_snapshot/offload_policy.c",
+          "expected": "58a772ddf879bb14480a3d715ac97b34fc64f811274a4a76a66c123f2c8f8135",
+          "actual": "58a772ddf879bb14480a3d715ac97b34fc64f811274a4a76a66c123f2c8f8135",
+          "match": true
+        },
+        {
+          "path": "docs/experiments/20261111_fused_real/reviewed_20_sealed_repeat3/source_snapshot/offload_policy.h",
+          "expected": "304ff38f9685bbd7bbf7fd2c2602dcf19e9c74a25d127b9f1070aa749c891702",
+          "actual": "304ff38f9685bbd7bbf7fd2c2602dcf19e9c74a25d127b9f1070aa749c891702",
+          "match": true
+        },
+        {
+          "path": "docs/experiments/20261111_fused_real/reviewed_20_sealed_repeat3/source_snapshot/policy_cli.c",
+          "expected": "c88b50574b5b29a9bca81fe46bab26d7f8e6710edf24e514ee0c632349af82b8",
+          "actual": "c88b50574b5b29a9bca81fe46bab26d7f8e6710edf24e514ee0c632349af82b8",
+          "match": true
+        },
+        {
+          "path": "docs/experiments/20261111_fused_real/reviewed_20_sealed_repeat3/source_snapshot/openai_backend.py",
+          "expected": "c8e82dc2f9693cede4417fc73df9e487266aea400b6aca7c0978155a58e3d7d5",
+          "actual": "c8e82dc2f9693cede4417fc73df9e487266aea400b6aca7c0978155a58e3d7d5",
+          "match": true
+        },
+        {
+          "path": "docs/experiments/20261111_fused_real/reviewed_20_sealed_repeat3/source_snapshot/eval_model.py",
+          "expected": "2e6bd2f615590d3639061c59bcb8d8012fba9916a5130a3148b03283544c1395",
+          "actual": "2e6bd2f615590d3639061c59bcb8d8012fba9916a5130a3148b03283544c1395",
+          "match": true
+        },
+        {
+          "path": "docs/experiments/20261111_fused_real/reviewed_20_sealed_repeat3/source_snapshot/bridge_server.py",
+          "expected": "16c0edf80492483464f9796a678cfce9f2f91a284db83fba6758720bd1785770",
+          "actual": "16c0edf80492483464f9796a678cfce9f2f91a284db83fba6758720bd1785770",
+          "match": true
+        },
+        {
+          "path": "docs/experiments/20261111_fused_real/reviewed_20_sealed_repeat3/source_snapshot/device_actions.py",
+          "expected": "b639e8e294e03a0171cea74ceaa2d9f2bae5c26166f019908e93af0265865698",
+          "actual": "b639e8e294e03a0171cea74ceaa2d9f2bae5c26166f019908e93af0265865698",
+          "match": true
+        },
+        {
+          "path": "docs/experiments/20261111_fused_real/reviewed_20_sealed_repeat3/source_snapshot/policy_cli.exe",
+          "expected": "04c8f57dd7c26a8168540c67410f9e5a63f4e818c3c5a97841c1510f6a2db72e",
+          "actual": "04c8f57dd7c26a8168540c67410f9e5a63f4e818c3c5a97841c1510f6a2db72e",
+          "match": true
+        }
+      ],
+      "current_source_comparison_informational_only": [
+        {
+          "path": "docs/deployment/fused_eval.py",
+          "expected": "37c8060aea5ee827a871a2b2624fc64f9134fbd125d8a15d0dc2ba7a046d14ca",
+          "actual": "2e8272977fe4d625aabd009cf64fb587ed2caded1383c7803d68b2e91d32e9e4",
+          "match": false
+        },
+        {
+          "path": "SenseHome-6G/net_offload/offload_gateway.py",
+          "expected": "d9f63dc5b6ffe73266777d8100e29842fce2d13005fd08baee8c997bf36793ef",
+          "actual": "b4613726ce03c202d33bad065552643aa3cdbe8cda1f8864992a32badaa39cd3",
+          "match": false
+        },
+        {
+          "path": "SenseHome-6G/net_offload/resource_policy.py",
+          "expected": "84a924664541b2e21458fa4e78130b1d31ee4e5f16ff6e859d11d951c23b3593",
+          "actual": "c8a8cd23fa7877116867d7961341e5322a3d7cae04fb641c162167b260fac706",
+          "match": false
+        },
+        {
+          "path": "SenseHome-6G/net_offload/offload_policy.c",
+          "expected": "58a772ddf879bb14480a3d715ac97b34fc64f811274a4a76a66c123f2c8f8135",
+          "actual": "58a772ddf879bb14480a3d715ac97b34fc64f811274a4a76a66c123f2c8f8135",
+          "match": true
+        },
+        {
+          "path": "SenseHome-6G/net_offload/offload_policy.h",
+          "expected": "304ff38f9685bbd7bbf7fd2c2602dcf19e9c74a25d127b9f1070aa749c891702",
+          "actual": "304ff38f9685bbd7bbf7fd2c2602dcf19e9c74a25d127b9f1070aa749c891702",
+          "match": true
+        },
+        {
+          "path": "SenseHome-6G/net_offload/policy_cli.c",
+          "expected": "c88b50574b5b29a9bca81fe46bab26d7f8e6710edf24e514ee0c632349af82b8",
+          "actual": "c88b50574b5b29a9bca81fe46bab26d7f8e6710edf24e514ee0c632349af82b8",
+          "match": true
+        },
+        {
+          "path": "SenseHome-6G/net_offload/backends/openai_backend.py",
+          "expected": "c8e82dc2f9693cede4417fc73df9e487266aea400b6aca7c0978155a58e3d7d5",
+          "actual": "3f93e58041e6dd4e15b86f16c7e4a400d095a93239d8d3540f250ae24ee59381",
+          "match": false
+        },
+        {
+          "path": "SenseHome-6G/net_offload/eval_model.py",
+          "expected": "2e6bd2f615590d3639061c59bcb8d8012fba9916a5130a3148b03283544c1395",
+          "actual": "2e6bd2f615590d3639061c59bcb8d8012fba9916a5130a3148b03283544c1395",
+          "match": true
+        },
+        {
+          "path": "openvela_smart_home/dashboard/bridge_server.py",
+          "expected": "16c0edf80492483464f9796a678cfce9f2f91a284db83fba6758720bd1785770",
+          "actual": "e0078d4e1afcecaadcc64a787c0647df4a782062552b1f0da521ec1f6f891de0",
+          "match": false
+        },
+        {
+          "path": "openvela_smart_home/dashboard/device_actions.py",
+          "expected": "b639e8e294e03a0171cea74ceaa2d9f2bae5c26166f019908e93af0265865698",
+          "actual": "b0ad12762be33a617991924c0cdcef536fd326484b8d094114cadc46fa1baee6",
+          "match": false
+        },
+        {
+          "path": "SenseHome-6G/net_offload/policy_cli.exe",
+          "expected": "04c8f57dd7c26a8168540c67410f9e5a63f4e818c3c5a97841c1510f6a2db72e",
+          "actual": "04c8f57dd7c26a8168540c67410f9e5a63f4e818c3c5a97841c1510f6a2db72e",
+          "match": true
+        }
+      ]
+    },
+    "challenge_12_sealed_development_repeat3": {
+      "sealed_artifacts": [
+        {
+          "path": "docs/experiments/20261111_fused_real/challenge_12_sealed_development_repeat3/report.json",
+          "expected": "e2a16bd49e5a448e6bb1f32b2f58a124a20e76fc2946a586abe5f3d49b01ac43",
+          "actual": "e2a16bd49e5a448e6bb1f32b2f58a124a20e76fc2946a586abe5f3d49b01ac43",
+          "match": true
+        },
+        {
+          "path": "docs/experiments/20261111_fused_real/challenge_12_sealed_development_repeat3/rows.jsonl",
+          "expected": "ca57888e754976afde4524f4694bc557b95b369bb39bdce305209e396a6cfc1d",
+          "actual": "ca57888e754976afde4524f4694bc557b95b369bb39bdce305209e396a6cfc1d",
+          "match": true
+        },
+        {
+          "path": "docs/experiments/20261111_fused_real/challenge_12_sealed_development_repeat3/blocks.jsonl",
+          "expected": "fb3f938536174ec513d2d4ff02c6b1b57fb8587e8c8ed92383abf0967b2c0dec",
+          "actual": "fb3f938536174ec513d2d4ff02c6b1b57fb8587e8c8ed92383abf0967b2c0dec",
+          "match": true
+        },
+        {
+          "path": "docs/experiments/20261111_fused_real/challenge_12_sealed_development_repeat3/summary.json",
+          "expected": "fa1e2ceed83a89ff5e4637a0a6cd4246a7f9d714758579f2384793dc4f05a4ef",
+          "actual": "fa1e2ceed83a89ff5e4637a0a6cd4246a7f9d714758579f2384793dc4f05a4ef",
+          "match": true
+        },
+        {
+          "path": "docs/experiments/20261111_fused_real/challenge_12_sealed_development_repeat3/summary.md",
+          "expected": "d45e14270ea238a461aaba6538e416ac9d6159e850fccd9f255df56c4494c3c2",
+          "actual": "d45e14270ea238a461aaba6538e416ac9d6159e850fccd9f255df56c4494c3c2",
+          "match": true
+        },
+        {
+          "path": "docs/experiments/20261111_fused_real/challenge_12_sealed_development_repeat3/calibration.json",
+          "expected": "d30a6d3db818f044572cce3a4c0c49eebb8bcd9e37fbe0ec679ad1c8079c234f",
+          "actual": "d30a6d3db818f044572cce3a4c0c49eebb8bcd9e37fbe0ec679ad1c8079c234f",
+          "match": true
+        }
+      ],
+      "source_snapshots": [
+        {
+          "path": "docs/experiments/20261111_fused_real/challenge_12_sealed_development_repeat3/source_snapshot/fused_eval.py",
+          "expected": "37c8060aea5ee827a871a2b2624fc64f9134fbd125d8a15d0dc2ba7a046d14ca",
+          "actual": "37c8060aea5ee827a871a2b2624fc64f9134fbd125d8a15d0dc2ba7a046d14ca",
+          "match": true
+        },
+        {
+          "path": "docs/experiments/20261111_fused_real/challenge_12_sealed_development_repeat3/source_snapshot/offload_gateway.py",
+          "expected": "d9f63dc5b6ffe73266777d8100e29842fce2d13005fd08baee8c997bf36793ef",
+          "actual": "d9f63dc5b6ffe73266777d8100e29842fce2d13005fd08baee8c997bf36793ef",
+          "match": true
+        },
+        {
+          "path": "docs/experiments/20261111_fused_real/challenge_12_sealed_development_repeat3/source_snapshot/resource_policy.py",
+          "expected": "84a924664541b2e21458fa4e78130b1d31ee4e5f16ff6e859d11d951c23b3593",
+          "actual": "84a924664541b2e21458fa4e78130b1d31ee4e5f16ff6e859d11d951c23b3593",
+          "match": true
+        },
+        {
+          "path": "docs/experiments/20261111_fused_real/challenge_12_sealed_development_repeat3/source_snapshot/offload_policy.c",
+          "expected": "58a772ddf879bb14480a3d715ac97b34fc64f811274a4a76a66c123f2c8f8135",
+          "actual": "58a772ddf879bb14480a3d715ac97b34fc64f811274a4a76a66c123f2c8f8135",
+          "match": true
+        },
+        {
+          "path": "docs/experiments/20261111_fused_real/challenge_12_sealed_development_repeat3/source_snapshot/offload_policy.h",
+          "expected": "304ff38f9685bbd7bbf7fd2c2602dcf19e9c74a25d127b9f1070aa749c891702",
+          "actual": "304ff38f9685bbd7bbf7fd2c2602dcf19e9c74a25d127b9f1070aa749c891702",
+          "match": true
+        },
+        {
+          "path": "docs/experiments/20261111_fused_real/challenge_12_sealed_development_repeat3/source_snapshot/policy_cli.c",
+          "expected": "c88b50574b5b29a9bca81fe46bab26d7f8e6710edf24e514ee0c632349af82b8",
+          "actual": "c88b50574b5b29a9bca81fe46bab26d7f8e6710edf24e514ee0c632349af82b8",
+          "match": true
+        },
+        {
+          "path": "docs/experiments/20261111_fused_real/challenge_12_sealed_development_repeat3/source_snapshot/openai_backend.py",
+          "expected": "c8e82dc2f9693cede4417fc73df9e487266aea400b6aca7c0978155a58e3d7d5",
+          "actual": "c8e82dc2f9693cede4417fc73df9e487266aea400b6aca7c0978155a58e3d7d5",
+          "match": true
+        },
+        {
+          "path": "docs/experiments/20261111_fused_real/challenge_12_sealed_development_repeat3/source_snapshot/eval_model.py",
+          "expected": "2e6bd2f615590d3639061c59bcb8d8012fba9916a5130a3148b03283544c1395",
+          "actual": "2e6bd2f615590d3639061c59bcb8d8012fba9916a5130a3148b03283544c1395",
+          "match": true
+        },
+        {
+          "path": "docs/experiments/20261111_fused_real/challenge_12_sealed_development_repeat3/source_snapshot/bridge_server.py",
+          "expected": "16c0edf80492483464f9796a678cfce9f2f91a284db83fba6758720bd1785770",
+          "actual": "16c0edf80492483464f9796a678cfce9f2f91a284db83fba6758720bd1785770",
+          "match": true
+        },
+        {
+          "path": "docs/experiments/20261111_fused_real/challenge_12_sealed_development_repeat3/source_snapshot/device_actions.py",
+          "expected": "b639e8e294e03a0171cea74ceaa2d9f2bae5c26166f019908e93af0265865698",
+          "actual": "b639e8e294e03a0171cea74ceaa2d9f2bae5c26166f019908e93af0265865698",
+          "match": true
+        },
+        {
+          "path": "docs/experiments/20261111_fused_real/challenge_12_sealed_development_repeat3/source_snapshot/policy_cli.exe",
+          "expected": "04c8f57dd7c26a8168540c67410f9e5a63f4e818c3c5a97841c1510f6a2db72e",
+          "actual": "04c8f57dd7c26a8168540c67410f9e5a63f4e818c3c5a97841c1510f6a2db72e",
+          "match": true
+        }
+      ],
+      "current_source_comparison_informational_only": [
+        {
+          "path": "docs/deployment/fused_eval.py",
+          "expected": "37c8060aea5ee827a871a2b2624fc64f9134fbd125d8a15d0dc2ba7a046d14ca",
+          "actual": "2e8272977fe4d625aabd009cf64fb587ed2caded1383c7803d68b2e91d32e9e4",
+          "match": false
+        },
+        {
+          "path": "SenseHome-6G/net_offload/offload_gateway.py",
+          "expected": "d9f63dc5b6ffe73266777d8100e29842fce2d13005fd08baee8c997bf36793ef",
+          "actual": "b4613726ce03c202d33bad065552643aa3cdbe8cda1f8864992a32badaa39cd3",
+          "match": false
+        },
+        {
+          "path": "SenseHome-6G/net_offload/resource_policy.py",
+          "expected": "84a924664541b2e21458fa4e78130b1d31ee4e5f16ff6e859d11d951c23b3593",
+          "actual": "c8a8cd23fa7877116867d7961341e5322a3d7cae04fb641c162167b260fac706",
+          "match": false
+        },
+        {
+          "path": "SenseHome-6G/net_offload/offload_policy.c",
+          "expected": "58a772ddf879bb14480a3d715ac97b34fc64f811274a4a76a66c123f2c8f8135",
+          "actual": "58a772ddf879bb14480a3d715ac97b34fc64f811274a4a76a66c123f2c8f8135",
+          "match": true
+        },
+        {
+          "path": "SenseHome-6G/net_offload/offload_policy.h",
+          "expected": "304ff38f9685bbd7bbf7fd2c2602dcf19e9c74a25d127b9f1070aa749c891702",
+          "actual": "304ff38f9685bbd7bbf7fd2c2602dcf19e9c74a25d127b9f1070aa749c891702",
+          "match": true
+        },
+        {
+          "path": "SenseHome-6G/net_offload/policy_cli.c",
+          "expected": "c88b50574b5b29a9bca81fe46bab26d7f8e6710edf24e514ee0c632349af82b8",
+          "actual": "c88b50574b5b29a9bca81fe46bab26d7f8e6710edf24e514ee0c632349af82b8",
+          "match": true
+        },
+        {
+          "path": "SenseHome-6G/net_offload/backends/openai_backend.py",
+          "expected": "c8e82dc2f9693cede4417fc73df9e487266aea400b6aca7c0978155a58e3d7d5",
+          "actual": "3f93e58041e6dd4e15b86f16c7e4a400d095a93239d8d3540f250ae24ee59381",
+          "match": false
+        },
+        {
+          "path": "SenseHome-6G/net_offload/eval_model.py",
+          "expected": "2e6bd2f615590d3639061c59bcb8d8012fba9916a5130a3148b03283544c1395",
+          "actual": "2e6bd2f615590d3639061c59bcb8d8012fba9916a5130a3148b03283544c1395",
+          "match": true
+        },
+        {
+          "path": "openvela_smart_home/dashboard/bridge_server.py",
+          "expected": "16c0edf80492483464f9796a678cfce9f2f91a284db83fba6758720bd1785770",
+          "actual": "e0078d4e1afcecaadcc64a787c0647df4a782062552b1f0da521ec1f6f891de0",
+          "match": false
+        },
+        {
+          "path": "openvela_smart_home/dashboard/device_actions.py",
+          "expected": "b639e8e294e03a0171cea74ceaa2d9f2bae5c26166f019908e93af0265865698",
+          "actual": "b0ad12762be33a617991924c0cdcef536fd326484b8d094114cadc46fa1baee6",
+          "match": false
+        },
+        {
+          "path": "SenseHome-6G/net_offload/policy_cli.exe",
+          "expected": "04c8f57dd7c26a8168540c67410f9e5a63f4e818c3c5a97841c1510f6a2db72e",
+          "actual": "04c8f57dd7c26a8168540c67410f9e5a63f4e818c3c5a97841c1510f6a2db72e",
+          "match": true
+        }
+      ]
+    },
+    "controlled_faults_sealed": {
+      "sealed_artifacts": [
+        {
+          "path": "docs/experiments/20261111_fused_real/controlled_faults_sealed/report.json",
+          "expected": "806d89da396906c7f26f894c60beb3254eec108152d6591b3909d423553a8a90",
+          "actual": "806d89da396906c7f26f894c60beb3254eec108152d6591b3909d423553a8a90",
+          "match": true
+        },
+        {
+          "path": "docs/experiments/20261111_fused_real/controlled_faults_sealed/rows.jsonl",
+          "expected": "23ceaa52b8af160e85ea7aa5af07d707f170c12190427c554d115f868df8e9f3",
+          "actual": "23ceaa52b8af160e85ea7aa5af07d707f170c12190427c554d115f868df8e9f3",
+          "match": true
+        },
+        {
+          "path": "docs/experiments/20261111_fused_real/controlled_faults_sealed/blocks.jsonl",
+          "expected": "f0092a7e0e7c2d5d34490424925bf12df5ec961f3ed19763453a7c46613eb9aa",
+          "actual": "f0092a7e0e7c2d5d34490424925bf12df5ec961f3ed19763453a7c46613eb9aa",
+          "match": true
+        },
+        {
+          "path": "docs/experiments/20261111_fused_real/controlled_faults_sealed/summary.json",
+          "expected": "554fdd6063bb4bf76e78b1292c761ad21ee450a1be4be0582eb2f23786c041d1",
+          "actual": "554fdd6063bb4bf76e78b1292c761ad21ee450a1be4be0582eb2f23786c041d1",
+          "match": true
+        },
+        {
+          "path": "docs/experiments/20261111_fused_real/controlled_faults_sealed/summary.md",
+          "expected": "af08dab76dc205baadfedfa0b08bdcd06686ea48bb6552b10a923308989cd188",
+          "actual": "af08dab76dc205baadfedfa0b08bdcd06686ea48bb6552b10a923308989cd188",
+          "match": true
+        },
+        {
+          "path": "docs/experiments/20261111_fused_real/controlled_faults_sealed/calibration.json",
+          "expected": "d30a6d3db818f044572cce3a4c0c49eebb8bcd9e37fbe0ec679ad1c8079c234f",
+          "actual": "d30a6d3db818f044572cce3a4c0c49eebb8bcd9e37fbe0ec679ad1c8079c234f",
+          "match": true
+        }
+      ],
+      "source_snapshots": [
+        {
+          "path": "docs/experiments/20261111_fused_real/controlled_faults_sealed/source_snapshot/fused_eval.py",
+          "expected": "37c8060aea5ee827a871a2b2624fc64f9134fbd125d8a15d0dc2ba7a046d14ca",
+          "actual": "37c8060aea5ee827a871a2b2624fc64f9134fbd125d8a15d0dc2ba7a046d14ca",
+          "match": true
+        },
+        {
+          "path": "docs/experiments/20261111_fused_real/controlled_faults_sealed/source_snapshot/offload_gateway.py",
+          "expected": "d9f63dc5b6ffe73266777d8100e29842fce2d13005fd08baee8c997bf36793ef",
+          "actual": "d9f63dc5b6ffe73266777d8100e29842fce2d13005fd08baee8c997bf36793ef",
+          "match": true
+        },
+        {
+          "path": "docs/experiments/20261111_fused_real/controlled_faults_sealed/source_snapshot/resource_policy.py",
+          "expected": "84a924664541b2e21458fa4e78130b1d31ee4e5f16ff6e859d11d951c23b3593",
+          "actual": "84a924664541b2e21458fa4e78130b1d31ee4e5f16ff6e859d11d951c23b3593",
+          "match": true
+        },
+        {
+          "path": "docs/experiments/20261111_fused_real/controlled_faults_sealed/source_snapshot/offload_policy.c",
+          "expected": "58a772ddf879bb14480a3d715ac97b34fc64f811274a4a76a66c123f2c8f8135",
+          "actual": "58a772ddf879bb14480a3d715ac97b34fc64f811274a4a76a66c123f2c8f8135",
+          "match": true
+        },
+        {
+          "path": "docs/experiments/20261111_fused_real/controlled_faults_sealed/source_snapshot/offload_policy.h",
+          "expected": "304ff38f9685bbd7bbf7fd2c2602dcf19e9c74a25d127b9f1070aa749c891702",
+          "actual": "304ff38f9685bbd7bbf7fd2c2602dcf19e9c74a25d127b9f1070aa749c891702",
+          "match": true
+        },
+        {
+          "path": "docs/experiments/20261111_fused_real/controlled_faults_sealed/source_snapshot/policy_cli.c",
+          "expected": "c88b50574b5b29a9bca81fe46bab26d7f8e6710edf24e514ee0c632349af82b8",
+          "actual": "c88b50574b5b29a9bca81fe46bab26d7f8e6710edf24e514ee0c632349af82b8",
+          "match": true
+        },
+        {
+          "path": "docs/experiments/20261111_fused_real/controlled_faults_sealed/source_snapshot/openai_backend.py",
+          "expected": "c8e82dc2f9693cede4417fc73df9e487266aea400b6aca7c0978155a58e3d7d5",
+          "actual": "c8e82dc2f9693cede4417fc73df9e487266aea400b6aca7c0978155a58e3d7d5",
+          "match": true
+        },
+        {
+          "path": "docs/experiments/20261111_fused_real/controlled_faults_sealed/source_snapshot/eval_model.py",
+          "expected": "2e6bd2f615590d3639061c59bcb8d8012fba9916a5130a3148b03283544c1395",
+          "actual": "2e6bd2f615590d3639061c59bcb8d8012fba9916a5130a3148b03283544c1395",
+          "match": true
+        },
+        {
+          "path": "docs/experiments/20261111_fused_real/controlled_faults_sealed/source_snapshot/bridge_server.py",
+          "expected": "16c0edf80492483464f9796a678cfce9f2f91a284db83fba6758720bd1785770",
+          "actual": "16c0edf80492483464f9796a678cfce9f2f91a284db83fba6758720bd1785770",
+          "match": true
+        },
+        {
+          "path": "docs/experiments/20261111_fused_real/controlled_faults_sealed/source_snapshot/device_actions.py",
+          "expected": "b639e8e294e03a0171cea74ceaa2d9f2bae5c26166f019908e93af0265865698",
+          "actual": "b639e8e294e03a0171cea74ceaa2d9f2bae5c26166f019908e93af0265865698",
+          "match": true
+        },
+        {
+          "path": "docs/experiments/20261111_fused_real/controlled_faults_sealed/source_snapshot/policy_cli.exe",
+          "expected": "04c8f57dd7c26a8168540c67410f9e5a63f4e818c3c5a97841c1510f6a2db72e",
+          "actual": "04c8f57dd7c26a8168540c67410f9e5a63f4e818c3c5a97841c1510f6a2db72e",
+          "match": true
+        }
+      ],
+      "current_source_comparison_informational_only": [
+        {
+          "path": "docs/deployment/fused_eval.py",
+          "expected": "37c8060aea5ee827a871a2b2624fc64f9134fbd125d8a15d0dc2ba7a046d14ca",
+          "actual": "2e8272977fe4d625aabd009cf64fb587ed2caded1383c7803d68b2e91d32e9e4",
+          "match": false
+        },
+        {
+          "path": "SenseHome-6G/net_offload/offload_gateway.py",
+          "expected": "d9f63dc5b6ffe73266777d8100e29842fce2d13005fd08baee8c997bf36793ef",
+          "actual": "b4613726ce03c202d33bad065552643aa3cdbe8cda1f8864992a32badaa39cd3",
+          "match": false
+        },
+        {
+          "path": "SenseHome-6G/net_offload/resource_policy.py",
+          "expected": "84a924664541b2e21458fa4e78130b1d31ee4e5f16ff6e859d11d951c23b3593",
+          "actual": "c8a8cd23fa7877116867d7961341e5322a3d7cae04fb641c162167b260fac706",
+          "match": false
+        },
+        {
+          "path": "SenseHome-6G/net_offload/offload_policy.c",
+          "expected": "58a772ddf879bb14480a3d715ac97b34fc64f811274a4a76a66c123f2c8f8135",
+          "actual": "58a772ddf879bb14480a3d715ac97b34fc64f811274a4a76a66c123f2c8f8135",
+          "match": true
+        },
+        {
+          "path": "SenseHome-6G/net_offload/offload_policy.h",
+          "expected": "304ff38f9685bbd7bbf7fd2c2602dcf19e9c74a25d127b9f1070aa749c891702",
+          "actual": "304ff38f9685bbd7bbf7fd2c2602dcf19e9c74a25d127b9f1070aa749c891702",
+          "match": true
+        },
+        {
+          "path": "SenseHome-6G/net_offload/policy_cli.c",
+          "expected": "c88b50574b5b29a9bca81fe46bab26d7f8e6710edf24e514ee0c632349af82b8",
+          "actual": "c88b50574b5b29a9bca81fe46bab26d7f8e6710edf24e514ee0c632349af82b8",
+          "match": true
+        },
+        {
+          "path": "SenseHome-6G/net_offload/backends/openai_backend.py",
+          "expected": "c8e82dc2f9693cede4417fc73df9e487266aea400b6aca7c0978155a58e3d7d5",
+          "actual": "3f93e58041e6dd4e15b86f16c7e4a400d095a93239d8d3540f250ae24ee59381",
+          "match": false
+        },
+        {
+          "path": "SenseHome-6G/net_offload/eval_model.py",
+          "expected": "2e6bd2f615590d3639061c59bcb8d8012fba9916a5130a3148b03283544c1395",
+          "actual": "2e6bd2f615590d3639061c59bcb8d8012fba9916a5130a3148b03283544c1395",
+          "match": true
+        },
+        {
+          "path": "openvela_smart_home/dashboard/bridge_server.py",
+          "expected": "16c0edf80492483464f9796a678cfce9f2f91a284db83fba6758720bd1785770",
+          "actual": "e0078d4e1afcecaadcc64a787c0647df4a782062552b1f0da521ec1f6f891de0",
+          "match": false
+        },
+        {
+          "path": "openvela_smart_home/dashboard/device_actions.py",
+          "expected": "b639e8e294e03a0171cea74ceaa2d9f2bae5c26166f019908e93af0265865698",
+          "actual": "b0ad12762be33a617991924c0cdcef536fd326484b8d094114cadc46fa1baee6",
+          "match": false
+        },
+        {
+          "path": "SenseHome-6G/net_offload/policy_cli.exe",
+          "expected": "04c8f57dd7c26a8168540c67410f9e5a63f4e818c3c5a97841c1510f6a2db72e",
+          "actual": "04c8f57dd7c26a8168540c67410f9e5a63f4e818c3c5a97841c1510f6a2db72e",
+          "match": true
+        }
+      ]
+    },
+    "holdout_12_programmatic_repeat3": {
+      "sealed_artifacts": [
+        {
+          "path": "docs/experiments/20261111_fused_real/holdout_12_programmatic_repeat3/report.json",
+          "expected": "1b4e1f8182cb62d1d42b0982cf713bd463b2cde49b3a2eace65b45e1ffcdd947",
+          "actual": "1b4e1f8182cb62d1d42b0982cf713bd463b2cde49b3a2eace65b45e1ffcdd947",
+          "match": true
+        },
+        {
+          "path": "docs/experiments/20261111_fused_real/holdout_12_programmatic_repeat3/rows.jsonl",
+          "expected": "aa1c7639d4f0d5ad0e7a9aa3a6351a84a7ec225fcd487640dd4d07f588812c1f",
+          "actual": "aa1c7639d4f0d5ad0e7a9aa3a6351a84a7ec225fcd487640dd4d07f588812c1f",
+          "match": true
+        },
+        {
+          "path": "docs/experiments/20261111_fused_real/holdout_12_programmatic_repeat3/blocks.jsonl",
+          "expected": "79a354d72ac0922f4bc1989b70b78ff03a99cadf9e7121ecc1d429bc1cea9346",
+          "actual": "79a354d72ac0922f4bc1989b70b78ff03a99cadf9e7121ecc1d429bc1cea9346",
+          "match": true
+        },
+        {
+          "path": "docs/experiments/20261111_fused_real/holdout_12_programmatic_repeat3/summary.json",
+          "expected": "ae044f658aa625281f9e20f0cc6b16a8e53f5d26059da74343558300b066f18a",
+          "actual": "ae044f658aa625281f9e20f0cc6b16a8e53f5d26059da74343558300b066f18a",
+          "match": true
+        },
+        {
+          "path": "docs/experiments/20261111_fused_real/holdout_12_programmatic_repeat3/summary.md",
+          "expected": "be48ec86e60c4887e90c5c9d6c558f166c700a4290dd24b6c6f2cbd631bdebe4",
+          "actual": "be48ec86e60c4887e90c5c9d6c558f166c700a4290dd24b6c6f2cbd631bdebe4",
+          "match": true
+        },
+        {
+          "path": "docs/experiments/20261111_fused_real/holdout_12_programmatic_repeat3/calibration.json",
+          "expected": "d30a6d3db818f044572cce3a4c0c49eebb8bcd9e37fbe0ec679ad1c8079c234f",
+          "actual": "d30a6d3db818f044572cce3a4c0c49eebb8bcd9e37fbe0ec679ad1c8079c234f",
+          "match": true
+        }
+      ],
+      "source_snapshots": [
+        {
+          "path": "docs/experiments/20261111_fused_real/holdout_12_programmatic_repeat3/source_snapshot/fused_eval.py",
+          "expected": "37c8060aea5ee827a871a2b2624fc64f9134fbd125d8a15d0dc2ba7a046d14ca",
+          "actual": "37c8060aea5ee827a871a2b2624fc64f9134fbd125d8a15d0dc2ba7a046d14ca",
+          "match": true
+        },
+        {
+          "path": "docs/experiments/20261111_fused_real/holdout_12_programmatic_repeat3/source_snapshot/offload_gateway.py",
+          "expected": "d9f63dc5b6ffe73266777d8100e29842fce2d13005fd08baee8c997bf36793ef",
+          "actual": "d9f63dc5b6ffe73266777d8100e29842fce2d13005fd08baee8c997bf36793ef",
+          "match": true
+        },
+        {
+          "path": "docs/experiments/20261111_fused_real/holdout_12_programmatic_repeat3/source_snapshot/resource_policy.py",
+          "expected": "84a924664541b2e21458fa4e78130b1d31ee4e5f16ff6e859d11d951c23b3593",
+          "actual": "84a924664541b2e21458fa4e78130b1d31ee4e5f16ff6e859d11d951c23b3593",
+          "match": true
+        },
+        {
+          "path": "docs/experiments/20261111_fused_real/holdout_12_programmatic_repeat3/source_snapshot/offload_policy.c",
+          "expected": "58a772ddf879bb14480a3d715ac97b34fc64f811274a4a76a66c123f2c8f8135",
+          "actual": "58a772ddf879bb14480a3d715ac97b34fc64f811274a4a76a66c123f2c8f8135",
+          "match": true
+        },
+        {
+          "path": "docs/experiments/20261111_fused_real/holdout_12_programmatic_repeat3/source_snapshot/offload_policy.h",
+          "expected": "304ff38f9685bbd7bbf7fd2c2602dcf19e9c74a25d127b9f1070aa749c891702",
+          "actual": "304ff38f9685bbd7bbf7fd2c2602dcf19e9c74a25d127b9f1070aa749c891702",
+          "match": true
+        },
+        {
+          "path": "docs/experiments/20261111_fused_real/holdout_12_programmatic_repeat3/source_snapshot/policy_cli.c",
+          "expected": "c88b50574b5b29a9bca81fe46bab26d7f8e6710edf24e514ee0c632349af82b8",
+          "actual": "c88b50574b5b29a9bca81fe46bab26d7f8e6710edf24e514ee0c632349af82b8",
+          "match": true
+        },
+        {
+          "path": "docs/experiments/20261111_fused_real/holdout_12_programmatic_repeat3/source_snapshot/openai_backend.py",
+          "expected": "c8e82dc2f9693cede4417fc73df9e487266aea400b6aca7c0978155a58e3d7d5",
+          "actual": "c8e82dc2f9693cede4417fc73df9e487266aea400b6aca7c0978155a58e3d7d5",
+          "match": true
+        },
+        {
+          "path": "docs/experiments/20261111_fused_real/holdout_12_programmatic_repeat3/source_snapshot/eval_model.py",
+          "expected": "2e6bd2f615590d3639061c59bcb8d8012fba9916a5130a3148b03283544c1395",
+          "actual": "2e6bd2f615590d3639061c59bcb8d8012fba9916a5130a3148b03283544c1395",
+          "match": true
+        },
+        {
+          "path": "docs/experiments/20261111_fused_real/holdout_12_programmatic_repeat3/source_snapshot/bridge_server.py",
+          "expected": "16c0edf80492483464f9796a678cfce9f2f91a284db83fba6758720bd1785770",
+          "actual": "16c0edf80492483464f9796a678cfce9f2f91a284db83fba6758720bd1785770",
+          "match": true
+        },
+        {
+          "path": "docs/experiments/20261111_fused_real/holdout_12_programmatic_repeat3/source_snapshot/device_actions.py",
+          "expected": "b639e8e294e03a0171cea74ceaa2d9f2bae5c26166f019908e93af0265865698",
+          "actual": "b639e8e294e03a0171cea74ceaa2d9f2bae5c26166f019908e93af0265865698",
+          "match": true
+        },
+        {
+          "path": "docs/experiments/20261111_fused_real/holdout_12_programmatic_repeat3/source_snapshot/policy_cli.exe",
+          "expected": "04c8f57dd7c26a8168540c67410f9e5a63f4e818c3c5a97841c1510f6a2db72e",
+          "actual": "04c8f57dd7c26a8168540c67410f9e5a63f4e818c3c5a97841c1510f6a2db72e",
+          "match": true
+        }
+      ],
+      "current_source_comparison_informational_only": [
+        {
+          "path": "docs/deployment/fused_eval.py",
+          "expected": "37c8060aea5ee827a871a2b2624fc64f9134fbd125d8a15d0dc2ba7a046d14ca",
+          "actual": "2e8272977fe4d625aabd009cf64fb587ed2caded1383c7803d68b2e91d32e9e4",
+          "match": false
+        },
+        {
+          "path": "SenseHome-6G/net_offload/offload_gateway.py",
+          "expected": "d9f63dc5b6ffe73266777d8100e29842fce2d13005fd08baee8c997bf36793ef",
+          "actual": "b4613726ce03c202d33bad065552643aa3cdbe8cda1f8864992a32badaa39cd3",
+          "match": false
+        },
+        {
+          "path": "SenseHome-6G/net_offload/resource_policy.py",
+          "expected": "84a924664541b2e21458fa4e78130b1d31ee4e5f16ff6e859d11d951c23b3593",
+          "actual": "c8a8cd23fa7877116867d7961341e5322a3d7cae04fb641c162167b260fac706",
+          "match": false
+        },
+        {
+          "path": "SenseHome-6G/net_offload/offload_policy.c",
+          "expected": "58a772ddf879bb14480a3d715ac97b34fc64f811274a4a76a66c123f2c8f8135",
+          "actual": "58a772ddf879bb14480a3d715ac97b34fc64f811274a4a76a66c123f2c8f8135",
+          "match": true
+        },
+        {
+          "path": "SenseHome-6G/net_offload/offload_policy.h",
+          "expected": "304ff38f9685bbd7bbf7fd2c2602dcf19e9c74a25d127b9f1070aa749c891702",
+          "actual": "304ff38f9685bbd7bbf7fd2c2602dcf19e9c74a25d127b9f1070aa749c891702",
+          "match": true
+        },
+        {
+          "path": "SenseHome-6G/net_offload/policy_cli.c",
+          "expected": "c88b50574b5b29a9bca81fe46bab26d7f8e6710edf24e514ee0c632349af82b8",
+          "actual": "c88b50574b5b29a9bca81fe46bab26d7f8e6710edf24e514ee0c632349af82b8",
+          "match": true
+        },
+        {
+          "path": "SenseHome-6G/net_offload/backends/openai_backend.py",
+          "expected": "c8e82dc2f9693cede4417fc73df9e487266aea400b6aca7c0978155a58e3d7d5",
+          "actual": "3f93e58041e6dd4e15b86f16c7e4a400d095a93239d8d3540f250ae24ee59381",
+          "match": false
+        },
+        {
+          "path": "SenseHome-6G/net_offload/eval_model.py",
+          "expected": "2e6bd2f615590d3639061c59bcb8d8012fba9916a5130a3148b03283544c1395",
+          "actual": "2e6bd2f615590d3639061c59bcb8d8012fba9916a5130a3148b03283544c1395",
+          "match": true
+        },
+        {
+          "path": "openvela_smart_home/dashboard/bridge_server.py",
+          "expected": "16c0edf80492483464f9796a678cfce9f2f91a284db83fba6758720bd1785770",
+          "actual": "e0078d4e1afcecaadcc64a787c0647df4a782062552b1f0da521ec1f6f891de0",
+          "match": false
+        },
+        {
+          "path": "openvela_smart_home/dashboard/device_actions.py",
+          "expected": "b639e8e294e03a0171cea74ceaa2d9f2bae5c26166f019908e93af0265865698",
+          "actual": "b0ad12762be33a617991924c0cdcef536fd326484b8d094114cadc46fa1baee6",
+          "match": false
+        },
+        {
+          "path": "SenseHome-6G/net_offload/policy_cli.exe",
+          "expected": "04c8f57dd7c26a8168540c67410f9e5a63f4e818c3c5a97841c1510f6a2db72e",
+          "actual": "04c8f57dd7c26a8168540c67410f9e5a63f4e818c3c5a97841c1510f6a2db72e",
+          "match": true
+        }
+      ]
+    }
+  },
+  "v4_frozen_source": [
+    {
+      "path": "docs/experiments_v4/frozen_source/docs/demo_v3/planning_recovery.py",
+      "expected": "5706f7514fec3ea4454d6d7fa4eebab769c64e2a60bd68bcca1de680e8c8f553",
+      "actual": "5706f7514fec3ea4454d6d7fa4eebab769c64e2a60bd68bcca1de680e8c8f553",
+      "match": true
+    },
+    {
+      "path": "docs/experiments_v4/frozen_source/docs/demo_v3/runtime.py",
+      "expected": "330a01159f79dda885c8acd137607d111b59ad959676689548039fb47c291ac5",
+      "actual": "330a01159f79dda885c8acd137607d111b59ad959676689548039fb47c291ac5",
+      "match": true
+    },
+    {
+      "path": "docs/experiments_v4/frozen_source/docs/demo_v3/local_models.json",
+      "expected": "45fa69de5595770100289bece32065f78d3c5783808192082c3d8d4b24af0b45",
+      "actual": "45fa69de5595770100289bece32065f78d3c5783808192082c3d8d4b24af0b45",
+      "match": true
+    },
+    {
+      "path": "docs/experiments_v4/frozen_source/docs/deployment/fused_eval.py",
+      "expected": "37c8060aea5ee827a871a2b2624fc64f9134fbd125d8a15d0dc2ba7a046d14ca",
+      "actual": "37c8060aea5ee827a871a2b2624fc64f9134fbd125d8a15d0dc2ba7a046d14ca",
+      "match": true
+    },
+    {
+      "path": "docs/experiments_v4/frozen_source/docs/deployment/real_fault_eval_v2.py",
+      "expected": "1af0fa45ae1710c842375ebae699a5ea552518be6bc3ff62f5f2a3fbbd5c90f5",
+      "actual": "1af0fa45ae1710c842375ebae699a5ea552518be6bc3ff62f5f2a3fbbd5c90f5",
+      "match": true
+    },
+    {
+      "path": "docs/experiments_v4/frozen_source/SenseHome-6G/net_offload/offload_gateway.py",
+      "expected": "d9f63dc5b6ffe73266777d8100e29842fce2d13005fd08baee8c997bf36793ef",
+      "actual": "d9f63dc5b6ffe73266777d8100e29842fce2d13005fd08baee8c997bf36793ef",
+      "match": true
+    },
+    {
+      "path": "docs/experiments_v4/frozen_source/SenseHome-6G/net_offload/resource_policy.py",
+      "expected": "84a924664541b2e21458fa4e78130b1d31ee4e5f16ff6e859d11d951c23b3593",
+      "actual": "84a924664541b2e21458fa4e78130b1d31ee4e5f16ff6e859d11d951c23b3593",
+      "match": true
+    },
+    {
+      "path": "docs/experiments_v4/frozen_source/SenseHome-6G/net_offload/experiment_inputs.py",
+      "expected": "43cd45bf47d03250e84fe7800afc276077ceeceb826693452696b44538de60a2",
+      "actual": "43cd45bf47d03250e84fe7800afc276077ceeceb826693452696b44538de60a2",
+      "match": true
+    },
+    {
+      "path": "docs/experiments_v4/frozen_source/SenseHome-6G/net_offload/eval_model.py",
+      "expected": "2e6bd2f615590d3639061c59bcb8d8012fba9916a5130a3148b03283544c1395",
+      "actual": "2e6bd2f615590d3639061c59bcb8d8012fba9916a5130a3148b03283544c1395",
+      "match": true
+    },
+    {
+      "path": "docs/experiments_v4/frozen_source/SenseHome-6G/net_offload/offload_policy.c",
+      "expected": "58a772ddf879bb14480a3d715ac97b34fc64f811274a4a76a66c123f2c8f8135",
+      "actual": "58a772ddf879bb14480a3d715ac97b34fc64f811274a4a76a66c123f2c8f8135",
+      "match": true
+    },
+    {
+      "path": "docs/experiments_v4/frozen_source/SenseHome-6G/net_offload/offload_policy.h",
+      "expected": "304ff38f9685bbd7bbf7fd2c2602dcf19e9c74a25d127b9f1070aa749c891702",
+      "actual": "304ff38f9685bbd7bbf7fd2c2602dcf19e9c74a25d127b9f1070aa749c891702",
+      "match": true
+    },
+    {
+      "path": "docs/experiments_v4/frozen_source/SenseHome-6G/net_offload/policy_cli.c",
+      "expected": "c88b50574b5b29a9bca81fe46bab26d7f8e6710edf24e514ee0c632349af82b8",
+      "actual": "c88b50574b5b29a9bca81fe46bab26d7f8e6710edf24e514ee0c632349af82b8",
+      "match": true
+    },
+    {
+      "path": "docs/experiments_v4/frozen_source/SenseHome-6G/net_offload/policy_cli.exe",
+      "expected": "04c8f57dd7c26a8168540c67410f9e5a63f4e818c3c5a97841c1510f6a2db72e",
+      "actual": "04c8f57dd7c26a8168540c67410f9e5a63f4e818c3c5a97841c1510f6a2db72e",
+      "match": true
+    },
+    {
+      "path": "docs/experiments_v4/frozen_source/SenseHome-6G/net_offload/backends/openai_backend.py",
+      "expected": "c8e82dc2f9693cede4417fc73df9e487266aea400b6aca7c0978155a58e3d7d5",
+      "actual": "c8e82dc2f9693cede4417fc73df9e487266aea400b6aca7c0978155a58e3d7d5",
+      "match": true
+    },
+    {
+      "path": "docs/experiments_v4/frozen_source/SenseHome-6G/net_offload/backends/eval_commands.reviewed.jsonl",
+      "expected": "3a2d50c6dca46712df5b1c26fdf6fbcfa0f76a79164b9c99f3cc07be9d7e0b06",
+      "actual": "3a2d50c6dca46712df5b1c26fdf6fbcfa0f76a79164b9c99f3cc07be9d7e0b06",
+      "match": true
+    },
+    {
+      "path": "docs/experiments_v4/frozen_source/SenseHome-6G/net_offload/experiments/policy_config.json",
+      "expected": "d76b772582fdf8d5b6417c77b55870a61b747fd797d290eb9b32b91cbd500449",
+      "actual": "d76b772582fdf8d5b6417c77b55870a61b747fd797d290eb9b32b91cbd500449",
+      "match": true
+    },
+    {
+      "path": "docs/experiments_v4/frozen_source/SenseHome-6G/net_offload/experiments/service_profiles.json",
+      "expected": "f258c15b35db282c5c7065857b842e3b3b65ed8f5a5d81cff692494b1dd99da7",
+      "actual": "f258c15b35db282c5c7065857b842e3b3b65ed8f5a5d81cff692494b1dd99da7",
+      "match": true
+    },
+    {
+      "path": "docs/experiments_v4/frozen_source/openvela_smart_home/dashboard/bridge_server.py",
+      "expected": "16c0edf80492483464f9796a678cfce9f2f91a284db83fba6758720bd1785770",
+      "actual": "16c0edf80492483464f9796a678cfce9f2f91a284db83fba6758720bd1785770",
+      "match": true
+    },
+    {
+      "path": "docs/experiments_v4/frozen_source/openvela_smart_home/dashboard/backend_monitor.py",
+      "expected": "f492423236e2b9c66bdb19499ed58097b0d93ec4273523674024fbc47eeb8507",
+      "actual": "f492423236e2b9c66bdb19499ed58097b0d93ec4273523674024fbc47eeb8507",
+      "match": true
+    },
+    {
+      "path": "docs/experiments_v4/frozen_source/openvela_smart_home/dashboard/device_actions.py",
+      "expected": "b639e8e294e03a0171cea74ceaa2d9f2bae5c26166f019908e93af0265865698",
+      "actual": "b639e8e294e03a0171cea74ceaa2d9f2bae5c26166f019908e93af0265865698",
+      "match": true
+    },
+    {
+      "path": "docs/experiments_v4/frozen_source/docs/experiments/20261111_fused_real/reviewed_20_sealed_repeat3/calibration.json",
+      "expected": "d30a6d3db818f044572cce3a4c0c49eebb8bcd9e37fbe0ec679ad1c8079c234f",
+      "actual": "d30a6d3db818f044572cce3a4c0c49eebb8bcd9e37fbe0ec679ad1c8079c234f",
+      "match": true
+    }
+  ],
+  "v4_final_artifacts": [
+    {
+      "path": "docs/experiments_v4/blocks.json",
+      "expected": "50a4d3f649a1b85cf634a6e75e81871ff4b54241f5279eee02378590168278c1",
+      "actual": "50a4d3f649a1b85cf634a6e75e81871ff4b54241f5279eee02378590168278c1",
+      "match": true
+    },
+    {
+      "path": "docs/experiments_v4/cloud_server.log",
+      "expected": "a904d1a61789c746f0e2378369baea46ae5a45279d081279dc7efa3d4b94d34e",
+      "actual": "a904d1a61789c746f0e2378369baea46ae5a45279d081279dc7efa3d4b94d34e",
+      "match": true
+    },
+    {
+      "path": "docs/experiments_v4/execution_status.json",
+      "expected": "6db98c24f445111ef5a5d50b0e02d80bc13c3010de8cd7df9f143fa94cf065f0",
+      "actual": "6db98c24f445111ef5a5d50b0e02d80bc13c3010de8cd7df9f143fa94cf065f0",
+      "match": true
+    },
+    {
+      "path": "docs/experiments_v4/execution_stdout.txt",
+      "expected": "5acfbe15599d7fc6d3156dcf44ad105cef9b67fd07497091d02b87c220858aaa",
+      "actual": "5acfbe15599d7fc6d3156dcf44ad105cef9b67fd07497091d02b87c220858aaa",
+      "match": true
+    },
+    {
+      "path": "docs/experiments_v4/final_verification_stdout.txt",
+      "expected": "03d25c9f0ff744a7b3238be78e601335c2740017ac7632b1d7543370d266c3f2",
+      "actual": "03d25c9f0ff744a7b3238be78e601335c2740017ac7632b1d7543370d266c3f2",
+      "match": true
+    },
+    {
+      "path": "docs/experiments_v4/initial_state.json",
+      "expected": "964cf9285a53f459c30be4047e0b9f878ac1ef13d5f61e913fd8cb3fe2677dbd",
+      "actual": "964cf9285a53f459c30be4047e0b9f878ac1ef13d5f61e913fd8cb3fe2677dbd",
+      "match": true
+    },
+    {
+      "path": "docs/experiments_v4/local_server.log",
+      "expected": "79600d74cce29f283e0798970404d212032482834c6a27b1fb0877860e6f3951",
+      "actual": "79600d74cce29f283e0798970404d212032482834c6a27b1fb0877860e6f3951",
+      "match": true
+    },
+    {
+      "path": "docs/experiments_v4/post_analysis.json",
+      "expected": "3e2aa7f0a78581acf32e7a6348d3697b4407af167beae563a945684d2451fa02",
+      "actual": "3e2aa7f0a78581acf32e7a6348d3697b4407af167beae563a945684d2451fa02",
+      "match": true
+    },
+    {
+      "path": "docs/experiments_v4/progress.md",
+      "expected": "9a998dc1619b46e92b393379aa882305f94dce0b7f197a7822a9e2551eb45e9f",
+      "actual": "9a998dc1619b46e92b393379aa882305f94dce0b7f197a7822a9e2551eb45e9f",
+      "match": true
+    },
+    {
+      "path": "docs/experiments_v4/README.md",
+      "expected": "63c1c7438979d14fe6171eca69239a7cb4fe8d0e0c409e415d9ca4fb7ece82f0",
+      "actual": "63c1c7438979d14fe6171eca69239a7cb4fe8d0e0c409e415d9ca4fb7ece82f0",
+      "match": true
+    },
+    {
+      "path": "docs/experiments_v4/recommendation.json",
+      "expected": "a488d4e1ea423f022f0396f9c98bb9b9787e374225cdfe4f9fe4722f9e77ccf6",
+      "actual": "a488d4e1ea423f022f0396f9c98bb9b9787e374225cdfe4f9fe4722f9e77ccf6",
+      "match": true
+    },
+    {
+      "path": "docs/experiments_v4/registration.json",
+      "expected": "4e4afc334c442d4b8ba7faacb7cf708b1576eb5bc873238b8697041062177840",
+      "actual": "4e4afc334c442d4b8ba7faacb7cf708b1576eb5bc873238b8697041062177840",
+      "match": true
+    },
+    {
+      "path": "docs/experiments_v4/registration_stdout.txt",
+      "expected": "f11e5839b843f0da1efb8d6b0bc9a1b9b441ca9bb8a64d0db7a993db497ed332",
+      "actual": "f11e5839b843f0da1efb8d6b0bc9a1b9b441ca9bb8a64d0db7a993db497ed332",
+      "match": true
+    },
+    {
+      "path": "docs/experiments_v4/report.md",
+      "expected": "cd6d482e3d335c668b9f0cdefac6a4655848abf61cda310be2600c5820b5680a",
+      "actual": "cd6d482e3d335c668b9f0cdefac6a4655848abf61cda310be2600c5820b5680a",
+      "match": true
+    },
+    {
+      "path": "docs/experiments_v4/results.json",
+      "expected": "ef2bb39991becdbdba0d2afc84cc95d373efe2e45ccd79711b116eb9fbf7bb12",
+      "actual": "ef2bb39991becdbdba0d2afc84cc95d373efe2e45ccd79711b116eb9fbf7bb12",
+      "match": true
+    },
+    {
+      "path": "docs/experiments_v4/rows.jsonl",
+      "expected": "dea460dcf6525270c9d997bfab7f7d1a2383ec950a9c35534337b7b17653d432",
+      "actual": "dea460dcf6525270c9d997bfab7f7d1a2383ec950a9c35534337b7b17653d432",
+      "match": true
+    },
+    {
+      "path": "docs/experiments_v4/runtime_manifest.json",
+      "expected": "483cb0a4a247d32a525f0b1ac29886b094cfac01b2088d6c926eec8c77cd0d69",
+      "actual": "483cb0a4a247d32a525f0b1ac29886b094cfac01b2088d6c926eec8c77cd0d69",
+      "match": true
+    },
+    {
+      "path": "docs/experiments_v4/runtime_resolved.json",
+      "expected": "a2de044c608cf7b7b8594e6769a328f43f56e256e364dc5c1777fa1b9c04a9e7",
+      "actual": "a2de044c608cf7b7b8594e6769a328f43f56e256e364dc5c1777fa1b9c04a9e7",
+      "match": true
+    },
+    {
+      "path": "docs/experiments_v4/run_comparison.py",
+      "expected": "1aaf8f46ebfc9127179646e163833460dbdbbc80dda049708593abe3efa40fed",
+      "actual": "1aaf8f46ebfc9127179646e163833460dbdbbc80dda049708593abe3efa40fed",
+      "match": true
+    },
+    {
+      "path": "docs/experiments_v4/source_capture.json",
+      "expected": "8b9e850bd9c4499eae1431b87433e30b2ad21086667c0dc844cf50b801819908",
+      "actual": "8b9e850bd9c4499eae1431b87433e30b2ad21086667c0dc844cf50b801819908",
+      "match": true
+    },
+    {
+      "path": "docs/experiments_v4/tdd_green.txt",
+      "expected": "4532afdf79f63b9ae60ad4a38e57f168d9190032172261b6636b3554ddb9f0a8",
+      "actual": "4532afdf79f63b9ae60ad4a38e57f168d9190032172261b6636b3554ddb9f0a8",
+      "match": true
+    },
+    {
+      "path": "docs/experiments_v4/tdd_green2.txt",
+      "expected": "c26af8a13fe1ae714ac56b0d1af449fb03f24f4730ceffa8fd5eb15878ae5a3b",
+      "actual": "c26af8a13fe1ae714ac56b0d1af449fb03f24f4730ceffa8fd5eb15878ae5a3b",
+      "match": true
+    },
+    {
+      "path": "docs/experiments_v4/tdd_red.txt",
+      "expected": "6d24c3d8dd1aeb1be924e9c5ff6f9a0569f177d053d4b9e1681b36141de430dc",
+      "actual": "6d24c3d8dd1aeb1be924e9c5ff6f9a0569f177d053d4b9e1681b36141de430dc",
+      "match": true
+    },
+    {
+      "path": "docs/experiments_v4/tdd_red2.txt",
+      "expected": "bdb8c9e7985ae8eb12e04e426a6369be9332d83b77649cdeec2cf957c20fbeed",
+      "actual": "bdb8c9e7985ae8eb12e04e426a6369be9332d83b77649cdeec2cf957c20fbeed",
+      "match": true
+    },
+    {
+      "path": "docs/experiments_v4/test_comparison.py",
+      "expected": "47dac11bf199d1e1a810fb20b9857b8b7bddb5ebe5ae2270efd2b0db501b0bf9",
+      "actual": "4c0b53a173cd42d902a0af0074ceea4e736db280e2b1f294598d8d4b75a69dd5",
+      "match": false
+    },
+    {
+      "path": "docs/experiments_v4/verification.json",
+      "expected": "de47c6e0cf5dde5b042b54858ea01aa0a2e97d11e78d703e45290f84c597b503",
+      "actual": "de47c6e0cf5dde5b042b54858ea01aa0a2e97d11e78d703e45290f84c597b503",
+      "match": true
+    },
+    {
+      "path": "docs/experiments_v4/verification_stdout.txt",
+      "expected": "03d25c9f0ff744a7b3238be78e601335c2740017ac7632b1d7543370d266c3f2",
+      "actual": "03d25c9f0ff744a7b3238be78e601335c2740017ac7632b1d7543370d266c3f2",
+      "match": true
+    },
+    {
+      "path": "docs/experiments_v4/verify_run.py",
+      "expected": "721575bf9ebd0c666f4303656f1acc28d87fe7dfe9530adb2d6058999b79ec87",
+      "actual": "721575bf9ebd0c666f4303656f1acc28d87fe7dfe9530adb2d6058999b79ec87",
+      "match": true
+    },
+    {
+      "path": "docs/experiments_v4/warmups.json",
+      "expected": "e69d7f457ee25f1da7cebd8b9e7f5c4257884392a83e786c6e045084d9b07606",
+      "actual": "e69d7f457ee25f1da7cebd8b9e7f5c4257884392a83e786c6e045084d9b07606",
+      "match": true
+    }
+  ],
+  "operations_frozen_source": [
+    {
+      "path": "docs/operations_v4/source_snapshot/openvela_smart_home/dashboard/bridge_server.py",
+      "expected": "58e498e0a8827070c97591db9cadeec140337c687640f5b89a395b2c46eb7a63",
+      "actual": "58e498e0a8827070c97591db9cadeec140337c687640f5b89a395b2c46eb7a63",
+      "match": true
+    },
+    {
+      "path": "docs/operations_v4/source_snapshot/openvela_smart_home/dashboard/device_actions.py",
+      "expected": "b639e8e294e03a0171cea74ceaa2d9f2bae5c26166f019908e93af0265865698",
+      "actual": "b639e8e294e03a0171cea74ceaa2d9f2bae5c26166f019908e93af0265865698",
+      "match": true
+    },
+    {
+      "path": "docs/operations_v4/source_snapshot/openvela_smart_home/dashboard/backend_monitor.py",
+      "expected": "f492423236e2b9c66bdb19499ed58097b0d93ec4273523674024fbc47eeb8507",
+      "actual": "f492423236e2b9c66bdb19499ed58097b0d93ec4273523674024fbc47eeb8507",
+      "match": true
+    },
+    {
+      "path": "docs/operations_v4/source_snapshot/openvela_smart_home/dashboard/web_panel.html",
+      "expected": "2828245613d5b23dea4c0f875818929b05f34ccdba3b422b9f0d5a10b9fd6afd",
+      "actual": "2828245613d5b23dea4c0f875818929b05f34ccdba3b422b9f0d5a10b9fd6afd",
+      "match": true
+    },
+    {
+      "path": "docs/operations_v4/source_snapshot/SenseHome-6G/net_offload/offload_policy.c",
+      "expected": "58a772ddf879bb14480a3d715ac97b34fc64f811274a4a76a66c123f2c8f8135",
+      "actual": "58a772ddf879bb14480a3d715ac97b34fc64f811274a4a76a66c123f2c8f8135",
+      "match": true
+    },
+    {
+      "path": "docs/operations_v4/source_snapshot/SenseHome-6G/net_offload/policy_cli.exe",
+      "expected": "04c8f57dd7c26a8168540c67410f9e5a63f4e818c3c5a97841c1510f6a2db72e",
+      "actual": "04c8f57dd7c26a8168540c67410f9e5a63f4e818c3c5a97841c1510f6a2db72e",
+      "match": true
+    },
+    {
+      "path": "docs/operations_v4/source_snapshot/docs/demo_v3/runtime.py",
+      "expected": "330a01159f79dda885c8acd137607d111b59ad959676689548039fb47c291ac5",
+      "actual": "330a01159f79dda885c8acd137607d111b59ad959676689548039fb47c291ac5",
+      "match": true
+    },
+    {
+      "path": "docs/operations_v4/source_snapshot/docs/demo_v3/planning_recovery.py",
+      "expected": "5706f7514fec3ea4454d6d7fa4eebab769c64e2a60bd68bcca1de680e8c8f553",
+      "actual": "5706f7514fec3ea4454d6d7fa4eebab769c64e2a60bd68bcca1de680e8c8f553",
+      "match": true
+    },
+    {
+      "path": "docs/operations_v4/source_snapshot/docs/demo_v3/run_live.py",
+      "expected": "712d8db2d006c0f51d08451ac0d45d7252a6668587d024b6239dcc17178a9bcf",
+      "actual": "712d8db2d006c0f51d08451ac0d45d7252a6668587d024b6239dcc17178a9bcf",
+      "match": true
+    },
+    {
+      "path": "docs/operations_v4/source_snapshot/docs/deployment/fused_eval.py",
+      "expected": null,
+      "actual": null,
+      "match": true
+    },
+    {
+      "path": "docs/operations_v4/source_snapshot/docs/demo_v4/live_v4.py",
+      "expected": "330206034290fc295f8396e0e5613a495e897dc18ef79923c9612849f29d8b1a",
+      "actual": "330206034290fc295f8396e0e5613a495e897dc18ef79923c9612849f29d8b1a",
+      "match": true
+    },
+    {
+      "path": "docs/operations_v4/source_snapshot/SenseHome-6G/net_offload/durable_receipts.py",
+      "expected": "6af0c33864c0709e5a4752ae874e079fafffe0b6edf6e124db86f52529adbf11",
+      "actual": "6af0c33864c0709e5a4752ae874e079fafffe0b6edf6e124db86f52529adbf11",
+      "match": true
+    },
+    {
+      "path": "docs/operations_v4/source_snapshot/SenseHome-6G/net_offload/mqtt_receipts.py",
+      "expected": "136769908d4a9a4accaecfd05a0f6c9298a7219d7476475335571012d9a424eb",
+      "actual": "136769908d4a9a4accaecfd05a0f6c9298a7219d7476475335571012d9a424eb",
+      "match": true
+    }
+  ],
+  "material_manifest_references": [
+    {
+      "manifest": "dist/final/20261111/source_manifest.json",
+      "role": "source",
+      "path": "SenseHome-6G/evidence/network_compute/20261111_fused/README.md",
+      "expected": "ad9ea2be9c7fa0165b6d5aa9f8be569d9f3c978c04164ad6b21210b3675aaf3b",
+      "actual": "ad9ea2be9c7fa0165b6d5aa9f8be569d9f3c978c04164ad6b21210b3675aaf3b",
+      "match": true
+    },
+    {
+      "manifest": "dist/final/20261111/source_manifest.json",
+      "role": "source",
+      "path": "SenseHome-6G/evidence/network_compute/20261111_fused/validation/verification.json",
+      "expected": "ec93c18ec292b404c15edc3b20ca29294423508082c75634798954703d82e7cb",
+      "actual": "ec93c18ec292b404c15edc3b20ca29294423508082c75634798954703d82e7cb",
+      "match": true
+    },
+    {
+      "manifest": "dist/final/20261111/source_manifest.json",
+      "role": "source",
+      "path": "SenseHome-6G/evidence/network_compute/20261111_fused/replay/summary.json",
+      "expected": "47f77b9343dfacabd273e81255cb9a291ec93b39644aea78f0022ee8fcdb5150",
+      "actual": "47f77b9343dfacabd273e81255cb9a291ec93b39644aea78f0022ee8fcdb5150",
+      "match": true
+    },
+    {
+      "manifest": "dist/final/20261111/source_manifest.json",
+      "role": "source",
+      "path": "SenseHome-6G/evidence/network_compute/20261111_fused/http_gateway/summary.json",
+      "expected": "e8b9abc4cdfa806b09a0d5de7b8ba639c51e2a04587f30026f5e986212286ec8",
+      "actual": "e8b9abc4cdfa806b09a0d5de7b8ba639c51e2a04587f30026f5e986212286ec8",
+      "match": true
+    },
+    {
+      "manifest": "dist/final/20261111/source_manifest.json",
+      "role": "source",
+      "path": "SenseHome-6G/evidence/network_compute/20261111_fused/safety/summary.json",
+      "expected": "7d57e829f56e5556fb95158d048eb8ca6709c5f8292ddc3219d6aebed281b581",
+      "actual": "7d57e829f56e5556fb95158d048eb8ca6709c5f8292ddc3219d6aebed281b581",
+      "match": true
+    },
+    {
+      "manifest": "dist/final/20261111/source_manifest.json",
+      "role": "source",
+      "path": "docs/experiments/autodl_20261103_normalized_v2/README.md",
+      "expected": "0244dde04f48059dbc6cd585a5f541222848e7503a7217fa60477aa4a47a709b",
+      "actual": "0244dde04f48059dbc6cd585a5f541222848e7503a7217fa60477aa4a47a709b",
+      "match": true
+    },
+    {
+      "manifest": "dist/final/20261111/source_manifest.json",
+      "role": "source",
+      "path": "docs/experiments/autodl_20261103_normalized_v2/eval.formal.json",
+      "expected": "cdf958bb09c11d9f05a1002a2b218ec3d178664e6edb019a6528664d7f7b2bcb",
+      "actual": "cdf958bb09c11d9f05a1002a2b218ec3d178664e6edb019a6528664d7f7b2bcb",
+      "match": true
+    },
+    {
+      "manifest": "dist/final/20261111/source_manifest.json",
+      "role": "source",
+      "path": "docs/experiments/autodl_20261103_normalized_v2/eval.draft.json",
+      "expected": "6a8be1718f4ba4b5796f4d4f99f0058b03e7bfa2d58bef97a49e78a5d5117e6c",
+      "actual": "6a8be1718f4ba4b5796f4d4f99f0058b03e7bfa2d58bef97a49e78a5d5117e6c",
+      "match": true
+    },
+    {
+      "manifest": "dist/final/20261111/source_manifest.json",
+      "role": "source",
+      "path": "docs/deployment/20条动作标签冻结记录_20261103.json",
+      "expected": "d99633dd8a245cfadd1d9c67b0b932043bd97d05b5395fc2addab325bdfe2a29",
+      "actual": "d99633dd8a245cfadd1d9c67b0b932043bd97d05b5395fc2addab325bdfe2a29",
+      "match": true
+    },
+    {
+      "manifest": "dist/final/20261111/source_manifest.json",
+      "role": "source",
+      "path": "SenseHome-6G/evidence/current/dashboard/dashboard_results.json",
+      "expected": "8441db19b596b413cc88071a9b0b745f165e2eb2d4729b3caa09830885c12d70",
+      "actual": "8441db19b596b413cc88071a9b0b745f165e2eb2d4729b3caa09830885c12d70",
+      "match": true
+    },
+    {
+      "manifest": "dist/final/20261111/source_manifest.json",
+      "role": "source",
+      "path": "docs/video/v2/software_replay.json",
+      "expected": "8eada8a5fb603b9def2a29c5f64f11e8517402f21af0330a3ef797d9989033e8",
+      "actual": "8eada8a5fb603b9def2a29c5f64f11e8517402f21af0330a3ef797d9989033e8",
+      "match": true
+    },
+    {
+      "manifest": "dist/final/20261111/source_manifest.json",
+      "role": "source",
+      "path": "docs/value/public_sources.json",
+      "expected": "0c1d514084f067820b7c55ed4cf3997096fd859fce0c6815b39778087a8a8f7e",
+      "actual": "0c1d514084f067820b7c55ed4cf3997096fd859fce0c6815b39778087a8a8f7e",
+      "match": true
+    },
+    {
+      "manifest": "dist/final/20261111/source_manifest.json",
+      "role": "source",
+      "path": "docs/value/host_resources_summary.json",
+      "expected": "1f33eb303f4356b13107fcc26900126a609c6369079a1a6016d25182d8de2622",
+      "actual": "1f33eb303f4356b13107fcc26900126a609c6369079a1a6016d25182d8de2622",
+      "match": true
+    },
+    {
+      "manifest": "dist/final/20261111/source_manifest.json",
+      "role": "source",
+      "path": "docs/value/cost_results/current_unknown.json",
+      "expected": "039621a35326cb385d2e228904daef4b329f5ba4c0b2396d2c7613d8cab1ab95",
+      "actual": "039621a35326cb385d2e228904daef4b329f5ba4c0b2396d2c7613d8cab1ab95",
+      "match": true
+    },
+    {
+      "manifest": "dist/final/20261111/source_manifest.json",
+      "role": "source",
+      "path": "docs/experiments/20261111_fused_real/reviewed_20_sealed_repeat3/summary.json",
+      "expected": "b0ed9da27872aba21cad050485c0b7106c024774ff5b9d18da19afee605d4f7f",
+      "actual": "b0ed9da27872aba21cad050485c0b7106c024774ff5b9d18da19afee605d4f7f",
+      "match": true
+    },
+    {
+      "manifest": "dist/final/20261111/source_manifest.json",
+      "role": "source",
+      "path": "docs/experiments/20261111_fused_real/reviewed_20_sealed_repeat3/report.json",
+      "expected": "d695368596da69fe400cea10991584932742cd43bd60bd85ab16290693725322",
+      "actual": "d695368596da69fe400cea10991584932742cd43bd60bd85ab16290693725322",
+      "match": true
+    },
+    {
+      "manifest": "dist/final/20261111/source_manifest.json",
+      "role": "source",
+      "path": "docs/experiments/20261111_fused_real/sealed_results.md",
+      "expected": "451da0671dabe8a15ec853245bf0573a991a0f94d2b041295f5ae2ba09d068aa",
+      "actual": "451da0671dabe8a15ec853245bf0573a991a0f94d2b041295f5ae2ba09d068aa",
+      "match": true
+    },
+    {
+      "manifest": "dist/final/20261111/source_manifest.json",
+      "role": "source",
+      "path": "docs/experiments/20261111_fused_real/sealed_evidence_index.json",
+      "expected": "c7a5f98cc4c81f498f7454e19d64d6bc3d0011c7bd1b919c41ce1be243544490",
+      "actual": "c7a5f98cc4c81f498f7454e19d64d6bc3d0011c7bd1b919c41ce1be243544490",
+      "match": true
+    },
+    {
+      "manifest": "dist/final/20261111_v2/source_manifest.json",
+      "role": "source",
+      "path": "SenseHome-6G/evidence/network_compute/20261111_fused/README.md",
+      "expected": "ad9ea2be9c7fa0165b6d5aa9f8be569d9f3c978c04164ad6b21210b3675aaf3b",
+      "actual": "ad9ea2be9c7fa0165b6d5aa9f8be569d9f3c978c04164ad6b21210b3675aaf3b",
+      "match": true
+    },
+    {
+      "manifest": "dist/final/20261111_v2/source_manifest.json",
+      "role": "source",
+      "path": "SenseHome-6G/evidence/network_compute/20261111_fused/validation/verification.json",
+      "expected": "ec93c18ec292b404c15edc3b20ca29294423508082c75634798954703d82e7cb",
+      "actual": "ec93c18ec292b404c15edc3b20ca29294423508082c75634798954703d82e7cb",
+      "match": true
+    },
+    {
+      "manifest": "dist/final/20261111_v2/source_manifest.json",
+      "role": "source",
+      "path": "SenseHome-6G/evidence/network_compute/20261111_fused/replay/summary.json",
+      "expected": "47f77b9343dfacabd273e81255cb9a291ec93b39644aea78f0022ee8fcdb5150",
+      "actual": "47f77b9343dfacabd273e81255cb9a291ec93b39644aea78f0022ee8fcdb5150",
+      "match": true
+    },
+    {
+      "manifest": "dist/final/20261111_v2/source_manifest.json",
+      "role": "source",
+      "path": "SenseHome-6G/evidence/network_compute/20261111_fused/http_gateway/summary.json",
+      "expected": "e8b9abc4cdfa806b09a0d5de7b8ba639c51e2a04587f30026f5e986212286ec8",
+      "actual": "e8b9abc4cdfa806b09a0d5de7b8ba639c51e2a04587f30026f5e986212286ec8",
+      "match": true
+    },
+    {
+      "manifest": "dist/final/20261111_v2/source_manifest.json",
+      "role": "source",
+      "path": "SenseHome-6G/evidence/network_compute/20261111_fused/safety/summary.json",
+      "expected": "7d57e829f56e5556fb95158d048eb8ca6709c5f8292ddc3219d6aebed281b581",
+      "actual": "7d57e829f56e5556fb95158d048eb8ca6709c5f8292ddc3219d6aebed281b581",
+      "match": true
+    },
+    {
+      "manifest": "dist/final/20261111_v2/source_manifest.json",
+      "role": "source",
+      "path": "docs/experiments/autodl_20261103_normalized_v2/README.md",
+      "expected": "0244dde04f48059dbc6cd585a5f541222848e7503a7217fa60477aa4a47a709b",
+      "actual": "0244dde04f48059dbc6cd585a5f541222848e7503a7217fa60477aa4a47a709b",
+      "match": true
+    },
+    {
+      "manifest": "dist/final/20261111_v2/source_manifest.json",
+      "role": "source",
+      "path": "docs/experiments/autodl_20261103_normalized_v2/eval.formal.json",
+      "expected": "cdf958bb09c11d9f05a1002a2b218ec3d178664e6edb019a6528664d7f7b2bcb",
+      "actual": "cdf958bb09c11d9f05a1002a2b218ec3d178664e6edb019a6528664d7f7b2bcb",
+      "match": true
+    },
+    {
+      "manifest": "dist/final/20261111_v2/source_manifest.json",
+      "role": "source",
+      "path": "docs/experiments/autodl_20261103_normalized_v2/eval.draft.json",
+      "expected": "6a8be1718f4ba4b5796f4d4f99f0058b03e7bfa2d58bef97a49e78a5d5117e6c",
+      "actual": "6a8be1718f4ba4b5796f4d4f99f0058b03e7bfa2d58bef97a49e78a5d5117e6c",
+      "match": true
+    },
+    {
+      "manifest": "dist/final/20261111_v2/source_manifest.json",
+      "role": "source",
+      "path": "docs/deployment/20条动作标签冻结记录_20261103.json",
+      "expected": "d99633dd8a245cfadd1d9c67b0b932043bd97d05b5395fc2addab325bdfe2a29",
+      "actual": "d99633dd8a245cfadd1d9c67b0b932043bd97d05b5395fc2addab325bdfe2a29",
+      "match": true
+    },
+    {
+      "manifest": "dist/final/20261111_v2/source_manifest.json",
+      "role": "source",
+      "path": "SenseHome-6G/evidence/current/dashboard/dashboard_results.json",
+      "expected": "8441db19b596b413cc88071a9b0b745f165e2eb2d4729b3caa09830885c12d70",
+      "actual": "8441db19b596b413cc88071a9b0b745f165e2eb2d4729b3caa09830885c12d70",
+      "match": true
+    },
+    {
+      "manifest": "dist/final/20261111_v2/source_manifest.json",
+      "role": "source",
+      "path": "docs/video/v2/software_replay.json",
+      "expected": "8eada8a5fb603b9def2a29c5f64f11e8517402f21af0330a3ef797d9989033e8",
+      "actual": "8eada8a5fb603b9def2a29c5f64f11e8517402f21af0330a3ef797d9989033e8",
+      "match": true
+    },
+    {
+      "manifest": "dist/final/20261111_v2/source_manifest.json",
+      "role": "source",
+      "path": "docs/value/public_sources.json",
+      "expected": "0c1d514084f067820b7c55ed4cf3997096fd859fce0c6815b39778087a8a8f7e",
+      "actual": "0c1d514084f067820b7c55ed4cf3997096fd859fce0c6815b39778087a8a8f7e",
+      "match": true
+    },
+    {
+      "manifest": "dist/final/20261111_v2/source_manifest.json",
+      "role": "source",
+      "path": "docs/value/host_resources_summary.json",
+      "expected": "1f33eb303f4356b13107fcc26900126a609c6369079a1a6016d25182d8de2622",
+      "actual": "1f33eb303f4356b13107fcc26900126a609c6369079a1a6016d25182d8de2622",
+      "match": true
+    },
+    {
+      "manifest": "dist/final/20261111_v2/source_manifest.json",
+      "role": "source",
+      "path": "docs/value/cost_results/current_unknown.json",
+      "expected": "039621a35326cb385d2e228904daef4b329f5ba4c0b2396d2c7613d8cab1ab95",
+      "actual": "039621a35326cb385d2e228904daef4b329f5ba4c0b2396d2c7613d8cab1ab95",
+      "match": true
+    },
+    {
+      "manifest": "dist/final/20261111_v2/source_manifest.json",
+      "role": "source",
+      "path": "docs/experiments/20261111_fused_real/reviewed_20_sealed_repeat3/summary.json",
+      "expected": "b0ed9da27872aba21cad050485c0b7106c024774ff5b9d18da19afee605d4f7f",
+      "actual": "b0ed9da27872aba21cad050485c0b7106c024774ff5b9d18da19afee605d4f7f",
+      "match": true
+    },
+    {
+      "manifest": "dist/final/20261111_v2/source_manifest.json",
+      "role": "source",
+      "path": "docs/experiments/20261111_fused_real/reviewed_20_sealed_repeat3/report.json",
+      "expected": "d695368596da69fe400cea10991584932742cd43bd60bd85ab16290693725322",
+      "actual": "d695368596da69fe400cea10991584932742cd43bd60bd85ab16290693725322",
+      "match": true
+    },
+    {
+      "manifest": "dist/final/20261111_v2/source_manifest.json",
+      "role": "source",
+      "path": "docs/experiments/20261111_fused_real/sealed_results.md",
+      "expected": "451da0671dabe8a15ec853245bf0573a991a0f94d2b041295f5ae2ba09d068aa",
+      "actual": "451da0671dabe8a15ec853245bf0573a991a0f94d2b041295f5ae2ba09d068aa",
+      "match": true
+    },
+    {
+      "manifest": "dist/final/20261111_v2/source_manifest.json",
+      "role": "source",
+      "path": "docs/experiments/20261111_fused_real/sealed_evidence_index.json",
+      "expected": "c7a5f98cc4c81f498f7454e19d64d6bc3d0011c7bd1b919c41ce1be243544490",
+      "actual": "c7a5f98cc4c81f498f7454e19d64d6bc3d0011c7bd1b919c41ce1be243544490",
+      "match": true
+    },
+    {
+      "manifest": "dist/final/20261111_v2/source_manifest.json",
+      "role": "source",
+      "path": "docs/experiments/20261111_real_fault_v2/registration.json",
+      "expected": "926b4e18b0aa1428f31d8f7a90886c65e928f8ce7191abd4a2a4cdff4decf630",
+      "actual": "926b4e18b0aa1428f31d8f7a90886c65e928f8ce7191abd4a2a4cdff4decf630",
+      "match": true
+    },
+    {
+      "manifest": "dist/final/20261111_v2/source_manifest.json",
+      "role": "source",
+      "path": "docs/experiments/20261111_real_fault_v2/summary.json",
+      "expected": "9b64bb49ffcba595133d791dd0adc1290a64101f66172e30f351256cd3e7f767",
+      "actual": "9b64bb49ffcba595133d791dd0adc1290a64101f66172e30f351256cd3e7f767",
+      "match": true
+    },
+    {
+      "manifest": "dist/final/20261111_v2/source_manifest.json",
+      "role": "source",
+      "path": "docs/experiments/20261111_real_fault_v2/audit.json",
+      "expected": "77cc83f6520f54084ea0064981c164cd13a9fa76da5585ba88938f1439db326f",
+      "actual": "77cc83f6520f54084ea0064981c164cd13a9fa76da5585ba88938f1439db326f",
+      "match": true
+    },
+    {
+      "manifest": "dist/final/20261111_v2/source_manifest.json",
+      "role": "source",
+      "path": "docs/experiments/20261111_real_fault_v2/post_run_runtime_inventory.json",
+      "expected": "3478a986f66bd3b98263a8374b00ba97a07925d302f3b5558ff68ce668dbab44",
+      "actual": "3478a986f66bd3b98263a8374b00ba97a07925d302f3b5558ff68ce668dbab44",
+      "match": true
+    },
+    {
+      "manifest": "dist/final/20261111_v2/source_manifest.json",
+      "role": "source",
+      "path": "docs/competition_v2/public_user_reports.json",
+      "expected": "b42b902c2de87045d6d886112303620285b4767a2900d53aa831a7a5dce5d5cf",
+      "actual": "b42b902c2de87045d6d886112303620285b4767a2900d53aa831a7a5dce5d5cf",
+      "match": true
+    },
+    {
+      "manifest": "dist/final/20261111_v2/source_manifest.json",
+      "role": "source",
+      "path": "docs/trial_v2/verification/browser_acceptance.json",
+      "expected": "e551c656f55bd99944dc2ae7197c7267b2c9ae42b0a6d32fc451bcf9b788dbe6",
+      "actual": "e551c656f55bd99944dc2ae7197c7267b2c9ae42b0a6d32fc451bcf9b788dbe6",
+      "match": true
+    },
+    {
+      "manifest": "dist/final/20261111_v2/source_manifest.json",
+      "role": "source",
+      "path": "docs/value_v2/results/usage_summary.json",
+      "expected": "8a36d463e3b8c8c4b01922e4246f7efdd80727bf1c48af896f25b0c2f728c466",
+      "actual": "8a36d463e3b8c8c4b01922e4246f7efdd80727bf1c48af896f25b0c2f728c466",
+      "match": true
+    },
+    {
+      "manifest": "dist/final/20261111_v2/source_manifest.json",
+      "role": "source",
+      "path": "docs/value_v2/results/ledger_current_result.json",
+      "expected": "9c0fe638e248c50fef79c629893aad211b23e3dd57e83cb7e4d0781b247f162c",
+      "actual": "9c0fe638e248c50fef79c629893aad211b23e3dd57e83cb7e4d0781b247f162c",
+      "match": true
+    },
+    {
+      "manifest": "dist/final/20261111_v2/source_manifest.json",
+      "role": "source",
+      "path": "docs/reviews/2026-11-11-v2-integration-review.md",
+      "expected": "27be9ce3254a9defd23c3e00f1d9ac3d0af8e41405a0137a56c379ca1c8f8d93",
+      "actual": "27be9ce3254a9defd23c3e00f1d9ac3d0af8e41405a0137a56c379ca1c8f8d93",
+      "match": true
+    },
+    {
+      "manifest": "dist/final/20261111_v3/report_manifest.json",
+      "role": "source",
+      "path": "docs/competition_v3/整改与冲刺路线.md",
+      "expected": "1d6790cf7c1f95fee03b1fa6320d121d9dcac6022b6bec6005c80ae032c434bd",
+      "actual": "1d6790cf7c1f95fee03b1fa6320d121d9dcac6022b6bec6005c80ae032c434bd",
+      "match": true
+    },
+    {
+      "manifest": "dist/final/20261111_v3/report_manifest.json",
+      "role": "source",
+      "path": "docs/competition_v3/官方评分逐项差距.md",
+      "expected": "8a9574be6f5c5d24d4c678a96c50906fd2ce7842ae55b845ea88f640aa7c760e",
+      "actual": "8a9574be6f5c5d24d4c678a96c50906fd2ce7842ae55b845ea88f640aa7c760e",
+      "match": true
+    },
+    {
+      "manifest": "dist/final/20261111_v3/report_manifest.json",
+      "role": "source",
+      "path": "docs/competition_v3/获奖案例与差距参照.md",
+      "expected": "9a449e156ba19867554ce78f0ed3847208e8ca4f8210a65c7c6f9876aeb10a40",
+      "actual": "9a449e156ba19867554ce78f0ed3847208e8ca4f8210a65c7c6f9876aeb10a40",
+      "match": true
+    },
+    {
+      "manifest": "dist/final/20261111_v3/report_manifest.json",
+      "role": "source",
+      "path": "docs/competition_v3/答辩20问证据卡.md",
+      "expected": "9675301f551a935b06b63a5f6854f18b00f4c4f37bc998630d5233006352c367",
+      "actual": "9675301f551a935b06b63a5f6854f18b00f4c4f37bc998630d5233006352c367",
+      "match": true
+    },
+    {
+      "manifest": "dist/final/20261111_v4/source_manifest.json",
+      "role": "source",
+      "path": "docs/competition_v3/criteria.json",
+      "expected": "b87f5efc06cd44adcb1f198413fefe7cda01bc10370935cbf2cdb33e8b984782",
+      "actual": "b87f5efc06cd44adcb1f198413fefe7cda01bc10370935cbf2cdb33e8b984782",
+      "match": true
+    },
+    {
+      "manifest": "dist/final/20261111_v4/source_manifest.json",
+      "role": "source",
+      "path": "附件1-作品提交要求.pdf",
+      "expected": "889d49c1f33ded274c301c81f4efd899977b84e303d132631f0edeeea2a4f439",
+      "actual": "889d49c1f33ded274c301c81f4efd899977b84e303d132631f0edeeea2a4f439",
+      "match": true
+    },
+    {
+      "manifest": "dist/final/20261111_v4/source_manifest.json",
+      "role": "source",
+      "path": "附件2-作品方案大纲与评分标准.pdf",
+      "expected": "f4d611c26b49d378821c976cf9555b0d90ea98c4b2e3d411bd4d31a0f7441542",
+      "actual": "f4d611c26b49d378821c976cf9555b0d90ea98c4b2e3d411bd4d31a0f7441542",
+      "match": true
+    },
+    {
+      "manifest": "dist/final/20261111_v4/source_manifest.json",
+      "role": "source",
+      "path": "docs/execution/2026-11-11-evidence-v3.md",
+      "expected": "ba0ddb82729ee9c0aeeff52ac001c165994ab0c410b3a11aa33e173cae33d5b4",
+      "actual": "ba0ddb82729ee9c0aeeff52ac001c165994ab0c410b3a11aa33e173cae33d5b4",
+      "match": true
+    },
+    {
+      "manifest": "dist/final/20261111_v4/source_manifest.json",
+      "role": "source",
+      "path": "docs/experiments/20261111_fused_real/sealed_evidence_index.json",
+      "expected": "c7a5f98cc4c81f498f7454e19d64d6bc3d0011c7bd1b919c41ce1be243544490",
+      "actual": "c7a5f98cc4c81f498f7454e19d64d6bc3d0011c7bd1b919c41ce1be243544490",
+      "match": true
+    },
+    {
+      "manifest": "dist/final/20261111_v4/source_manifest.json",
+      "role": "source",
+      "path": "docs/experiments/20261111_real_fault_v2/summary.json",
+      "expected": "9b64bb49ffcba595133d791dd0adc1290a64101f66172e30f351256cd3e7f767",
+      "actual": "9b64bb49ffcba595133d791dd0adc1290a64101f66172e30f351256cd3e7f767",
+      "match": true
+    },
+    {
+      "manifest": "dist/final/20261111_v4/source_manifest.json",
+      "role": "source",
+      "path": "docs/experiments/20261111_race_v3_portfix/summary.json",
+      "expected": "e27282dba66705e9255ada6a9316e252433d9611499708d24b0580c19a1243f7",
+      "actual": "e27282dba66705e9255ada6a9316e252433d9611499708d24b0580c19a1243f7",
+      "match": true
+    },
+    {
+      "manifest": "dist/final/20261111_v4/source_manifest.json",
+      "role": "source",
+      "path": "docs/experiments/20261111_race_v3_portfix/rows.jsonl",
+      "expected": "b7ce17f342d75633a911931b734879cd28d26cc086d41d3d46c8e4b25edcb288",
+      "actual": "b7ce17f342d75633a911931b734879cd28d26cc086d41d3d46c8e4b25edcb288",
+      "match": true
+    },
+    {
+      "manifest": "dist/final/20261111_v4/source_manifest.json",
+      "role": "source",
+      "path": "docs/value/public_sources.json",
+      "expected": "0c1d514084f067820b7c55ed4cf3997096fd859fce0c6815b39778087a8a8f7e",
+      "actual": "0c1d514084f067820b7c55ed4cf3997096fd859fce0c6815b39778087a8a8f7e",
+      "match": true
+    },
+    {
+      "manifest": "dist/final/20261111_v4/source_manifest.json",
+      "role": "source",
+      "path": "docs/value_v2/results/ledger_current_result.json",
+      "expected": "9c0fe638e248c50fef79c629893aad211b23e3dd57e83cb7e4d0781b247f162c",
+      "actual": "9c0fe638e248c50fef79c629893aad211b23e3dd57e83cb7e4d0781b247f162c",
+      "match": true
+    },
+    {
+      "manifest": "dist/final/20261111_v4/source_manifest.json",
+      "role": "source",
+      "path": "docs/competition_v4/results_inputs.json",
+      "expected": "d919ead10ee8934fead18b339618c71a535ec790a6b88d637603cfa714a2ff24",
+      "actual": "d919ead10ee8934fead18b339618c71a535ec790a6b88d637603cfa714a2ff24",
+      "match": true
+    },
+    {
+      "manifest": "dist/final/20261111_v4/source_manifest.json",
+      "role": "source",
+      "path": "docs/submission/build_submission_v4.py",
+      "expected": "2752e21b6edb3a9e163fbdc0a5be79b56e11a01c5277e58359d9ea5c47b95664",
+      "actual": "2752e21b6edb3a9e163fbdc0a5be79b56e11a01c5277e58359d9ea5c47b95664",
+      "match": true
+    },
+    {
+      "manifest": "dist/final/20261111_v4/source_manifest.json",
+      "role": "source",
+      "path": "docs/experiments_v4/post_analysis.json",
+      "expected": "3e2aa7f0a78581acf32e7a6348d3697b4407af167beae563a945684d2451fa02",
+      "actual": "3e2aa7f0a78581acf32e7a6348d3697b4407af167beae563a945684d2451fa02",
+      "match": true
+    },
+    {
+      "manifest": "dist/final/20261111_v4/source_manifest.json",
+      "role": "source",
+      "path": "docs/experiments_v4/recommendation.json",
+      "expected": "a488d4e1ea423f022f0396f9c98bb9b9787e374225cdfe4f9fe4722f9e77ccf6",
+      "actual": "a488d4e1ea423f022f0396f9c98bb9b9787e374225cdfe4f9fe4722f9e77ccf6",
+      "match": true
+    },
+    {
+      "manifest": "dist/final/20261111_v4/source_manifest.json",
+      "role": "source",
+      "path": "docs/experiments_v4/final_manifest.json",
+      "expected": "6eff402175eacf8c6f5235a1e712d0d43efee7ca1df2ce3a1ed776cb4ef1c559",
+      "actual": "6eff402175eacf8c6f5235a1e712d0d43efee7ca1df2ce3a1ed776cb4ef1c559",
+      "match": true
+    },
+    {
+      "manifest": "dist/final/20261111_v4/source_manifest.json",
+      "role": "source",
+      "path": "docs/operations_v4/registration.json",
+      "expected": "67de82fc769890fa94d6cc8597e9db892f65728472dca5cbad14a3e5bce4da87",
+      "actual": "67de82fc769890fa94d6cc8597e9db892f65728472dca5cbad14a3e5bce4da87",
+      "match": true
+    },
+    {
+      "manifest": "dist/final/20261111_v4/source_manifest.json",
+      "role": "source",
+      "path": "docs/operations_v4/rows.jsonl",
+      "expected": "700c4bba4b596048a693415bdf1dc58a6c2f41e8c6dfd28a74c6dcc56430ba0e",
+      "actual": "700c4bba4b596048a693415bdf1dc58a6c2f41e8c6dfd28a74c6dcc56430ba0e",
+      "match": true
+    },
+    {
+      "manifest": "dist/final/20261111_v4/source_manifest.json",
+      "role": "source",
+      "path": "docs/operations_v4/resource_samples.json",
+      "expected": "4b53668da64baec6e13787bcd442585a89f7b14cb55e3ae351f7a8cfcc1aae9a",
+      "actual": "4b53668da64baec6e13787bcd442585a89f7b14cb55e3ae351f7a8cfcc1aae9a",
+      "match": true
+    },
+    {
+      "manifest": "dist/final/20261111_v4/source_manifest.json",
+      "role": "source",
+      "path": "docs/integration_v4/LATEST.json",
+      "expected": "af9fe70643e9cebbb219ff7b06d6edb371df8f2716aea7b52c45d78c7ff18ba1",
+      "actual": "af9fe70643e9cebbb219ff7b06d6edb371df8f2716aea7b52c45d78c7ff18ba1",
+      "match": true
+    },
+    {
+      "manifest": "dist/final/20261111_v4/source_manifest.json",
+      "role": "source",
+      "path": "docs/integration_v4/verification/final_verification.json",
+      "expected": "23ef9db674a4862e41dda9e4f6a838b64c26c20a688a3b687fd525567b044b46",
+      "actual": "23ef9db674a4862e41dda9e4f6a838b64c26c20a688a3b687fd525567b044b46",
+      "match": true
+    },
+    {
+      "manifest": "dist/final/20261111_v4/source_manifest.json",
+      "role": "source",
+      "path": "docs/reviews/2026-11-11-v4-independent-review.md",
+      "expected": "d26451cbe5ee66d871181e1703580efbfe8f9255917fcf4ad8596a45e759fd70",
+      "actual": "d26451cbe5ee66d871181e1703580efbfe8f9255917fcf4ad8596a45e759fd70",
+      "match": true
+    },
+    {
+      "manifest": "dist/final/20261111_v4/source_manifest.json",
+      "role": "source",
+      "path": "docs/reviews/2026-11-11-v4-independent-review.json",
+      "expected": "d7d431a1df13f95764639e660e490e10fba0e67f50c4ac069766a539667a43be",
+      "actual": "d7d431a1df13f95764639e660e490e10fba0e67f50c4ac069766a539667a43be",
+      "match": true
+    },
+    {
+      "manifest": "dist/final/20261111_v4/source_manifest.json",
+      "role": "source",
+      "path": "docs/video/v4/metadata_correction.json",
+      "expected": "4062897ce814e751ffd64f1d5153e463c7b7e886bfe2a0c87e8df29cf36e1bb8",
+      "actual": "4062897ce814e751ffd64f1d5153e463c7b7e886bfe2a0c87e8df29cf36e1bb8",
+      "match": true
+    },
+    {
+      "manifest": "dist/final/20261111_v4/source_manifest.json",
+      "role": "source",
+      "path": "docs/video/v4/visual_review.json",
+      "expected": "afff4bca755b34f9fc3a005c23b4bd5916a7bd52683d91b5d6da53facb4fdc8f",
+      "actual": "afff4bca755b34f9fc3a005c23b4bd5916a7bd52683d91b5d6da53facb4fdc8f",
+      "match": true
+    },
+    {
+      "manifest": "dist/final/20261111_v4/source_manifest.json",
+      "role": "source",
+      "path": "docs/experiments_v4/registration.json",
+      "expected": "4e4afc334c442d4b8ba7faacb7cf708b1576eb5bc873238b8697041062177840",
+      "actual": "4e4afc334c442d4b8ba7faacb7cf708b1576eb5bc873238b8697041062177840",
+      "match": true
+    },
+    {
+      "manifest": "dist/final/20261111_v4/source_manifest.json",
+      "role": "source",
+      "path": "docs/experiments_v4/results.json",
+      "expected": "ef2bb39991becdbdba0d2afc84cc95d373efe2e45ccd79711b116eb9fbf7bb12",
+      "actual": "ef2bb39991becdbdba0d2afc84cc95d373efe2e45ccd79711b116eb9fbf7bb12",
+      "match": true
+    },
+    {
+      "manifest": "dist/final/20261111_v4/source_manifest.json",
+      "role": "source",
+      "path": "docs/experiments_v4/verification.json",
+      "expected": "de47c6e0cf5dde5b042b54858ea01aa0a2e97d11e78d703e45290f84c597b503",
+      "actual": "de47c6e0cf5dde5b042b54858ea01aa0a2e97d11e78d703e45290f84c597b503",
+      "match": true
+    },
+    {
+      "manifest": "dist/final/20261111_v4/source_manifest.json",
+      "role": "source",
+      "path": "docs/experiments_v4/rows.jsonl",
+      "expected": "dea460dcf6525270c9d997bfab7f7d1a2383ec950a9c35534337b7b17653d432",
+      "actual": "dea460dcf6525270c9d997bfab7f7d1a2383ec950a9c35534337b7b17653d432",
+      "match": true
+    },
+    {
+      "manifest": "dist/final/20261111_v4/source_manifest.json",
+      "role": "source",
+      "path": "docs/integration_v4/runs/20261111T070837Z_7cfbfcf3/summary.json",
+      "expected": "5d65ed8b866818aa82aa990b01dfaccfc498742951e3eebacc7b92e5f76a8919",
+      "actual": "5d65ed8b866818aa82aa990b01dfaccfc498742951e3eebacc7b92e5f76a8919",
+      "match": true
+    },
+    {
+      "manifest": "dist/final/20261111_v4/source_manifest.json",
+      "role": "source",
+      "path": "docs/integration_v4/runs/20261111T070837Z_7cfbfcf3/offline_audit.json",
+      "expected": "5fd72e44af8561b2823bf56b5a573f7e3755739988046e239562c241276e2e4c",
+      "actual": "5fd72e44af8561b2823bf56b5a573f7e3755739988046e239562c241276e2e4c",
+      "match": true
+    },
+    {
+      "manifest": "dist/final/20261111_v4/source_manifest.json",
+      "role": "source",
+      "path": "docs/integration_v4/runs/20261111T070837Z_7cfbfcf3/normal/offload_events.jsonl",
+      "expected": "d3bdc03829a5aadd3bc651f809c85bb9164b765151186d6d30e9df99f13b8d44",
+      "actual": "d3bdc03829a5aadd3bc651f809c85bb9164b765151186d6d30e9df99f13b8d44",
+      "match": true
+    },
+    {
+      "manifest": "dist/final/20261111_v4/source_manifest.json",
+      "role": "source",
+      "path": "docs/operations_v4/results.json",
+      "expected": "4a0dc9467b1892f43973ecdd6fa82e93e9310d30ce712a8d38b919878191a642",
+      "actual": "4a0dc9467b1892f43973ecdd6fa82e93e9310d30ce712a8d38b919878191a642",
+      "match": true
+    },
+    {
+      "manifest": "dist/final/20261111_v4/source_manifest.json",
+      "role": "source",
+      "path": "docs/video/v4/manifest.json",
+      "expected": "d780d74d20ee9e9aeb801d558acdc72273fcb9168fc6189d1a2a25e18d9cb46c",
+      "actual": "d780d74d20ee9e9aeb801d558acdc72273fcb9168fc6189d1a2a25e18d9cb46c",
+      "match": true
+    },
+    {
+      "manifest": "dist/final/20261111_v4/source_manifest.json",
+      "role": "source",
+      "path": "docs/video/v4/final_runtime_records.json",
+      "expected": "14e79b65b7a6387afa6c25b22758f53185c6175b7e096cf67254c1464402da32",
+      "actual": "14e79b65b7a6387afa6c25b22758f53185c6175b7e096cf67254c1464402da32",
+      "match": true
+    },
+    {
+      "manifest": "dist/final/20261111_v4/source_manifest.json",
+      "role": "source",
+      "path": "docs/video/v4/final_runtime_manifest.json",
+      "expected": "df990fda78745d71b9e976479424e7a1b950484841d8b273e66552d6f69e0c48",
+      "actual": "df990fda78745d71b9e976479424e7a1b950484841d8b273e66552d6f69e0c48",
+      "match": true
+    },
+    {
+      "manifest": "dist/final/20261111_v4/source_manifest.json",
+      "role": "source",
+      "path": "docs/integration_v4/runs/20261111T070837Z_7cfbfcf3/normal/http_results.json",
+      "expected": "e8d8c3518f97c2a1180765406804605d8b43f2430382181d1ccce734ee56059e",
+      "actual": "e8d8c3518f97c2a1180765406804605d8b43f2430382181d1ccce734ee56059e",
+      "match": true
+    },
+    {
+      "manifest": "dist/final/20261111_v4/source_manifest.json",
+      "role": "source",
+      "path": "docs/integration_v4/runs/20261111T070837Z_7cfbfcf3/ack_loss/http_results.json",
+      "expected": "ea760061b34691b713fe845f8eeb855b1408aa6d7eb090a31de685ebe1ef9e68",
+      "actual": "ea760061b34691b713fe845f8eeb855b1408aa6d7eb090a31de685ebe1ef9e68",
+      "match": true
+    },
+    {
+      "manifest": "dist/final/20261111_v4/source_manifest.json",
+      "role": "output",
+      "path": "dist/final/20261111_v4/SenseHome_场景设计方案_20261111_v4.docx",
+      "expected": "ee300246b6f25a46fd1222e84b38a0ef3a97cfdaa772b394a3b28c20669db927",
+      "actual": "ee300246b6f25a46fd1222e84b38a0ef3a97cfdaa772b394a3b28c20669db927",
+      "match": true
+    },
+    {
+      "manifest": "dist/final/20261111_v4/source_manifest.json",
+      "role": "output",
+      "path": "dist/final/20261111_v4/SenseHome_场景设计答辩_20261111_v4.pptx",
+      "expected": "8a4fdd2656e0b4e6c7c76e8fb25290f671bc3bba067e3b785013d242b04b57d9",
+      "actual": "8a4fdd2656e0b4e6c7c76e8fb25290f671bc3bba067e3b785013d242b04b57d9",
+      "match": true
+    },
+    {
+      "manifest": "dist/final/20261111_v4/source_manifest.json",
+      "role": "output",
+      "path": "dist/final/20261111_v4/SenseHome_场景设计方案_20261111_v4.pdf",
+      "expected": "20fa2514810e76bc9585d355fe48900f3423d8c317112ea12220512e18844edb",
+      "actual": "20fa2514810e76bc9585d355fe48900f3423d8c317112ea12220512e18844edb",
+      "match": true
+    },
+    {
+      "manifest": "dist/final/20261111_v4/source_manifest.json",
+      "role": "output",
+      "path": "dist/final/20261111_v4/SenseHome_场景设计答辩_20261111_v4.pdf",
+      "expected": "1dbfcca5e3910c6f0aa453cc275a286a27104f238e3a02742e99f186a17adf19",
+      "actual": "1dbfcca5e3910c6f0aa453cc275a286a27104f238e3a02742e99f186a17adf19",
+      "match": true
+    },
+    {
+      "manifest": "dist/final/20261111_v4/source_manifest.json",
+      "role": "output",
+      "path": "dist/final/20261111_v4/SenseHome_合并佐证材料_20261111_v4.pdf",
+      "expected": "e6f36b727027ab1448b28988a704a1f576cdec17755299f0ee4d962fba668ae3",
+      "actual": "e6f36b727027ab1448b28988a704a1f576cdec17755299f0ee4d962fba668ae3",
+      "match": true
+    },
+    {
+      "manifest": "dist/final/20261111_v4/source_manifest.json",
+      "role": "output",
+      "path": "dist/final/20261111_v4/作品简介.txt",
+      "expected": "cfa4b174f54a51db07add6f23095958b1c9372d0b2972686abe75380e1d37a86",
+      "actual": "cfa4b174f54a51db07add6f23095958b1c9372d0b2972686abe75380e1d37a86",
+      "match": true
+    },
+    {
+      "manifest": "dist/final/20261111_v4/source_manifest.json",
+      "role": "output",
+      "path": "dist/final/20261111_v4/SenseHome_当前软件证据回放_20261111_v4.mp4",
+      "expected": "d4d507268a614a4b77e665cfcd6e6a7f98594ff20114842d08069bc922410b6f",
+      "actual": "d4d507268a614a4b77e665cfcd6e6a7f98594ff20114842d08069bc922410b6f",
+      "match": true
+    }
+  ],
+  "summary": {
+    "preserved_package_count": 6,
+    "preservation_checks": 137,
+    "preservation_matches": 136,
+    "preservation_mismatches": [
+      {
+        "path": "docs/experiments_v4/test_comparison.py",
+        "expected": "47dac11bf199d1e1a810fb20b9857b8b7bddb5ebe5ae2270efd2b0db501b0bf9",
+        "actual": "4c0b53a173cd42d902a0af0074ceea4e736db280e2b1f294598d8d4b75a69dd5",
+        "match": false
+      }
+    ],
+    "material_reference_checks": 93,
+    "material_reference_matches": 93,
+    "material_reference_mismatches": [],
+    "current_source_differences": 24
+  }
+}

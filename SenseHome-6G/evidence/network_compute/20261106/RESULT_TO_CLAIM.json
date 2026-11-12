@@ -1,0 +1,71 @@
+{
+  "schema_version": "aris.result-to-claim.v1",
+  "date": "2026-11-06",
+  "claim_supported": "yes",
+  "interpretation": "yes only for the exact bounded C1-C5 statements in implement-stage/EXPERIMENT_PROTOCOL.md, retaining every scope qualification below",
+  "integrity_status": "warn",
+  "audit_verdict": "WARN",
+  "review_independence": "same-family",
+  "acceptance_status": "provisional",
+  "identity_source": "native_spawn_configuration",
+  "reviewer_model": "gpt-6.1-sol",
+  "reviewer_reasoning": "xhigh",
+  "runtime_server_attested_model": null,
+  "completion": "completed",
+  "source_audit": "EXPERIMENT_AUDIT.json",
+  "raw_review": ".aris/traces/experiment-audit/2026-11-06_run01/reviewer_response.json",
+  "claims": [
+    {
+      "id": "C1",
+      "claim_supported": "yes",
+      "claim": "Default command entry consumes both model-endpoint observations and invokes C.",
+      "support": "Default initializer tests, 9084 persisted HTTP events and fresh captured-observation C replay agree.",
+      "qualification": "Software integration with loopback fixed-plan fixtures and recorded operator overrides, not real-model accuracy or physical deployment."
+    },
+    {
+      "id": "C2",
+      "claim_supported": "yes",
+      "claim": "Observed network/resource failures change route with reasons.",
+      "support": "14-phase synthetic replay, 333 checked switches, exact C rerun and HTTP event observations.",
+      "qualification": "Injected application-level faults/telemetry; no captured household/radio causal generalization."
+    },
+    {
+      "id": "C3",
+      "claim_supported": "yes",
+      "claim": "Rule and model command paths retain the structured whitelist.",
+      "support": "Shared full-batch allowlisted executor, state lock, 25 rejection/unchanged-state cases, three positive controls and local/default-entry tests.",
+      "qualification": "Structured action boundary on isolated simulated state, not complete natural-language authorization, prompt-injection or physical-safety certification."
+    },
+    {
+      "id": "C4",
+      "claim_supported": "yes",
+      "claim": "Joint information affects contract attainment under declared loads.",
+      "support": "Seven matched replay arms and separate real-thread/HTTP queue workloads show both benefits and regressions.",
+      "qualification": "No uniform superiority. Completion and deadline attainment remain separate. Deterministic replay alone is paired; HTTP health differs across arms.",
+      "negative_evidence": [
+        "Replay complex deadline: joint 4254/5040 < no-hysteresis 4260/5040.",
+        "Direct-thread complex completion: joint 1789/1848 < network-only 1848/1848.",
+        "HTTP matrix complex deadline: joint 192/252 < compute-only 210/252.",
+        "HTTP cloud-down c32 deadline: joint 208/231 < network-only 231/231.",
+        "HTTP cloud-down c64 deadline: joint 89/231 < network-only 102/231."
+      ]
+    },
+    {
+      "id": "C5",
+      "claim_supported": "yes",
+      "claim": "Reported quantiles/counts are recomputable from raw records.",
+      "support": "Five fresh mechanical audit reruns pass; independent raw counts/type-7 quantiles/completion/deadline calculations agree; current and archived enumerated sources match.",
+      "qualification": "Mechanical evidence is not independent semantic approval. The during-run freeze covers 46 enumerated sources; supplemental tests/backends are explicitly post-run snapshots."
+    }
+  ],
+  "must_not_derive": [
+    "real-model NLU accuracy from fixed-contract completion",
+    "real AI/GPU/6G/physical-household capacity from software wall clocks or sleeps",
+    "population-level reliability from three synthetic seeds or tautological modeled safety success",
+    "energy consumption from Python CPU time",
+    "uniform joint/hysteresis superiority",
+    "paired causal HTTP gains from shared configured traces",
+    "complete product or official submission readiness",
+    "independent cross-family semantic acceptance"
+  ]
+}

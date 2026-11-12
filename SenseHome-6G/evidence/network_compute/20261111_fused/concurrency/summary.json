@@ -1,0 +1,4382 @@
+{
+  "schema_version": "sensehome.concurrency.v1",
+  "command": [
+    "C:\\Users\\\u90d1\u5085\u97ec\\Desktop\\\u5927\u5b66\u751f\u6d3b\\AIC\\AIC6G\u4e13\u9879\u8d5b_2026\\\u573a\u666f\u8d5b\u9053\\SenseHome-6G\\net_offload\\experiment_concurrency.py",
+    "--out",
+    "C:\\Users\\\u90d1\u5085\u97ec\\Desktop\\\u5927\u5b66\u751f\u6d3b\\AIC\\AIC6G\u4e13\u9879\u8d5b_2026\\\u573a\u666f\u8d5b\u9053\\SenseHome-6G\\net_offload\\_work\\validation_fused_20261111_r3\\concurrency",
+    "--cli",
+    "C:\\Users\\\u90d1\u5085\u97ec\\Desktop\\\u5927\u5b66\u751f\u6d3b\\AIC\\AIC6G\u4e13\u9879\u8d5b_2026\\\u573a\u666f\u8d5b\u9053\\SenseHome-6G\\net_offload\\policy_cli.exe",
+    "--requests",
+    "128",
+    "--repetitions",
+    "3",
+    "--inflight-max",
+    "64"
+  ],
+  "platform": "Windows-11-10.0.26200-SP0",
+  "python": "3.13.7 (tags/v3.13.7:bcee1c3, Aug 14 2025, 14:15:11) [MSC v.1944 64 bit (AMD64)]",
+  "sources": {
+    "C:\\Users\\\u90d1\u5085\u97ec\\Desktop\\\u5927\u5b66\u751f\u6d3b\\AIC\\AIC6G\u4e13\u9879\u8d5b_2026\\\u573a\u666f\u8d5b\u9053\\docs\\deployment\\autodl_large_recovery.py": "0e1e5f4c88b097782c277f03e2e7479a4c5e6ba6e24dc500852e7e1528e98586",
+    "C:\\Users\\\u90d1\u5085\u97ec\\Desktop\\\u5927\u5b66\u751f\u6d3b\\AIC\\AIC6G\u4e13\u9879\u8d5b_2026\\\u573a\u666f\u8d5b\u9053\\docs\\deployment\\autodl_small_recovery.py": "46713354baa7a53196abb1a827f029acbb9ef76df75bbc28a29603bd1e7b59b6",
+    "C:\\Users\\\u90d1\u5085\u97ec\\Desktop\\\u5927\u5b66\u751f\u6d3b\\AIC\\AIC6G\u4e13\u9879\u8d5b_2026\\\u573a\u666f\u8d5b\u9053\\docs\\deployment\\capture_real_gateway.py": "b23fe2a7c1bb47e9e8adae3ffec78443efa6374efbc081efca926732b54a8137",
+    "C:\\Users\\\u90d1\u5085\u97ec\\Desktop\\\u5927\u5b66\u751f\u6d3b\\AIC\\AIC6G\u4e13\u9879\u8d5b_2026\\\u573a\u666f\u8d5b\u9053\\docs\\deployment\\freeze_captured_eval.py": "3600294e985a07ae5f4b3561484ddd34d80d4db0712a9c107d09e00e0e83925c",
+    "C:\\Users\\\u90d1\u5085\u97ec\\Desktop\\\u5927\u5b66\u751f\u6d3b\\AIC\\AIC6G\u4e13\u9879\u8d5b_2026\\\u573a\u666f\u8d5b\u9053\\docs\\deployment\\prepare_autodl_recovery.py": "1b7991af2da019dede514d64abade47d27785d5b96ba7f0d6bdb903ffcaf94a6",
+    "C:\\Users\\\u90d1\u5085\u97ec\\Desktop\\\u5927\u5b66\u751f\u6d3b\\AIC\\AIC6G\u4e13\u9879\u8d5b_2026\\\u573a\u666f\u8d5b\u9053\\docs\\deployment\\test_capture_real_gateway.py": "e8ce2e1c48d189db4548f8c8f0afb6cde3bb6ab806a951928bdb14491602031e",
+    "C:\\Users\\\u90d1\u5085\u97ec\\Desktop\\\u5927\u5b66\u751f\u6d3b\\AIC\\AIC6G\u4e13\u9879\u8d5b_2026\\\u573a\u666f\u8d5b\u9053\\docs\\deployment\\test_large_recovery.py": "9022fdcd7cebe20fa9573977c5cb617ab457e1f6b6627d071973c63c130ba6ec",
+    "C:\\Users\\\u90d1\u5085\u97ec\\Desktop\\\u5927\u5b66\u751f\u6d3b\\AIC\\AIC6G\u4e13\u9879\u8d5b_2026\\\u573a\u666f\u8d5b\u9053\\docs\\deployment\\test_recovery_helpers.py": "b12bc0228938fcd0edb683de76b223bda4d1139d48ed187727a3b2898e90ae6a",
+    "C:\\Users\\\u90d1\u5085\u97ec\\Desktop\\\u5927\u5b66\u751f\u6d3b\\AIC\\AIC6G\u4e13\u9879\u8d5b_2026\\\u573a\u666f\u8d5b\u9053\\openvela_smart_home\\dashboard\\backend_monitor.py": "f492423236e2b9c66bdb19499ed58097b0d93ec4273523674024fbc47eeb8507",
+    "C:\\Users\\\u90d1\u5085\u97ec\\Desktop\\\u5927\u5b66\u751f\u6d3b\\AIC\\AIC6G\u4e13\u9879\u8d5b_2026\\\u573a\u666f\u8d5b\u9053\\openvela_smart_home\\dashboard\\bridge_server.py": "78a346f74ab2c19f052d0761f1673f72bf07d6a6d82976ed94571ffa8c3a444f",
+    "C:\\Users\\\u90d1\u5085\u97ec\\Desktop\\\u5927\u5b66\u751f\u6d3b\\AIC\\AIC6G\u4e13\u9879\u8d5b_2026\\\u573a\u666f\u8d5b\u9053\\openvela_smart_home\\dashboard\\device_actions.py": "b639e8e294e03a0171cea74ceaa2d9f2bae5c26166f019908e93af0265865698",
+    "C:\\Users\\\u90d1\u5085\u97ec\\Desktop\\\u5927\u5b66\u751f\u6d3b\\AIC\\AIC6G\u4e13\u9879\u8d5b_2026\\\u573a\u666f\u8d5b\u9053\\openvela_smart_home\\dashboard\\tests\\test_backend_monitor.py": "222d0218d4abdaa5ed9f336428b9ed5f206175ff899b1eac875d32b05eb1206d",
+    "C:\\Users\\\u90d1\u5085\u97ec\\Desktop\\\u5927\u5b66\u751f\u6d3b\\AIC\\AIC6G\u4e13\u9879\u8d5b_2026\\\u573a\u666f\u8d5b\u9053\\openvela_smart_home\\dashboard\\tests\\test_default_resource_gateway.py": "b1f88d63b250de5037d4d3af97faaf9677e44054942e05657c2cb7a40f5cac60",
+    "C:\\Users\\\u90d1\u5085\u97ec\\Desktop\\\u5927\u5b66\u751f\u6d3b\\AIC\\AIC6G\u4e13\u9879\u8d5b_2026\\\u573a\u666f\u8d5b\u9053\\openvela_smart_home\\dashboard\\tests\\test_device_actions.py": "9581e5a5de598bab413b54581abae1e7bb05e82d95277fff9df4b569ee19744f",
+    "C:\\Users\\\u90d1\u5085\u97ec\\Desktop\\\u5927\u5b66\u751f\u6d3b\\AIC\\AIC6G\u4e13\u9879\u8d5b_2026\\\u573a\u666f\u8d5b\u9053\\openvela_smart_home\\dashboard\\tests\\test_gateway_bridge.py": "3d3f66ccb4941bd26c8cf1b09bfe5743a3a033499b5d81d53562a103434f9f40",
+    "C:\\Users\\\u90d1\u5085\u97ec\\Desktop\\\u5927\u5b66\u751f\u6d3b\\AIC\\AIC6G\u4e13\u9879\u8d5b_2026\\\u573a\u666f\u8d5b\u9053\\openvela_smart_home\\dashboard\\tests\\test_http_boundaries.py": "e2bc8625bb15f900895a0e5bd02f7ee996a5572bd719e3ed80caabe9e2ddffff",
+    "C:\\Users\\\u90d1\u5085\u97ec\\Desktop\\\u5927\u5b66\u751f\u6d3b\\AIC\\AIC6G\u4e13\u9879\u8d5b_2026\\\u573a\u666f\u8d5b\u9053\\openvela_smart_home\\dashboard\\tests\\test_remote_execution.py": "be558b5402af0ef4d4f0e603860bcc9978c63cb3e9c3f7688cac6f3473389bac",
+    "C:\\Users\\\u90d1\u5085\u97ec\\Desktop\\\u5927\u5b66\u751f\u6d3b\\AIC\\AIC6G\u4e13\u9879\u8d5b_2026\\\u573a\u666f\u8d5b\u9053\\openvela_smart_home\\dashboard\\tests\\test_resource_observation.py": "719a29f32588eafde85a837e573169907fc44d6765830c668686af11e45019d7",
+    "C:\\Users\\\u90d1\u5085\u97ec\\Desktop\\\u5927\u5b66\u751f\u6d3b\\AIC\\AIC6G\u4e13\u9879\u8d5b_2026\\\u573a\u666f\u8d5b\u9053\\openvela_smart_home\\dashboard\\tests\\test_web_panel_gateway.py": "60fb358c0515e4d0f5e51c603bb0419425988b529591601fca7dec7b5918bb71",
+    "C:\\Users\\\u90d1\u5085\u97ec\\Desktop\\\u5927\u5b66\u751f\u6d3b\\AIC\\AIC6G\u4e13\u9879\u8d5b_2026\\\u573a\u666f\u8d5b\u9053\\openvela_smart_home\\dashboard\\web_panel.html": "f7d5dc9efd6d4cb56484872cdeaa86da8a9c8c72d06bf99e28d3258d0e0f18df",
+    "audit_experiments.py": "f71ce0b319c95b61660df63e1c6fa857a9d292e3db1edf2eaf4705dedb469ffa",
+    "eval_model.py": "2e6bd2f615590d3639061c59bcb8d8012fba9916a5130a3148b03283544c1395",
+    "evidence.py": "90a78f0414e71c31bdbe4cd7b2251f32da12665ecabaeb9f13cdb15ac5ec3086",
+    "experiment_concurrency.py": "1b3f4ad0b540e12406247f58c4a04600bc9ec9eb503fe0571abf003c4201705a",
+    "experiment_http_gateway.py": "122a3e7c28daf1223eb4a11fbcdf7375af1c0510683bf0c33d793afa267b2d64",
+    "experiment_inputs.py": "43cd45bf47d03250e84fe7800afc276077ceeceb826693452696b44538de60a2",
+    "experiment_replay.py": "5b932e09d8525b5c8e262c3a87ac6ac1b0269a048332a3be59e9bb0cbfc86c85",
+    "experiment_safety.py": "bc9bf53b86c84a500d89827c0b7e56da086c79af4ccaf5c7e70ed83f68f43eb1",
+    "experiment_sensitivity.py": "669dbd3f0eb53c141621c69bd1fc3ce71dc74952c5c5b9f2c8cd126aafa55a29",
+    "experiment_stats.py": "acd3a2da5025e1237b5de6ffca8a03da7568fa1af2141d4c0590ac93e3416bf5",
+    "experiments/policy_config.json": "d76b772582fdf8d5b6417c77b55870a61b747fd797d290eb9b32b91cbd500449",
+    "experiments/service_profiles.json": "f258c15b35db282c5c7065857b842e3b3b65ed8f5a5d81cff692494b1dd99da7",
+    "link_emulator.py": "56137d0cbc8aade2689e8002be2c894ddeceb8a90e34806076ce5aaf85887c00",
+    "network_trace.py": "e001b7b4bc2e851cecef43fcab84379847e37c0f637be2842534a0332de445e0",
+    "offload_bench.py": "e781e9c607c67ed19b872c52e513f5dfd2132f4afc2b7ab0aa446db10f2a6329",
+    "offload_gateway.py": "d9f63dc5b6ffe73266777d8100e29842fce2d13005fd08baee8c997bf36793ef",
+    "offload_policy.c": "58a772ddf879bb14480a3d715ac97b34fc64f811274a4a76a66c123f2c8f8135",
+    "offload_policy.h": "304ff38f9685bbd7bbf7fd2c2602dcf19e9c74a25d127b9f1070aa749c891702",
+    "policy_cli.c": "c88b50574b5b29a9bca81fe46bab26d7f8e6710edf24e514ee0c632349af82b8",
+    "policy_cli.exe": "04c8f57dd7c26a8168540c67410f9e5a63f4e818c3c5a97841c1510f6a2db72e",
+    "render_evidence_report.py": "e7346b8debc112eba2fbfd11ec7409cdf9f0bd15d7c6689288e735f653318efc",
+    "resource_policy.py": "84a924664541b2e21458fa4e78130b1d31ee4e5f16ff6e859d11d951c23b3593",
+    "run_experiment_suite.py": "b336384eb1bc788bbf58025612af2fb679e531a09bd554441b7e41d00af014de",
+    "test_compute_policy.c": "9e7db7773517866be46ccb8752ddbef430b929c5c826bc20f803999fa9932572",
+    "test_offload_policy.c": "74a5ca556e67c18ba7a9e54a1d8ec3757d784d4d0102dab8e0429e0d15913462",
+    "tests/__init__.py": "01ba4719c80b6fe911b091a7c05124b64eeece964e09c058ef8f9805daca546b",
+    "tests/test_backend_health.py": "f8316ddde5d92b01415ddd9158175012fd6c8fc02bb268b61e38d53dce25cab6",
+    "tests/test_bench_latency.py": "415070020666ddd9474f8ed4ddce8557b861acf441bd1c173637784777de6c47",
+    "tests/test_deterministic_replay.py": "7c029e2ea08fa09a124e7f76646c104ee5f06aeef950509acc871558017c32dd",
+    "tests/test_eval_model.py": "ace2ef55224cd979ed975b898b41e131d247d15a726f5a8512cb76b9d8886ece",
+    "tests/test_event_sink.py": "83f48eb3f86f455e5e9e4d4dfbafcf09341a9465a83b5910e219ba696682137b",
+    "tests/test_evidence_schema.py": "e9ccc09c0edaca49c50f6099fc967715b72d61f841d2152ab7da288b58f4859a",
+    "tests/test_experiment_concurrency.py": "b1c9dac7b6d882c79e613ca72c0e22abb43a1d42a37a0bc36efc2fbb637d16f3",
+    "tests/test_experiment_pipeline.py": "3f230c15bbc331639664a07ed722c2734a96254045c8f7766d756d0a8c0bf814",
+    "tests/test_gateway_action_execution.py": "8e1bba59813301bd8b32847b09d52b618a936dee152c794135277d635a275384",
+    "tests/test_gateway_resilience.py": "0cee0639210d5760c19bb187619c3c4d706d22254686142867fc74415893238e",
+    "tests/test_latency_accounting.py": "d08e4cc00f8c2667aa5f87b5037e76a5083ceb1fc74eba7bee4a6a9b3b2f100b",
+    "tests/test_local_routing_latency.py": "88ffa7a51d0410c1b981e39d05f73fa8d1ba529016df9afa5f873b7c907fec1d",
+    "tests/test_offload_gateway.py": "81315be67feab7c6a5200f88d0f702672421f6f267fa50269d48349bf181d5b8",
+    "tests/test_openai_backend.py": "bb46d6b83ea4a62e29ed260d99213aeed2dafdcd036adc77c988569fdad83ae3",
+    "tests/test_policy_cli_compute.py": "a916f6b3c567e2114f3171f68d15635fb7d97c08b00d199f770e8951c9887a7e",
+    "tests/test_policy_cli_resources.py": "f2bbd8ddcde565ebe9ff9d36a95fc959f8a60c33fb1a9087ca54e5a4edc5b2d8",
+    "tests/test_policy_cli_timeout.py": "f156afe65d01ca603e6f32b5be3481a6a51ad83823b0130082b424398427a5e8",
+    "tests/test_resource_observation.py": "f06770293abf09bbbc84248e3ecc4401dad9526a08a755cc6c25b2bfae604fe7",
+    "tests/test_resource_policy_adapter.py": "860d0ee9b719fa1a0704459c597fbf2ed597d9f183133943f7342fcefb1c3fdc",
+    "tests/test_trace.py": "de0322b0efbe9268598e7e383e2f6892a92d3b94066b36278588b815e44bcd48"
+  },
+  "evidence_type": "measured_wall_clock_on_bounded_sleep_stubs_and_PC_devices",
+  "load_model": "closed-loop finite clients, synchronized first wave; no coordinated-omission correction",
+  "limits": [
+    "No real model, GPU, radio, physical actuators or HTTP in this test",
+    "Unknown memory stays null; queue estimates and measured queue delays are distinct",
+    "Runtime arm outcomes are not deterministic; compare distributions, not identical wall times"
+  ],
+  "raw_count": 6144,
+  "cells": [
+    {
+      "arm": "joint",
+      "concurrency": 1,
+      "repetition": 0,
+      "scenario": "healthy",
+      "requests": 128,
+      "cell_wall_s": 1.1586138000056962,
+      "requests_per_second": 110.4768474183293,
+      "python_process_cpu_ms": 250.0,
+      "cpu_scope": "this Python process only; excludes C subprocess and external GPU",
+      "effective_policy_config": {
+        "schema_version": "sensehome.policy.v1",
+        "queue_max_ms": 300,
+        "inflight_max": 64,
+        "free_mem_min_mb": 256,
+        "local_infer_ms": 12,
+        "cloud_infer_ms": 35,
+        "switch_margin_ms": 15,
+        "recovery_samples": 3,
+        "timeout_ms": 800,
+        "observation_max_age_ms": 2000,
+        "observation_lookup_ms": 0.2,
+        "policy_model_ms": 0.2,
+        "execution_model_ms": 0.1,
+        "rule_model_ms": 1
+      },
+      "stub_slots": {
+        "local": 2,
+        "cloud": 8
+      },
+      "max_waiters_per_endpoint": 64,
+      "local_peak_active": 1,
+      "cloud_peak_active": 0,
+      "final_active": 0,
+      "final_waiting": 0,
+      "fifo_verified": true
+    },
+    {
+      "arm": "network-only",
+      "concurrency": 1,
+      "repetition": 0,
+      "scenario": "healthy",
+      "requests": 128,
+      "cell_wall_s": 1.1741135999982362,
+      "requests_per_second": 109.01841184719459,
+      "python_process_cpu_ms": 171.875,
+      "cpu_scope": "this Python process only; excludes C subprocess and external GPU",
+      "effective_policy_config": {
+        "schema_version": "sensehome.policy.v1",
+        "queue_max_ms": 300,
+        "inflight_max": 64,
+        "free_mem_min_mb": 256,
+        "local_infer_ms": 12,
+        "cloud_infer_ms": 35,
+        "switch_margin_ms": 15,
+        "recovery_samples": 3,
+        "timeout_ms": 800,
+        "observation_max_age_ms": 2000,
+        "observation_lookup_ms": 0.2,
+        "policy_model_ms": 0.2,
+        "execution_model_ms": 0.1,
+        "rule_model_ms": 1
+      },
+      "stub_slots": {
+        "local": 2,
+        "cloud": 8
+      },
+      "max_waiters_per_endpoint": 64,
+      "local_peak_active": 1,
+      "cloud_peak_active": 0,
+      "final_active": 0,
+      "final_waiting": 0,
+      "fifo_verified": true
+    },
+    {
+      "arm": "joint",
+      "concurrency": 1,
+      "repetition": 0,
+      "scenario": "cloud_down",
+      "requests": 128,
+      "cell_wall_s": 1.1966315000026952,
+      "requests_per_second": 106.96693175778148,
+      "python_process_cpu_ms": 78.125,
+      "cpu_scope": "this Python process only; excludes C subprocess and external GPU",
+      "effective_policy_config": {
+        "schema_version": "sensehome.policy.v1",
+        "queue_max_ms": 300,
+        "inflight_max": 64,
+        "free_mem_min_mb": 256,
+        "local_infer_ms": 12,
+        "cloud_infer_ms": 35,
+        "switch_margin_ms": 15,
+        "recovery_samples": 3,
+        "timeout_ms": 800,
+        "observation_max_age_ms": 2000,
+        "observation_lookup_ms": 0.2,
+        "policy_model_ms": 0.2,
+        "execution_model_ms": 0.1,
+        "rule_model_ms": 1
+      },
+      "stub_slots": {
+        "local": 2,
+        "cloud": 8
+      },
+      "max_waiters_per_endpoint": 64,
+      "local_peak_active": 1,
+      "cloud_peak_active": 0,
+      "final_active": 0,
+      "final_waiting": 0,
+      "fifo_verified": true
+    },
+    {
+      "arm": "network-only",
+      "concurrency": 1,
+      "repetition": 0,
+      "scenario": "cloud_down",
+      "requests": 128,
+      "cell_wall_s": 1.1837694000059855,
+      "requests_per_second": 108.12916772418073,
+      "python_process_cpu_ms": 156.25,
+      "cpu_scope": "this Python process only; excludes C subprocess and external GPU",
+      "effective_policy_config": {
+        "schema_version": "sensehome.policy.v1",
+        "queue_max_ms": 300,
+        "inflight_max": 64,
+        "free_mem_min_mb": 256,
+        "local_infer_ms": 12,
+        "cloud_infer_ms": 35,
+        "switch_margin_ms": 15,
+        "recovery_samples": 3,
+        "timeout_ms": 800,
+        "observation_max_age_ms": 2000,
+        "observation_lookup_ms": 0.2,
+        "policy_model_ms": 0.2,
+        "execution_model_ms": 0.1,
+        "rule_model_ms": 1
+      },
+      "stub_slots": {
+        "local": 2,
+        "cloud": 8
+      },
+      "max_waiters_per_endpoint": 64,
+      "local_peak_active": 1,
+      "cloud_peak_active": 0,
+      "final_active": 0,
+      "final_waiting": 0,
+      "fifo_verified": true
+    },
+    {
+      "arm": "joint",
+      "concurrency": 8,
+      "repetition": 0,
+      "scenario": "healthy",
+      "requests": 128,
+      "cell_wall_s": 0.451701599995431,
+      "requests_per_second": 283.3729169905414,
+      "python_process_cpu_ms": 203.125,
+      "cpu_scope": "this Python process only; excludes C subprocess and external GPU",
+      "effective_policy_config": {
+        "schema_version": "sensehome.policy.v1",
+        "queue_max_ms": 300,
+        "inflight_max": 64,
+        "free_mem_min_mb": 256,
+        "local_infer_ms": 12,
+        "cloud_infer_ms": 35,
+        "switch_margin_ms": 15,
+        "recovery_samples": 3,
+        "timeout_ms": 800,
+        "observation_max_age_ms": 2000,
+        "observation_lookup_ms": 0.2,
+        "policy_model_ms": 0.2,
+        "execution_model_ms": 0.1,
+        "rule_model_ms": 1
+      },
+      "stub_slots": {
+        "local": 2,
+        "cloud": 8
+      },
+      "max_waiters_per_endpoint": 64,
+      "local_peak_active": 2,
+      "cloud_peak_active": 1,
+      "final_active": 0,
+      "final_waiting": 0,
+      "fifo_verified": true
+    },
+    {
+      "arm": "network-only",
+      "concurrency": 8,
+      "repetition": 0,
+      "scenario": "healthy",
+      "requests": 128,
+      "cell_wall_s": 0.5201262000045972,
+      "requests_per_second": 246.09412100153511,
+      "python_process_cpu_ms": 250.0,
+      "cpu_scope": "this Python process only; excludes C subprocess and external GPU",
+      "effective_policy_config": {
+        "schema_version": "sensehome.policy.v1",
+        "queue_max_ms": 300,
+        "inflight_max": 64,
+        "free_mem_min_mb": 256,
+        "local_infer_ms": 12,
+        "cloud_infer_ms": 35,
+        "switch_margin_ms": 15,
+        "recovery_samples": 3,
+        "timeout_ms": 800,
+        "observation_max_age_ms": 2000,
+        "observation_lookup_ms": 0.2,
+        "policy_model_ms": 0.2,
+        "execution_model_ms": 0.1,
+        "rule_model_ms": 1
+      },
+      "stub_slots": {
+        "local": 2,
+        "cloud": 8
+      },
+      "max_waiters_per_endpoint": 64,
+      "local_peak_active": 2,
+      "cloud_peak_active": 0,
+      "final_active": 0,
+      "final_waiting": 0,
+      "fifo_verified": true
+    },
+    {
+      "arm": "joint",
+      "concurrency": 8,
+      "repetition": 0,
+      "scenario": "cloud_down",
+      "requests": 128,
+      "cell_wall_s": 0.5238635999994585,
+      "requests_per_second": 244.3384117547627,
+      "python_process_cpu_ms": 187.5,
+      "cpu_scope": "this Python process only; excludes C subprocess and external GPU",
+      "effective_policy_config": {
+        "schema_version": "sensehome.policy.v1",
+        "queue_max_ms": 300,
+        "inflight_max": 64,
+        "free_mem_min_mb": 256,
+        "local_infer_ms": 12,
+        "cloud_infer_ms": 35,
+        "switch_margin_ms": 15,
+        "recovery_samples": 3,
+        "timeout_ms": 800,
+        "observation_max_age_ms": 2000,
+        "observation_lookup_ms": 0.2,
+        "policy_model_ms": 0.2,
+        "execution_model_ms": 0.1,
+        "rule_model_ms": 1
+      },
+      "stub_slots": {
+        "local": 2,
+        "cloud": 8
+      },
+      "max_waiters_per_endpoint": 64,
+      "local_peak_active": 2,
+      "cloud_peak_active": 0,
+      "final_active": 0,
+      "final_waiting": 0,
+      "fifo_verified": true
+    },
+    {
+      "arm": "network-only",
+      "concurrency": 8,
+      "repetition": 0,
+      "scenario": "cloud_down",
+      "requests": 128,
+      "cell_wall_s": 0.5255864999999176,
+      "requests_per_second": 243.53745767827004,
+      "python_process_cpu_ms": 234.375,
+      "cpu_scope": "this Python process only; excludes C subprocess and external GPU",
+      "effective_policy_config": {
+        "schema_version": "sensehome.policy.v1",
+        "queue_max_ms": 300,
+        "inflight_max": 64,
+        "free_mem_min_mb": 256,
+        "local_infer_ms": 12,
+        "cloud_infer_ms": 35,
+        "switch_margin_ms": 15,
+        "recovery_samples": 3,
+        "timeout_ms": 800,
+        "observation_max_age_ms": 2000,
+        "observation_lookup_ms": 0.2,
+        "policy_model_ms": 0.2,
+        "execution_model_ms": 0.1,
+        "rule_model_ms": 1
+      },
+      "stub_slots": {
+        "local": 2,
+        "cloud": 8
+      },
+      "max_waiters_per_endpoint": 64,
+      "local_peak_active": 2,
+      "cloud_peak_active": 0,
+      "final_active": 0,
+      "final_waiting": 0,
+      "fifo_verified": true
+    },
+    {
+      "arm": "joint",
+      "concurrency": 32,
+      "repetition": 0,
+      "scenario": "healthy",
+      "requests": 128,
+      "cell_wall_s": 0.31320879999839235,
+      "requests_per_second": 408.673064105022,
+      "python_process_cpu_ms": 203.125,
+      "cpu_scope": "this Python process only; excludes C subprocess and external GPU",
+      "effective_policy_config": {
+        "schema_version": "sensehome.policy.v1",
+        "queue_max_ms": 300,
+        "inflight_max": 64,
+        "free_mem_min_mb": 256,
+        "local_infer_ms": 12,
+        "cloud_infer_ms": 35,
+        "switch_margin_ms": 15,
+        "recovery_samples": 3,
+        "timeout_ms": 800,
+        "observation_max_age_ms": 2000,
+        "observation_lookup_ms": 0.2,
+        "policy_model_ms": 0.2,
+        "execution_model_ms": 0.1,
+        "rule_model_ms": 1
+      },
+      "stub_slots": {
+        "local": 2,
+        "cloud": 8
+      },
+      "max_waiters_per_endpoint": 64,
+      "local_peak_active": 2,
+      "cloud_peak_active": 8,
+      "final_active": 0,
+      "final_waiting": 0,
+      "fifo_verified": true
+    },
+    {
+      "arm": "network-only",
+      "concurrency": 32,
+      "repetition": 0,
+      "scenario": "healthy",
+      "requests": 128,
+      "cell_wall_s": 0.5527750999972341,
+      "requests_per_second": 231.5589106684445,
+      "python_process_cpu_ms": 312.5,
+      "cpu_scope": "this Python process only; excludes C subprocess and external GPU",
+      "effective_policy_config": {
+        "schema_version": "sensehome.policy.v1",
+        "queue_max_ms": 300,
+        "inflight_max": 64,
+        "free_mem_min_mb": 256,
+        "local_infer_ms": 12,
+        "cloud_infer_ms": 35,
+        "switch_margin_ms": 15,
+        "recovery_samples": 3,
+        "timeout_ms": 800,
+        "observation_max_age_ms": 2000,
+        "observation_lookup_ms": 0.2,
+        "policy_model_ms": 0.2,
+        "execution_model_ms": 0.1,
+        "rule_model_ms": 1
+      },
+      "stub_slots": {
+        "local": 2,
+        "cloud": 8
+      },
+      "max_waiters_per_endpoint": 64,
+      "local_peak_active": 2,
+      "cloud_peak_active": 0,
+      "final_active": 0,
+      "final_waiting": 0,
+      "fifo_verified": true
+    },
+    {
+      "arm": "joint",
+      "concurrency": 32,
+      "repetition": 0,
+      "scenario": "cloud_down",
+      "requests": 128,
+      "cell_wall_s": 0.5510788000028697,
+      "requests_per_second": 232.2716823788784,
+      "python_process_cpu_ms": 312.5,
+      "cpu_scope": "this Python process only; excludes C subprocess and external GPU",
+      "effective_policy_config": {
+        "schema_version": "sensehome.policy.v1",
+        "queue_max_ms": 300,
+        "inflight_max": 64,
+        "free_mem_min_mb": 256,
+        "local_infer_ms": 12,
+        "cloud_infer_ms": 35,
+        "switch_margin_ms": 15,
+        "recovery_samples": 3,
+        "timeout_ms": 800,
+        "observation_max_age_ms": 2000,
+        "observation_lookup_ms": 0.2,
+        "policy_model_ms": 0.2,
+        "execution_model_ms": 0.1,
+        "rule_model_ms": 1
+      },
+      "stub_slots": {
+        "local": 2,
+        "cloud": 8
+      },
+      "max_waiters_per_endpoint": 64,
+      "local_peak_active": 2,
+      "cloud_peak_active": 0,
+      "final_active": 0,
+      "final_waiting": 0,
+      "fifo_verified": true
+    },
+    {
+      "arm": "network-only",
+      "concurrency": 32,
+      "repetition": 0,
+      "scenario": "cloud_down",
+      "requests": 128,
+      "cell_wall_s": 0.551493400002073,
+      "requests_per_second": 232.09706589329784,
+      "python_process_cpu_ms": 265.625,
+      "cpu_scope": "this Python process only; excludes C subprocess and external GPU",
+      "effective_policy_config": {
+        "schema_version": "sensehome.policy.v1",
+        "queue_max_ms": 300,
+        "inflight_max": 64,
+        "free_mem_min_mb": 256,
+        "local_infer_ms": 12,
+        "cloud_infer_ms": 35,
+        "switch_margin_ms": 15,
+        "recovery_samples": 3,
+        "timeout_ms": 800,
+        "observation_max_age_ms": 2000,
+        "observation_lookup_ms": 0.2,
+        "policy_model_ms": 0.2,
+        "execution_model_ms": 0.1,
+        "rule_model_ms": 1
+      },
+      "stub_slots": {
+        "local": 2,
+        "cloud": 8
+      },
+      "max_waiters_per_endpoint": 64,
+      "local_peak_active": 2,
+      "cloud_peak_active": 0,
+      "final_active": 0,
+      "final_waiting": 0,
+      "fifo_verified": true
+    },
+    {
+      "arm": "joint",
+      "concurrency": 64,
+      "repetition": 0,
+      "scenario": "healthy",
+      "requests": 128,
+      "cell_wall_s": 0.3267634000003454,
+      "requests_per_second": 391.7207373893915,
+      "python_process_cpu_ms": 234.375,
+      "cpu_scope": "this Python process only; excludes C subprocess and external GPU",
+      "effective_policy_config": {
+        "schema_version": "sensehome.policy.v1",
+        "queue_max_ms": 300,
+        "inflight_max": 64,
+        "free_mem_min_mb": 256,
+        "local_infer_ms": 12,
+        "cloud_infer_ms": 35,
+        "switch_margin_ms": 15,
+        "recovery_samples": 3,
+        "timeout_ms": 800,
+        "observation_max_age_ms": 2000,
+        "observation_lookup_ms": 0.2,
+        "policy_model_ms": 0.2,
+        "execution_model_ms": 0.1,
+        "rule_model_ms": 1
+      },
+      "stub_slots": {
+        "local": 2,
+        "cloud": 8
+      },
+      "max_waiters_per_endpoint": 64,
+      "local_peak_active": 2,
+      "cloud_peak_active": 8,
+      "final_active": 0,
+      "final_waiting": 0,
+      "fifo_verified": true
+    },
+    {
+      "arm": "network-only",
+      "concurrency": 64,
+      "repetition": 0,
+      "scenario": "healthy",
+      "requests": 128,
+      "cell_wall_s": 0.5656202000027406,
+      "requests_per_second": 226.30026296688095,
+      "python_process_cpu_ms": 250.0,
+      "cpu_scope": "this Python process only; excludes C subprocess and external GPU",
+      "effective_policy_config": {
+        "schema_version": "sensehome.policy.v1",
+        "queue_max_ms": 300,
+        "inflight_max": 64,
+        "free_mem_min_mb": 256,
+        "local_infer_ms": 12,
+        "cloud_infer_ms": 35,
+        "switch_margin_ms": 15,
+        "recovery_samples": 3,
+        "timeout_ms": 800,
+        "observation_max_age_ms": 2000,
+        "observation_lookup_ms": 0.2,
+        "policy_model_ms": 0.2,
+        "execution_model_ms": 0.1,
+        "rule_model_ms": 1
+      },
+      "stub_slots": {
+        "local": 2,
+        "cloud": 8
+      },
+      "max_waiters_per_endpoint": 64,
+      "local_peak_active": 2,
+      "cloud_peak_active": 0,
+      "final_active": 0,
+      "final_waiting": 0,
+      "fifo_verified": true
+    },
+    {
+      "arm": "joint",
+      "concurrency": 64,
+      "repetition": 0,
+      "scenario": "cloud_down",
+      "requests": 128,
+      "cell_wall_s": 0.556038400005491,
+      "requests_per_second": 230.19992863574885,
+      "python_process_cpu_ms": 375.0,
+      "cpu_scope": "this Python process only; excludes C subprocess and external GPU",
+      "effective_policy_config": {
+        "schema_version": "sensehome.policy.v1",
+        "queue_max_ms": 300,
+        "inflight_max": 64,
+        "free_mem_min_mb": 256,
+        "local_infer_ms": 12,
+        "cloud_infer_ms": 35,
+        "switch_margin_ms": 15,
+        "recovery_samples": 3,
+        "timeout_ms": 800,
+        "observation_max_age_ms": 2000,
+        "observation_lookup_ms": 0.2,
+        "policy_model_ms": 0.2,
+        "execution_model_ms": 0.1,
+        "rule_model_ms": 1
+      },
+      "stub_slots": {
+        "local": 2,
+        "cloud": 8
+      },
+      "max_waiters_per_endpoint": 64,
+      "local_peak_active": 2,
+      "cloud_peak_active": 0,
+      "final_active": 0,
+      "final_waiting": 0,
+      "fifo_verified": true
+    },
+    {
+      "arm": "network-only",
+      "concurrency": 64,
+      "repetition": 0,
+      "scenario": "cloud_down",
+      "requests": 128,
+      "cell_wall_s": 0.5456504999965546,
+      "requests_per_second": 234.58239294348348,
+      "python_process_cpu_ms": 250.0,
+      "cpu_scope": "this Python process only; excludes C subprocess and external GPU",
+      "effective_policy_config": {
+        "schema_version": "sensehome.policy.v1",
+        "queue_max_ms": 300,
+        "inflight_max": 64,
+        "free_mem_min_mb": 256,
+        "local_infer_ms": 12,
+        "cloud_infer_ms": 35,
+        "switch_margin_ms": 15,
+        "recovery_samples": 3,
+        "timeout_ms": 800,
+        "observation_max_age_ms": 2000,
+        "observation_lookup_ms": 0.2,
+        "policy_model_ms": 0.2,
+        "execution_model_ms": 0.1,
+        "rule_model_ms": 1
+      },
+      "stub_slots": {
+        "local": 2,
+        "cloud": 8
+      },
+      "max_waiters_per_endpoint": 64,
+      "local_peak_active": 2,
+      "cloud_peak_active": 0,
+      "final_active": 0,
+      "final_waiting": 0,
+      "fifo_verified": true
+    },
+    {
+      "arm": "network-only",
+      "concurrency": 1,
+      "repetition": 1,
+      "scenario": "healthy",
+      "requests": 128,
+      "cell_wall_s": 1.1896062000014354,
+      "requests_per_second": 107.59863221950722,
+      "python_process_cpu_ms": 78.125,
+      "cpu_scope": "this Python process only; excludes C subprocess and external GPU",
+      "effective_policy_config": {
+        "schema_version": "sensehome.policy.v1",
+        "queue_max_ms": 300,
+        "inflight_max": 64,
+        "free_mem_min_mb": 256,
+        "local_infer_ms": 12,
+        "cloud_infer_ms": 35,
+        "switch_margin_ms": 15,
+        "recovery_samples": 3,
+        "timeout_ms": 800,
+        "observation_max_age_ms": 2000,
+        "observation_lookup_ms": 0.2,
+        "policy_model_ms": 0.2,
+        "execution_model_ms": 0.1,
+        "rule_model_ms": 1
+      },
+      "stub_slots": {
+        "local": 2,
+        "cloud": 8
+      },
+      "max_waiters_per_endpoint": 64,
+      "local_peak_active": 1,
+      "cloud_peak_active": 0,
+      "final_active": 0,
+      "final_waiting": 0,
+      "fifo_verified": true
+    },
+    {
+      "arm": "joint",
+      "concurrency": 1,
+      "repetition": 1,
+      "scenario": "healthy",
+      "requests": 128,
+      "cell_wall_s": 1.1752196999950684,
+      "requests_per_second": 108.91580527499423,
+      "python_process_cpu_ms": 265.625,
+      "cpu_scope": "this Python process only; excludes C subprocess and external GPU",
+      "effective_policy_config": {
+        "schema_version": "sensehome.policy.v1",
+        "queue_max_ms": 300,
+        "inflight_max": 64,
+        "free_mem_min_mb": 256,
+        "local_infer_ms": 12,
+        "cloud_infer_ms": 35,
+        "switch_margin_ms": 15,
+        "recovery_samples": 3,
+        "timeout_ms": 800,
+        "observation_max_age_ms": 2000,
+        "observation_lookup_ms": 0.2,
+        "policy_model_ms": 0.2,
+        "execution_model_ms": 0.1,
+        "rule_model_ms": 1
+      },
+      "stub_slots": {
+        "local": 2,
+        "cloud": 8
+      },
+      "max_waiters_per_endpoint": 64,
+      "local_peak_active": 1,
+      "cloud_peak_active": 0,
+      "final_active": 0,
+      "final_waiting": 0,
+      "fifo_verified": true
+    },
+    {
+      "arm": "network-only",
+      "concurrency": 1,
+      "repetition": 1,
+      "scenario": "cloud_down",
+      "requests": 128,
+      "cell_wall_s": 1.1761310000001686,
+      "requests_per_second": 108.83141418768969,
+      "python_process_cpu_ms": 187.5,
+      "cpu_scope": "this Python process only; excludes C subprocess and external GPU",
+      "effective_policy_config": {
+        "schema_version": "sensehome.policy.v1",
+        "queue_max_ms": 300,
+        "inflight_max": 64,
+        "free_mem_min_mb": 256,
+        "local_infer_ms": 12,
+        "cloud_infer_ms": 35,
+        "switch_margin_ms": 15,
+        "recovery_samples": 3,
+        "timeout_ms": 800,
+        "observation_max_age_ms": 2000,
+        "observation_lookup_ms": 0.2,
+        "policy_model_ms": 0.2,
+        "execution_model_ms": 0.1,
+        "rule_model_ms": 1
+      },
+      "stub_slots": {
+        "local": 2,
+        "cloud": 8
+      },
+      "max_waiters_per_endpoint": 64,
+      "local_peak_active": 1,
+      "cloud_peak_active": 0,
+      "final_active": 0,
+      "final_waiting": 0,
+      "fifo_verified": true
+    },
+    {
+      "arm": "joint",
+      "concurrency": 1,
+      "repetition": 1,
+      "scenario": "cloud_down",
+      "requests": 128,
+      "cell_wall_s": 1.1966849000018556,
+      "requests_per_second": 106.96215854298948,
+      "python_process_cpu_ms": 296.875,
+      "cpu_scope": "this Python process only; excludes C subprocess and external GPU",
+      "effective_policy_config": {
+        "schema_version": "sensehome.policy.v1",
+        "queue_max_ms": 300,
+        "inflight_max": 64,
+        "free_mem_min_mb": 256,
+        "local_infer_ms": 12,
+        "cloud_infer_ms": 35,
+        "switch_margin_ms": 15,
+        "recovery_samples": 3,
+        "timeout_ms": 800,
+        "observation_max_age_ms": 2000,
+        "observation_lookup_ms": 0.2,
+        "policy_model_ms": 0.2,
+        "execution_model_ms": 0.1,
+        "rule_model_ms": 1
+      },
+      "stub_slots": {
+        "local": 2,
+        "cloud": 8
+      },
+      "max_waiters_per_endpoint": 64,
+      "local_peak_active": 1,
+      "cloud_peak_active": 0,
+      "final_active": 0,
+      "final_waiting": 0,
+      "fifo_verified": true
+    },
+    {
+      "arm": "network-only",
+      "concurrency": 8,
+      "repetition": 1,
+      "scenario": "healthy",
+      "requests": 128,
+      "cell_wall_s": 0.5195192000028328,
+      "requests_per_second": 246.38165442066827,
+      "python_process_cpu_ms": 203.125,
+      "cpu_scope": "this Python process only; excludes C subprocess and external GPU",
+      "effective_policy_config": {
+        "schema_version": "sensehome.policy.v1",
+        "queue_max_ms": 300,
+        "inflight_max": 64,
+        "free_mem_min_mb": 256,
+        "local_infer_ms": 12,
+        "cloud_infer_ms": 35,
+        "switch_margin_ms": 15,
+        "recovery_samples": 3,
+        "timeout_ms": 800,
+        "observation_max_age_ms": 2000,
+        "observation_lookup_ms": 0.2,
+        "policy_model_ms": 0.2,
+        "execution_model_ms": 0.1,
+        "rule_model_ms": 1
+      },
+      "stub_slots": {
+        "local": 2,
+        "cloud": 8
+      },
+      "max_waiters_per_endpoint": 64,
+      "local_peak_active": 2,
+      "cloud_peak_active": 0,
+      "final_active": 0,
+      "final_waiting": 0,
+      "fifo_verified": true
+    },
+    {
+      "arm": "joint",
+      "concurrency": 8,
+      "repetition": 1,
+      "scenario": "healthy",
+      "requests": 128,
+      "cell_wall_s": 0.4550230000022566,
+      "requests_per_second": 281.3044615313187,
+      "python_process_cpu_ms": 218.75,
+      "cpu_scope": "this Python process only; excludes C subprocess and external GPU",
+      "effective_policy_config": {
+        "schema_version": "sensehome.policy.v1",
+        "queue_max_ms": 300,
+        "inflight_max": 64,
+        "free_mem_min_mb": 256,
+        "local_infer_ms": 12,
+        "cloud_infer_ms": 35,
+        "switch_margin_ms": 15,
+        "recovery_samples": 3,
+        "timeout_ms": 800,
+        "observation_max_age_ms": 2000,
+        "observation_lookup_ms": 0.2,
+        "policy_model_ms": 0.2,
+        "execution_model_ms": 0.1,
+        "rule_model_ms": 1
+      },
+      "stub_slots": {
+        "local": 2,
+        "cloud": 8
+      },
+      "max_waiters_per_endpoint": 64,
+      "local_peak_active": 2,
+      "cloud_peak_active": 1,
+      "final_active": 0,
+      "final_waiting": 0,
+      "fifo_verified": true
+    },
+    {
+      "arm": "network-only",
+      "concurrency": 8,
+      "repetition": 1,
+      "scenario": "cloud_down",
+      "requests": 128,
+      "cell_wall_s": 0.5163748999984819,
+      "requests_per_second": 247.8819168018746,
+      "python_process_cpu_ms": 218.75,
+      "cpu_scope": "this Python process only; excludes C subprocess and external GPU",
+      "effective_policy_config": {
+        "schema_version": "sensehome.policy.v1",
+        "queue_max_ms": 300,
+        "inflight_max": 64,
+        "free_mem_min_mb": 256,
+        "local_infer_ms": 12,
+        "cloud_infer_ms": 35,
+        "switch_margin_ms": 15,
+        "recovery_samples": 3,
+        "timeout_ms": 800,
+        "observation_max_age_ms": 2000,
+        "observation_lookup_ms": 0.2,
+        "policy_model_ms": 0.2,
+        "execution_model_ms": 0.1,
+        "rule_model_ms": 1
+      },
+      "stub_slots": {
+        "local": 2,
+        "cloud": 8
+      },
+      "max_waiters_per_endpoint": 64,
+      "local_peak_active": 2,
+      "cloud_peak_active": 0,
+      "final_active": 0,
+      "final_waiting": 0,
+      "fifo_verified": true
+    },
+    {
+      "arm": "joint",
+      "concurrency": 8,
+      "repetition": 1,
+      "scenario": "cloud_down",
+      "requests": 128,
+      "cell_wall_s": 0.5186774999965564,
+      "requests_per_second": 246.78147789493434,
+      "python_process_cpu_ms": 250.0,
+      "cpu_scope": "this Python process only; excludes C subprocess and external GPU",
+      "effective_policy_config": {
+        "schema_version": "sensehome.policy.v1",
+        "queue_max_ms": 300,
+        "inflight_max": 64,
+        "free_mem_min_mb": 256,
+        "local_infer_ms": 12,
+        "cloud_infer_ms": 35,
+        "switch_margin_ms": 15,
+        "recovery_samples": 3,
+        "timeout_ms": 800,
+        "observation_max_age_ms": 2000,
+        "observation_lookup_ms": 0.2,
+        "policy_model_ms": 0.2,
+        "execution_model_ms": 0.1,
+        "rule_model_ms": 1
+      },
+      "stub_slots": {
+        "local": 2,
+        "cloud": 8
+      },
+      "max_waiters_per_endpoint": 64,
+      "local_peak_active": 2,
+      "cloud_peak_active": 0,
+      "final_active": 0,
+      "final_waiting": 0,
+      "fifo_verified": true
+    },
+    {
+      "arm": "network-only",
+      "concurrency": 32,
+      "repetition": 1,
+      "scenario": "healthy",
+      "requests": 128,
+      "cell_wall_s": 0.5393418999956339,
+      "requests_per_second": 237.32626744007132,
+      "python_process_cpu_ms": 281.25,
+      "cpu_scope": "this Python process only; excludes C subprocess and external GPU",
+      "effective_policy_config": {
+        "schema_version": "sensehome.policy.v1",
+        "queue_max_ms": 300,
+        "inflight_max": 64,
+        "free_mem_min_mb": 256,
+        "local_infer_ms": 12,
+        "cloud_infer_ms": 35,
+        "switch_margin_ms": 15,
+        "recovery_samples": 3,
+        "timeout_ms": 800,
+        "observation_max_age_ms": 2000,
+        "observation_lookup_ms": 0.2,
+        "policy_model_ms": 0.2,
+        "execution_model_ms": 0.1,
+        "rule_model_ms": 1
+      },
+      "stub_slots": {
+        "local": 2,
+        "cloud": 8
+      },
+      "max_waiters_per_endpoint": 64,
+      "local_peak_active": 2,
+      "cloud_peak_active": 0,
+      "final_active": 0,
+      "final_waiting": 0,
+      "fifo_verified": true
+    },
+    {
+      "arm": "joint",
+      "concurrency": 32,
+      "repetition": 1,
+      "scenario": "healthy",
+      "requests": 128,
+      "cell_wall_s": 0.3210722000003443,
+      "requests_per_second": 398.6642256784073,
+      "python_process_cpu_ms": 218.75,
+      "cpu_scope": "this Python process only; excludes C subprocess and external GPU",
+      "effective_policy_config": {
+        "schema_version": "sensehome.policy.v1",
+        "queue_max_ms": 300,
+        "inflight_max": 64,
+        "free_mem_min_mb": 256,
+        "local_infer_ms": 12,
+        "cloud_infer_ms": 35,
+        "switch_margin_ms": 15,
+        "recovery_samples": 3,
+        "timeout_ms": 800,
+        "observation_max_age_ms": 2000,
+        "observation_lookup_ms": 0.2,
+        "policy_model_ms": 0.2,
+        "execution_model_ms": 0.1,
+        "rule_model_ms": 1
+      },
+      "stub_slots": {
+        "local": 2,
+        "cloud": 8
+      },
+      "max_waiters_per_endpoint": 64,
+      "local_peak_active": 2,
+      "cloud_peak_active": 8,
+      "final_active": 0,
+      "final_waiting": 0,
+      "fifo_verified": true
+    },
+    {
+      "arm": "network-only",
+      "concurrency": 32,
+      "repetition": 1,
+      "scenario": "cloud_down",
+      "requests": 128,
+      "cell_wall_s": 0.5403970000043046,
+      "requests_per_second": 236.86289894092752,
+      "python_process_cpu_ms": 312.5,
+      "cpu_scope": "this Python process only; excludes C subprocess and external GPU",
+      "effective_policy_config": {
+        "schema_version": "sensehome.policy.v1",
+        "queue_max_ms": 300,
+        "inflight_max": 64,
+        "free_mem_min_mb": 256,
+        "local_infer_ms": 12,
+        "cloud_infer_ms": 35,
+        "switch_margin_ms": 15,
+        "recovery_samples": 3,
+        "timeout_ms": 800,
+        "observation_max_age_ms": 2000,
+        "observation_lookup_ms": 0.2,
+        "policy_model_ms": 0.2,
+        "execution_model_ms": 0.1,
+        "rule_model_ms": 1
+      },
+      "stub_slots": {
+        "local": 2,
+        "cloud": 8
+      },
+      "max_waiters_per_endpoint": 64,
+      "local_peak_active": 2,
+      "cloud_peak_active": 0,
+      "final_active": 0,
+      "final_waiting": 0,
+      "fifo_verified": true
+    },
+    {
+      "arm": "joint",
+      "concurrency": 32,
+      "repetition": 1,
+      "scenario": "cloud_down",
+      "requests": 128,
+      "cell_wall_s": 0.5350905000013881,
+      "requests_per_second": 239.2118716360465,
+      "python_process_cpu_ms": 265.625,
+      "cpu_scope": "this Python process only; excludes C subprocess and external GPU",
+      "effective_policy_config": {
+        "schema_version": "sensehome.policy.v1",
+        "queue_max_ms": 300,
+        "inflight_max": 64,
+        "free_mem_min_mb": 256,
+        "local_infer_ms": 12,
+        "cloud_infer_ms": 35,
+        "switch_margin_ms": 15,
+        "recovery_samples": 3,
+        "timeout_ms": 800,
+        "observation_max_age_ms": 2000,
+        "observation_lookup_ms": 0.2,
+        "policy_model_ms": 0.2,
+        "execution_model_ms": 0.1,
+        "rule_model_ms": 1
+      },
+      "stub_slots": {
+        "local": 2,
+        "cloud": 8
+      },
+      "max_waiters_per_endpoint": 64,
+      "local_peak_active": 2,
+      "cloud_peak_active": 0,
+      "final_active": 0,
+      "final_waiting": 0,
+      "fifo_verified": true
+    },
+    {
+      "arm": "network-only",
+      "concurrency": 64,
+      "repetition": 1,
+      "scenario": "healthy",
+      "requests": 128,
+      "cell_wall_s": 0.5579534999997122,
+      "requests_per_second": 229.40979848690978,
+      "python_process_cpu_ms": 312.5,
+      "cpu_scope": "this Python process only; excludes C subprocess and external GPU",
+      "effective_policy_config": {
+        "schema_version": "sensehome.policy.v1",
+        "queue_max_ms": 300,
+        "inflight_max": 64,
+        "free_mem_min_mb": 256,
+        "local_infer_ms": 12,
+        "cloud_infer_ms": 35,
+        "switch_margin_ms": 15,
+        "recovery_samples": 3,
+        "timeout_ms": 800,
+        "observation_max_age_ms": 2000,
+        "observation_lookup_ms": 0.2,
+        "policy_model_ms": 0.2,
+        "execution_model_ms": 0.1,
+        "rule_model_ms": 1
+      },
+      "stub_slots": {
+        "local": 2,
+        "cloud": 8
+      },
+      "max_waiters_per_endpoint": 64,
+      "local_peak_active": 2,
+      "cloud_peak_active": 0,
+      "final_active": 0,
+      "final_waiting": 0,
+      "fifo_verified": true
+    },
+    {
+      "arm": "joint",
+      "concurrency": 64,
+      "repetition": 1,
+      "scenario": "healthy",
+      "requests": 128,
+      "cell_wall_s": 0.3300249999956577,
+      "requests_per_second": 387.8494053531828,
+      "python_process_cpu_ms": 265.625,
+      "cpu_scope": "this Python process only; excludes C subprocess and external GPU",
+      "effective_policy_config": {
+        "schema_version": "sensehome.policy.v1",
+        "queue_max_ms": 300,
+        "inflight_max": 64,
+        "free_mem_min_mb": 256,
+        "local_infer_ms": 12,
+        "cloud_infer_ms": 35,
+        "switch_margin_ms": 15,
+        "recovery_samples": 3,
+        "timeout_ms": 800,
+        "observation_max_age_ms": 2000,
+        "observation_lookup_ms": 0.2,
+        "policy_model_ms": 0.2,
+        "execution_model_ms": 0.1,
+        "rule_model_ms": 1
+      },
+      "stub_slots": {
+        "local": 2,
+        "cloud": 8
+      },
+      "max_waiters_per_endpoint": 64,
+      "local_peak_active": 2,
+      "cloud_peak_active": 8,
+      "final_active": 0,
+      "final_waiting": 0,
+      "fifo_verified": true
+    },
+    {
+      "arm": "network-only",
+      "concurrency": 64,
+      "repetition": 1,
+      "scenario": "cloud_down",
+      "requests": 128,
+      "cell_wall_s": 0.5616709000023548,
+      "requests_per_second": 227.89145743435057,
+      "python_process_cpu_ms": 343.75,
+      "cpu_scope": "this Python process only; excludes C subprocess and external GPU",
+      "effective_policy_config": {
+        "schema_version": "sensehome.policy.v1",
+        "queue_max_ms": 300,
+        "inflight_max": 64,
+        "free_mem_min_mb": 256,
+        "local_infer_ms": 12,
+        "cloud_infer_ms": 35,
+        "switch_margin_ms": 15,
+        "recovery_samples": 3,
+        "timeout_ms": 800,
+        "observation_max_age_ms": 2000,
+        "observation_lookup_ms": 0.2,
+        "policy_model_ms": 0.2,
+        "execution_model_ms": 0.1,
+        "rule_model_ms": 1
+      },
+      "stub_slots": {
+        "local": 2,
+        "cloud": 8
+      },
+      "max_waiters_per_endpoint": 64,
+      "local_peak_active": 2,
+      "cloud_peak_active": 0,
+      "final_active": 0,
+      "final_waiting": 0,
+      "fifo_verified": true
+    },
+    {
+      "arm": "joint",
+      "concurrency": 64,
+      "repetition": 1,
+      "scenario": "cloud_down",
+      "requests": 128,
+      "cell_wall_s": 0.5569428999951924,
+      "requests_per_second": 229.82607373413848,
+      "python_process_cpu_ms": 265.625,
+      "cpu_scope": "this Python process only; excludes C subprocess and external GPU",
+      "effective_policy_config": {
+        "schema_version": "sensehome.policy.v1",
+        "queue_max_ms": 300,
+        "inflight_max": 64,
+        "free_mem_min_mb": 256,
+        "local_infer_ms": 12,
+        "cloud_infer_ms": 35,
+        "switch_margin_ms": 15,
+        "recovery_samples": 3,
+        "timeout_ms": 800,
+        "observation_max_age_ms": 2000,
+        "observation_lookup_ms": 0.2,
+        "policy_model_ms": 0.2,
+        "execution_model_ms": 0.1,
+        "rule_model_ms": 1
+      },
+      "stub_slots": {
+        "local": 2,
+        "cloud": 8
+      },
+      "max_waiters_per_endpoint": 64,
+      "local_peak_active": 2,
+      "cloud_peak_active": 0,
+      "final_active": 0,
+      "final_waiting": 0,
+      "fifo_verified": true
+    },
+    {
+      "arm": "joint",
+      "concurrency": 1,
+      "repetition": 2,
+      "scenario": "healthy",
+      "requests": 128,
+      "cell_wall_s": 1.196640699999989,
+      "requests_per_second": 106.96610937602338,
+      "python_process_cpu_ms": 218.75,
+      "cpu_scope": "this Python process only; excludes C subprocess and external GPU",
+      "effective_policy_config": {
+        "schema_version": "sensehome.policy.v1",
+        "queue_max_ms": 300,
+        "inflight_max": 64,
+        "free_mem_min_mb": 256,
+        "local_infer_ms": 12,
+        "cloud_infer_ms": 35,
+        "switch_margin_ms": 15,
+        "recovery_samples": 3,
+        "timeout_ms": 800,
+        "observation_max_age_ms": 2000,
+        "observation_lookup_ms": 0.2,
+        "policy_model_ms": 0.2,
+        "execution_model_ms": 0.1,
+        "rule_model_ms": 1
+      },
+      "stub_slots": {
+        "local": 2,
+        "cloud": 8
+      },
+      "max_waiters_per_endpoint": 64,
+      "local_peak_active": 1,
+      "cloud_peak_active": 0,
+      "final_active": 0,
+      "final_waiting": 0,
+      "fifo_verified": true
+    },
+    {
+      "arm": "network-only",
+      "concurrency": 1,
+      "repetition": 2,
+      "scenario": "healthy",
+      "requests": 128,
+      "cell_wall_s": 1.1894753000015044,
+      "requests_per_second": 107.61047329006169,
+      "python_process_cpu_ms": 312.5,
+      "cpu_scope": "this Python process only; excludes C subprocess and external GPU",
+      "effective_policy_config": {
+        "schema_version": "sensehome.policy.v1",
+        "queue_max_ms": 300,
+        "inflight_max": 64,
+        "free_mem_min_mb": 256,
+        "local_infer_ms": 12,
+        "cloud_infer_ms": 35,
+        "switch_margin_ms": 15,
+        "recovery_samples": 3,
+        "timeout_ms": 800,
+        "observation_max_age_ms": 2000,
+        "observation_lookup_ms": 0.2,
+        "policy_model_ms": 0.2,
+        "execution_model_ms": 0.1,
+        "rule_model_ms": 1
+      },
+      "stub_slots": {
+        "local": 2,
+        "cloud": 8
+      },
+      "max_waiters_per_endpoint": 64,
+      "local_peak_active": 1,
+      "cloud_peak_active": 0,
+      "final_active": 0,
+      "final_waiting": 0,
+      "fifo_verified": true
+    },
+    {
+      "arm": "joint",
+      "concurrency": 1,
+      "repetition": 2,
+      "scenario": "cloud_down",
+      "requests": 128,
+      "cell_wall_s": 1.1775932000018656,
+      "requests_per_second": 108.69627983568283,
+      "python_process_cpu_ms": 390.625,
+      "cpu_scope": "this Python process only; excludes C subprocess and external GPU",
+      "effective_policy_config": {
+        "schema_version": "sensehome.policy.v1",
+        "queue_max_ms": 300,
+        "inflight_max": 64,
+        "free_mem_min_mb": 256,
+        "local_infer_ms": 12,
+        "cloud_infer_ms": 35,
+        "switch_margin_ms": 15,
+        "recovery_samples": 3,
+        "timeout_ms": 800,
+        "observation_max_age_ms": 2000,
+        "observation_lookup_ms": 0.2,
+        "policy_model_ms": 0.2,
+        "execution_model_ms": 0.1,
+        "rule_model_ms": 1
+      },
+      "stub_slots": {
+        "local": 2,
+        "cloud": 8
+      },
+      "max_waiters_per_endpoint": 64,
+      "local_peak_active": 1,
+      "cloud_peak_active": 0,
+      "final_active": 0,
+      "final_waiting": 0,
+      "fifo_verified": true
+    },
+    {
+      "arm": "network-only",
+      "concurrency": 1,
+      "repetition": 2,
+      "scenario": "cloud_down",
+      "requests": 128,
+      "cell_wall_s": 1.167733499998576,
+      "requests_per_second": 109.61405149390343,
+      "python_process_cpu_ms": 156.25,
+      "cpu_scope": "this Python process only; excludes C subprocess and external GPU",
+      "effective_policy_config": {
+        "schema_version": "sensehome.policy.v1",
+        "queue_max_ms": 300,
+        "inflight_max": 64,
+        "free_mem_min_mb": 256,
+        "local_infer_ms": 12,
+        "cloud_infer_ms": 35,
+        "switch_margin_ms": 15,
+        "recovery_samples": 3,
+        "timeout_ms": 800,
+        "observation_max_age_ms": 2000,
+        "observation_lookup_ms": 0.2,
+        "policy_model_ms": 0.2,
+        "execution_model_ms": 0.1,
+        "rule_model_ms": 1
+      },
+      "stub_slots": {
+        "local": 2,
+        "cloud": 8
+      },
+      "max_waiters_per_endpoint": 64,
+      "local_peak_active": 1,
+      "cloud_peak_active": 0,
+      "final_active": 0,
+      "final_waiting": 0,
+      "fifo_verified": true
+    },
+    {
+      "arm": "joint",
+      "concurrency": 8,
+      "repetition": 2,
+      "scenario": "healthy",
+      "requests": 128,
+      "cell_wall_s": 0.44606840000051307,
+      "requests_per_second": 286.9515078850077,
+      "python_process_cpu_ms": 218.75,
+      "cpu_scope": "this Python process only; excludes C subprocess and external GPU",
+      "effective_policy_config": {
+        "schema_version": "sensehome.policy.v1",
+        "queue_max_ms": 300,
+        "inflight_max": 64,
+        "free_mem_min_mb": 256,
+        "local_infer_ms": 12,
+        "cloud_infer_ms": 35,
+        "switch_margin_ms": 15,
+        "recovery_samples": 3,
+        "timeout_ms": 800,
+        "observation_max_age_ms": 2000,
+        "observation_lookup_ms": 0.2,
+        "policy_model_ms": 0.2,
+        "execution_model_ms": 0.1,
+        "rule_model_ms": 1
+      },
+      "stub_slots": {
+        "local": 2,
+        "cloud": 8
+      },
+      "max_waiters_per_endpoint": 64,
+      "local_peak_active": 2,
+      "cloud_peak_active": 1,
+      "final_active": 0,
+      "final_waiting": 0,
+      "fifo_verified": true
+    },
+    {
+      "arm": "network-only",
+      "concurrency": 8,
+      "repetition": 2,
+      "scenario": "healthy",
+      "requests": 128,
+      "cell_wall_s": 0.5220647999958601,
+      "requests_per_second": 245.18029179713903,
+      "python_process_cpu_ms": 250.0,
+      "cpu_scope": "this Python process only; excludes C subprocess and external GPU",
+      "effective_policy_config": {
+        "schema_version": "sensehome.policy.v1",
+        "queue_max_ms": 300,
+        "inflight_max": 64,
+        "free_mem_min_mb": 256,
+        "local_infer_ms": 12,
+        "cloud_infer_ms": 35,
+        "switch_margin_ms": 15,
+        "recovery_samples": 3,
+        "timeout_ms": 800,
+        "observation_max_age_ms": 2000,
+        "observation_lookup_ms": 0.2,
+        "policy_model_ms": 0.2,
+        "execution_model_ms": 0.1,
+        "rule_model_ms": 1
+      },
+      "stub_slots": {
+        "local": 2,
+        "cloud": 8
+      },
+      "max_waiters_per_endpoint": 64,
+      "local_peak_active": 2,
+      "cloud_peak_active": 0,
+      "final_active": 0,
+      "final_waiting": 0,
+      "fifo_verified": true
+    },
+    {
+      "arm": "joint",
+      "concurrency": 8,
+      "repetition": 2,
+      "scenario": "cloud_down",
+      "requests": 128,
+      "cell_wall_s": 0.5224786000035238,
+      "requests_per_second": 244.98611043425842,
+      "python_process_cpu_ms": 250.0,
+      "cpu_scope": "this Python process only; excludes C subprocess and external GPU",
+      "effective_policy_config": {
+        "schema_version": "sensehome.policy.v1",
+        "queue_max_ms": 300,
+        "inflight_max": 64,
+        "free_mem_min_mb": 256,
+        "local_infer_ms": 12,
+        "cloud_infer_ms": 35,
+        "switch_margin_ms": 15,
+        "recovery_samples": 3,
+        "timeout_ms": 800,
+        "observation_max_age_ms": 2000,
+        "observation_lookup_ms": 0.2,
+        "policy_model_ms": 0.2,
+        "execution_model_ms": 0.1,
+        "rule_model_ms": 1
+      },
+      "stub_slots": {
+        "local": 2,
+        "cloud": 8
+      },
+      "max_waiters_per_endpoint": 64,
+      "local_peak_active": 2,
+      "cloud_peak_active": 0,
+      "final_active": 0,
+      "final_waiting": 0,
+      "fifo_verified": true
+    },
+    {
+      "arm": "network-only",
+      "concurrency": 8,
+      "repetition": 2,
+      "scenario": "cloud_down",
+      "requests": 128,
+      "cell_wall_s": 0.519805500000075,
+      "requests_per_second": 246.2459516107112,
+      "python_process_cpu_ms": 171.875,
+      "cpu_scope": "this Python process only; excludes C subprocess and external GPU",
+      "effective_policy_config": {
+        "schema_version": "sensehome.policy.v1",
+        "queue_max_ms": 300,
+        "inflight_max": 64,
+        "free_mem_min_mb": 256,
+        "local_infer_ms": 12,
+        "cloud_infer_ms": 35,
+        "switch_margin_ms": 15,
+        "recovery_samples": 3,
+        "timeout_ms": 800,
+        "observation_max_age_ms": 2000,
+        "observation_lookup_ms": 0.2,
+        "policy_model_ms": 0.2,
+        "execution_model_ms": 0.1,
+        "rule_model_ms": 1
+      },
+      "stub_slots": {
+        "local": 2,
+        "cloud": 8
+      },
+      "max_waiters_per_endpoint": 64,
+      "local_peak_active": 2,
+      "cloud_peak_active": 0,
+      "final_active": 0,
+      "final_waiting": 0,
+      "fifo_verified": true
+    },
+    {
+      "arm": "joint",
+      "concurrency": 32,
+      "repetition": 2,
+      "scenario": "healthy",
+      "requests": 128,
+      "cell_wall_s": 0.29817589999584015,
+      "requests_per_second": 429.2768127866327,
+      "python_process_cpu_ms": 187.5,
+      "cpu_scope": "this Python process only; excludes C subprocess and external GPU",
+      "effective_policy_config": {
+        "schema_version": "sensehome.policy.v1",
+        "queue_max_ms": 300,
+        "inflight_max": 64,
+        "free_mem_min_mb": 256,
+        "local_infer_ms": 12,
+        "cloud_infer_ms": 35,
+        "switch_margin_ms": 15,
+        "recovery_samples": 3,
+        "timeout_ms": 800,
+        "observation_max_age_ms": 2000,
+        "observation_lookup_ms": 0.2,
+        "policy_model_ms": 0.2,
+        "execution_model_ms": 0.1,
+        "rule_model_ms": 1
+      },
+      "stub_slots": {
+        "local": 2,
+        "cloud": 8
+      },
+      "max_waiters_per_endpoint": 64,
+      "local_peak_active": 2,
+      "cloud_peak_active": 8,
+      "final_active": 0,
+      "final_waiting": 0,
+      "fifo_verified": true
+    },
+    {
+      "arm": "network-only",
+      "concurrency": 32,
+      "repetition": 2,
+      "scenario": "healthy",
+      "requests": 128,
+      "cell_wall_s": 0.5321194999996806,
+      "requests_per_second": 240.54747100994578,
+      "python_process_cpu_ms": 250.0,
+      "cpu_scope": "this Python process only; excludes C subprocess and external GPU",
+      "effective_policy_config": {
+        "schema_version": "sensehome.policy.v1",
+        "queue_max_ms": 300,
+        "inflight_max": 64,
+        "free_mem_min_mb": 256,
+        "local_infer_ms": 12,
+        "cloud_infer_ms": 35,
+        "switch_margin_ms": 15,
+        "recovery_samples": 3,
+        "timeout_ms": 800,
+        "observation_max_age_ms": 2000,
+        "observation_lookup_ms": 0.2,
+        "policy_model_ms": 0.2,
+        "execution_model_ms": 0.1,
+        "rule_model_ms": 1
+      },
+      "stub_slots": {
+        "local": 2,
+        "cloud": 8
+      },
+      "max_waiters_per_endpoint": 64,
+      "local_peak_active": 2,
+      "cloud_peak_active": 0,
+      "final_active": 0,
+      "final_waiting": 0,
+      "fifo_verified": true
+    },
+    {
+      "arm": "joint",
+      "concurrency": 32,
+      "repetition": 2,
+      "scenario": "cloud_down",
+      "requests": 128,
+      "cell_wall_s": 0.5440880000023753,
+      "requests_per_second": 235.25606151843303,
+      "python_process_cpu_ms": 281.25,
+      "cpu_scope": "this Python process only; excludes C subprocess and external GPU",
+      "effective_policy_config": {
+        "schema_version": "sensehome.policy.v1",
+        "queue_max_ms": 300,
+        "inflight_max": 64,
+        "free_mem_min_mb": 256,
+        "local_infer_ms": 12,
+        "cloud_infer_ms": 35,
+        "switch_margin_ms": 15,
+        "recovery_samples": 3,
+        "timeout_ms": 800,
+        "observation_max_age_ms": 2000,
+        "observation_lookup_ms": 0.2,
+        "policy_model_ms": 0.2,
+        "execution_model_ms": 0.1,
+        "rule_model_ms": 1
+      },
+      "stub_slots": {
+        "local": 2,
+        "cloud": 8
+      },
+      "max_waiters_per_endpoint": 64,
+      "local_peak_active": 2,
+      "cloud_peak_active": 0,
+      "final_active": 0,
+      "final_waiting": 0,
+      "fifo_verified": true
+    },
+    {
+      "arm": "network-only",
+      "concurrency": 32,
+      "repetition": 2,
+      "scenario": "cloud_down",
+      "requests": 128,
+      "cell_wall_s": 0.5354359999982989,
+      "requests_per_second": 239.05751574493806,
+      "python_process_cpu_ms": 234.375,
+      "cpu_scope": "this Python process only; excludes C subprocess and external GPU",
+      "effective_policy_config": {
+        "schema_version": "sensehome.policy.v1",
+        "queue_max_ms": 300,
+        "inflight_max": 64,
+        "free_mem_min_mb": 256,
+        "local_infer_ms": 12,
+        "cloud_infer_ms": 35,
+        "switch_margin_ms": 15,
+        "recovery_samples": 3,
+        "timeout_ms": 800,
+        "observation_max_age_ms": 2000,
+        "observation_lookup_ms": 0.2,
+        "policy_model_ms": 0.2,
+        "execution_model_ms": 0.1,
+        "rule_model_ms": 1
+      },
+      "stub_slots": {
+        "local": 2,
+        "cloud": 8
+      },
+      "max_waiters_per_endpoint": 64,
+      "local_peak_active": 2,
+      "cloud_peak_active": 0,
+      "final_active": 0,
+      "final_waiting": 0,
+      "fifo_verified": true
+    },
+    {
+      "arm": "joint",
+      "concurrency": 64,
+      "repetition": 2,
+      "scenario": "healthy",
+      "requests": 128,
+      "cell_wall_s": 0.3226914000042598,
+      "requests_per_second": 396.663809442428,
+      "python_process_cpu_ms": 375.0,
+      "cpu_scope": "this Python process only; excludes C subprocess and external GPU",
+      "effective_policy_config": {
+        "schema_version": "sensehome.policy.v1",
+        "queue_max_ms": 300,
+        "inflight_max": 64,
+        "free_mem_min_mb": 256,
+        "local_infer_ms": 12,
+        "cloud_infer_ms": 35,
+        "switch_margin_ms": 15,
+        "recovery_samples": 3,
+        "timeout_ms": 800,
+        "observation_max_age_ms": 2000,
+        "observation_lookup_ms": 0.2,
+        "policy_model_ms": 0.2,
+        "execution_model_ms": 0.1,
+        "rule_model_ms": 1
+      },
+      "stub_slots": {
+        "local": 2,
+        "cloud": 8
+      },
+      "max_waiters_per_endpoint": 64,
+      "local_peak_active": 2,
+      "cloud_peak_active": 8,
+      "final_active": 0,
+      "final_waiting": 0,
+      "fifo_verified": true
+    },
+    {
+      "arm": "network-only",
+      "concurrency": 64,
+      "repetition": 2,
+      "scenario": "healthy",
+      "requests": 128,
+      "cell_wall_s": 0.5457711000053678,
+      "requests_per_second": 234.53055685568748,
+      "python_process_cpu_ms": 281.25,
+      "cpu_scope": "this Python process only; excludes C subprocess and external GPU",
+      "effective_policy_config": {
+        "schema_version": "sensehome.policy.v1",
+        "queue_max_ms": 300,
+        "inflight_max": 64,
+        "free_mem_min_mb": 256,
+        "local_infer_ms": 12,
+        "cloud_infer_ms": 35,
+        "switch_margin_ms": 15,
+        "recovery_samples": 3,
+        "timeout_ms": 800,
+        "observation_max_age_ms": 2000,
+        "observation_lookup_ms": 0.2,
+        "policy_model_ms": 0.2,
+        "execution_model_ms": 0.1,
+        "rule_model_ms": 1
+      },
+      "stub_slots": {
+        "local": 2,
+        "cloud": 8
+      },
+      "max_waiters_per_endpoint": 64,
+      "local_peak_active": 2,
+      "cloud_peak_active": 0,
+      "final_active": 0,
+      "final_waiting": 0,
+      "fifo_verified": true
+    },
+    {
+      "arm": "joint",
+      "concurrency": 64,
+      "repetition": 2,
+      "scenario": "cloud_down",
+      "requests": 128,
+      "cell_wall_s": 0.5578420000019833,
+      "requests_per_second": 229.45565231650707,
+      "python_process_cpu_ms": 265.625,
+      "cpu_scope": "this Python process only; excludes C subprocess and external GPU",
+      "effective_policy_config": {
+        "schema_version": "sensehome.policy.v1",
+        "queue_max_ms": 300,
+        "inflight_max": 64,
+        "free_mem_min_mb": 256,
+        "local_infer_ms": 12,
+        "cloud_infer_ms": 35,
+        "switch_margin_ms": 15,
+        "recovery_samples": 3,
+        "timeout_ms": 800,
+        "observation_max_age_ms": 2000,
+        "observation_lookup_ms": 0.2,
+        "policy_model_ms": 0.2,
+        "execution_model_ms": 0.1,
+        "rule_model_ms": 1
+      },
+      "stub_slots": {
+        "local": 2,
+        "cloud": 8
+      },
+      "max_waiters_per_endpoint": 64,
+      "local_peak_active": 2,
+      "cloud_peak_active": 0,
+      "final_active": 0,
+      "final_waiting": 0,
+      "fifo_verified": true
+    },
+    {
+      "arm": "network-only",
+      "concurrency": 64,
+      "repetition": 2,
+      "scenario": "cloud_down",
+      "requests": 128,
+      "cell_wall_s": 0.5517326999979559,
+      "requests_per_second": 231.99639970673158,
+      "python_process_cpu_ms": 234.375,
+      "cpu_scope": "this Python process only; excludes C subprocess and external GPU",
+      "effective_policy_config": {
+        "schema_version": "sensehome.policy.v1",
+        "queue_max_ms": 300,
+        "inflight_max": 64,
+        "free_mem_min_mb": 256,
+        "local_infer_ms": 12,
+        "cloud_infer_ms": 35,
+        "switch_margin_ms": 15,
+        "recovery_samples": 3,
+        "timeout_ms": 800,
+        "observation_max_age_ms": 2000,
+        "observation_lookup_ms": 0.2,
+        "policy_model_ms": 0.2,
+        "execution_model_ms": 0.1,
+        "rule_model_ms": 1
+      },
+      "stub_slots": {
+        "local": 2,
+        "cloud": 8
+      },
+      "max_waiters_per_endpoint": 64,
+      "local_peak_active": 2,
+      "cloud_peak_active": 0,
+      "final_active": 0,
+      "final_waiting": 0,
+      "fifo_verified": true
+    }
+  ],
+  "groups": [
+    {
+      "concurrency": 1,
+      "statistics": {
+        "method": {
+          "quantiles": "linear/type-7; all requests including failures",
+          "deadline": "completed contract AND full total_user_ms <= per-service deadline",
+          "intervals": "Wilson95 descriptive rates; paired seed-cluster bootstrap 2000 draws",
+          "no_field_inference": true,
+          "p99_warning": "Tail estimates are exploratory, especially n<1000"
+        },
+        "cells": [
+          {
+            "scenario": "cloud_down",
+            "service": "interactive_inference",
+            "arm": "joint",
+            "n": 231,
+            "p50_ms": 14.175299998896662,
+            "p95_ms": 15.070749999722466,
+            "p99_ms": 15.917510003055211,
+            "mean_ms": 14.222326407351913,
+            "completed_p95_ms": 15.070749999722466,
+            "contract_completed": 231,
+            "contract_completion_rate": 1.0,
+            "contract_completion_wilson95": [
+              0.9836423311284778,
+              0.9999999999999999
+            ],
+            "deadline_met": 231,
+            "deadline_met_rate": 1.0,
+            "deadline_violation_rate": 0.0,
+            "deadline_met_wilson95": [
+              0.9836423311284778,
+              0.9999999999999999
+            ],
+            "fallbacks": 0,
+            "backend_counts": {
+              "local-model": 231
+            },
+            "reason_counts": {
+              "MODEL_UNAVAILABLE": 231
+            },
+            "failure_counts": {},
+            "p99_tail_observations": 2,
+            "p99_caution": true
+          },
+          {
+            "scenario": "cloud_down",
+            "service": "interactive_inference",
+            "arm": "network-only",
+            "n": 231,
+            "p50_ms": 14.01849999820115,
+            "p95_ms": 14.77300000260584,
+            "p99_ms": 15.782160001253942,
+            "mean_ms": 14.089934199416478,
+            "completed_p95_ms": 14.77300000260584,
+            "contract_completed": 231,
+            "contract_completion_rate": 1.0,
+            "contract_completion_wilson95": [
+              0.9836423311284778,
+              0.9999999999999999
+            ],
+            "deadline_met": 231,
+            "deadline_met_rate": 1.0,
+            "deadline_violation_rate": 0.0,
+            "deadline_met_wilson95": [
+              0.9836423311284778,
+              0.9999999999999999
+            ],
+            "fallbacks": 0,
+            "backend_counts": {
+              "local-model": 231
+            },
+            "reason_counts": {
+              "COST_LOCAL": 231
+            },
+            "failure_counts": {},
+            "p99_tail_observations": 2,
+            "p99_caution": true
+          },
+          {
+            "scenario": "cloud_down",
+            "service": "safety_control",
+            "arm": "joint",
+            "n": 75,
+            "p50_ms": 1.382099995680619,
+            "p95_ms": 1.828469998872606,
+            "p99_ms": 2.1195100019394895,
+            "mean_ms": 1.399800000169004,
+            "completed_p95_ms": 1.828469998872606,
+            "contract_completed": 75,
+            "contract_completion_rate": 1.0,
+            "contract_completion_wilson95": [
+              0.9512761575171942,
+              1
+            ],
+            "deadline_met": 75,
+            "deadline_met_rate": 1.0,
+            "deadline_violation_rate": 0.0,
+            "deadline_met_wilson95": [
+              0.9512761575171942,
+              1
+            ],
+            "fallbacks": 0,
+            "backend_counts": {
+              "local-rules": 75
+            },
+            "reason_counts": {
+              "TASK_IS_SAFETY": 75
+            },
+            "failure_counts": {},
+            "p99_tail_observations": 0,
+            "p99_caution": true
+          },
+          {
+            "scenario": "cloud_down",
+            "service": "safety_control",
+            "arm": "network-only",
+            "n": 75,
+            "p50_ms": 1.262099998712074,
+            "p95_ms": 1.7689999993308447,
+            "p99_ms": 1.98627399862744,
+            "mean_ms": 1.3215200004439491,
+            "completed_p95_ms": 1.7689999993308447,
+            "contract_completed": 75,
+            "contract_completion_rate": 1.0,
+            "contract_completion_wilson95": [
+              0.9512761575171942,
+              1
+            ],
+            "deadline_met": 75,
+            "deadline_met_rate": 1.0,
+            "deadline_violation_rate": 0.0,
+            "deadline_met_wilson95": [
+              0.9512761575171942,
+              1
+            ],
+            "fallbacks": 0,
+            "backend_counts": {
+              "local-rules": 75
+            },
+            "reason_counts": {
+              "TASK_IS_SAFETY": 75
+            },
+            "failure_counts": {},
+            "p99_tail_observations": 0,
+            "p99_caution": true
+          },
+          {
+            "scenario": "cloud_down",
+            "service": "sensor_batch",
+            "arm": "joint",
+            "n": 78,
+            "p50_ms": 1.3963999990664888,
+            "p95_ms": 2.0091599984880304,
+            "p99_ms": 2.202477998362156,
+            "mean_ms": 1.474766666946473,
+            "completed_p95_ms": 2.0091599984880304,
+            "contract_completed": 78,
+            "contract_completion_rate": 1.0,
+            "contract_completion_wilson95": [
+              0.9530621902878059,
+              1
+            ],
+            "deadline_met": 78,
+            "deadline_met_rate": 1.0,
+            "deadline_violation_rate": 0.0,
+            "deadline_met_wilson95": [
+              0.9530621902878059,
+              1
+            ],
+            "fallbacks": 0,
+            "backend_counts": {
+              "local-rules": 78
+            },
+            "reason_counts": {
+              "TASK_IS_SIMPLE": 78
+            },
+            "failure_counts": {},
+            "p99_tail_observations": 0,
+            "p99_caution": true
+          },
+          {
+            "scenario": "cloud_down",
+            "service": "sensor_batch",
+            "arm": "network-only",
+            "n": 78,
+            "p50_ms": 1.3488000004144851,
+            "p95_ms": 1.8284499969013264,
+            "p99_ms": 2.172500999367913,
+            "mean_ms": 1.412199999415465,
+            "completed_p95_ms": 1.8284499969013264,
+            "contract_completed": 78,
+            "contract_completion_rate": 1.0,
+            "contract_completion_wilson95": [
+              0.9530621902878059,
+              1
+            ],
+            "deadline_met": 78,
+            "deadline_met_rate": 1.0,
+            "deadline_violation_rate": 0.0,
+            "deadline_met_wilson95": [
+              0.9530621902878059,
+              1
+            ],
+            "fallbacks": 0,
+            "backend_counts": {
+              "local-rules": 78
+            },
+            "reason_counts": {
+              "TASK_IS_SIMPLE": 78
+            },
+            "failure_counts": {},
+            "p99_tail_observations": 0,
+            "p99_caution": true
+          },
+          {
+            "scenario": "healthy",
+            "service": "interactive_inference",
+            "arm": "joint",
+            "n": 231,
+            "p50_ms": 14.026700002432335,
+            "p95_ms": 14.881899998727022,
+            "p99_ms": 15.407460001733849,
+            "mean_ms": 14.094492640628255,
+            "completed_p95_ms": 14.881899998727022,
+            "contract_completed": 231,
+            "contract_completion_rate": 1.0,
+            "contract_completion_wilson95": [
+              0.9836423311284778,
+              0.9999999999999999
+            ],
+            "deadline_met": 231,
+            "deadline_met_rate": 1.0,
+            "deadline_violation_rate": 0.0,
+            "deadline_met_wilson95": [
+              0.9836423311284778,
+              0.9999999999999999
+            ],
+            "fallbacks": 0,
+            "backend_counts": {
+              "local-model": 231
+            },
+            "reason_counts": {
+              "COST_LOCAL": 231
+            },
+            "failure_counts": {},
+            "p99_tail_observations": 2,
+            "p99_caution": true
+          },
+          {
+            "scenario": "healthy",
+            "service": "interactive_inference",
+            "arm": "network-only",
+            "n": 231,
+            "p50_ms": 14.10740000574151,
+            "p95_ms": 14.915799998561852,
+            "p99_ms": 15.471209998213451,
+            "mean_ms": 14.163806926644533,
+            "completed_p95_ms": 14.915799998561852,
+            "contract_completed": 231,
+            "contract_completion_rate": 1.0,
+            "contract_completion_wilson95": [
+              0.9836423311284778,
+              0.9999999999999999
+            ],
+            "deadline_met": 231,
+            "deadline_met_rate": 1.0,
+            "deadline_violation_rate": 0.0,
+            "deadline_met_wilson95": [
+              0.9836423311284778,
+              0.9999999999999999
+            ],
+            "fallbacks": 0,
+            "backend_counts": {
+              "local-model": 231
+            },
+            "reason_counts": {
+              "COST_LOCAL": 231
+            },
+            "failure_counts": {},
+            "p99_tail_observations": 2,
+            "p99_caution": true
+          },
+          {
+            "scenario": "healthy",
+            "service": "safety_control",
+            "arm": "joint",
+            "n": 75,
+            "p50_ms": 1.3624999992316589,
+            "p95_ms": 1.8412499979604036,
+            "p99_ms": 2.040242001530717,
+            "mean_ms": 1.3687253332075973,
+            "completed_p95_ms": 1.8412499979604036,
+            "contract_completed": 75,
+            "contract_completion_rate": 1.0,
+            "contract_completion_wilson95": [
+              0.9512761575171942,
+              1
+            ],
+            "deadline_met": 75,
+            "deadline_met_rate": 1.0,
+            "deadline_violation_rate": 0.0,
+            "deadline_met_wilson95": [
+              0.9512761575171942,
+              1
+            ],
+            "fallbacks": 0,
+            "backend_counts": {
+              "local-rules": 75
+            },
+            "reason_counts": {
+              "TASK_IS_SAFETY": 75
+            },
+            "failure_counts": {},
+            "p99_tail_observations": 0,
+            "p99_caution": true
+          },
+          {
+            "scenario": "healthy",
+            "service": "safety_control",
+            "arm": "network-only",
+            "n": 75,
+            "p50_ms": 1.2967999937245622,
+            "p95_ms": 2.0379000015964266,
+            "p99_ms": 2.5486459997773685,
+            "mean_ms": 1.4033586663814883,
+            "completed_p95_ms": 2.0379000015964266,
+            "contract_completed": 75,
+            "contract_completion_rate": 1.0,
+            "contract_completion_wilson95": [
+              0.9512761575171942,
+              1
+            ],
+            "deadline_met": 75,
+            "deadline_met_rate": 1.0,
+            "deadline_violation_rate": 0.0,
+            "deadline_met_wilson95": [
+              0.9512761575171942,
+              1
+            ],
+            "fallbacks": 0,
+            "backend_counts": {
+              "local-rules": 75
+            },
+            "reason_counts": {
+              "TASK_IS_SAFETY": 75
+            },
+            "failure_counts": {},
+            "p99_tail_observations": 0,
+            "p99_caution": true
+          },
+          {
+            "scenario": "healthy",
+            "service": "sensor_batch",
+            "arm": "joint",
+            "n": 78,
+            "p50_ms": 1.328400001511909,
+            "p95_ms": 1.8183149964897884,
+            "p99_ms": 2.093300996275504,
+            "mean_ms": 1.3903769232946126,
+            "completed_p95_ms": 1.8183149964897884,
+            "contract_completed": 78,
+            "contract_completion_rate": 1.0,
+            "contract_completion_wilson95": [
+              0.9530621902878059,
+              1
+            ],
+            "deadline_met": 78,
+            "deadline_met_rate": 1.0,
+            "deadline_violation_rate": 0.0,
+            "deadline_met_wilson95": [
+              0.9530621902878059,
+              1
+            ],
+            "fallbacks": 0,
+            "backend_counts": {
+              "local-rules": 78
+            },
+            "reason_counts": {
+              "TASK_IS_SIMPLE": 78
+            },
+            "failure_counts": {},
+            "p99_tail_observations": 0,
+            "p99_caution": true
+          },
+          {
+            "scenario": "healthy",
+            "service": "sensor_batch",
+            "arm": "network-only",
+            "n": 78,
+            "p50_ms": 1.3850499999534804,
+            "p95_ms": 1.9966299958468874,
+            "p99_ms": 2.4550930019904667,
+            "mean_ms": 1.4656987183022863,
+            "completed_p95_ms": 1.9966299958468874,
+            "contract_completed": 78,
+            "contract_completion_rate": 1.0,
+            "contract_completion_wilson95": [
+              0.9530621902878059,
+              1
+            ],
+            "deadline_met": 78,
+            "deadline_met_rate": 1.0,
+            "deadline_violation_rate": 0.0,
+            "deadline_met_wilson95": [
+              0.9530621902878059,
+              1
+            ],
+            "fallbacks": 0,
+            "backend_counts": {
+              "local-rules": 78
+            },
+            "reason_counts": {
+              "TASK_IS_SIMPLE": 78
+            },
+            "failure_counts": {},
+            "p99_tail_observations": 0,
+            "p99_caution": true
+          }
+        ],
+        "overall": [
+          {
+            "service": "interactive_inference",
+            "arm": "joint",
+            "n": 462,
+            "p50_ms": 14.116499998635845,
+            "p95_ms": 14.92544500179065,
+            "p99_ms": 15.854797001447874,
+            "mean_ms": 14.158409523990084,
+            "completed_p95_ms": 14.92544500179065,
+            "contract_completed": 462,
+            "contract_completion_rate": 1.0,
+            "contract_completion_wilson95": [
+              0.9917537206104003,
+              1
+            ],
+            "deadline_met": 462,
+            "deadline_met_rate": 1.0,
+            "deadline_violation_rate": 0.0,
+            "deadline_met_wilson95": [
+              0.9917537206104003,
+              1
+            ],
+            "fallbacks": 0,
+            "backend_counts": {
+              "local-model": 462
+            },
+            "reason_counts": {
+              "COST_LOCAL": 231,
+              "MODEL_UNAVAILABLE": 231
+            },
+            "failure_counts": {},
+            "p99_tail_observations": 4,
+            "p99_caution": true
+          },
+          {
+            "service": "interactive_inference",
+            "arm": "network-only",
+            "n": 462,
+            "p50_ms": 14.065999999729684,
+            "p95_ms": 14.888445001633954,
+            "p99_ms": 15.647391003440132,
+            "mean_ms": 14.126870563030504,
+            "completed_p95_ms": 14.888445001633954,
+            "contract_completed": 462,
+            "contract_completion_rate": 1.0,
+            "contract_completion_wilson95": [
+              0.9917537206104003,
+              1
+            ],
+            "deadline_met": 462,
+            "deadline_met_rate": 1.0,
+            "deadline_violation_rate": 0.0,
+            "deadline_met_wilson95": [
+              0.9917537206104003,
+              1
+            ],
+            "fallbacks": 0,
+            "backend_counts": {
+              "local-model": 462
+            },
+            "reason_counts": {
+              "COST_LOCAL": 462
+            },
+            "failure_counts": {},
+            "p99_tail_observations": 4,
+            "p99_caution": true
+          },
+          {
+            "service": "safety_control",
+            "arm": "joint",
+            "n": 150,
+            "p50_ms": 1.3658999960171059,
+            "p95_ms": 1.8419249994622076,
+            "p99_ms": 2.1578850012883763,
+            "mean_ms": 1.3842626666883007,
+            "completed_p95_ms": 1.8419249994622076,
+            "contract_completed": 150,
+            "contract_completion_rate": 1.0,
+            "contract_completion_wilson95": [
+              0.9750297556319235,
+              1
+            ],
+            "deadline_met": 150,
+            "deadline_met_rate": 1.0,
+            "deadline_violation_rate": 0.0,
+            "deadline_met_wilson95": [
+              0.9750297556319235,
+              1
+            ],
+            "fallbacks": 0,
+            "backend_counts": {
+              "local-rules": 150
+            },
+            "reason_counts": {
+              "TASK_IS_SAFETY": 150
+            },
+            "failure_counts": {},
+            "p99_tail_observations": 1,
+            "p99_caution": true
+          },
+          {
+            "service": "safety_control",
+            "arm": "network-only",
+            "n": 150,
+            "p50_ms": 1.2798999996448401,
+            "p95_ms": 1.88130000133242,
+            "p99_ms": 2.287598998373141,
+            "mean_ms": 1.3624393334127187,
+            "completed_p95_ms": 1.88130000133242,
+            "contract_completed": 150,
+            "contract_completion_rate": 1.0,
+            "contract_completion_wilson95": [
+              0.9750297556319235,
+              1
+            ],
+            "deadline_met": 150,
+            "deadline_met_rate": 1.0,
+            "deadline_violation_rate": 0.0,
+            "deadline_met_wilson95": [
+              0.9750297556319235,
+              1
+            ],
+            "fallbacks": 0,
+            "backend_counts": {
+              "local-rules": 150
+            },
+            "reason_counts": {
+              "TASK_IS_SAFETY": 150
+            },
+            "failure_counts": {},
+            "p99_tail_observations": 1,
+            "p99_caution": true
+          },
+          {
+            "service": "sensor_batch",
+            "arm": "joint",
+            "n": 156,
+            "p50_ms": 1.360899997962406,
+            "p95_ms": 1.9876249989465578,
+            "p99_ms": 2.2373699983290845,
+            "mean_ms": 1.4325717951205428,
+            "completed_p95_ms": 1.9876249989465578,
+            "contract_completed": 156,
+            "contract_completion_rate": 1.0,
+            "contract_completion_wilson95": [
+              0.9759670685625849,
+              0.9999999999999999
+            ],
+            "deadline_met": 156,
+            "deadline_met_rate": 1.0,
+            "deadline_violation_rate": 0.0,
+            "deadline_met_wilson95": [
+              0.9759670685625849,
+              0.9999999999999999
+            ],
+            "fallbacks": 0,
+            "backend_counts": {
+              "local-rules": 156
+            },
+            "reason_counts": {
+              "TASK_IS_SIMPLE": 156
+            },
+            "failure_counts": {},
+            "p99_tail_observations": 1,
+            "p99_caution": true
+          },
+          {
+            "service": "sensor_batch",
+            "arm": "network-only",
+            "n": 156,
+            "p50_ms": 1.3670499974978156,
+            "p95_ms": 1.975775001483271,
+            "p99_ms": 2.2785850003856454,
+            "mean_ms": 1.4389493588588755,
+            "completed_p95_ms": 1.975775001483271,
+            "contract_completed": 156,
+            "contract_completion_rate": 1.0,
+            "contract_completion_wilson95": [
+              0.9759670685625849,
+              0.9999999999999999
+            ],
+            "deadline_met": 156,
+            "deadline_met_rate": 1.0,
+            "deadline_violation_rate": 0.0,
+            "deadline_met_wilson95": [
+              0.9759670685625849,
+              0.9999999999999999
+            ],
+            "fallbacks": 0,
+            "backend_counts": {
+              "local-rules": 156
+            },
+            "reason_counts": {
+              "TASK_IS_SIMPLE": 156
+            },
+            "failure_counts": {},
+            "p99_tail_observations": 1,
+            "p99_caution": true
+          }
+        ],
+        "paired_effects": []
+      }
+    },
+    {
+      "concurrency": 8,
+      "statistics": {
+        "method": {
+          "quantiles": "linear/type-7; all requests including failures",
+          "deadline": "completed contract AND full total_user_ms <= per-service deadline",
+          "intervals": "Wilson95 descriptive rates; paired seed-cluster bootstrap 2000 draws",
+          "no_field_inference": true,
+          "p99_warning": "Tail estimates are exploratory, especially n<1000"
+        },
+        "cells": [
+          {
+            "scenario": "cloud_down",
+            "service": "interactive_inference",
+            "arm": "joint",
+            "n": 231,
+            "p50_ms": 50.42390000016894,
+            "p95_ms": 52.80589999892982,
+            "p99_ms": 55.58820000223928,
+            "mean_ms": 49.12727532470629,
+            "completed_p95_ms": 52.80589999892982,
+            "contract_completed": 231,
+            "contract_completion_rate": 1.0,
+            "contract_completion_wilson95": [
+              0.9836423311284778,
+              0.9999999999999999
+            ],
+            "deadline_met": 231,
+            "deadline_met_rate": 1.0,
+            "deadline_violation_rate": 0.0,
+            "deadline_met_wilson95": [
+              0.9836423311284778,
+              0.9999999999999999
+            ],
+            "fallbacks": 0,
+            "backend_counts": {
+              "local-model": 231
+            },
+            "reason_counts": {
+              "MODEL_UNAVAILABLE": 231
+            },
+            "failure_counts": {},
+            "p99_tail_observations": 2,
+            "p99_caution": true
+          },
+          {
+            "scenario": "cloud_down",
+            "service": "interactive_inference",
+            "arm": "network-only",
+            "n": 231,
+            "p50_ms": 50.43689999729395,
+            "p95_ms": 52.68259999866132,
+            "p99_ms": 53.49687000198173,
+            "mean_ms": 48.936410389508744,
+            "completed_p95_ms": 52.68259999866132,
+            "contract_completed": 231,
+            "contract_completion_rate": 1.0,
+            "contract_completion_wilson95": [
+              0.9836423311284778,
+              0.9999999999999999
+            ],
+            "deadline_met": 231,
+            "deadline_met_rate": 1.0,
+            "deadline_violation_rate": 0.0,
+            "deadline_met_wilson95": [
+              0.9836423311284778,
+              0.9999999999999999
+            ],
+            "fallbacks": 0,
+            "backend_counts": {
+              "local-model": 231
+            },
+            "reason_counts": {
+              "COST_LOCAL": 231
+            },
+            "failure_counts": {},
+            "p99_tail_observations": 2,
+            "p99_caution": true
+          },
+          {
+            "scenario": "cloud_down",
+            "service": "safety_control",
+            "arm": "joint",
+            "n": 75,
+            "p50_ms": 2.1280000000842847,
+            "p95_ms": 8.194379996712087,
+            "p99_ms": 9.113398000918101,
+            "mean_ms": 2.606614667165559,
+            "completed_p95_ms": 8.194379996712087,
+            "contract_completed": 75,
+            "contract_completion_rate": 1.0,
+            "contract_completion_wilson95": [
+              0.9512761575171942,
+              1
+            ],
+            "deadline_met": 75,
+            "deadline_met_rate": 1.0,
+            "deadline_violation_rate": 0.0,
+            "deadline_met_wilson95": [
+              0.9512761575171942,
+              1
+            ],
+            "fallbacks": 0,
+            "backend_counts": {
+              "local-rules": 75
+            },
+            "reason_counts": {
+              "TASK_IS_SAFETY": 75
+            },
+            "failure_counts": {},
+            "p99_tail_observations": 0,
+            "p99_caution": true
+          },
+          {
+            "scenario": "cloud_down",
+            "service": "safety_control",
+            "arm": "network-only",
+            "n": 75,
+            "p50_ms": 2.040400002442766,
+            "p95_ms": 8.603350003249941,
+            "p99_ms": 11.19439400485135,
+            "mean_ms": 2.512362666796738,
+            "completed_p95_ms": 8.603350003249941,
+            "contract_completed": 75,
+            "contract_completion_rate": 1.0,
+            "contract_completion_wilson95": [
+              0.9512761575171942,
+              1
+            ],
+            "deadline_met": 75,
+            "deadline_met_rate": 1.0,
+            "deadline_violation_rate": 0.0,
+            "deadline_met_wilson95": [
+              0.9512761575171942,
+              1
+            ],
+            "fallbacks": 0,
+            "backend_counts": {
+              "local-rules": 75
+            },
+            "reason_counts": {
+              "TASK_IS_SAFETY": 75
+            },
+            "failure_counts": {},
+            "p99_tail_observations": 0,
+            "p99_caution": true
+          },
+          {
+            "scenario": "cloud_down",
+            "service": "sensor_batch",
+            "arm": "joint",
+            "n": 78,
+            "p50_ms": 2.184950000810204,
+            "p95_ms": 4.662734999874371,
+            "p99_ms": 10.06620500025747,
+            "mean_ms": 2.5035807692545813,
+            "completed_p95_ms": 4.662734999874371,
+            "contract_completed": 78,
+            "contract_completion_rate": 1.0,
+            "contract_completion_wilson95": [
+              0.9530621902878059,
+              1
+            ],
+            "deadline_met": 78,
+            "deadline_met_rate": 1.0,
+            "deadline_violation_rate": 0.0,
+            "deadline_met_wilson95": [
+              0.9530621902878059,
+              1
+            ],
+            "fallbacks": 0,
+            "backend_counts": {
+              "local-rules": 78
+            },
+            "reason_counts": {
+              "TASK_IS_SIMPLE": 78
+            },
+            "failure_counts": {},
+            "p99_tail_observations": 0,
+            "p99_caution": true
+          },
+          {
+            "scenario": "cloud_down",
+            "service": "sensor_batch",
+            "arm": "network-only",
+            "n": 78,
+            "p50_ms": 2.1712500019930303,
+            "p95_ms": 4.115535000528313,
+            "p99_ms": 7.804977998312106,
+            "mean_ms": 2.4177294881389035,
+            "completed_p95_ms": 4.115535000528313,
+            "contract_completed": 78,
+            "contract_completion_rate": 1.0,
+            "contract_completion_wilson95": [
+              0.9530621902878059,
+              1
+            ],
+            "deadline_met": 78,
+            "deadline_met_rate": 1.0,
+            "deadline_violation_rate": 0.0,
+            "deadline_met_wilson95": [
+              0.9530621902878059,
+              1
+            ],
+            "fallbacks": 0,
+            "backend_counts": {
+              "local-rules": 78
+            },
+            "reason_counts": {
+              "TASK_IS_SIMPLE": 78
+            },
+            "failure_counts": {},
+            "p99_tail_observations": 0,
+            "p99_caution": true
+          },
+          {
+            "scenario": "healthy",
+            "service": "interactive_inference",
+            "arm": "joint",
+            "n": 231,
+            "p50_ms": 40.5148999998346,
+            "p95_ms": 49.82365000250866,
+            "p99_ms": 50.92471999814734,
+            "mean_ms": 41.97341038960005,
+            "completed_p95_ms": 49.82365000250866,
+            "contract_completed": 231,
+            "contract_completion_rate": 1.0,
+            "contract_completion_wilson95": [
+              0.9836423311284778,
+              0.9999999999999999
+            ],
+            "deadline_met": 231,
+            "deadline_met_rate": 1.0,
+            "deadline_violation_rate": 0.0,
+            "deadline_met_wilson95": [
+              0.9836423311284778,
+              0.9999999999999999
+            ],
+            "fallbacks": 0,
+            "backend_counts": {
+              "cloud-model": 30,
+              "local-model": 201
+            },
+            "reason_counts": {
+              "COST_CLOUD": 30,
+              "COST_LOCAL": 201
+            },
+            "failure_counts": {},
+            "p99_tail_observations": 2,
+            "p99_caution": true
+          },
+          {
+            "scenario": "healthy",
+            "service": "interactive_inference",
+            "arm": "network-only",
+            "n": 231,
+            "p50_ms": 50.447200002963655,
+            "p95_ms": 52.699900003062794,
+            "p99_ms": 53.615739998349454,
+            "mean_ms": 48.94377012996384,
+            "completed_p95_ms": 52.699900003062794,
+            "contract_completed": 231,
+            "contract_completion_rate": 1.0,
+            "contract_completion_wilson95": [
+              0.9836423311284778,
+              0.9999999999999999
+            ],
+            "deadline_met": 231,
+            "deadline_met_rate": 1.0,
+            "deadline_violation_rate": 0.0,
+            "deadline_met_wilson95": [
+              0.9836423311284778,
+              0.9999999999999999
+            ],
+            "fallbacks": 0,
+            "backend_counts": {
+              "local-model": 231
+            },
+            "reason_counts": {
+              "COST_LOCAL": 231
+            },
+            "failure_counts": {},
+            "p99_tail_observations": 2,
+            "p99_caution": true
+          },
+          {
+            "scenario": "healthy",
+            "service": "safety_control",
+            "arm": "joint",
+            "n": 75,
+            "p50_ms": 1.9391000023460947,
+            "p95_ms": 9.804370001074856,
+            "p99_ms": 16.6302300003008,
+            "mean_ms": 2.7261880000393526,
+            "completed_p95_ms": 9.804370001074856,
+            "contract_completed": 75,
+            "contract_completion_rate": 1.0,
+            "contract_completion_wilson95": [
+              0.9512761575171942,
+              1
+            ],
+            "deadline_met": 75,
+            "deadline_met_rate": 1.0,
+            "deadline_violation_rate": 0.0,
+            "deadline_met_wilson95": [
+              0.9512761575171942,
+              1
+            ],
+            "fallbacks": 0,
+            "backend_counts": {
+              "local-rules": 75
+            },
+            "reason_counts": {
+              "TASK_IS_SAFETY": 75
+            },
+            "failure_counts": {},
+            "p99_tail_observations": 0,
+            "p99_caution": true
+          },
+          {
+            "scenario": "healthy",
+            "service": "safety_control",
+            "arm": "network-only",
+            "n": 75,
+            "p50_ms": 2.012600001762621,
+            "p95_ms": 8.633179997559633,
+            "p99_ms": 11.632240003527873,
+            "mean_ms": 2.585215999861248,
+            "completed_p95_ms": 8.633179997559633,
+            "contract_completed": 75,
+            "contract_completion_rate": 1.0,
+            "contract_completion_wilson95": [
+              0.9512761575171942,
+              1
+            ],
+            "deadline_met": 75,
+            "deadline_met_rate": 1.0,
+            "deadline_violation_rate": 0.0,
+            "deadline_met_wilson95": [
+              0.9512761575171942,
+              1
+            ],
+            "fallbacks": 0,
+            "backend_counts": {
+              "local-rules": 75
+            },
+            "reason_counts": {
+              "TASK_IS_SAFETY": 75
+            },
+            "failure_counts": {},
+            "p99_tail_observations": 0,
+            "p99_caution": true
+          },
+          {
+            "scenario": "healthy",
+            "service": "sensor_batch",
+            "arm": "joint",
+            "n": 78,
+            "p50_ms": 1.6364499970222823,
+            "p95_ms": 4.091600001265743,
+            "p99_ms": 8.582896001389617,
+            "mean_ms": 2.089428205437845,
+            "completed_p95_ms": 4.091600001265743,
+            "contract_completed": 78,
+            "contract_completion_rate": 1.0,
+            "contract_completion_wilson95": [
+              0.9530621902878059,
+              1
+            ],
+            "deadline_met": 78,
+            "deadline_met_rate": 1.0,
+            "deadline_violation_rate": 0.0,
+            "deadline_met_wilson95": [
+              0.9530621902878059,
+              1
+            ],
+            "fallbacks": 0,
+            "backend_counts": {
+              "local-rules": 78
+            },
+            "reason_counts": {
+              "TASK_IS_SIMPLE": 78
+            },
+            "failure_counts": {},
+            "p99_tail_observations": 0,
+            "p99_caution": true
+          },
+          {
+            "scenario": "healthy",
+            "service": "sensor_batch",
+            "arm": "network-only",
+            "n": 78,
+            "p50_ms": 1.7459000009694137,
+            "p95_ms": 4.220659998463813,
+            "p99_ms": 8.65325899590973,
+            "mean_ms": 2.216492307268662,
+            "completed_p95_ms": 4.220659998463813,
+            "contract_completed": 78,
+            "contract_completion_rate": 1.0,
+            "contract_completion_wilson95": [
+              0.9530621902878059,
+              1
+            ],
+            "deadline_met": 78,
+            "deadline_met_rate": 1.0,
+            "deadline_violation_rate": 0.0,
+            "deadline_met_wilson95": [
+              0.9530621902878059,
+              1
+            ],
+            "fallbacks": 0,
+            "backend_counts": {
+              "local-rules": 78
+            },
+            "reason_counts": {
+              "TASK_IS_SIMPLE": 78
+            },
+            "failure_counts": {},
+            "p99_tail_observations": 0,
+            "p99_caution": true
+          }
+        ],
+        "overall": [
+          {
+            "service": "interactive_inference",
+            "arm": "joint",
+            "n": 462,
+            "p50_ms": 48.65020000215736,
+            "p95_ms": 52.50887500515091,
+            "p99_ms": 53.052616002532886,
+            "mean_ms": 45.55034285715317,
+            "completed_p95_ms": 52.50887500515091,
+            "contract_completed": 462,
+            "contract_completion_rate": 1.0,
+            "contract_completion_wilson95": [
+              0.9917537206104003,
+              1
+            ],
+            "deadline_met": 462,
+            "deadline_met_rate": 1.0,
+            "deadline_violation_rate": 0.0,
+            "deadline_met_wilson95": [
+              0.9917537206104003,
+              1
+            ],
+            "fallbacks": 0,
+            "backend_counts": {
+              "cloud-model": 30,
+              "local-model": 432
+            },
+            "reason_counts": {
+              "COST_CLOUD": 30,
+              "COST_LOCAL": 201,
+              "MODEL_UNAVAILABLE": 231
+            },
+            "failure_counts": {},
+            "p99_tail_observations": 4,
+            "p99_caution": true
+          },
+          {
+            "service": "interactive_inference",
+            "arm": "network-only",
+            "n": 462,
+            "p50_ms": 50.44159999670228,
+            "p95_ms": 52.691169996978715,
+            "p99_ms": 53.59202100029506,
+            "mean_ms": 48.940090259736294,
+            "completed_p95_ms": 52.691169996978715,
+            "contract_completed": 462,
+            "contract_completion_rate": 1.0,
+            "contract_completion_wilson95": [
+              0.9917537206104003,
+              1
+            ],
+            "deadline_met": 462,
+            "deadline_met_rate": 1.0,
+            "deadline_violation_rate": 0.0,
+            "deadline_met_wilson95": [
+              0.9917537206104003,
+              1
+            ],
+            "fallbacks": 0,
+            "backend_counts": {
+              "local-model": 462
+            },
+            "reason_counts": {
+              "COST_LOCAL": 462
+            },
+            "failure_counts": {},
+            "p99_tail_observations": 4,
+            "p99_caution": true
+          },
+          {
+            "service": "safety_control",
+            "arm": "joint",
+            "n": 150,
+            "p50_ms": 2.011799999309005,
+            "p95_ms": 8.24652500123193,
+            "p99_ms": 14.851207000101535,
+            "mean_ms": 2.666401333602456,
+            "completed_p95_ms": 8.24652500123193,
+            "contract_completed": 150,
+            "contract_completion_rate": 1.0,
+            "contract_completion_wilson95": [
+              0.9750297556319235,
+              1
+            ],
+            "deadline_met": 150,
+            "deadline_met_rate": 1.0,
+            "deadline_violation_rate": 0.0,
+            "deadline_met_wilson95": [
+              0.9750297556319235,
+              1
+            ],
+            "fallbacks": 0,
+            "backend_counts": {
+              "local-rules": 150
+            },
+            "reason_counts": {
+              "TASK_IS_SAFETY": 150
+            },
+            "failure_counts": {},
+            "p99_tail_observations": 1,
+            "p99_caution": true
+          },
+          {
+            "service": "safety_control",
+            "arm": "network-only",
+            "n": 150,
+            "p50_ms": 2.0197500016365666,
+            "p95_ms": 8.764225002232696,
+            "p99_ms": 11.357369003453636,
+            "mean_ms": 2.5487893333289926,
+            "completed_p95_ms": 8.764225002232696,
+            "contract_completed": 150,
+            "contract_completion_rate": 1.0,
+            "contract_completion_wilson95": [
+              0.9750297556319235,
+              1
+            ],
+            "deadline_met": 150,
+            "deadline_met_rate": 1.0,
+            "deadline_violation_rate": 0.0,
+            "deadline_met_wilson95": [
+              0.9750297556319235,
+              1
+            ],
+            "fallbacks": 0,
+            "backend_counts": {
+              "local-rules": 150
+            },
+            "reason_counts": {
+              "TASK_IS_SAFETY": 150
+            },
+            "failure_counts": {},
+            "p99_tail_observations": 1,
+            "p99_caution": true
+          },
+          {
+            "service": "sensor_batch",
+            "arm": "joint",
+            "n": 156,
+            "p50_ms": 2.0053500011272263,
+            "p95_ms": 4.698824999650242,
+            "p99_ms": 10.194574999695753,
+            "mean_ms": 2.296504487346213,
+            "completed_p95_ms": 4.698824999650242,
+            "contract_completed": 156,
+            "contract_completion_rate": 1.0,
+            "contract_completion_wilson95": [
+              0.9759670685625849,
+              0.9999999999999999
+            ],
+            "deadline_met": 156,
+            "deadline_met_rate": 1.0,
+            "deadline_violation_rate": 0.0,
+            "deadline_met_wilson95": [
+              0.9759670685625849,
+              0.9999999999999999
+            ],
+            "fallbacks": 0,
+            "backend_counts": {
+              "local-rules": 156
+            },
+            "reason_counts": {
+              "TASK_IS_SIMPLE": 156
+            },
+            "failure_counts": {},
+            "p99_tail_observations": 1,
+            "p99_caution": true
+          },
+          {
+            "service": "sensor_batch",
+            "arm": "network-only",
+            "n": 156,
+            "p50_ms": 1.9560000000637956,
+            "p95_ms": 4.248899998856359,
+            "p99_ms": 8.351369997762934,
+            "mean_ms": 2.317110897703783,
+            "completed_p95_ms": 4.248899998856359,
+            "contract_completed": 156,
+            "contract_completion_rate": 1.0,
+            "contract_completion_wilson95": [
+              0.9759670685625849,
+              0.9999999999999999
+            ],
+            "deadline_met": 156,
+            "deadline_met_rate": 1.0,
+            "deadline_violation_rate": 0.0,
+            "deadline_met_wilson95": [
+              0.9759670685625849,
+              0.9999999999999999
+            ],
+            "fallbacks": 0,
+            "backend_counts": {
+              "local-rules": 156
+            },
+            "reason_counts": {
+              "TASK_IS_SIMPLE": 156
+            },
+            "failure_counts": {},
+            "p99_tail_observations": 1,
+            "p99_caution": true
+          }
+        ],
+        "paired_effects": []
+      }
+    },
+    {
+      "concurrency": 32,
+      "statistics": {
+        "method": {
+          "quantiles": "linear/type-7; all requests including failures",
+          "deadline": "completed contract AND full total_user_ms <= per-service deadline",
+          "intervals": "Wilson95 descriptive rates; paired seed-cluster bootstrap 2000 draws",
+          "no_field_inference": true,
+          "p99_warning": "Tail estimates are exploratory, especially n<1000"
+        },
+        "cells": [
+          {
+            "scenario": "cloud_down",
+            "service": "interactive_inference",
+            "arm": "joint",
+            "n": 231,
+            "p50_ms": 183.0483000012464,
+            "p95_ms": 214.04359999723965,
+            "p99_ms": 217.7604299999075,
+            "mean_ms": 162.52222900428544,
+            "completed_p95_ms": 214.04359999723965,
+            "contract_completed": 231,
+            "contract_completion_rate": 1.0,
+            "contract_completion_wilson95": [
+              0.9836423311284778,
+              0.9999999999999999
+            ],
+            "deadline_met": 231,
+            "deadline_met_rate": 1.0,
+            "deadline_violation_rate": 0.0,
+            "deadline_met_wilson95": [
+              0.9836423311284778,
+              0.9999999999999999
+            ],
+            "fallbacks": 0,
+            "backend_counts": {
+              "local-model": 231
+            },
+            "reason_counts": {
+              "MODEL_UNAVAILABLE": 231
+            },
+            "failure_counts": {},
+            "p99_tail_observations": 2,
+            "p99_caution": true
+          },
+          {
+            "scenario": "cloud_down",
+            "service": "interactive_inference",
+            "arm": "network-only",
+            "n": 231,
+            "p50_ms": 179.23380000138422,
+            "p95_ms": 214.4324000000779,
+            "p99_ms": 216.84571999649052,
+            "mean_ms": 161.3515450216495,
+            "completed_p95_ms": 214.4324000000779,
+            "contract_completed": 231,
+            "contract_completion_rate": 1.0,
+            "contract_completion_wilson95": [
+              0.9836423311284778,
+              0.9999999999999999
+            ],
+            "deadline_met": 231,
+            "deadline_met_rate": 1.0,
+            "deadline_violation_rate": 0.0,
+            "deadline_met_wilson95": [
+              0.9836423311284778,
+              0.9999999999999999
+            ],
+            "fallbacks": 0,
+            "backend_counts": {
+              "local-model": 231
+            },
+            "reason_counts": {
+              "COST_LOCAL": 231
+            },
+            "failure_counts": {},
+            "p99_tail_observations": 2,
+            "p99_caution": true
+          },
+          {
+            "scenario": "cloud_down",
+            "service": "safety_control",
+            "arm": "joint",
+            "n": 75,
+            "p50_ms": 17.049200003384613,
+            "p95_ms": 45.321389999298844,
+            "p99_ms": 52.626142000226544,
+            "mean_ms": 19.175945333651423,
+            "completed_p95_ms": 45.321389999298844,
+            "contract_completed": 75,
+            "contract_completion_rate": 1.0,
+            "contract_completion_wilson95": [
+              0.9512761575171942,
+              1
+            ],
+            "deadline_met": 73,
+            "deadline_met_rate": 0.9733333333333334,
+            "deadline_violation_rate": 0.026666666666666616,
+            "deadline_met_wilson95": [
+              0.9078851181224086,
+              0.9926563109938686
+            ],
+            "fallbacks": 0,
+            "backend_counts": {
+              "local-rules": 75
+            },
+            "reason_counts": {
+              "TASK_IS_SAFETY": 75
+            },
+            "failure_counts": {},
+            "p99_tail_observations": 0,
+            "p99_caution": true
+          },
+          {
+            "scenario": "cloud_down",
+            "service": "safety_control",
+            "arm": "network-only",
+            "n": 75,
+            "p50_ms": 16.311699997459073,
+            "p95_ms": 46.022959997935686,
+            "p99_ms": 51.71516600006727,
+            "mean_ms": 20.10632133256877,
+            "completed_p95_ms": 46.022959997935686,
+            "contract_completed": 75,
+            "contract_completion_rate": 1.0,
+            "contract_completion_wilson95": [
+              0.9512761575171942,
+              1
+            ],
+            "deadline_met": 73,
+            "deadline_met_rate": 0.9733333333333334,
+            "deadline_violation_rate": 0.026666666666666616,
+            "deadline_met_wilson95": [
+              0.9078851181224086,
+              0.9926563109938686
+            ],
+            "fallbacks": 0,
+            "backend_counts": {
+              "local-rules": 75
+            },
+            "reason_counts": {
+              "TASK_IS_SAFETY": 75
+            },
+            "failure_counts": {},
+            "p99_tail_observations": 0,
+            "p99_caution": true
+          },
+          {
+            "scenario": "cloud_down",
+            "service": "sensor_batch",
+            "arm": "joint",
+            "n": 78,
+            "p50_ms": 16.881149997061584,
+            "p95_ms": 47.04183500434738,
+            "p99_ms": 50.520584001133116,
+            "mean_ms": 19.266937179147646,
+            "completed_p95_ms": 47.04183500434738,
+            "contract_completed": 78,
+            "contract_completion_rate": 1.0,
+            "contract_completion_wilson95": [
+              0.9530621902878059,
+              1
+            ],
+            "deadline_met": 78,
+            "deadline_met_rate": 1.0,
+            "deadline_violation_rate": 0.0,
+            "deadline_met_wilson95": [
+              0.9530621902878059,
+              1
+            ],
+            "fallbacks": 0,
+            "backend_counts": {
+              "local-rules": 78
+            },
+            "reason_counts": {
+              "TASK_IS_SIMPLE": 78
+            },
+            "failure_counts": {},
+            "p99_tail_observations": 0,
+            "p99_caution": true
+          },
+          {
+            "scenario": "cloud_down",
+            "service": "sensor_batch",
+            "arm": "network-only",
+            "n": 78,
+            "p50_ms": 16.47700000103214,
+            "p95_ms": 46.10633000411326,
+            "p99_ms": 48.98103299943616,
+            "mean_ms": 20.045425640907922,
+            "completed_p95_ms": 46.10633000411326,
+            "contract_completed": 78,
+            "contract_completion_rate": 1.0,
+            "contract_completion_wilson95": [
+              0.9530621902878059,
+              1
+            ],
+            "deadline_met": 78,
+            "deadline_met_rate": 1.0,
+            "deadline_violation_rate": 0.0,
+            "deadline_met_wilson95": [
+              0.9530621902878059,
+              1
+            ],
+            "fallbacks": 0,
+            "backend_counts": {
+              "local-rules": 78
+            },
+            "reason_counts": {
+              "TASK_IS_SIMPLE": 78
+            },
+            "failure_counts": {},
+            "p99_tail_observations": 0,
+            "p99_caution": true
+          },
+          {
+            "scenario": "healthy",
+            "service": "interactive_inference",
+            "arm": "joint",
+            "n": 231,
+            "p50_ms": 69.87040000240086,
+            "p95_ms": 121.21635000221431,
+            "p99_ms": 131.0541099999682,
+            "mean_ms": 78.31156709982592,
+            "completed_p95_ms": 121.21635000221431,
+            "contract_completed": 231,
+            "contract_completion_rate": 1.0,
+            "contract_completion_wilson95": [
+              0.9836423311284778,
+              0.9999999999999999
+            ],
+            "deadline_met": 231,
+            "deadline_met_rate": 1.0,
+            "deadline_violation_rate": 0.0,
+            "deadline_met_wilson95": [
+              0.9836423311284778,
+              0.9999999999999999
+            ],
+            "fallbacks": 0,
+            "backend_counts": {
+              "cloud-model": 101,
+              "local-model": 130
+            },
+            "reason_counts": {
+              "COST_CLOUD": 101,
+              "COST_LOCAL": 130
+            },
+            "failure_counts": {},
+            "p99_tail_observations": 2,
+            "p99_caution": true
+          },
+          {
+            "scenario": "healthy",
+            "service": "interactive_inference",
+            "arm": "network-only",
+            "n": 231,
+            "p50_ms": 186.12579999899026,
+            "p95_ms": 216.4931000006618,
+            "p99_ms": 225.5495699988387,
+            "mean_ms": 162.97295757570507,
+            "completed_p95_ms": 216.4931000006618,
+            "contract_completed": 231,
+            "contract_completion_rate": 1.0,
+            "contract_completion_wilson95": [
+              0.9836423311284778,
+              0.9999999999999999
+            ],
+            "deadline_met": 231,
+            "deadline_met_rate": 1.0,
+            "deadline_violation_rate": 0.0,
+            "deadline_met_wilson95": [
+              0.9836423311284778,
+              0.9999999999999999
+            ],
+            "fallbacks": 0,
+            "backend_counts": {
+              "local-model": 231
+            },
+            "reason_counts": {
+              "COST_LOCAL": 231
+            },
+            "failure_counts": {},
+            "p99_tail_observations": 2,
+            "p99_caution": true
+          },
+          {
+            "scenario": "healthy",
+            "service": "safety_control",
+            "arm": "joint",
+            "n": 75,
+            "p50_ms": 21.965899999486282,
+            "p95_ms": 45.52955000326619,
+            "p99_ms": 50.103707995440374,
+            "mean_ms": 25.878670666425023,
+            "completed_p95_ms": 45.52955000326619,
+            "contract_completed": 75,
+            "contract_completion_rate": 1.0,
+            "contract_completion_wilson95": [
+              0.9512761575171942,
+              1
+            ],
+            "deadline_met": 74,
+            "deadline_met_rate": 0.9866666666666667,
+            "deadline_violation_rate": 0.013333333333333308,
+            "deadline_met_wilson95": [
+              0.9282663444557845,
+              0.9976424488609515
+            ],
+            "fallbacks": 0,
+            "backend_counts": {
+              "local-rules": 75
+            },
+            "reason_counts": {
+              "TASK_IS_SAFETY": 75
+            },
+            "failure_counts": {},
+            "p99_tail_observations": 0,
+            "p99_caution": true
+          },
+          {
+            "scenario": "healthy",
+            "service": "safety_control",
+            "arm": "network-only",
+            "n": 75,
+            "p50_ms": 15.619400001014583,
+            "p95_ms": 45.02297999933944,
+            "p99_ms": 48.762174001458355,
+            "mean_ms": 18.408657333638985,
+            "completed_p95_ms": 45.02297999933944,
+            "contract_completed": 75,
+            "contract_completion_rate": 1.0,
+            "contract_completion_wilson95": [
+              0.9512761575171942,
+              1
+            ],
+            "deadline_met": 74,
+            "deadline_met_rate": 0.9866666666666667,
+            "deadline_violation_rate": 0.013333333333333308,
+            "deadline_met_wilson95": [
+              0.9282663444557845,
+              0.9976424488609515
+            ],
+            "fallbacks": 0,
+            "backend_counts": {
+              "local-rules": 75
+            },
+            "reason_counts": {
+              "TASK_IS_SAFETY": 75
+            },
+            "failure_counts": {},
+            "p99_tail_observations": 0,
+            "p99_caution": true
+          },
+          {
+            "scenario": "healthy",
+            "service": "sensor_batch",
+            "arm": "joint",
+            "n": 78,
+            "p50_ms": 22.49880000090343,
+            "p95_ms": 45.854994996625464,
+            "p99_ms": 51.43525999767008,
+            "mean_ms": 25.82478974382423,
+            "completed_p95_ms": 45.854994996625464,
+            "contract_completed": 78,
+            "contract_completion_rate": 1.0,
+            "contract_completion_wilson95": [
+              0.9530621902878059,
+              1
+            ],
+            "deadline_met": 78,
+            "deadline_met_rate": 1.0,
+            "deadline_violation_rate": 0.0,
+            "deadline_met_wilson95": [
+              0.9530621902878059,
+              1
+            ],
+            "fallbacks": 0,
+            "backend_counts": {
+              "local-rules": 78
+            },
+            "reason_counts": {
+              "TASK_IS_SIMPLE": 78
+            },
+            "failure_counts": {},
+            "p99_tail_observations": 0,
+            "p99_caution": true
+          },
+          {
+            "scenario": "healthy",
+            "service": "sensor_batch",
+            "arm": "network-only",
+            "n": 78,
+            "p50_ms": 12.768699998559896,
+            "p95_ms": 43.588914997963,
+            "p99_ms": 47.653979998212904,
+            "mean_ms": 17.983543589555968,
+            "completed_p95_ms": 43.588914997963,
+            "contract_completed": 78,
+            "contract_completion_rate": 1.0,
+            "contract_completion_wilson95": [
+              0.9530621902878059,
+              1
+            ],
+            "deadline_met": 78,
+            "deadline_met_rate": 1.0,
+            "deadline_violation_rate": 0.0,
+            "deadline_met_wilson95": [
+              0.9530621902878059,
+              1
+            ],
+            "fallbacks": 0,
+            "backend_counts": {
+              "local-rules": 78
+            },
+            "reason_counts": {
+              "TASK_IS_SIMPLE": 78
+            },
+            "failure_counts": {},
+            "p99_tail_observations": 0,
+            "p99_caution": true
+          }
+        ],
+        "overall": [
+          {
+            "service": "interactive_inference",
+            "arm": "joint",
+            "n": 462,
+            "p50_ms": 106.96430000461987,
+            "p95_ms": 211.92469499874278,
+            "p99_ms": 216.07599400289473,
+            "mean_ms": 120.41689805205567,
+            "completed_p95_ms": 211.92469499874278,
+            "contract_completed": 462,
+            "contract_completion_rate": 1.0,
+            "contract_completion_wilson95": [
+              0.9917537206104003,
+              1
+            ],
+            "deadline_met": 462,
+            "deadline_met_rate": 1.0,
+            "deadline_violation_rate": 0.0,
+            "deadline_met_wilson95": [
+              0.9917537206104003,
+              1
+            ],
+            "fallbacks": 0,
+            "backend_counts": {
+              "cloud-model": 101,
+              "local-model": 361
+            },
+            "reason_counts": {
+              "COST_CLOUD": 101,
+              "COST_LOCAL": 130,
+              "MODEL_UNAVAILABLE": 231
+            },
+            "failure_counts": {},
+            "p99_tail_observations": 4,
+            "p99_caution": true
+          },
+          {
+            "service": "interactive_inference",
+            "arm": "network-only",
+            "n": 462,
+            "p50_ms": 184.34375000288128,
+            "p95_ms": 215.68498500273563,
+            "p99_ms": 222.25798499915976,
+            "mean_ms": 162.1622512986773,
+            "completed_p95_ms": 215.68498500273563,
+            "contract_completed": 462,
+            "contract_completion_rate": 1.0,
+            "contract_completion_wilson95": [
+              0.9917537206104003,
+              1
+            ],
+            "deadline_met": 462,
+            "deadline_met_rate": 1.0,
+            "deadline_violation_rate": 0.0,
+            "deadline_met_wilson95": [
+              0.9917537206104003,
+              1
+            ],
+            "fallbacks": 0,
+            "backend_counts": {
+              "local-model": 462
+            },
+            "reason_counts": {
+              "COST_LOCAL": 462
+            },
+            "failure_counts": {},
+            "p99_tail_observations": 4,
+            "p99_caution": true
+          },
+          {
+            "service": "safety_control",
+            "arm": "joint",
+            "n": 150,
+            "p50_ms": 21.52619999833405,
+            "p95_ms": 45.631915002013535,
+            "p99_ms": 52.99840399995445,
+            "mean_ms": 22.52730800003822,
+            "completed_p95_ms": 45.631915002013535,
+            "contract_completed": 150,
+            "contract_completion_rate": 1.0,
+            "contract_completion_wilson95": [
+              0.9750297556319235,
+              1
+            ],
+            "deadline_met": 147,
+            "deadline_met_rate": 0.98,
+            "deadline_violation_rate": 0.020000000000000018,
+            "deadline_met_wilson95": [
+              0.9428533167296139,
+              0.9931752486770326
+            ],
+            "fallbacks": 0,
+            "backend_counts": {
+              "local-rules": 150
+            },
+            "reason_counts": {
+              "TASK_IS_SAFETY": 150
+            },
+            "failure_counts": {},
+            "p99_tail_observations": 1,
+            "p99_caution": true
+          },
+          {
+            "service": "safety_control",
+            "arm": "network-only",
+            "n": 150,
+            "p50_ms": 15.78104999862262,
+            "p95_ms": 45.5784349975147,
+            "p99_ms": 51.6631140022946,
+            "mean_ms": 19.257489333103877,
+            "completed_p95_ms": 45.5784349975147,
+            "contract_completed": 150,
+            "contract_completion_rate": 1.0,
+            "contract_completion_wilson95": [
+              0.9750297556319235,
+              1
+            ],
+            "deadline_met": 147,
+            "deadline_met_rate": 0.98,
+            "deadline_violation_rate": 0.020000000000000018,
+            "deadline_met_wilson95": [
+              0.9428533167296139,
+              0.9931752486770326
+            ],
+            "fallbacks": 0,
+            "backend_counts": {
+              "local-rules": 150
+            },
+            "reason_counts": {
+              "TASK_IS_SAFETY": 150
+            },
+            "failure_counts": {},
+            "p99_tail_observations": 1,
+            "p99_caution": true
+          },
+          {
+            "service": "sensor_batch",
+            "arm": "joint",
+            "n": 156,
+            "p50_ms": 21.51869999943301,
+            "p95_ms": 46.15542499959702,
+            "p99_ms": 51.81629999860886,
+            "mean_ms": 22.54586346148594,
+            "completed_p95_ms": 46.15542499959702,
+            "contract_completed": 156,
+            "contract_completion_rate": 1.0,
+            "contract_completion_wilson95": [
+              0.9759670685625849,
+              0.9999999999999999
+            ],
+            "deadline_met": 156,
+            "deadline_met_rate": 1.0,
+            "deadline_violation_rate": 0.0,
+            "deadline_met_wilson95": [
+              0.9759670685625849,
+              0.9999999999999999
+            ],
+            "fallbacks": 0,
+            "backend_counts": {
+              "local-rules": 156
+            },
+            "reason_counts": {
+              "TASK_IS_SIMPLE": 156
+            },
+            "failure_counts": {},
+            "p99_tail_observations": 1,
+            "p99_caution": true
+          },
+          {
+            "service": "sensor_batch",
+            "arm": "network-only",
+            "n": 156,
+            "p50_ms": 15.786599997227313,
+            "p95_ms": 45.284175002962,
+            "p99_ms": 48.79698999939135,
+            "mean_ms": 19.014484615231943,
+            "completed_p95_ms": 45.284175002962,
+            "contract_completed": 156,
+            "contract_completion_rate": 1.0,
+            "contract_completion_wilson95": [
+              0.9759670685625849,
+              0.9999999999999999
+            ],
+            "deadline_met": 156,
+            "deadline_met_rate": 1.0,
+            "deadline_violation_rate": 0.0,
+            "deadline_met_wilson95": [
+              0.9759670685625849,
+              0.9999999999999999
+            ],
+            "fallbacks": 0,
+            "backend_counts": {
+              "local-rules": 156
+            },
+            "reason_counts": {
+              "TASK_IS_SIMPLE": 156
+            },
+            "failure_counts": {},
+            "p99_tail_observations": 1,
+            "p99_caution": true
+          }
+        ],
+        "paired_effects": []
+      }
+    },
+    {
+      "concurrency": 64,
+      "statistics": {
+        "method": {
+          "quantiles": "linear/type-7; all requests including failures",
+          "deadline": "completed contract AND full total_user_ms <= per-service deadline",
+          "intervals": "Wilson95 descriptive rates; paired seed-cluster bootstrap 2000 draws",
+          "no_field_inference": true,
+          "p99_warning": "Tail estimates are exploratory, especially n<1000"
+        },
+        "cells": [
+          {
+            "scenario": "cloud_down",
+            "service": "interactive_inference",
+            "arm": "joint",
+            "n": 231,
+            "p50_ms": 263.6168000026373,
+            "p95_ms": 340.3914000009536,
+            "p99_ms": 347.8547399987292,
+            "mean_ms": 225.91906709932783,
+            "completed_p95_ms": 340.3914000009536,
+            "contract_completed": 231,
+            "contract_completion_rate": 1.0,
+            "contract_completion_wilson95": [
+              0.9836423311284778,
+              0.9999999999999999
+            ],
+            "deadline_met": 108,
+            "deadline_met_rate": 0.4675324675324675,
+            "deadline_violation_rate": 0.5324675324675325,
+            "deadline_met_wilson95": [
+              0.4042477633083824,
+              0.5318793580469111
+            ],
+            "fallbacks": 0,
+            "backend_counts": {
+              "local-model": 231
+            },
+            "reason_counts": {
+              "MODEL_UNAVAILABLE": 231
+            },
+            "failure_counts": {},
+            "p99_tail_observations": 2,
+            "p99_caution": true
+          },
+          {
+            "scenario": "cloud_down",
+            "service": "interactive_inference",
+            "arm": "network-only",
+            "n": 231,
+            "p50_ms": 263.8745000003837,
+            "p95_ms": 345.6318499993358,
+            "p99_ms": 357.94937000173377,
+            "mean_ms": 227.2932004330373,
+            "completed_p95_ms": 345.6318499993358,
+            "contract_completed": 231,
+            "contract_completion_rate": 1.0,
+            "contract_completion_wilson95": [
+              0.9836423311284778,
+              0.9999999999999999
+            ],
+            "deadline_met": 106,
+            "deadline_met_rate": 0.4588744588744589,
+            "deadline_violation_rate": 0.5411255411255411,
+            "deadline_met_wilson95": [
+              0.39581175596656054,
+              0.5232825977501446
+            ],
+            "fallbacks": 0,
+            "backend_counts": {
+              "local-model": 231
+            },
+            "reason_counts": {
+              "COST_LOCAL": 231
+            },
+            "failure_counts": {},
+            "p99_tail_observations": 2,
+            "p99_caution": true
+          },
+          {
+            "scenario": "cloud_down",
+            "service": "safety_control",
+            "arm": "joint",
+            "n": 75,
+            "p50_ms": 73.33870000002207,
+            "p95_ms": 100.09297000433435,
+            "p99_ms": 107.65696999820649,
+            "mean_ms": 68.68197466683341,
+            "completed_p95_ms": 100.09297000433435,
+            "contract_completed": 75,
+            "contract_completion_rate": 1.0,
+            "contract_completion_wilson95": [
+              0.9512761575171942,
+              1
+            ],
+            "deadline_met": 16,
+            "deadline_met_rate": 0.21333333333333335,
+            "deadline_violation_rate": 0.7866666666666666,
+            "deadline_met_wilson95": [
+              0.1358020117971739,
+              0.31879965789296816
+            ],
+            "fallbacks": 0,
+            "backend_counts": {
+              "local-rules": 75
+            },
+            "reason_counts": {
+              "TASK_IS_SAFETY": 75
+            },
+            "failure_counts": {},
+            "p99_tail_observations": 0,
+            "p99_caution": true
+          },
+          {
+            "scenario": "cloud_down",
+            "service": "safety_control",
+            "arm": "network-only",
+            "n": 75,
+            "p50_ms": 64.48559999989811,
+            "p95_ms": 93.37409000072512,
+            "p99_ms": 97.63953200133984,
+            "mean_ms": 62.64720933356633,
+            "completed_p95_ms": 93.37409000072512,
+            "contract_completed": 75,
+            "contract_completion_rate": 1.0,
+            "contract_completion_wilson95": [
+              0.9512761575171942,
+              1
+            ],
+            "deadline_met": 22,
+            "deadline_met_rate": 0.29333333333333333,
+            "deadline_violation_rate": 0.7066666666666667,
+            "deadline_met_wilson95": [
+              0.20240140321903244,
+              0.40440445167386063
+            ],
+            "fallbacks": 0,
+            "backend_counts": {
+              "local-rules": 75
+            },
+            "reason_counts": {
+              "TASK_IS_SAFETY": 75
+            },
+            "failure_counts": {},
+            "p99_tail_observations": 0,
+            "p99_caution": true
+          },
+          {
+            "scenario": "cloud_down",
+            "service": "sensor_batch",
+            "arm": "joint",
+            "n": 78,
+            "p50_ms": 71.23265000336687,
+            "p95_ms": 101.07468999885894,
+            "p99_ms": 106.30525200111154,
+            "mean_ms": 67.3612615387239,
+            "completed_p95_ms": 101.07468999885894,
+            "contract_completed": 78,
+            "contract_completion_rate": 1.0,
+            "contract_completion_wilson95": [
+              0.9530621902878059,
+              1
+            ],
+            "deadline_met": 78,
+            "deadline_met_rate": 1.0,
+            "deadline_violation_rate": 0.0,
+            "deadline_met_wilson95": [
+              0.9530621902878059,
+              1
+            ],
+            "fallbacks": 0,
+            "backend_counts": {
+              "local-rules": 78
+            },
+            "reason_counts": {
+              "TASK_IS_SIMPLE": 78
+            },
+            "failure_counts": {},
+            "p99_tail_observations": 0,
+            "p99_caution": true
+          },
+          {
+            "scenario": "cloud_down",
+            "service": "sensor_batch",
+            "arm": "network-only",
+            "n": 78,
+            "p50_ms": 64.69490000017686,
+            "p95_ms": 92.32831499648454,
+            "p99_ms": 99.08288100014035,
+            "mean_ms": 61.67445641068088,
+            "completed_p95_ms": 92.32831499648454,
+            "contract_completed": 78,
+            "contract_completion_rate": 1.0,
+            "contract_completion_wilson95": [
+              0.9530621902878059,
+              1
+            ],
+            "deadline_met": 78,
+            "deadline_met_rate": 1.0,
+            "deadline_violation_rate": 0.0,
+            "deadline_met_wilson95": [
+              0.9530621902878059,
+              1
+            ],
+            "fallbacks": 0,
+            "backend_counts": {
+              "local-rules": 78
+            },
+            "reason_counts": {
+              "TASK_IS_SIMPLE": 78
+            },
+            "failure_counts": {},
+            "p99_tail_observations": 0,
+            "p99_caution": true
+          },
+          {
+            "scenario": "healthy",
+            "service": "interactive_inference",
+            "arm": "joint",
+            "n": 231,
+            "p50_ms": 118.22390000452287,
+            "p95_ms": 173.30344999936642,
+            "p99_ms": 182.76433000137325,
+            "mean_ms": 119.40108917744777,
+            "completed_p95_ms": 173.30344999936642,
+            "contract_completed": 231,
+            "contract_completion_rate": 1.0,
+            "contract_completion_wilson95": [
+              0.9836423311284778,
+              0.9999999999999999
+            ],
+            "deadline_met": 231,
+            "deadline_met_rate": 1.0,
+            "deadline_violation_rate": 0.0,
+            "deadline_met_wilson95": [
+              0.9836423311284778,
+              0.9999999999999999
+            ],
+            "fallbacks": 0,
+            "backend_counts": {
+              "cloud-model": 102,
+              "local-model": 129
+            },
+            "reason_counts": {
+              "COST_CLOUD": 102,
+              "COST_LOCAL": 129
+            },
+            "failure_counts": {},
+            "p99_tail_observations": 2,
+            "p99_caution": true
+          },
+          {
+            "scenario": "healthy",
+            "service": "interactive_inference",
+            "arm": "network-only",
+            "n": 231,
+            "p50_ms": 259.9580999958562,
+            "p95_ms": 346.6498000016145,
+            "p99_ms": 359.55790000298293,
+            "mean_ms": 225.7784398268098,
+            "completed_p95_ms": 346.6498000016145,
+            "contract_completed": 231,
+            "contract_completion_rate": 1.0,
+            "contract_completion_wilson95": [
+              0.9836423311284778,
+              0.9999999999999999
+            ],
+            "deadline_met": 108,
+            "deadline_met_rate": 0.4675324675324675,
+            "deadline_violation_rate": 0.5324675324675325,
+            "deadline_met_wilson95": [
+              0.4042477633083824,
+              0.5318793580469111
+            ],
+            "fallbacks": 0,
+            "backend_counts": {
+              "local-model": 231
+            },
+            "reason_counts": {
+              "COST_LOCAL": 231
+            },
+            "failure_counts": {},
+            "p99_tail_observations": 2,
+            "p99_caution": true
+          },
+          {
+            "scenario": "healthy",
+            "service": "safety_control",
+            "arm": "joint",
+            "n": 75,
+            "p50_ms": 73.27970000187634,
+            "p95_ms": 95.28453000166337,
+            "p99_ms": 96.8565300028422,
+            "mean_ms": 68.5805386667683,
+            "completed_p95_ms": 95.28453000166337,
+            "contract_completed": 75,
+            "contract_completion_rate": 1.0,
+            "contract_completion_wilson95": [
+              0.9512761575171942,
+              1
+            ],
+            "deadline_met": 15,
+            "deadline_met_rate": 0.2,
+            "deadline_violation_rate": 0.8,
+            "deadline_met_wilson95": [
+              0.1251214771419671,
+              0.30411282834771647
+            ],
+            "fallbacks": 0,
+            "backend_counts": {
+              "local-rules": 75
+            },
+            "reason_counts": {
+              "TASK_IS_SAFETY": 75
+            },
+            "failure_counts": {},
+            "p99_tail_observations": 0,
+            "p99_caution": true
+          },
+          {
+            "scenario": "healthy",
+            "service": "safety_control",
+            "arm": "network-only",
+            "n": 75,
+            "p50_ms": 68.62129999353783,
+            "p95_ms": 97.25628999658511,
+            "p99_ms": 99.70581800211222,
+            "mean_ms": 66.71267866622657,
+            "completed_p95_ms": 97.25628999658511,
+            "contract_completed": 75,
+            "contract_completion_rate": 1.0,
+            "contract_completion_wilson95": [
+              0.9512761575171942,
+              1
+            ],
+            "deadline_met": 15,
+            "deadline_met_rate": 0.2,
+            "deadline_violation_rate": 0.8,
+            "deadline_met_wilson95": [
+              0.1251214771419671,
+              0.30411282834771647
+            ],
+            "fallbacks": 0,
+            "backend_counts": {
+              "local-rules": 75
+            },
+            "reason_counts": {
+              "TASK_IS_SAFETY": 75
+            },
+            "failure_counts": {},
+            "p99_tail_observations": 0,
+            "p99_caution": true
+          },
+          {
+            "scenario": "healthy",
+            "service": "sensor_batch",
+            "arm": "joint",
+            "n": 78,
+            "p50_ms": 72.96924999900511,
+            "p95_ms": 94.53436999756376,
+            "p99_ms": 101.56946099923516,
+            "mean_ms": 67.74651282037853,
+            "completed_p95_ms": 94.53436999756376,
+            "contract_completed": 78,
+            "contract_completion_rate": 1.0,
+            "contract_completion_wilson95": [
+              0.9530621902878059,
+              1
+            ],
+            "deadline_met": 78,
+            "deadline_met_rate": 1.0,
+            "deadline_violation_rate": 0.0,
+            "deadline_met_wilson95": [
+              0.9530621902878059,
+              1
+            ],
+            "fallbacks": 0,
+            "backend_counts": {
+              "local-rules": 78
+            },
+            "reason_counts": {
+              "TASK_IS_SIMPLE": 78
+            },
+            "failure_counts": {},
+            "p99_tail_observations": 0,
+            "p99_caution": true
+          },
+          {
+            "scenario": "healthy",
+            "service": "sensor_batch",
+            "arm": "network-only",
+            "n": 78,
+            "p50_ms": 66.93209999866667,
+            "p95_ms": 96.87824500324496,
+            "p99_ms": 101.47381799914002,
+            "mean_ms": 65.2620461537131,
+            "completed_p95_ms": 96.87824500324496,
+            "contract_completed": 78,
+            "contract_completion_rate": 1.0,
+            "contract_completion_wilson95": [
+              0.9530621902878059,
+              1
+            ],
+            "deadline_met": 78,
+            "deadline_met_rate": 1.0,
+            "deadline_violation_rate": 0.0,
+            "deadline_met_wilson95": [
+              0.9530621902878059,
+              1
+            ],
+            "fallbacks": 0,
+            "backend_counts": {
+              "local-rules": 78
+            },
+            "reason_counts": {
+              "TASK_IS_SIMPLE": 78
+            },
+            "failure_counts": {},
+            "p99_tail_observations": 0,
+            "p99_caution": true
+          }
+        ],
+        "overall": [
+          {
+            "service": "interactive_inference",
+            "arm": "joint",
+            "n": 462,
+            "p50_ms": 149.71855000112555,
+            "p95_ms": 331.5539999992325,
+            "p99_ms": 345.7013849964278,
+            "mean_ms": 172.6600781383878,
+            "completed_p95_ms": 331.5539999992325,
+            "contract_completed": 462,
+            "contract_completion_rate": 1.0,
+            "contract_completion_wilson95": [
+              0.9917537206104003,
+              1
+            ],
+            "deadline_met": 339,
+            "deadline_met_rate": 0.7337662337662337,
+            "deadline_violation_rate": 0.26623376623376627,
+            "deadline_met_wilson95": [
+              0.6916557706046871,
+              0.7720212935767987
+            ],
+            "fallbacks": 0,
+            "backend_counts": {
+              "cloud-model": 102,
+              "local-model": 360
+            },
+            "reason_counts": {
+              "COST_CLOUD": 102,
+              "COST_LOCAL": 129,
+              "MODEL_UNAVAILABLE": 231
+            },
+            "failure_counts": {},
+            "p99_tail_observations": 4,
+            "p99_caution": true
+          },
+          {
+            "service": "interactive_inference",
+            "arm": "network-only",
+            "n": 462,
+            "p50_ms": 263.6512999997649,
+            "p95_ms": 346.51958500217006,
+            "p99_ms": 359.1992300011043,
+            "mean_ms": 226.53582012992354,
+            "completed_p95_ms": 346.51958500217006,
+            "contract_completed": 462,
+            "contract_completion_rate": 1.0,
+            "contract_completion_wilson95": [
+              0.9917537206104003,
+              1
+            ],
+            "deadline_met": 214,
+            "deadline_met_rate": 0.46320346320346323,
+            "deadline_violation_rate": 0.5367965367965368,
+            "deadline_met_wilson95": [
+              0.4182244885555774,
+              0.5087893068973368
+            ],
+            "fallbacks": 0,
+            "backend_counts": {
+              "local-model": 462
+            },
+            "reason_counts": {
+              "COST_LOCAL": 462
+            },
+            "failure_counts": {},
+            "p99_tail_observations": 4,
+            "p99_caution": true
+          },
+          {
+            "service": "safety_control",
+            "arm": "joint",
+            "n": 150,
+            "p50_ms": 73.3092000009492,
+            "p95_ms": 98.18080999684751,
+            "p99_ms": 105.27994799813311,
+            "mean_ms": 68.63125666680087,
+            "completed_p95_ms": 98.18080999684751,
+            "contract_completed": 150,
+            "contract_completion_rate": 1.0,
+            "contract_completion_wilson95": [
+              0.9750297556319235,
+              1
+            ],
+            "deadline_met": 31,
+            "deadline_met_rate": 0.20666666666666667,
+            "deadline_violation_rate": 0.7933333333333333,
+            "deadline_met_wilson95": [
+              0.1495889415499601,
+              0.27839360181264483
+            ],
+            "fallbacks": 0,
+            "backend_counts": {
+              "local-rules": 150
+            },
+            "reason_counts": {
+              "TASK_IS_SAFETY": 150
+            },
+            "failure_counts": {},
+            "p99_tail_observations": 1,
+            "p99_caution": true
+          },
+          {
+            "service": "safety_control",
+            "arm": "network-only",
+            "n": 150,
+            "p50_ms": 67.27124999815715,
+            "p95_ms": 95.18153000099117,
+            "p99_ms": 99.15981800098962,
+            "mean_ms": 64.67994399989645,
+            "completed_p95_ms": 95.18153000099117,
+            "contract_completed": 150,
+            "contract_completion_rate": 1.0,
+            "contract_completion_wilson95": [
+              0.9750297556319235,
+              1
+            ],
+            "deadline_met": 37,
+            "deadline_met_rate": 0.24666666666666667,
+            "deadline_violation_rate": 0.7533333333333333,
+            "deadline_met_wilson95": [
+              0.18458162955288543,
+              0.3214032942602734
+            ],
+            "fallbacks": 0,
+            "backend_counts": {
+              "local-rules": 150
+            },
+            "reason_counts": {
+              "TASK_IS_SAFETY": 150
+            },
+            "failure_counts": {},
+            "p99_tail_observations": 1,
+            "p99_caution": true
+          },
+          {
+            "service": "sensor_batch",
+            "arm": "joint",
+            "n": 156,
+            "p50_ms": 72.2247999983665,
+            "p95_ms": 98.75637500044832,
+            "p99_ms": 104.36391500079479,
+            "mean_ms": 67.55388717955121,
+            "completed_p95_ms": 98.75637500044832,
+            "contract_completed": 156,
+            "contract_completion_rate": 1.0,
+            "contract_completion_wilson95": [
+              0.9759670685625849,
+              0.9999999999999999
+            ],
+            "deadline_met": 156,
+            "deadline_met_rate": 1.0,
+            "deadline_violation_rate": 0.0,
+            "deadline_met_wilson95": [
+              0.9759670685625849,
+              0.9999999999999999
+            ],
+            "fallbacks": 0,
+            "backend_counts": {
+              "local-rules": 156
+            },
+            "reason_counts": {
+              "TASK_IS_SIMPLE": 156
+            },
+            "failure_counts": {},
+            "p99_tail_observations": 1,
+            "p99_caution": true
+          },
+          {
+            "service": "sensor_batch",
+            "arm": "network-only",
+            "n": 156,
+            "p50_ms": 65.39930000144523,
+            "p95_ms": 94.86912499960454,
+            "p99_ms": 101.1026900003344,
+            "mean_ms": 63.468251282196995,
+            "completed_p95_ms": 94.86912499960454,
+            "contract_completed": 156,
+            "contract_completion_rate": 1.0,
+            "contract_completion_wilson95": [
+              0.9759670685625849,
+              0.9999999999999999
+            ],
+            "deadline_met": 156,
+            "deadline_met_rate": 1.0,
+            "deadline_violation_rate": 0.0,
+            "deadline_met_wilson95": [
+              0.9759670685625849,
+              0.9999999999999999
+            ],
+            "fallbacks": 0,
+            "backend_counts": {
+              "local-rules": 156
+            },
+            "reason_counts": {
+              "TASK_IS_SIMPLE": 156
+            },
+            "failure_counts": {},
+            "p99_tail_observations": 1,
+            "p99_caution": true
+          }
+        ],
+        "paired_effects": []
+      }
+    }
+  ]
+}

@@ -51,7 +51,14 @@ typedef enum {
     REASON_TASK_IS_SIMPLE,      /* 任务本身不需要大模型 */
     REASON_TASK_IS_SAFETY,      /* 安全关键，强制设备内 */
     REASON_MODEL_UNAVAILABLE,    /* 目标模型进程未就绪 */
-    REASON_COMPUTE_OVERLOADED    /* 队列、显存或并发超过运行预算 */
+    REASON_COMPUTE_OVERLOADED,   /* 队列、显存或并发超过运行预算 */
+    REASON_LOCAL_MODEL_UNAVAILABLE,
+    REASON_LOCAL_COMPUTE_OVERLOADED,
+    REASON_NO_MODEL_CAPACITY,
+    REASON_COST_LOCAL,
+    REASON_COST_CLOUD,
+    REASON_RECOVERY_HOLD,
+    REASON_STATIC_BASELINE
 } policy_reason_t;
 
 /* 后端健康观测。字段来自运行时，不包含模型内部或隐藏赛题参数。
@@ -81,6 +88,9 @@ typedef struct {
     int loss_pct;     /* 平滑丢包率 0-100 */
     int last_rtt;     /* 上一次的原始 RTT 样本（供抖动计算） */
     int has_last;     /* last_rtt 是否有效（手工构造的状态可能没有历史） */
+    int rtt_known;
+    int jitter_known;
+    int loss_known;
 } link_state_t;
 
 /* ============ 网络全景：两段链路 ============ */
@@ -96,6 +106,21 @@ typedef struct {
     int cloud_loss_max_pct;   /* 允许上云的最大丢包率 */
     int safety_local_always;  /* 安全关键是否强制设备内（1=强制；0=仅作消融） */
 } policy_cfg_t;
+
+/* Opt-in dual-endpoint policy. Negative transfer estimates mean unknown. */
+typedef struct {
+    policy_cfg_t network;
+    int queue_max_ms, inflight_max, free_mem_min_mb;
+    int local_infer_ms, cloud_infer_ms;
+    int local_transfer_ms, cloud_transfer_ms;
+    int switch_margin_ms, recovery_samples, mode;
+} resource_cfg_t;
+
+typedef struct {
+    backend_t last_model;
+    int cloud_blocked, cloud_good_samples;
+    int observation_generation, last_recovery_generation;
+} resource_history_t;
 
 /* ============ 接口 ============ */
 
@@ -150,6 +175,16 @@ backend_t policy_select_with_compute(const policy_cfg_t *cfg,
                                      const compute_state_t *compute,
                                      task_class_t task,
                                      policy_reason_t *reason);
+
+void resource_cfg_default(resource_cfg_t *cfg);
+void resource_history_init(resource_history_t *history);
+backend_t policy_select_resources(const resource_cfg_t *cfg,
+                                  const net_state_t *net,
+                                  const compute_state_t *local,
+                                  const compute_state_t *cloud,
+                                  resource_history_t *history,
+                                  task_class_t task,
+                                  policy_reason_t *reason);
 
 /* 名字表（日志/报告用；返回值恒非 NULL） */
 const char *backend_name(backend_t b);

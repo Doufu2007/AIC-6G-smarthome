@@ -1,0 +1,21 @@
+{
+  "schema_version": "sensehome.injected-observation-conditions.v1",
+  "scope": "Counterfactual policy-input tests with actual model HTTP calls; not measured outages or congestion",
+  "conditions": [
+    {
+      "id": "local_not_ready_injected",
+      "override": {"compute": {"local": {"model_ready": false}}}
+    },
+    {
+      "id": "cloud_not_ready_injected",
+      "override": {"compute": {"cloud": {"model_ready": false}}}
+    },
+    {
+      "id": "health_stale_injected",
+      "override": {
+        "observed_age_ms": 5000,
+        "endpoint_age_ms": {"local": 5000, "cloud": 5000}
+      }
+    }
+  ]
+}

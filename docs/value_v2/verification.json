@@ -1,0 +1,113 @@
+{
+  "schema": "sensehome.value-v2-verification.v1",
+  "checked_at_utc": "2026-11-10T20:24:48.232314+00:00",
+  "status": "passed",
+  "tests": {
+    "command": "python -m pytest -q docs/value_v2/test_evidence_tools.py docs/value/test_cost_calculator.py",
+    "passed": 19,
+    "subtests_passed": 12,
+    "new_tests_red_before_implementation": 9,
+    "deployment_probe_regression_tests_red_before_fix": 2,
+    "literal_loopback_validation_tests": 1
+  },
+  "actual_model_post_calls_audited": 415,
+  "server_reported_prompt_tokens": 246502,
+  "server_reported_completion_tokens": 29277,
+  "new_inference_requests_sent": 0,
+  "old_port_probe_result": "Two urllib inventory GET attempts plus two direct http.client diagnostic attempts; all four failed with connection refusal. No service restarted. Dedicated current-round ports not probed by this task.",
+  "actual_cost_total": null,
+  "files": {
+    "docs/value_v2/cost_ledger.py": {
+      "bytes": 4441,
+      "sha256": "b3123c3590a9ba00f482bb647814a76446c90b9a32334c177ebd9800095ccad0"
+    },
+    "docs/value_v2/deployment_check.py": {
+      "bytes": 4769,
+      "sha256": "6f5b317809d2105ce99c72d7df0b03f27e3c3c4a4f9057ca92d3cf4bbab391d2"
+    },
+    "docs/value_v2/deployment_current_local.json": {
+      "bytes": 149,
+      "sha256": "bdef515c5f5abb17a7710a3751a4007c9eeefaef06770ec183e205e36f2ca65a"
+    },
+    "docs/value_v2/deployment_dedicated_local.json": {
+      "bytes": 333,
+      "sha256": "9d37f1f2f8ade4fe0d26e8403fd32552be42db064cd265cbb71be4c3c1d00257"
+    },
+    "docs/value_v2/deployment_two_host_template.json": {
+      "bytes": 244,
+      "sha256": "e903aa8af951e5add66be43c618abd67af2f615e8337b8ef4ad4a63b775c5dd9"
+    },
+    "docs/value_v2/ledger_current_unknown.json": {
+      "bytes": 1920,
+      "sha256": "5ccdeef11eabc80db25e27ecd941713e3a83536fa3dfbc2938071bec70870694"
+    },
+    "docs/value_v2/README.md": {
+      "bytes": 6845,
+      "sha256": "5563d889f62853f818dbc5e512f00cd6391e3b813bf9b3928c7b8df48a816ced"
+    },
+    "docs/value_v2/results/deployment_current_check.json": {
+      "bytes": 744,
+      "sha256": "abec8884c19916cc90fbd1dfe11ec218ce034ddf38409ecca0e8468520f7dbbf"
+    },
+    "docs/value_v2/results/deployment_dedicated_static_check.json": {
+      "bytes": 525,
+      "sha256": "7dcca66ef350c8e224e1784b4a34dbdc72dd4f8f38ab373f83abb1cc2bc0d335"
+    },
+    "docs/value_v2/results/deployment_probe_fix_verification.json": {
+      "bytes": 3428,
+      "sha256": "7d8b4425b4074e72dddaffcad56ec282927efc6063911fdc3581d59e36ce6156"
+    },
+    "docs/value_v2/results/deployment_template_check.json": {
+      "bytes": 496,
+      "sha256": "ac43382969c314579ec5de655b13cf50c572acb25b76c54e8e40ebcbd42840c9"
+    },
+    "docs/value_v2/results/ledger_current_result.json": {
+      "bytes": 2907,
+      "sha256": "9c0fe638e248c50fef79c629893aad211b23e3dd57e83cb7e4d0781b247f162c"
+    },
+    "docs/value_v2/results/usage_calls.jsonl": {
+      "bytes": 330872,
+      "sha256": "c7c1851262e6da07f04450d7439bb04671887f782a4d2cbbfb2aea5b11a1b3b7"
+    },
+    "docs/value_v2/results/usage_independent_recheck.json": {
+      "bytes": 903,
+      "sha256": "d5a0494ff44bafd803afe5182c2c3650043d99545a6e7a193ba1e398397edf5b"
+    },
+    "docs/value_v2/results/usage_report.md": {
+      "bytes": 1697,
+      "sha256": "ec3b82d98e69811b09a70451da665e41b71a265c10db3831434ba25235ea74e5"
+    },
+    "docs/value_v2/results/usage_summary.json": {
+      "bytes": 8244,
+      "sha256": "8a36d463e3b8c8c4b01922e4246f7efdd80727bf1c48af896f25b0c2f728c466"
+    },
+    "docs/value_v2/test_evidence_tools.py": {
+      "bytes": 10543,
+      "sha256": "89f971e8a3028251957aeeab2064ba79c32db5854109297bae4969d278bfeb4a"
+    },
+    "docs/value_v2/usage_audit.py": {
+      "bytes": 8959,
+      "sha256": "86eda1d43af55d076a0aac0014e8efa02d42bb58f4db2a13b61d39b13580614a"
+    },
+    "docs/value_v2/verification/deployment_probe_red_green.md": {
+      "bytes": 1961,
+      "sha256": "42640e14f8c29d43125d59f95e2b9ea4e8ca024ab0bedd0917efc54c3a36d24b"
+    },
+    "docs/value_v2/verification/tests_after_deployment_fix.log": {
+      "bytes": 109,
+      "sha256": "58099a8e4c2964f65579982cdcd5e9b776f45988803dd0d6ced82bb1ff5c2f98"
+    }
+  },
+  "read_only_GET_probe_attempts": 4,
+  "deployment_probe_fix": {
+    "status": "implemented_and_fixture_verified",
+    "independent_review": "pending",
+    "transport": "direct http.client; literal loopback IP; no proxy; no redirects",
+    "fixture_report": "docs/value_v2/results/deployment_probe_fix_verification.json",
+    "real_model_requests": 0,
+    "fixture_environment_proxy_received": 0,
+    "fixture_declared_target_received": 2,
+    "fixture_redirect_target_received": 0
+  },
+  "independent_raw_recheck": "docs/value_v2/results/usage_independent_recheck.json"
+}

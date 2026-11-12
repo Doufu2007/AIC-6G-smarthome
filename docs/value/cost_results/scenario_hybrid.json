@@ -1,0 +1,119 @@
+{
+  "schema": "sensehome.cost-result.v1",
+  "scenario_name": "演示B：25%请求送云；情景假设+官方token报价",
+  "currency": "USD",
+  "result_kind": "parameterized scenario, not an invoice or measured total cost",
+  "input_evidence_statuses": [
+    "assumption",
+    "quote"
+  ],
+  "monthly_requests": 3000,
+  "monthly_cloud_routed_requests": 750.0,
+  "monthly_cloud_attempts": 750.0,
+  "local_active_hours": 1.875,
+  "energy_kwh": 7.246875,
+  "monthly_components": {
+    "hardware_amortization": 5.0,
+    "electricity": 1.08703125,
+    "cloud_tokens": 0.5175,
+    "operations": 5,
+    "network": 0
+  },
+  "monthly_known_subtotal": 11.60453125,
+  "monthly_total": 11.60453125,
+  "per_1000_requests_components": {
+    "hardware_amortization": 1.6666666666666667,
+    "electricity": 0.36234375,
+    "cloud_tokens": 0.1725,
+    "operations": 1.6666666666666667,
+    "network": 0.0
+  },
+  "per_1000_requests_known_subtotal": 3.8681770833333333,
+  "per_1000_requests_total": 3.8681770833333333,
+  "unknown_parameters": [],
+  "unknown_cost_components": [],
+  "parameters": {
+    "monthly_requests": {
+      "value": 3000,
+      "status": "assumption",
+      "source": "演示情景假设；不是采购、运行或用户需求实测。见 cost_model.md"
+    },
+    "cloud_fraction": {
+      "value": 0.25,
+      "status": "assumption",
+      "source": "演示情景假设；不是采购、运行或用户需求实测。见 cost_model.md"
+    },
+    "input_tokens_per_cloud_attempt": {
+      "value": 1500,
+      "status": "assumption",
+      "source": "演示情景假设；不是采购、运行或用户需求实测。见 cost_model.md"
+    },
+    "output_tokens_per_cloud_attempt": {
+      "value": 200,
+      "status": "assumption",
+      "source": "演示情景假设；不是采购、运行或用户需求实测。见 cost_model.md"
+    },
+    "cloud_attempts_per_routed_request": {
+      "value": 1,
+      "status": "assumption",
+      "source": "演示情景假设；不是采购、运行或用户需求实测。见 cost_model.md"
+    },
+    "cloud_input_per_million": {
+      "value": 0.3,
+      "status": "quote",
+      "source": "public_sources.json S9，2026-11-11；DeepSeek deepseek-flash，高峰、输入缓存未命中，USD/1M tokens，未实际调用"
+    },
+    "cloud_output_per_million": {
+      "value": 1.2,
+      "status": "quote",
+      "source": "public_sources.json S9，2026-11-11；DeepSeek deepseek-flash，高峰、输入缓存未命中，USD/1M tokens，未实际调用"
+    },
+    "gateway_purchase": {
+      "value": 180,
+      "status": "assumption",
+      "source": "演示情景假设；不是采购、运行或用户需求实测。见 cost_model.md"
+    },
+    "amortization_months": {
+      "value": 36,
+      "status": "assumption",
+      "source": "演示情景假设；不是采购、运行或用户需求实测。见 cost_model.md"
+    },
+    "monthly_uptime_hours": {
+      "value": 720,
+      "status": "assumption",
+      "source": "演示情景假设；不是采购、运行或用户需求实测。见 cost_model.md"
+    },
+    "idle_watts": {
+      "value": 10,
+      "status": "assumption",
+      "source": "演示情景假设；不是采购、运行或用户需求实测。见 cost_model.md"
+    },
+    "active_watts": {
+      "value": 35,
+      "status": "assumption",
+      "source": "演示情景假设；不是采购、运行或用户需求实测。见 cost_model.md"
+    },
+    "local_seconds_per_request": {
+      "value": 3,
+      "status": "assumption",
+      "source": "演示情景假设；不是采购、运行或用户需求实测。见 cost_model.md"
+    },
+    "electricity_per_kwh": {
+      "value": 0.15,
+      "status": "assumption",
+      "source": "演示情景假设；不是采购、运行或用户需求实测。见 cost_model.md"
+    },
+    "monthly_operations": {
+      "value": 5,
+      "status": "assumption",
+      "source": "演示情景假设；不是采购、运行或用户需求实测。见 cost_model.md"
+    },
+    "monthly_network": {
+      "value": 0,
+      "status": "assumption",
+      "source": "演示情景假设；不是采购、运行或用户需求实测。见 cost_model.md"
+    }
+  },
+  "scope": "One always-on gateway, serialized average local work; token-only cloud API; no tax, finance, device purchase, audio, paid tools or failure compensation unless included in inputs.",
+  "energy_boundary": "Whole-gateway idle plus incremental local-active power. CPU/RSS/TDP alone cannot supply watts. Probes, cloud-wait work and failed local work require integrated measurements or explicit allocation."
+}
