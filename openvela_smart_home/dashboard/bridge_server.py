@@ -73,6 +73,11 @@ ROOM_ICONS = {"客厅": "🛋️", "卧室": "🛏️", "厨房": "🍳", "浴�
 patrol_log = []          # 主动巡检日志
 patrol_running = False   # 巡检线程状态
 last_patrol_time = 0
+patrol_error = None
+_patrol_lock = threading.RLock()
+_patrol_control_lock = threading.RLock()
+_patrol_thread = None
+_patrol_stop = None
 gateway = None
 gateway_backends = {}
 gateway_init_error = None
@@ -100,12 +105,32 @@ _observation_clock = {
 
 # ============ 设备状态管理 ============
 def load_state():
-    if os.path.exists(STATE_FILE):
-        try:
-            with open(STATE_FILE, 'r', encoding='utf-8') as f:
-                return json.load(f)
-        except: pass
-    return default_state()
+    try:
+        with open(STATE_FILE, 'r', encoding='utf-8') as f:
+            state = json.load(f)
+    except FileNotFoundError:
+        return default_state()
+    except (UnicodeError, json.JSONDecodeError):
+        raise ValueError('STATE_FILE_INVALID') from None
+    except OSError:
+        raise OSError('STATE_FILE_UNREADABLE') from None
+    # Sensor observations may be absent or malformed independently; that does
+    # not reset valid device state. Core persisted groups must remain usable.
+    if not isinstance(state, dict) or any(
+            not isinstance(state.get(group), dict) or
+            any(not isinstance(state[group].get(room), dict) for room in LOCATIONS)
+            for group in ('lights', 'temperature', 'curtains')):
+        raise ValueError('STATE_FILE_INVALID')
+    for room in LOCATIONS:
+        for group, flag, level in (('lights', 'is_on', 'brightness'), ('curtains', 'is_open', 'position')):
+            value = state[group][room]
+            if (type(value.get(flag)) is not bool or type(value.get(level)) is not int or
+                    not 0 <= value[level] <= 100 or value[flag] != (value[level] > 0)):
+                raise ValueError('STATE_FILE_INVALID')
+        for value in (state['temperature'][room].get('temp'), state['temperature'][room].get('humidity')):
+            if type(value) not in (int, float) or not -1e308 <= value <= 1e308:
+                raise ValueError('STATE_FILE_INVALID')
+    return state
 
 def default_state():
     state = {
@@ -123,6 +148,9 @@ def save_state(state):
     # Replace atomically so the monitor/patrol/UI never reads partial JSON.
     # Errors propagate to the action boundary rather than reporting a device
     # change that was never persisted.
+    # Never overwrite existing corrupt evidence with an inferred reset, even
+    # when a caller supplies a fresh default or an MQTT UI cache update.
+    load_state()
     directory = os.path.dirname(os.path.abspath(STATE_FILE))
     fd, temporary = tempfile.mkstemp(prefix='.sensehome-state-', suffix='.json', dir=directory)
     try:
@@ -189,10 +217,54 @@ def generate_sensor_data(loc):
         "pm25":            round(noise(p["pm25"]), 1),
         "co2":             round(noise(p["co2"]), 0),
         "noise":           round(noise(p["noise"]), 1),
-        "update_time":     time.strftime("%H:%M:%S")
+        "update_time":     time.strftime("%H:%M:%S"),
+        "sample_kind":     "simulated-initial-value"
     }
 
 # ============ 主动环境巡检（物理AI核心） ============
+SENSOR_MAX_AGE_S = 30.0
+SENSOR_TRUSTED_SOURCES = frozenset({'sensor-adapter', 'software-test-fixture'})
+SENSOR_FIELDS = ('illuminance', 'motion_detected', 'pm25', 'co2')
+
+
+def sensor_observations(sensors, *, now=None):
+    """Validate adapter-owned per-signal samples; DB reads never resample.
+
+    Each room needs ``observations[field]`` with Unix ``sampled_at``, accepted
+    ``source``, ``status='ok'`` and ``trusted=True``. The test-fixture source
+    proves software behavior only. HH:MM:SS strings cannot grant authority.
+    """
+    now = time.time() if now is None else now
+    rooms = sensors if isinstance(sensors, dict) else {}
+    result = {}
+    for room in LOCATIONS:
+        value = rooms.get(room)
+        values = value if isinstance(value, dict) else {}
+        metadata = values.get('observations')
+        metadata = metadata if isinstance(metadata, dict) else {}
+        signals = {}
+        for field in SENSOR_FIELDS:
+            measured = values.get(field)
+            valid_value = (type(measured) is bool if field == 'motion_detected' else
+                           type(measured) in (int, float) and 0 <= measured <= 1e308)
+            sample = metadata.get(field)
+            sample = sample if isinstance(sample, dict) else {}
+            sampled_at = sample.get('sampled_at')
+            valid_time = (type(sampled_at) in (int, float) and 0 < sampled_at <= now)
+            age = now - sampled_at if valid_time else None
+            trusted = (sample.get('trusted') is True and sample.get('status') == 'ok'
+                       and isinstance(sample.get('source'), str) and sample['source'] in SENSOR_TRUSTED_SOURCES)
+            usable = bool(valid_value and trusted and age is not None and age <= SENSOR_MAX_AGE_S)
+            signals[field] = {'available': usable, 'value': measured if usable else None,
+                'sampled_at': sampled_at if valid_time else None, 'age_ms': age * 1000 if age is not None else None,
+                'source': sample.get('source') if isinstance(sample.get('source'), str) else None,
+                'status': 'ok' if usable else 'unavailable',
+                'reason': None if usable else 'INVALID_VALUE' if not valid_value else
+                          'UNTRUSTED_SAMPLE' if not trusted else 'INVALID_SAMPLE_TIME' if not valid_time else 'STALE_SAMPLE'}
+        result[room] = signals
+    return result
+
+
 def _execute_leave_scene(context=None):
     """Server-owned light/curtain scene using the ordinary receipt boundary."""
     actions = []
@@ -222,51 +294,113 @@ def run_environment_patrol(context=None):
         state = load_state()
         sensors = ((snapshot or {}).get('software_state', {}).get('sensors', {})
                    if gateway_receipt_executor is not None else state.get('sensors', {}))
+        observations = sensor_observations(sensors)
         actions, anomalies = [], []
         for room in LOCATIONS:
             if room == '室外':
                 continue
             actions.append({'name': 'read_temperature', 'params': {'location': room}})
-            sensor = sensors.get(room, {})
-            lux, motion = sensor.get('illuminance'), sensor.get('motion_detected')
-            if type(lux) in (int, float) and math.isfinite(lux) and type(motion) is bool:
+            sensor = observations[room]
+            lux, motion = sensor['illuminance']['value'], sensor['motion_detected']['value']
+            if sensor['illuminance']['available']:
                 if lux > 50000:
                     actions.append({'name': 'curtain_control', 'params': {'location': room, 'position': 20}})
-                if lux < 2000 and motion:
+            if sensor['illuminance']['available'] and sensor['motion_detected']['available']:
+                if lux < 2000 and motion is True:
                     actions.append({'name': 'light_control', 'params': {'location': room, 'brightness': 60}})
-                elif not motion and state.get('lights', {}).get(room, {}).get('is_on'):
+                elif motion is False and state.get('lights', {}).get(room, {}).get('is_on'):
                     actions.append({'name': 'light_control', 'params': {'location': room, 'action': 'off'}})
             for field, limit in (('pm25', 75), ('co2', 1000)):
-                value = sensor.get(field)
-                if type(value) in (int, float) and math.isfinite(value) and value > limit:
+                value = sensor[field]['value']
+                if sensor[field]['available'] and value > limit:
                     anomalies.append(f'{room} {field}={value} 超过巡检阈值')
         execution_context = {**dict(context or {}), '_receipt_command': '服务器主动巡检：读取温湿度并执行观测触发动作',
                              '_server_goals': copy.deepcopy(actions)}
         execution_context.setdefault('command_id', uuid.uuid4().hex)
         executed = _gateway_action_executor(actions, execution_context)
+    unavailable_rooms = {room: [field for field, sample in signals.items() if not sample['available']]
+                         for room, signals in observations.items() if room != '室外' and
+                         any(not sample['available'] for sample in signals.values())}
+    unavailable = {field for fields in unavailable_rooms.values() for field in fields}
     report = {**executed, 'time': time.strftime('%H:%M:%S'), 'active': True, 'anomalies': anomalies,
               'execution_actions': executed.get('actions', []),
               'actions': [a.get('description', a.get('name', '')) for a in executed.get('actions', [])],
               'auto_decisions': sum(a['name'] != 'read_temperature' for a in actions),
               'checked_items': ['temperature', 'humidity'],
               'sensor_scope': 'mqtt-software-entity' if gateway_receipt_executor is not None else 'local-simulated-state',
-              'unavailable_sensors': ['illuminance', 'motion', 'pm25', 'co2'] if not sensors else []}
+              'sensor_observations': observations,
+              'sensor_max_age_s': SENSOR_MAX_AGE_S,
+              'unavailable_sensor_rooms': unavailable_rooms,
+              'unavailable_sensors': ['motion' if field == 'motion_detected' else field
+                                      for field in SENSOR_FIELDS if field in unavailable]}
     report['status'] = 'complete' if report.get('task_complete') else ('partial' if report.get('execution_complete') else 'failed')
     patrol_log.insert(0, report)
     del patrol_log[50:]
     return report
 
-def patrol_loop(interval):
-    """后台巡检线程"""
-    global patrol_running
-    patrol_running = True
-    print(f"[Patrol] 主动巡检线程已启动（间隔 {interval}s）")
-    # 立即执行一次
-    run_environment_patrol()
-    while patrol_running:
-        time.sleep(interval)
-        if patrol_running:
+def patrol_loop(interval, stop_event=None):
+    """One owned loop; cancellation cannot be undone by a later start."""
+    global patrol_running, patrol_error, _patrol_thread, _patrol_stop
+    current = threading.current_thread()
+    with _patrol_lock:
+        if stop_event is None:
+            if _patrol_thread is not None and _patrol_thread.is_alive() and _patrol_thread is not current:
+                return
+            stop_event = threading.Event()
+            _patrol_thread, _patrol_stop, patrol_running = current, stop_event, True
+        elif _patrol_thread is not current or _patrol_stop is not stop_event:
+            return
+    try:
+        while not stop_event.is_set():
             run_environment_patrol()
+            if stop_event.wait(interval):
+                break
+    except Exception as exc:
+        with _patrol_lock:
+            patrol_error = type(exc).__name__
+    finally:
+        with _patrol_lock:
+            if _patrol_thread is current and _patrol_stop is stop_event:
+                patrol_running, _patrol_thread, _patrol_stop = False, None, None
+
+
+def start_patrol(interval=PATROL_INTERVAL):
+    global patrol_running, patrol_error, _patrol_thread, _patrol_stop
+    if type(interval) not in (int, float) or not math.isfinite(interval) or interval <= 0:
+        raise ValueError('INVALID_PATROL_INTERVAL')
+    with _patrol_control_lock, _patrol_lock:
+        if _patrol_thread is not None and _patrol_thread.is_alive():
+            return False
+        _patrol_stop = threading.Event()
+        patrol_error, patrol_running = None, True
+        _patrol_thread = threading.Thread(target=patrol_loop, args=(interval, _patrol_stop),
+                                          name='sensehome-patrol', daemon=True)
+        _patrol_thread.start()
+        return True
+
+
+def stop_patrol(timeout_s=3.0):
+    global patrol_running
+    with _patrol_control_lock:
+        with _patrol_lock:
+            thread = _patrol_thread
+            if _patrol_stop is not None:
+                _patrol_stop.set()
+            patrol_running = False
+        if thread is not None and thread is not threading.current_thread():
+            thread.join(max(0., timeout_s))
+        return thread is None or not thread.is_alive()
+
+
+def toggle_patrol(interval=PATROL_INTERVAL):
+    with _patrol_control_lock:
+        with _patrol_lock:
+            running = patrol_running
+        if running:
+            stop_patrol()
+        else:
+            start_patrol(interval)
+        return patrol_running
 
 # ============ 多设备协同执行器 ============
 def execute_leave_home(state):
@@ -876,6 +1010,7 @@ def _probe_gateway_links():
 def close_gateway():
     """Release the active health monitor and policy subprocess, if any."""
     global gateway, backend_monitor, gateway_init_error, gateway_receipt_executor
+    stop_patrol()
     active_gateway, active_monitor = gateway, backend_monitor
     refresh_closer = globals().get('close_state_refresh')
     if callable(refresh_closer):
@@ -1358,6 +1493,7 @@ class BridgeHandler(http.server.BaseHTTPRequestHandler):
                     self.send_json({'error': str(exc)}, status=400)
         elif path == '/api/patrol/log':
             self.send_json({"log": patrol_log, "running": patrol_running,
+                           "error": patrol_error,
                            "last": time.strftime("%H:%M:%S", time.localtime(last_patrol_time)) if last_patrol_time else "从未"})
         elif path == '/api/patrol/trigger':
             self.send_json({'error': 'POST_REQUIRED', 'answer': '请通过带请求ID的POST触发巡检。'}, status=405)
@@ -1390,12 +1526,7 @@ class BridgeHandler(http.server.BaseHTTPRequestHandler):
                 self.send_json({"error": str(exc)}, status=400)
 
         elif path == '/api/patrol/toggle':
-            global patrol_running
-            patrol_running = not patrol_running
-            if patrol_running:
-                t = threading.Thread(target=patrol_loop, args=(PATROL_INTERVAL,), daemon=True)
-                t.start()
-            self.send_json({"patrol_active": patrol_running})
+            self.send_json({"patrol_active": toggle_patrol(), "error": patrol_error})
 
         else:
             self.send_error(404)
@@ -1474,17 +1605,16 @@ def main():
 
     # 启动主动巡检线程
     if patrol_sec > 0:
-        t = threading.Thread(target=patrol_loop, args=(patrol_sec,), daemon=True)
-        t.start()
+        start_patrol(patrol_sec)
 
     server = BoundedHTTPServer(('0.0.0.0', port), BridgeHandler)
     try:
         server.serve_forever()
     except KeyboardInterrupt:
-        global patrol_running
-        patrol_running = False
         print("\n服务器已停止")
-        server.shutdown()
+    finally:
+        stop_patrol()
+        server.server_close()
 
 if __name__ == '__main__':
     main()
