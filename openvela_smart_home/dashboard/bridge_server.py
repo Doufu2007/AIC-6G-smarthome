@@ -760,6 +760,10 @@ def _gateway_local_handler_unlocked(command, context=None):
                 'actions': [], 'semantic_complete': False, 'error': 'UNRESOLVED_NO_NLU'}
     location = extract_location(command)
     if location is None and re.search(r'灯|窗帘|温度|湿度|室温|暗|亮', command):
+        if re.search(r'温度|湿度|室温|多少度', command):
+            return {'actions': [], 'answer': '请指定查询房间，例如“查看客厅的温度和湿度”。',
+                    'semantic_complete': False, 'clarification_required': True,
+                    'simulated_execution_confirmed': False}
         return {'actions': [], 'answer': '请指定受支持的房间和需要调整的目标。',
                 'semantic_complete': False, 'clarification_required': True,
                 'simulated_execution_confirmed': False}

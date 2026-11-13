@@ -82,6 +82,16 @@ class LocalExplicitContractTests(unittest.TestCase):
         self.assertTrue(result['simulated_execution_confirmed'])
         self.assertEqual(result['actions'][0]['name'], 'read_temperature')
 
+    def test_roomless_temperature_query_asks_for_a_room_without_suggesting_adjustment(self):
+        before = deepcopy(bridge.load_state())
+        result = bridge._gateway_local_handler('现在室温多少度')
+        self.assertEqual(bridge.load_state(), before)
+        self.assertEqual(result['actions'], [])
+        self.assertFalse(result['semantic_complete'])
+        self.assertTrue(result['clarification_required'])
+        self.assertIn('请指定查询房间', result['answer'])
+        self.assertNotIn('调整', result['answer'])
+
 
 if __name__ == '__main__':
     unittest.main()

@@ -145,10 +145,10 @@ body {
   </div>
 
   <div class="quick-actions">
-    <button class="btn accent" onclick="sendCmd('我出门了')">🏠 离家模式</button>
-    <button class="btn accent" onclick="sendCmd('早上好')">☀️ 早安模式</button>
-    <button class="btn" onclick="sendCmd('打开所有灯')">💡 全屋开灯</button>
-    <button class="btn" onclick="sendCmd('关闭所有灯')">🌙 全屋关灯</button>
+    <button class="btn accent" onclick="sendCmd('将客厅灯光调到60%')">💡 客厅灯光60%</button>
+    <button class="btn accent" onclick="sendCmd('查看客厅的温度和湿度')">🌡️ 客厅温湿度</button>
+    <button class="btn" onclick="sendCmd('打开客厅窗帘')">🪟 打开客厅窗帘</button>
+    <button class="btn" onclick="sendCmd('关闭燃气报警器')">🛡️ 安全边界</button>
   </div>
 
   <div class="section-title">🏠 房间控制面板</div>
@@ -184,17 +184,16 @@ body {
   </div>
 
   <div class="hints">
-    <span onclick="sendCmd('打开客厅的灯')">💡 开灯</span>
-    <span onclick="sendCmd('现在室温多少度')">🌡️ 温湿度</span>
-    <span class="fuzzy" onclick="sendCmd('有点冷')">🥶 有点冷</span>
-    <span class="fuzzy" onclick="sendCmd('太暗了')">🌑 太暗了</span>
-    <span class="fuzzy" onclick="sendCmd('不透气')">😮‍💨 不透气</span>
+    <span onclick="sendCmd('将客厅灯光调到60%')">💡 客厅灯光60%</span>
+    <span onclick="sendCmd('查看客厅的温度和湿度')">🌡️ 客厅温湿度</span>
+    <span class="fuzzy" onclick="sendCmd('太暗了')">🌑 亮度待补充</span>
+    <span onclick="sendCmd('关闭燃气报警器')">🛡️ 安全边界</span>
   </div>
 
   <div class="log-container" id="logContainer">
     <div class="log-entry answer">
-      <div class="log-step">等待网关确认</div>
-      <div class="log-content">这是PC设备仿真演示。设备与传感器状态来自网关，不代表真实家居或6G网络测量。连接状态以健康信息为准；请求失败时请先查询状态再重试。</div>
+      <div class="log-step">演示说明</div>
+      <div class="log-content">等待你输入指令。设备与传感器状态来自PC仿真网关，不代表真实家居或6G网络测量；当前没有待确认请求。</div>
     </div>
   </div>
 
@@ -215,7 +214,7 @@ body {
   </div>
   <div style="padding:8px 20px;font-size:12px;display:flex;gap:8px;flex-wrap:wrap;align-items:center;">
     <button onclick="archivePendingRequest()">结束等待并保留记录</button>
-    <select id="requestHistorySelect" aria-label="历史待确认请求"></select>
+    <select id="requestHistorySelect" aria-label="历史请求"></select>
     <button onclick="recoverArchivedRequest()">回查历史请求</button>
     <span>结束等待后，旧请求仍可能执行；历史记录可继续回查。</span>
   </div>
@@ -248,7 +247,7 @@ function renderRequestHistory() {
     `<option value="${escapeHtml(item.id)}">${escapeHtml(item.command||item.kind)} (${escapeHtml(item.id)}) ${escapeHtml(item.request_state||'未确认')}</option>`).join('') : '<option value="">暂无历史待确认请求</option>';
 }
 function archivePendingRequest() {
-  if(!pendingRequest) { appendLog('observe','暂无待等待请求','历史记录仍可回查。'); return; }
+  if(!pendingRequest) { appendLog('observe','当前没有待确认请求','历史记录仍可回查。'); return; }
   const pending=pendingRequest;
   if(!requestHistory.some(item=>item.id===pending.id)) requestHistory.push({...pending,archived_at:Date.now(),request_state:'未确认'});
   saveClientValue('sensehome.requestHistory',JSON.stringify(requestHistory));
@@ -275,7 +274,7 @@ function pendingFinished(data) {
   return data.request_state==='finished' || (!data.request_state && typeof data.semantic_complete==='boolean' && typeof data.interface_ok==='boolean' && Array.isArray(data.actions) && data.execution_state!=='unknown');
 }
 async function recoverPendingRequest() {
-  if (!pendingRequest) { appendLog('observe','暂无待回查请求','上次已收到最终结果。'); return null; }
+  if (!pendingRequest) { appendLog('observe','当前没有待确认请求','上次已收到最终结果。'); return null; }
   const pending = pendingRequest;
   try {
     const data=await readJsonResponse(await fetch('/api/requests/'+encodeURIComponent(pending.id)));
@@ -292,8 +291,11 @@ async function recoverPendingRequest() {
 }
 async function beginClientRequest(command,kind='command') {
   if(pendingRequest) {
-    appendLog('observe','正在回查上次请求','上次请求尚未确认，先查询其结果。');
-    await recoverPendingRequest();
+    appendLog('observe','正在回查上次请求','当前输入暂不发送；仅查询原请求，不会重发动作。若回查确认完成，请再次点击“发送”提交当前输入。');
+    const recovered=await recoverPendingRequest();
+    if(!pendingRequest && recovered && pendingFinished(recovered)) {
+      appendLog('observe','当前输入尚未发送','上一条请求已确认完成。点击“发送”可提交当前输入。');
+    }
     return null;
   }
   const value={id:requestId(),command,kind};

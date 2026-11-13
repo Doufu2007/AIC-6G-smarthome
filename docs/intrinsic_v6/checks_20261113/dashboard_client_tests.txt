@@ -1,0 +1,13 @@
+✔ lost response keeps client ID; repeat queries original instead of posting again (76.3841ms)
+✔ reload restores pending identity and recovery only performs GET (2.3834ms)
+✔ disabled patrol report never displays completion (2.6564ms)
+✔ not-found request can be archived explicitly and later queried without blocking new intent (4.972ms)
+✔ late old response cannot clear the newer pending request (7.9006ms)
+ℹ tests 5
+ℹ suites 0
+ℹ pass 5
+ℹ fail 0
+ℹ cancelled 0
+ℹ skipped 0
+ℹ todo 0
+ℹ duration_ms 220.5497
