@@ -1,0 +1,106 @@
+--- before/controller.py
++++ after/controller.py
+@@ -116,8 +116,11 @@
+ 
+ 
+ class ModelPlanner:
+-    def __init__(self,endpoint,model,*,api_key=None,timeout=5,allow_model_proposals=False):
++    def __init__(self,endpoint,model,*,api_key=None,timeout=5,allow_model_proposals=False,
++                 seed=20261111,json_mode=True):
+         if type(allow_model_proposals) is not bool:raise ValueError('allow_model_proposals must be boolean')
++        if seed is not None and (type(seed) is not int):raise ValueError('seed must be an integer or null')
++        if type(json_mode) is not bool:raise ValueError('json_mode must be boolean')
+         parsed=urlparse(endpoint)
+         if parsed.scheme not in ('http','https') or not parsed.hostname or parsed.username or parsed.password:
+             raise ValueError('invalid model endpoint')
+@@ -125,6 +128,7 @@
+         if type(timeout) not in (int,float) or not 0 < timeout <= 300:raise ValueError('invalid model timeout')
+         self.endpoint=endpoint;self.model=model;self.api_key=api_key;self.timeout=timeout
+         self.allow_model_proposals=allow_model_proposals
++        self.seed=seed;self.json_mode=json_mode
+         self._local=threading.local()
+ 
+     @property
+@@ -137,7 +141,9 @@
+         if request_privacy_mode(view.get('request')) != 'standard':
+             return clarification('当前请求禁止联网或上传数据，已停止模型调用；请移除模型扩展需求或明确更改隐私要求')
+         body=dict(model=self.model,messages=[dict(role='system',content=SEMANTIC_PROMPT if self.allow_model_proposals else PROMPT),dict(role='user',content=json.dumps(view,ensure_ascii=False))],
+-                  temperature=0,max_tokens=512,seed=20261111,response_format=dict(type='json_object'))
++                  temperature=0,max_tokens=512)
++        if self.seed is not None:body['seed']=self.seed
++        if self.json_mode:body['response_format']=dict(type='json_object')
+         headers={'Content-Type':'application/json'}
+         if self.api_key:headers['Authorization']='Bearer '+self.api_key
+         data=json.dumps(body,ensure_ascii=False).encode('utf8')
+--- before/cli.py
++++ after/cli.py
+@@ -37,6 +37,7 @@
+     allow_model_proposals=getattr(args,'allow_model_proposals',False)
+     if type(allow_model_proposals) is not bool:raise ValueError('allow_model_proposals must be boolean')
+     if args.routes and args.model_endpoint:raise ValueError('choose --routes or --model-endpoint')
++    if args.routes and args.calibration_file:raise ValueError('set calibration_file inside --routes instead of --calibration-file')
+     if args.routes:
+         path=Path(args.routes).resolve();config=load(path)
+         if not isinstance(config,dict):raise ValueError('routes config must be an object')
+@@ -54,13 +55,35 @@
+     if type(config.get('prefer_rules',True)) is not bool:
+         raise ValueError('routes prefer_rules must be boolean')
+     allow_model_proposals=allow_model_proposals or config.get('allow_model_proposals',False)
++    direct_model=config.get('direct_model',bool(args.model_endpoint and allow_model_proposals
++                                               and not config.get('calibration_file')))
++    if type(direct_model) is not bool:raise ValueError('direct_model must be boolean')
++    if direct_model:
++        if 'calibration_file' in config:
++            raise ValueError('direct_model cannot be combined with calibration_file; use calibrated routing')
++        if (not allow_model_proposals or config.get('prefer_rules',True)
++                or config.get('privacy','standard')!='standard' or len(specs)!=1):
++            raise ValueError('direct_model requires one explicit proposal backend, standard privacy and prefer_rules=false')
++        deadline_ms=config.get('deadline_ms',None)
++        if deadline_ms is not None and (type(deadline_ms) not in (int,float) or not 0<deadline_ms<=300000):
++            raise ValueError('direct_model deadline_ms must be within 0..300000')
+     backends={}
+     resources={}
+     for name,spec in specs.items():
+         if not isinstance(spec,dict):raise ValueError('invalid backend configuration')
++        key_env=spec.get('api_key_env','SENSEHOME_MODEL_KEY')
++        require_key=spec.get('require_api_key',False)
++        if type(require_key) is not bool:raise ValueError('require_api_key must be boolean')
++        api_key=os.environ.get(key_env)
++        if require_key and not api_key:raise ValueError('set '+key_env+' privately before calling this backend')
++        timeout=spec.get('timeout_seconds',5)
++        if type(timeout) not in (int,float) or not 0<timeout<=300:raise ValueError('invalid model timeout')
++        if direct_model and deadline_ms is not None:timeout=min(timeout,deadline_ms/1000)
++        if direct_model and spec.get('resources_url'):
++            raise ValueError('resources_url requires calibrated routing, not direct_model')
+         backends[name]=ModelPlanner(spec['endpoint'],spec['model'],
+-            api_key=os.environ.get(spec.get('api_key_env','SENSEHOME_MODEL_KEY')),
+-            timeout=spec.get('timeout_seconds',5),allow_model_proposals=allow_model_proposals)
++            api_key=api_key,timeout=timeout,allow_model_proposals=allow_model_proposals,
++            seed=spec.get('seed',20261111),json_mode=spec.get('json_mode',True))
+         if spec.get('resources_url'):
+             url=spec['resources_url'];parsed=urlparse(url)
+             if parsed.scheme not in ('http','https') or not parsed.hostname or parsed.username or parsed.password:
+@@ -80,9 +103,9 @@
+         if not isinstance(value,dict):raise ValueError('resource object required')
+         return dict(queue_ms=value.get('queue_ms'),free_mem_mb=value.get('free_mem_mb'),
+                     inflight=value.get('inflight'),source='configured HTTP resource endpoint',observed_at=time.time())
+-    if allow_model_proposals and args.model_endpoint and not calibration:
+-        # The user selected this endpoint explicitly; no quality observation or
+-        # routing superiority is fabricated for a direct proposal call.
++    if direct_model:
++        # An explicitly selected, uncalibrated endpoint is used for proposals
++        # without claiming quality or routing superiority.
+         return next(iter(backends.values()))
+     return RoutedPlanner(backends,prefer_rules=config.get('prefer_rules',True),allow_model_proposals=allow_model_proposals,
+         privacy=config.get('privacy','standard'),trusted_backends=set(config.get('trusted_backends',[])),
+--- before/catalog_planner.py
++++ after/catalog_planner.py
+@@ -83,7 +83,7 @@
+         return 'offline'
+     if any(term in normalized for term in (
+             '不要上传', '不上传', '禁止上传', '不得上传', '不要发送设备信息',
+-            '不要把设备信息发到云端', '不要将设备信息发到云端')):
++            '不要把设备信息发到云端', '不要将设备信息发到云端', '仅在本地', '只在本地')):
+         return 'no_upload'
+     return 'standard'
+ 

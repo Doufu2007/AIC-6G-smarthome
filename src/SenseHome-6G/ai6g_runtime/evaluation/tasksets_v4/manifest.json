@@ -1,0 +1,65 @@
+{
+  "schema": "sensehome.taskset.v4",
+  "provenance": "AI-assisted synthetic protocol suite; source-known exploratory validation, not external generalization",
+  "split_unit": "utterance template group",
+  "independence_note": "surface variants share intents; bootstrap 72 cluster_id groups, not 144 independent user scenarios",
+  "test_order": {
+    "seed": 20261104,
+    "method": "shuffle each family stratum, then shuffle 12-family rounds",
+    "phase_steps": 36,
+    "families_per_phase": 12,
+    "rows_per_family_per_phase": 3,
+    "round_steps": 12,
+    "rows_per_family_per_round": 1,
+    "rows_per_family_total": 12
+  },
+  "trace_schema": [
+    "step",
+    "backend",
+    "rtt_ms",
+    "queue_ms",
+    "reachable"
+  ],
+  "trace_phases": [
+    {
+      "start_step": 0,
+      "end_step_exclusive": 36,
+      "name": "stable"
+    },
+    {
+      "start_step": 36,
+      "end_step_exclusive": 72,
+      "name": "cloud_congestion"
+    },
+    {
+      "start_step": 72,
+      "end_step_exclusive": 108,
+      "name": "cloud_outage"
+    },
+    {
+      "start_step": 108,
+      "end_step_exclusive": 144,
+      "name": "recovery"
+    }
+  ],
+  "bootstrap": {
+    "unit": "cluster_id",
+    "clusters": 72,
+    "tasks_per_cluster": 2,
+    "aggregation": "average repeats per task, average tasks per cluster, paired resampling of clusters"
+  },
+  "files": {
+    "calibration.jsonl": {
+      "sha256": "59b495841a158b5295dd00d1b5e614bd9f7ec045dc5088ca7f8a86c101b5cfa3",
+      "rows": 72
+    },
+    "test.jsonl": {
+      "sha256": "557546b7f05825dc208277da53e83d3335b1650dd3adc4d0b39f7247f4f1a7be",
+      "rows": 144
+    },
+    "trace.jsonl": {
+      "sha256": "c1ae675e2cd30008d65c31b3acccbdfd765511900fb2b8c757df59c195ab0f90",
+      "rows": 5
+    }
+  }
+}

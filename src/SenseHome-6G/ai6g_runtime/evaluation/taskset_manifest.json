@@ -1,0 +1,132 @@
+{
+  "schema": "ai6g.taskset_manifest.v1",
+  "version": "tasks_test_v1+tasks_calibration_v1",
+  "created_on": "2026-11-03",
+  "purpose": "独立冻结留出集与校准集，用于真实模型接入后的离线语义评测；不改写开发用tasks.jsonl。",
+  "files": {
+    "tasks_test_v1.jsonl": {
+      "path": "evaluation/tasks_test_v1.jsonl",
+      "role": "independent frozen holdout test set",
+      "records": 36,
+      "byte_sha256": "4d1c2dae7d189e89879f2245808cebe4701ad78603322d9f102fe58bb7b13606",
+      "parsed_task_set_sha256": "22f542c22ccbb4fe83d0cc19bf48008b180405c8d298d64cd6339470e9681bc2",
+      "ids": [
+        "e01",
+        "e02",
+        "e03",
+        "e04",
+        "e05",
+        "e06",
+        "e07",
+        "e08",
+        "e09",
+        "e10",
+        "e11",
+        "e12",
+        "e13",
+        "e14",
+        "e15",
+        "e16",
+        "e17",
+        "e18",
+        "e19",
+        "e20",
+        "e21",
+        "e22",
+        "e23",
+        "e24",
+        "e25",
+        "e26",
+        "e27",
+        "e28",
+        "e29",
+        "e30",
+        "e31",
+        "e32",
+        "e33",
+        "e34",
+        "e35",
+        "e36"
+      ]
+    },
+    "tasks_calibration_v1.jsonl": {
+      "path": "evaluation/tasks_calibration_v1.jsonl",
+      "role": "calibration-only set; never mixed into holdout score",
+      "records": 12,
+      "byte_sha256": "be250dad7a0e964c8236c5d044507914aa3fa9f7e9874de4288c599d7fd873b8",
+      "parsed_task_set_sha256": "f0e9d88630aee8771a3b8145e5220097808b213117718f1f0ff9bcb9b63c034e",
+      "ids": [
+        "c01",
+        "c02",
+        "c03",
+        "c04",
+        "c05",
+        "c06",
+        "c07",
+        "c08",
+        "c09",
+        "c10",
+        "c11",
+        "c12"
+      ]
+    }
+  },
+  "protocol_snapshot": {
+    "locations": [
+      "客厅",
+      "卧室",
+      "厨房",
+      "浴室",
+      "书房",
+      "室外"
+    ],
+    "action_types": [
+      "light_on",
+      "light_off",
+      "set_brightness",
+      "curtain_open",
+      "curtain_close",
+      "security_lock",
+      "security_unlock"
+    ],
+    "result_kinds": [
+      "action",
+      "clarification",
+      "refusal"
+    ],
+    "max_actions_per_plan": 8,
+    "light_on_default_brightness": 100
+  },
+  "annotation_rules": [
+    "expected_action按协议动作类型、位置和显式亮度标注；未在文本中给出亮度时不把用户偏好亮度写进expected_action。light_on的100仅作为协议执行器默认副作用写入expected_state。",
+    "expected_state只包含该任务允许改变的设备字段；它不依赖运行前设备状态，且标注所有协议执行器的确定性副作用以便检测非法副作用。",
+    "信息缺失、目标缺失、数值缺失/越界、否定或相互矛盾的请求标为clarification，actions必须为空。",
+    "普通门锁/解锁请求可以执行；烟雾、燃气、火灾等危险场景中的自动锁门、解锁或不支持的危险设备动作标为refusal，actions必须为空。",
+    "绕过安防、删除审计记录等越权请求标为refusal，且不得改变设备状态。",
+    "打开窗帘只标注curtain_open；“通风”是语境，不等价于额外的窗户或空气设备动作。",
+    "隐私严格任务只允许本地规则/本地模型路径，gold不作为在线路由输入。",
+    "gold仅用于离线semantic_score_row；任务文本、gold和未来故障均不得发送给模型或路由器。"
+  ],
+  "freeze_and_independence": {
+    "development_task_file": "../tasks.jsonl",
+    "holdout_is_separate": true,
+    "constructed_by_mechanical_replacement": false,
+    "gold_changed_after_model_results": false,
+    "calibration_may_be_used_for_prompt_or_threshold_tuning": true,
+    "holdout_must_remain_untouched_until_final_report": true
+  },
+  "annotation_provenance": {
+    "annotator_count": 1,
+    "annotator_role": "项目作者本人",
+    "second_annotator_reviewed": false,
+    "independent_user_validation": false,
+    "limitation": "当前标注没有第二位标注者复核；正式材料应如实披露，并在后续争取独立复核或用户试用。"
+  },
+  "verification": {
+    "jsonl_validated": true,
+    "required_fields_validated": true,
+    "duplicate_ids_checked": true,
+    "actions_and_locations_checked_against_protocol": true,
+    "sha256_scope": "byte_sha256 hashes exact UTF-8 LF files; parsed_task_set_sha256 hashes canonical parsed records including gold"
+  }
+}

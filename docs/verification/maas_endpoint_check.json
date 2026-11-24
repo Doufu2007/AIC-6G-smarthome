@@ -1,0 +1,15 @@
+{
+  "test": "unauthenticated_endpoint_check",
+  "endpoint": "https://api.modelarts-maas.com/openai/v1/chat/completions",
+  "credentials_sent": false,
+  "user_or_device_data_sent": false,
+  "inference_success": false,
+  "http_status": 400,
+  "status": "http_error",
+  "error_details": {
+    "code": "ModelArts.81002",
+    "message": "Failed to get the authorization header.",
+    "type": "BadRequest"
+  },
+  "elapsed_ms": 160.7
+}

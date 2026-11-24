@@ -1,0 +1,24 @@
+{
+  "prefer_rules": true,
+  "privacy": "standard",
+  "trusted_backends": [
+    "local-model"
+  ],
+  "deadline_ms": 3000,
+  "quality_floor": 0.8,
+  "calibration_file": "calibration.v9-development.json",
+  "backends": {
+    "local-model": {
+      "endpoint": "http://127.0.0.1:8001/v1/chat/completions",
+      "model": "REPLACE_WITH_YOUR_ACTUAL_MODEL_ID",
+      "api_key_env": "SENSEHOME_LOCAL_MODEL_KEY",
+      "timeout_seconds": 3
+    },
+    "cloud-model": {
+      "endpoint": "http://127.0.0.1:8002/v1/chat/completions",
+      "model": "REPLACE_WITH_YOUR_ACTUAL_MODEL_ID",
+      "api_key_env": "SENSEHOME_CLOUD_MODEL_KEY",
+      "timeout_seconds": 3
+    }
+  }
+}

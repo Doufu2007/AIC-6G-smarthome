@@ -1,0 +1,12 @@
+{"id":"rule-on","request":"打开阅读灯","expected_actions":[{"entity_id":"light.reading","service":"light.turn_on","data":{}}]}
+{"id":"rule-off","request":"关闭阅读灯","expected_actions":[{"entity_id":"light.reading","service":"light.turn_off","data":{}}]}
+{"id":"rule-brightness","request":"阅读灯调到35%","expected_actions":[{"entity_id":"light.reading","service":"light.turn_on","data":{"brightness_pct":35}}]}
+{"id":"semantic-reading","request":"我想看书，帮我点亮适合阅读的那盏灯","expected_actions":[{"entity_id":"light.reading","service":"light.turn_on","data":{}}]}
+{"id":"negation","request":"无须让阅读灯亮起来","expected_actions":[]}
+{"id":"arrival","request":"进门后让阅读灯亮起来","expected_actions":[]}
+{"id":"waiting","request":"待我回来让阅读灯亮起来","expected_actions":[]}
+{"id":"delay","request":"过一阵再让阅读灯亮起来","expected_actions":[]}
+{"id":"unknown-device","request":"打开不存在的设备","expected_actions":[]}
+{"id":"unsupported-number","request":"阅读灯调到12.5%","expected_actions":[]}
+{"id":"conditional","request":"如果有人就打开阅读灯","expected_actions":[]}
+{"id":"schedule","request":"10秒后打开阅读灯","expected_actions":[]}

@@ -1,0 +1,745 @@
+{
+  "schema": "sensehome.synthetic_tasks.frozen.v6",
+  "created_at": 1794333916.5826733,
+  "provenance": "AI-assisted synthetic, root literal gold review; no new model outputs used",
+  "independent_units": "semantic template clusters; six room variants per cluster",
+  "real_users": 0,
+  "splits": {
+    "calibration": {
+      "sha256": "c608c0a8b9eea590b5dfcc4a9bd5bf5ed71a42197b0eb6aade65f774e07110f1",
+      "rows": 48,
+      "template_clusters": 8,
+      "checks": [
+        {
+          "id": "v6-cal-07-5",
+          "gold_roundtrip": true,
+          "public_family": "lighting",
+          "model_eligible": false
+        },
+        {
+          "id": "v6-cal-08-2",
+          "gold_roundtrip": true,
+          "public_family": "general",
+          "model_eligible": true
+        },
+        {
+          "id": "v6-cal-01-1",
+          "gold_roundtrip": true,
+          "public_family": "lighting",
+          "model_eligible": true
+        },
+        {
+          "id": "v6-cal-06-0",
+          "gold_roundtrip": true,
+          "public_family": "lighting",
+          "model_eligible": false
+        },
+        {
+          "id": "v6-cal-02-0",
+          "gold_roundtrip": true,
+          "public_family": "lighting",
+          "model_eligible": true
+        },
+        {
+          "id": "v6-cal-02-3",
+          "gold_roundtrip": true,
+          "public_family": "lighting",
+          "model_eligible": true
+        },
+        {
+          "id": "v6-cal-04-2",
+          "gold_roundtrip": true,
+          "public_family": "multi_action",
+          "model_eligible": true
+        },
+        {
+          "id": "v6-cal-03-3",
+          "gold_roundtrip": true,
+          "public_family": "curtain",
+          "model_eligible": true
+        },
+        {
+          "id": "v6-cal-05-1",
+          "gold_roundtrip": true,
+          "public_family": "lighting",
+          "model_eligible": true
+        },
+        {
+          "id": "v6-cal-05-4",
+          "gold_roundtrip": true,
+          "public_family": "lighting",
+          "model_eligible": true
+        },
+        {
+          "id": "v6-cal-06-4",
+          "gold_roundtrip": true,
+          "public_family": "lighting",
+          "model_eligible": false
+        },
+        {
+          "id": "v6-cal-03-2",
+          "gold_roundtrip": true,
+          "public_family": "curtain",
+          "model_eligible": true
+        },
+        {
+          "id": "v6-cal-05-0",
+          "gold_roundtrip": true,
+          "public_family": "lighting",
+          "model_eligible": true
+        },
+        {
+          "id": "v6-cal-02-4",
+          "gold_roundtrip": true,
+          "public_family": "lighting",
+          "model_eligible": true
+        },
+        {
+          "id": "v6-cal-01-5",
+          "gold_roundtrip": true,
+          "public_family": "lighting",
+          "model_eligible": true
+        },
+        {
+          "id": "v6-cal-07-0",
+          "gold_roundtrip": true,
+          "public_family": "lighting",
+          "model_eligible": false
+        },
+        {
+          "id": "v6-cal-05-2",
+          "gold_roundtrip": true,
+          "public_family": "lighting",
+          "model_eligible": true
+        },
+        {
+          "id": "v6-cal-05-5",
+          "gold_roundtrip": true,
+          "public_family": "lighting",
+          "model_eligible": true
+        },
+        {
+          "id": "v6-cal-06-3",
+          "gold_roundtrip": true,
+          "public_family": "lighting",
+          "model_eligible": false
+        },
+        {
+          "id": "v6-cal-02-2",
+          "gold_roundtrip": true,
+          "public_family": "lighting",
+          "model_eligible": true
+        },
+        {
+          "id": "v6-cal-03-1",
+          "gold_roundtrip": true,
+          "public_family": "curtain",
+          "model_eligible": true
+        },
+        {
+          "id": "v6-cal-04-0",
+          "gold_roundtrip": true,
+          "public_family": "multi_action",
+          "model_eligible": true
+        },
+        {
+          "id": "v6-cal-06-2",
+          "gold_roundtrip": true,
+          "public_family": "lighting",
+          "model_eligible": false
+        },
+        {
+          "id": "v6-cal-02-5",
+          "gold_roundtrip": true,
+          "public_family": "lighting",
+          "model_eligible": true
+        },
+        {
+          "id": "v6-cal-03-5",
+          "gold_roundtrip": true,
+          "public_family": "curtain",
+          "model_eligible": true
+        },
+        {
+          "id": "v6-cal-05-3",
+          "gold_roundtrip": true,
+          "public_family": "lighting",
+          "model_eligible": true
+        },
+        {
+          "id": "v6-cal-03-0",
+          "gold_roundtrip": true,
+          "public_family": "curtain",
+          "model_eligible": true
+        },
+        {
+          "id": "v6-cal-02-1",
+          "gold_roundtrip": true,
+          "public_family": "lighting",
+          "model_eligible": true
+        },
+        {
+          "id": "v6-cal-01-2",
+          "gold_roundtrip": true,
+          "public_family": "lighting",
+          "model_eligible": true
+        },
+        {
+          "id": "v6-cal-01-0",
+          "gold_roundtrip": true,
+          "public_family": "lighting",
+          "model_eligible": true
+        },
+        {
+          "id": "v6-cal-04-4",
+          "gold_roundtrip": true,
+          "public_family": "multi_action",
+          "model_eligible": true
+        },
+        {
+          "id": "v6-cal-08-4",
+          "gold_roundtrip": true,
+          "public_family": "general",
+          "model_eligible": true
+        },
+        {
+          "id": "v6-cal-08-3",
+          "gold_roundtrip": true,
+          "public_family": "general",
+          "model_eligible": true
+        },
+        {
+          "id": "v6-cal-07-1",
+          "gold_roundtrip": true,
+          "public_family": "lighting",
+          "model_eligible": false
+        },
+        {
+          "id": "v6-cal-06-5",
+          "gold_roundtrip": true,
+          "public_family": "lighting",
+          "model_eligible": false
+        },
+        {
+          "id": "v6-cal-03-4",
+          "gold_roundtrip": true,
+          "public_family": "curtain",
+          "model_eligible": true
+        },
+        {
+          "id": "v6-cal-07-3",
+          "gold_roundtrip": true,
+          "public_family": "lighting",
+          "model_eligible": false
+        },
+        {
+          "id": "v6-cal-04-1",
+          "gold_roundtrip": true,
+          "public_family": "multi_action",
+          "model_eligible": true
+        },
+        {
+          "id": "v6-cal-07-2",
+          "gold_roundtrip": true,
+          "public_family": "lighting",
+          "model_eligible": false
+        },
+        {
+          "id": "v6-cal-04-3",
+          "gold_roundtrip": true,
+          "public_family": "multi_action",
+          "model_eligible": true
+        },
+        {
+          "id": "v6-cal-04-5",
+          "gold_roundtrip": true,
+          "public_family": "multi_action",
+          "model_eligible": true
+        },
+        {
+          "id": "v6-cal-08-0",
+          "gold_roundtrip": true,
+          "public_family": "general",
+          "model_eligible": true
+        },
+        {
+          "id": "v6-cal-07-4",
+          "gold_roundtrip": true,
+          "public_family": "lighting",
+          "model_eligible": false
+        },
+        {
+          "id": "v6-cal-08-1",
+          "gold_roundtrip": true,
+          "public_family": "general",
+          "model_eligible": true
+        },
+        {
+          "id": "v6-cal-01-3",
+          "gold_roundtrip": true,
+          "public_family": "lighting",
+          "model_eligible": true
+        },
+        {
+          "id": "v6-cal-08-5",
+          "gold_roundtrip": true,
+          "public_family": "general",
+          "model_eligible": true
+        },
+        {
+          "id": "v6-cal-01-4",
+          "gold_roundtrip": true,
+          "public_family": "lighting",
+          "model_eligible": true
+        },
+        {
+          "id": "v6-cal-06-1",
+          "gold_roundtrip": true,
+          "public_family": "lighting",
+          "model_eligible": false
+        }
+      ]
+    },
+    "test": {
+      "sha256": "333388bde3802a1d54bc32bfe56a9a314039b96c8d07fa57298d2fd73a2d66ce",
+      "rows": 72,
+      "template_clusters": 12,
+      "checks": [
+        {
+          "id": "v6-tes-02-4",
+          "gold_roundtrip": true,
+          "public_family": "lighting",
+          "model_eligible": true
+        },
+        {
+          "id": "v6-tes-07-0",
+          "gold_roundtrip": true,
+          "public_family": "lighting",
+          "model_eligible": true
+        },
+        {
+          "id": "v6-tes-10-4",
+          "gold_roundtrip": true,
+          "public_family": "general",
+          "model_eligible": true
+        },
+        {
+          "id": "v6-tes-06-0",
+          "gold_roundtrip": true,
+          "public_family": "multi_action",
+          "model_eligible": true
+        },
+        {
+          "id": "v6-tes-12-4",
+          "gold_roundtrip": true,
+          "public_family": "curtain",
+          "model_eligible": true
+        },
+        {
+          "id": "v6-tes-10-2",
+          "gold_roundtrip": true,
+          "public_family": "general",
+          "model_eligible": true
+        },
+        {
+          "id": "v6-tes-09-1",
+          "gold_roundtrip": true,
+          "public_family": "lighting",
+          "model_eligible": false
+        },
+        {
+          "id": "v6-tes-07-5",
+          "gold_roundtrip": true,
+          "public_family": "lighting",
+          "model_eligible": true
+        },
+        {
+          "id": "v6-tes-03-2",
+          "gold_roundtrip": true,
+          "public_family": "curtain",
+          "model_eligible": true
+        },
+        {
+          "id": "v6-tes-05-2",
+          "gold_roundtrip": true,
+          "public_family": "multi_action",
+          "model_eligible": true
+        },
+        {
+          "id": "v6-tes-06-2",
+          "gold_roundtrip": true,
+          "public_family": "multi_action",
+          "model_eligible": true
+        },
+        {
+          "id": "v6-tes-11-2",
+          "gold_roundtrip": true,
+          "public_family": "lighting",
+          "model_eligible": true
+        },
+        {
+          "id": "v6-tes-11-5",
+          "gold_roundtrip": true,
+          "public_family": "lighting",
+          "model_eligible": true
+        },
+        {
+          "id": "v6-tes-12-1",
+          "gold_roundtrip": true,
+          "public_family": "curtain",
+          "model_eligible": true
+        },
+        {
+          "id": "v6-tes-04-1",
+          "gold_roundtrip": true,
+          "public_family": "curtain",
+          "model_eligible": true
+        },
+        {
+          "id": "v6-tes-05-4",
+          "gold_roundtrip": true,
+          "public_family": "multi_action",
+          "model_eligible": true
+        },
+        {
+          "id": "v6-tes-02-3",
+          "gold_roundtrip": true,
+          "public_family": "lighting",
+          "model_eligible": true
+        },
+        {
+          "id": "v6-tes-10-0",
+          "gold_roundtrip": true,
+          "public_family": "general",
+          "model_eligible": true
+        },
+        {
+          "id": "v6-tes-07-3",
+          "gold_roundtrip": true,
+          "public_family": "lighting",
+          "model_eligible": true
+        },
+        {
+          "id": "v6-tes-01-2",
+          "gold_roundtrip": true,
+          "public_family": "lighting",
+          "model_eligible": true
+        },
+        {
+          "id": "v6-tes-04-4",
+          "gold_roundtrip": true,
+          "public_family": "curtain",
+          "model_eligible": true
+        },
+        {
+          "id": "v6-tes-12-0",
+          "gold_roundtrip": true,
+          "public_family": "curtain",
+          "model_eligible": true
+        },
+        {
+          "id": "v6-tes-02-1",
+          "gold_roundtrip": true,
+          "public_family": "lighting",
+          "model_eligible": true
+        },
+        {
+          "id": "v6-tes-04-3",
+          "gold_roundtrip": true,
+          "public_family": "curtain",
+          "model_eligible": true
+        },
+        {
+          "id": "v6-tes-03-1",
+          "gold_roundtrip": true,
+          "public_family": "curtain",
+          "model_eligible": true
+        },
+        {
+          "id": "v6-tes-10-3",
+          "gold_roundtrip": true,
+          "public_family": "general",
+          "model_eligible": true
+        },
+        {
+          "id": "v6-tes-08-4",
+          "gold_roundtrip": true,
+          "public_family": "lighting",
+          "model_eligible": false
+        },
+        {
+          "id": "v6-tes-01-4",
+          "gold_roundtrip": true,
+          "public_family": "lighting",
+          "model_eligible": true
+        },
+        {
+          "id": "v6-tes-01-3",
+          "gold_roundtrip": true,
+          "public_family": "lighting",
+          "model_eligible": true
+        },
+        {
+          "id": "v6-tes-04-5",
+          "gold_roundtrip": true,
+          "public_family": "curtain",
+          "model_eligible": true
+        },
+        {
+          "id": "v6-tes-09-5",
+          "gold_roundtrip": true,
+          "public_family": "lighting",
+          "model_eligible": false
+        },
+        {
+          "id": "v6-tes-06-1",
+          "gold_roundtrip": true,
+          "public_family": "multi_action",
+          "model_eligible": true
+        },
+        {
+          "id": "v6-tes-05-3",
+          "gold_roundtrip": true,
+          "public_family": "multi_action",
+          "model_eligible": true
+        },
+        {
+          "id": "v6-tes-07-2",
+          "gold_roundtrip": true,
+          "public_family": "lighting",
+          "model_eligible": true
+        },
+        {
+          "id": "v6-tes-12-5",
+          "gold_roundtrip": true,
+          "public_family": "curtain",
+          "model_eligible": true
+        },
+        {
+          "id": "v6-tes-05-0",
+          "gold_roundtrip": true,
+          "public_family": "multi_action",
+          "model_eligible": true
+        },
+        {
+          "id": "v6-tes-11-0",
+          "gold_roundtrip": true,
+          "public_family": "lighting",
+          "model_eligible": true
+        },
+        {
+          "id": "v6-tes-06-5",
+          "gold_roundtrip": true,
+          "public_family": "multi_action",
+          "model_eligible": true
+        },
+        {
+          "id": "v6-tes-07-1",
+          "gold_roundtrip": true,
+          "public_family": "lighting",
+          "model_eligible": true
+        },
+        {
+          "id": "v6-tes-10-1",
+          "gold_roundtrip": true,
+          "public_family": "general",
+          "model_eligible": true
+        },
+        {
+          "id": "v6-tes-02-5",
+          "gold_roundtrip": true,
+          "public_family": "lighting",
+          "model_eligible": true
+        },
+        {
+          "id": "v6-tes-06-4",
+          "gold_roundtrip": true,
+          "public_family": "multi_action",
+          "model_eligible": true
+        },
+        {
+          "id": "v6-tes-01-5",
+          "gold_roundtrip": true,
+          "public_family": "lighting",
+          "model_eligible": true
+        },
+        {
+          "id": "v6-tes-05-5",
+          "gold_roundtrip": true,
+          "public_family": "multi_action",
+          "model_eligible": true
+        },
+        {
+          "id": "v6-tes-04-2",
+          "gold_roundtrip": true,
+          "public_family": "curtain",
+          "model_eligible": true
+        },
+        {
+          "id": "v6-tes-09-3",
+          "gold_roundtrip": true,
+          "public_family": "lighting",
+          "model_eligible": false
+        },
+        {
+          "id": "v6-tes-09-2",
+          "gold_roundtrip": true,
+          "public_family": "lighting",
+          "model_eligible": false
+        },
+        {
+          "id": "v6-tes-07-4",
+          "gold_roundtrip": true,
+          "public_family": "lighting",
+          "model_eligible": true
+        },
+        {
+          "id": "v6-tes-03-4",
+          "gold_roundtrip": true,
+          "public_family": "curtain",
+          "model_eligible": true
+        },
+        {
+          "id": "v6-tes-12-3",
+          "gold_roundtrip": true,
+          "public_family": "curtain",
+          "model_eligible": true
+        },
+        {
+          "id": "v6-tes-08-3",
+          "gold_roundtrip": true,
+          "public_family": "lighting",
+          "model_eligible": false
+        },
+        {
+          "id": "v6-tes-06-3",
+          "gold_roundtrip": true,
+          "public_family": "multi_action",
+          "model_eligible": true
+        },
+        {
+          "id": "v6-tes-01-0",
+          "gold_roundtrip": true,
+          "public_family": "lighting",
+          "model_eligible": true
+        },
+        {
+          "id": "v6-tes-08-2",
+          "gold_roundtrip": true,
+          "public_family": "lighting",
+          "model_eligible": false
+        },
+        {
+          "id": "v6-tes-09-4",
+          "gold_roundtrip": true,
+          "public_family": "lighting",
+          "model_eligible": false
+        },
+        {
+          "id": "v6-tes-08-5",
+          "gold_roundtrip": true,
+          "public_family": "lighting",
+          "model_eligible": false
+        },
+        {
+          "id": "v6-tes-08-1",
+          "gold_roundtrip": true,
+          "public_family": "lighting",
+          "model_eligible": false
+        },
+        {
+          "id": "v6-tes-03-3",
+          "gold_roundtrip": true,
+          "public_family": "curtain",
+          "model_eligible": true
+        },
+        {
+          "id": "v6-tes-08-0",
+          "gold_roundtrip": true,
+          "public_family": "lighting",
+          "model_eligible": false
+        },
+        {
+          "id": "v6-tes-12-2",
+          "gold_roundtrip": true,
+          "public_family": "curtain",
+          "model_eligible": true
+        },
+        {
+          "id": "v6-tes-03-5",
+          "gold_roundtrip": true,
+          "public_family": "curtain",
+          "model_eligible": true
+        },
+        {
+          "id": "v6-tes-02-2",
+          "gold_roundtrip": true,
+          "public_family": "lighting",
+          "model_eligible": true
+        },
+        {
+          "id": "v6-tes-04-0",
+          "gold_roundtrip": true,
+          "public_family": "curtain",
+          "model_eligible": true
+        },
+        {
+          "id": "v6-tes-01-1",
+          "gold_roundtrip": true,
+          "public_family": "lighting",
+          "model_eligible": true
+        },
+        {
+          "id": "v6-tes-10-5",
+          "gold_roundtrip": true,
+          "public_family": "general",
+          "model_eligible": true
+        },
+        {
+          "id": "v6-tes-09-0",
+          "gold_roundtrip": true,
+          "public_family": "lighting",
+          "model_eligible": false
+        },
+        {
+          "id": "v6-tes-11-4",
+          "gold_roundtrip": true,
+          "public_family": "lighting",
+          "model_eligible": true
+        },
+        {
+          "id": "v6-tes-02-0",
+          "gold_roundtrip": true,
+          "public_family": "lighting",
+          "model_eligible": true
+        },
+        {
+          "id": "v6-tes-11-3",
+          "gold_roundtrip": true,
+          "public_family": "lighting",
+          "model_eligible": true
+        },
+        {
+          "id": "v6-tes-05-1",
+          "gold_roundtrip": true,
+          "public_family": "multi_action",
+          "model_eligible": true
+        },
+        {
+          "id": "v6-tes-03-0",
+          "gold_roundtrip": true,
+          "public_family": "curtain",
+          "model_eligible": true
+        },
+        {
+          "id": "v6-tes-11-1",
+          "gold_roundtrip": true,
+          "public_family": "lighting",
+          "model_eligible": true
+        }
+      ]
+    }
+  },
+  "cross_split_normalized_template_overlap": [],
+  "generator_sha256": "9a096aa096535f02db5e19421b7df17441c341c81a2a46e2ee85af2e3e3fc2af"
+}

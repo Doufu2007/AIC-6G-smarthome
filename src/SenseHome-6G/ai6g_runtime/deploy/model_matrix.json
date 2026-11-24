@@ -1,0 +1,60 @@
+{
+  "schema": "ai6g.model_matrix.v1",
+  "purpose": "AutoDL 上的真实 OpenAI 兼容模型端点配置；本文件不包含密钥、不包含实验结果。",
+  "endpoint_contract": {
+    "path": "/v1/chat/completions",
+    "health_path": "/health",
+    "models_path": "/v1/models",
+    "request": {
+      "temperature": 0,
+      "response_format": {"type": "json_object"},
+      "max_tokens": 256,
+      "timeout_ms": 5000
+    },
+    "response_requirement": "choices[0].message.content 必须是包含 actions 数组的 JSON 对象"
+  },
+  "models": [
+    {
+      "key": "qwen2.5-1.5b",
+      "hf_id": "Qwen/Qwen2.5-1.5B-Instruct",
+      "served_model_name": "qwen2.5-1.5b",
+      "role": "local-model",
+      "default_port": 8001,
+      "dtype": "auto",
+      "tensor_parallel_size": 1,
+      "max_model_len": 4096,
+      "estimated_gpu_note": "1.5B 模型通常适合单卡低预算部署；实际显存取决于 dtype、vLLM 版本和上下文长度，启动前以显卡余量为准。"
+    },
+    {
+      "key": "qwen2.5-7b",
+      "hf_id": "Qwen/Qwen2.5-7B-Instruct",
+      "served_model_name": "qwen2.5-7b",
+      "role": "cloud-model",
+      "default_port": 8002,
+      "dtype": "auto",
+      "tensor_parallel_size": 1,
+      "max_model_len": 4096,
+      "estimated_gpu_note": "7B 模型建议使用显存更大的 GPU 或量化配置；本文件不假设具体显存，也不把模型大小当作质量结果。"
+    }
+  ],
+  "fair_evaluation": {
+    "tasks": "SenseHome-6G/ai6g_runtime/tasks.jsonl",
+    "task_count": 36,
+    "repeats": 3,
+    "strategies": ["rules", "fixed-local", "fixed-cloud", "adaptive"],
+    "cli_aliases": {
+      "fixed-local": "benchmark/evaluator strategy local",
+      "fixed-cloud": "benchmark/evaluator strategy cloud"
+    },
+    "timeout_ms": 5000,
+    "temperature": 0,
+    "same_executor": true,
+    "same_task_order": true,
+    "gold_is_online_input": false,
+    "notes": [
+      "固定策略与 adaptive 必须使用同一任务文件、同一模型端点、同一动作校验和同一超时。",
+      "gold 只用于离线评测，不得传给路由器或模型。",
+      "提交时保存启动命令、模型版本、提示词版本、端点健康记录和全部 JSONL 原始日志。"
+    ]
+  }
+}

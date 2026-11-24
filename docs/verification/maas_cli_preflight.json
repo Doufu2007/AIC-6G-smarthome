@@ -1,0 +1,11 @@
+{
+  "test": "actual_cli_missing_key_preflight",
+  "configuration": "src/SenseHome-6G/v11/examples/huawei-maas.routes.example.json",
+  "init_exit_code": 0,
+  "proposal_exit_code": 2,
+  "result": {
+    "status": "rejected",
+    "error": "set MAAS_API_KEY privately before calling this backend"
+  },
+  "inference_success": false
+}

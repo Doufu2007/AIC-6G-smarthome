@@ -1,0 +1,18 @@
+{
+  "direct_model": true,
+  "prefer_rules": false,
+  "allow_model_proposals": true,
+  "privacy": "standard",
+  "deadline_ms": 15000,
+  "backends": {
+    "cloud-model": {
+      "endpoint": "https://api.modelarts-maas.com/openai/v1/chat/completions",
+      "model": "openpangu-2.1-pro",
+      "api_key_env": "MAAS_API_KEY",
+      "require_api_key": true,
+      "timeout_seconds": 15,
+      "json_mode": false,
+      "seed": null
+    }
+  }
+}
