@@ -19,6 +19,7 @@ import time
 import uuid
 from urllib.parse import quote, urlparse
 from urllib.request import Request
+from capabilities import DEVICE_SERVICES, temperature_data_valid, temperature_target_supported
 from deadline import request_response
 
 
@@ -102,7 +103,7 @@ class HAClient:
                 value = json.loads(data)
             except ValueError:
                 value = data.decode('utf8', errors='replace')
-            record.update(status=status, response=value)
+            record.update(status=status, response='<omitted>' if path == '/api/config' else value)
             if status == 404 and path.startswith('/api/states/'):
                 raise UnknownEntity('unknown_entity')
             if not 200 <= status < 300:
@@ -139,6 +140,12 @@ class HAClient:
         value = self._request('/api/states')
         if not isinstance(value, list) or any(not isinstance(s, dict) for s in value):
             raise HAError('invalid_state_list_response')
+        return value
+
+    def get_config(self, *, timeout=None):
+        value = self._request('/api/config', timeout=timeout)
+        if not isinstance(value, dict):
+            raise HAError('invalid_config_response')
         return value
 
 
@@ -227,9 +234,7 @@ class ExecutionStore:
             if not isinstance(service, str) or not isinstance(data, dict):
                 return 'invalid_service'
             domain = entity.split('.')[0]
-            allowed = {'light': ('light.turn_on', 'light.turn_off'),
-                       'cover': ('cover.open_cover', 'cover.close_cover'),
-                       'input_boolean': ('input_boolean.turn_on', 'input_boolean.turn_off'),
+            allowed = {**DEVICE_SERVICES, 'input_boolean': ('input_boolean.turn_on', 'input_boolean.turn_off'),
                        'input_number': ('input_number.set_value',)}
             if service not in allowed.get(domain, ()):
                 return 'unsupported_target_action'
@@ -243,6 +248,9 @@ class ExecutionStore:
             elif service == 'input_number.set_value':
                 if set(data) != {'value'} or type(data['value']) not in (int, float) or not math.isfinite(data['value']):
                     return 'invalid_number'
+            elif service == 'climate.set_temperature':
+                if not temperature_data_valid(data):
+                    return 'invalid_temperature'
             elif data:
                 return 'invalid_service_data'
             entities.append(entity)
@@ -253,10 +261,11 @@ class ExecutionStore:
         return None
 
     @staticmethod
-    def _matches(step, state):
+    def _matches(step, state, expected=None):
         service, data = step['service'], step['data']
         value = state.get('state')
-        if service in ('input_boolean.turn_on', 'input_boolean.turn_off', 'light.turn_off'):
+        if service in ('input_boolean.turn_on', 'input_boolean.turn_off', 'light.turn_off',
+                       'switch.turn_on', 'switch.turn_off'):
             return value == ('on' if service.endswith('turn_on') else 'off')
         if service == 'light.turn_on':
             pct = data.get('brightness_pct')
@@ -277,6 +286,12 @@ class ExecutionStore:
                 return abs(float(value) - data['value']) < 1e-7
             except (TypeError, ValueError):
                 return False
+        if service == 'climate.set_temperature':
+            attrs = state.get('attributes', {})
+            actual = attrs.get('temperature')
+            return (expected is not None and value == expected.get('state') and
+                    attrs.get('temperature_unit') == '°C' and temperature_data_valid({'temperature': actual}) and
+                    abs(actual - data['temperature']) <= 1e-7)
         return False
 
     @contextmanager
@@ -453,9 +468,11 @@ class ExecutionStore:
             target = step['data']['value']
             if 'min' not in attrs or 'max' not in attrs or not attrs['min'] <= target <= attrs['max']:
                 return 'number_out_of_range'
+        if step['service'] == 'climate.set_temperature' and not temperature_target_supported(step['data'], state):
+            return 'temperature_out_of_range_or_unsupported'
         return None
 
-    def _verify(self, step):
+    def _verify(self, step, expected=None):
         deadline = time.monotonic() + self.verify_timeout_seconds
         actual, error = None, None
         first_read = True
@@ -470,7 +487,7 @@ class ExecutionStore:
                 else:
                     actual = self.client.get_state(step['entity_id'])
                 first_read = False
-                if self._matches(step, actual): return True, actual, error
+                if self._matches(step, actual, expected): return True, actual, error
             except Exception as exc:
                 error = type(exc).__name__
             remaining = deadline - time.monotonic()
@@ -572,7 +589,7 @@ class ExecutionStore:
                 # A persisted dispatch intent may already have reached HA.
                 # Reconciliation only GETs it; no second POST is issued.
                 error = row['error_type']
-            verified, actual, read_error = self._verify(step)
+            verified, actual, read_error = self._verify(step, expected[row['entity_id']])
             error = error or read_error
             with self._db() as db:
                 db.execute('UPDATE steps SET status=?,verification=?,error_type=? WHERE request_id=? AND ordinal=?',

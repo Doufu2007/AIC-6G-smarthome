@@ -4,6 +4,8 @@ Python 3.10+，无需第三方Python包。请保留同级 `../ai6g_runtime/`，v
 
 ## 本机运行
 
+网页控制台使用 `python -X utf8 -B web_demo.py`，在浏览器打开 `http://127.0.0.1:8765/`，输入终端打印的本地操作员令牌。默认使用软件模拟设备。设备、定时灯光、照护和感知试验均在同一网页中。配置 AgentArts 的步骤见[实施手册](../../../docs/AgentArts与全屋照护实施手册.md)。
+
 在本目录打开终端：
 
 ```powershell
@@ -26,9 +28,10 @@ python -X utf8 -B cli.py --home demo_v11 reconcile task-001
 
 ## 语义与能力
 
-支持即时灯开关、0—100整数百分比亮度、窗帘开关；明确名称/别名、房间与设备类型、并列对象、顺序子句、当前亮着的灯。整个请求必须匹配受支持语法。
+支持即时灯开关、0—100 整数百分比亮度、窗帘和插座开关、绝对摄氏温度设定。可以按名称、别名、房间或设备类型定位设备。灯光还支持并列对象、顺序子句和当前状态筛选。整个请求必须匹配受支持语法。
 
-- “不要打开阅读灯”“10秒后打开阅读灯”“今晚打开阅读灯”：空动作澄清，当前不提供定时任务。
+- 命令行仅执行即时时态的提案。网页支持“10 秒后打开阅读灯”一类单灯开关请求，用户确认后由持久化调度器触发。
+- “不要打开阅读灯”“今晚打开阅读灯”进入澄清。
 - “关闭书房当前亮着的灯”：只筛选书房；范围内设备状态不完整则澄清。
 - “打开阅读灯和客厅顶灯”：完整保留两个对象。
 - 亮度12.5%或-10%：澄清，不截取部分数字。
@@ -44,9 +47,9 @@ python -X utf8 -B cli.py --home demo_v11 reconcile task-001
 python -X utf8 -B cli.py --home native_v11 --ha-url http://127.0.0.1:8123 --ha-native discover
 ```
 
-discover只调用官方状态GET。检查分区（states未提供时为“未分组”）、名称和别名，将输出catalog数组保存为native_v11/catalog.json。propose/confirm/status均带同样的ha-url和ha-native；无须软件种子文件。
+`discover` 使用官方状态 GET，有空调时还检查平台配置中的温标。检查分区、名称和别名，将输出 `catalog` 数组保存为 `native_v11/catalog.json`。`propose`、`confirm`、`status` 均带同样的 `--ha-url` 和 `--ha-native`。
 
-原生light亮度根据supported_color_modes，cover开关根据supported_features，未声明能力保守拒绝。发送官方/api/services/light或cover服务，执行后独立GET最终状态。
+原生灯光亮度由 `supported_color_modes` 判断，窗帘开合由 `supported_features` 判断。空调仅在当前制冷或制热模式下设定绝对摄氏温度，校验设备报告的范围和步长，读回必须确认设定值及原模式。每次执行后通过独立 GET 核验平台状态。
 
 虚拟helper另用 `--ha-url ... --ha-map mapping.json`，逻辑light映射input_boolean，只支持空参数开关。ha-native与ha-map互斥。token来自环境变量，HTTP审计脱敏。v11原生适配的localhost HTTP契约结果见回归记录；官方Home Assistant虚拟实体调用归档在历史v9证据中。
 

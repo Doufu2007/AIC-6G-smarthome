@@ -4,7 +4,9 @@
 
 ## 当前功能
 
-- Home Assistant `light`/`cover` 发现、能力校验、提案与明确确认。
+- 中文网页控制台，支持按房间查看设备、人工确认、状态读回、定时灯光和照护模拟。
+- Home Assistant 灯、窗帘、开关和适用空调的能力校验与确认执行，门磁和摄像头在线状态可查询。
+- AgentArts 工作流客户端、设备工具 API 和 CSI、WM、RSI 离线试验。
 - SQLite 持久化执行记录、重复请求处理、超时后状态核验和未知结果恢复。
 - 可选的华为云 MaaS OpenAI 兼容模型提案配置。模型输出仍经过本地护栏，不直接控制设备。
 - openvela 家居 Agent、命令白名单、QEMU 运行材料及原始许可证。
@@ -12,6 +14,15 @@
 ## 本地运行 v11
 
 需要 Python 3.10+。v11 核心链路使用 Python 标准库。
+
+```powershell
+cd src/SenseHome-6G/v11
+python -X utf8 -B web_demo.py
+```
+
+从终端读取本地操作员令牌，进入 [SenseHome 控制台](http://127.0.0.1:8765/)。详细的界面、网关和工作流联调步骤见 [实施手册](docs/AgentArts与全屋照护实施手册.md)。
+
+命令行也可以从仓库根目录独立试用。
 
 ```powershell
 cd src/SenseHome-6G/v11
@@ -36,14 +47,14 @@ cd src/SenseHome-6G/v11
 python -X utf8 -B -m unittest discover -s tests -v
 ```
 
-2026-11-24 MaaS 接入后，v11 测试套件第二轮 211 项通过。本地 HTTP 契约测试不代表华为 MaaS 真实模型调用，当前真实调用仍待在运行环境配置有效 API Key 后验证。相关范围与失败记录见 `docs/MaaS接入记录.md`。
+本次发布通过 v11 的 250 项回归测试。AgentArts 工作流和 MaaS 接入已通过本地接口测试。真实云端调用仍待团队配置和验证。[AgentArts 实施手册](docs/AgentArts与全屋照护实施手册.md) · [MaaS 接入记录](docs/MaaS接入记录.md) · [CSI、WM 和 RSI 离线试验](src/SenseHome-6G/v11/SENSING_TRIAL.md)
 
 ## 目录
 
 ```text
 src/SenseHome-6G/       当前 Python Runtime、v11 和校准/模型接口
 src/openvela_smart_home/ openvela 家居 Agent、设备工具和许可证
-docs/                    MaaS 接入说明与版本记录
+docs/                    参赛方案、接入说明和来源版本边界
 rules/                   华为 ICT 官方赛制来源链接
 参赛项目初版.md           华为 ICT 创新赛方案
 ```

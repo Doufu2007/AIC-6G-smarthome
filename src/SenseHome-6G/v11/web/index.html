@@ -1,0 +1,109 @@
+<!doctype html>
+<html lang="zh-CN">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>SenseHome 控制台</title>
+  <link rel="stylesheet" href="/style.css">
+  <script src="/app.js" defer></script>
+</head>
+<body>
+  <header class="masthead">
+    <a class="brand" href="#home" aria-label="SenseHome 首页"><span class="brand-mark" aria-hidden="true"><i></i><i></i><i></i></span>SenseHome</a>
+    <div class="connection">
+      <span class="tag" id="connection-status" role="status">未登录</span>
+      <button type="button" class="secondary" id="sign-out" hidden>退出</button>
+    </div>
+  </header>
+
+  <main id="login" class="login">
+    <form id="login-form" class="login-form">
+      <h1>登录家庭控制台</h1>
+      <label for="operator-token">操作者令牌</label>
+      <input id="operator-token" type="password" required autocomplete="off" spellcheck="false" autocapitalize="none">
+      <button type="submit" class="primary">进入控制台 <span aria-hidden="true">→</span></button>
+      <p class="feedback" id="login-feedback" role="alert"></p>
+    </form>
+  </main>
+
+  <div id="console" class="console" hidden>
+    <nav class="sidebar" aria-label="控制台导航">
+      <button type="button" class="nav-button" data-view="home" aria-current="page"><span aria-hidden="true">⌂</span>家庭控制</button>
+      <button type="button" class="nav-button" data-view="care"><span aria-hidden="true">＋</span>照护模拟</button>
+      <button type="button" class="nav-button" data-view="sensing"><span aria-hidden="true">≋</span>感知实验</button>
+    </nav>
+
+    <main class="content">
+      <section id="home" data-panel>
+        <div class="page-head">
+          <h1>家庭控制</h1>
+          <span class="tag" id="workflow-label"></span>
+        </div>
+        <div class="command-layout">
+          <section class="command-pane" aria-labelledby="command-title">
+            <h2 id="command-title">给家里发一条指令</h2>
+            <form id="command-form">
+              <label for="command-text" class="visually-hidden">家庭指令</label>
+              <div class="command-entry">
+                <textarea id="command-text" rows="3" maxlength="2000" required placeholder="把阅读灯调到 40%，拉开书房窗帘"></textarea>
+                <button class="primary" type="submit">生成提案 <span aria-hidden="true">↗</span></button>
+              </div>
+            </form>
+            <div class="suggestions" aria-label="常用指令">
+              <button type="button" data-command="打开书房阅读灯">打开阅读灯</button>
+              <button type="button" data-command="把阅读灯调到40%，拉开书房窗帘">书房阅读场景</button>
+              <button type="button" data-command="查看门口监控的状态">门口监控状态</button>
+              <button type="button" data-command="10秒后打开阳台灯">定时开阳台灯</button>
+            </div>
+            <p class="feedback" id="command-feedback" role="status"></p>
+          </section>
+          <section class="proposal-pane" aria-labelledby="proposal-title">
+            <div class="section-head"><h2 id="proposal-title">提案与回执</h2><span id="countdown"></span></div>
+            <div id="proposal-output" class="proposal-output" aria-live="polite"><p class="empty">暂无提案</p></div>
+            <button type="button" class="primary confirm" id="confirm-button" hidden>确认执行</button>
+          </section>
+        </div>
+
+        <section aria-labelledby="devices-title">
+          <div class="section-head"><h2 id="devices-title">全屋设备</h2><button type="button" id="refresh-devices" class="secondary"><span aria-hidden="true">↻</span> 刷新</button></div>
+          <div id="room-filters" class="rooms" aria-label="房间筛选"></div>
+          <p class="feedback" id="device-feedback" role="status"></p>
+          <div id="device-list" class="device-list"></div>
+        </section>
+
+        <section aria-labelledby="schedules-title">
+          <div class="section-head"><h2 id="schedules-title">定时任务</h2><button type="button" id="refresh-schedules" class="secondary"><span aria-hidden="true">↻</span> 刷新</button></div>
+          <p class="feedback" id="schedule-feedback" role="status"></p>
+          <div id="schedule-list"></div>
+        </section>
+      </section>
+
+      <section id="care" data-panel hidden>
+        <div class="page-head"><h1>照护模拟</h1><span class="tag warn">模拟通知</span></div>
+        <div class="section-head care-toolbar">
+          <form id="care-form" class="inline-form">
+            <label for="care-room">求助房间</label>
+            <select id="care-room">
+              <option value="卧室">卧室</option><option value="客厅">客厅</option><option value="卫生间">卫生间</option>
+            </select>
+            <button type="submit" class="primary">触发模拟 SOS</button>
+          </form>
+          <button type="button" id="refresh-care" class="secondary"><span aria-hidden="true">↻</span> 刷新</button>
+        </div>
+        <p class="feedback" id="care-feedback" role="status"></p>
+        <div id="care-list"></div>
+      </section>
+
+      <section id="sensing" data-panel hidden>
+        <div class="page-head"><h1>感知实验</h1><span class="tag warn" id="sensing-mode">合成数据</span></div>
+        <div class="section-head">
+          <h2>窗帘状态实验</h2>
+          <button type="button" id="refresh-sensing" class="secondary"><span aria-hidden="true">↻</span> 运行离线演示</button>
+        </div>
+        <p class="feedback" id="sensing-feedback" role="status"></p>
+        <div id="sensing-output"></div>
+      </section>
+    </main>
+  </div>
+</body>
+</html>

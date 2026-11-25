@@ -13,6 +13,7 @@ from urllib.parse import urlparse
 from concurrent.futures import wait, FIRST_COMPLETED
 import math
 
+from capabilities import DEVICE_SERVICES, temperature_control_available
 from proposal import ProposalStore, validate_payload, canonical
 from platform_execution import ExecutionStore, UnknownEntity, NotDispatched
 from catalog_planner import (catalog_rules, PROMPT, guard_payload, clarification,
@@ -27,18 +28,23 @@ _PLANNER_POOL = BoundedCallPool(max_workers=4)
 
 class SoftwareClient:
     """Clearly labeled software state demo, not an official HA server."""
-    def __init__(self, states, path=None):
+    def __init__(self, states, path=None, *, seed_missing=False):
         self.path=Path(path) if path else None
-        self.states=copy.deepcopy(states)
-        if self.path and self.path.exists():self.states=json.loads(self.path.read_text(encoding='utf8'))
+        from_file=json.loads(self.path.read_text(encoding='utf8')) if self.path and self.path.exists() else {}
+        self.states=copy.deepcopy({**states, **from_file} if seed_missing else (from_file if self.path and self.path.exists() else states))
         self.calls=0;self.lock=threading.RLock()
         self.state_db=Path(str(self.path)+'.sqlite3') if self.path else None
         if self.state_db:
             self.state_db.parent.mkdir(parents=True,exist_ok=True)
             with self._db() as db:
                 db.execute('CREATE TABLE IF NOT EXISTS software_state (singleton INTEGER PRIMARY KEY CHECK(singleton=1), value TEXT NOT NULL)')
+                db.execute('BEGIN IMMEDIATE')
                 db.execute('INSERT OR IGNORE INTO software_state VALUES (1,?)',(canonical(self.states),))
-                self.states=json.loads(db.execute('SELECT value FROM software_state WHERE singleton=1').fetchone()[0])
+                persisted=json.loads(db.execute('SELECT value FROM software_state WHERE singleton=1').fetchone()[0])
+                if seed_missing and self.states.keys() - persisted.keys():
+                    persisted={**self.states,**persisted}
+                    db.execute('UPDATE software_state SET value=? WHERE singleton=1',(canonical(persisted),))
+                self.states=persisted
 
     @contextmanager
     def _db(self):
@@ -64,6 +70,11 @@ class SoftwareClient:
             attrs.setdefault('supported_services',['light.turn_on','light.turn_off'])
         elif entity_id.startswith('cover.'):
             attrs.setdefault('supported_services',['cover.open_cover','cover.close_cover'])
+        elif entity_id.startswith('switch.'):
+            attrs.setdefault('supported_services',list(DEVICE_SERVICES['switch']))
+        elif entity_id.startswith('climate.'):
+            services = list(DEVICE_SERVICES['climate']) if temperature_control_available(value) else []
+            attrs.setdefault('supported_services',services)
         return value
 
     def call_service(self,entity_id,service,data):
@@ -111,6 +122,8 @@ class SoftwareClient:
         elif service=='light.turn_off':state['state']='off'
         elif service=='cover.open_cover':state['state']='open';state.setdefault('attributes',{})['current_position']=100
         elif service=='cover.close_cover':state['state']='closed';state.setdefault('attributes',{})['current_position']=0
+        elif service in ('switch.turn_on', 'switch.turn_off'):state['state']=service.rsplit('_',1)[1]
+        elif service=='climate.set_temperature':state.setdefault('attributes',{})['temperature']=data['temperature']
         else:raise ValueError('unsupported software service')
         self.calls+=1;state['last_updated']=str(time.time_ns())
 
@@ -263,6 +276,13 @@ class Controller:
         return states
 
     def propose(self,text):
+        return self._propose(text, self.planner, self.allow_model_proposals)
+
+    def propose_candidate(self, text, candidate):
+        """Build a card from an external candidate using the original request."""
+        return self._propose(text, lambda view: candidate, True, source='agentarts')
+
+    def _propose(self, text, selected_planner, allow_model_proposals, *, source=None):
         if not isinstance(text,str) or not text.strip() or len(text)>2000:raise ValueError('request length 1..2000 required')
         entered=time.perf_counter()
         privacy_mode=request_privacy_mode(text)
@@ -275,7 +295,7 @@ class Controller:
             result['handler_total_ms']=(time.perf_counter()-entered)*1000
             return result
         rule_dependencies=request_dependencies(text,self.catalog)
-        extension=self.allow_model_proposals and privacy_mode=='standard'
+        extension=allow_model_proposals and privacy_mode=='standard'
         dependencies=rule_dependencies
         extension_dependencies_used=False
         if extension and rule_dependencies is None:
@@ -285,8 +305,8 @@ class Controller:
         snapshot_started=time.perf_counter()
         states=self.snapshot(read_ids);view=dict(request=text,catalog=copy.deepcopy(self.catalog),states=states)
         snapshot_ms=(time.perf_counter()-snapshot_started)*1000
-        started=time.perf_counter();planner=catalog_rules if privacy_mode=='no_upload' else self.planner
-        route=dict(backend='local-rules' if planner is catalog_rules else 'configured-planner',reason='DIRECT_PLANNER')
+        started=time.perf_counter();planner=catalog_rules if privacy_mode=='no_upload' else selected_planner
+        route=dict(backend='local-rules' if planner is catalog_rules else source or 'configured-planner',reason='DIRECT_PLANNER')
         if privacy_mode=='no_upload':route['reason']='NO_UPLOAD_LOCAL_RULES'
         def run_planner():
             # Thread-local telemetry must cross the worker boundary with its result.

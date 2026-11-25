@@ -14,6 +14,8 @@ import sqlite3
 import time
 import uuid
 
+from capabilities import DEVICE_SERVICES, temperature_data_valid, validate_actions
+
 
 def canonical(value):
     return json.dumps(value, ensure_ascii=False, sort_keys=True, separators=(",", ":"), allow_nan=False)
@@ -31,7 +33,7 @@ def catalog_index(catalog):
         if not isinstance(entry, dict) or not isinstance(entry.get("entity_id"), str):
             raise ValueError("invalid catalog entity")
         entity = entry["entity_id"]
-        if entity in result or entry.get("kind") not in ("light", "cover"):
+        if entity in result or entry.get("kind") not in DEVICE_SERVICES:
             raise ValueError("duplicate entity or unsupported kind")
         result[entity] = entry
     return result
@@ -61,16 +63,16 @@ def validate_payload(payload, catalog, states=None):
         seen.add(entity)
         entry = index[entity]
         if entry.get("available") is not True: raise ValueError("entity unavailable")
-        allowed = {"light": ("light.turn_on", "light.turn_off"), "cover": ("cover.open_cover", "cover.close_cover")}
-        if service not in allowed[entry["kind"]] or not isinstance(data, dict):
+        if service not in DEVICE_SERVICES[entry["kind"]] or not isinstance(data, dict):
             raise ValueError("unsupported service")
         if service == "light.turn_on":
             if set(data) - {"brightness_pct"}: raise ValueError("unsupported light data")
             if "brightness_pct" in data and (type(data["brightness_pct"]) is not int or not 0 <= data["brightness_pct"] <= 100):
                 raise ValueError("brightness_pct requires integer 0..100")
+        elif service == "climate.set_temperature":
+            if not temperature_data_valid(data): raise ValueError("temperature requires a finite number")
         elif data: raise ValueError("this service requires empty data")
     if states is not None:
-        from capabilities import validate_actions
         validate_actions(actions, catalog, states)
     return json.loads(canonical(payload))
 
