@@ -3,14 +3,18 @@
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title>SenseHome 控制台</title>
+  <title>SenseHome 智算家护协同体 · 可信执行控制台</title>
   <link rel="stylesheet" href="/style.css">
   <script src="/app.js" defer></script>
 </head>
 <body>
   <header class="masthead">
-    <a class="brand" href="#home" aria-label="SenseHome 首页"><span class="brand-mark" aria-hidden="true"><i></i><i></i><i></i></span>SenseHome</a>
+    <a class="brand" href="#home" aria-label="SenseHome 首页">
+      <span class="brand-mark" aria-hidden="true"><i></i><i></i><i></i></span>
+      <span class="brand-text">SenseHome<small>智算家护协同体</small></span>
+    </a>
     <div class="connection">
+      <span class="tag info" id="guardrail-badge">物理防火墙 · 云端只读提案</span>
       <span class="tag" id="connection-status" role="status">未登录</span>
       <button type="button" class="secondary" id="sign-out" hidden>退出</button>
     </div>
@@ -18,9 +22,13 @@
 
   <main id="login" class="login">
     <form id="login-form" class="login-form">
-      <h1>登录家庭控制台</h1>
-      <label for="operator-token">操作者令牌</label>
-      <input id="operator-token" type="password" required autocomplete="off" spellcheck="false" autocapitalize="none">
+      <div class="login-head">
+        <span class="eyebrow">云端认知编排 · 边缘可信护栏</span>
+        <h1>登录家庭控制台</h1>
+        <p class="detail">请输入操作员令牌以进入动态检查单、多智能体轨迹与照护协同工作台。</p>
+      </div>
+      <label for="operator-token">操作员令牌</label>
+      <input id="operator-token" type="password" required autocomplete="off" spellcheck="false" autocapitalize="none" placeholder="输入 SENSEHOME_OPERATOR_KEY">
       <button type="submit" class="primary">进入控制台 <span aria-hidden="true">→</span></button>
       <p class="feedback" id="login-feedback" role="alert"></p>
     </form>
@@ -28,80 +36,190 @@
 
   <div id="console" class="console" hidden>
     <nav class="sidebar" aria-label="控制台导航">
-      <button type="button" class="nav-button" data-view="home" aria-current="page"><span aria-hidden="true">⌂</span>家庭控制</button>
-      <button type="button" class="nav-button" data-view="care"><span aria-hidden="true">＋</span>照护模拟</button>
-      <button type="button" class="nav-button" data-view="sensing"><span aria-hidden="true">≋</span>感知实验</button>
+      <button type="button" class="nav-button" data-view="home" aria-current="page"><span aria-hidden="true">01</span>家庭控制</button>
+      <button type="button" class="nav-button" data-view="care"><span aria-hidden="true">02</span>照护应急</button>
+      <button type="button" class="nav-button" data-view="sensing"><span aria-hidden="true">03</span>感知实验</button>
+      <button type="button" class="nav-button" data-view="governance"><span aria-hidden="true">04</span>MCP与规则</button>
     </nav>
 
     <main class="content">
+      <section class="summary-strip" aria-label="云边协同运行摘要">
+        <div class="metric-box">
+          <span class="metric-label">编排模式</span>
+          <strong class="metric-value" id="workflow-label">本地协同仿真</strong>
+        </div>
+        <div class="metric-box">
+          <span class="metric-label">安全护栏</span>
+          <strong class="metric-value ok" id="guardrail-state">边缘强校验 · 显式确认</strong>
+        </div>
+        <div class="metric-box">
+          <span class="metric-label">MCP 工具暴露</span>
+          <strong class="metric-value mono" id="mcp-summary">6 Read/Propose · 0 Execute</strong>
+        </div>
+        <div class="metric-box">
+          <span class="metric-label">当前 Trace / Session</span>
+          <strong class="metric-value mono" id="session-trace-id">待发起请求</strong>
+        </div>
+      </section>
+
       <section id="home" data-panel>
         <div class="page-head">
-          <h1>家庭控制</h1>
-          <span class="tag" id="workflow-label"></span>
+          <div>
+            <h1>动态检查单与可信控制</h1>
+            <p class="detail">云端负责自然语言与家庭约定编排，边缘负责隐私拦截、排除校验、状态新鲜度核对与执行后独立读回。</p>
+          </div>
+          <div class="head-actions" id="demo-preset-bar">
+            <button type="button" class="secondary" data-preset="leave_home_ready">置为离家初始态</button>
+            <button type="button" class="secondary" data-preset="leave_home_all_off">置为全灭初始态</button>
+          </div>
         </div>
+
         <div class="command-layout">
-          <section class="command-pane" aria-labelledby="command-title">
-            <h2 id="command-title">给家里发一条指令</h2>
+          <section class="panel command-pane" aria-labelledby="command-title">
+            <div class="section-head">
+              <h2 id="command-title">自然语言指令台</h2>
+              <span class="descriptor">支持口语排除 · 家庭约定 · 只读巡检 · 隐私旁路</span>
+            </div>
             <form id="command-form">
               <label for="command-text" class="visually-hidden">家庭指令</label>
               <div class="command-entry">
-                <textarea id="command-text" rows="3" maxlength="2000" required placeholder="把阅读灯调到 40%，拉开书房窗帘"></textarea>
-                <button class="primary" type="submit">生成提案 <span aria-hidden="true">↗</span></button>
+                <textarea id="command-text" rows="3" maxlength="2000" required placeholder="例如：我要出门了，帮我把书房和阳台还亮着的灯关了，客厅别动。顺便看看入户门关了没有。"></textarea>
+                <div class="entry-footer">
+                  <span class="detail">提案需在 30 秒内经人工显式确认后方可执行</span>
+                  <button class="primary" type="submit">生成可核对检查单 <span aria-hidden="true">↗</span></button>
+                </div>
               </div>
             </form>
-            <div class="suggestions" aria-label="常用指令">
-              <button type="button" data-command="打开书房阅读灯">打开阅读灯</button>
-              <button type="button" data-command="把阅读灯调到40%，拉开书房窗帘">书房阅读场景</button>
-              <button type="button" data-command="查看门口监控的状态">门口监控状态</button>
-              <button type="button" data-command="10秒后打开阳台灯">定时开阳台灯</button>
+
+            <div class="scenario-block">
+              <span class="scenario-label">评审一键剧本</span>
+              <div class="suggestions" aria-label="评审一键演示剧本">
+                <button type="button" data-preset-before="leave_home_ready" data-command="我要出门了，帮我把书房和阳台还亮着的灯关了，客厅别动。顺便看看入户门关了没有。">1. 复合离家检查单</button>
+                <button type="button" data-preset-before="leave_home_ready" data-command="我先出门，室友还在客厅，按平时的离家约定检查一下">2. 家庭约定 RAG 检查</button>
+                <button type="button" data-preset-before="leave_home_all_off" data-command="我先出门，室友还在客厅，按平时的离家约定检查一下">3. 同句全灭态对照</button>
+                <button type="button" data-command="我想看书">4. 模糊意图追问</button>
+                <button type="button" data-command="不要上传云端，打开书房阅读灯">5. 隐私本地零上云</button>
+                <button type="button" data-command="把阅读灯调到40%，拉开书房窗帘">6. 书房阅读组合场景</button>
+                <button type="button" data-command="10秒后打开阳台灯">7. 定时灯光任务</button>
+              </div>
             </div>
             <p class="feedback" id="command-feedback" role="status"></p>
           </section>
-          <section class="proposal-pane" aria-labelledby="proposal-title">
-            <div class="section-head"><h2 id="proposal-title">提案与回执</h2><span id="countdown"></span></div>
-            <div id="proposal-output" class="proposal-output" aria-live="polite"><p class="empty">暂无提案</p></div>
-            <button type="button" class="primary confirm" id="confirm-button" hidden>确认执行</button>
+
+          <section class="panel proposal-pane" aria-labelledby="proposal-title">
+            <div class="section-head">
+              <h2 id="proposal-title">可溯源检查单与执行回执</h2>
+              <span id="countdown" class="mono"></span>
+            </div>
+            <div id="proposal-output" class="proposal-output" aria-live="polite">
+              <p class="empty">暂无提案或检查单。点击左侧“评审一键剧本”或输入指令开始演示。</p>
+            </div>
+            <div class="proposal-actions">
+              <button type="button" class="primary confirm" id="confirm-button" hidden>确认执行</button>
+              <button type="button" class="secondary warn-btn" id="drift-button" hidden>模拟确认前状态漂移</button>
+              <button type="button" class="secondary" id="replay-button" hidden>重放同 Request ID（幂等演练）</button>
+            </div>
           </section>
         </div>
 
-        <section aria-labelledby="devices-title">
-          <div class="section-head"><h2 id="devices-title">全屋设备</h2><button type="button" id="refresh-devices" class="secondary"><span aria-hidden="true">↻</span> 刷新</button></div>
+        <section class="panel trace-pane" aria-labelledby="trace-title">
+          <div class="section-head">
+            <h2 id="trace-title">云边协同与多智能体追踪轨迹</h2>
+            <span class="mono detail" id="trace-timing">暂无调用轨迹</span>
+          </div>
+          <div id="trace-output" class="trace-steps">
+            <p class="empty">发起指令后，此处实时展示：边缘隐私分级 → 多智能体路由 → 知识库规则命中 → 只读工具/MCP 查询 → 边缘安全护栏校验。</p>
+          </div>
+        </section>
+
+        <section class="panel" aria-labelledby="devices-title">
+          <div class="section-head">
+            <h2 id="devices-title">全屋设备目录与实时状态</h2>
+            <button type="button" id="refresh-devices" class="secondary"><span aria-hidden="true">↻</span> 刷新目录</button>
+          </div>
           <div id="room-filters" class="rooms" aria-label="房间筛选"></div>
           <p class="feedback" id="device-feedback" role="status"></p>
           <div id="device-list" class="device-list"></div>
         </section>
 
-        <section aria-labelledby="schedules-title">
-          <div class="section-head"><h2 id="schedules-title">定时任务</h2><button type="button" id="refresh-schedules" class="secondary"><span aria-hidden="true">↻</span> 刷新</button></div>
+        <section class="panel" aria-labelledby="schedules-title">
+          <div class="section-head">
+            <h2 id="schedules-title">一次性定时任务</h2>
+            <button type="button" id="refresh-schedules" class="secondary"><span aria-hidden="true">↻</span> 刷新</button>
+          </div>
           <p class="feedback" id="schedule-feedback" role="status"></p>
           <div id="schedule-list"></div>
         </section>
       </section>
 
       <section id="care" data-panel hidden>
-        <div class="page-head"><h1>照护模拟</h1><span class="tag warn">模拟通知</span></div>
-        <div class="section-head care-toolbar">
-          <form id="care-form" class="inline-form">
-            <label for="care-room">求助房间</label>
-            <select id="care-room">
-              <option value="卧室">卧室</option><option value="客厅">客厅</option><option value="卫生间">卫生间</option>
-            </select>
-            <button type="submit" class="primary">触发模拟 SOS</button>
-          </form>
-          <button type="button" id="refresh-care" class="secondary"><span aria-hidden="true">↻</span> 刷新</button>
+        <div class="page-head">
+          <div>
+            <h1>居家照护应急协同</h1>
+            <p class="detail">本地 SQLite 状态机负责 SOS 触发与 30 秒超时升级兜底；照护协同 Agent 仅通过只读接口生成 SOP 研判与家属处置建议。</p>
+          </div>
+          <span class="tag warn">模拟求助通知</span>
         </div>
-        <p class="feedback" id="care-feedback" role="status"></p>
-        <div id="care-list"></div>
+        <div class="panel">
+          <div class="section-head care-toolbar">
+            <form id="care-form" class="inline-form">
+              <label for="care-room">求助房间</label>
+              <select id="care-room">
+                <option value="卧室">卧室</option>
+                <option value="客厅">客厅</option>
+                <option value="卫生间">卫生间</option>
+                <option value="书房">书房</option>
+              </select>
+              <button type="submit" class="primary">触发模拟 SOS</button>
+            </form>
+            <button type="button" id="refresh-care" class="secondary"><span aria-hidden="true">↻</span> 刷新事件</button>
+          </div>
+          <p class="feedback" id="care-feedback" role="status"></p>
+          <div id="care-list"></div>
+        </div>
       </section>
 
       <section id="sensing" data-panel hidden>
-        <div class="page-head"><h1>感知实验</h1><span class="tag warn" id="sensing-mode">合成数据</span></div>
-        <div class="section-head">
-          <h2>窗帘状态实验</h2>
-          <button type="button" id="refresh-sensing" class="secondary"><span aria-hidden="true">↻</span> 运行离线演示</button>
+        <div class="page-head">
+          <div>
+            <h1>非侵入式 Wi-Fi CSI 与世界模型感知实验</h1>
+            <p class="detail">原始 CSI IQ 严格留在本地边缘；无需在卧室/书房安装摄像头即可完成运动复核与遮挡窗帘动作预测。</p>
+          </div>
+          <span class="tag warn" id="sensing-mode">合成数据</span>
         </div>
-        <p class="feedback" id="sensing-feedback" role="status"></p>
-        <div id="sensing-output"></div>
+        <div class="panel">
+          <div class="section-head">
+            <h2>窗帘状态与 RSI 迭代记录</h2>
+            <button type="button" id="refresh-sensing" class="secondary"><span aria-hidden="true">↻</span> 运行离线演示</button>
+          </div>
+          <p class="feedback" id="sensing-feedback" role="status"></p>
+          <div id="sensing-output"></div>
+        </div>
+      </section>
+
+      <section id="governance" data-panel hidden>
+        <div class="page-head">
+          <div>
+            <h1>MCP 最小权限契约与家庭知识库审计</h1>
+            <p class="detail">面向华为云 AgentArts 的标准 MCP 工具清单（POST /mcp 与 stdio）及结构化家庭约定/照护预案语料。</p>
+          </div>
+          <button type="button" id="refresh-governance" class="secondary"><span aria-hidden="true">↻</span> 刷新契约</button>
+        </div>
+        <p class="feedback" id="governance-feedback" role="status"></p>
+        <div class="panel" id="mcp-manifest-panel">
+          <div class="section-head">
+            <h2>已注册 MCP 工具（物理世界防火墙）</h2>
+            <span class="tag good" id="mcp-posture-tag">0 执行工具 · 禁止越权</span>
+          </div>
+          <div id="mcp-tool-list" class="device-list"></div>
+        </div>
+        <div class="panel" id="rules-catalog-panel">
+          <div class="section-head">
+            <h2>家庭约定与照护 SOP 知识库</h2>
+            <span class="descriptor">与 agentarts_assets 知识库语料一一对应</span>
+          </div>
+          <div id="rules-list" class="rules-grid"></div>
+        </div>
       </section>
     </main>
   </div>

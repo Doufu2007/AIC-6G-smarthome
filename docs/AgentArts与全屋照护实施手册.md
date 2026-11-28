@@ -1,6 +1,6 @@
 # SenseHome 实施手册
 
-`web_demo.py` 已提供中文网页、设备工具、确认接口、定时灯光、照护模拟和感知回放。AgentArts 客户端已接线，需在团队控制台创建并部署对应工作流。默认使用软件模拟设备。
+`web_demo.py` 已提供升级版中文可视化控制台、可溯源动态检查单（`checklist.py`）、标准最小权限 MCP 服务（`mcp_server.py`，支持 `POST /mcp` 与 `stdio`）、确认接口、定时灯光、照护应急协同研判和感知回放。AgentArts 客户端支持 M0 探针回调与 M1/M2 纯只读工具直返结构化检查单两种模式；可直接导入华为云控制台的 3 套知识库、多智能体提示词与 50 条冻结评测集位于仓库根目录 `agentarts_assets/`（详见 [云边协同部署与编排手册](../agentarts_assets/workflow_architecture.md)）。默认使用软件模拟设备。
 
 ## 1. 先跑通 AgentArts
 

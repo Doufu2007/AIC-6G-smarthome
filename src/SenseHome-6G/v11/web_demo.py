@@ -12,15 +12,23 @@ import re
 import secrets
 import sqlite3
 import threading
+import time
 import unicodedata
 from urllib.parse import parse_qs, unquote, urlsplit
 
 from agentarts import AgentArtsWorkflow
 from care import CareStore
 from catalog_planner import request_privacy_mode
+from checklist import (
+    build_care_advisory,
+    evaluate_cloud_candidate,
+    get_rules_catalog,
+    plan_local_checklist,
+)
 from cli import DEFAULT_CATALOG, DEFAULT_STATES, load
 from controller import Controller, SoftwareClient
 from inventory import DeviceInventory, demo_household
+from mcp_server import SenseHomeMCPServer
 from native_ha_adapter import NativeHAAdapter
 from platform_execution import HAClient, HAError
 from scheduler import LightScheduler
@@ -67,6 +75,7 @@ class DemoApp:
             self.inventory = DeviceInventory(self.controller, extra_states=extra)
         self.scheduler = LightScheduler(self.directory / 'schedules.sqlite', self.controller)
         self.care = CareStore(self.directory / 'care.sqlite')
+        self.mcp = SenseHomeMCPServer(self)
 
     @contextmanager
     def db(self):
@@ -108,8 +117,62 @@ class DemoApp:
     def card(result, source):
         payload = result['payload']
         fields = ('status', 'proposal_id', 'digest', 'expires_at')
-        return {**{key: result[key] for key in fields if key in result},
-                'actions': payload['actions'], 'reason': payload['reason'], 'source': source}
+        out = {**{key: result[key] for key in fields if key in result},
+               'actions': payload['actions'], 'reason': payload['reason'], 'source': source}
+        metadata = result.get('metadata') if isinstance(result.get('metadata'), dict) else {}
+        if metadata.get('checklist'):
+            out['checklist'] = metadata['checklist']
+            if metadata['checklist'].get('rule_refs'):
+                out['rule_refs'] = metadata['checklist']['rule_refs']
+        if metadata.get('trace'):
+            out['trace'] = metadata['trace']
+        return out
+
+    @staticmethod
+    def _is_structured_candidate(candidate):
+        if not isinstance(candidate, dict):
+            return False
+        if candidate.get('result_kind') == 'read_only_report':
+            return True
+        return bool(set(candidate) & {'checklist', 'intent_type', 'agent_role', 'rule_refs', 'tools_used'})
+
+    @staticmethod
+    def _local_trace(text, privacy, source, role, guard_status, rule_refs=None, started=None):
+        elapsed = round((time.perf_counter() - started) * 1000, 2) if started is not None else 0.0
+        refs = list(rule_refs or ())
+        return {
+            'agentarts_session_id': None,
+            'agent_role': role,
+            'privacy_policy': privacy,
+            'guard_status': guard_status,
+            'timing_ms': {'cloud_ms': 0.0, 'guard_ms': elapsed, 'total_ms': elapsed},
+            'steps': [
+                {
+                    'stage': 'privacy_gate',
+                    'label': '边缘隐私分级',
+                    'status': 'bypassed_local' if privacy != 'standard' else 'passed',
+                    'detail': f'策略={privacy}' + ('（本地拦截，零云端调用）' if privacy != 'standard' else '（标准请求）'),
+                },
+                {
+                    'stage': 'router',
+                    'label': '意图路由',
+                    'status': 'completed',
+                    'detail': f'路由至 {role}（来源：{source}）',
+                },
+                {
+                    'stage': 'knowledge',
+                    'label': '家庭约定 / 规则命中',
+                    'status': 'hit' if refs else 'none',
+                    'detail': '命中：' + ', '.join(refs) if refs else '直接语法/设备目录匹配',
+                },
+                {
+                    'stage': 'edge_guardrail',
+                    'label': '边缘安全护栏校验',
+                    'status': guard_status,
+                    'detail': f'耗时 {elapsed} ms · 需人工显式确认',
+                },
+            ],
+        }
 
     def owned_proposal(self, proposal_id, owner, *, context=None):
         if not self.owns('proposal', proposal_id, owner):
@@ -138,12 +201,39 @@ class DemoApp:
             [device['name'], *device['aliases'], device['room'] + device['name'],
              device['room'] + '的' + device['name']])]
 
+    @staticmethod
+    def _strip_no_upload_prefix(text):
+        cleaned = re.sub(
+            r'^\s*(?:请|麻烦)?(?:不要上传(?:云端|数据|设备信息)?|不上传(?:云端|数据)?|'
+            r'禁止上传(?:云端|设备信息|数据)?|不得上传(?:云端|设备信息|数据)?|'
+            r'不要发送设备信息|不要把设备信息发到云端|不要将设备信息发到云端|'
+            r'仅在本地(?:处理|执行|运行)?|只在本地(?:处理|执行|运行)?)[,，;；:：\s]*',
+            '',
+            text.strip(),
+        )
+        return cleaned.strip()
+
     def operator_proposal(self, text, owner):
+        started = time.perf_counter()
         if not isinstance(text, str) or not 0 < len(text.strip()) <= 2000:
             raise ValueError('请输入 1 到 2000 个字符。')
         privacy = request_privacy_mode(text)
         if privacy != 'standard':
-            return self.propose({'text': text}, owner=owner)
+            if privacy == 'no_upload':
+                local_text = self._strip_no_upload_prefix(text)
+                raw = self.controller.propose_local_no_upload(text, local_text)
+                card = self.card(raw, raw['metadata']['route']['backend'])
+                if card['status'] == 'awaiting_confirmation':
+                    self.bind('proposal', card['proposal_id'], owner)
+            else:
+                card = self.propose({'text': text}, owner=owner)
+            card['rule_refs'] = ['RULE-006']
+            card['trace'] = self._local_trace(
+                text, privacy, card.get('source', 'local-rules'), 'privacy-bypass',
+                'verified_local_privacy' if card['status'] == 'awaiting_confirmation' else 'blocked_offline',
+                rule_refs=['RULE-006'], started=started,
+            )
+            return card
         value = self.normalized(text)
         scheduled = re.fullmatch(r'10秒后(打开|关闭)(.+)', value)
         if scheduled:
@@ -160,7 +250,60 @@ class DemoApp:
             task = self.scheduler.prepare(device['entity_id'], service)
             self.bind('schedule', task['schedule_id'], owner)
             return {**task, 'actions': [dict(entity_id=device['entity_id'], service=service, data={})],
-                    'reason': '确认后 10 秒执行。', 'source': 'scheduler'}
+                    'reason': '确认后 10 秒执行。', 'source': 'scheduler',
+                    'trace': self._local_trace(text, privacy, 'scheduler', 'local-scheduler',
+                                               'awaiting_schedule_confirm', started=started)}
+        if self.workflow is not None:
+            try:
+                with self.workflow_context(owner, text) as context:
+                    response = self.workflow(text, context)
+                    cloud_trace = getattr(self.workflow, 'last_trace', None)
+                    if response.get('status') == 'awaiting_confirmation':
+                        card = {**self.owned_proposal(response['proposal_id'], owner, context=context), 'source': 'agentarts'}
+                        if isinstance(cloud_trace, dict) and cloud_trace.get('session_id') and 'trace' not in card:
+                            card['trace'] = {
+                                'agentarts_session_id': cloud_trace['session_id'],
+                                'agent_role': 'agentarts-workflow',
+                                'privacy_policy': privacy,
+                                'guard_status': 'verified_for_confirmation',
+                                'timing_ms': {'cloud_ms': cloud_trace.get('elapsed_ms', 0.0), 'guard_ms': 0.0,
+                                              'total_ms': cloud_trace.get('elapsed_ms', 0.0)},
+                                'steps': [
+                                    {'stage': 'privacy_gate', 'label': '边缘隐私分级', 'status': 'passed', 'detail': '标准请求'},
+                                    {'stage': 'router', 'label': 'AgentArts 云端工作流', 'status': 'completed',
+                                     'detail': f'Session {cloud_trace["session_id"][:12]}'},
+                                    {'stage': 'edge_guardrail', 'label': '边缘护栏建卡', 'status': 'verified_for_confirmation',
+                                     'detail': '已绑定原句与会话，等待人工确认'},
+                                ],
+                            }
+                        return card
+                    if response.get('result_kind') in ('proposal', 'clarification', 'read_only_report'):
+                        if self._is_structured_candidate(response):
+                            card = evaluate_cloud_candidate(
+                                text, response, self.controller, self.inventory,
+                                source='agentarts', cloud_trace=cloud_trace,
+                            )
+                            if card.get('status') == 'awaiting_confirmation':
+                                self.bind('proposal', card['proposal_id'], owner)
+                            return card
+                        return self.propose({'text': text, 'candidate': response}, owner=owner)
+                    if response.get('status') == 'clarification':
+                        return self.clarify(response.get('code') or 'needs_clarification',
+                                            str(response.get('reason') or '请明确房间和设备。'), 'agentarts')
+                    raise ValueError('unexpected AgentArts workflow output')
+            except (OSError, ValueError, KeyError, PermissionError, TypeError):
+                return self.clarify('model_unavailable', 'AgentArts 暂不可用，请检查工作流部署和接线配置。', 'agentarts')
+        local_candidate = plan_local_checklist(text, self.controller, self.inventory, self.care)
+        if local_candidate is not None:
+            card = evaluate_cloud_candidate(
+                text, local_candidate, self.controller, self.inventory,
+                source='local-copilot', cloud_trace=None,
+            )
+            if card.get('status') == 'awaiting_confirmation':
+                self.bind('proposal', card['proposal_id'], owner)
+            if local_candidate.get('care_advisory'):
+                card['care_advisory'] = local_candidate['care_advisory']
+            return card
         read = re.fullmatch(r'(?:帮我)?(?:看看|查看|查询)(.+?)(?:的状态)?', value)
         if read:
             matches = self.device_candidates(read.group(1))
@@ -168,22 +311,22 @@ class DemoApp:
                 return self.clarify('device_not_found' if not matches else 'needs_clarification', '请指定要查看的设备。')
             device = matches[0]
             state = self.inventory.get_device_state(device['entity_id'])
-            return dict(status='device_state', actions=[], source=device['source'], device=device, state=state)
-        if self.workflow is None:
-            return self.propose({'text': text}, owner=owner)
-        try:
-            with self.workflow_context(owner, text) as context:
-                response = self.workflow(text, context)
-                if response.get('status') == 'awaiting_confirmation':
-                    return {**self.owned_proposal(response['proposal_id'], owner, context=context), 'source': 'agentarts'}
-                if response.get('result_kind') in ('proposal', 'clarification'):
-                    return self.propose({'text': text, 'candidate': response}, owner=owner)
-                if response.get('status') == 'clarification':
-                    return self.clarify(response.get('code') or 'needs_clarification',
-                                        str(response.get('reason') or '请明确房间和设备。'), 'agentarts')
-                raise ValueError('unexpected AgentArts workflow output')
-        except (OSError, ValueError, KeyError, PermissionError, TypeError):
-            return self.clarify('model_unavailable', 'AgentArts 暂不可用，请检查工作流部署和接线配置。', 'agentarts')
+            return dict(status='device_state', actions=[], source=device['source'], device=device, state=state,
+                        rule_refs=['RULE-003'],
+                        trace=self._local_trace(text, privacy, device['source'], 'inspection-agent',
+                                                'verified_read_only', rule_refs=['RULE-003'], started=started))
+        card = self.propose({'text': text}, owner=owner)
+        if 'trace' not in card:
+            refs = ['RULE-004'] if value in STUDY_SCENE or value in ('我想看书', '我想阅读', '我要看书') else []
+            if refs:
+                card['rule_refs'] = refs
+            card['trace'] = self._local_trace(
+                text, privacy, card.get('source', 'local-rules'),
+                'scene-agent' if value in STUDY_SCENE else 'local-rules',
+                'verified_for_confirmation' if card['status'] == 'awaiting_confirmation' else 'needs_clarification',
+                rule_refs=refs, started=started,
+            )
+        return card
 
     def propose(self, body, *, owner):
         if set(body) - {'text', 'candidate'}:
@@ -232,10 +375,106 @@ class DemoApp:
             if text != provided_text:
                 raise PermissionError('workflow changed the original request')
         data = {key: value for key, value in body.items() if key != 'context'}
-        card = self.propose(data, owner=owner)
+        candidate = data.get('candidate')
+        if candidate is not None and self._is_structured_candidate(candidate):
+            card = evaluate_cloud_candidate(text, candidate, self.controller, self.inventory, source='agentarts')
+            if card.get('status') == 'awaiting_confirmation':
+                self.bind('proposal', card['proposal_id'], owner)
+        else:
+            card = self.propose(data, owner=owner)
         if context is not None and card['status'] == 'awaiting_confirmation':
             self.bind('workflow_proposal', card['proposal_id'], body['context'])
         return card
+
+    def advise_care_incident(self, incident_id):
+        incident = self.care.get_incident(incident_id)
+        if incident is None:
+            raise KeyError(incident_id)
+        report = run_demo()
+        if self.csi_csv is not None:
+            with self.csi_csv.open(encoding='utf-8-sig') as capture:
+                report['csi']['replay'] = observe_csi(capture)
+        base_advisory = build_care_advisory(incident, self.inventory, report, source='local-care-copilot')
+        if self.workflow is not None:
+            prompt = (f'请针对照护SOS事件 {incident_id}（房间：{incident["area_id"]}，状态：{incident["status"]}）'
+                      '结合居家照护SOP预案生成家属研判与处置建议')
+            try:
+                with self.workflow_context('care-copilot', prompt) as context:
+                    cloud_resp = self.workflow(prompt, context)
+                if isinstance(cloud_resp, dict) and isinstance(cloud_resp.get('reason'), str) and cloud_resp['reason'].strip():
+                    base_advisory['cloud_summary'] = cloud_resp['reason'].strip()
+                    base_advisory['source'] = 'agentarts'
+            except (OSError, ValueError, KeyError, PermissionError, TypeError):
+                pass
+        return base_advisory
+
+    def apply_demo_preset(self, body):
+        if self.controller.mode != 'software-demo':
+            raise PermissionError('demo presets are available only in software-demo mode')
+        preset = body.get('preset')
+        client = self.controller.client
+        catalog_map = {e['entity_id']: e for e in self.controller.catalog}
+        if preset == 'leave_home_ready':
+            desired = {
+                'light.reading': ('light.turn_on', {'brightness_pct': 80}),
+                'light.living': ('light.turn_on', {}),
+                'light.patio': ('light.turn_off', {}),
+                'light.bedroom': ('light.turn_off', {}),
+                'light.kitchen': ('light.turn_off', {}),
+                'light.bathroom': ('light.turn_off', {}),
+                'light.entry': ('light.turn_off', {}),
+            }
+            for eid, (service, data) in desired.items():
+                if eid in catalog_map:
+                    client.call_service(eid, service, data)
+            if 'binary_sensor.front_door' in self.inventory.extra_states:
+                self.inventory.set_extra_state('binary_sensor.front_door', 'on', str(time.time_ns()))
+            return {'preset': preset, 'summary': '已准备离家演示初始态：书房灯亮、客厅灯亮、阳台灯灭、入户门磁打开。'}
+        if preset == 'leave_home_all_off':
+            for eid in ('light.reading', 'light.patio', 'light.bedroom', 'light.kitchen', 'light.bathroom', 'light.entry'):
+                if eid in catalog_map:
+                    client.call_service(eid, 'light.turn_off', {})
+            if 'light.living' in catalog_map:
+                client.call_service('light.living', 'light.turn_on', {})
+            if 'binary_sensor.front_door' in self.inventory.extra_states:
+                self.inventory.set_extra_state('binary_sensor.front_door', 'off', str(time.time_ns()))
+            return {'preset': preset, 'summary': '已切换为全灭态：仅客厅灯亮、其余灯均已关闭、入户门磁已关闭。'}
+        if preset == 'inject_state_drift':
+            target = body.get('entity_id') or 'light.patio'
+            if not isinstance(target, str) or target not in catalog_map or catalog_map[target]['kind'] != 'light':
+                raise ValueError('state drift target must be a known catalog light')
+            current = self.inventory.get_device_state(target)['state']
+            service = 'light.turn_off' if current == 'on' else 'light.turn_on'
+            client.call_service(target, service, {})
+            new_state = self.inventory.get_device_state(target)['state']
+            return {
+                'preset': preset,
+                'entity_id': target,
+                'previous_state': current,
+                'new_state': new_state,
+                'summary': f'已注入确认前状态漂移：{target} 由 {current} 变为 {new_state}。此时点击“确认执行”将被边缘护栏拦截。',
+            }
+        if preset == 'toggle_device':
+            eid = body.get('entity_id')
+            if not isinstance(eid, str) or not eid:
+                raise ValueError('entity_id is required')
+            if eid == 'binary_sensor.front_door' and eid in self.inventory.extra_states:
+                current = self.inventory.get_device_state(eid)['state']
+                updated = self.inventory.set_extra_state(eid, 'off' if current == 'on' else 'on', str(time.time_ns()))
+                return {'preset': preset, 'entity_id': eid, 'new_state': updated['state']}
+            if eid not in catalog_map:
+                raise ValueError('unknown controllable entity_id')
+            current = self.inventory.get_device_state(eid)['state']
+            if eid.startswith('light.'):
+                client.call_service(eid, 'light.turn_off' if current == 'on' else 'light.turn_on', {})
+            elif eid.startswith('switch.'):
+                client.call_service(eid, 'switch.turn_off' if current == 'on' else 'switch.turn_on', {})
+            elif eid.startswith('cover.'):
+                client.call_service(eid, 'cover.close_cover' if current == 'open' else 'cover.open_cover', {})
+            else:
+                raise ValueError('unsupported toggle entity')
+            return {'preset': preset, 'entity_id': eid, 'new_state': self.inventory.get_device_state(eid)['state']}
+        raise ValueError('unknown demo preset')
 
     def confirm(self, body, *, owner):
         if owner == 'tool' or not isinstance(body.get('proposal_id'), str) or not self.owns('proposal', body['proposal_id'], owner):
@@ -249,9 +488,22 @@ class DemoApp:
         return self.controller.confirm(body)
 
     def dispatch(self, method, path, query, body, role, owner):
+        if method == 'POST' and path == '/mcp':
+            if role != 'tool':
+                raise PermissionError('tool credential required for MCP endpoint')
+            return self.mcp.handle_jsonrpc(body)
+        if method == 'GET' and path == '/api/v1/mcp/manifest':
+            return self.mcp.manifest()
+        if method == 'GET' and path == '/api/v1/rules':
+            return get_rules_catalog(query=query.get('q', [None])[0], category=query.get('category', [None])[0])
         if method == 'GET' and path == '/api/v1/devices':
-            return dict(devices=self.inventory.list_devices(query.get('room', [None])[0]),
-                        mode=self.controller.mode, workflow='agentarts' if self.workflow else 'local')
+            items = self.inventory.list_devices(query.get('room', [None])[0])
+            payload = dict(devices=items, mode=self.controller.mode,
+                           workflow='agentarts' if self.workflow else 'local',
+                           mcp_tools=len(self.mcp.manifest()['tools']), guardrail='edge-firewall-active')
+            if query.get('include_states', ['0'])[0] == '1':
+                payload['states'] = {item['entity_id']: self.inventory.get_device_state(item['entity_id']) for item in items}
+            return payload
         state = re.fullmatch(r'/api/v1/devices/([^/]+)/state', path)
         if method == 'GET' and state:
             return self.inventory.get_device_state(state.group(1))
@@ -269,6 +521,8 @@ class DemoApp:
             return result
         if role != 'operator':
             raise PermissionError('operator permission required')
+        if method == 'POST' and path == '/api/v1/demo/preset':
+            return self.apply_demo_preset(body)
         if method == 'POST' and path == '/api/v1/confirm':
             return self.confirm(body, owner=owner)
         receipt = re.fullmatch(r'/api/v1/receipts/([^/]+)', path)
@@ -299,6 +553,9 @@ class DemoApp:
             if set(body) - {'event_id', 'area_id'} or 'event_id' not in body:
                 raise ValueError('provide an event ID and optional area')
             return self.care.create_event(body['event_id'], area_id=body.get('area_id', 'bedroom'))
+        advise = re.fullmatch(r'/api/v1/care/incidents/([A-Za-z0-9_-]+)/advise', path)
+        if method == 'POST' and advise:
+            return self.advise_care_incident(advise.group(1))
         acknowledgment = re.fullmatch(r'/api/v1/care/incidents/([A-Za-z0-9_-]+)/ack', path)
         if method == 'POST' and acknowledgment:
             result = self.care.acknowledge(acknowledgment.group(1))
@@ -375,19 +632,42 @@ class DemoHandler(BaseHTTPRequestHandler):
                 filename, content_type = STATIC[path]
                 self.send_data(200, (Path(__file__).with_name('web') / filename).read_bytes(), content_type)
                 return
+            if method == 'GET' and path == '/mcp':
+                self.send_response(405)
+                self.send_header('Allow', 'POST')
+                self.end_headers()
+                return
             role, owner = self.identity(app)
             if role is None:
                 self.send_data(401, {'error': '请输入有效的访问凭据。'})
                 return
             body = self.read_body() if method == 'POST' else {}
             value = app.dispatch(method, path, parse_qs(url.query), body, role, owner)
+            if value is None:
+                self.send_response(202)
+                self.end_headers()
+                return
             self.send_data(200, value)
         except PermissionError:
             self.send_data(403, {'error': '该凭据或会话没有此操作的权限。'})
         except KeyError:
             self.send_data(404, {'error': '未找到设备、事件或回执。'})
         except (ValueError, TypeError) as exc:
-            self.send_data(400, {'error': str(exc)})
+            message = str(exc)
+            if 'dependency changed' in message or 'state changed' in message:
+                self.send_data(400, {
+                    'error': '边缘安全护栏拦截：确认前检测到检查范围内设备状态已发生变化，旧提案已自动作废，请重新生成检查单。',
+                    'code': 'state_drift_blocked',
+                    'detail': message,
+                })
+            elif 'proposal expired' in message:
+                self.send_data(400, {
+                    'error': '提案已超过 30 秒确认有效期，请重新生成检查单。',
+                    'code': 'proposal_expired',
+                    'detail': message,
+                })
+            else:
+                self.send_data(400, {'error': message})
         except (BrokenPipeError, ConnectionResetError):
             return
         except (HAError, OSError):
@@ -417,8 +697,15 @@ def main():
     runtime_key = os.environ.get('AGENTARTS_RUNTIME_KEY')
     if bool(workflow_url) != bool(runtime_key):
         parser.error('Set both AGENTARTS_WORKFLOW_URL and AGENTARTS_RUNTIME_KEY')
+    try:
+        workflow_timeout = float(os.environ.get('AGENTARTS_TIMEOUT', '60'))
+        if not 0 < workflow_timeout <= 300:
+            raise ValueError
+    except ValueError:
+        parser.error('AGENTARTS_TIMEOUT must be a number within (0, 300]')
     workflow = AgentArtsWorkflow(workflow_url, runtime_key,
-                result_path=os.environ.get('AGENTARTS_RESULT_PATH', 'proposal')) if workflow_url else None
+                result_path=os.environ.get('AGENTARTS_RESULT_PATH', 'proposal'),
+                timeout=workflow_timeout) if workflow_url else None
     if args.bind not in ('127.0.0.1', 'localhost') and (not operator_key or not tool_key or args.ha_url):
         parser.error('Non-loopback software demo requires both configured keys. Home Assistant mode must bind locally.')
     if not operator_key:

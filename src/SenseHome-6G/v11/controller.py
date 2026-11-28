@@ -282,6 +282,137 @@ class Controller:
         """Build a card from an external candidate using the original request."""
         return self._propose(text, lambda view: candidate, True, source='agentarts')
 
+    def propose_local_no_upload(self, original_text, command_text):
+        """Execute strict local-rules planning on ``command_text`` while binding ``original_text`` and ``no_upload``."""
+        if not isinstance(original_text, str) or not original_text.strip() or len(original_text) > 2000:
+            raise ValueError('request length 1..2000 required')
+        if not isinstance(command_text, str) or not command_text.strip():
+            return self.propose(original_text)
+        entered = time.perf_counter()
+        deps = request_dependencies(command_text, self.catalog)
+        read_ids = set() if deps is None else deps
+        snapshot_started = time.perf_counter()
+        states = self.snapshot(read_ids)
+        snapshot_ms = (time.perf_counter() - snapshot_started) * 1000
+        view = dict(request=command_text, catalog=copy.deepcopy(self.catalog), states=states)
+        payload = guard_payload(catalog_rules(copy.deepcopy(view)), view)
+        metadata = dict(
+            route=dict(backend='local-rules', reason='NO_UPLOAD_LOCAL_RULES'),
+            privacy_policy='no_upload',
+            planning_ms=(time.perf_counter() - entered) * 1000,
+            semantic_scope='complete supported grammar; local no-upload bypass',
+            semantic_mode='independent_rule_validation',
+            intent_review_required=False,
+            dependency_scope='no_model_or_state_dependencies' if deps is None else 'parsed_request_dependencies',
+            timing=dict(snapshot_ms=snapshot_ms, refresh_snapshot_ms=0,
+                        snapshot_budget_ms=self.snapshot_timeout_seconds * 1000),
+        )
+        if payload['result_kind'] == 'clarification':
+            result = dict(status='clarification', authorized=False, payload=payload, mode=self.mode, metadata=metadata)
+        else:
+            involved = {a['entity_id'] for a in payload['actions']}
+            refresh_started = time.perf_counter()
+            fresh = self.snapshot(read_ids | involved)
+            metadata['timing']['refresh_snapshot_ms'] = (time.perf_counter() - refresh_started) * 1000
+            payload = guard_payload(payload, dict(request=command_text, catalog=copy.deepcopy(self.catalog), states=fresh))
+            unreadable = any(
+                s.get('state') in ('unavailable', 'unknown') or s.get('read_error_type')
+                for s in fresh.values()
+            )
+            if payload['result_kind'] == 'clarification' or unreadable:
+                if unreadable:
+                    payload = clarification('请求依赖状态不可读，请恢复连接后重新提案')
+                result = dict(status='clarification', authorized=False, payload=payload, mode=self.mode, metadata=metadata)
+            else:
+                result = self.proposals.create(
+                    original_text, self.catalog, {e: fresh[e] for e in involved},
+                    payload, metadata=metadata, dependency_states=fresh,
+                )
+            result['mode'] = self.mode
+        result = self._audited_result('proposal', result)
+        result['handler_total_ms'] = (time.perf_counter() - entered) * 1000
+        return result
+
+    def propose_checklist(self, text, candidate, *, extra_dependency_ids=None, checklist=None,
+                          source='agentarts', trace=None):
+        """Create a proposal card for a structured checklist with full dependency tracking.
+
+        Every controllable entity in ``extra_dependency_ids`` (such as initially-off
+        lights skipped during leave-home checks) is bound into ``dependency_states``
+        so pre-confirm state drift invalidates stale cards.
+        """
+        if not isinstance(text, str) or not text.strip() or len(text) > 2000:
+            raise ValueError('request length 1..2000 required')
+        entered = time.perf_counter()
+        privacy_mode = request_privacy_mode(text)
+        if privacy_mode != 'standard':
+            result = dict(status='clarification', authorized=False,
+                          payload=clarification('此请求要求本地处理或离线；已拒绝云端检查单提案'),
+                          mode=self.mode,
+                          metadata=dict(route=dict(backend='local-rules', reason='PRIVACY_CHECKLIST_BLOCK'),
+                                        privacy_policy=privacy_mode, semantic_mode='not_run'))
+            result = self._audited_result('proposal', result)
+            result['handler_total_ms'] = (time.perf_counter() - entered) * 1000
+            return result
+        try:
+            validated = validate_payload(candidate, self.catalog)
+        except (ValueError, TypeError, KeyError):
+            payload = clarification('检查单候选提案结构、设备目录或参数不符合要求')
+            result = dict(status='clarification', authorized=False, payload=payload, mode=self.mode,
+                          metadata=dict(route=dict(backend=source, reason='CHECKLIST_SCHEMA_REJECTED'),
+                                        privacy_policy=privacy_mode, checklist=copy.deepcopy(checklist or {}),
+                                        trace=copy.deepcopy(trace or {})))
+            result = self._audited_result('proposal', result)
+            result['handler_total_ms'] = (time.perf_counter() - entered) * 1000
+            return result
+        if validated['result_kind'] != 'proposal':
+            result = dict(status='clarification', authorized=False, payload=validated, mode=self.mode,
+                          metadata=dict(route=dict(backend=source, reason='CHECKLIST_CLARIFICATION'),
+                                        privacy_policy=privacy_mode, checklist=copy.deepcopy(checklist or {}),
+                                        trace=copy.deepcopy(trace or {})))
+            result = self._audited_result('proposal', result)
+            result['handler_total_ms'] = (time.perf_counter() - entered) * 1000
+            return result
+        catalog_ids = {entry['entity_id'] for entry in self.catalog}
+        involved = {action['entity_id'] for action in validated['actions']}
+        extra = {eid for eid in (extra_dependency_ids or ()) if eid in catalog_ids}
+        watched = involved | extra
+        snapshot_started = time.perf_counter()
+        fresh = self.snapshot(watched)
+        snapshot_ms = (time.perf_counter() - snapshot_started) * 1000
+        unreadable = any(
+            state.get('state') in ('unavailable', 'unknown') or state.get('read_error_type')
+            for state in fresh.values()
+        )
+        metadata = dict(
+            route=dict(backend=source, reason='STRUCTURED_CHECKLIST_GUARDRAIL'),
+            privacy_policy=privacy_mode,
+            semantic_scope='边缘护栏已完成目录、能力、排除约束与全范围状态依赖校验；待用户显式确认',
+            semantic_mode='structured_checklist_with_explicit_review',
+            intent_review_required=True,
+            dependency_scope='checklist_watched_entities',
+            checklist=copy.deepcopy(checklist or {}),
+            trace=copy.deepcopy(trace or {}),
+            timing=dict(snapshot_ms=snapshot_ms, entry_to_card_store_ms=(time.perf_counter() - entered) * 1000),
+        )
+        if unreadable:
+            payload = clarification('检查单依赖设备状态不可读，请恢复连接后重新核查')
+            result = dict(status='clarification', authorized=False, payload=payload, mode=self.mode, metadata=metadata)
+        else:
+            try:
+                validated = validate_payload(validated, self.catalog, states={e: fresh[e] for e in involved})
+                result = self.proposals.create(
+                    text, self.catalog, {entity: fresh[entity] for entity in involved},
+                    validated, metadata=metadata, dependency_states=fresh,
+                )
+            except (ValueError, TypeError, KeyError):
+                payload = clarification('设备当前能力或状态不满足检查单执行条件，请刷新后重试')
+                result = dict(status='clarification', authorized=False, payload=payload, mode=self.mode, metadata=metadata)
+            result['mode'] = self.mode
+        result = self._audited_result('proposal', result)
+        result['handler_total_ms'] = (time.perf_counter() - entered) * 1000
+        return result
+
     def _propose(self, text, selected_planner, allow_model_proposals, *, source=None):
         if not isinstance(text,str) or not text.strip() or len(text)>2000:raise ValueError('request length 1..2000 required')
         entered=time.perf_counter()

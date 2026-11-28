@@ -2,9 +2,15 @@
 
 Python 3.10+，无需第三方Python包。请保留同级 `../ai6g_runtime/`，v11直接复用已有TaskRouter；发布ZIP包含这些依赖。v10及历史实验保留，v11使用新数据目录。
 
-## 本机运行
+## 本机运行与标准 MCP 服务
 
-网页控制台使用 `python -X utf8 -B web_demo.py`，在浏览器打开 `http://127.0.0.1:8765/`，输入终端打印的本地操作员令牌。默认使用软件模拟设备。设备、定时灯光、照护和感知试验均在同一网页中。配置 AgentArts 的步骤见[实施手册](../../../docs/AgentArts与全屋照护实施手册.md)。
+网页控制台使用 `python -X utf8 -B web_demo.py`，在浏览器打开 `http://127.0.0.1:8765/`，输入终端打印的本地操作员令牌。默认使用软件模拟设备，同屏提供动态离家检查单（拟执行 / 自动跳过 / 规则保留 / 只读观测）、多智能体追踪轨迹、7 组评审一键演示剧本、确认前状态漂移与幂等防重演练、照护应急 SOP 研判及 MCP 规则透明审计。
+
+标准最小权限 MCP 服务（仅开放 6 个只读/提案工具，不含任何确认或执行工具）：
+- **Streamable HTTP**：`web_demo.py` 内置挂载 `POST /mcp`（需请求头 `Authorization: Bearer <SENSEHOME_TOOL_KEY>`）。
+- **本地 stdio**：`python -X utf8 -B mcp_server.py --home demo/web`。
+
+配置华为云 AgentArts 多智能体、知识库与运行时的完整步骤见 [AgentArts 云边协同部署手册](../../../agentarts_assets/workflow_architecture.md) 与 [实施手册](../../../docs/AgentArts与全屋照护实施手册.md)。
 
 在本目录打开终端：
 

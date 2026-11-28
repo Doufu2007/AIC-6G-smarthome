@@ -1,6 +1,7 @@
 """Project household inventory onto the data allowed in the AgentArts tools."""
 
 import copy
+import threading
 
 from capabilities import DEVICE_SERVICES
 
@@ -48,6 +49,15 @@ class DeviceInventory:
         self.ha_client = ha_client
         self.rooms = copy.deepcopy(rooms or {})
         self.extra_states = copy.deepcopy(extra_states or {})
+        self._lock = threading.RLock()
+
+    def set_extra_state(self, entity_id, state, last_updated):
+        with self._lock:
+            if entity_id not in self.extra_states:
+                raise KeyError(entity_id)
+            self.extra_states[entity_id]['state'] = state
+            self.extra_states[entity_id]['last_updated'] = last_updated
+            return copy.deepcopy(self.extra_states[entity_id])
 
     def _room(self, entity, default):
         entry = self.rooms.get(entity, default)
@@ -78,7 +88,10 @@ class DeviceInventory:
                                    available=available, access='control' if services else 'read_only',
                                    supported_services=list(services),
                                    source=self.controller.mode if self.ha_client is None else 'home-assistant')
-        for value in [*states, *self.extra_states.values()]:
+        with self._lock:
+            extras_snapshot = [copy.deepcopy(v) for v in self.extra_states.values()]
+            extra_keys = set(self.extra_states)
+        for value in [*states, *extras_snapshot]:
             entity = value.get('entity_id', '')
             kind = entity.partition('.')[0]
             if entity in entries or kind not in _READ_ONLY:
@@ -90,7 +103,7 @@ class DeviceInventory:
                                    aliases=list(value.get('aliases', [])),
                                    available=value.get('state', 'unavailable') not in ('unknown', 'unavailable'),
                                    access='event_only' if kind in ('camera', 'event') else 'read_only',
-                                   supported_services=[], source='software-demo' if entity in self.extra_states
+                                   supported_services=[], source='software-demo' if entity in extra_keys
                                    else 'home-assistant')
         return entries
 
@@ -104,10 +117,10 @@ class DeviceInventory:
         entry = self._entries()[entity_id]
         if any(row['entity_id'] == entity_id for row in self.controller.catalog):
             value = self.controller.snapshot([entity_id])[entity_id]
-        elif entity_id in self.extra_states:
-            value = self.extra_states[entity_id]
         else:
-            value = self.ha_client.get_state(entity_id)
+            with self._lock:
+                extra_val = copy.deepcopy(self.extra_states.get(entity_id))
+            value = extra_val if extra_val is not None else self.ha_client.get_state(entity_id)
         state = value.get('state', 'unavailable')
         attributes = {}
         if entry['kind'] == 'camera':
